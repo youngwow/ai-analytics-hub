@@ -1,0 +1,150 @@
+{
+  "comment": "Стартовый список источников: «Материалы и данные» из context/task.md плюс сайты регуляторов. kind/fetch_url указаны там, где лента проверена вручную (02.09.2026); остальное определяет резолвер при `python -m src sources seed`.",
+  "sources": [
+    {
+      "name": "Ведомости",
+      "url": "https://www.vedomosti.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.vedomosti.ru/rss/news",
+      "notes": "Лента новостей (~200 записей, только анонсы) — полный текст дотягивается со страницы."
+    },
+    {
+      "name": "Коммерсантъ",
+      "url": "https://www.kommersant.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.kommersant.ru/RSS/news.xml",
+      "notes": "Лента новостей (~600 записей, анонсы в description). Сайт не афиширует RSS, резолвер находит только sitemap."
+    },
+    {
+      "name": "Кабельщик",
+      "url": "https://www.cableman.ru/",
+      "category": "media",
+      "notes": "RSS нет — резолвер берёт sitemap.xml с lastmod."
+    },
+    {
+      "name": "Телеспутник",
+      "url": "https://telesputnik.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://telesputnik.ru/rss/",
+      "notes": "Лента с анонсами; полный текст со страницы."
+    },
+    {
+      "name": "Банк России — пресс-релизы",
+      "url": "https://www.cbr.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://www.cbr.ru/rss/RssPress",
+      "notes": "Полный текст прямо в ленте. Главная /rss/ отдаёт 404, поэтому адрес закреплён."
+    },
+    {
+      "name": "Правительство РФ",
+      "url": "http://government.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "http://government.ru/all/rss/",
+      "notes": "Материалы из всех разделов; полный текст со страницы."
+    },
+    {
+      "name": "Государственная Дума",
+      "url": "http://duma.gov.ru",
+      "category": "regulator",
+      "notes": "RSS не найден — резолвер сравнивает ссылки главной страницы между обходами."
+    },
+    {
+      "name": "Цифровые индустриальные технологии — дайджест",
+      "url": "https://t.me/cit_gov",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/cit_gov"
+    },
+    {
+      "name": "РФРИТ",
+      "url": "https://t.me/rfrit",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/rfrit"
+    },
+    {
+      "name": "Гранты для ИТ",
+      "url": "https://t.me/grantsforbussines",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/grantsforbussines"
+    },
+    {
+      "name": "CIO: канал IT-руководителей",
+      "url": "https://t.me/cio_channel",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/cio_channel"
+    },
+    {
+      "name": "Торгпред — тендеры и закупки",
+      "url": "https://t.me/rustorgpred",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/rustorgpred"
+    },
+    {
+      "name": "Правительство РФ — сводки",
+      "url": "https://t.me/government_rus",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/government_rus"
+    },
+    {
+      "name": "АРПЭ — новости",
+      "url": "https://t.me/arperf",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/arperf"
+    },
+    {
+      "name": "ЦИПР — новости и анонсы мероприятий",
+      "url": "https://t.me/icipr",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/icipr"
+    },
+    {
+      "name": "АРПП — новости",
+      "url": "https://t.me/arppsoft",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/arppsoft"
+    },
+    {
+      "name": "Правовой комитет АРПП — дайджесты ИРИ и ЭБР",
+      "url": "manual://arpp-legal-digest",
+      "category": "manual",
+      "kind": "manual",
+      "fetch_url": "manual://arpp-legal-digest",
+      "notes": "Приходят файлами по понедельникам; вносятся вручную или через import-url."
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Официальное опубликование НПА",
+      "url": "http://publication.pravo.gov.ru/",
+      "reason": "Без RSS, sitemap без lastmod, на главной только разделы — обход HTML даёт разделы вместо документов. Нужен отдельный адаптер (scraper.md §2)."
+    },
+    {
+      "name": "regulation.gov.ru — проекты НПА",
+      "url": "https://regulation.gov.ru/",
+      "reason": "Next.js-приложение без RSS и sitemap; нужен отдельный адаптер по API портала (scraper.md §2)."
+    },
+    {
+      "name": "Минцифры (digital.gov.ru)",
+      "url": "https://digital.gov.ru/",
+      "reason": "Таймаут соединения при проверке 02.09.2026 — перепроверить из российской сети и добавить через `sources add`."
+    },
+    {
+      "name": "Роскомнадзор (rkn.gov.ru)",
+      "url": "https://rkn.gov.ru/",
+      "reason": "Таймаут соединения при проверке 02.09.2026 — перепроверить из российской сети и добавить через `sources add`."
+    }
+  ]
+}

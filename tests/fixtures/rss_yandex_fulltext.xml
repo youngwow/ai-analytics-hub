@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rss version="2.0" xmlns:yandex="http://news.yandex.ru" xmlns:turbo="http://turbo.yandex.ru" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>Отраслевые новости</title>
+<link>https://example.ru/</link>
+<item>
+<title>Минцифры предложило новые правила реестра ПО</title>
+<link>https://example.ru/news/123?utm_source=rss&amp;utm_medium=feed</link>
+<guid isPermaLink="false">news-123</guid>
+<pubDate>Tue, 02 Sep 2026 10:00:00 +0300</pubDate>
+<description>Анонс: ведомство опубликовало проект &lt;b&gt;постановления&lt;/b&gt;. Читать далее…</description>
+<yandex:full-text>Минцифры опубликовало проект постановления о новых правилах ведения реестра российского ПО.
+
+Документ вводит требование совместимости с доверенными операционными системами.</yandex:full-text>
+<author>Иван Петров</author>
+<enclosure url="https://example.ru/files/proekt.pdf" type="application/pdf" length="12345"/>
+<enclosure url="https://example.ru/img/123.jpg" type="image/jpeg" length="1"/>
+</item>
+<item>
+<title>Турбо-статья без yandex:full-text</title>
+<link>https://example.ru/news/124</link>
+<pubDate>Tue, 02 Sep 2026 09:00:00 +0300</pubDate>
+<description>Короткий анонс.</description>
+<turbo:content><![CDATA[<p>Первый абзац турбо-контента.</p><p>Второй абзац.</p>]]></turbo:content>
+</item>
+<item>
+<title>Только content:encoded</title>
+<link>https://example.ru/news/125</link>
+<pubDate>Tue, 02 Sep 2026 08:00:00 +0300</pubDate>
+<content:encoded><![CDATA[<div>Абзац из content:encoded.<br>Вторая строка.</div>]]></content:encoded>
+</item>
+<item>
+<title>Только анонс — нужен полный текст</title>
+<link>https://example.ru/news/126</link>
+<pubDate>Tue, 02 Sep 2026 07:00:00 +0300</pubDate>
+<description>Совсем короткий анонс.</description>
+</item>
+</channel>
+</rss>
