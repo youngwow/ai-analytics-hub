@@ -1,4 +1,4 @@
-.PHONY: install test lint format seed collect watch
+.PHONY: install test lint format seed collect watch happy-pr happy-gr
 
 install:
 	uv sync
@@ -20,3 +20,9 @@ collect:
 
 watch:
 	uv run python -m src collect --watch
+
+happy-pr:
+	bash scripts/happy_path_pr.sh
+
+happy-gr:
+	bash scripts/happy_path_gr.sh

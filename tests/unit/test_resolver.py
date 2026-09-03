@@ -7,6 +7,7 @@ import pytest
 from support import HTML_UTF8, RSS, XML, MockRoutes, raising
 
 from src.sources.resolver import Resolver
+from src.sources.scraper_search import SearchQuery
 
 HOME_WITH_FEED = (
     b"<!DOCTYPE html><html><head><title>  Site   News </title>"
@@ -64,6 +65,104 @@ def test_private_telegram_links_are_manual(mock_client, url):
     assert res.kind == "manual"
     assert res.note == "private/invite Telegram links have no web preview"
     assert res.fetch_url.startswith("https://t.me/")
+    assert routes.requests == []
+
+
+# ── non-http schemes ───────────────────────────────────────────────────────
+
+
+CANONICAL_SEARCH_URL = SearchQuery("закон об ИИ", ["gov.ru"]).to_url()
+
+
+@pytest.mark.parametrize(
+    ("url", "name", "fetch_url"),
+    [
+        (CANONICAL_SEARCH_URL, "закон об ИИ", CANONICAL_SEARCH_URL),
+        (
+            "tavily://search?q=%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD",
+            "закон",
+            "tavily://search?q=%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD&domains=&days=7&topic=news&summary=1",
+        ),
+        (
+            "  tavily://search?q=ai+law&days=3&topic=general  ",
+            "ai law",
+            "tavily://search?q=ai+law&domains=&days=3&topic=general&summary=1",
+        ),
+        (
+            "TAVILY://SEARCH?q=x",
+            "x",
+            "tavily://search?q=x&domains=&days=7&topic=news&summary=1",
+        ),
+        (
+            "tavily://search?q=x&domains=WWW.Gov.ru,cbr.ru&summary=no",
+            "x",
+            "tavily://search?q=x&domains=cbr.ru%2Cgov.ru&days=7&topic=news&summary=0",
+        ),
+    ],
+    ids=["canonical-unchanged", "bare-query", "padded", "upper-case-scheme", "messy-params"],
+)
+def test_search_urls_resolve_to_a_canonical_search_url_without_network(
+    mock_client, url, name, fetch_url
+):
+    routes = MockRoutes()
+    res = _resolver(mock_client, routes).resolve(url)
+    assert res.kind == "search"
+    assert res.fetch_url == fetch_url
+    assert res.fetch_url == SearchQuery.from_url(url).to_url()
+    assert res.name == name
+    assert res.note == ""
+    assert routes.requests == []
+
+
+def test_equivalent_search_urls_resolve_to_one_fetch_url(mock_client):
+    resolver = _resolver(mock_client, MockRoutes())
+    spellings = [
+        "tavily://search?q=закон+об+ИИ&domains=gov.ru",
+        "TAVILY://search?q=%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD+%D0%BE%D0%B1+%D0%98%D0%98&domains=WWW.GOV.RU,&summary=yes",
+        " tavily://search?summary=1&topic=news&days=7&domains=gov.ru&q=закон++об+ИИ ",
+    ]
+    assert {resolver.resolve(u).fetch_url for u in spellings} == {CANONICAL_SEARCH_URL}
+
+
+def test_search_source_name_is_capped_at_80_chars(mock_client):
+    routes = MockRoutes()
+    res = _resolver(mock_client, routes).resolve(SearchQuery("ы" * 100).to_url())
+    assert res.kind == "search"
+    assert res.name == "ы" * 80
+
+
+@pytest.mark.parametrize(
+    ("url", "reason"),
+    [
+        ("tavily://search?q=", "search query is empty"),
+        ("tavily://search", "search query is empty"),
+        ("tavily://search?q=x&days=0", "days must be >= 1"),
+        ("tavily://search?q=x&topic=blog", "topic must be one of"),
+    ],
+    ids=["blank-query", "no-query", "zero-days", "bad-topic"],
+)
+def test_malformed_search_urls_are_manual_with_a_note(mock_client, url, reason):
+    routes = MockRoutes()
+    res = _resolver(mock_client, routes).resolve(url)
+    assert res.kind == "manual"
+    assert res.fetch_url == url
+    assert res.note.startswith("bad search url: " + reason)
+    assert routes.requests == []
+
+
+@pytest.mark.parametrize(
+    "url",
+    ["manual://import", "ftp://files.example.ru/npa.pdf", "file:///tmp/draft.pdf"],
+    ids=["manual", "ftp", "file"],
+)
+def test_other_non_http_schemes_are_manual_without_network(mock_client, url):
+    routes = MockRoutes()
+    res = _resolver(mock_client, routes).resolve(url)
+    scheme = url.split("://", 1)[0]
+    assert res.kind == "manual"
+    assert res.fetch_url == url
+    assert res.name == ""
+    assert res.note == f"{scheme}:// is not fetched; kept as manual"
     assert routes.requests == []
 
 

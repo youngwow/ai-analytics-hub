@@ -16,7 +16,7 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from ..common import get_logger, parse_datetime, to_utc_iso, utc_now
+from ..common import get_logger, load_env_secret, parse_datetime, to_utc_iso, utc_now
 from ..config import Config
 from ..models import CollectReport, FetchResult, FetchState, RawDocument, Source
 from ..paths import ProjectPaths
@@ -40,6 +40,7 @@ class Collector:
         db: Database,
         transport: httpx.BaseTransport | None = None,
         now: Callable[[], datetime] = utc_now,
+        tavily_key: str | None = None,
     ):
         self.config = config
         self.paths = paths
@@ -47,7 +48,9 @@ class Collector:
         self.transport = transport
         self.now = now
         self.limiter = HostLimiter(config.scraper.per_host_concurrency)
-        self.adapters = build_adapters(config, self.limiter)
+        if tavily_key is None:
+            tavily_key = load_env_secret(config.tavily.api_key_env, paths.env_path)
+        self.adapters = build_adapters(config, self.limiter, tavily_key=tavily_key)
         self.fulltext = FullTextFetcher(config.scraper, self.limiter)
 
     # ── run ────────────────────────────────────────────────────────────────
@@ -97,20 +100,54 @@ class Collector:
                         backfill,
                         latency_ms,
                     )
-                    report.per_source.append(entry)
-                    status = entry["status"]
-                    if status == "ok":
-                        report.sources_ok += 1
-                        report.docs_new += entry["new"]
-                    elif status == "not_modified":
-                        report.sources_not_modified += 1
-                    else:
-                        report.sources_fail += 1
+                    self._tally(report, entry)
 
         report.finished_at = to_utc_iso(self.now()) or ""
         self.db.runs.add(report)
         log.info("collect done: %s", report.summary_line())
         return report
+
+    def collect_one(self, source: Source, *, force: bool = False) -> tuple[FetchResult, dict]:
+        """Poll one source right now, on the calling thread, and record the run.
+
+        Returns the adapter's result (every hit, stored or not) alongside the
+        report entry, so a caller can show what just came in without querying
+        the source a second time. `force` clears validators and cursors first.
+        """
+        if source.id is None:
+            raise ValueError("source must be stored before it can be collected")
+        started = self.now()
+        if force:
+            with self.db.transaction():
+                self.db.fetch_state.reset(source.id)
+        state = self.db.fetch_state.get(source.id)
+        since = started - timedelta(hours=self.config.scraper.date_window_hours)
+        report = CollectReport(started_at=to_utc_iso(started) or "")
+        if source.kind not in self.adapters:
+            result = FetchResult(error=f"no adapter for kind '{source.kind}'")
+            entry = self._persist(source, state, result, None, started, since, False, 0.0)
+        else:
+            with make_client(self.config, self.transport) as client:
+                result, latency_ms = self._poll(source, state, client, started, since, False)
+                entry = self._persist(
+                    source, state, result, client, started, since, False, latency_ms
+                )
+        self._tally(report, entry)
+        report.finished_at = to_utc_iso(self.now()) or ""
+        self.db.runs.add(report)
+        return result, entry
+
+    @staticmethod
+    def _tally(report: CollectReport, entry: dict) -> None:
+        report.per_source.append(entry)
+        status = entry["status"]
+        if status == "ok":
+            report.sources_ok += 1
+            report.docs_new += entry["new"]
+        elif status == "not_modified":
+            report.sources_not_modified += 1
+        else:
+            report.sources_fail += 1
 
     def _poll(
         self,
@@ -138,7 +175,7 @@ class Collector:
         source: Source,
         state: FetchState,
         result: FetchResult,
-        client: httpx.Client,
+        client: httpx.Client | None,
         now: datetime,
         since: datetime | None,
         backfill: bool,
@@ -182,10 +219,19 @@ class Collector:
             seen_urls = [d.url for d in candidates]
             known = self.db.seen_urls.known(source.id, seen_urls)
             docs = [d for d in docs if d.url not in known]
-        docs = self._window_filter(docs, since)
-        docs = docs[: self.config.scraper.max_new_per_source]
+        # A search source bounds its own recency (`days`), which may be wider than
+        # the collect window; everything else is cut to the window here.
+        docs = self._window_filter(docs, None if source.kind == "search" else since)
+        # Cap the batch, but never at the expense of adapter-generated documents
+        # without an origin URL (the search digest rides at the end of its batch).
+        cap = self.config.scraper.max_new_per_source
+        docs = docs[:cap] + [d for d in docs[cap:] if not d.url]
 
-        if self.config.scraper.fetch_fulltext and any(d.needs_fulltext for d in docs):
+        if (
+            client is not None
+            and self.config.scraper.fetch_fulltext
+            and any(d.needs_fulltext for d in docs)
+        ):
             self.fulltext.enrich(client, docs)
         if source.kind in ("html", "sitemap") and first_run and since is not None:
             # First look at a list page / undated sitemap entries: only keep what we
@@ -195,13 +241,13 @@ class Collector:
         for d in docs:
             self._finalize(d, now)
 
-        inserted = 0
+        inserted: list[str] = []
         with self.db.transaction():
             for d in docs:
                 if self.db.documents.exists(source.id, d.external_id):
                     continue
                 self.db.documents.insert(d)
-                inserted += 1
+                inserted.append(d.external_id)
             if "etag" in result.state_update:
                 state.etag = result.state_update["etag"]
             if "last_modified" in result.state_update:
@@ -211,7 +257,7 @@ class Collector:
             state.last_error = None
             state.consecutive_failures = 0
             state.last_success_at = now_iso
-            state.last_doc_count = inserted
+            state.last_doc_count = len(inserted)
             if seen_urls:
                 self.db.seen_urls.add(source.id, seen_urls, now_iso)
             self.db.fetch_state.save(state)
@@ -222,15 +268,20 @@ class Collector:
             entry["name"] = source.name
 
         log.info(
-            "→ %s: %d entries (%d new, %.0f ms)", source.name, len(candidates), inserted, latency_ms
+            "→ %s: %d entries (%d new, %.0f ms)",
+            source.name,
+            len(candidates),
+            len(inserted),
+            latency_ms,
         )
-        return {**entry, "status": "ok", "new": inserted}
+        return {**entry, "status": "ok", "new": len(inserted), "new_external_ids": inserted}
 
     def _drop_known(self, source: Source, docs: list[RawDocument]) -> list[RawDocument]:
         """Skip documents already stored, by (source, external_id) or by URL.
 
-        The URL rule is skipped for section/home URLs: some regulator feeds link
-        every item to the same landing page.
+        The URL rule is skipped for section/home URLs and for documents without
+        one (search digests): some regulator feeds link every item to the same
+        landing page.
         """
         own = {source.url.rstrip("/"), source.fetch_url.rstrip("/")}
         out: list[RawDocument] = []

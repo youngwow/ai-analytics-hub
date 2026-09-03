@@ -7,7 +7,7 @@ from datetime import datetime
 import feedparser
 import httpx
 
-from ..common import get_logger, parse_datetime, struct_time_to_datetime, to_utc_iso
+from ..common import get_logger, normalize_ws, parse_datetime, struct_time_to_datetime, to_utc_iso
 from ..config import ScraperConfig
 from ..models import FetchResult, FetchState, RawDocument, Source
 from .base import HostLimiter, fetch
@@ -70,7 +70,9 @@ def parse_entry(entry, source: Source, now: datetime) -> RawDocument | None:
         source_id=source.id or 0,
         external_id=external_id,
         url=link or external_id,
-        title=strip_html(entry.get("title") or "").strip(),
+        title=normalize_ws(
+            strip_html(entry.get("title") or "")
+        ),  # pravo.gov.ru breaks titles over lines
         summary=summary,
         text=text,
         author=strip_html(entry.get("author") or "").strip(),

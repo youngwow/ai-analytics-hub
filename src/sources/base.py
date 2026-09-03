@@ -114,7 +114,7 @@ def make_client(config: Config, transport: httpx.BaseTransport | None = None) ->
 
 
 class Adapter(Protocol):
-    """One polling strategy (rss, telegram, sitemap, html)."""
+    """One polling strategy (rss, telegram, sitemap, html, search)."""
 
     kind: str
 
@@ -132,10 +132,17 @@ class Adapter(Protocol):
         ...
 
 
-def build_adapters(config: Config, limiter: HostLimiter) -> dict[str, Adapter]:
-    """Registry keyed by `Source.kind`; `manual` sources have no adapter."""
+def build_adapters(
+    config: Config, limiter: HostLimiter, tavily_key: str | None = None
+) -> dict[str, Adapter]:
+    """Registry keyed by `Source.kind`; `manual` sources have no adapter.
+
+    `tavily_key` may be empty — `search` sources then fail per run with a clear
+    error instead of taking the whole collect down.
+    """
     from .scraper_html import HtmlAdapter
     from .scraper_rss import RssAdapter
+    from .scraper_search import SearchAdapter
     from .scraper_sitemap import SitemapAdapter
     from .scraper_tg import TelegramAdapter
 
@@ -144,5 +151,6 @@ def build_adapters(config: Config, limiter: HostLimiter) -> dict[str, Adapter]:
         TelegramAdapter(config.scraper, config.telegram, limiter),
         SitemapAdapter(config.scraper, config.sitemap, limiter),
         HtmlAdapter(config.scraper, limiter),
+        SearchAdapter(config.tavily, config.scraper, limiter, api_key=tavily_key),
     ]
     return {a.kind: a for a in adapters}

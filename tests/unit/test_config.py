@@ -5,7 +5,8 @@ from __future__ import annotations
 import pytest
 import yaml
 
-from src.config import Config, ConfigError, ScraperConfig
+from src.config import Config, ConfigError, ScraperConfig, TavilyConfig
+from src.paths import DEFAULT_PATHS
 
 
 def test_from_dict_builds_every_section(raw_config):
@@ -62,6 +63,53 @@ def test_bad_tavily_search_depth_raises(raw_config, depth):
 def test_known_tavily_search_depths_accepted(raw_config, depth):
     raw_config["tavily"]["search_depth"] = depth
     assert Config.from_dict(raw_config).tavily.search_depth == depth
+
+
+def test_tavily_keys_with_defaults_may_be_omitted(raw_config):
+    assert set(raw_config["tavily"]) == {"api_key_env", "max_results", "search_depth"}
+    assert Config.from_dict(raw_config).tavily == TavilyConfig(
+        api_key_env="TAVILY_API",
+        max_results=10,
+        search_depth="basic",
+        days=7,
+        country="",
+        language="",
+    )
+
+
+def test_tavily_optional_keys_are_read_when_present(raw_config):
+    raw_config["tavily"].update(days=3, country="russia", language="ru")
+    tavily = Config.from_dict(raw_config).tavily
+    assert (tavily.days, tavily.country, tavily.language) == (3, "russia", "ru")
+
+
+def test_required_tavily_key_is_still_reported_when_missing(raw_config):
+    del raw_config["tavily"]["search_depth"]
+    with pytest.raises(ConfigError, match=r"section 'tavily' missing keys: \['search_depth'\]"):
+        Config.from_dict(raw_config)
+
+
+def test_unknown_keys_in_a_section_are_ignored(raw_config):
+    raw_config["tavily"]["future_option"] = True
+    assert Config.from_dict(raw_config).tavily.days == 7
+
+
+@pytest.mark.parametrize("days", [0, -1])
+def test_tavily_days_below_one_raises(raw_config, days):
+    raw_config["tavily"]["days"] = days
+    with pytest.raises(ConfigError, match="tavily.days must be >= 1"):
+        Config.from_dict(raw_config)
+
+
+def test_tavily_days_of_one_is_accepted(raw_config):
+    raw_config["tavily"]["days"] = 1
+    assert Config.from_dict(raw_config).tavily.days == 1
+
+
+def test_repo_config_yaml_loads_with_search_settings():
+    cfg = Config.load(DEFAULT_PATHS.config_path)
+    assert cfg.tavily.days == 7
+    assert (cfg.tavily.country, cfg.tavily.language) == ("russia", "ru")
 
 
 @pytest.mark.parametrize("key", ["concurrency", "per_host_concurrency"])

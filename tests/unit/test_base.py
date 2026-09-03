@@ -201,8 +201,24 @@ def test_make_client_without_transport_is_a_plain_client(config):
 def test_build_adapters_registers_every_kind(config):
     limiter = HostLimiter(2)
     adapters = build_adapters(config, limiter)
-    assert set(adapters) == {"rss", "telegram", "sitemap", "html"}
+    assert set(adapters) == {"rss", "telegram", "sitemap", "html", "search"}
     for kind, adapter in adapters.items():
         assert adapter.kind == kind
         assert adapter.limiter is limiter
-        assert adapter.config is config.scraper
+    for kind in ("rss", "telegram", "sitemap", "html"):
+        assert adapters[kind].config is config.scraper
+    search = adapters["search"]
+    assert search.scraper is config.scraper
+    assert search.tavily is config.tavily
+
+
+@pytest.mark.parametrize(
+    ("tavily_key", "expected"), [(None, ""), ("", ""), ("secret-key", "secret-key")]
+)
+def test_build_adapters_hands_the_tavily_key_to_the_search_adapter(config, tavily_key, expected):
+    adapters = build_adapters(config, HostLimiter(1), tavily_key=tavily_key)
+    assert adapters["search"].api_key == expected
+
+
+def test_build_adapters_has_no_adapter_for_manual_sources(config):
+    assert "manual" not in build_adapters(config, HostLimiter(1))

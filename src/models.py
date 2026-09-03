@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 
 from .common import sha256_text
 
-KINDS = ("rss", "telegram", "sitemap", "html", "manual")
+KINDS = ("rss", "telegram", "sitemap", "html", "manual", "search")
 CATEGORIES = ("media", "regulator", "telegram", "manual")
 
 

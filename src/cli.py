@@ -17,6 +17,7 @@ from .paths import DEFAULT_PATHS, ProjectPaths
 from .sources.base import HostLimiter, make_client
 from .sources.collector import Collector
 from .sources.resolver import Resolver
+from .sources.scraper_search import SEARCH_MAX_RESULTS, SUMMARY_PREFIX, SearchQuery
 from .storage import Database, DuplicateSourceError
 
 log = get_logger("cli")
@@ -29,7 +30,18 @@ _REGULATOR_HOSTS = (
     "pravo.gov.ru",
     "consultant.ru",
     "garant.ru",
+    "fstec.ru",
+    "fsb.ru",
+    "rfrit.ru",
+    "xn--h1ahbkg.xn--p1ai",  # рфрит.рф
 )
+# `--domains @media` / `@regulator` / `@all` → hosts of the enabled sources of that category.
+_DOMAIN_PRESETS = {
+    "@media": ("media",),
+    "@regulator": ("regulator",),
+    "@all": ("media", "regulator"),
+}
+_SEARCH_CATEGORIES = ("media", "regulator")
 
 
 def _table(headers: list[str], rows: list[list[str]]) -> str:
@@ -48,12 +60,38 @@ def guess_category(url: str, kind: str) -> str:
         return "telegram"
     if kind == "manual":
         return "manual"
+    if kind == "search":
+        return "media"  # `search --category regulator` overrides
     host = (urlsplit(url).hostname or "").lower()
     return (
         "regulator"
         if any(host == h or host.endswith("." + h) for h in _REGULATOR_HOSTS)
         else "media"
     )
+
+
+def _expand_domains(db: Database, spec: str | None) -> list[str]:
+    """`a.ru,b.ru` as given; `@media` / `@regulator` / `@all` → hosts of enabled sources."""
+    out: list[str] = []
+    for item in (spec or "").split(","):
+        item = item.strip()
+        if not item:
+            continue
+        categories = _DOMAIN_PRESETS.get(item.lower())
+        if categories is None:
+            if item.startswith("@"):
+                raise ValueError(
+                    f"unknown domain preset {item!r}; use {', '.join(_DOMAIN_PRESETS)}"
+                )
+            out.append(item.lower().removeprefix("www."))
+            continue
+        for s in db.sources.list(enabled_only=True):
+            if s.category not in categories or s.kind in ("telegram", "manual", "search"):
+                continue
+            host = (urlsplit(s.url).hostname or "").lower().removeprefix("www.")
+            if host:
+                out.append(host)
+    return list(dict.fromkeys(out))
 
 
 def _add_source(
@@ -247,9 +285,14 @@ def _cmd_sources_seed(args, config: Config, paths: ProjectPaths) -> int:
             counts["failed"] += 1
             continue
         counts[status] += 1
+        if status == "ok" and item.get("enabled") is False:
+            # Seeded but not polled until `sources enable` (low-priority or paid sources).
+            db.sources.set_enabled(source.id, False)
+            source.enabled = False
         mark = {"ok": "+", "exists": "="}[status]
         print(
             f"{mark} #{source.id} [{source.kind}/{source.category}] {source.name} → {source.fetch_url}"
+            + ("" if source.enabled else "  (off)")
         )
     for item in doc.get("excluded", []):
         print(f"- skipped {item.get('name', '?')}: {item.get('reason', '')}")
@@ -260,7 +303,7 @@ def _cmd_sources_seed(args, config: Config, paths: ProjectPaths) -> int:
     return 0
 
 
-# ── resolve / discover / import / docs ─────────────────────────────────────
+# ── resolve / discover / search / import / docs ────────────────────────────
 
 
 def _cmd_resolve(args, config: Config, paths: ProjectPaths) -> int:
@@ -273,34 +316,127 @@ def _cmd_resolve(args, config: Config, paths: ProjectPaths) -> int:
 
 
 def _cmd_discover(args, config: Config, paths: ProjectPaths) -> int:
+    """Find candidate *sources* for a query; `--add` runs each hit's site through the resolver."""
     from .sources.scraper_llm import TavilyError, TavilySearch
 
     api_key = load_env_secret(config.tavily.api_key_env, paths.env_path)
-    domains = [d.strip() for d in (args.domains or "").split(",") if d.strip()]
-    try:
-        results = TavilySearch(api_key, config.tavily).search(
-            args.query,
-            max_results=args.max,
-            include_domains=domains or None,
-            topic="news" if args.news else "general",
-        )
-    except TavilyError as e:
-        print(str(e), file=sys.stderr)
-        return 2
-    if not results:
-        print("no results")
-        return 0
-    rows = [[f"{c.score:.2f}", c.title[:60], c.url[:80]] for c in results]
-    print(_table(["score", "title", "url"], rows))
-    if not args.add:
-        return 0
     db = Database(paths.db_path)
-    for base in dict.fromkeys(get_base_url(c.url) for c in results):
-        source, status = _add_source(db, config, base)
+    try:
+        try:
+            domains = _expand_domains(db, args.domains)
+        except ValueError as e:
+            print(str(e), file=sys.stderr)
+            return 1
+        try:
+            with make_client(config) as client:
+                response = TavilySearch(api_key, config.tavily).search(
+                    client,
+                    args.query,
+                    max_results=args.max,
+                    include_domains=domains or None,
+                    topic="news" if args.news else "general",
+                    country=config.tavily.country or None,
+                    language=config.tavily.language or None,
+                )
+        except TavilyError as e:
+            print(str(e), file=sys.stderr)
+            return 2
+        results = response.results
+        if not results:
+            print("no results")
+            return 0
+        rows = [[f"{c.score:.2f}", c.title[:60], c.url[:80]] for c in results]
+        print(_table(["score", "title", "url"], rows))
+        if not args.add:
+            return 0
+        for base in dict.fromkeys(get_base_url(c.url) for c in results):
+            source, status = _add_source(db, config, base)
+            print(
+                f"{'+' if status == 'ok' else '='} #{source.id} [{source.kind}] "
+                f"{source.name} → {source.fetch_url}"
+            )
+    finally:
+        db.close()
+    return 0
+
+
+def _cmd_search(args, config: Config, paths: ProjectPaths) -> int:
+    """Run a Tavily query as a `search` source: the hits and the digest go into `documents`.
+
+    Without `--save` the source stays disabled (an ad-hoc query you can re-run or
+    enable later); with it, `collect` keeps polling the query incrementally.
+    """
+    api_key = load_env_secret(config.tavily.api_key_env, paths.env_path)
+    if not api_key:
+        # Checked before anything is stored: a query without a key would only leave a dead source row.
         print(
-            f"{'+' if status == 'ok' else '='} #{source.id} [{source.kind}] {source.name} → {source.fetch_url}"
+            f"search failed: no Tavily API key: set {config.tavily.api_key_env} "
+            "in the environment or .env",
+            file=sys.stderr,
         )
-    db.close()
+        return 2
+    db = Database(paths.db_path)
+    try:
+        try:
+            query = SearchQuery(
+                query=args.query,
+                domains=_expand_domains(db, args.domains),
+                days=args.days if args.days is not None else config.tavily.days,
+                topic="general" if args.general else "news",
+                summary=not args.no_summary,
+            )
+        except ValueError as e:
+            print(str(e), file=sys.stderr)
+            return 1
+        url = query.to_url()
+        source, status = _add_source(
+            db,
+            config,
+            url,
+            name=args.name or query.query,
+            category=args.category or "media",
+            kind="search",
+            fetch_url=url,
+            notes=f"Tavily: {query.describe()}",
+        )
+        if status == "ok" and not args.save:
+            db.sources.set_enabled(source.id, False)
+            source.enabled = False
+        elif args.save and not source.enabled:
+            db.sources.set_enabled(source.id, True)
+            source.enabled = True
+
+        collector = Collector(config, paths, db, tavily_key=api_key)
+        result, entry = collector.collect_one(source, force=True)
+        if entry["status"] != "ok":
+            print(f"search failed: {entry.get('error') or result.error}", file=sys.stderr)
+            return 2
+        new_ids = set(entry.get("new_external_ids", []))
+        hits = [d for d in result.documents if not d.external_id.startswith(SUMMARY_PREFIX)]
+        digest = next(
+            (d for d in result.documents if d.external_id.startswith(SUMMARY_PREFIX)), None
+        )
+        limit = max(1, min(args.max or SEARCH_MAX_RESULTS, SEARCH_MAX_RESULTS))
+        rows = [
+            [
+                "+" if d.external_id in new_ids else "=",
+                (d.published_at or "-")[:10],
+                d.title[:60],
+                d.url[:80],
+            ]
+            for d in hits[:limit]
+        ]
+        print(_table(["", "published", "title", "url"], rows) if rows else "no results")
+        if digest is not None:
+            print(f"\n{digest.title}\n{digest.text}\n")
+        print(
+            f"{len(hits)} hits, {entry['new']} new document(s) → source #{source.id} "
+            f"«{source.name}» [{'on' if source.enabled else 'off'}]"
+        )
+        if not source.enabled:
+            print(f"  hint: `sources enable {source.id}` keeps polling this query with `collect`")
+    finally:
+        db.close()
     return 0
 
 
@@ -389,11 +525,33 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("discover", help="search the web (Tavily) for candidate sources")
     p.add_argument("query")
-    p.add_argument("--domains", help="comma-separated include_domains, e.g. gov.ru,cbr.ru")
+    p.add_argument(
+        "--domains",
+        help="comma-separated include_domains (gov.ru,cbr.ru) or @media/@regulator/@all",
+    )
     p.add_argument("--max", type=int, default=None)
     p.add_argument("--news", action="store_true", help="use Tavily's news topic")
     p.add_argument("--add", action="store_true", help="add each result's site as a source")
     p.set_defaults(func=_cmd_discover)
+
+    p = sub.add_parser(
+        "search", help="run a Tavily news query as a source: hits + digest go into documents"
+    )
+    p.add_argument("query")
+    p.add_argument(
+        "--domains",
+        help="comma-separated include_domains (gov.ru,cbr.ru) or @media/@regulator/@all",
+    )
+    p.add_argument("--days", type=int, default=None, help="recency window in days (config: 7)")
+    p.add_argument("--max", type=int, default=None, help="rows to print (≤ 20)")
+    p.add_argument("--category", choices=_SEARCH_CATEGORIES, default=None)
+    p.add_argument("--general", action="store_true", help="Tavily 'general' topic instead of news")
+    p.add_argument(
+        "--no-summary", action="store_true", help="skip Tavily's answer (the «Сводка» document)"
+    )
+    p.add_argument("--save", action="store_true", help="keep the query enabled for `collect`")
+    p.add_argument("--name", help="source name (default: the query itself)")
+    p.set_defaults(func=_cmd_search)
 
     p = sub.add_parser("import-url", help="one-off: fetch a page into the manual source")
     p.add_argument("url")

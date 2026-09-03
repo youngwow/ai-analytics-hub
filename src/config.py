@@ -7,7 +7,7 @@ global, which keeps them trivially testable via `Config.from_dict(...)`.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import MISSING, dataclass, field
 
 import yaml
 
@@ -55,6 +55,9 @@ class TavilyConfig:
     api_key_env: str
     max_results: int
     search_depth: str
+    days: int = 7  # default recency window for `search` (--days)
+    country: str = ""  # boost results from this country for topic=general; "" → not sent
+    language: str = ""  # ISO 639-1; boosts hits and steers the answer's language; "" → not sent
 
 
 _SECTIONS = {
@@ -70,11 +73,11 @@ def _build_section(name: str, cls: type, raw: dict):
     if not isinstance(section, dict):
         raise ConfigError(f"config.yaml: missing or non-mapping section '{name}'")
     fields = cls.__dataclass_fields__
-    missing = [k for k in fields if k not in section]
+    missing = [k for k, f in fields.items() if k not in section and f.default is MISSING]
     if missing:
         raise ConfigError(f"config.yaml: section '{name}' missing keys: {missing}")
     try:
-        return cls(**{k: section[k] for k in fields})
+        return cls(**{k: section[k] for k in fields if k in section})
     except TypeError as e:
         raise ConfigError(f"config.yaml: section '{name}' is malformed: {e}") from e
 
@@ -118,3 +121,5 @@ class Config:
             raise ConfigError(
                 f"config.yaml: unknown tavily.search_depth '{self.tavily.search_depth}'"
             )
+        if self.tavily.days < 1:
+            raise ConfigError("config.yaml: tavily.days must be >= 1")

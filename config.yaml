@@ -2,7 +2,7 @@
 
 scraper:
   date_window_hours: 72           # на первом запуске берём материалы не старше этого окна
-  request_timeout: 20             # секунд на один HTTP-запрос
+  request_timeout: 30             # секунд на один HTTP-запрос (Коммерсантъ, CNews, ТАСС из-за рубежа отвечают ~17 с)
   max_redirects: 5
   user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 AiAnalyticsHub/0.1"
   accept_language: "ru-RU,ru;q=0.9,en;q=0.5"
@@ -23,5 +23,8 @@ sitemap:
 
 tavily:
   api_key_env: TAVILY_API         # имя переменной окружения / ключа в .env
-  max_results: 10
+  max_results: 10                 # для discover; поисковые источники (search) запрашивают 20
   search_depth: basic             # basic | fast | advanced (advanced стоит 2 кредита)
+  days: 7                         # окно свежести для search по умолчанию (--days)
+  country: russia                 # приоритет российских результатов (только topic=general)
+  language: ru                    # язык результатов и сводки (без него Tavily отвечает по-английски)

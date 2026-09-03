@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from datetime import timedelta
 
 import pytest
@@ -10,6 +11,7 @@ from support import (
     GZIP,
     HTML_CP1251,
     HTML_UTF8,
+    JSON,
     RSS,
     XML,
     MockRoutes,
@@ -19,15 +21,28 @@ from support import (
 
 from src.common import parse_datetime
 from src.config import Config
-from src.models import FetchResult, FetchState, Source
+from src.models import FetchResult, FetchState, RawDocument, Source
 from src.paths import ProjectPaths
 from src.sources.collector import Collector
+from src.sources.scraper_llm import TAVILY_SEARCH_URL
+from src.sources.scraper_search import SearchQuery
 
 RSS_URL = "https://feed.example.ru/rss.xml"
 TG_URL = "https://t.me/s/cit_gov"
 SITEMAP_URL = "https://site.ru/sitemap.xml"
 CABLEMAN = "https://www.cableman.ru/"
 CHANNEL_TITLE = "Цифровые индустриальные технологии"
+SEARCH_URL = SearchQuery("GS Labs Триколор").to_url()
+GS_GROUP_URL = (
+    "https://gs-group.com/press-center/news/"
+    "ddr-pyatogo-pokoleniya-lokalizovany-v-rossii-po-novym-trebovaniyam"
+)
+TELESPUTNIK_URL = (
+    "https://telesputnik.ru/materials/trends/news/trikolor-zavershil-testirovanie-cas-dreguard/"
+)
+FORUM_URL = "https://forum.example.ru/viewforum.php?f=605"
+HIT_IDS = [GS_GROUP_URL, TELESPUTNIK_URL, FORUM_URL]
+DIGEST_ID = "summary:2026-09-02"
 
 PARAGRAPH = (
     "Министерство цифрового развития опубликовало проект правил, регулирующих использование "
@@ -50,14 +65,35 @@ def _add(db, **overrides) -> Source:
     return db.sources.add(Source(**{**base, **overrides}))
 
 
-def _collector(config, db, routes, now, tmp_path) -> Collector:
+def _collector(config, db, routes, now, tmp_path, tavily_key: str = "secret-key") -> Collector:
+    """A collector over `routes` with a frozen clock; the Tavily key is always explicit."""
     return Collector(
         config,
         ProjectPaths.from_root(str(tmp_path)),
         db,
         transport=routes.transport(),
         now=lambda: now,
+        tavily_key=tavily_key,
     )
+
+
+def _search_source(db, **overrides) -> Source:
+    base = dict(name="GS Labs Триколор", url=SEARCH_URL, kind="search", fetch_url=SEARCH_URL)
+    return _add(db, **{**base, **overrides})
+
+
+def _tavily_routes(fixture_bytes, extra: dict | None = None) -> MockRoutes:
+    return MockRoutes({TAVILY_SEARCH_URL: (200, fixture_bytes("tavily_news.json"), JSON),
+                       **(extra or {})})
+
+
+def _tavily_reply(results: list[dict], answer: str | None = None) -> tuple:
+    body = {"results": results, **({"answer": answer} if answer is not None else {})}
+    return (200, json.dumps(body, ensure_ascii=False).encode("utf-8"), JSON)
+
+
+def _tavily_payloads(routes: MockRoutes) -> list[dict]:
+    return [json.loads(r.content) for r in routes.requests_to(TAVILY_SEARCH_URL)]
 
 
 def _config(raw_config, **scraper) -> Config:
@@ -642,3 +678,229 @@ def test_fetch_result_error_short_circuits_persistence(raw_config, db, now, tmp_
         "status": "failed", "error": "boom",
     }
     assert db.fetch_state.get(source.id).last_error == "boom"
+
+
+def test_ok_entries_list_the_inserted_external_ids(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    feed = rss_bytes([{"title": "a", "link": "https://example.ru/1", "guid": "one"},
+                      {"title": "b", "link": "https://example.ru/2", "guid": "two"}])
+    routes = MockRoutes({RSS_URL: (200, feed, RSS)})
+    _add(db)
+    collector = _collector(config, db, routes, now, tmp_path)
+    assert collector.run().per_source[0]["new_external_ids"] == ["one", "two"]
+    rerun = collector.run().per_source[0]
+    assert (rerun["seen"], rerun["new"], rerun["new_external_ids"]) == (2, 0, [])
+
+
+# ── search sources ─────────────────────────────────────────────────────────
+
+
+@pytest.mark.parametrize(
+    ("kind", "expected_new"),
+    [("search", 1), ("rss", 0), ("sitemap", 0), ("telegram", 0)],
+    ids=["search-bypasses-window", "rss-filtered", "sitemap-filtered", "telegram-filtered"],
+)
+def test_window_filter_is_skipped_only_for_search_sources(raw_config, db, now, tmp_path, kind,
+                                                          expected_new):
+    config = _config(raw_config, fetch_fulltext=False)
+    source = _add(db, kind=kind)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    old = RawDocument(source.id, "old", "https://example.ru/old", title="Старая",
+                      published_at="2026-08-01T00:00:00+00:00")
+    entry = collector._persist(
+        source, FetchState(source_id=source.id), FetchResult(documents=[old]), None, now,
+        now - timedelta(hours=72), False, 0.0,
+    )
+    assert (entry["status"], entry["seen"], entry["new"]) == ("ok", 1, expected_new)
+    assert db.documents.exists(source.id, "old") is (expected_new == 1)
+
+
+def test_search_run_stores_hits_older_than_the_collect_window(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)  # 72h window: since = Aug 30 12:00Z
+    old_hit = {"url": "https://example.ru/old-story", "title": "Старая, но по запросу",
+               "content": "Текст.", "score": 0.5, "published_date": "Sat, 01 Aug 2026 10:00:00 GMT"}
+    routes = MockRoutes({TAVILY_SEARCH_URL: _tavily_reply([old_hit], answer="")})
+    source = _search_source(db)
+    report = _collector(config, db, routes, now, tmp_path).run()
+    assert (report.sources_ok, report.docs_new) == (1, 1)
+    assert db.documents.list(source_id=source.id)[0]["published_at"] == "2026-08-01T10:00:00+00:00"
+    assert db.fetch_state.get(source.id).cursor == {"since": "2026-09-02", "days": 7}
+
+
+def test_search_digest_is_stored_once_per_utc_day(raw_config, db, fixture_bytes, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    routes = _tavily_routes(fixture_bytes)
+    source = _search_source(db)
+    collector = _collector(config, db, routes, now, tmp_path)
+
+    assert collector.run().docs_new == 4
+    assert db.documents.exists(source.id, DIGEST_ID)
+
+    collector.now = lambda: now + timedelta(hours=1)
+    same_day = collector.run()
+    assert (same_day.docs_new, same_day.per_source[0]["seen"]) == (0, 4)
+    assert db.documents.count(source.id) == 4
+
+    collector.now = lambda: now + timedelta(days=1)
+    next_day = collector.run()
+    assert next_day.docs_new == 1
+    assert next_day.per_source[0]["new_external_ids"] == ["summary:2026-09-03"]
+    assert db.documents.count(source.id) == 5
+    rows = db.documents.list(source_id=source.id)
+    digests = [r for r in rows if r["external_id"].startswith("summary:")]
+    assert {r["external_id"] for r in digests} == {DIGEST_ID, "summary:2026-09-03"}
+    assert all(r["url"] == "" for r in digests)
+    assert db.fetch_state.get(source.id).cursor == {"since": "2026-09-03", "days": 7}
+
+
+def test_per_source_cap_keeps_the_digest_of_a_search_batch(raw_config, db, fixture_bytes, now,
+                                                            tmp_path):
+    config = _config(raw_config, fetch_fulltext=False, max_new_per_source=2)
+    routes = _tavily_routes(fixture_bytes)  # 3 hits + digest
+    source = _search_source(db)
+    _, entry = _collector(config, db, routes, now, tmp_path).collect_one(source)
+    assert (entry["seen"], entry["new"]) == (4, 3)
+    assert entry["new_external_ids"] == [GS_GROUP_URL, TELESPUTNIK_URL, DIGEST_ID]
+    assert set(_stored_ids(db, source.id)) == {GS_GROUP_URL, TELESPUTNIK_URL, DIGEST_ID}
+    assert db.documents.exists(source.id, FORUM_URL) is False
+
+
+def test_per_source_cap_still_cuts_url_bearing_documents(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False, max_new_per_source=2)
+    feed = rss_bytes([{"title": f"Новость {i}", "link": f"https://example.ru/{i}"} for i in range(3)])
+    routes = MockRoutes({RSS_URL: (200, feed, RSS)})
+    source = _add(db)
+    entry = _collector(config, db, routes, now, tmp_path).run().per_source[0]
+    assert (entry["seen"], entry["new"]) == (3, 2)
+    assert entry["new_external_ids"] == ["https://example.ru/0", "https://example.ru/1"]
+    assert db.documents.count(source.id) == 2
+
+
+def test_search_source_is_never_renamed(raw_config, db, fixture_bytes, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    routes = _tavily_routes(fixture_bytes)
+    placeholder = _search_source(db, name=SEARCH_URL)  # would be replaced for html/telegram
+    _collector(config, db, routes, now, tmp_path).run()
+    assert db.sources.get(placeholder.id).name == SEARCH_URL
+
+
+def test_search_thin_hits_get_their_text_from_the_page(raw_config, db, fixture_bytes, now,
+                                                        tmp_path):
+    config = _config(raw_config)  # fetch_fulltext on
+    page = html_page("Триколор", f"<p>{PARAGRAPH}</p>", published="2026-08-31T12:30:00+03:00")
+    routes = _tavily_routes(fixture_bytes, {TELESPUTNIK_URL: (200, page, HTML_UTF8)})
+    source = _search_source(db)
+    _collector(config, db, routes, now, tmp_path).collect_one(source)
+
+    rows = {r["external_id"]: r for r in db.documents.list(source_id=source.id)}
+    thin = db.documents.get(rows[TELESPUTNIK_URL]["id"])
+    assert PARAGRAPH[:60] in thin.text
+    assert thin.title == "«Триколор» завершил тестирование CAS DREGUARD — Телеспутник"  # Tavily's
+    assert thin.published_at == "2026-08-31T09:30:00+00:00"  # Tavily's date kept
+    rich = db.documents.get(rows[GS_GROUP_URL]["id"])
+    assert rich.text.startswith("Российский инвестиционно-промышленный холдинг")
+    forum = db.documents.get(rows[FORUM_URL]["id"])
+    assert forum.text == "Ветка форума о приставках и спутниковом ТВ."  # 404 page: chunks stay
+    fetched = routes.urls()
+    assert TELESPUTNIK_URL in fetched and FORUM_URL in fetched
+    assert GS_GROUP_URL not in fetched
+
+
+# ── collect_one ────────────────────────────────────────────────────────────
+
+
+def test_collect_one_polls_a_disabled_source_and_records_the_run(raw_config, db, fixture_bytes,
+                                                                  now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    routes = _tavily_routes(fixture_bytes)
+    source = _search_source(db, enabled=False)
+    result, entry = _collector(config, db, routes, now, tmp_path).collect_one(source)
+
+    assert result.error is None
+    assert [d.external_id for d in result.documents] == [*HIT_IDS, DIGEST_ID]
+    assert (entry["id"], entry["kind"], entry["status"]) == (source.id, "search", "ok")
+    assert (entry["seen"], entry["new"]) == (4, 4)
+    assert entry["new_external_ids"] == [*HIT_IDS, DIGEST_ID]
+    assert set(_stored_ids(db, source.id)) == {*HIT_IDS, DIGEST_ID}
+    assert _tavily_payloads(routes)[0]["days"] == 7
+    state = db.fetch_state.get(source.id)
+    assert state.cursor == {"since": "2026-09-02", "days": 7}
+    assert state.last_success_at == "2026-09-02T12:00:00+00:00"
+    assert state.last_doc_count == 4
+    run = db.runs.latest()
+    assert (run["sources_ok"], run["sources_fail"], run["docs_new"]) == (1, 0, 4)
+    assert run["started_at"] == run["finished_at"] == "2026-09-02T12:00:00+00:00"
+    assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 1
+    assert db.sources.get(source.id).enabled is False
+
+
+def test_collect_one_force_drops_the_cursor_and_re_asks_the_full_window(raw_config, db,
+                                                                         fixture_bytes, now,
+                                                                         tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    routes = _tavily_routes(fixture_bytes)
+    source = _search_source(db)
+    with db.transaction():
+        db.fetch_state.save(FetchState(source_id=source.id, cursor={"since": "2026-09-01", "days": 7},
+                                       last_success_at="2026-09-01T12:00:00+00:00"))
+    collector = _collector(config, db, routes, now, tmp_path)
+    collector.collect_one(source)
+    collector.collect_one(source, force=True)
+    incremental, forced = _tavily_payloads(routes)
+    assert incremental["start_date"] == "2026-08-31"
+    assert "days" not in incremental
+    assert forced["days"] == 7
+    assert "start_date" not in forced
+    assert db.fetch_state.get(source.id).cursor == {"since": "2026-09-02", "days": 7}
+
+
+def test_collect_one_returns_known_hits_but_lists_only_new_ids(raw_config, db, fixture_bytes, now,
+                                                                tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    routes = _tavily_routes(fixture_bytes)
+    source = _search_source(db)
+    collector = _collector(config, db, routes, now, tmp_path)
+    collector.collect_one(source)
+
+    collector.now = lambda: now + timedelta(hours=1)
+    result, entry = collector.collect_one(source)
+    assert [d.external_id for d in result.documents] == [*HIT_IDS, DIGEST_ID]
+    assert (entry["status"], entry["seen"], entry["new"]) == ("ok", 4, 0)
+    assert entry["new_external_ids"] == []
+    assert db.documents.count(source.id) == 4
+    assert db.runs.latest()["docs_new"] == 0
+    assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 2
+
+
+def test_collect_one_rejects_a_source_that_is_not_stored(raw_config, db, now, tmp_path):
+    config = _config(raw_config)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    with pytest.raises(ValueError, match="must be stored"):
+        collector.collect_one(Source(name="x", url=SEARCH_URL, kind="search", fetch_url=SEARCH_URL))
+    assert db.runs.latest() is None
+
+
+def test_collect_one_without_an_adapter_records_a_failure(raw_config, db, now, tmp_path):
+    config = _config(raw_config)
+    manual = db.sources.ensure_manual()
+    routes = MockRoutes()
+    result, entry = _collector(config, db, routes, now, tmp_path).collect_one(manual)
+    assert result.error == entry["error"] == "no adapter for kind 'manual'"
+    assert entry["status"] == "failed"
+    assert db.runs.latest()["sources_fail"] == 1
+    assert db.fetch_state.get(manual.id).consecutive_failures == 1
+    assert routes.requests == []
+
+
+def test_collect_one_without_tavily_key_fails_per_run_without_http(raw_config, db, fixture_bytes,
+                                                                    now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    routes = _tavily_routes(fixture_bytes)
+    source = _search_source(db)
+    result, entry = _collector(config, db, routes, now, tmp_path, tavily_key="").collect_one(source)
+    assert entry["status"] == "failed"
+    assert "TAVILY_API" in entry["error"]
+    assert result.documents == []
+    assert routes.requests == []
+    assert db.fetch_state.get(source.id).last_error == entry["error"]
+    assert db.runs.latest()["sources_fail"] == 1

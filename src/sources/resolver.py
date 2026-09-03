@@ -1,6 +1,8 @@
 """URL resolver (scraper.md §0): decide how a user-entered URL should be polled.
 
 t.me/<channel>                     → telegram
+tavily://search?q=…                → search (a saved Tavily query, scraper_search.py)
+other non-http scheme              → manual (nothing to fetch)
 feed-looking URL that parses       → rss
 page advertising a feed / probes   → rss
 robots.txt Sitemap: or sitemap.xml → sitemap (only if it carries lastmod)
@@ -22,6 +24,8 @@ from ..common import get_logger
 from ..models import Resolution
 from .base import HostLimiter, Page, fetch
 from .scraper_rss import is_feed
+from .scraper_search import SCHEME as SEARCH_SCHEME
+from .scraper_search import SearchQuery
 from .scraper_sitemap import has_lastmod, parse_sitemap
 from .textutil import looks_like_html
 
@@ -122,6 +126,19 @@ class Resolver:
 
     def resolve(self, url: str) -> Resolution:
         url = self._normalise_input(url)
+
+        scheme = urlsplit(url).scheme.lower()
+        if scheme == SEARCH_SCHEME:
+            try:
+                query = SearchQuery.from_url(url)
+            except ValueError as e:
+                return Resolution(kind="manual", fetch_url=url, note=f"bad search url: {e}")
+            # Canonical form, so the same query never lands under two fetch_urls.
+            return Resolution(kind="search", fetch_url=query.to_url(), name=query.query[:80])
+        if scheme not in ("http", "https"):
+            return Resolution(
+                kind="manual", fetch_url=url, note=f"{scheme}:// is not fetched; kept as manual"
+            )
 
         if _TG_REJECT.match(url):
             return Resolution(
