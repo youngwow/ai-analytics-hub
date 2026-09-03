@@ -10,6 +10,14 @@
       "notes": "Лента «Бизнес» (на cnews.ru/rss есть ещё news.xml, news_top.xml и рубрики Телеком/Безопасность). Высокий: репутация, конкуренты, тренды ИТ, импортозамещение."
     },
     {
+      "name": "CNews Телеком",
+      "url": "https://www.cnews.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.cnews.ru/inc/rss/telecom.xml",
+      "notes": "Рубричная лента «Телеком» (100 записей; та же площадка, что CNews «Бизнес»). Высокий: профильный рынок — операторы, вещание, оборудование."
+    },
+    {
       "name": "TAdviser",
       "url": "https://www.tadviser.ru",
       "category": "media",
@@ -22,8 +30,9 @@
       "url": "https://www.kommersant.ru",
       "category": "media",
       "kind": "rss",
-      "fetch_url": "https://www.kommersant.ru/RSS/news.xml",
-      "notes": "Лента новостей (~600 записей, анонсы; полные тексты частично за paywall). Высокий: регуляторика, деловая повестка."
+      "fetch_url": "https://www.kommersant.ru/rss/news.xml",
+      "notes": "Лента новостей (~500 записей, анонсы; полные тексты частично за paywall). Сайт публикует адрес как /RSS/news.xml, сервер регистр игнорирует; есть профильная /RSS/section-hitech.xml. Высокий: регуляторика, деловая повестка. Зеркало t.me/kommersant дополняет текстами.",
+      "enabled": true
     },
     {
       "name": "РБК",
@@ -40,7 +49,8 @@
       "category": "media",
       "kind": "rss",
       "fetch_url": "https://tass.ru/rss/v2.xml",
-      "notes": "Общая лента (100 записей, отвечает медленно). Полные ленты по FTP/API — платная подписка b2b.tass.ru. Средний: госповестка, заявления регуляторов."
+      "notes": "Общая лента (100 записей). Страницы статей закрыты JS-challenge (ServicePipe): извлекается только заголовок и подзаголовок. Выключен 04.09.2026: тексты берём из зеркала t.me/tass_agency. Полные ленты по FTP/API — платная подписка b2b.tass.ru.",
+      "enabled": false
     },
     {
       "name": "Lenta.ru",
@@ -49,6 +59,14 @@
       "kind": "rss",
       "fetch_url": "https://lenta.ru/rss/news",
       "notes": "Лента новостей (200 записей; есть /rss/last24 и рубричные /rss/news/<rubric>). Низкий/средний: широкий новостной фон."
+    },
+    {
+      "name": "Интерфакс",
+      "url": "https://www.interfax.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.interfax.ru/rss.asp",
+      "notes": "Общая лента агентства (25 записей, короткие заметки 300–400 знаков). Средний: деловая повестка, заявления ведомств."
     },
     {
       "name": "Телеспутник",
@@ -72,8 +90,8 @@
       "category": "media",
       "kind": "rss",
       "fetch_url": "https://d-russia.ru/feed",
-      "enabled": false,
-      "notes": "Адрес ленты — по иконке RSS в футере, не подтверждён (из-за рубежа таймаут). После проверки из РФ: sources resolve <id>, sources enable <id>. Высокий: ИТ-регуляторика, импортозамещение ПО."
+      "enabled": true,
+      "notes": "Лента найдена по иконке RSS в футере; проверена 04.09.2026 — 10 записей, статьи извлекаются. Высокий: ИТ-регуляторика, импортозамещение ПО."
     },
     {
       "name": "Habr — новости",
@@ -98,8 +116,8 @@
       "category": "media",
       "kind": "rss",
       "fetch_url": "https://www.consultant.ru/rss/hotdocs.xml",
-      "enabled": false,
-      "notes": "Страница лент consultant.ru/law/rss/ («Горячие документы», «Новое в законодательстве»); из-за рубежа сайт не отвечает, адрес не подтверждён. После проверки из РФ: sources resolve <id>. Высокий: оперативный сигнал по НПА."
+      "enabled": true,
+      "notes": "Лента «Горячие документы» (rss/hotdocs.xml; страница лент — consultant.ru/law/rss/). Проверена 04.09.2026: 50 записей, статьи извлекаются. Высокий: оперативный сигнал по НПА."
     },
     {
       "name": "Ведомости — Технологии",
@@ -159,6 +177,23 @@
       "notes": "Лента центрального аппарата (нашёл резолвер; обновляется нечасто). Региональные сайты: <NN>.rkn.gov.ru. Высокий: персональные данные, реестры, надзор."
     },
     {
+      "name": "Официальное опубликование НПА",
+      "url": "http://publication.pravo.gov.ru/",
+      "category": "regulator",
+      "kind": "html",
+      "fetch_url": "http://publication.pravo.gov.ru/",
+      "enabled": false,
+      "notes": "Без RSS, sitemap без lastmod; на главной только разделы — нужен отдельный адаптер (scraper.md §2). Ленты по блокам подключены отдельно (api/rss?block=…)."
+    },
+    {
+      "name": "Государственная Дума",
+      "url": "http://duma.gov.ru",
+      "category": "regulator",
+      "kind": "html",
+      "fetch_url": "http://duma.gov.ru",
+      "notes": "RSS нет: проверены /news/rss/, /rss/, /rss/news.xml и ещё два варианта — все 404. Читается html-адаптером по разнице ссылок главной. Высокий: законотворчество."
+    },
+    {
       "name": "ФНС России",
       "url": "https://www.nalog.gov.ru",
       "category": "regulator",
@@ -192,6 +227,22 @@
       "notes": "Полный текст прямо в ленте (проверено 02.09.2026). Низкий: финрегулирование, если релевантно."
     },
     {
+      "name": "Гарант",
+      "url": "https://www.garant.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://rss.garant.ru/categories/news/",
+      "notes": "Лента на отдельном домене rss.garant.ru (страница лент — garant.ru/rss/); 10 записей, статьи извлекаются целиком. Высокий: обзор изменений законодательства."
+    },
+    {
+      "name": "Банк России — новости",
+      "url": "https://www.cbr.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://www.cbr.ru/rss/RssNews",
+      "notes": "Общая новостная лента (100 записей). Пресс-релизы (/rss/RssPress) отдают всего ~8 записей, поэтому основной поток по ЦБ идёт отсюда. Высокий: регуляторика финсектора, требования к ИБ."
+    },
+    {
       "name": "Минцифры России — Telegram",
       "url": "https://t.me/mintsifry",
       "category": "telegram",
@@ -206,6 +257,14 @@
       "kind": "telegram",
       "fetch_url": "https://t.me/s/government_rus",
       "notes": "Постановления, нацпроекты. Высокий."
+    },
+    {
+      "name": "Госдума — Telegram",
+      "url": "https://t.me/duma_gov_ru",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/duma_gov_ru",
+      "notes": "Законопроекты, чтения, заявления депутатов. Высокий: законотворчество."
     },
     {
       "name": "РФРИТ — Telegram",
@@ -288,6 +347,30 @@
       "notes": "Кабельное/платное ТВ, вещание. Высокий."
     },
     {
+      "name": "Коммерсантъ — Telegram",
+      "url": "https://t.me/kommersant",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/kommersant",
+      "notes": "Зеркало ленты; в постах текст есть, на сайте часть материалов за paywall. Средний."
+    },
+    {
+      "name": "Ведомости — Telegram",
+      "url": "https://t.me/vedomosti",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/vedomosti",
+      "notes": "Зеркало ленты, посты с текстом. Средний: деловая повестка, технологии."
+    },
+    {
+      "name": "Телеспутник — Telegram",
+      "url": "https://t.me/telesputnik",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/telesputnik",
+      "notes": "Платное ТВ, вещание, операторы — дополняет сайт telesputnik.ru. Высокий: профильный рынок."
+    },
+    {
       "name": "АНО «Цифровая экономика» — Telegram",
       "url": "https://t.me/DataEconomyRU",
       "category": "telegram",
@@ -302,6 +385,14 @@
       "kind": "telegram",
       "fetch_url": "https://t.me/s/tass_agency",
       "notes": "Госповестка. Средний."
+    },
+    {
+      "name": "Цифровые индустриальные технологии — Telegram",
+      "url": "https://t.me/cit_gov",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/cit_gov",
+      "notes": "Отраслевые ИТ-новости и меры поддержки. Средний."
     },
     {
       "name": "Торгпред (Минпромторг) — Telegram",
@@ -319,6 +410,14 @@
       "kind": "telegram",
       "fetch_url": "https://t.me/s/fasietalks",
       "notes": "Гранты стартапам/ИТ. Средний."
+    },
+    {
+      "name": "Гранты для ИТ — Telegram",
+      "url": "https://t.me/grantsforbussines",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/grantsforbussines",
+      "notes": "Канал Easy.Start.Up: гранты и меры поддержки ИТ-компаниям. Средний."
     },
     {
       "name": "Поиск: упоминания GS Labs / Триколор",

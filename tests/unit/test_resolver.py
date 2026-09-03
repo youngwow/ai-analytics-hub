@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 
+from urllib.parse import urlsplit
+
 import httpx
 import pytest
 from support import HTML_UTF8, RSS, XML, MockRoutes, raising
 
-from src.sources.resolver import Resolver
+from src.sources.resolver import _PROBE_PATHS, Resolver
 from src.sources.scraper_search import SearchQuery
 
 HOME_WITH_FEED = (
@@ -19,6 +21,30 @@ HOME_PLAIN = (
     b"<body><p>hello</p></body></html>"
 )
 ROBOTS_WITH_SITEMAP = b"User-agent: *\nDisallow: /admin\nSitemap: https://site.ru/sitemap-news.xml\n"
+# The lowercase probe list the resolver walks, in its declared order: the generic
+# WordPress/Drupal/Bitrix conventions first, then the Russian news-section
+# variants. Every `.xml` twin sits right after the extensionless spelling it
+# complements — Kommersant answers 403 on /rss/news and serves the feed at
+# /rss/news.xml, so the extension variants have to be probed too.
+LOWER_PROBE_PATHS = [
+    "/rss",
+    "/rss/",
+    "/feed",
+    "/feed/",
+    "/rss.xml",
+    "/rss/news",
+    "/rss/news/",
+    "/rss/news.xml",
+    "/news/rss",
+    "/news/rss/",
+    "/news/rss.xml",
+    "/rss/all",
+]
+# nginx and Apache on Linux match paths case-sensitively, so a feed published as
+# /RSS/news.xml is invisible to the lowercase probes; each path carrying an `rss`
+# segment gets an uppercase twin. /feed and /feed/ have no such segment, so their
+# twins collapse into the lowercase entries and the twins number 10, not 12.
+UPPER_PROBE_PATHS = [p.replace("rss", "RSS") for p in LOWER_PROBE_PATHS if "rss" in p]
 URLSET_NO_LASTMOD = (
     b'<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     b"<url><loc>https://site.ru/a</loc></url><url><loc>https://site.ru/b</loc></url></urlset>"
@@ -315,18 +341,74 @@ def test_every_probe_path_is_tried_in_generic_first_order(mock_client, fixture_b
     everything_404 = MockRoutes({"https://site.ru/": (200, HOME_PLAIN, HTML_UTF8)})
     _resolver(mock_client, everything_404).resolve("https://site.ru/")
     feed_probes = [u for u in everything_404.urls()[1:] if "robots" not in u and "sitemap" not in u]
-    assert feed_probes == [
-        "https://site.ru/rss",
-        "https://site.ru/rss/",
-        "https://site.ru/feed",
-        "https://site.ru/feed/",
-        "https://site.ru/rss.xml",
-        "https://site.ru/rss/news",
-        "https://site.ru/rss/news/",
-        "https://site.ru/news/rss",
-        "https://site.ru/news/rss/",
-        "https://site.ru/rss/all",
+    assert feed_probes == ["https://site.ru" + p for p in LOWER_PROBE_PATHS + UPPER_PROBE_PATHS]
+    assert len(feed_probes) == 22
+    assert len(set(feed_probes)) == len(feed_probes)  # no path is probed twice
+
+
+def test_uppercase_probe_twins_come_after_every_lowercase_path():
+    lowercase = [p for p in _PROBE_PATHS if "RSS" not in p]
+    uppercase = [p for p in _PROBE_PATHS if "RSS" in p]
+
+    assert lowercase == LOWER_PROBE_PATHS
+    assert uppercase == UPPER_PROBE_PATHS
+    # A site that answers on a lowercase path never pays for the twins: the walk
+    # stops at the first hit, and no twin is interleaved among the lowercase ones.
+    assert list(_PROBE_PATHS) == lowercase + uppercase
+    assert len(set(_PROBE_PATHS)) == len(_PROBE_PATHS)
+
+
+def test_feed_is_found_at_rss_news_xml_when_rss_news_is_forbidden(mock_client, fixture_bytes):
+    # Kommersant: /rss/news answers 403 (Qrator), the feed lives at /rss/news.xml.
+    routes = MockRoutes(
+        {
+            "https://kommersant.ru/": (200, HOME_PLAIN, HTML_UTF8),
+            "https://kommersant.ru/rss/news": (403, b"<html>Forbidden</html>", HTML_UTF8),
+            "https://kommersant.ru/rss/news.xml": (
+                200,
+                fixture_bytes("rss_kommersant.xml"),
+                RSS,
+            ),
+        }
+    )
+    res = _resolver(mock_client, routes).resolve("https://kommersant.ru/")
+    assert res.kind == "rss"
+    assert res.fetch_url == "https://kommersant.ru/rss/news.xml"
+    assert res.name == "Коммерсантъ. Лента новостей"
+    assert res.note == "feed discovered at https://kommersant.ru/rss/news.xml"
+    # The 403 neither ends the walk nor is mistaken for a feed.
+    assert "https://kommersant.ru/rss/news" in routes.urls()
+    assert routes.urls()[-1] == "https://kommersant.ru/rss/news.xml"
+
+
+def test_feed_published_at_uppercase_path_is_found_after_all_lowercase_probes(
+    mock_client, fixture_bytes
+):
+    # Case-sensitive nginx: only /RSS/news.xml exists, every lowercase path 404s.
+    routes = MockRoutes(
+        {
+            "https://site.ru/": (200, HOME_PLAIN, HTML_UTF8),
+            "https://site.ru/RSS/news.xml": (200, fixture_bytes("rss_government.xml"), RSS),
+        }
+    )
+    res = _resolver(mock_client, routes).resolve("https://site.ru/")
+    assert res.kind == "rss"
+    assert res.fetch_url == "https://site.ru/RSS/news.xml"
+    assert res.name == "Материалы из всех разделов"
+    assert res.note == "feed discovered at https://site.ru/RSS/news.xml"
+
+    probed = [urlsplit(u).path for u in routes.urls()[1:]]
+    assert "/rss/news.xml" in probed  # the lowercase twin was tried and 404'd
+    assert probed[: len(LOWER_PROBE_PATHS)] == LOWER_PROBE_PATHS
+    assert probed[len(LOWER_PROBE_PATHS) :] == [
+        "/RSS",
+        "/RSS/",
+        "/RSS.xml",
+        "/RSS/news",
+        "/RSS/news/",
+        "/RSS/news.xml",
     ]
+    assert "/RSS/all" not in probed  # the walk stops at the first hit
 
 
 def test_feed_with_no_entries_is_not_accepted(mock_client):

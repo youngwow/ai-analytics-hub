@@ -38,8 +38,10 @@ _TG_RE = re.compile(
 _TG_REJECT = re.compile(r"^(?:https?://)?(?:www\.)?(?:t\.me|telegram\.me)/(?:\+|joinchat/|c/)")
 _FEEDISH_PATH = re.compile(r"(?:\.(?:xml|rss|atom)|/rss|/feed|/atom)/?$", re.IGNORECASE)
 # Probed in this order after whatever the page itself advertises: the generic
-# paths first (WordPress/Drupal/Bitrix conventions), then Russian news-section variants.
-_PROBE_PATHS = (
+# paths first (WordPress/Drupal/Bitrix conventions), then Russian news-section
+# variants. The `.xml` twins earn their place: Kommersant answers 403 on
+# /rss/news and serves the feed at /rss/news.xml.
+_LOWER_PROBE_PATHS = (
     "/rss",
     "/rss/",
     "/feed",
@@ -47,9 +49,25 @@ _PROBE_PATHS = (
     "/rss.xml",
     "/rss/news",
     "/rss/news/",
+    "/rss/news.xml",
     "/news/rss",
     "/news/rss/",
+    "/news/rss.xml",
     "/rss/all",
+)
+
+
+def _upper_rss(path: str) -> str:
+    """`/rss/news.xml` → `/RSS/news.xml`; paths without an `rss` segment stay as they are."""
+    return re.sub(r"(?<![a-z])rss(?![a-z])", "RSS", path)
+
+
+# Most servers ignore case in paths, but nginx and Apache on Linux do not, and a
+# feed published as /RSS/news.xml is then invisible to the lowercase probes. Each
+# path gets an uppercase twin, tried only once every lowercase one has failed —
+# so a site with a feed never pays for them.
+_PROBE_PATHS = tuple(
+    dict.fromkeys(_LOWER_PROBE_PATHS + tuple(_upper_rss(p) for p in _LOWER_PROBE_PATHS))
 )
 _MAX_PROBES = len(_PROBE_PATHS)
 _SITEMAP_RE = re.compile(r"^\s*sitemap:\s*(\S+)", re.IGNORECASE | re.MULTILINE)
