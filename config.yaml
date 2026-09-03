@@ -16,6 +16,15 @@ scraper:
 
 telegram:
   backfill_pages: 1               # сколько страниц t.me/s/<канал> листать при --backfill
+  mtproto: auto                   # auto (MTProto при наличии сессии, иначе веб-превью) | off | only
+  api_id_env: TELEGRAM_API_ID     # имя переменной окружения / ключа в .env (my.telegram.org)
+  api_hash_env: TELEGRAM_API_HASH
+  session_name: telegram          # файл сессии data/<session_name>.session — это доступ к аккаунту
+  max_posts: 100                  # постов с канала за один проход по MTProto
+  backfill_posts: 300             # постов с канала при --backfill
+  concurrency: 2                  # параллельных запросов истории (аккаунт лучше не разгонять)
+  flood_sleep_threshold: 60       # секунд: более долгий FloodWait — ошибка источника, а не ожидание
+  request_timeout: 60             # секунд на историю одного канала
 
 sitemap:
   max_sitemaps: 5                 # сколько дочерних sitemap из sitemapindex обрабатывать (свежие первыми)

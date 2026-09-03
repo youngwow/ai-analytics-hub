@@ -10,7 +10,7 @@ import threading
 from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Protocol
+from typing import TYPE_CHECKING, Callable, Protocol
 from urllib.parse import urlsplit
 
 import httpx
@@ -18,6 +18,9 @@ import httpx
 from ..common import get_logger
 from ..config import Config
 from ..models import FetchResult, FetchState, Source
+
+if TYPE_CHECKING:  # only for the annotation; importing it eagerly would pull in telethon paths
+    from .telegram_mtproto import MtprotoReader
 
 log = get_logger("fetch")
 
@@ -133,12 +136,16 @@ class Adapter(Protocol):
 
 
 def build_adapters(
-    config: Config, limiter: HostLimiter, tavily_key: str | None = None
+    config: Config,
+    limiter: HostLimiter,
+    tavily_key: str | None = None,
+    mtproto_factory: "Callable[[], MtprotoReader] | None" = None,
 ) -> dict[str, Adapter]:
     """Registry keyed by `Source.kind`; `manual` sources have no adapter.
 
     `tavily_key` may be empty — `search` sources then fail per run with a clear
-    error instead of taking the whole collect down.
+    error instead of taking the whole collect down. `mtproto_factory` is likewise
+    optional: without it telegram sources fall back to the `t.me/s/` preview.
     """
     from .scraper_html import HtmlAdapter
     from .scraper_rss import RssAdapter
@@ -148,7 +155,7 @@ def build_adapters(
 
     adapters: list[Adapter] = [
         RssAdapter(config.scraper, limiter),
-        TelegramAdapter(config.scraper, config.telegram, limiter),
+        TelegramAdapter(config.scraper, config.telegram, limiter, mtproto_factory),
         SitemapAdapter(config.scraper, config.sitemap, limiter),
         HtmlAdapter(config.scraper, limiter),
         SearchAdapter(config.tavily, config.scraper, limiter, api_key=tavily_key),

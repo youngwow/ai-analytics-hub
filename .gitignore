@@ -222,3 +222,8 @@ __marimo__/
 
 # local database
 data/hub.db*
+
+# Telegram MTProto session — equals full access to the account, never commit
+data/*.session
+data/*.session-journal
+data/telegram.session

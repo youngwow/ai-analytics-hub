@@ -1,4 +1,4 @@
-.PHONY: install test lint format seed collect watch happy-pr happy-gr
+.PHONY: install test lint format seed collect watch tg-login tg-status happy-pr happy-gr
 
 install:
 	uv sync
@@ -20,6 +20,12 @@ collect:
 
 watch:
 	uv run python -m src collect --watch
+
+tg-login:
+	uv run python -m src telegram login
+
+tg-status:
+	uv run python -m src telegram status
 
 happy-pr:
 	bash scripts/happy_path_pr.sh

@@ -31,6 +31,8 @@ def get_logger(name: str) -> logging.Logger:
         # httpx logs every request at INFO; that is noise next to our per-source lines.
         logging.getLogger("httpx").setLevel(logging.WARNING)
         logging.getLogger("httpcore").setLevel(logging.WARNING)
+        # telethon narrates connection setup at INFO; keep only what went wrong.
+        logging.getLogger("telethon").setLevel(logging.WARNING)
         _LOGGING_CONFIGURED = True
     return logging.getLogger(name)
 

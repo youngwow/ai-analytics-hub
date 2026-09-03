@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import getpass
 import json
+import os
 import sys
 import time
 from urllib.parse import urlsplit
@@ -18,6 +20,13 @@ from .sources.base import HostLimiter, make_client
 from .sources.collector import Collector
 from .sources.resolver import Resolver
 from .sources.scraper_search import SEARCH_MAX_RESULTS, SUMMARY_PREFIX, SearchQuery
+from .sources.telegram_mtproto import (
+    MtprotoError,
+    credentials_from_env,
+    delete_session,
+    login,
+    session_status,
+)
 from .storage import Database, DuplicateSourceError
 
 log = get_logger("cli")
@@ -453,6 +462,81 @@ def _cmd_import_url(args, config: Config, paths: ProjectPaths) -> int:
     return 0
 
 
+# ── telegram (MTProto) ─────────────────────────────────────────────────────
+
+
+def _telegram_credentials(config: Config, paths: ProjectPaths):
+    """Credentials or None, with the reason printed for the user."""
+    creds = credentials_from_env(config.telegram, paths)
+    if creds is None:
+        tg = config.telegram
+        print(
+            f"no Telegram credentials: set {tg.api_id_env} and {tg.api_hash_env} "
+            f"in the environment or .env (get them at https://my.telegram.org)",
+            file=sys.stderr,
+        )
+    return creds
+
+
+def _cmd_telegram_login(
+    args,
+    config: Config,
+    paths: ProjectPaths,
+    prompt=input,
+    secret_prompt=getpass.getpass,
+) -> int:
+    creds = _telegram_credentials(config, paths)
+    if creds is None:
+        return 1
+    try:
+        account = login(
+            creds, phone=args.phone or "", prompt=prompt, secret_prompt=secret_prompt
+        )
+    except MtprotoError as e:
+        print(f"login failed: {e}", file=sys.stderr)
+        return 2
+    print(f"signed in as {account}")
+    print(f"session: {creds.session_path} — храните как пароль, это доступ к аккаунту")
+    return 0
+
+
+def _cmd_telegram_status(args, config: Config, paths: ProjectPaths) -> int:
+    creds = _telegram_credentials(config, paths)
+    if creds is None:
+        return 1
+    print(f"mode:    telegram.mtproto = {config.telegram.mtproto}")
+    print(f"api id:  {creds.api_id} (from {config.telegram.api_id_env})")
+    try:
+        status = session_status(creds)
+    except MtprotoError as e:
+        print(f"session check failed: {e}", file=sys.stderr)
+        return 2
+    print(f"session: {status['session_path']}{'' if status['session_exists'] else ' (missing)'}")
+    if status["authorized"]:
+        print(f"account: {status['account']}")
+        return 0
+    print("not signed in — run `python -m src telegram login`")
+    return 0
+
+
+def _cmd_telegram_logout(args, config: Config, paths: ProjectPaths) -> int:
+    creds = _telegram_credentials(config, paths)
+    if creds is None:
+        return 1
+    if not os.path.exists(creds.session_path):
+        print(f"no session file at {creds.session_path}")
+        return 0
+    if not args.yes:
+        print(
+            f"this deletes {creds.session_path}; re-run with --yes to confirm",
+            file=sys.stderr,
+        )
+        return 1
+    for path in delete_session(creds):
+        print(f"removed {path}")
+    return 0
+
+
 def _cmd_docs(args, config: Config, paths: ProjectPaths) -> int:
     db = Database(paths.db_path)
     rows = [
@@ -552,6 +636,19 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--save", action="store_true", help="keep the query enabled for `collect`")
     p.add_argument("--name", help="source name (default: the query itself)")
     p.set_defaults(func=_cmd_search)
+
+    pt = sub.add_parser("telegram", help="MTProto session for Telegram channels").add_subparsers(
+        dest="action", required=True
+    )
+    p = pt.add_parser("login", help="sign in once and store data/<session>.session")
+    p.add_argument("--phone", help="phone number in +79991234567 form (asked interactively if absent)")
+    p.set_defaults(func=_cmd_telegram_login)
+    pt.add_parser("status", help="credentials, session file and whether it is signed in").set_defaults(
+        func=_cmd_telegram_status
+    )
+    p = pt.add_parser("logout", help="delete the stored session")
+    p.add_argument("--yes", action="store_true", help="confirm deletion")
+    p.set_defaults(func=_cmd_telegram_logout)
 
     p = sub.add_parser("import-url", help="one-off: fetch a page into the manual source")
     p.add_argument("url")

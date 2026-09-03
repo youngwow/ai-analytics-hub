@@ -39,9 +39,34 @@ class ScraperConfig:
         return {"User-Agent": self.user_agent, "Accept-Language": self.accept_language}
 
 
+MTPROTO_MODES = ("auto", "off", "only")
+# "on" and friends are what YAML turns a bare `on:` into; treat them as `auto`.
+_MTPROTO_SYNONYMS = {"on": "auto", "true": "auto", "yes": "auto", "false": "off", "no": "off"}
+
+
 @dataclass(frozen=True)
 class TelegramConfig:
     backfill_pages: int
+    mtproto: str = "auto"  # auto: MTProto when a session exists, else the t.me/s/ preview
+    api_id_env: str = "TELEGRAM_API_ID"
+    api_hash_env: str = "TELEGRAM_API_HASH"
+    session_name: str = "telegram"  # data/<session_name>.session
+    max_posts: int = 100  # posts per channel per run over MTProto
+    backfill_posts: int = 300  # posts per channel with --backfill
+    concurrency: int = 2  # parallel MTProto history requests
+    flood_sleep_threshold: float = 60.0  # longer FloodWait fails the source instead of waiting
+    request_timeout: float = 60.0  # seconds for one channel's history
+
+    def __post_init__(self):
+        # YAML 1.1 reads a bare `off` / `on` / `no` / `yes` as a boolean, and
+        # `mtproto: off` is exactly what a reader would write. Accept every
+        # spelling of those two, quoted or not, so the mode never depends on
+        # whether the value happened to hit a YAML keyword.
+        mode = self.mtproto
+        if isinstance(mode, bool):
+            mode = "on" if mode else "off"
+        mode = str(mode).strip().lower()
+        object.__setattr__(self, "mtproto", _MTPROTO_SYNONYMS.get(mode, mode))
 
 
 @dataclass(frozen=True)
@@ -123,3 +148,18 @@ class Config:
             )
         if self.tavily.days < 1:
             raise ConfigError("config.yaml: tavily.days must be >= 1")
+        tg = self.telegram
+        if tg.mtproto not in MTPROTO_MODES:
+            raise ConfigError(
+                f"config.yaml: telegram.mtproto must be one of {list(MTPROTO_MODES)}, "
+                f"got '{tg.mtproto}'"
+            )
+        if tg.max_posts < 1 or tg.backfill_posts < 1 or tg.concurrency < 1:
+            raise ConfigError(
+                "config.yaml: telegram.max_posts, backfill_posts and concurrency must be >= 1"
+            )
+        if tg.request_timeout <= 0 or tg.flood_sleep_threshold < 0:
+            raise ConfigError(
+                "config.yaml: telegram.request_timeout must be > 0 and "
+                "flood_sleep_threshold >= 0"
+            )

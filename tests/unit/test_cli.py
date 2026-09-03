@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 from contextlib import contextmanager
 
@@ -15,9 +16,11 @@ from src.config import Config
 from src.models import CollectReport, RawDocument, Resolution, Source
 from src.paths import DEFAULT_PATHS as REAL_PATHS
 from src.paths import ProjectPaths
+from src.sources import telegram_mtproto
 from src.sources.collector import Collector
 from src.sources.scraper_llm import TAVILY_SEARCH_URL
 from src.sources.scraper_search import SearchQuery
+from src.sources.telegram_mtproto import MtprotoError
 from src.storage import Database
 
 SEARCH_QUERY = "GS Labs Триколор"
@@ -142,6 +145,13 @@ def _db(paths: ProjectPaths):
              "category": None, "general": False, "no_summary": False, "save": False,
              "name": None},
         ),
+        (["telegram", "login"],
+         {"func": cli._cmd_telegram_login, "action": "login", "phone": None}),
+        (["telegram", "login", "--phone", "+79991234567"], {"phone": "+79991234567"}),
+        (["telegram", "status"], {"func": cli._cmd_telegram_status, "action": "status"}),
+        (["telegram", "logout"],
+         {"func": cli._cmd_telegram_logout, "action": "logout", "yes": False}),
+        (["telegram", "logout", "--yes"], {"func": cli._cmd_telegram_logout, "yes": True}),
         (["import-url", "https://a.ru/x"], {"func": cli._cmd_import_url, "url": "https://a.ru/x"}),
         (["docs"], {"func": cli._cmd_docs, "source": None, "limit": 20}),
         (["docs", "--source", "1", "--limit", "5"], {"source": 1, "limit": 5}),
@@ -159,7 +169,9 @@ def test_build_parser_parses_every_command(argv, expected):
     [[], ["sources"], ["bogus"], ["sources", "add", "u", "--kind", "bogus"],
      ["sources", "add", "u", "--category", "bogus"], ["sources", "enable", "x"], ["collect", "--nope"],
      ["discover", "q", "--collect"], ["search"], ["search", "q", "--days", "week"],
-     ["search", "q", "--category", "telegram"], ["search", "q", "--category", "manual"]],
+     ["search", "q", "--category", "telegram"], ["search", "q", "--category", "manual"],
+     ["telegram"], ["telegram", "signin"], ["telegram", "status", "--yes"],
+     ["telegram", "login", "--yes"], ["telegram", "logout", "--phone", "+7999"]],
     ids=lambda v: " ".join(v) or "<empty>",
 )
 def test_build_parser_rejects_bad_input(argv):
@@ -753,6 +765,224 @@ def test_search_expands_domain_presets_from_enabled_sources(config, paths, offli
     assert cli._cmd_search(_search_args(domains="@all,extra.ru"), config, paths) == 0
     payload = _payloads(offline_collector)[0]
     assert payload["include_domains"] == ["cbr.ru", "extra.ru", "vedomosti.ru"]
+
+
+# ── telegram (MTProto) ─────────────────────────────────────────────────────
+
+API_ID = "1234567"
+API_HASH = "0123456789abcdef0123456789abcdef"
+ACCOUNT = "Никита Бояркин (@nboiarkin)"
+
+
+@pytest.fixture
+def telegram_env(monkeypatch):
+    monkeypatch.setenv("TELEGRAM_API_ID", API_ID)
+    monkeypatch.setenv("TELEGRAM_API_HASH", API_HASH)
+
+
+@pytest.fixture
+def no_telegram_env(monkeypatch):
+    monkeypatch.delenv("TELEGRAM_API_ID", raising=False)
+    monkeypatch.delenv("TELEGRAM_API_HASH", raising=False)
+
+
+@pytest.fixture
+def delete_session_spy(monkeypatch) -> list:
+    """`cli.delete_session` still deletes, but the call is recorded."""
+    calls: list = []
+    real = telegram_mtproto.delete_session
+
+    def spy(creds):
+        calls.append(creds)
+        return real(creds)
+
+    monkeypatch.setattr(cli, "delete_session", spy)
+    return calls
+
+
+def _session_file(paths: ProjectPaths, *, journal: bool = False) -> str:
+    os.makedirs(paths.data_dir, exist_ok=True)
+    path = paths.data("telegram.session")
+    with open(path, "wb") as f:
+        f.write(b"sqlite")
+    if journal:
+        with open(f"{path}-journal", "wb") as f:
+            f.write(b"journal")
+    return path
+
+
+def _never(*_args, **_kwargs):
+    pytest.fail("this seam must not be reached")
+
+
+@pytest.mark.parametrize("command", ["login", "status", "logout"])
+def test_telegram_commands_without_credentials_print_the_hint(monkeypatch, config, paths, capsys,
+                                                              no_telegram_env, command):
+    for name in ("login", "session_status", "delete_session"):
+        monkeypatch.setattr(cli, name, _never)
+    args = _args(phone=None, yes=True)
+    assert getattr(cli, f"_cmd_telegram_{command}")(args, config, paths) == 1
+    err = capsys.readouterr().err.strip()
+    assert err == (
+        "no Telegram credentials: set TELEGRAM_API_ID and TELEGRAM_API_HASH "
+        "in the environment or .env (get them at https://my.telegram.org)"
+    )
+
+
+def test_telegram_status_reports_a_missing_session(monkeypatch, config, paths, capsys,
+                                                   telegram_env):
+    seen = []
+
+    def fake_status(creds):
+        seen.append(creds)
+        return {"session_path": creds.session_path, "session_exists": False,
+                "authorized": False, "account": ""}
+
+    monkeypatch.setattr(cli, "session_status", fake_status)
+    assert cli._cmd_telegram_status(_args(), config, paths) == 0
+    assert capsys.readouterr().out.splitlines() == [
+        "mode:    telegram.mtproto = auto",
+        f"api id:  {API_ID} (from TELEGRAM_API_ID)",
+        f"session: {paths.data('telegram.session')} (missing)",
+        "not signed in — run `python -m src telegram login`",
+    ]
+    assert seen[0].api_id == 1234567
+    assert seen[0].api_hash == API_HASH
+
+
+def test_telegram_status_reports_the_signed_in_account(monkeypatch, config, paths, capsys,
+                                                       telegram_env):
+    session = _session_file(paths)
+    monkeypatch.setattr(
+        cli, "session_status",
+        lambda creds: {"session_path": creds.session_path, "session_exists": True,
+                       "authorized": True, "account": ACCOUNT},
+    )
+    assert cli._cmd_telegram_status(_args(), config, paths) == 0
+    lines = capsys.readouterr().out.splitlines()
+    assert lines[2] == f"session: {session}"  # no "(missing)" marker
+    assert lines[3] == f"account: {ACCOUNT}"
+
+
+def test_telegram_status_reads_the_mode_from_the_config(monkeypatch, raw_config, paths, capsys,
+                                                        telegram_env):
+    raw_config["telegram"]["mtproto"] = "only"
+    monkeypatch.setattr(
+        cli, "session_status",
+        lambda creds: {"session_path": creds.session_path, "session_exists": False,
+                       "authorized": False, "account": ""},
+    )
+    assert cli._cmd_telegram_status(_args(), Config.from_dict(raw_config), paths) == 0
+    assert capsys.readouterr().out.splitlines()[0] == "mode:    telegram.mtproto = only"
+
+
+def test_telegram_status_returns_2_when_the_session_check_fails(monkeypatch, config, paths, capsys,
+                                                                telegram_env):
+    def boom(creds):
+        raise MtprotoError("Telegram session is no longer valid")
+
+    monkeypatch.setattr(cli, "session_status", boom)
+    assert cli._cmd_telegram_status(_args(), config, paths) == 2
+    assert capsys.readouterr().err.strip() == (
+        "session check failed: Telegram session is no longer valid"
+    )
+
+
+def test_telegram_login_prints_the_account_and_the_session_path(monkeypatch, config, paths, capsys,
+                                                                telegram_env):
+    calls: dict = {}
+
+    def fake_login(creds, *, phone="", prompt=None, secret_prompt=None):
+        calls.update(creds=creds, phone=phone, prompt=prompt, secret_prompt=secret_prompt)
+        return ACCOUNT
+
+    monkeypatch.setattr(cli, "login", fake_login)
+    prompt, secret_prompt = (lambda q: "+79991234567"), (lambda q: "2fa-пароль")
+    rc = cli._cmd_telegram_login(_args(phone=None), config, paths, prompt=prompt,
+                                 secret_prompt=secret_prompt)
+    assert rc == 0
+    out = capsys.readouterr().out.splitlines()
+    assert out[0] == f"signed in as {ACCOUNT}"
+    assert out[1] == (
+        f"session: {paths.data('telegram.session')} — храните как пароль, "
+        "это доступ к аккаунту"
+    )
+    assert calls["phone"] == ""  # no --phone: `login` asks through the prompt
+    assert calls["prompt"] is prompt
+    assert calls["secret_prompt"] is secret_prompt
+    assert calls["creds"].session_path == paths.data("telegram.session")
+
+
+def test_telegram_login_forwards_the_phone_flag(monkeypatch, config, paths, telegram_env):
+    calls: dict = {}
+
+    def fake_login(creds, **kwargs):
+        calls.update(kwargs)
+        return ACCOUNT
+
+    monkeypatch.setattr(cli, "login", fake_login)
+    assert cli._cmd_telegram_login(_args(phone="+79991234567"), config, paths,
+                                   prompt=_never, secret_prompt=_never) == 0
+    assert calls["phone"] == "+79991234567"
+
+
+def test_telegram_login_failure_is_exit_2(monkeypatch, config, paths, capsys, telegram_env):
+    def boom(creds, **kwargs):
+        raise MtprotoError("phone number is required")
+
+    monkeypatch.setattr(cli, "login", boom)
+    assert cli._cmd_telegram_login(_args(phone=None), config, paths, prompt=_never,
+                                   secret_prompt=_never) == 2
+    captured = capsys.readouterr()
+    assert captured.err.strip() == "login failed: phone number is required"
+    assert captured.out == ""  # no "signed in as …" line on failure
+
+
+def test_telegram_logout_refuses_without_yes(config, paths, capsys, telegram_env,
+                                             delete_session_spy):
+    session = _session_file(paths, journal=True)
+    assert cli._cmd_telegram_logout(_args(yes=False), config, paths) == 1
+    assert capsys.readouterr().err.strip() == (
+        f"this deletes {session}; re-run with --yes to confirm"
+    )
+    assert delete_session_spy == []
+    assert os.path.exists(session)
+
+
+def test_telegram_logout_deletes_the_session_with_yes(config, paths, capsys, telegram_env,
+                                                      delete_session_spy):
+    session = _session_file(paths, journal=True)
+    assert cli._cmd_telegram_logout(_args(yes=True), config, paths) == 0
+    assert capsys.readouterr().out.splitlines() == [
+        f"removed {session}",
+        f"removed {session}-journal",
+    ]
+    assert len(delete_session_spy) == 1
+    assert not os.path.exists(session)
+    assert not os.path.exists(f"{session}-journal")
+
+
+def test_telegram_logout_without_a_session_file_is_a_no_op(config, paths, capsys, telegram_env,
+                                                           delete_session_spy):
+    assert cli._cmd_telegram_logout(_args(yes=True), config, paths) == 0
+    assert capsys.readouterr().out.strip() == (
+        f"no session file at {paths.data('telegram.session')}"
+    )
+    assert delete_session_spy == []
+
+
+def test_telegram_credentials_come_from_the_project_dot_env(monkeypatch, config, paths, tmp_path,
+                                                            capsys, no_telegram_env):
+    (tmp_path / ".env").write_text(
+        f'TELEGRAM_API_ID={API_ID}\nTELEGRAM_API_HASH="{API_HASH}"\n', encoding="utf-8"
+    )
+    monkeypatch.setattr(
+        cli, "session_status",
+        lambda creds: {"session_path": creds.session_path, "session_exists": False,
+                       "authorized": False, "account": ""},
+    )
+    assert cli._cmd_telegram_status(_args(), config, paths) == 0
+    assert f"api id:  {API_ID} (from TELEGRAM_API_ID)" in capsys.readouterr().out
 
 
 def test_import_url_command(monkeypatch, config, paths, capsys):

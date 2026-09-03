@@ -5,7 +5,7 @@
 единой лентой (см. `context/task.md`).
 
 Реализован **этап 1.1 — сбор данных**: один резолвер типа источника плюс адаптеры
-(RSS/Atom, Telegram через `t.me/s/`, sitemap, обход HTML-страницы, поисковые
+(RSS/Atom, Telegram через MTProto или `t.me/s/`, sitemap, обход HTML-страницы, поисковые
 запросы Tavily), полный текст через trafilatura, хранение в SQLite. Пул источников —
 из `context/sources_for_company.md` (GS Labs). Этапы 1.2–1.4 (саммаризация,
 категоризация, дашборд, управление источниками из UI) — впереди.
@@ -14,14 +14,14 @@
 
 ```bash
 uv sync                                    # зависимости в .venv (Python ≥ 3.11)
-cp .env.example .env                       # TAVILY_API нужен для discover и search
+cp .env.example .env                       # TAVILY_API для discover и search; TELEGRAM_API_* — для MTProto
 uv run python -m src sources seed          # загрузить sources.json (41 источник, 32 включены)
 uv run python -m src collect               # один проход по всем включённым источникам
 uv run python -m src docs --limit 20       # что собрали
 uv run python -m src collect --watch --interval 900   # опрашивать каждые 15 минут
 ```
 
-`make install | seed | collect | watch | test | lint | happy-pr | happy-gr` — те же команды.
+`make install | seed | collect | watch | tg-login | tg-status | test | lint | happy-pr | happy-gr` — те же команды.
 
 ## Команды
 
@@ -29,6 +29,7 @@ uv run python -m src collect --watch --interval 900   # опрашивать к�
 |---|---|
 | `collect [--source ID] [--backfill] [--force] [--watch --interval S]` | Опрос источников: условный GET для RSS, курсор по постам для Telegram, `lastmod` для sitemap, окно `days` для поисковых запросов. `--backfill` листает историю, `--force` сбрасывает ETag/курсоры |
 | `search "<запрос>" [--domains a.ru,b.ru \| @media \| @regulator \| @all] [--days N] [--general] [--no-summary] [--category media\|regulator] [--save] [--name …]` | Новости по запросу через Tavily за последние N дней: каждое попадание и «Сводка» (ответ Tavily) сохраняются в `documents`. Запрос становится источником вида `search`; с `--save` он включён и `collect` опрашивает его дальше |
+| `telegram login [--phone …] / status / logout --yes` | Вход в Telegram через MTProto: разовая интерактивная авторизация (телефон, код, 2FA), проверка сессии, удаление сессии. Без неё Telegram собирается через веб-превью |
 | `discover "<запрос>" [--domains …] [--add]` | Поиск *источников* через Tavily: сайты из результатов прогоняются через резолвер и добавляются (`--add`) |
 | `sources add <url> [--name] [--category] [--kind --fetch-url]` | Вставили ссылку — резолвер сам решает, чем её тянуть; `--kind/--fetch-url` закрепляют адрес вручную |
 | `sources list / enable / disable / remove / resolve <id>` | Состояние источников (документы, последний успех, ошибка) и управление ими |
@@ -49,7 +50,7 @@ uv run python -m src collect --watch --interval 900   # опрашивать к�
 - **Регуляторы (9)** — официальное опубликование НПА `publication.pravo.gov.ru` (три ленты API:
   Правительство, ФОИВ, Президент), government.ru, Роскомнадзор, ФНС, ФСБ (HTML-diff), РФРИТ
   (sitemap); ЦБ выключен как низкоприоритетный.
-- **Telegram (16)** — зеркала `t.me/s/`: Минцифры, Правительство, РФРИТ, АРПП, АРПЭ, RSpectr,
+- **Telegram (16)** — каналы через MTProto или зеркала `t.me/s/`: Минцифры, Правительство, РФРИТ, АРПП, АРПЭ, RSpectr,
   ЦИПР, CIO, ComNews, TAdviser, CNews, Кабельщик, «Цифровая экономика», ТАСС, ФСИ; Торгпред выключен.
 - **Поиск (2, выключены)** — запросы Tavily «упоминания GS Labs / Триколор» (news, 7 дней, домены
   отраслевых СМИ) и «проекты НПА — ПО, ПД, КИИ» (general, 14 дней, regulation.gov.ru, СОЗД,
@@ -61,6 +62,32 @@ uv run python -m src collect --watch --interval 900   # опрашивать к�
 
 Государственные домены и часть СМИ ограничивают доступ с зарубежных IP: с российского адреса
 выключенные и исключённые источники стоит перепроверить (`sources resolve <id>`, `sources add <url>`).
+
+## Telegram: MTProto или веб-превью
+
+Каналы читаются двумя способами, тип источника у обоих один — `telegram`, номера постов
+совпадают, поэтому переключение транспорта не приводит ни к повторному импорту, ни к дублям.
+
+| | `t.me/s/<канал>` | MTProto (Telethon) |
+|---|---|---|
+| Что нужно | ничего | `api_id`/`api_hash` с [my.telegram.org](https://my.telegram.org) и один вход |
+| Каналы без веб-превью | не читаются | читаются |
+| Догоняние | до 5 страниц `?after=` за проход | `telegram.max_posts` за проход, `backfill_posts` при `--backfill` |
+| Вложения | ссылки `t.me` | имена файлов (`file:<имя>` в `attachments`); сами файлы не скачиваются |
+
+```bash
+uv run python -m src telegram login     # телефон → код из Telegram → пароль 2FA, если включён
+uv run python -m src telegram status    # ключи, файл сессии, аккаунт, режим
+uv run python -m src collect            # Telegram-источники пойдут через MTProto
+```
+
+`telegram.mtproto` в `config.yaml`: `auto` (MTProto при наличии сессии, иначе превью), `off`
+(только превью), `only` (без сессии источник падает с ошибкой). В режиме `auto` ошибка по одному
+каналу откатывает на превью, а проблема с самой сессией отключает MTProto до конца прогона.
+
+Файл сессии `data/telegram.session` — это доступ к аккаунту: он в `.gitignore`, его нельзя
+коммитить и пересылать. Чтение пассивное: каналы не подписываются, посты не помечаются
+прочитанными, одновременных запросов не больше `telegram.concurrency` (по умолчанию 2).
 
 ## Поиск через Tavily
 
@@ -127,13 +154,16 @@ search  ──► collect_one(источник-запрос) ──► SearchAda
 
 - `src/sources/resolver.py` — цепочка из `scraper.md` §0: t.me → `tavily://` → RSS по URL →
   `<link rel=alternate>` и типовые пути → sitemap с `lastmod` → HTML-diff.
+- `src/sources/telegram_mtproto.py` — Telethon за синхронным интерфейсом: один фоновый event loop и
+  один клиент на прогон, ошибки сводятся к «канал недоступен» и «сессия непригодна».
 - `src/sources/scraper_*.py` — адаптеры с общим интерфейсом (`base.py`); все возвращают `RawDocument`
   (`source_id, external_id, url, title, summary, text, author, attachments, published_at, fetched_at, content_hash`).
   `scraper_search.py` — запрос Tavily как источник; `scraper_llm.py` — HTTP-обёртка Tavily.
 - `src/sources/fulltext.py` — trafilatura для материалов, где в ленте только анонс; не больше двух
   одновременных запросов к одному хосту (gov.ru банит бурсты).
 - `src/storage/db.py` — `data/hub.db`: `sources`, `documents`, `fetch_state`, `seen_urls`, `collect_runs`.
-- `config.yaml` — окно первого сбора, таймауты, лимиты, параметры Tavily (`days`, `country`, `language`).
+- `config.yaml` — окно первого сбора, таймауты, лимиты, параметры Tavily (`days`, `country`, `language`)
+  и Telegram (`mtproto`, `max_posts`, `concurrency`).
 
 ## Разработка
 

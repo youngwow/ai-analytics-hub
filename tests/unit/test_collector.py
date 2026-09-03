@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 
 import pytest
 from support import (
@@ -26,6 +26,7 @@ from src.paths import ProjectPaths
 from src.sources.collector import Collector
 from src.sources.scraper_llm import TAVILY_SEARCH_URL
 from src.sources.scraper_search import SearchQuery
+from src.sources.telegram_mtproto import MtChannel, MtPost
 
 RSS_URL = "https://feed.example.ru/rss.xml"
 TG_URL = "https://t.me/s/cit_gov"
@@ -65,7 +66,8 @@ def _add(db, **overrides) -> Source:
     return db.sources.add(Source(**{**base, **overrides}))
 
 
-def _collector(config, db, routes, now, tmp_path, tavily_key: str = "secret-key") -> Collector:
+def _collector(config, db, routes, now, tmp_path, tavily_key: str = "secret-key",
+               **kwargs) -> Collector:
     """A collector over `routes` with a frozen clock; the Tavily key is always explicit."""
     return Collector(
         config,
@@ -74,6 +76,7 @@ def _collector(config, db, routes, now, tmp_path, tavily_key: str = "secret-key"
         transport=routes.transport(),
         now=lambda: now,
         tavily_key=tavily_key,
+        **kwargs,
     )
 
 
@@ -178,7 +181,7 @@ def test_first_and_second_run_over_every_adapter(raw_config, db, fixture_bytes, 
 
     # telegram: cursor stored, placeholder name replaced by the channel title
     assert _stored_ids(db, tg.id) == ["cit_gov/1485", "cit_gov/1484", "cit_gov/1483", "cit_gov/1482"]
-    assert db.fetch_state.get(tg.id).cursor == {"last_post_id": 1485}
+    assert db.fetch_state.get(tg.id).cursor == {"last_post_id": 1485, "transport": "web"}
     assert db.sources.get(tg.id).name == CHANNEL_TITLE
 
     # sitemap: only the fresh child was fetched; old entry never touched
@@ -236,7 +239,7 @@ def test_first_and_second_run_over_every_adapter(raw_config, db, fixture_bytes, 
     assert not any("cableman.ru/content" in str(r.url) for r in second)  # all seen
     assert db.fetch_state.get(rss.id).last_success_at == "2026-09-02T13:00:00+00:00"
     assert db.fetch_state.get(rss.id).etag == 'W/"abc"'
-    assert db.fetch_state.get(tg.id).cursor == {"last_post_id": 1485}
+    assert db.fetch_state.get(tg.id).cursor == {"last_post_id": 1485, "transport": "web"}
     assert db.runs.latest()["sources_not_modified"] == 1
     assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 2
 
@@ -904,3 +907,197 @@ def test_collect_one_without_tavily_key_fails_per_run_without_http(raw_config, d
     assert routes.requests == []
     assert db.fetch_state.get(source.id).last_error == entry["error"]
     assert db.runs.latest()["sources_fail"] == 1
+
+
+# ── telegram over MTProto ──────────────────────────────────────────────────
+
+TG_POST_DATE = datetime(2026, 9, 2, 10, 0, 0, tzinfo=timezone.utc)
+
+
+class FakeMtprotoReader:
+    """The collector's view of `MtprotoReader`: canned posts, and it must be closed."""
+
+    def __init__(self, channel: MtChannel):
+        self.channel = channel
+        self.calls: list[dict] = []
+        self.closed = 0
+
+    def channel_posts(self, channel, *, min_id=0, limit=100, offset_date=None) -> MtChannel:
+        self.calls.append(
+            {"channel": channel, "min_id": min_id, "limit": limit, "offset_date": offset_date}
+        )
+        return self.channel
+
+    def close(self) -> None:
+        self.closed += 1
+
+
+class RecordingAdapter:
+    """A `close()`-able adapter that never touches the network."""
+
+    def __init__(self, kind: str = "rss", close_error: Exception | None = None):
+        self.kind = kind
+        self.close_error = close_error
+        self.closed = 0
+
+    def fetch(self, source, state, client, *, now, since=None, backfill=False) -> FetchResult:
+        return FetchResult()
+
+    def close(self) -> None:
+        self.closed += 1
+        if self.close_error is not None:
+            raise self.close_error
+
+
+def _tg_source(db) -> Source:
+    return _add(db, name="cit_gov", url="https://t.me/cit_gov", kind="telegram",
+                category="telegram", fetch_url=TG_URL)
+
+
+def _tg_reader() -> FakeMtprotoReader:
+    return FakeMtprotoReader(
+        MtChannel(
+            title=CHANNEL_TITLE,
+            posts=[
+                MtPost(id=1490, text="Первый пост\n\nПодробности", date=TG_POST_DATE),
+                MtPost(id=1491, text="Второй пост", date=TG_POST_DATE,
+                       urls=["https://gov.ru/doc"], files=["Приказ.pdf"]),
+                MtPost(id=1492, date=TG_POST_DATE),  # a photo: no document, but it moves the cursor
+            ],
+        )
+    )
+
+
+def test_explicit_mtproto_factory_reaches_the_telegram_adapter(raw_config, db, now, tmp_path):
+    config = _config(raw_config)
+    reader = _tg_reader()
+
+    def factory():
+        return reader
+
+    collector = _collector(config, db, MockRoutes(), now, tmp_path, mtproto_factory=factory)
+    assert collector.adapters["telegram"].mtproto_factory is factory
+
+
+@pytest.mark.integration
+def test_telegram_run_over_mtproto_stores_documents_and_the_cursor(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    reader = _tg_reader()
+    routes = MockRoutes()
+    source = _tg_source(db)
+    collector = _collector(config, db, routes, now, tmp_path, mtproto_factory=lambda: reader)
+
+    report = collector.run()
+    assert (report.sources_ok, report.sources_fail, report.docs_new) == (1, 0, 2)
+    assert routes.requests == []  # nothing fell back to the t.me/s/ preview
+    assert set(_stored_ids(db, source.id)) == {"cit_gov/1490", "cit_gov/1491"}
+    assert db.fetch_state.get(source.id).cursor == {"last_post_id": 1492, "transport": "mtproto"}
+    assert db.sources.get(source.id).name == CHANNEL_TITLE  # placeholder replaced
+    rows = {r["external_id"]: r for r in db.documents.list(source_id=source.id)}
+    assert rows["cit_gov/1490"]["title"] == "Первый пост"
+    assert rows["cit_gov/1490"]["url"] == "https://t.me/cit_gov/1490"
+    assert rows["cit_gov/1490"]["published_at"] == "2026-09-02T10:00:00+00:00"
+    assert rows["cit_gov/1491"]["attachments"] == '["file:Приказ.pdf", "https://gov.ru/doc"]'
+    assert reader.closed == 1
+    assert reader.calls[0] == {"channel": "cit_gov", "min_id": 0, "limit": 50,
+                               "offset_date": now - timedelta(hours=72)}
+
+
+def test_the_stored_cursor_bounds_the_next_mtproto_run(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    reader = _tg_reader()
+    _tg_source(db)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path, mtproto_factory=lambda: reader)
+    collector.run()
+
+    collector.now = lambda: now + timedelta(hours=1)
+    report = collector.run()
+    assert report.docs_new == 0
+    assert reader.calls[1]["min_id"] == 1492  # the cursor survived the JSON round-trip
+    assert reader.calls[1]["offset_date"] is None
+    assert reader.closed == 2  # one connection per run
+
+
+def test_run_closes_every_adapter_at_the_end(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    _add(db)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    adapter = RecordingAdapter()
+    collector.adapters["rss"] = adapter
+    report = collector.run()
+    assert report.sources_ok == 1
+    assert adapter.closed == 1
+
+
+def test_collect_one_closes_every_adapter_at_the_end(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    source = _add(db)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    adapter = RecordingAdapter()
+    collector.adapters["rss"] = adapter
+    _, entry = collector.collect_one(source)
+    assert entry["status"] == "ok"
+    assert adapter.closed == 1
+
+
+def test_a_failing_close_does_not_fail_the_run(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    _add(db)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    collector.adapters["rss"] = RecordingAdapter(close_error=RuntimeError("socket already gone"))
+    report = collector.run()
+    assert (report.sources_ok, report.sources_fail) == (1, 0)
+    assert db.runs.latest()["sources_ok"] == 1
+
+
+# The suite must never build a real Telethon reader, even on a machine that has
+# Telegram credentials exported: a tmp project root has no session file.
+
+
+def test_autoload_builds_no_factory_without_a_session_file(raw_config, db, now, tmp_path,
+                                                           monkeypatch):
+    monkeypatch.setenv("TELEGRAM_API_ID", "1234567")
+    monkeypatch.setenv("TELEGRAM_API_HASH", "0123456789abcdef")
+    config = _config(raw_config)
+    assert config.telegram.mtproto == "auto"  # the autoload branch really is taken
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    assert collector.adapters["telegram"].mtproto_factory is None
+
+
+def test_autoload_builds_a_factory_when_a_session_file_exists(raw_config, db, now, tmp_path,
+                                                              monkeypatch):
+    monkeypatch.setenv("TELEGRAM_API_ID", "1234567")
+    monkeypatch.setenv("TELEGRAM_API_HASH", "0123456789abcdef")
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "telegram.session").write_bytes(b"")
+    config = _config(raw_config)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    assert collector.adapters["telegram"].mtproto_factory is not None  # never called here
+
+
+@pytest.mark.parametrize(
+    "env", [{}, {"TELEGRAM_API_ID": "1234567"}, {"TELEGRAM_API_HASH": "hash"}],
+    ids=["no-credentials", "id-only", "hash-only"],
+)
+def test_autoload_builds_no_factory_without_both_credentials(raw_config, db, now, tmp_path,
+                                                             monkeypatch, env):
+    monkeypatch.delenv("TELEGRAM_API_ID", raising=False)
+    monkeypatch.delenv("TELEGRAM_API_HASH", raising=False)
+    for key, value in env.items():
+        monkeypatch.setenv(key, value)
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "telegram.session").write_bytes(b"")
+    config = _config(raw_config)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    assert collector.adapters["telegram"].mtproto_factory is None
+
+
+def test_autoload_is_skipped_when_mtproto_is_off(raw_config, db, now, tmp_path, monkeypatch):
+    monkeypatch.setenv("TELEGRAM_API_ID", "1234567")
+    monkeypatch.setenv("TELEGRAM_API_HASH", "0123456789abcdef")
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "telegram.session").write_bytes(b"")
+    raw_config["telegram"]["mtproto"] = "off"
+    config = _config(raw_config)
+    collector = _collector(config, db, MockRoutes(), now, tmp_path)
+    assert collector.adapters["telegram"].mtproto_factory is None

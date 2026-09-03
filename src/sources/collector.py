@@ -8,6 +8,7 @@ raised — one dead site must not stop the run.
 
 from __future__ import annotations
 
+import os
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
@@ -23,6 +24,7 @@ from ..paths import ProjectPaths
 from ..storage import Database
 from .base import HostLimiter, build_adapters, make_client
 from .fulltext import FullTextFetcher
+from .telegram_mtproto import MtprotoReader, credentials_from_env, reader_factory
 
 log = get_logger("collector")
 
@@ -41,6 +43,7 @@ class Collector:
         transport: httpx.BaseTransport | None = None,
         now: Callable[[], datetime] = utc_now,
         tavily_key: str | None = None,
+        mtproto_factory: Callable[[], MtprotoReader] | None = None,
     ):
         self.config = config
         self.paths = paths
@@ -50,7 +53,15 @@ class Collector:
         self.limiter = HostLimiter(config.scraper.per_host_concurrency)
         if tavily_key is None:
             tavily_key = load_env_secret(config.tavily.api_key_env, paths.env_path)
-        self.adapters = build_adapters(config, self.limiter, tavily_key=tavily_key)
+        if mtproto_factory is None and config.telegram.mtproto != "off":
+            creds = credentials_from_env(config.telegram, paths)
+            # No session file means no MTProto: skip the doomed connect and let
+            # telegram sources go straight to the t.me/s/ preview.
+            if creds and os.path.exists(creds.session_path):
+                mtproto_factory = reader_factory(creds, config.telegram)
+        self.adapters = build_adapters(
+            config, self.limiter, tavily_key=tavily_key, mtproto_factory=mtproto_factory
+        )
         self.fulltext = FullTextFetcher(config.scraper, self.limiter)
 
     # ── run ────────────────────────────────────────────────────────────────
@@ -80,28 +91,30 @@ class Collector:
             ", backfill" if backfill else "",
         )
 
-        with make_client(self.config, self.transport) as client:
-            workers = min(self.config.scraper.concurrency, len(sources) or 1)
-            with ThreadPoolExecutor(max_workers=workers) as pool:
-                futures = {
-                    pool.submit(self._poll, s, states[s.id], client, started, since, backfill): s
-                    for s in sources
-                }
-                for fut in as_completed(futures):
-                    source = futures[fut]
-                    result, latency_ms = fut.result()
-                    entry = self._persist(
-                        source,
-                        states[source.id],
-                        result,
-                        client,
-                        started,
-                        since,
-                        backfill,
-                        latency_ms,
-                    )
-                    self._tally(report, entry)
-
+        try:
+            with make_client(self.config, self.transport) as client:
+                workers = min(self.config.scraper.concurrency, len(sources) or 1)
+                with ThreadPoolExecutor(max_workers=workers) as pool:
+                    futures = {
+                        pool.submit(self._poll, s, states[s.id], client, started, since, backfill): s
+                        for s in sources
+                    }
+                    for fut in as_completed(futures):
+                        source = futures[fut]
+                        result, latency_ms = fut.result()
+                        entry = self._persist(
+                            source,
+                            states[source.id],
+                            result,
+                            client,
+                            started,
+                            since,
+                            backfill,
+                            latency_ms,
+                        )
+                        self._tally(report, entry)
+        finally:
+            self.close()
         report.finished_at = to_utc_iso(self.now()) or ""
         self.db.runs.add(report)
         log.info("collect done: %s", report.summary_line())
@@ -123,19 +136,33 @@ class Collector:
         state = self.db.fetch_state.get(source.id)
         since = started - timedelta(hours=self.config.scraper.date_window_hours)
         report = CollectReport(started_at=to_utc_iso(started) or "")
-        if source.kind not in self.adapters:
-            result = FetchResult(error=f"no adapter for kind '{source.kind}'")
-            entry = self._persist(source, state, result, None, started, since, False, 0.0)
-        else:
-            with make_client(self.config, self.transport) as client:
-                result, latency_ms = self._poll(source, state, client, started, since, False)
-                entry = self._persist(
-                    source, state, result, client, started, since, False, latency_ms
-                )
+        try:
+            if source.kind not in self.adapters:
+                result = FetchResult(error=f"no adapter for kind '{source.kind}'")
+                entry = self._persist(source, state, result, None, started, since, False, 0.0)
+            else:
+                with make_client(self.config, self.transport) as client:
+                    result, latency_ms = self._poll(source, state, client, started, since, False)
+                    entry = self._persist(
+                        source, state, result, client, started, since, False, latency_ms
+                    )
+        finally:
+            self.close()
         self._tally(report, entry)
         report.finished_at = to_utc_iso(self.now()) or ""
         self.db.runs.add(report)
         return result, entry
+
+    def close(self) -> None:
+        """Release what adapters hold open between runs (the MTProto client)."""
+        for adapter in self.adapters.values():
+            closer = getattr(adapter, "close", None)
+            if closer is None:
+                continue
+            try:
+                closer()
+            except Exception as e:  # closing must never fail a completed run
+                log.debug("closing the %s adapter: %s", adapter.kind, e)
 
     @staticmethod
     def _tally(report: CollectReport, entry: dict) -> None:
