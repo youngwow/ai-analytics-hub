@@ -11,6 +11,7 @@ dependencies = [
     "selectolax>=0.3",
     "pyyaml>=6.0",
     "telethon>=1.41,<2",
+    "ollama>=0.6,<1",
 ]
 
 [dependency-groups]

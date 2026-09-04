@@ -182,3 +182,267 @@ class CollectReport:
             f"{self.docs_new} new documents; sources ok={self.sources_ok} "
             f"not_modified={self.sources_not_modified} failed={self.sources_fail}"
         )
+
+
+ITEM_TYPES = ("npa", "news")
+PRIORITIES = ("high", "medium", "low")
+NPA_STATUSES = ("анонс", "разработка", "внесён", "рассмотрение", "принят", "действует", "архив")
+ENTITY_ROLES = ("who", "what", "when", "impact", "org", "act_number")
+ITEM_TAGS = ("регуляторика", "репутация", "конкуренты", "тренды", "господдержка/льготы")
+
+
+def _json_list(raw) -> list:
+    try:
+        value = json.loads(raw or "[]")
+    except (ValueError, TypeError):
+        return []
+    return value if isinstance(value, list) else []
+
+
+@dataclass
+class Cluster:
+    """A group of publications about one event; one card is built per cluster."""
+
+    canonical_document_id: int
+    centroid_embedding: bytes | None = None
+    size: int = 1
+    has_divergent_opinions: bool = False
+    created_at: str = ""
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "Cluster":
+        return cls(
+            canonical_document_id=row["canonical_document_id"],
+            centroid_embedding=row["centroid_embedding"],
+            size=row["size"] or 1,
+            has_divergent_opinions=bool(row["has_divergent_opinions"]),
+            created_at=row["created_at"] or "",
+            id=row["id"],
+        )
+
+
+@dataclass
+class EntitySpan:
+    """One extracted entity plus where it is grounded in `documents.norm_text`."""
+
+    role: str
+    value: str
+    normalized_value: str = ""
+    evidence_start: int | None = None
+    evidence_end: int | None = None
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "EntitySpan":
+        return cls(
+            role=row["role"],
+            value=row["value"],
+            normalized_value=row["normalized_value"] or "",
+            evidence_start=row["evidence_start"],
+            evidence_end=row["evidence_end"],
+            id=row["id"],
+        )
+
+
+@dataclass
+class Item:
+    """A feed card: what the analyst reads instead of the original."""
+
+    cluster_id: int
+    type: str = "news"
+    npa_status: str | None = None
+    npa_key: str | None = None
+    title: str = ""
+    summary: str = ""
+    priority: str = "medium"
+    relevance_score: float = 0.0
+    reasoning: str = ""
+    confidence: float = 0.0
+    tags: list[str] = field(default_factory=list)
+    analyst_note: str = ""
+    is_hidden: bool = False
+    is_archived: bool = False
+    degraded: bool = False
+    needs_review: bool = False
+    date_estimated: bool = False
+    model_name: str = ""
+    prompt_version: int | None = None
+    profile_version: int | None = None
+    edited_fields: list[str] = field(default_factory=list)
+    processed_at: str = ""
+    published_at: str | None = None
+    id: int | None = None
+
+    def to_row(self) -> dict:
+        return {
+            "cluster_id": self.cluster_id,
+            "type": self.type,
+            "npa_status": self.npa_status,
+            "npa_key": self.npa_key or None,
+            "title": self.title,
+            "summary": self.summary,
+            "priority": self.priority,
+            "relevance_score": float(self.relevance_score),
+            "reasoning": self.reasoning,
+            "confidence": float(self.confidence),
+            "tags": json.dumps(self.tags, ensure_ascii=False),
+            "analyst_note": self.analyst_note,
+            "is_hidden": int(self.is_hidden),
+            "is_archived": int(self.is_archived),
+            "degraded": int(self.degraded),
+            "needs_review": int(self.needs_review),
+            "date_estimated": int(self.date_estimated),
+            "model_name": self.model_name,
+            "prompt_version": self.prompt_version,
+            "profile_version": self.profile_version,
+            "edited_fields": json.dumps(self.edited_fields, ensure_ascii=False),
+            "processed_at": self.processed_at,
+            "published_at": self.published_at,
+        }
+
+    @classmethod
+    def from_row(cls, row) -> "Item":
+        return cls(
+            cluster_id=row["cluster_id"],
+            type=row["type"],
+            npa_status=row["npa_status"],
+            npa_key=row["npa_key"],
+            title=row["title"] or "",
+            summary=row["summary"] or "",
+            priority=row["priority"] or "medium",
+            relevance_score=row["relevance_score"] or 0.0,
+            reasoning=row["reasoning"] or "",
+            confidence=row["confidence"] or 0.0,
+            tags=_json_list(row["tags"]),
+            analyst_note=row["analyst_note"] or "",
+            is_hidden=bool(row["is_hidden"]),
+            is_archived=bool(row["is_archived"]),
+            degraded=bool(row["degraded"]),
+            needs_review=bool(row["needs_review"]),
+            date_estimated=bool(row["date_estimated"]),
+            model_name=row["model_name"] or "",
+            prompt_version=row["prompt_version"],
+            profile_version=row["profile_version"],
+            edited_fields=_json_list(row["edited_fields"]),
+            processed_at=row["processed_at"] or "",
+            published_at=row["published_at"],
+            id=row["id"],
+        )
+
+
+@dataclass
+class NpaEvent:
+    """One step of a bill's life; kept even after the card is archived."""
+
+    item_id: int
+    status: str
+    occurred_at: str | None = None
+    source_url: str = ""
+    note: str = ""
+    created_by: str = "system"
+    created_at: str = ""
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "NpaEvent":
+        return cls(
+            item_id=row["item_id"],
+            status=row["status"],
+            occurred_at=row["occurred_at"],
+            source_url=row["source_url"] or "",
+            note=row["note"] or "",
+            created_by=row["created_by"] or "system",
+            created_at=row["created_at"] or "",
+            id=row["id"],
+        )
+
+
+@dataclass
+class ItemRevision:
+    """Audit of one field edit — and the training data for later quality work."""
+
+    item_id: int
+    field: str
+    old_value: str | None = None
+    new_value: str | None = None
+    actor: str = "user"
+    created_at: str = ""
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "ItemRevision":
+        return cls(
+            item_id=row["item_id"],
+            field=row["field"],
+            old_value=row["old_value"],
+            new_value=row["new_value"],
+            actor=row["actor"] or "user",
+            created_at=row["created_at"] or "",
+            id=row["id"],
+        )
+
+
+@dataclass
+class CompanyProfile:
+    """Whose point of view decides priority; a version equals a prompt fragment."""
+
+    name: str
+    payload: dict = field(default_factory=dict)
+    version: int = 1
+    is_default: bool = False
+    updated_at: str = ""
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "CompanyProfile":
+        try:
+            payload = json.loads(row["payload"] or "{}")
+        except (ValueError, TypeError):
+            payload = {}
+        return cls(
+            name=row["name"],
+            payload=payload if isinstance(payload, dict) else {},
+            version=row["version"] or 1,
+            is_default=bool(row["is_default"]),
+            updated_at=row["updated_at"] or "",
+            id=row["id"],
+        )
+
+    def prompt_block(self) -> str:
+        """The profile as it goes into the prompt: stable order, no analyst-only fields."""
+        lines = [f"Компания: {self.name}"]
+        labels = {
+            "industry": "Отрасль",
+            "products": "Продукты",
+            "stack": "Стек",
+            "regime": "Налоговый/аккредитационный режим",
+            "regulators": "Регуляторы",
+            "competitors": "Конкуренты",
+            "topics": "Ключевые темы",
+            "negative_facets": "НЕ относится к компании",
+        }
+        for key, label in labels.items():
+            value = self.payload.get(key)
+            if not value:
+                continue
+            text = ", ".join(map(str, value)) if isinstance(value, (list, tuple)) else str(value)
+            lines.append(f"{label}: {text}")
+        return "\n".join(lines)
+
+
+@dataclass
+class LlmCall:
+    """Telemetry of one model call — the measurement behind the 15 s budget."""
+
+    stage: str
+    model: str
+    item_id: int | None = None
+    tokens_in: int = 0
+    tokens_out: int = 0
+    latency_ms: int = 0
+    cost: float = 0.0
+    status: str = "ok"
+    error: str = ""
+    created_at: str = ""
+    id: int | None = None

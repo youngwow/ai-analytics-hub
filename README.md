@@ -7,21 +7,28 @@
 Реализован **этап 1.1 — сбор данных**: один резолвер типа источника плюс адаптеры
 (RSS/Atom, Telegram через MTProto или `t.me/s/`, sitemap, обход HTML-страницы, поисковые
 запросы Tavily), полный текст через trafilatura, хранение в SQLite. Пул источников —
-из `context/sources_for_company.md` (GS Labs). Этапы 1.2–1.4 (саммаризация,
-категоризация, дашборд, управление источниками из UI) — впереди.
+из `context/sources_for_company.md` (GS Labs).
+
+Реализован **этап 1.2 — интеллектуальная обработка**: собранные документы схлопываются в
+кластеры и превращаются в карточки ленты — саммари в 3–5 предложений, сущности «кто / что /
+когда / последствия», тип (`НПА` | `Новость`), приоритет относительно профиля компании и теги.
+Модель — GLM-5.3 в Ollama Cloud за интерфейсом `LLMProvider`. Этапы 1.3–1.4 (дашборд,
+управление источниками из UI) — впереди.
 
 ## Быстрый старт
 
 ```bash
 uv sync                                    # зависимости в .venv (Python ≥ 3.11)
-cp .env.example .env                       # TAVILY_API для discover и search; TELEGRAM_API_* — для MTProto
+cp .env.example .env                       # TAVILY_API — discover и search; TELEGRAM_API_* — MTProto; OLLAMA_API_KEY — обработка
 uv run python -m src sources seed          # загрузить sources.json (41 источник, 32 включены)
 uv run python -m src collect               # один проход по всем включённым источникам
 uv run python -m src docs --limit 20       # что собрали
+uv run python -m src process --limit 20    # обработать: саммари, тип, приоритет (нужен OLLAMA_API_KEY)
+uv run python -m src items --priority high # лента: что важно прочитать первым
 uv run python -m src collect --watch --interval 900   # опрашивать каждые 15 минут
 ```
 
-`make install | seed | collect | watch | tg-login | tg-status | test | lint | happy-pr | happy-gr` — те же команды.
+`make install | seed | collect | watch | tg-login | tg-status | process | quality | test | lint | happy-pr | happy-gr` — те же команды.
 
 ## Команды
 
@@ -37,6 +44,58 @@ uv run python -m src collect --watch --interval 900   # опрашивать к�
 | `resolve <url>` | Сухой прогон резолвера: какой адаптер и какой адрес |
 | `import-url <url>` | Разовый импорт страницы в источник «Ручной импорт» |
 | `docs [--source ID] [--limit N]` | Просмотр собранных документов |
+| `process [--limit N] [--source ID] [--since ISO] [--profile ID] [--force] [--dry-run]` | Обработка документов без карточки: нормализация, кластеризация, один вызов модели на кластер, проверка саммари на опору в оригинале. `--dry-run` показывает план без обращений к модели |
+| `items [--type npa\|news] [--priority …] [--tag T] [--q ТЕКСТ] [--limit N]` | Лента карточек с фильтрами; `--q` ищет по заголовку и саммари через FTS5 |
+| `item <id>` | Карточка целиком: саммари, сущности, источники, хронология НПА, история правок |
+| `edit <id> [--summary …] [--priority …] [--type …] [--tags a,b] [--note …]` | Правка аналитика: поле помечается как правленое и не перезаписывается при переобработке |
+| `reprocess <id> [--stages summary,priority] [--drop-human-edits]` | Переобработать карточку заново |
+| `npa-event <id> --status S [--occurred-at ISO] [--note …]` | Ручное событие в хронологии НПА |
+| `profile show \| list \| use <id> \| set <file.json>` | Профиль компании, по которому считается приоритет; `set` сохраняет новую версию |
+| `quality [--from ISO] [--to ISO] [--gold]` | Метрики обработки; `--gold` считает recall по `high` и точность приоритета на размеченном наборе |
+
+## Обработка: саммари, категория, приоритет
+
+`collect` наполняет `documents`, `process` превращает их в карточки ленты (`items`).
+
+```bash
+uv run python -m src process --limit 20     # обработать 20 свежих документов
+uv run python -m src items --priority high  # что читать первым
+uv run python -m src item 42                # карточка целиком
+```
+
+Что происходит с каждым документом:
+
+1. **Нормализация.** Чистка HTML и служебных строк; результат хранится в `documents.norm_text`,
+   потому что `evidence_offsets` считаются именно по нему.
+2. **Дедупликация.** URL → SimHash по 3-граммам → косинус по эмбеддингам, но только среди
+   кандидатов за последние 7 дней. 15 перепечаток одной новости дают одну карточку и **один**
+   вызов модели, а не пятнадцать.
+3. **Один structured-output вызов** на кластер: тип, сущности, саммари, приоритет и теги сразу.
+   Схема уходит провайдеру параметром `format`, поэтому синтаксически битый JSON исключён.
+4. **Проверка на опору в оригинале.** Каждое предложение саммари обязано ссылаться на фрагмент
+   текста, а числа, даты и месяцы из предложения — встречаться в этом фрагменте. Не прошедшее
+   предложение удаляется; если снято больше половины, карточка помечается «нужна проверка».
+
+**Приоритет считается относительно профиля компании** (`profile show`) — отрасль, продукты,
+регуляторы, ключевые темы и, что важнее, `negative_facets`: чем компания не является. Поэтому
+законопроект о поддержке МСП получает `low`, хотя тематически он рядом. В пограничной зоне
+(`relevance_score` 0.35–0.5) или при низкой уверенности приоритет **повышается** на ступень:
+уронить критичный НПА в `low` дороже, чем показать лишнюю карточку.
+
+**Если модель недоступна**, лента не пустеет: карточка собирается экстрактивным baseline'ом
+(первые предложения, `priority = medium`), помечается `degraded`, и `process` возвращает код 2.
+Повторный прогон переберёт такие документы заново.
+
+**Правки аналитика не затираются.** `edit` помечает поле в `edited_fields`, и `reprocess` его
+не трогает; каждое изменение попадает в историю (`item_revisions`). Заметка `analyst_note`
+никогда не уходит в модель — это проверяется отдельным тестом.
+
+Ключ модели — `OLLAMA_API_KEY` в `.env` (ollama.com → Settings → Keys), модель и хост — в
+`config.yaml`, секция `llm`. Тег модели должен совпадать с облачным буквально
+(`glm-5.3:cloud`). Переезд на другого провайдера меняет только реализацию `LLMProvider`.
+
+Вложения (PDF и другие файлы) в 1.2 не читаются: обрабатывается текст самой публикации, а
+материал, содержимое которого лежит во вложении, попадает в ленту ссылкой.
 
 ## Источники
 
@@ -150,6 +209,12 @@ URL источника → resolver → kind (rss | telegram | sitemap | html | 
 collect ──► ThreadPool ──► adapter.fetch() ──► RawDocument[] ──► dedup ──► fulltext ──► SQLite
              (HTTP+parse)                                     (main thread, транзакция на источник)
 search  ──► collect_one(источник-запрос) ──► SearchAdapter → Tavily ──► документы + «Сводка»
+
+process ──► S0 нормализация ──► S1 SimHash + эмбеддинги ──► кластер
+                                       │
+            один вызов модели на кластер (тип, сущности, саммари, приоритет, теги)
+                                       │
+            S6 проверка опоры на оригинал ──► items + entities + item_sources (транзакция на кластер)
 ```
 
 - `src/sources/resolver.py` — цепочка из `scraper.md` §0: t.me → `tavily://` → RSS по URL →
@@ -161,9 +226,19 @@ search  ──► collect_one(источник-запрос) ──► SearchAda
   `scraper_search.py` — запрос Tavily как источник; `scraper_llm.py` — HTTP-обёртка Tavily.
 - `src/sources/fulltext.py` — trafilatura для материалов, где в ленте только анонс; не больше двух
   одновременных запросов к одному хосту (gov.ru банит бурсты).
-- `src/storage/db.py` — `data/hub.db`: `sources`, `documents`, `fetch_state`, `seen_urls`, `collect_runs`.
+- `src/processing/service.py` — `ProcessingService`: единственная точка входа этапа 1.2, на неё сядет
+  и будущий REST. Медленные вызовы модели — в воркерах, все записи — на главном потоке.
+- `src/processing/llm.py` — провайдер модели, единственный модуль с `import ollama`; наружу торчат
+  протоколы `LLMProvider` / `EmbeddingProvider`, поэтому тесты не знают об SDK.
+- `src/processing/pipeline.py` — S2–S6 над одним кластером: один structured-output вызов, проверка
+  ответа, fail-safe по приоритету, экстрактивный baseline при отказе модели.
+- `src/processing/dedup.py`, `normalize.py`, `grounding.py` — SimHash и косинус без numpy,
+  нормализация с сохранением offsets, проверка саммари на опору в оригинале.
+- `src/storage/db.py` — `data/hub.db`: `sources`, `documents`, `fetch_state`, `seen_urls`,
+  `collect_runs` (v1) плюс `clusters`, `items`, `entities`, `item_sources`, `npa_events`,
+  `item_revisions`, `company_profiles`, `prompt_versions`, `llm_calls` и `items_fts` (v2).
 - `config.yaml` — окно первого сбора, таймауты, лимиты, параметры Tavily (`days`, `country`, `language`)
-  и Telegram (`mtproto`, `max_posts`, `concurrency`).
+  и Telegram (`mtproto`, `max_posts`, `concurrency`), модель и пороги обработки (`llm`, `processing`).
 
 ## Разработка
 

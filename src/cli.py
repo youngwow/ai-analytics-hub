@@ -14,8 +14,12 @@ from courlan import get_base_url
 
 from .common import get_logger, load_env_secret
 from .config import Config, ConfigError
-from .models import CATEGORIES, KINDS, Resolution, Source
+from .models import CATEGORIES, ITEM_TYPES, KINDS, PRIORITIES, Resolution, Source
 from .paths import DEFAULT_PATHS, ProjectPaths
+from .processing import profile as company_profile
+from .processing.llm import LlmConfigError, build_provider
+from .processing.quality import GOLD_PATH, evaluate, load_gold
+from .processing.service import EDITABLE_FIELDS, ProcessingService
 from .sources.base import HostLimiter, make_client
 from .sources.collector import Collector
 from .sources.resolver import Resolver
@@ -561,6 +565,290 @@ def _cmd_docs(args, config: Config, paths: ProjectPaths) -> int:
     return 0
 
 
+
+# ── processing (task 1.2) ──────────────────────────────────────────────────
+
+
+def _processing(config: Config, paths: ProjectPaths) -> tuple[Database, ProcessingService]:
+    """Database plus service; without a key the provider is None and cards degrade."""
+    db = Database(paths.db_path)
+    key = load_env_secret(config.llm.api_key_env, paths.env_path)
+    provider = build_provider(config.llm, key) if key else None
+    if provider is None:
+        log.warning("нет %s — обработка пойдёт без модели", config.llm.api_key_env)
+    return db, ProcessingService(config, db, provider=provider, embedder=provider)
+
+
+def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
+    db, service = _processing(config, paths)
+    try:
+        report = service.run(
+            limit=args.limit,
+            source_id=args.source,
+            since=args.since,
+            profile_id=args.profile,
+            force=args.force,
+            dry_run=args.dry_run,
+        )
+    except LlmConfigError as e:
+        log.error("%s", e)
+        return 2
+    except ValueError as e:
+        log.error("%s", e)
+        return 1
+    finally:
+        service.close()
+        db.close()
+
+    if args.dry_run:
+        print(
+            f"dry-run: {report.documents} документ(ов) → {report.clusters} кластер(ов), "
+            "модель не вызывалась"
+        )
+        return 0
+    print(
+        f"обработано {report.documents} документ(ов): +{report.items_new} карточек, "
+        f"{report.items_joined} присоединено, {report.items_updated} пересобрано, "
+        f"{report.degraded} деградировало, {report.needs_review} на проверку"
+    )
+    print(
+        f"вызовов модели {report.calls}, средняя латентность {report.avg_latency_ms} мс, "
+        f"всего {report.elapsed_s:.1f} с"
+    )
+    if report.failed:
+        print(f"не обработано: {report.failed}")
+    return 2 if (report.degraded and report.items_new) or report.failed else 0
+
+
+def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
+    db = Database(paths.db_path)
+    rows = db.items.list(
+        type_=args.type,
+        priority=args.priority,
+        tag=args.tag,
+        query=args.q,
+        since=args.since,
+        limit=args.limit,
+    )
+    table = [
+        [
+            str(r["id"]),
+            (r["published_at"] or "-")[:10],
+            r["type"],
+            r["priority"],
+            str(r["sources_count"]),
+            ("⚠ " if r["needs_review"] else "") + (r["title"] or "")[:70],
+        ]
+        for r in rows
+    ]
+    total = db.items.count()
+    db.close()
+    print(
+        _table(["id", "date", "type", "priority", "src", "title"], table)
+        if table
+        else "карточек нет — запустите `process`"
+    )
+    print(f"({total} карточек всего)")
+    return 0
+
+
+def _cmd_item(args, config: Config, paths: ProjectPaths) -> int:
+    db = Database(paths.db_path)
+    payload = ProcessingService(config, db).get_item(args.id)
+    if payload is None:
+        db.close()
+        log.error("карточка #%s не найдена", args.id)
+        return 1
+    item = payload["item"]
+    print(f"#{item.id} [{item.type}/{item.priority}] {item.title}")
+    print(f"дата: {item.published_at or '-'} | уверенность: {item.confidence:.2f}", end="")
+    print(f" | релевантность: {item.relevance_score:.2f} | модель: {item.model_name or '-'}")
+    if item.npa_status or item.npa_key:
+        print(f"НПА: статус {item.npa_status or '-'}, идентификатор {item.npa_key or '-'}")
+    flags = [
+        name
+        for name, on in (
+            ("деградировано", item.degraded),
+            ("нужна проверка", item.needs_review),
+            ("дата оценена", item.date_estimated),
+        )
+        if on
+    ]
+    if flags:
+        print("флаги: " + ", ".join(flags))
+    print()
+    for line in item.summary.split("\n"):
+        print(f"  {line}")
+    print()
+    if item.reasoning:
+        print(f"почему такой приоритет: {item.reasoning}")
+    if item.tags:
+        print(f"теги: {', '.join(item.tags)}")
+    entities = {e.role: e.value for e in payload["entities"]}
+    if entities:
+        print("сущности: " + "; ".join(f"{k}={v}" for k, v in entities.items()))
+    print("\nисточники:")
+    for src in payload["sources"]:
+        mark = "*" if src["is_canonical"] else " "
+        print(f" {mark} {src['source_name'][:24]:24} {src['url']}")
+    if payload["events"]:
+        print("\nхронология НПА:")
+        for event in payload["events"]:
+            print(f"  {(event.occurred_at or event.created_at)[:10]} {event.status} ({event.created_by})")
+    if payload["revisions"]:
+        print("\nправки:")
+        for rev in payload["revisions"]:
+            print(f"  {rev.created_at[:16]} {rev.actor}: {rev.field}: {rev.old_value} → {rev.new_value}")
+    if item.analyst_note:
+        print(f"\nзаметка аналитика: {item.analyst_note}")
+    db.close()
+    return 0
+
+
+def _cmd_item_edit(args, config: Config, paths: ProjectPaths) -> int:
+    fields = {
+        "title": args.title,
+        "summary": args.summary,
+        "priority": args.priority,
+        "type": args.type,
+        "npa_status": args.npa_status,
+        "analyst_note": args.note,
+        "tags": [t.strip() for t in args.tags.split(",") if t.strip()] if args.tags else None,
+    }
+    db = Database(paths.db_path)
+    service = ProcessingService(config, db)
+    try:
+        item = service.edit_item(args.id, fields)
+    except ValueError as e:
+        log.error("%s", e)
+        return 1
+    finally:
+        db.close()
+    print(f"#{item.id}: правки сохранены, поля защищены от перезаписи: {item.edited_fields or '—'}")
+    return 0
+
+
+def _cmd_reprocess(args, config: Config, paths: ProjectPaths) -> int:
+    db, service = _processing(config, paths)
+    stages = [s.strip() for s in args.stages.split(",") if s.strip()] if args.stages else None
+    try:
+        item = service.reprocess(
+            args.id, stages=stages, keep_human_edits=not args.drop_human_edits
+        )
+    except LlmConfigError as e:
+        log.error("%s", e)
+        return 2
+    except ValueError as e:
+        log.error("%s", e)
+        return 1
+    finally:
+        service.close()
+        db.close()
+    print(f"#{item.id}: пересобрано ({item.priority}, {item.type}); сохранено: {item.edited_fields or '—'}")
+    return 2 if item.degraded else 0
+
+
+def _cmd_npa_event(args, config: Config, paths: ProjectPaths) -> int:
+    db = Database(paths.db_path)
+    service = ProcessingService(config, db)
+    try:
+        service.add_npa_event(
+            args.id,
+            args.status,
+            occurred_at=args.occurred_at,
+            source_url=args.source_url or "",
+            note=args.note or "",
+        )
+    except ValueError as e:
+        log.error("%s", e)
+        return 1
+    finally:
+        db.close()
+    print(f"#{args.id}: событие «{args.status}» добавлено")
+    return 0
+
+
+def _cmd_profile(args, config: Config, paths: ProjectPaths) -> int:
+    db = Database(paths.db_path)
+    try:
+        if args.action == "list":
+            rows = [
+                [str(p.id), p.name[:40], f"v{p.version}", "по умолчанию" if p.is_default else ""]
+                for p in db.profiles.list()
+            ] or [["—", "профилей нет", "", ""]]
+            print(_table(["id", "название", "версия", ""], rows))
+            return 0
+        if args.action == "use":
+            if not db.profiles.set_default(args.id):
+                log.error("профиль #%s не найден", args.id)
+                return 1
+            print(f"профиль #{args.id} стал профилем по умолчанию")
+            return 0
+        if args.action == "set":
+            try:
+                with open(args.file, encoding="utf-8") as handle:
+                    payload = json.load(handle)
+            except (OSError, ValueError) as e:
+                log.error("не прочитать %s: %s", args.file, e)
+                return 1
+            name = payload.pop("name", None) or args.name
+            if not name:
+                log.error("в файле нет поля name и не передан --name")
+                return 1
+            saved = db.profiles.save(company_profile.CompanyProfile(name=name, payload=payload))
+            print(f"профиль «{saved.name}» сохранён как версия {saved.version}")
+            return 0
+        profile = company_profile.ensure_default(db)
+        print(f"#{profile.id} {profile.name} (версия {profile.version})")
+        print(profile.prompt_block())
+        return 0
+    finally:
+        db.close()
+
+
+def _cmd_quality(args, config: Config, paths: ProjectPaths) -> int:
+    db = Database(paths.db_path)
+    service = ProcessingService(config, db)
+    summary = service.quality_summary(since=args.since, until=args.until)
+    print(
+        f"карточек {summary['items']} "
+        f"(high {summary['by_priority'].get('high', 0)}, "
+        f"medium {summary['by_priority'].get('medium', 0)}, "
+        f"low {summary['by_priority'].get('low', 0)})"
+    )
+    print(
+        f"деградировало {summary['degraded']}, на проверку {summary['hallucination_flags']}, "
+        f"доля правок {summary['edited_share']}"
+    )
+    print(
+        f"вызовов модели {summary['calls']} (ошибок {summary['failed_calls']}), "
+        f"средняя латентность {summary['avg_latency_ms']} мс, "
+        f"токенов {summary['tokens_in']}→{summary['tokens_out']}"
+    )
+    code = 0
+    if args.gold:
+        rows = load_gold(args.gold_path or GOLD_PATH)
+        if not rows:
+            log.error("золотой набор не найден: %s", args.gold_path or GOLD_PATH)
+            code = 1
+        else:
+            result = evaluate(db, rows)
+            data = result.as_dict()
+            print(
+                f"\nзолотой набор: {data['scored']} размечено, {data['skipped']} пропущено "
+                f"(вложения), {data['missing']} без карточки"
+            )
+            print(
+                f"recall по high {data['high_recall']} (цель ≥ 0.95), "
+                f"точность приоритета {data['priority_accuracy']} (цель ≥ 0.80), "
+                f"точность типа {data['type_accuracy']}"
+            )
+            print("приёмка пройдена" if data["passed"] else "приёмка НЕ пройдена")
+            code = 0 if data["passed"] else 1
+    db.close()
+    return code
+
+
 # ── parser ─────────────────────────────────────────────────────────────────
 
 
@@ -649,6 +937,77 @@ def build_parser() -> argparse.ArgumentParser:
     p = pt.add_parser("logout", help="delete the stored session")
     p.add_argument("--yes", action="store_true", help="confirm deletion")
     p.set_defaults(func=_cmd_telegram_logout)
+
+    p = sub.add_parser("process", help="turn collected documents into feed cards (LLM)")
+    p.add_argument("--limit", type=int, default=None, help="documents per run (config: 200)")
+    p.add_argument("--source", type=int, help="only documents from this source id")
+    p.add_argument("--since", help="only documents published after this ISO date")
+    p.add_argument("--profile", type=int, help="company profile id (default: the default one)")
+    p.add_argument("--force", action="store_true", help="re-read documents that already have cards")
+    p.add_argument("--dry-run", action="store_true", help="plan only: no model calls, no writes")
+    p.set_defaults(func=_cmd_process)
+
+    p = sub.add_parser("items", help="the feed: cards with filters")
+    p.add_argument("--type", choices=ITEM_TYPES)
+    p.add_argument("--priority", choices=PRIORITIES)
+    p.add_argument("--tag")
+    p.add_argument("--q", help="full-text query over title and summary")
+    p.add_argument("--since", help="ISO date lower bound")
+    p.add_argument("--limit", type=int, default=20)
+    p.set_defaults(func=_cmd_items)
+
+    p = sub.add_parser("item", help="one card: summary, entities, sources, history")
+    p.add_argument("id", type=int)
+    p.set_defaults(func=_cmd_item)
+
+    p = sub.add_parser("edit", help="analyst edit; edited fields survive reprocessing")
+    p.add_argument("id", type=int)
+    p.add_argument("--title")
+    p.add_argument("--summary")
+    p.add_argument("--priority", choices=PRIORITIES)
+    p.add_argument("--type", choices=ITEM_TYPES)
+    p.add_argument("--npa-status", dest="npa_status")
+    p.add_argument("--tags", help="comma-separated list")
+    p.add_argument("--note", help="analyst note — never sent to the model")
+    p.set_defaults(func=_cmd_item_edit)
+
+    p = sub.add_parser("reprocess", help="re-run the model for one card")
+    p.add_argument("id", type=int)
+    p.add_argument("--stages", help=f"comma-separated subset of {','.join(EDITABLE_FIELDS)}")
+    p.add_argument(
+        "--drop-human-edits", action="store_true", help="let the model overwrite edited fields"
+    )
+    p.set_defaults(func=_cmd_reprocess)
+
+    p = sub.add_parser("npa-event", help="add a step to a bill's timeline by hand")
+    p.add_argument("id", type=int)
+    p.add_argument("--status", required=True)
+    p.add_argument("--occurred-at", dest="occurred_at")
+    p.add_argument("--source-url", dest="source_url")
+    p.add_argument("--note")
+    p.set_defaults(func=_cmd_npa_event)
+
+    pprofile = sub.add_parser("profile", help="company profile used for prioritisation")
+    pprofile.set_defaults(func=_cmd_profile, action="show")
+    pp = pprofile.add_subparsers(dest="action")
+    pp.add_parser("show", help="the default profile as the model sees it").set_defaults(
+        func=_cmd_profile, action="show"
+    )
+    pp.add_parser("list", help="stored profiles").set_defaults(func=_cmd_profile, action="list")
+    p = pp.add_parser("use", help="make a profile the default")
+    p.add_argument("id", type=int)
+    p.set_defaults(func=_cmd_profile, action="use")
+    p = pp.add_parser("set", help="save a profile from a JSON file as a new version")
+    p.add_argument("file")
+    p.add_argument("--name")
+    p.set_defaults(func=_cmd_profile, action="set")
+
+    p = sub.add_parser("quality", help="processing metrics; --gold checks the labelled set")
+    p.add_argument("--from", dest="since")
+    p.add_argument("--to", dest="until")
+    p.add_argument("--gold", action="store_true", help="evaluate against the gold set")
+    p.add_argument("--gold-path", help=f"path to the gold set (default: {'tests/fixtures/gold/gold_set.jsonl'})")
+    p.set_defaults(func=_cmd_quality)
 
     p = sub.add_parser("import-url", help="one-off: fetch a page into the manual source")
     p.add_argument("url")
