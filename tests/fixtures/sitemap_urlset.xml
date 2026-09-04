@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<url><loc>https://site.ru/news/1</loc><lastmod>2026-09-02T09:00:00+03:00</lastmod></url>
+<url><loc>https://site.ru/news/2</loc><news:news><news:publication_date>2026-09-01</news:publication_date></news:news></url>
+<url><loc>https://site.ru/news/old</loc><lastmod>2026-01-01</lastmod></url>
+<url><loc>https://site.ru/about</loc></url>
+<url><loc>https://other.ru/leak</loc><lastmod>2026-09-02</lastmod></url>
+</urlset>

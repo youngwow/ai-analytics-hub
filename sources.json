@@ -1,0 +1,483 @@
+{
+  "comment": "Пул источников GS Labs — только из context/sources_for_company.md (категории 1–3 + два поисковых запроса Tavily). kind/fetch_url закреплены там, где лента проверена вручную 03.09.2026; enabled:false — низкий приоритет или адрес не подтверждён из-за рубежа. Загрузка: python -m src sources seed.",
+  "sources": [
+    {
+      "name": "CNews",
+      "url": "https://www.cnews.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.cnews.ru/inc/rss/biz.xml",
+      "notes": "Лента «Бизнес» (на cnews.ru/rss есть ещё news.xml, news_top.xml и рубрики Телеком/Безопасность). Высокий: репутация, конкуренты, тренды ИТ, импортозамещение."
+    },
+    {
+      "name": "CNews Телеком",
+      "url": "https://www.cnews.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.cnews.ru/inc/rss/telecom.xml",
+      "notes": "Рубричная лента «Телеком» (100 записей; та же площадка, что CNews «Бизнес»). Высокий: профильный рынок — операторы, вещание, оборудование."
+    },
+    {
+      "name": "TAdviser",
+      "url": "https://www.tadviser.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.tadviser.ru/xml/tadviser.xml",
+      "notes": "«Новости ИТ-рынка России» (страница лент tadviser.ru/index.php/RSS; на страницах статей бот-защита). Высокий: профили компании и конкурентов, реестр ПО, гранты РФРИТ."
+    },
+    {
+      "name": "Коммерсантъ",
+      "url": "https://www.kommersant.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.kommersant.ru/rss/news.xml",
+      "notes": "Лента новостей (~500 записей, анонсы; полные тексты частично за paywall). Сайт публикует адрес как /RSS/news.xml, сервер регистр игнорирует; есть профильная /RSS/section-hitech.xml. Высокий: регуляторика, деловая повестка. Зеркало t.me/kommersant дополняет текстами.",
+      "enabled": true
+    },
+    {
+      "name": "РБК",
+      "url": "https://www.rbc.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://rssexport.rbc.ru/rbcnews/news/30/full.rss",
+      "enabled": false,
+      "notes": "Адрес из sources_for_company.md; 03.09.2026 из-за рубежа — таймаут. После проверки из РФ: sources enable <id>. Средний: деловые новости, экономика ИТ."
+    },
+    {
+      "name": "ТАСС",
+      "url": "https://tass.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://tass.ru/rss/v2.xml",
+      "notes": "Общая лента (100 записей). Страницы статей закрыты JS-challenge (ServicePipe): извлекается только заголовок и подзаголовок. Выключен 04.09.2026: тексты берём из зеркала t.me/tass_agency. Полные ленты по FTP/API — платная подписка b2b.tass.ru.",
+      "enabled": false
+    },
+    {
+      "name": "Lenta.ru",
+      "url": "https://lenta.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://lenta.ru/rss/news",
+      "notes": "Лента новостей (200 записей; есть /rss/last24 и рубричные /rss/news/<rubric>). Низкий/средний: широкий новостной фон."
+    },
+    {
+      "name": "Интерфакс",
+      "url": "https://www.interfax.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.interfax.ru/rss.asp",
+      "notes": "Общая лента агентства (25 записей, короткие заметки 300–400 знаков). Средний: деловая повестка, заявления ведомств."
+    },
+    {
+      "name": "Телеспутник",
+      "url": "https://telesputnik.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://telesputnik.ru/rss/",
+      "notes": "Лента с анонсами, полный текст со страницы. Высокий: платное/спутниковое ТВ, OTT, CAS — ядро отрасли."
+    },
+    {
+      "name": "Кабельщик",
+      "url": "https://www.cableman.ru/",
+      "category": "media",
+      "kind": "sitemap",
+      "fetch_url": "https://www.cableman.ru/sitemap.xml",
+      "notes": "RSS нет — sitemap с lastmod (проверен 02.09.2026; 03.09 из-за рубежа таймаут). Зеркало: t.me/s/cablemanru. Средний/высокий: кабельное/платное ТВ."
+    },
+    {
+      "name": "D-Russia (Цифровая Россия)",
+      "url": "https://d-russia.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://d-russia.ru/feed",
+      "enabled": true,
+      "notes": "Лента найдена по иконке RSS в футере; проверена 04.09.2026 — 10 записей, статьи извлекаются. Высокий: ИТ-регуляторика, импортозамещение ПО."
+    },
+    {
+      "name": "Habr — новости",
+      "url": "https://habr.com",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://habr.com/ru/rss/news/?fl=ru",
+      "notes": "Новости (последние 40). Хабы: habr.com/ru/rss/hubs/<hub>/articles/?fl=ru (infosecurity, video). Средний: технические тренды, DRM/CAS/стриминг."
+    },
+    {
+      "name": "RusCable",
+      "url": "https://www.ruscable.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.ruscable.ru/rss/news",
+      "enabled": false,
+      "notes": "Лента новостей (нашёл резолвер). Низкий: кабельная/телеком-инфраструктура."
+    },
+    {
+      "name": "КонсультантПлюс — горячие документы",
+      "url": "https://www.consultant.ru/law/rss/",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.consultant.ru/rss/hotdocs.xml",
+      "enabled": true,
+      "notes": "Лента «Горячие документы» (rss/hotdocs.xml; страница лент — consultant.ru/law/rss/). Проверена 04.09.2026: 50 записей, статьи извлекаются. Высокий: оперативный сигнал по НПА."
+    },
+    {
+      "name": "Ведомости — Технологии",
+      "url": "https://www.vedomosti.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.vedomosti.ru/rss/rubric/technology",
+      "notes": "Рубрика «Технологии» (общая лента — /rss/news); жёсткий paywall, в ленте анонсы. Средний: деловая и телеком-повестка."
+    },
+    {
+      "name": "Forbes.ru",
+      "url": "https://www.forbes.ru",
+      "category": "media",
+      "kind": "rss",
+      "fetch_url": "https://www.forbes.ru/newrss.xml",
+      "enabled": false,
+      "notes": "Полный текст прямо в ленте (15 записей). Низкий: бизнес-контекст."
+    },
+    {
+      "name": "НПА: акты Правительства (pravo.gov.ru)",
+      "url": "http://publication.pravo.gov.ru/api/rss?block=government",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "http://publication.pravo.gov.ru/api/rss?block=government",
+      "notes": "Официальное опубликование, блок «Правительство» (30 последних; API отвечает только по http). Высокий: постановления и распоряжения по ИТ, ПД, КИИ."
+    },
+    {
+      "name": "НПА: акты ФОИВ (pravo.gov.ru)",
+      "url": "http://publication.pravo.gov.ru/api/rss?block=federal_authorities",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "http://publication.pravo.gov.ru/api/rss?block=federal_authorities",
+      "notes": "Официальное опубликование, блок «Федеральные органы исполнительной власти» — приказы министерств и служб. Высокий."
+    },
+    {
+      "name": "НПА: Президент — указы и федеральные законы (pravo.gov.ru)",
+      "url": "http://publication.pravo.gov.ru/api/rss?block=president",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "http://publication.pravo.gov.ru/api/rss?block=president",
+      "notes": "Официальное опубликование, блок «Президент». Высокий: подписанные федеральные законы."
+    },
+    {
+      "name": "Правительство РФ",
+      "url": "http://government.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "http://government.ru/all/rss/",
+      "notes": "Материалы из всех разделов (документы, поручения, новости); полный текст со страницы. Высокий: ИТ-льготы, «Экономика данных»."
+    },
+    {
+      "name": "Роскомнадзор",
+      "url": "https://rkn.gov.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://rkn.gov.ru/_services/rss/",
+      "notes": "Лента центрального аппарата (нашёл резолвер; обновляется нечасто). Региональные сайты: <NN>.rkn.gov.ru. Высокий: персональные данные, реестры, надзор."
+    },
+    {
+      "name": "Официальное опубликование НПА",
+      "url": "http://publication.pravo.gov.ru/",
+      "category": "regulator",
+      "kind": "html",
+      "fetch_url": "http://publication.pravo.gov.ru/",
+      "enabled": false,
+      "notes": "Без RSS, sitemap без lastmod; на главной только разделы — нужен отдельный адаптер (scraper.md §2). Ленты по блокам подключены отдельно (api/rss?block=…)."
+    },
+    {
+      "name": "Государственная Дума",
+      "url": "http://duma.gov.ru",
+      "category": "regulator",
+      "kind": "html",
+      "fetch_url": "http://duma.gov.ru",
+      "notes": "RSS нет: проверены /news/rss/, /rss/, /rss/news.xml и ещё два варианта — все 404. Читается html-адаптером по разнице ссылок главной. Высокий: законотворчество."
+    },
+    {
+      "name": "ФНС России",
+      "url": "https://www.nalog.gov.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://www.nalog.gov.ru/rn77/rss/",
+      "notes": "Лента новостей (несколько последних записей). Средний: налоговые льготы для ИТ, аккредитация."
+    },
+    {
+      "name": "ФСБ России",
+      "url": "http://www.fsb.ru",
+      "category": "regulator",
+      "kind": "html",
+      "fetch_url": "http://www.fsb.ru",
+      "notes": "RSS нет — сравнение ссылок главной страницы между обходами. Средний: криптосредства, сертификация (актуально для CAS/DRM)."
+    },
+    {
+      "name": "РФРИТ",
+      "url": "https://rfrit.ru",
+      "category": "regulator",
+      "kind": "sitemap",
+      "fetch_url": "https://rfrit.ru/sitemap.xml",
+      "notes": "рфрит.рф → rfrit.ru; sitemap-индекс (news, grants). Telegram: t.me/s/rfrit. Высокий: гранты на российские ИТ-решения."
+    },
+    {
+      "name": "Банк России — пресс-релизы",
+      "url": "https://www.cbr.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://www.cbr.ru/rss/RssPress",
+      "enabled": false,
+      "notes": "Полный текст прямо в ленте (проверено 02.09.2026). Низкий: финрегулирование, если релевантно."
+    },
+    {
+      "name": "Гарант",
+      "url": "https://www.garant.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://rss.garant.ru/categories/news/",
+      "notes": "Лента на отдельном домене rss.garant.ru (страница лент — garant.ru/rss/); 10 записей, статьи извлекаются целиком. Высокий: обзор изменений законодательства."
+    },
+    {
+      "name": "Банк России — новости",
+      "url": "https://www.cbr.ru",
+      "category": "regulator",
+      "kind": "rss",
+      "fetch_url": "https://www.cbr.ru/rss/RssNews",
+      "notes": "Общая новостная лента (100 записей). Пресс-релизы (/rss/RssPress) отдают всего ~8 записей, поэтому основной поток по ЦБ идёт отсюда. Высокий: регуляторика финсектора, требования к ИБ."
+    },
+    {
+      "name": "Минцифры России — Telegram",
+      "url": "https://t.me/mintsifry",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/mintsifry",
+      "notes": "ИТ-льготы, аккредитация, реестр ПО, регуляторика. Высокий."
+    },
+    {
+      "name": "Правительство России — Telegram",
+      "url": "https://t.me/government_rus",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/government_rus",
+      "notes": "Постановления, нацпроекты. Высокий."
+    },
+    {
+      "name": "Госдума — Telegram",
+      "url": "https://t.me/duma_gov_ru",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/duma_gov_ru",
+      "notes": "Законопроекты, чтения, заявления депутатов. Высокий: законотворчество."
+    },
+    {
+      "name": "РФРИТ — Telegram",
+      "url": "https://t.me/rfrit",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/rfrit",
+      "notes": "Гранты, ОЗП, поддержка ИТ. Высокий."
+    },
+    {
+      "name": "АРПП «Отечественный софт» — Telegram",
+      "url": "https://t.me/arppsoft",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/arppsoft",
+      "notes": "Реестр ПО, ИТ-регуляторика, льготы. Высокий."
+    },
+    {
+      "name": "АРПЭ — Telegram",
+      "url": "https://t.me/arperf",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/arperf",
+      "notes": "Электроника, КИИ, доверенные ПАК, импортозамещение. Высокий."
+    },
+    {
+      "name": "RSpectr — Telegram",
+      "url": "https://t.me/rspectr",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/rspectr",
+      "notes": "Связь, ИТ, кибербезопасность, ТВ-регуляторика. Высокий."
+    },
+    {
+      "name": "ЦИПР — Telegram",
+      "url": "https://t.me/icipr",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/icipr",
+      "notes": "Цифровая индустрия, ИТ. Средний."
+    },
+    {
+      "name": "CIO: канал IT-руководителей — Telegram",
+      "url": "https://t.me/cio_channel",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/cio_channel",
+      "notes": "ИТ-управление, отраслевые тренды. Средний."
+    },
+    {
+      "name": "ComNews — Telegram",
+      "url": "https://t.me/comnewsgroup",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/comnewsgroup",
+      "notes": "Телеком, вещание, ИТ; интервью с GS Labs. Высокий (сайт comnews.ru из-за рубежа не отвечает)."
+    },
+    {
+      "name": "TAdviser — Telegram",
+      "url": "https://t.me/tadviser",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/tadviser",
+      "notes": "ИТ-рынок, вендоры, реестр ПО. Высокий."
+    },
+    {
+      "name": "CNews — Telegram",
+      "url": "https://t.me/CNewsDaily",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/CNewsDaily",
+      "notes": "ИТ-бизнес, профиль GS Labs/Триколор. Высокий."
+    },
+    {
+      "name": "Кабельщик — Telegram",
+      "url": "https://t.me/cablemanru",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/cablemanru",
+      "notes": "Кабельное/платное ТВ, вещание. Высокий."
+    },
+    {
+      "name": "Коммерсантъ — Telegram",
+      "url": "https://t.me/kommersant",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/kommersant",
+      "notes": "Зеркало ленты; в постах текст есть, на сайте часть материалов за paywall. Средний."
+    },
+    {
+      "name": "Ведомости — Telegram",
+      "url": "https://t.me/vedomosti",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/vedomosti",
+      "notes": "Зеркало ленты, посты с текстом. Средний: деловая повестка, технологии."
+    },
+    {
+      "name": "Телеспутник — Telegram",
+      "url": "https://t.me/telesputnik",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/telesputnik",
+      "notes": "Платное ТВ, вещание, операторы — дополняет сайт telesputnik.ru. Высокий: профильный рынок."
+    },
+    {
+      "name": "АНО «Цифровая экономика» — Telegram",
+      "url": "https://t.me/DataEconomyRU",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/DataEconomyRU",
+      "notes": "ИТ-регуляторика, нацпрограмма, ИТ-льготы. Средний."
+    },
+    {
+      "name": "ТАСС — Telegram",
+      "url": "https://t.me/tass_agency",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/tass_agency",
+      "notes": "Госповестка. Средний."
+    },
+    {
+      "name": "Цифровые индустриальные технологии — Telegram",
+      "url": "https://t.me/cit_gov",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/cit_gov",
+      "notes": "Отраслевые ИТ-новости и меры поддержки. Средний."
+    },
+    {
+      "name": "Торгпред (Минпромторг) — Telegram",
+      "url": "https://t.me/rustorgpred",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/rustorgpred",
+      "enabled": false,
+      "notes": "ВЭД — слабо релевантно ТВ/CAS. Низкий."
+    },
+    {
+      "name": "Фонд содействия инновациям — Telegram",
+      "url": "https://t.me/fasietalks",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/fasietalks",
+      "notes": "Гранты стартапам/ИТ. Средний."
+    },
+    {
+      "name": "Гранты для ИТ — Telegram",
+      "url": "https://t.me/grantsforbussines",
+      "category": "telegram",
+      "kind": "telegram",
+      "fetch_url": "https://t.me/s/grantsforbussines",
+      "notes": "Канал Easy.Start.Up: гранты и меры поддержки ИТ-компаниям. Средний."
+    },
+    {
+      "name": "Поиск: упоминания GS Labs / Триколор",
+      "url": "tavily://search?q=GS+Labs+OR+%D0%A2%D1%80%D0%B8%D0%BA%D0%BE%D0%BB%D0%BE%D1%80+OR+StingrayTV+OR+DREGUARD+OR+DreCrypt&domains=broadcasting.ru%2Ccableman.ru%2Ccnews.ru%2Ccomnews.ru%2Cd-russia.ru%2Cgs-group.com%2Cgs-labs.ru%2Chabr.com%2Ckommersant.ru%2Crbc.ru%2Crspectr.com%2Ctadviser.ru%2Ctass.ru%2Ctelesputnik.ru%2Cvedomosti.ru&days=7&topic=news&summary=1",
+      "category": "media",
+      "kind": "search",
+      "fetch_url": "tavily://search?q=GS+Labs+OR+%D0%A2%D1%80%D0%B8%D0%BA%D0%BE%D0%BB%D0%BE%D1%80+OR+StingrayTV+OR+DREGUARD+OR+DreCrypt&domains=broadcasting.ru%2Ccableman.ru%2Ccnews.ru%2Ccomnews.ru%2Cd-russia.ru%2Cgs-group.com%2Cgs-labs.ru%2Chabr.com%2Ckommersant.ru%2Crbc.ru%2Crspectr.com%2Ctadviser.ru%2Ctass.ru%2Ctelesputnik.ru%2Cvedomosti.ru&days=7&topic=news&summary=1",
+      "enabled": false,
+      "notes": "Tavily, news, 7 дн., домены: broadcasting.ru, cableman.ru, cnews.ru, comnews.ru, d-russia.ru, gs-group.com, gs-labs.ru, habr.com, kommersant.ru, rbc.ru, rspectr.com, tadviser.ru, tass.ru, telesputnik.ru, vedomosti.ru. Стоит кредиты на каждый collect — включать осознанно (sources enable <id>) или запускать вручную: search."
+    },
+    {
+      "name": "Поиск: проекты НПА — ПО, ПД, КИИ",
+      "url": "tavily://search?q=%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+OR+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D0%9A%D0%98%D0%98+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%BE%D1%82%D0%B5%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D0%9F%D0%9E&domains=consultant.ru%2Cdigital.gov.ru%2Cduma.gov.ru%2Cgovernment.ru%2Cpublication.pravo.gov.ru%2Cregulation.gov.ru%2Csozd.duma.gov.ru&days=14&topic=general&summary=1",
+      "category": "regulator",
+      "kind": "search",
+      "fetch_url": "tavily://search?q=%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+OR+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D0%9A%D0%98%D0%98+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%BE%D1%82%D0%B5%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D0%9F%D0%9E&domains=consultant.ru%2Cdigital.gov.ru%2Cduma.gov.ru%2Cgovernment.ru%2Cpublication.pravo.gov.ru%2Cregulation.gov.ru%2Csozd.duma.gov.ru&days=14&topic=general&summary=1",
+      "enabled": false,
+      "notes": "Tavily, general, 14 дн., домены: consultant.ru, digital.gov.ru, duma.gov.ru, government.ru, publication.pravo.gov.ru, regulation.gov.ru, sozd.duma.gov.ru. Закрывает regulation.gov.ru и СОЗД, у которых нет лент. Стоит кредиты на каждый collect."
+    }
+  ],
+  "excluded": [
+    {
+      "name": "ComNews (сайт)",
+      "url": "https://www.comnews.ru",
+      "reason": "RSS не подтверждён, сайт из-за рубежа не отвечает (03.09.2026). Зеркало t.me/s/comnewsgroup включено; из РФ: sources add https://www.comnews.ru."
+    },
+    {
+      "name": "Broadcasting.ru",
+      "url": "https://broadcasting.ru",
+      "reason": "TLS-соединение обрывается из-за рубежа; RSS не подтверждён. Из РФ: sources add https://broadcasting.ru."
+    },
+    {
+      "name": "RSpectr (сайт)",
+      "url": "https://rspectr.com",
+      "reason": "Сайт из-за рубежа не отвечает; адрес ленты не известен. Зеркало t.me/s/rspectr включено; из РФ: sources add https://rspectr.com."
+    },
+    {
+      "name": "regulation.gov.ru — проекты НПА",
+      "url": "https://regulation.gov.ru/",
+      "reason": "Next.js-приложение: RSS-подписка и Open Data API требуют отдельного адаптера (scraper.md §2). Пока покрывается поисковым источником «Поиск: проекты НПА» по домену."
+    },
+    {
+      "name": "СОЗД Госдумы",
+      "url": "https://sozd.duma.gov.ru",
+      "reason": "Публичного API нет, из-за рубежа таймаут; нужен адаптер по машиночитаемому поиску. Покрывается поисковым источником «Поиск: проекты НПА»."
+    },
+    {
+      "name": "Минцифры (digital.gov.ru)",
+      "url": "https://digital.gov.ru/",
+      "reason": "Из-за рубежа таймаут (02–03.09.2026). Канал t.me/s/mintsifry включён; из РФ: sources add https://digital.gov.ru."
+    },
+    {
+      "name": "Реестр отечественного ПО",
+      "url": "https://reestr.digital.gov.ru",
+      "reason": "RSS/API нет, только поиск с URL-параметрами — нужен отдельный адаптер (мониторинг включений своих и конкурентных продуктов)."
+    },
+    {
+      "name": "ФСТЭК России / БДУ",
+      "url": "https://fstec.ru",
+      "reason": "fstec.ru из-за рубежа не отвечает; bdu.fstec.ru — сертификат российского УЦ (нужно доверить корневой сертификат). Из РФ: sources add https://fstec.ru."
+    }
+  ]
+}

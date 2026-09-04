@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <language>ru</language>
+    <copyright>1991-2026, АО «Коммерсантъ».</copyright>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <title>Коммерсантъ. Лента новостей</title>
+    <link>https://www.kommersant.ru/publishing/86</link>
+    <atom:link rel="self" href="https://www.kommersant.ru/rss/news.xml" />
+    <description>Регулярно обновляемая новостная лента ИД "Коммерсантъ"</description>
+    <lastBuildDate>Wed, 02 Sep 2026 23:31:00 +0300</lastBuildDate>
+    <image>
+      <url>https://im2.kommersant.ru/pics/yatlogo.gif</url>
+      <title>Коммерсантъ. Лента новостей</title>
+      <link>https://www.kommersant.ru/publishing/86</link>
+    </image>
+    <item>
+      <guid>https://www.kommersant.ru/doc/8924564</guid>
+      <category>Происшествия</category>
+      <title>В Ингушетии усилят контроль за свадебными кортежами после гибели трех человек</title>
+      <link>https://www.kommersant.ru/doc/8924564</link>
+      <pubDate>Wed, 02 Sep 2026 23:02:19 +0300</pubDate>
+      <description>Власти Ингушетии подготовят предложения по регулированию свадебных кортежей. Такое решение принято на встрече главы республики Махмуд-Али Калиматова с Советом старейшин, сообщает пресс-служба регионального правительства.</description>
+    </item>
+<item>
+      <guid>https://www.kommersant.ru/doc/8924563</guid>
+      <category>Бизнес</category>
+      <title>Во Внуково и Шереметьево вводили временные ограничения</title>
+      <link>https://www.kommersant.ru/doc/8924563</link>
+      <pubDate>Wed, 02 Sep 2026 23:00:12 +0300</pubDate>
+      <description>Московские аэропорты Внуково и Шереметьево полчаса не принимали и не отправляли самолеты. Об этом сообщила пресс-служба Росавиации.</description>
+    </item>
+<item>
+      <guid>https://www.kommersant.ru/doc/8924560</guid>
+      <category>Мир</category>
+      <title>Трамп считает Венесуэлу неготовой к проведению выборов</title>
+      <link>https://www.kommersant.ru/doc/8924560</link>
+      <pubDate>Wed, 02 Sep 2026 22:54:20 +0300</pubDate>
+      <description>Президент США Дональд Трамп заявил, что Венесуэла пока не готова к проведению выборов. При этом американская сторона, по его словам, хочет их провести.</description>
+    </item>
+</channel>
+</rss>

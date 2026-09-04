@@ -1,0 +1,39 @@
+# ai-analytics-hub — сбор данных (task 1.1)
+
+scraper:
+  date_window_hours: 72           # на первом запуске берём материалы не старше этого окна
+  request_timeout: 30             # секунд на один HTTP-запрос (Коммерсантъ, CNews, ТАСС из-за рубежа отвечают ~17 с)
+  max_redirects: 5
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 AiAnalyticsHub/0.1"
+  accept_language: "ru-RU,ru;q=0.9,en;q=0.5"
+  concurrency: 8                  # источников опрашивается параллельно
+  per_host_concurrency: 2         # одновременных запросов к одному хосту (gov.ru банит за бурсты)
+  fetch_fulltext: true            # дотягивать полный текст статьи, если в ленте только анонс
+  fulltext_timeout: 15            # секунд на загрузку страницы статьи
+  fulltext_max_chars: 20000       # обрезать извлечённый текст до этой длины
+  max_new_per_source: 50          # не больше стольких новых материалов с источника за один проход
+  store_raw_html: false           # хранить исходный HTML документа (раздувает БД; включать для отладки)
+
+telegram:
+  backfill_pages: 1               # сколько страниц t.me/s/<канал> листать при --backfill
+  mtproto: auto                   # auto (MTProto при наличии сессии, иначе веб-превью) | off | only
+  api_id_env: TELEGRAM_API_ID     # имя переменной окружения / ключа в .env (my.telegram.org)
+  api_hash_env: TELEGRAM_API_HASH
+  session_name: telegram          # файл сессии data/<session_name>.session — это доступ к аккаунту
+  max_posts: 100                  # постов с канала за один проход по MTProto
+  backfill_posts: 300             # постов с канала при --backfill
+  concurrency: 2                  # параллельных запросов истории (аккаунт лучше не разгонять)
+  flood_sleep_threshold: 60       # секунд: более долгий FloodWait — ошибка источника, а не ожидание
+  request_timeout: 60             # секунд на историю одного канала
+
+sitemap:
+  max_sitemaps: 5                 # сколько дочерних sitemap из sitemapindex обрабатывать (свежие первыми)
+  max_urls: 200                   # сколько URL из sitemap рассматривать за проход
+
+tavily:
+  api_key_env: TAVILY_API         # имя переменной окружения / ключа в .env
+  max_results: 10                 # для discover; поисковые источники (search) запрашивают 20
+  search_depth: basic             # basic | fast | advanced (advanced стоит 2 кредита)
+  days: 7                         # окно свежести для search по умолчанию (--days)
+  country: russia                 # приоритет российских результатов (только topic=general)
+  language: ru                    # язык результатов и сводки (без него Tavily отвечает по-английски)
