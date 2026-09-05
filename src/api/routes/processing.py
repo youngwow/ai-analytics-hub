@@ -12,6 +12,7 @@ from ...models.responses import (
     ProcessingRunListResponse,
     ProcessingRunResponse,
     ProcessingStatusResponse,
+    QualityResponse,
 )
 from ...services.processing_service import run_in_background
 
@@ -55,11 +56,25 @@ def start_run(
         since=payload.since,
         profile_id=payload.profile_id,
         force=payload.force,
+        only_failed=payload.only_failed,
         trigger="api",
     )
     # Прогон идёт после ответа на своём соединении; провайдер модели — общий на процесс.
     background.add_task(run_in_background, config, paths, run.id, run.params, provider)
     return ProcessingRunResponse.from_domain(run)
+
+
+@router.get(
+    "/quality",
+    response_model=QualityResponse,
+    summary="Сводка качества: карточки, вызовы модели по этапам и суткам",
+)
+def quality(
+    service: ProcessingServiceDep,
+    since: Annotated[str | None, Query(description="ISO-дата начала окна")] = None,
+    until: Annotated[str | None, Query(description="ISO-дата конца окна")] = None,
+) -> QualityResponse:
+    return QualityResponse.model_validate(service.quality_summary(since=since, until=until))
 
 
 @router.get("/runs/{run_id}", response_model=ProcessingRunResponse, summary="Один прогон")

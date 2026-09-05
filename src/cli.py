@@ -641,6 +641,7 @@ def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
             profile_id=args.profile,
             force=args.force,
             dry_run=args.dry_run,
+            only_failed=args.only_failed,
         )
     except LlmConfigError as e:
         log.error("%s", e)
@@ -779,8 +780,11 @@ def _cmd_item(args, config: Config, paths: ProjectPaths) -> int:
         print("\nправки:")
         for rev in payload["revisions"]:
             print(f"  {rev.created_at[:16]} {rev.actor}: {rev.field}: {rev.old_value} → {rev.new_value}")
-    if item.analyst_note:
-        print(f"\nзаметка аналитика: {item.analyst_note}")
+    if payload["notes"]:
+        print("\nзаметки аналитика:")
+        for note in payload["notes"]:
+            stamp = (note.created_at or "")[:16]
+            print(f"  {stamp} {note.author or 'аналитик'}: {note.body}")
     db.close()
     return 0
 
@@ -792,13 +796,16 @@ def _cmd_item_edit(args, config: Config, paths: ProjectPaths) -> int:
         "priority": args.priority,
         "type": args.type,
         "npa_status": args.npa_status,
-        "analyst_note": args.note,
         "tags": [t.strip() for t in args.tags.split(",") if t.strip()] if args.tags else None,
     }
     db = Database(paths.db_path)
     service = ItemService(config, db)
     try:
         item = service.edit_item(args.id, fields, reason=args.reason or "")
+        if args.note:
+            # Устаревший флаг: заметка живёт в `item_notes` с v8, а не в колонке.
+            service.add_note(args.id, args.note)
+            log.warning("`edit --note` устарел, используйте `note %s --text ...`", args.id)
     except ItemError as e:
         return _report_service_error(e)
     finally:
@@ -1356,6 +1363,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--profile", type=int, help="company profile id (default: the default one)")
     p.add_argument("--force", action="store_true", help="re-read documents that already have cards")
     p.add_argument("--dry-run", action="store_true", help="plan only: no model calls, no writes")
+    p.add_argument(
+        "--only-failed", action="store_true", help="retry only documents that failed last run"
+    )
     p.set_defaults(func=_cmd_process)
 
     p = sub.add_parser("items", help="the feed: cards with filters")

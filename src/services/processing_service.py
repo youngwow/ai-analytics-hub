@@ -47,6 +47,7 @@ log = get_logger("processing")
 @dataclass
 class ProcessingReport:
     documents: int = 0
+    processed: int = 0
     clusters: int = 0
     items_new: int = 0
     items_joined: int = 0
@@ -108,6 +109,7 @@ class ProcessingService:
         profile_id: int | None = None,
         force: bool = False,
         dry_run: bool = False,
+        only_failed: bool = False,
         run_id: int | None = None,
         trigger: str = "cli",
     ) -> ProcessingReport:
@@ -118,7 +120,7 @@ class ProcessingService:
         record created by `enqueue()`; otherwise a record is opened here.
         """
         params = {"limit": limit, "source_id": source_id, "since": since,
-                  "profile_id": profile_id, "force": force}
+                  "profile_id": profile_id, "force": force, "only_failed": only_failed}
         record: ProcessingRun | None = None
         if not dry_run:
             record = (
@@ -129,7 +131,8 @@ class ProcessingService:
         try:
             report = self._run(
                 limit=limit, source_id=source_id, since=since, profile_id=profile_id,
-                force=force, dry_run=dry_run, progress_run_id=record.id if record else None,
+                force=force, dry_run=dry_run, only_failed=only_failed,
+                progress_run_id=record.id if record else None,
             )
         except Exception as e:
             if record is not None:
@@ -149,6 +152,7 @@ class ProcessingService:
         since: str | None = None,
         profile_id: int | None = None,
         force: bool = False,
+        only_failed: bool = False,
         trigger: str = "api",
     ) -> ProcessingRun:
         """Open a run record for a background run; one run at a time."""
@@ -161,7 +165,7 @@ class ProcessingService:
         if limit is not None and limit < 1:
             raise ItemValidationError("limit должен быть >= 1")
         params = {"limit": limit, "source_id": source_id, "since": since,
-                  "profile_id": profile_id, "force": force}
+                  "profile_id": profile_id, "force": force, "only_failed": only_failed}
         return self.db.processing_runs.start(params, trigger=trigger)
 
     def get_run(self, run_id: int) -> ProcessingRun:
@@ -179,6 +183,7 @@ class ProcessingService:
             "running": self.db.processing_runs.running(),
             "last": self.db.processing_runs.latest(),
             "unprocessed": self.db.documents.count_unprocessed(),
+            "failed": self.db.documents.count_failed(),
             "llm_available": self.provider is not None,
         }
 
@@ -191,6 +196,7 @@ class ProcessingService:
         profile_id: int | None = None,
         force: bool = False,
         dry_run: bool = False,
+        only_failed: bool = False,
         progress_run_id: int | None = None,
     ) -> ProcessingReport:
         started = time.monotonic()
@@ -203,7 +209,12 @@ class ProcessingService:
 
         limit = limit or self.config.processing.max_new_per_run
         rows = self.db.documents.unprocessed(
-            limit=limit, source_id=source_id, since=since, force=force
+            limit=limit,
+            source_id=source_id,
+            since=since,
+            force=force,
+            only_failed=only_failed,
+            category_weights=self.config.processing.category_weights,
         )
         report.documents = len(rows)
         publish()
@@ -245,11 +256,20 @@ class ProcessingService:
                     report.items_joined += 1
                 else:
                     self._store(unit, company, prompt_version, report)
+                with self.db.transaction():
+                    self.db.documents.clear_failure(unit.document_id)
             except LlmError:  # a configuration failure must stop the run loudly
                 raise
             except Exception as e:  # one bad document must not lose the whole batch
                 report.failed += 1
+                # Сбой остаётся на документе: иначе «упал» и «ещё не брали»
+                # неразличимы, а `--only-failed` не на что опереть.
+                with self.db.transaction():
+                    self.db.documents.mark_failed(unit.document_id, f"{type(e).__name__}: {e}")
                 log.error("документ #%s не обработан: %s", unit.document_id, e)
+            # Считаем документы, а не кластеры: перепечатки схлопываются, и иначе
+            # прогресс не сойдётся с `documents`.
+            report.processed += len(unit.members) or 1
             publish()
 
         for unit in units:
@@ -265,6 +285,7 @@ class ProcessingService:
             except (ItemError, ValueError, LookupError) as e:
                 report.failed += 1
                 log.error("карточка #%s не пересобрана: %s", item_id, e)
+            report.processed += 1
             publish()
         report.elapsed_s = time.monotonic() - started
         return report
@@ -277,7 +298,8 @@ class ProcessingService:
         """
         units: list[_Unit] = []
         window = self._window_start()
-        candidates = self.db.documents.clustered_candidates(since=window)
+        # Пул кандидатов готовится один раз на прогон, а не на каждый документ.
+        candidates = dedup.prepare(self.db.documents.clustered_candidates(since=window))
         texts: list[str] = []
         pending: list[_Unit] = []
 
@@ -455,7 +477,7 @@ class ProcessingService:
                 item_id = self.db.items.add(item)
                 self.db.tags.set_tags(item_id, draft.tags, is_manual=False)
                 self.items.record_model_revisions(item_id, item)
-                self.db.items.add_entities(item_id, self._entities(draft))
+                self.db.items.add_entities(item_id, self._entities(draft, unit.norm_text))
                 self.db.items.link_sources(item_id, unit.members, unit.document_id)
                 self.db.search.rebuild(item_id)
                 if draft.type == "npa" and draft.npa_status:
@@ -513,15 +535,26 @@ class ProcessingService:
             norm_text=unit.norm_text,
         )
 
-    def _entities(self, draft: Draft) -> list[EntitySpan]:
+    def _entities(self, draft: Draft, norm_text: str = "") -> list[EntitySpan]:
+        """Сущности со ссылкой на текст: где именно в оригинале это сказано.
+
+        Координаты — по нормализованному тексту (`documents.norm_text`), тому же,
+        по которому модель считала `evidence_offsets`. Не нашли дословно — поля
+        остаются пустыми: честное отсутствие лучше выдуманного диапазона.
+        """
         spans = [
-            EntitySpan(role=role, value=value)
+            EntitySpan(role=role, value=value, **_span(norm_text, value))
             for role, value in draft.entities.items()
             if value and role in ("who", "what", "when", "impact")
         ]
         if draft.npa_key:
             spans.append(
-                EntitySpan(role="act_number", value=draft.npa_key, normalized_value=draft.npa_key)
+                EntitySpan(
+                    role="act_number",
+                    value=draft.npa_key,
+                    normalized_value=draft.npa_key,
+                    **_span(norm_text, draft.npa_key),
+                )
             )
         return spans
 
@@ -743,7 +776,7 @@ class ProcessingService:
             self.db.items.update(item)
             if "entities" in wanted:
                 self.db.items.clear_entities(item_id)
-                self.db.items.add_entities(item_id, self._entities(draft))
+                self.db.items.add_entities(item_id, self._entities(draft, norm))
             self.db.search.rebuild(item_id)
             for call in draft.calls:
                 call.item_id = item_id
@@ -772,6 +805,12 @@ class ProcessingService:
             "tokens_in": stats["tokens_in"],
             "tokens_out": stats["tokens_out"],
             "failed_calls": stats["failed"] or 0,
+            "queue": {
+                "unprocessed": self.db.documents.count_unprocessed(),
+                "failed": self.db.documents.count_failed(),
+            },
+            "by_stage": self.db.llm_calls.breakdown(since, until),
+            "by_day": self.db.llm_calls.by_day(since, until),
         }
 
     def close(self) -> None:
@@ -802,9 +841,20 @@ def run_in_background(
         db.close()
 
 
+def _span(text: str, value: str) -> dict:
+    """Первое дословное вхождение значения в текст — иначе пусто."""
+    if not text or not value:
+        return {}
+    start = text.find(value)
+    if start < 0:
+        return {}
+    return {"evidence_start": start, "evidence_end": start + len(value)}
+
+
 def _counters(report: ProcessingReport) -> dict:
     return {
         "documents": report.documents,
+        "processed": report.processed,
         "clusters": report.clusters,
         "items_new": report.items_new,
         "items_joined": report.items_joined,
@@ -819,7 +869,7 @@ def _counters(report: ProcessingReport) -> dict:
 
 def match_text(candidates, match) -> str:
     """The title of the card a document is joining — enough to spot a commentary."""
-    for row in candidates:
-        if row["item_id"] == match.item_id:
-            return row["title"] or ""
+    for row in dedup.prepare(candidates):
+        if row.item_id == match.item_id:
+            return row.title or ""
     return ""

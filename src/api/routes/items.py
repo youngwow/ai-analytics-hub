@@ -13,6 +13,8 @@ from fastapi import APIRouter, Path, Request, status
 from ...api.query import feed_query
 from ...dependencies import FeedServiceDep, ItemServiceDep, ProcessingServiceDep
 from ...models.requests import (
+    BulkArchiveRequest,
+    BulkTagsRequest,
     BulkVisibilityRequest,
     HideRequest,
     ItemCreateRequest,
@@ -23,6 +25,7 @@ from ...models.requests import (
 )
 from ...models.responses import (
     ArchiveResponse,
+    BulkItemsResponse,
     BulkResponse,
     FacetsResponse,
     FeedResponse,
@@ -83,6 +86,28 @@ def facets(request: Request, service: FeedServiceDep) -> FacetsResponse:
 def bulk_visibility(payload: BulkVisibilityRequest, service: ItemServiceDep) -> BulkResponse:
     changed = service.bulk_visibility(payload.item_ids, payload.scope, payload.reason)
     return BulkResponse(changed=changed, scope=payload.scope)
+
+
+@router.post(
+    "/tags/bulk",
+    response_model=BulkItemsResponse,
+    summary="Массовый тегинг: добавить и снять теги у списка карточек",
+)
+def bulk_tags(payload: BulkTagsRequest, service: ItemServiceDep) -> BulkItemsResponse:
+    return BulkItemsResponse.model_validate(
+        service.bulk_tags(payload.item_ids, add=payload.add, remove=payload.remove)
+    )
+
+
+@router.post(
+    "/archive/bulk",
+    response_model=BulkItemsResponse,
+    summary="Массовая архивация: после отправки дайджеста это один жест",
+)
+def bulk_archive(payload: BulkArchiveRequest, service: ItemServiceDep) -> BulkItemsResponse:
+    return BulkItemsResponse.model_validate(
+        service.bulk_archive(payload.item_ids, payload.archived)
+    )
 
 
 @router.get("/{item_id}", response_model=ItemCardResponse, summary="Карточка целиком")

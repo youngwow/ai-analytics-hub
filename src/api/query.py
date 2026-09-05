@@ -42,6 +42,7 @@ def document_query(request: Request, timezone_name: str) -> DocumentQuery:
         date_from=params.get("from"),
         date_to=params.get("to"),
         limit=params.get("limit"),
+        order=params.get("order"),
         cursor=params.get("cursor"),
         timezone_name=timezone_name,
     )

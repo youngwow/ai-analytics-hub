@@ -66,24 +66,30 @@ class ProcessingRunRepo:
         return run
 
     def progress(self, run_id: int, counters: dict) -> None:
-        """Publish committed results while a run is still executing."""
-        fields = ("documents", "clusters", "items_new", "items_joined", "items_updated",
-                  "degraded", "needs_review", "calls", "failed", "elapsed_s")
+        """Publish committed results while a run is still executing.
+
+        `processed` и `heartbeat_at` отвечают на два вопроса дашборда, на которые
+        одних итоговых счётчиков не хватает: сколько из `documents` уже пройдено
+        и жив ли прогон вообще (застрявший виден по возрасту биения).
+        """
+        fields = ("documents", "processed", "clusters", "items_new", "items_joined",
+                  "items_updated", "degraded", "needs_review", "calls", "failed", "elapsed_s")
         self.conn.execute(
             "UPDATE processing_runs SET " + ", ".join(f"{name}=?" for name in fields)
-            + " WHERE id=? AND status='running'",
-            [counters.get(name, 0) for name in fields] + [run_id],
+            + ", heartbeat_at=? WHERE id=? AND status='running'",
+            [counters.get(name, 0) for name in fields] + [to_utc_iso(utc_now()) or "", run_id],
         )
         self.conn.commit()
 
     def finish(self, run_id: int, counters: dict, finished_at: str | None = None) -> None:
         """Закрыть прогон отчётом: `counters` — поля `ProcessingReport` по именам."""
         self.conn.execute(
-            "UPDATE processing_runs SET status='done', finished_at=?, documents=?, clusters=?, "
-            "items_new=?, items_joined=?, items_updated=?, degraded=?, needs_review=?, calls=?, "
-            "failed=?, elapsed_s=? WHERE id=?",
+            "UPDATE processing_runs SET status='done', finished_at=?, processed=?, documents=?, "
+            "clusters=?, items_new=?, items_joined=?, items_updated=?, degraded=?, needs_review=?, "
+            "calls=?, failed=?, elapsed_s=? WHERE id=?",
             (
                 finished_at or (to_utc_iso(utc_now()) or ""),
+                int(counters.get("processed", counters.get("documents", 0))),
                 int(counters.get("documents", 0)),
                 int(counters.get("clusters", 0)),
                 int(counters.get("items_new", 0)),
@@ -236,6 +242,65 @@ class LlmCallRepo:
             ),
         )
         return int(cur.lastrowid)
+
+    def breakdown(self, since: str | None = None, until: str | None = None) -> list[dict]:
+        """Вызовы модели по этапу и статусу: где именно теряется прогон."""
+        where, params = [], []
+        if since:
+            where.append("created_at >= ?")
+            params.append(since)
+        if until:
+            where.append("created_at <= ?")
+            params.append(until)
+        sql = (
+            "SELECT stage, status, count(*) AS calls, "
+            "coalesce(avg(latency_ms), 0) AS avg_latency_ms, "
+            "coalesce(sum(tokens_in), 0) AS tokens_in, "
+            "coalesce(sum(tokens_out), 0) AS tokens_out "
+            "FROM llm_calls "
+            + ("WHERE " + " AND ".join(where) + " " if where else "")
+            + "GROUP BY stage, status ORDER BY calls DESC"
+        )
+        return [
+            {
+                "stage": r["stage"],
+                "status": r["status"],
+                "calls": int(r["calls"]),
+                "avg_latency_ms": int(r["avg_latency_ms"] or 0),
+                "tokens_in": int(r["tokens_in"]),
+                "tokens_out": int(r["tokens_out"]),
+            }
+            for r in self.conn.execute(sql, params)
+        ]
+
+    def by_day(self, since: str | None = None, until: str | None = None, limit: int = 14) -> list[dict]:
+        """Сутки прогонов: сколько вызовов и токенов ушло по дням."""
+        where, params = [], []
+        if since:
+            where.append("created_at >= ?")
+            params.append(since)
+        if until:
+            where.append("created_at <= ?")
+            params.append(until)
+        sql = (
+            "SELECT substr(created_at, 1, 10) AS day, count(*) AS calls, "
+            "coalesce(sum(tokens_in), 0) AS tokens_in, "
+            "coalesce(sum(tokens_out), 0) AS tokens_out, "
+            "sum(CASE WHEN status <> 'ok' THEN 1 ELSE 0 END) AS failed "
+            "FROM llm_calls "
+            + ("WHERE " + " AND ".join(where) + " " if where else "")
+            + "GROUP BY day ORDER BY day DESC LIMIT ?"
+        )
+        return [
+            {
+                "day": r["day"],
+                "calls": int(r["calls"]),
+                "tokens_in": int(r["tokens_in"]),
+                "tokens_out": int(r["tokens_out"]),
+                "failed": int(r["failed"] or 0),
+            }
+            for r in self.conn.execute(sql, [*params, limit])
+        ]
 
     def stats(self, since: str | None = None, until: str | None = None) -> sqlite3.Row:
         where, params = [], []

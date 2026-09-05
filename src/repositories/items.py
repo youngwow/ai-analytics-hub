@@ -112,12 +112,12 @@ class SqliteItemRepository(ItemRepository):
         type_: str | None = None,
         priority: str | None = None,
         tag: str | None = None,
-        query: str | None = None,
         since: str | None = None,
         limit: int = 20,
         include_hidden: bool = False,
     ) -> list[sqlite3.Row]:
-        """Feed rows, newest first; `query` goes through items_fts."""
+        """Строки карточек, свежие первыми. Поиск живёт в `FeedRepository`: у ленты
+        один индекс `items_search`, а этот путь обслуживает сводку качества."""
         # Ленту очищает только `hidden_feed`; карточка, убранная из дайджеста,
         # остаётся видимой — иначе подготовка адресной выжимки чистит ленту всем
         # сразу (решение владельца от 2026-09-05).
@@ -137,15 +137,10 @@ class SqliteItemRepository(ItemRepository):
         if since:
             where.append("(i.published_at >= ? OR i.published_at IS NULL)")
             params.append(since)
-        join = ""
-        if query:
-            join = "JOIN items_fts f ON f.rowid = i.id "
-            where.append("items_fts MATCH ?")
-            params.append(query)
         params.append(limit)
         sql = (
             "SELECT i.*, c.size AS sources_count FROM items i "
-            "JOIN clusters c ON c.id = i.cluster_id " + join
+            "JOIN clusters c ON c.id = i.cluster_id "
             + ("WHERE " + " AND ".join(where) + " " if where else "")
             + "ORDER BY i.published_at DESC, i.id DESC LIMIT ?"
         )
@@ -181,6 +176,18 @@ class SqliteItemRepository(ItemRepository):
                 f"UPDATE items SET visibility=?, hidden_reason=? WHERE id IN ({marks})",
                 [visibility, reason, *ids],
             )
+        return cur.rowcount
+
+    def set_archived_bulk(self, item_ids: Iterable[int], archived: bool) -> int:
+        """Архивация пачкой — после отправки дайджеста это один жест, а не двадцать."""
+        ids = list(dict.fromkeys(item_ids))
+        if not ids:
+            return 0
+        marks = ",".join("?" * len(ids))
+        cur = self.conn.execute(
+            f"UPDATE items SET is_archived=? WHERE id IN ({marks}) AND is_archived <> ?",
+            [int(archived), *ids, int(archived)],
+        )
         return cur.rowcount
 
     def hide_by_source(self, source_id: int) -> int:
@@ -365,6 +372,35 @@ class ItemTagRepo:
         )
         return [ItemTag.from_row(r) for r in rows]
 
+    def add(self, item_id: int, tags: Iterable[str], *, is_manual: bool = True) -> int:
+        """Добавить теги, не трогая остальные (в отличие от `set_tags`)."""
+        rows = [(item_id, t, int(is_manual)) for t in dict.fromkeys(tags) if t]
+        if not rows:
+            return 0
+        before = self._count(item_id)
+        self.conn.executemany(
+            "INSERT OR IGNORE INTO item_tags (item_id, tag, is_manual) VALUES (?, ?, ?)", rows
+        )
+        return self._count(item_id) - before
+
+    def remove(self, item_id: int, tags: Iterable[str]) -> int:
+        """Снять теги независимо от происхождения: решение человека сильнее модели."""
+        names = [t for t in dict.fromkeys(tags) if t]
+        if not names:
+            return 0
+        marks = ",".join("?" * len(names))
+        cur = self.conn.execute(
+            f"DELETE FROM item_tags WHERE item_id=? AND tag IN ({marks})", [item_id, *names]
+        )
+        return cur.rowcount
+
+    def _count(self, item_id: int) -> int:
+        return int(
+            self.conn.execute(
+                "SELECT count(*) FROM item_tags WHERE item_id=?", (item_id,)
+            ).fetchone()[0]
+        )
+
     def names(self, item_id: int) -> list[str]:
         return [t.tag for t in self.list(item_id)]
 
@@ -413,7 +449,6 @@ class SearchRepo:
         ids = [int(r["id"]) for r in self.conn.execute("SELECT id FROM items ORDER BY id")]
         for item_id in ids:
             self.rebuild(item_id)
-        self.conn.commit()
         return len(ids)
 
 

@@ -70,6 +70,30 @@ class SqliteDocumentRepository(DocumentRepository):
         params.append(limit)
         return list(self.conn.execute(sql, params))
 
+    def mark_failed(self, document_id: int, error: str, at: str | None = None) -> None:
+        """Документ помнит свой сбой: иначе «упал» и «ещё не брали» неразличимы."""
+        self.conn.execute(
+            "UPDATE documents SET attempts = attempts + 1, last_error = ?, last_attempt_at = ? "
+            "WHERE id = ?",
+            ((error or "")[:500], at or _now_iso(), document_id),
+        )
+
+    def clear_failure(self, document_id: int, at: str | None = None) -> None:
+        """Успешный прогон снимает отметку о сбое, счётчик попыток остаётся историей."""
+        self.conn.execute(
+            "UPDATE documents SET last_error = '', last_attempt_at = ? WHERE id = ?",
+            (at or _now_iso(), document_id),
+        )
+
+    def count_failed(self) -> int:
+        return int(
+            self.conn.execute(
+                "SELECT count(*) FROM documents d LEFT JOIN item_sources s "
+                "ON s.document_id = d.id "
+                "WHERE s.document_id IS NULL AND d.hidden = 0 AND d.last_error <> ''"
+            ).fetchone()[0]
+        )
+
     def count_unprocessed(self) -> int:
         """Очередь обработки: собрано, не скрыто и без карточки."""
         return int(
@@ -95,25 +119,37 @@ class SqliteDocumentRepository(DocumentRepository):
         source_id: int | None = None,
         since: str | None = None,
         force: bool = False,
+        only_failed: bool = False,
+        category_weights: dict | None = None,
     ) -> list[sqlite3.Row]:
-        """Documents that have no card yet (with --force: everything in the window)."""
+        """Documents that have no card yet (with --force: everything in the window).
+
+        Порядок учитывает категорию источника: при очереди в тысячи документов
+        НПА от регулятора не должен ждать за лентой СМИ (`category_weights`).
+        `only_failed` оставляет только те, что упали в прошлый прогон.
+        """
         where = ["d.hidden = 0"]
         params: list = []
         if not force:
             where.append("s.document_id IS NULL")
+        if only_failed:
+            where.append("d.last_error <> ''")
         if source_id is not None:
             where.append("d.source_id = ?")
             params.append(source_id)
         if since:
             where.append("(d.published_at >= ? OR d.published_at IS NULL)")
             params.append(since)
+        weight, weight_params = _category_rank(category_weights)
+        params.extend(weight_params)
         params.append(limit)
         return list(
             self.conn.execute(
                 "SELECT d.* FROM documents d "
                 "LEFT JOIN item_sources s ON s.document_id = d.id "
+                "JOIN sources src ON src.id = d.source_id "
                 "WHERE " + " AND ".join(where) + " "
-                "ORDER BY d.published_at DESC, d.id DESC LIMIT ?",
+                f"ORDER BY {weight} DESC, d.published_at DESC, d.id DESC LIMIT ?",
                 params,
             )
         )
@@ -150,3 +186,19 @@ class SqliteDocumentRepository(DocumentRepository):
 
 
 DocumentRepo = SqliteDocumentRepository
+
+
+DEFAULT_CATEGORY_WEIGHTS = {"regulator": 3, "telegram": 2, "media": 1, "manual": 1}
+
+
+def _category_rank(weights: dict | None) -> tuple[str, list]:
+    """`CASE` по категории источника — вес приходит из конфигурации, не из кода."""
+    table = weights if weights is not None else DEFAULT_CATEGORY_WEIGHTS
+    if not table:
+        # Не «0»: голое целое в ORDER BY SQLite читает как номер колонки.
+        return "NULL", []
+    branches = " ".join("WHEN ? THEN ?" for _ in table)
+    params: list = []
+    for category, weight in table.items():
+        params.extend([category, int(weight)])
+    return f"CASE src.category {branches} ELSE 0 END", params

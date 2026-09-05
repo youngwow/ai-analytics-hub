@@ -126,6 +126,30 @@ class NothingToRevertError(ItemError):
     code = "nothing_to_revert"
 
 
+# ── профиль компании ───────────────────────────────────────────────────────
+
+
+class ProfileError(AppError):
+    """Ошибка работы с профилем компании."""
+
+    status_code = 400
+    code = "validation_error"
+
+
+class ProfileValidationError(ProfileError):
+    """Профиль не проходит проверку."""
+
+    status_code = 400
+    code = "validation_error"
+
+
+class ProfileNotFoundError(ProfileError):
+    """Профиль компании не найден."""
+
+    status_code = 404
+    code = "profile_not_found"
+
+
 # ── обработка (очередь ИИ) ─────────────────────────────────────────────────
 
 

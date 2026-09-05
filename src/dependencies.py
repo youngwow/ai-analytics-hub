@@ -28,6 +28,7 @@ from .services.feed_service import FeedService
 from .services.health import HealthService
 from .services.item_service import ItemService
 from .services.processing_service import ProcessingService
+from .services.profile_service import ProfileService
 from .services.source_service import SourceService
 from .sources.collector import Collector
 from .utils import load_env_secret
@@ -104,6 +105,10 @@ def get_feed_service(config: ConfigDep, db: DatabaseDep) -> FeedService:
     return FeedService(config, db)
 
 
+def get_profile_service(config: ConfigDep, db: DatabaseDep) -> ProfileService:
+    return ProfileService(config, db)
+
+
 def get_health_service(settings: SettingsDep, db: DatabaseDep) -> HealthService:
     return HealthService(settings, db)
 
@@ -119,5 +124,6 @@ SourceServiceDep = Annotated[SourceService, Depends(get_source_service)]
 ItemServiceDep = Annotated[ItemService, Depends(get_item_service)]
 ProcessingServiceDep = Annotated[ProcessingService, Depends(get_processing_service)]
 FeedServiceDep = Annotated[FeedService, Depends(get_feed_service)]
+ProfileServiceDep = Annotated[ProfileService, Depends(get_profile_service)]
 HealthServiceDep = Annotated[HealthService, Depends(get_health_service)]
 CollectionServiceDep = Annotated[CollectionService, Depends(get_collection_service)]

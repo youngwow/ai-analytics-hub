@@ -27,6 +27,49 @@ _OPINION_RE = re.compile(
 )
 
 
+@dataclass
+class Candidate:
+    """Кандидат на присоединение, подготовленный один раз на прогон.
+
+    Вектор из BLOB'а раскодирован, норма посчитана: иначе на 2000 кандидатов ×
+    200 документов приходится 400 тысяч раскодирований и вдвое больше корней —
+    самая дорогая часть прогона, а результат каждый раз один и тот же.
+    """
+
+    item_id: int
+    cluster_id: int
+    type: str
+    simhash: str
+    title: str
+    embedding: list[float]
+    norm: float
+    document_id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "Candidate":
+        vector = decode_vector(row["embedding"])
+        keys = row.keys() if hasattr(row, "keys") else ()
+        return cls(
+            item_id=row["item_id"],
+            cluster_id=row["cluster_id"],
+            type=row["type"],
+            simhash=row["simhash"] or "",
+            title=(row["title"] if "title" in keys else "") or "",
+            embedding=vector,
+            norm=vector_norm(vector),
+            document_id=row["id"] if "id" in keys else None,
+        )
+
+
+def prepare(rows: Iterable) -> list[Candidate]:
+    """Подготовить пул кандидатов: раскодировать векторы и посчитать нормы."""
+    return [row if isinstance(row, Candidate) else Candidate.from_row(row) for row in rows]
+
+
+def vector_norm(vector: Sequence[float]) -> float:
+    return math.sqrt(sum(a * a for a in vector)) if vector else 0.0
+
+
 @dataclass(frozen=True)
 class Match:
     """An existing card a new document should join."""
@@ -99,6 +142,15 @@ def cosine(left: Sequence[float], right: Sequence[float]) -> float:
     return dot / (norm_left * norm_right)
 
 
+def cosine_prepared(
+    left: Sequence[float], left_norm: float, right: Sequence[float], right_norm: float
+) -> float:
+    """Косинус с заранее посчитанными нормами — то же число, вдвое меньше работы."""
+    if not left or not right or len(left) != len(right) or not left_norm or not right_norm:
+        return 0.0
+    return sum(a * b for a, b in zip(left, right)) / (left_norm * right_norm)
+
+
 def centroid(vectors: Iterable[Sequence[float]]) -> list[float]:
     rows = [v for v in vectors if v]
     if not rows:
@@ -128,20 +180,23 @@ def find_match(
     never joined here: their identity is the act number, decided by the service.
     """
     best: Match | None = None
-    for row in candidates:
-        if row["type"] == "npa":
+    # Норма запроса считается один раз, а не заново на каждого кандидата.
+    query_norm = vector_norm(embedding or [])
+    for candidate in prepare(candidates):
+        if candidate.type == "npa":
             continue
-        distance = hamming(text_simhash, row["simhash"] or "")
+        distance = hamming(text_simhash, candidate.simhash)
         if distance <= max_distance:
             score = 1.0 - distance / _BITS
             if best is None or score > best.score:
-                best = Match(row["item_id"], row["cluster_id"], score, f"simhash d={distance}")
+                best = Match(
+                    candidate.item_id, candidate.cluster_id, score, f"simhash d={distance}"
+                )
             continue
-        if embedding:
-            other = decode_vector(row["embedding"])
-            if not other:
-                continue
-            score = cosine(embedding, other)
+        if embedding and candidate.embedding:
+            score = cosine_prepared(embedding, query_norm, candidate.embedding, candidate.norm)
             if score >= threshold and (best is None or score > best.score):
-                best = Match(row["item_id"], row["cluster_id"], score, f"cosine {score:.3f}")
+                best = Match(
+                    candidate.item_id, candidate.cluster_id, score, f"cosine {score:.3f}"
+                )
     return best

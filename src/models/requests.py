@@ -81,6 +81,19 @@ class BulkVisibilityRequest(_Request):
     reason: str = ""
 
 
+class BulkTagsRequest(_Request):
+    """Массовый тегинг: добавить и/или снять теги у списка карточек."""
+
+    item_ids: list[int]
+    add: list[str] = Field(default_factory=list)
+    remove: list[str] = Field(default_factory=list)
+
+
+class BulkArchiveRequest(_Request):
+    item_ids: list[int]
+    archived: bool = True
+
+
 class NoteCreateRequest(_Request):
     body: str
     author: str = ""
@@ -100,6 +113,13 @@ class NpaEventCreateRequest(_Request):
     note: str = ""
 
 
+class ProfileSaveRequest(_Request):
+    """Профиль целиком: имя — ключ, `payload` — то, что уйдёт в промпт."""
+
+    name: str = Field(min_length=1, max_length=200)
+    payload: dict
+
+
 class ProcessingRunRequest(_Request):
     """Параметры прогона обработки — те же, что у `python -m src process`."""
 
@@ -108,6 +128,7 @@ class ProcessingRunRequest(_Request):
     since: str | None = None
     profile_id: int | None = None
     force: bool = False
+    only_failed: bool = False  # взять только документы, упавшие в прошлый прогон
 
 
 class CollectionStartRequest(_Request):

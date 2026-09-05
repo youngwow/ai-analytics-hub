@@ -7,7 +7,7 @@
 
 from fastapi import APIRouter
 
-from .routes import collection, feed, health, items, processing, sources
+from .routes import collection, export, feed, health, items, processing, profiles, sources
 
 api_router = APIRouter()
 api_router.include_router(health.router)
@@ -16,5 +16,7 @@ api_router.include_router(items.router)
 api_router.include_router(feed.router)
 api_router.include_router(processing.router)
 api_router.include_router(collection.router)
+api_router.include_router(profiles.router)
+api_router.include_router(export.router)
 
 __all__ = ["api_router"]

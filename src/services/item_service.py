@@ -15,7 +15,9 @@ from ..utils import get_logger, parse_datetime, to_utc_iso, utc_now
 
 log = get_logger("items")
 
-EDITABLE_FIELDS = ("title", "summary", "priority", "type", "tags", "npa_status", "analyst_note")
+# `analyst_note` сюда не входит с v8: заметка живёт в `item_notes` (add_note),
+# а не в колонке карточки — один источник правды.
+EDITABLE_FIELDS = ("title", "summary", "priority", "type", "tags", "npa_status")
 # Fields a human may edit and therefore may want to revert to the model's version.
 REVERTIBLE_FIELDS = ("title", "summary", "priority", "type", "tags")
 # A later publication may only move a bill forward; a retrospective article must
@@ -134,6 +136,90 @@ class ItemService:
         if target is None:
             raise ItemValidationError(f"неизвестная область скрытия: {scope}")
         return self.db.items.set_visibility_bulk(item_ids, target, reason)
+
+    def bulk_tags(
+        self,
+        item_ids: list[int],
+        *,
+        add: list[str] | None = None,
+        remove: list[str] | None = None,
+        actor: str = "user",
+    ) -> dict:
+        """Массовый тегинг: обычная работа аналитика, а не двадцать одиночных правок.
+
+        Теги человека переживают переобработку (`is_manual`), поэтому здесь тот же
+        признак, что и у одиночной правки. Индекс поиска перестраивается: тег
+        входит в строку `items_search`.
+        """
+        added = [t.strip() for t in (add or []) if t and t.strip()]
+        removed = [t.strip() for t in (remove or []) if t and t.strip()]
+        if not added and not removed:
+            raise ItemValidationError("нужен хотя бы один тег в add или remove")
+        overlap = set(added) & set(removed)
+        if overlap:
+            raise ItemValidationError(f"тег нельзя добавить и снять сразу: {sorted(overlap)}")
+        ids = list(dict.fromkeys(item_ids))
+        if not ids:
+            return {"changed": 0, "items": []}
+        touched: list[int] = []
+        with self.db.transaction():
+            for item_id in ids:
+                item = self.db.items.get(item_id)
+                if item is None:
+                    raise ItemNotFoundError(f"карточка #{item_id} не найдена")
+                before = self.db.tags.names(item_id)
+                self.db.tags.add(item_id, added, is_manual=True)
+                self.db.tags.remove(item_id, removed)
+                after = self.db.tags.names(item_id)
+                if after == before:
+                    continue
+                item.tags = after
+                self.db.items.update(item)
+                self.db.items.add_revision(
+                    ItemRevision(
+                        item_id=item_id,
+                        field="tags",
+                        old_value=", ".join(before),
+                        new_value=", ".join(after),
+                        actor=actor,
+                        source_of_change="human",
+                        edit_reason="bulk_tags",
+                    )
+                )
+                if "tags" not in item.manual_overrides:
+                    item.manual_overrides.append("tags")
+                    self.db.items.update(item)
+                self.db.search.rebuild(item_id)
+                touched.append(item_id)
+        return {"changed": len(touched), "items": touched}
+
+    def bulk_archive(self, item_ids: list[int], archived: bool = True, *, actor: str = "user") -> dict:
+        """Убрать пачку карточек в архив (или вернуть). Ничего не удаляется."""
+        ids = list(dict.fromkeys(item_ids))
+        if not ids:
+            return {"changed": 0, "items": []}
+        touched: list[int] = []
+        with self.db.transaction():
+            for item_id in ids:
+                item = self.db.items.get(item_id)
+                if item is None:
+                    raise ItemNotFoundError(f"карточка #{item_id} не найдена")
+                if item.is_archived == archived:
+                    continue
+                self.db.items.set_archived(item_id, archived)
+                self.db.items.add_revision(
+                    ItemRevision(
+                        item_id=item_id,
+                        field="is_archived",
+                        old_value=str(int(item.is_archived)),
+                        new_value=str(int(archived)),
+                        actor=actor,
+                        source_of_change="human",
+                        edit_reason="archive" if archived else "unarchive",
+                    )
+                )
+                touched.append(item_id)
+        return {"changed": len(touched), "items": touched}
 
     def add_note(self, item_id: int, body: str, author: str = "") -> ItemNote:
         """Заметка аналитика: решение сотрудника, а не факт из источника (US-7)."""

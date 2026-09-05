@@ -104,7 +104,7 @@ class FeedService:
         cursor = None
         if has_more and rows:
             last = rows[-1]
-            cursor = query.encode_cursor(last["published_at"], int(last["id"]))
+            cursor = query.encode_cursor(last[query.sort_field], int(last["id"]))
         return {
             "documents": rows,
             "total": total,
@@ -124,13 +124,7 @@ class FeedService:
         limit: int = 200,
     ) -> dict:
         """Выгрузка среза. Ничего не сохраняет: дайджест — это срез, а не сущность."""
-        # Скрытое из дайджеста и архив не выгружаются никогда, что бы ни просили фильтры.
-        prepared = replace(query, include_hidden=False, archived="exclude", limit=limit, cursor=None)
-        rows = [
-            self._row(r)
-            for r in self.repository.page(prepared, None)[:limit]
-            if r["visibility"] == "visible"
-        ]
+        rows = self.visible_slice(query, limit=limit)
         rows.sort(
             key=lambda r: ({"high": 0, "medium": 1}.get(r["priority"], 2), r["published_at"] or "")
         )
@@ -153,6 +147,19 @@ class FeedService:
             "format": fmt,
             "body": body,
         }
+
+    def visible_slice(self, query: FeedQuery, *, limit: int = 200) -> list[dict]:
+        """Срез только из видимых карточек — общая основа дайджеста и выгрузок.
+
+        Скрытое и архив не выгружаются никогда, что бы ни просили фильтры: канал
+        выгрузки уходит за пределы дашборда, а авторизации нет (спецификация 1.3).
+        """
+        prepared = replace(query, include_hidden=False, archived="exclude", limit=limit, cursor=None)
+        return [
+            self._row(r)
+            for r in self.repository.page(prepared, None)[:limit]
+            if r["visibility"] == "visible"
+        ]
 
     def _notes_for(self, rows: list[dict]) -> dict:
         notes: dict[int, list[str]] = {}

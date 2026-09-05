@@ -172,7 +172,6 @@ class ItemRepository(ABC):
         type_: str | None = None,
         priority: str | None = None,
         tag: str | None = None,
-        query: str | None = None,
         since: str | None = None,
         limit: int = 20,
         include_hidden: bool = False,

@@ -283,21 +283,25 @@ class SqliteFeedRepository(FeedRepository):
             clauses.append("d.published_at <= ?")
             params.append(to_utc_iso(query.date_to))
         if query.q:
-            clauses.append("d.title LIKE ?")
-            params.append(f"%{query.q}%")
+            # `%` и `_` в запросе пользователя — символы, а не шаблон: без ESCAPE
+            # «100%» находило что угодно.
+            clauses.append("d.title LIKE ? ESCAPE '\\'")
+            params.append(f"%{_like_escape(query.q)}%")
         base = (
             "FROM documents d LEFT JOIN item_sources s ON s.document_id = d.id "
             "JOIN sources src ON src.id = d.source_id WHERE " + " AND ".join(clauses)
         )
         total = int(self.conn.execute("SELECT count(*) " + base, params).fetchone()[0])
+        sort = f"COALESCE(d.{query.sort_field}, '')"
         page_clause, page_params = "", []
         if position:
-            page_clause = " AND (COALESCE(d.published_at, ''), d.id) < (?, ?)"
+            page_clause = f" AND ({sort}, d.id) < (?, ?)"
             page_params = [position[0] or "", position[1]]
         rows = self.conn.execute(
             "SELECT d.id, d.title, d.url, d.source_id, src.name AS source_name, "
-            "d.published_at, length(d.text) AS chars " + base + page_clause
-            + " ORDER BY COALESCE(d.published_at, '') DESC, d.id DESC LIMIT ?",
+            "d.published_at, d.fetched_at, d.last_error, length(d.text) AS chars "
+            + base + page_clause
+            + f" ORDER BY {sort} DESC, d.id DESC LIMIT ?",
             [*params, *page_params, query.limit + 1],
         )
         return [dict(r) for r in rows], total
@@ -310,3 +314,8 @@ class SqliteFeedRepository(FeedRepository):
             r["status"]: int(r["n"])
             for r in self.conn.execute("SELECT status, count(*) AS n FROM sources GROUP BY status")
         }
+
+
+def _like_escape(value: str) -> str:
+    """Экранировать шаблонные символы LIKE, чтобы искалась подстрока, а не маска."""
+    return value.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")

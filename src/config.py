@@ -129,6 +129,11 @@ class ProcessingConfig:
     cosine_threshold: float = 0.86
     borderline_low: float = 0.35
     borderline_high: float = 0.5
+    # Очередь обработки: НПА от регулятора не должен ждать за лентой СМИ, когда
+    # очередь длиннее одного прогона. Ключ — `sources.category`.
+    category_weights: dict = field(
+        default_factory=lambda: {"regulator": 3, "telegram": 2, "media": 1, "manual": 1}
+    )
 
 
 @dataclass(frozen=True)
@@ -149,16 +154,21 @@ _SECTIONS = {
 }
 
 
+def _has_default(field_info) -> bool:
+    """У поля есть значение по умолчанию — прямое или через фабрику."""
+    return field_info.default is not MISSING or field_info.default_factory is not MISSING
+
+
 def _build_section(name: str, cls: type, raw: dict):
     fields = cls.__dataclass_fields__
     section = raw.get(name)
-    if section is None and all(f.default is not MISSING for f in fields.values()):
+    if section is None and all(_has_default(f) for f in fields.values()):
         # Секция, у которой все поля со значениями по умолчанию, необязательна:
         # старый config.yaml должен грузиться после добавления новой секции.
         section = {}
     if not isinstance(section, dict):
         raise ConfigError(f"config.yaml: missing or non-mapping section '{name}'")
-    missing = [k for k, f in fields.items() if k not in section and f.default is MISSING]
+    missing = [k for k, f in fields.items() if k not in section and not _has_default(f)]
     if missing:
         raise ConfigError(f"config.yaml: section '{name}' missing keys: {missing}")
     try:
@@ -258,6 +268,14 @@ class Config:
             value = getattr(pr, name)
             if not 0 <= value <= 1:
                 raise ConfigError(f"config.yaml: processing.{name} must be within [0, 1]")
+        if not isinstance(pr.category_weights, dict):
+            raise ConfigError("config.yaml: processing.category_weights must be a mapping")
+        for category, weight in pr.category_weights.items():
+            if not isinstance(weight, int) or weight < 0:
+                raise ConfigError(
+                    f"config.yaml: processing.category_weights['{category}'] must be an "
+                    "integer >= 0"
+                )
         if pr.borderline_low > pr.borderline_high:
             raise ConfigError(
                 "config.yaml: processing.borderline_low must be <= borderline_high"

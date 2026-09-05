@@ -499,6 +499,7 @@ class ProcessingRun:
     trigger: str = "cli"
     params: dict = field(default_factory=dict)
     documents: int = 0
+    processed: int = 0
     clusters: int = 0
     items_new: int = 0
     items_joined: int = 0
@@ -509,6 +510,7 @@ class ProcessingRun:
     failed: int = 0
     elapsed_s: float = 0.0
     error: str = ""
+    heartbeat_at: str | None = None
     id: int | None = None
 
     @classmethod
@@ -525,6 +527,7 @@ class ProcessingRun:
             trigger=row["trigger"],
             params=params if isinstance(params, dict) else {},
             documents=int(row["documents"]),
+            processed=int(row["processed"]),
             clusters=int(row["clusters"]),
             items_new=int(row["items_new"]),
             items_joined=int(row["items_joined"]),
@@ -535,6 +538,7 @@ class ProcessingRun:
             failed=int(row["failed"]),
             elapsed_s=float(row["elapsed_s"] or 0.0),
             error=row["error"] or "",
+            heartbeat_at=row["heartbeat_at"],
         )
 
 

@@ -14,6 +14,7 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 from .domain import (
+    CompanyProfile,
     EntitySpan,
     Item,
     ItemNote,
@@ -298,6 +299,13 @@ class BulkResponse(BaseModel):
     scope: str
 
 
+class BulkItemsResponse(BaseModel):
+    """Массовая правка: сколько карточек изменилось и какие именно."""
+
+    changed: int
+    items: list[int]
+
+
 class RevisionListResponse(BaseModel):
     revisions: list[RevisionResponse]
 
@@ -403,6 +411,8 @@ class DocumentEntry(BaseModel):
     source_id: int
     source_name: str | None
     published_at: str | None
+    fetched_at: str | None = None
+    last_error: str = ""
     chars: int | None
 
 
@@ -439,6 +449,26 @@ class StatusResponse(BaseModel):
     timezone: str
 
 
+# ── профиль компании ───────────────────────────────────────────────────────
+
+
+class ProfileResponse(BaseModel):
+    id: int | None
+    name: str
+    payload: dict
+    version: int
+    is_default: bool
+    updated_at: str
+
+    @classmethod
+    def from_domain(cls, profile: CompanyProfile) -> ProfileResponse:
+        return cls(**asdict(profile))
+
+
+class ProfileListResponse(BaseModel):
+    profiles: list[ProfileResponse]
+
+
 # ── обработка (очередь ИИ) ─────────────────────────────────────────────────
 
 
@@ -450,6 +480,7 @@ class ProcessingRunResponse(BaseModel):
     trigger: str
     params: dict
     documents: int
+    processed: int
     clusters: int
     items_new: int
     items_joined: int
@@ -460,10 +491,13 @@ class ProcessingRunResponse(BaseModel):
     failed: int
     elapsed_s: float
     error: str
+    heartbeat_at: str | None
+    progress: float | None
 
     @classmethod
     def from_domain(cls, run: ProcessingRun) -> ProcessingRunResponse:
-        return cls(**asdict(run))
+        share = round(run.processed / run.documents, 3) if run.documents else None
+        return cls(**asdict(run), progress=min(share, 1.0) if share is not None else None)
 
 
 class ProcessingRunListResponse(BaseModel):
@@ -476,6 +510,7 @@ class ProcessingStatusResponse(BaseModel):
     running: ProcessingRunResponse | None
     last: ProcessingRunResponse | None
     unprocessed: int
+    failed: int
     llm_available: bool
 
     @classmethod
@@ -484,8 +519,49 @@ class ProcessingStatusResponse(BaseModel):
             running=ProcessingRunResponse.from_domain(status["running"]) if status["running"] else None,
             last=ProcessingRunResponse.from_domain(status["last"]) if status["last"] else None,
             unprocessed=status["unprocessed"],
+            failed=status["failed"],
             llm_available=status["llm_available"],
         )
+
+
+class QueueCounts(BaseModel):
+    unprocessed: int
+    failed: int
+
+
+class StageBreakdown(BaseModel):
+    stage: str
+    status: str
+    calls: int
+    avg_latency_ms: int
+    tokens_in: int
+    tokens_out: int
+
+
+class DayBreakdown(BaseModel):
+    day: str
+    calls: int
+    tokens_in: int
+    tokens_out: int
+    failed: int
+
+
+class QualityResponse(BaseModel):
+    """Что база честно знает о качестве без размеченного набора."""
+
+    items: int
+    by_priority: dict[str, int]
+    degraded: int
+    hallucination_flags: int
+    edited_share: float
+    calls: int
+    avg_latency_ms: int
+    tokens_in: int
+    tokens_out: int
+    failed_calls: int
+    queue: QueueCounts
+    by_stage: list[StageBreakdown]
+    by_day: list[DayBreakdown]
 
 
 # ── сбор (автоматический мониторинг) ───────────────────────────────────────

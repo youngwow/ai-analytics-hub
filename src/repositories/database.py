@@ -10,6 +10,7 @@
 from __future__ import annotations
 
 import os
+import re
 import sqlite3
 
 from ..sources.textutil import normalized_source_url
@@ -292,7 +293,8 @@ CREATE TABLE IF NOT EXISTS item_notes (
 );
 CREATE INDEX IF NOT EXISTS idx_item_notes_item ON item_notes(item_id, created_at);
 INSERT INTO item_notes (item_id, body, author, created_at)
-    SELECT id, analyst_note, '', processed_at FROM items WHERE analyst_note <> '';
+    SELECT id, analyst_note, '', processed_at FROM items WHERE analyst_note <> ''
+      AND NOT EXISTS (SELECT 1 FROM item_notes n WHERE n.item_id = items.id);
 
 CREATE TABLE IF NOT EXISTS item_tags (
     item_id   INTEGER NOT NULL REFERENCES items(id) ON DELETE CASCADE,
@@ -348,13 +350,113 @@ CREATE INDEX IF NOT EXISTS idx_processing_runs_status ON processing_runs(status,
 """
 
 
+# v6: у ленты один индекс — `items_search` (v4). `items_fts` из v2 обслуживал
+# только недостижимый путь `list(query=...)`, а три его триггера дорожали каждую
+# запись карточки.
+_SCHEMA_V6 = """
+DROP TRIGGER IF EXISTS items_fts_ai;
+DROP TRIGGER IF EXISTS items_fts_ad;
+DROP TRIGGER IF EXISTS items_fts_au;
+DROP TABLE IF EXISTS items_fts;
+"""
+
+
+# v7: сбой обработки перестаёт быть строчкой в логе (документ помнит свою ошибку),
+# а прогон отчитывается о прогрессе, пока идёт, а не только в конце.
+_SCHEMA_V7 = """
+ALTER TABLE documents ADD COLUMN attempts INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE documents ADD COLUMN last_error TEXT NOT NULL DEFAULT '';
+ALTER TABLE documents ADD COLUMN last_attempt_at TEXT;
+CREATE INDEX IF NOT EXISTS idx_documents_failed ON documents(last_error, published_at DESC)
+    WHERE last_error <> '';
+ALTER TABLE processing_runs ADD COLUMN processed INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE processing_runs ADD COLUMN heartbeat_at TEXT;
+"""
+
+
+# v8: у заметки аналитика один дом — `item_notes`. Колонка `items.analyst_note`
+# осталась с v2, v3 перенесла её содержимое, но CLI продолжал писать в колонку.
+# Здесь переезжают остатки, дальше колонка не заполняется (в ответе она осталась
+# ради совместимости и всегда пуста).
+_SCHEMA_V8 = """
+INSERT INTO item_notes (item_id, body, author, created_at)
+    SELECT id, analyst_note, '', COALESCE(processed_at, '') FROM items
+    WHERE analyst_note <> ''
+      AND NOT EXISTS (
+          SELECT 1 FROM item_notes n WHERE n.item_id = items.id AND n.body = items.analyst_note
+      );
+UPDATE items SET analyst_note = '' WHERE analyst_note <> '';
+"""
+
+
 _MIGRATIONS: dict[int, str] = {
     1: _SCHEMA_V1,
     2: _SCHEMA_V2,
     3: _SCHEMA_V3,
     4: _SCHEMA_V4,
     5: _SCHEMA_V5,
+    6: _SCHEMA_V6,
+    7: _SCHEMA_V7,
+    8: _SCHEMA_V8,
 }
+
+
+_ADD_COLUMN_RE = re.compile(r"ALTER\s+TABLE\s+(\w+)\s+ADD\s+COLUMN\s+(\w+)", re.I)
+_DROP_COLUMN_RE = re.compile(r"ALTER\s+TABLE\s+(\w+)\s+DROP\s+COLUMN\s+(\w+)", re.I)
+_RENAME_COLUMN_RE = re.compile(
+    r"ALTER\s+TABLE\s+(\w+)\s+RENAME\s+COLUMN\s+(\w+)\s+TO\s+(\w+)", re.I
+)
+
+
+def _statements(script: str) -> list[str]:
+    """Разбить скрипт миграции на отдельные операторы.
+
+    Делить по `;` нельзя: тело триггера само содержит `;` до своего `END`.
+    `sqlite3.complete_statement` знает это правило — на нём построена и
+    интерактивная оболочка из документации Python.
+    """
+    statements: list[str] = []
+    buffer = ""
+    for line in script.splitlines(keepends=True):
+        buffer += line
+        if buffer.strip() and sqlite3.complete_statement(buffer):
+            statements.append(buffer.strip())
+            buffer = ""
+    tail = buffer.strip()
+    if tail:
+        statements.append(tail)
+    return [s for s in statements if not _is_noop(s)]
+
+
+def _is_noop(statement: str) -> bool:
+    """Хвост из одних комментариев — не оператор."""
+    body = "\n".join(
+        line for line in statement.splitlines() if not line.strip().startswith("--")
+    )
+    return not body.strip().strip(";")
+
+
+def _first_line(statement: str) -> str:
+    return statement.splitlines()[0].strip()[:80]
+
+
+def _columns(conn: sqlite3.Connection, table: str) -> set[str]:
+    return {row["name"] for row in conn.execute(f"PRAGMA table_info({table})")}
+
+
+def _already_applied(conn: sqlite3.Connection, statement: str) -> bool:
+    """`CREATE ... IF NOT EXISTS` идемпотентен сам, а ALTER — нет: сверяемся со схемой."""
+    add = _ADD_COLUMN_RE.match(statement)
+    if add:
+        return add.group(2) in _columns(conn, add.group(1))
+    drop = _DROP_COLUMN_RE.match(statement)
+    if drop:
+        return drop.group(2) not in _columns(conn, drop.group(1))
+    rename = _RENAME_COLUMN_RE.match(statement)
+    if rename:
+        columns = _columns(conn, rename.group(1))
+        return rename.group(3) in columns and rename.group(2) not in columns
+    return False
 
 
 def _now_iso() -> str:
@@ -441,15 +543,36 @@ class Database:
         version = self.conn.execute("PRAGMA user_version").fetchone()[0]
         for target in sorted(_MIGRATIONS):
             if version < target:
-                self.conn.executescript(_MIGRATIONS[target])
-                self.conn.execute(f"PRAGMA user_version = {target}")
-                self.conn.commit()
-                after = _AFTER_MIGRATION.get(target)
-                if after is not None:
-                    after(self.conn)
-                    self.conn.commit()
+                self._apply(target)
                 log.info("schema migrated to v%d", target)
                 version = target
+
+    def _apply(self, target: int) -> None:
+        """Одна миграция целиком или никак.
+
+        `executescript` здесь нельзя: он делает COMMIT перед запуском, поэтому
+        упавшая на середине миграция оставляла базу полусобранной, а
+        `user_version` — прежним, и следующее открытие падало на «duplicate
+        column». Здесь DDL, python-донаполнение и `PRAGMA user_version` живут в
+        одной транзакции: SQLite держит `user_version` в заголовке файла и
+        откатывает его вместе с остальным. Уже применённые ALTER'ы
+        пропускаются — чтобы база, пострадавшая от старого механизма, доехала.
+        """
+        self.conn.execute("BEGIN IMMEDIATE")
+        try:
+            for statement in _statements(_MIGRATIONS[target]):
+                if _already_applied(self.conn, statement):
+                    log.info("миграция v%d: пропущено «%s»", target, _first_line(statement))
+                    continue
+                self.conn.execute(statement)
+            after = _AFTER_MIGRATION.get(target)
+            if after is not None:
+                after(self.conn)
+            self.conn.execute(f"PRAGMA user_version = {target}")
+        except Exception:
+            self.conn.rollback()
+            raise
+        self.conn.commit()
 
     def transaction(self):
         """`with db.transaction():` — commit on success, roll back on exception."""

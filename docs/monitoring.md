@@ -1,4 +1,4 @@
-# Наблюдаемость в эксплуатации (Статус на 05.09.2026. 23:00)
+# Наблюдаемость в эксплуатации (Статус на 06.09.2026. 02:00)
 
 ## Что должно быть:
 
@@ -11,7 +11,7 @@
 
 *Статус на 05.09.2026: отдельной системы мониторинга нет и в прототипе не планируется. Источник всех чисел — сама база `data/hub.db` (`llm_calls`, `items`, `item_revisions`, `item_tags`, `collect_runs`, `source_runs`, `items_search`) и команды `python -m src quality`, `sources list`, `sources health <id>`; код выхода `process` (2 — деградация или отказ провайдера) годится как сигнал для cron.*
 
-*Готовые источники наблюдения: сводка `GET /api/v1/status` (та же в команде `status`), поле `took_ms` в каждом ответе чтения (латентность меряет сам ответ), `GET /api/v1/health` и `GET /api/v1/health/ready` для оркестраторов (503, когда хранилище не отвечает; на readiness смотрит `HEALTHCHECK` в `src/Dockerfile`), таблица `processing_runs` (каждый прогон обработки с `trigger`, счётчиками, `elapsed_s` и ошибкой), `GET /api/v1/processing` (идёт ли прогон, последний, `unprocessed`, `llm_available`) и `GET /api/v1/collection` (запущен ли наблюдатель, `busy`, `next_tick_at`, `cycles`, `last_error`, `due_sources`).*
+*Готовые источники наблюдения: сводка `GET /api/v1/status` (та же в команде `status`), поле `took_ms` в каждом ответе чтения (латентность меряет сам ответ), `GET /api/v1/health` и `GET /api/v1/health/ready` для оркестраторов (503, когда хранилище не отвечает; на readiness смотрит `HEALTHCHECK` в `src/Dockerfile`), таблица `processing_runs` (каждый прогон обработки с `trigger`, счётчиками, `elapsed_s` и ошибкой), `GET /api/v1/processing` (идёт ли прогон, последний, `unprocessed`, `llm_available`) и `GET /api/v1/collection` (запущен ли наблюдатель, `busy`, `next_tick_at`, `cycles`, `last_error`, `due_sources`). С 06.09.2026 добавились `GET /api/v1/processing/quality` (карточки, очередь и вызовы модели с разбивкой по `stage` / `status` и по суткам — то же, что печатает `python -m src quality`, но без терминала) и колонки сбоя у документа (`documents.last_error`, `attempts`), по которым видно не «сколько упало», а «что именно упало».*
 
 *Агрегатов по всему пулу нет ни в CLI, ни в API: метрики по источникам — SQL-запросом к `source_runs`, `took_ms` не накапливается (p95 планируется через middleware). Это осознанный долг. Пороги, помеченные «допущение», взяты из ориентиров task.md и уточняются после первой недели эксплуатации. Это проверка процесса, а не продукта: «сбор стоит» и «обработка отстала» видны только в `/status`.*
 
@@ -21,13 +21,16 @@
 |---|---|---|
 | Свежесть источников | `sources.next_run_at` против `max(source_runs.started_at)` у активных; сводно — `due_sources` в `GET /api/v1/collection` | ни одного активного источника, просроченного больше чем на 3 своих интервала (допущение); `due_sources`, не убывающий дольше одного тика, означает остановленный цикл сбора |
 | Доля источников не в `active` | `sources.status` | базовая линия — 31 из 32 OK на прогоне 03.09.2026; рост `error` без ручной паузы разбираем |
-| Неудачи подряд | `fetch_state.consecutive_failures` | 5 подряд — источник сломан; статус в `error` ставится руками, автоперевода нет |
+| Неудачи подряд | `fetch_state.consecutive_failures` | 5 подряд — источник сломан и автоматически переводится в `error`; дальше интервал опроса растягивается вдвое за каждую неудачу (до 16×), а после 50 неудач и недели без успеха источник сам уходит в `paused` с причиной в `notes` |
 | Распределение `error_code` за сутки | `source_runs.error_code` | `network_unreachable` и `timeout` кучей — сеть или гео-блокировка; `parse_error` — сайт сменил вёрстку, чинить адаптер |
 | Латентность вызова модели, p95 | `llm_calls.latency_ms` | ≤ 15 с на публикацию; таймаут запроса — 300 с |
 | Доля `failed` и `retry` | `llm_calls.status` | `failed` < 2 %, `retry` < 10 % за сутки (допущение) |
 | Доля деградированных карточек | `items.degraded` | < 5 % за сутки (допущение); всплеск = проблема с провайдером, не с текстами |
 | Отставание обработки от сбора | `GET /api/v1/status`: `documents`, `items`, `unprocessed`; та же цифра — в `GET /processing` | меньше суточного притока (~600); сейчас 631 без карточки против 38 карточек — это главный объяснитель пустой ленты, а не поломка поиска |
 | Прогоны обработки | `processing_runs`: `calls`, `elapsed_s`, `failed`, `degraded`, `documents`, `status`, `trigger` | `elapsed_s / documents` ≤ 15 с; `failed = 0` в норме; `status = failed` — прогон упал целиком; сравнивать прогоны одного `trigger` и одинаковых `params` |
+| Прогресс идущего прогона | `processing_runs.processed` против `documents`, `heartbeat_at`; в ответе — поле `progress` | биение старше 5 минут при `status = running` — прогон завис (допущение: один вызов модели ≤ 300 с) |
+| Документы, упавшие в обработке | `documents.last_error`, `attempts`; сводно — `failed` в `GET /api/v1/processing` | не растёт от прогона к прогону; повторить — `process --only-failed`; один и тот же `last_error` на десятках документов — общая причина, а не плохие тексты |
+| Вызовы модели по этапам | `GET /api/v1/processing/quality`: `by_stage` (`stage` × `status`) и `by_day` | перекос `status <> 'ok'` в одном этапе показывает, где именно ломается пайплайн |
 | Состояние очереди ИИ | `GET /api/v1/processing`: `running`, `last`, `unprocessed`, `llm_available` | `running` не старше 30 мин (допущение); `llm_available: false` при наличии ключа — конфигурация процесса, а не модели |
 | Состояние наблюдателя сбора | `GET /api/v1/collection`: `running`, `busy`, `interval_seconds`, `next_tick_at`, `cycles`, `last_error`, `due_sources`, `last_collect` | `next_tick_at` в будущем, `cycles` растёт на 1 за интервал; непустой `last_error` два тика подряд — цикл не проходит; `busy: true` дольше одного цикла (~7 мин на полном пуле) — завис на сети |
 | Экономия на кластеризации | `processing_runs.calls / processing_runs.documents` | < 1 вызова на документ, иначе перепечатки не схлопываются |

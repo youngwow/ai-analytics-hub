@@ -22,6 +22,8 @@ from .domain import ITEM_TYPES, NPA_STATUSES, PRIORITIES
 ORDERS = ("published", "priority", "processed")
 # Архив: по умолчанию не показывается, но по запросу — вместе с лентой или отдельно.
 ARCHIVED_MODES = ("exclude", "include", "only")
+# Очередь сортируется по дате публикации или по времени, когда её забрал сбор.
+DOCUMENT_ORDERS = ("published", "fetched")
 MAX_LIMIT = 200
 DEFAULT_LIMIT = 20
 
@@ -141,16 +143,20 @@ class DocumentQuery:
     date_to: datetime | None = None
     q: str = ""
     limit: int = DEFAULT_LIMIT
+    order: str = "published"
     cursor: str | None = None
     rejected: tuple[str, ...] = field(default_factory=tuple)
 
     @classmethod
-    def build(cls, *, unsupported: dict | None = None, **kwargs) -> "DocumentQuery":
+    def build(cls, *, unsupported: dict | None = None, order: str | None = None, **kwargs) -> "DocumentQuery":
         present = [name for name, value in (unsupported or {}).items() if value]
         if present:
             raise QueryValidationError(
                 f"к списку документов неприменимы фильтры карточки: {', '.join(sorted(present))}"
             )
+        order = order or "published"
+        _one_of(order, DOCUMENT_ORDERS, "order")
+        # Порядок ленты к документам не применяется, но остальные проверки — те же.
         feed = FeedQuery.build(**kwargs)
         return cls(
             source_ids=feed.source_ids,
@@ -158,8 +164,14 @@ class DocumentQuery:
             date_to=feed.date_to,
             q=feed.q,
             limit=feed.limit,
+            order=order,
             cursor=feed.cursor,
         )
+
+    @property
+    def sort_field(self) -> str:
+        """Имя поля строки, по которому строится курсор."""
+        return "published_at" if self.order == "published" else "fetched_at"
 
     # -- курсор: та же схема, что у ленты, но отпечаток только из фильтров документа --
 
@@ -170,6 +182,7 @@ class DocumentQuery:
                 sorted(self.source_ids),
                 self.date_from.isoformat() if self.date_from else None,
                 self.date_to.isoformat() if self.date_to else None,
+                self.order,
             ],
             ensure_ascii=False,
         )
