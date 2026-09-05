@@ -16,9 +16,13 @@ import sqlite3
 import pytest
 
 from src.storage import Database
-from src.storage.db import _SCHEMA_V1, _SCHEMA_V2
+from src.storage.db import _MIGRATIONS, _SCHEMA_V1, _SCHEMA_V2
 
 NOW = "2026-09-02T12:00:00+00:00"
+# This file is about the v3 *data* moves; later steps ride along, so the version
+# assertions say «the chain ran to the end» instead of pinning a number twice
+# (`test_migration_v4.py` owns the literal for the newest step).
+CURRENT_VERSION = max(_MIGRATIONS)
 
 
 def _v2_connection(path: str) -> sqlite3.Connection:
@@ -131,11 +135,11 @@ def _open(path: str) -> Database:
 # ── the version bump itself ────────────────────────────────────────────────
 
 
-def test_opening_a_v2_database_migrates_it_to_v3(v2_database):
+def test_opening_a_v2_database_runs_the_migration_chain_to_the_end(v2_database):
     path, _ = v2_database
     db = _open(path)
     try:
-        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 3
+        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
     finally:
         db.close()
 
@@ -304,7 +308,7 @@ def test_two_spellings_of_one_address_do_not_break_the_migration(tmp_path, caplo
     with caplog.at_level(logging.WARNING, logger="db"):
         db = _open(path)
     try:
-        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 3
+        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
         assert db.sources.get(first).normalized_url == "t.me/rfrit"
         # the later row keeps its data but stays out of the unique index
         assert db.sources.get(second).normalized_url == ""
@@ -357,7 +361,7 @@ def test_reopening_a_migrated_database_changes_nothing(v2_database):
 
     second = _open(path)
     try:
-        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 3
+        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
         assert len(second.notes.list(ids["visible_item"])) == first_seen["notes"] == 1
         assert second.tags.names(ids["visible_item"]) == first_seen["tags"]
         # the backfill must not re-stamp a schedule that already exists
@@ -367,7 +371,7 @@ def test_reopening_a_migrated_database_changes_nothing(v2_database):
         second.close()
 
 
-def test_a_fresh_database_lands_on_v3_with_the_same_shape_as_a_migrated_one(tmp_path, v2_database):
+def test_a_fresh_database_has_the_same_column_shape_as_a_migrated_one(tmp_path, v2_database):
     migrated_path, _ = v2_database
     migrated, fresh = _open(migrated_path), _open(str(tmp_path / "fresh.db"))
     try:

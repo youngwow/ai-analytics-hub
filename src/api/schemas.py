@@ -70,3 +70,10 @@ class NoteRequest(BaseModel):
 
 class RevertRequest(BaseModel):
     field: str
+
+
+class DigestRequest(BaseModel):
+    filters: dict = Field(default_factory=dict)
+    format: str = "markdown"  # markdown | json
+    title: str = ""
+    include_notes: bool = False  # заметка — черновая мысль, пока её не решили отправить

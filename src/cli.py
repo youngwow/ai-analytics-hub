@@ -14,11 +14,14 @@ from courlan import get_base_url
 
 from .common import get_logger, load_env_secret
 from .config import Config, ConfigError
+from .feed.query import DocumentQuery, FeedQuery, QueryError
+from .feed.service import FeedService
 from .models import (
     CATEGORIES,
     EDIT_REASONS,
     ITEM_TYPES,
     KINDS,
+    NPA_STATUSES,
     PRIORITIES,
     Resolution,
     Source,
@@ -558,7 +561,37 @@ def _cmd_telegram_logout(args, config: Config, paths: ProjectPaths) -> int:
     return 0
 
 
+def _cmd_docs_unprocessed(args, config: Config, paths: ProjectPaths) -> int:
+    """Собрано, но карточки ещё нет — материал доступен, пока обработка догоняет."""
+    db, feed = _feed_service(config, paths)
+    try:
+        result = feed.documents(
+            DocumentQuery.build(
+                source_ids=[args.source] if args.source else [],
+                limit=args.limit,
+                timezone_name=config.api.timezone,
+            )
+        )
+    finally:
+        db.close()
+    rows = [
+        [
+            str(r["id"]),
+            (r["published_at"] or "-")[:10],
+            (r["source_name"] or "")[:22],
+            (r["title"] or "")[:56],
+            str(r["chars"] or 0),
+        ]
+        for r in result["documents"]
+    ]
+    print(_table(["id", "date", "источник", "title", "chars"], rows) if rows else "всё обработано")
+    print(f"({result['total']} документов без карточки)")
+    return 0
+
+
 def _cmd_docs(args, config: Config, paths: ProjectPaths) -> int:
+    if args.unprocessed:
+        return _cmd_docs_unprocessed(args, config, paths)
     db = Database(paths.db_path)
     rows = [
         [
@@ -637,38 +670,63 @@ def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
     return 2 if (report.degraded and report.items_new) or report.failed else 0
 
 
-def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
+def _feed_service(config: Config, paths: ProjectPaths):
     db = Database(paths.db_path)
-    rows = db.items.list(
-        type_=args.type,
-        priority=args.priority,
-        tag=args.tag,
-        query=args.q,
-        since=args.since,
-        limit=args.limit,
-        include_hidden=args.include_hidden,
-    )
-    table = [
+    return db, FeedService(config, db)
+
+
+def _feed_query(args, config: Config, **overrides):
+    """Один и тот же фильтр, что и у API: описан один раз в FeedQuery."""
+    kwargs = {
+        "q": getattr(args, "q", None),
+        "type": getattr(args, "type", None),
+        "npa_status": getattr(args, "npa_status", None),
+        "priority": getattr(args, "priority", None) or [],
+        "tags": getattr(args, "tag", None) or [],
+        "source_ids": getattr(args, "source", None) or [],
+        "date_from": getattr(args, "date_from", None),
+        "date_to": getattr(args, "date_to", None),
+        "order": getattr(args, "order", "published"),
+        "limit": getattr(args, "limit", None),
+        "cursor": getattr(args, "cursor", None),
+        "include_hidden": getattr(args, "include_hidden", False),
+        "timezone_name": config.api.timezone,
+    }
+    kwargs.update(overrides)
+    return FeedQuery.build(**kwargs)
+
+
+def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
+    db, feed = _feed_service(config, paths)
+    try:
+        result = feed.items(_feed_query(args, config))
+    except QueryError as e:
+        log.error("%s", e.message)
+        return 1
+    finally:
+        db.close()
+    rows = [
         [
             str(r["id"]),
             (r["published_at"] or "-")[:10],
             r["type"],
             r["priority"],
             str(r["sources_count"]),
-            ("⚠ " if r["needs_review"] else "")
+            (r["source_name"] or "—")[:18],
+            ("⚠ " if r["flags"]["needs_review"] else "")
             + ("· " if r["visibility"] != "visible" else "")
-            + (r["title"] or "")[:68],
+            + (r["title"] or "")[:52],
         ]
-        for r in rows
+        for r in result["items"]
     ]
-    total = db.items.count()
-    db.close()
     print(
-        _table(["id", "date", "type", "priority", "src", "title"], table)
-        if table
-        else "карточек нет — запустите `process`"
+        _table(["id", "date", "type", "priority", "src", "источник", "title"], rows)
+        if rows
+        else "по этому срезу карточек нет"
     )
-    print(f"({total} карточек всего)")
+    print(f"({result['total']} в срезе, показано {len(rows)}, {result['took_ms']} мс)")
+    if result["next_cursor"]:
+        print(f"следующая страница: --cursor {result['next_cursor']}")
     return 0
 
 
@@ -1103,7 +1161,73 @@ def _cmd_serve(args, config: Config, paths: ProjectPaths) -> int:
     return 0
 
 
+
+def _cmd_digest(args, config: Config, paths: ProjectPaths) -> int:
+    db, feed = _feed_service(config, paths)
+    try:
+        result = feed.digest(
+            _feed_query(args, config, limit=200, order="priority"),
+            fmt=args.format,
+            title=args.title or "",
+            include_notes=args.include_notes,
+        )
+    except QueryError as e:
+        log.error("%s", e.message)
+        return 1
+    finally:
+        db.close()
+    if args.out:
+        with open(args.out, "w", encoding="utf-8") as handle:
+            handle.write(result["body"])
+        print(f"{result['items']} материал(ов) → {args.out}")
+    else:
+        print(result["body"])
+    return 0
+
+
+def _cmd_status(args, config: Config, paths: ProjectPaths) -> int:
+    db, feed = _feed_service(config, paths)
+    try:
+        data = feed.status()
+    finally:
+        db.close()
+    print(f"последний сбор: {data['last_collect_at'] or '—'}")
+    print(
+        f"документов {data['documents']}, карточек {data['items']}, "
+        f"без карточки {data['unprocessed']}"
+    )
+    print("источники: " + ", ".join(f"{k} {v}" for k, v in sorted(data["sources"].items())))
+    if data["stale_sources"]:
+        rows = [
+            [
+                str(s["id"]),
+                s["name"][:28],
+                f"{s['overdue_minutes']} мин",
+                str(s["consecutive_failures"]),
+                (s["last_error"] or "")[:40],
+            ]
+            for s in data["stale_sources"]
+        ]
+        print()
+        print(_table(["id", "источник", "просрочен", "неудач", "ошибка"], rows))
+    return 0
+
+
 # ── parser ─────────────────────────────────────────────────────────────────
+
+
+def _feed_filter_args(parser) -> None:
+    """Фильтры ленты — одни и те же у `items` и `digest`."""
+    parser.add_argument("--q", help="search over card, tags, entities and the original text")
+    parser.add_argument("--type", choices=ITEM_TYPES)
+    parser.add_argument("--npa-status", dest="npa_status", choices=NPA_STATUSES)
+    parser.add_argument("--priority", choices=PRIORITIES, action="append")
+    parser.add_argument("--tag", action="append")
+    parser.add_argument("--source", type=int, action="append", help="source id (repeatable)")
+    parser.add_argument("--from", dest="date_from", help="local date or ISO timestamp")
+    parser.add_argument("--to", dest="date_to")
+    parser.add_argument("--order", choices=("published", "priority", "processed"),
+                        default="published")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -1223,16 +1347,25 @@ def build_parser() -> argparse.ArgumentParser:
     p.set_defaults(func=_cmd_process)
 
     p = sub.add_parser("items", help="the feed: cards with filters")
-    p.add_argument("--type", choices=ITEM_TYPES)
-    p.add_argument("--priority", choices=PRIORITIES)
-    p.add_argument("--tag")
-    p.add_argument("--q", help="full-text query over title and summary")
-    p.add_argument("--since", help="ISO date lower bound")
+    _feed_filter_args(p)
     p.add_argument("--limit", type=int, default=20)
+    p.add_argument("--cursor", help="next page token from the previous call")
     p.add_argument(
         "--include-hidden", action="store_true", help="show hidden and deleted cards too"
     )
     p.set_defaults(func=_cmd_items)
+
+    p = sub.add_parser("digest", help="export the current slice for a manager")
+    _feed_filter_args(p)
+    p.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    p.add_argument("--title")
+    p.add_argument("--include-notes", action="store_true", help="include analyst notes")
+    p.add_argument("--out", help="write to a file instead of stdout")
+    p.set_defaults(func=_cmd_digest)
+
+    sub.add_parser("status", help="collection and processing health").set_defaults(
+        func=_cmd_status
+    )
 
     p = sub.add_parser("item", help="one card: summary, entities, sources, history")
     p.add_argument("id", type=int)
@@ -1338,6 +1471,9 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("docs", help="show collected documents")
     p.add_argument("--source", type=int)
     p.add_argument("--limit", type=int, default=20)
+    p.add_argument(
+        "--unprocessed", action="store_true", help="only documents that have no card yet"
+    )
     p.set_defaults(func=_cmd_docs)
     return parser
 

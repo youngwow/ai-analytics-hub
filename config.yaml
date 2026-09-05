@@ -69,3 +69,4 @@ api:
   host: 127.0.0.1                 # адрес HTTP-API (`python -m src serve`)
   port: 8000
   docs: true                      # отдавать /docs и /openapi.json
+  timezone: Europe/Moscow         # голая дата в фильтре — это местные сутки, а не UTC

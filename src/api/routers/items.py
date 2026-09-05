@@ -5,38 +5,24 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Request
 
+from ...feed.service import FeedService
 from ...processing.service import ProcessingService
 from ..schemas import BulkRequest, HideRequest, ItemCreate, ItemPatch, NoteRequest, RevertRequest
-from ._common import get_processing
+from ._common import get_feed, get_processing
+from .feed import feed_query
 
 router = APIRouter(prefix="/api/v1/items", tags=["items"])
 
 Service = Annotated[ProcessingService, Depends(get_processing)]
+Feed = Annotated[FeedService, Depends(get_feed)]
 
 
 @router.get("", summary="Лента карточек")
-def list_items(
-    svc: Service,
-    type: str | None = Query(default=None),
-    priority: str | None = Query(default=None),
-    tag: str | None = Query(default=None),
-    q: str | None = Query(default=None),
-    since: str | None = Query(default=None),
-    limit: int = Query(default=20, le=200),
-    include_hidden: bool = Query(default=False),
-) -> dict:
-    rows = svc.list_items(
-        type_=type,
-        priority=priority,
-        tag=tag,
-        query=q,
-        since=since,
-        limit=limit,
-        include_hidden=include_hidden,
-    )
-    return {"items": [dict(r) for r in rows], "total": svc.db.items.count()}
+def list_items(request: Request, feed: Feed) -> dict:
+    """Лента целиком уехала в `FeedService`: одна реализация фильтра на CLI и API."""
+    return feed.items(feed_query(request, feed))
 
 
 @router.post("", status_code=201, summary="Ручное добавление материала")
@@ -66,7 +52,9 @@ def get_item(item_id: int, svc: Service) -> dict:
         from ...processing.service import ItemError
 
         raise ItemError("item_not_found", f"карточка #{item_id} не найдена")
+    canonical = next((s for s in payload["sources"] if s["is_canonical"]), None)
     return {
+        "canonical_url": (canonical["url"] if canonical else None) or None,
         "item": asdict(payload["item"]),
         "entities": [asdict(e) for e in payload["entities"]],
         "sources": [dict(r) for r in payload["sources"]],

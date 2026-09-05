@@ -166,8 +166,16 @@ def test_health_reports_the_poll_history(client, file_db, source):
 # ── карточки ───────────────────────────────────────────────────────────────
 
 
-def test_the_feed_hides_what_was_hidden(client, file_db, item_id):
+def test_hiding_from_the_digest_leaves_the_card_in_the_feed(client, file_db, item_id):
+    """Скрытие из дайджеста — не скрытие из ленты (решение владельца от 2026-09-05)."""
     client.post(f"/api/v1/items/{item_id}/hide", json={"scope": "digest", "reason": "не тем"})
+
+    assert [r["id"] for r in client.get("/api/v1/items").json()["items"]] == [item_id]
+    assert file_db.items.get(item_id).visibility == "hidden_digest"
+
+
+def test_the_feed_hides_what_was_hidden_from_it(client, file_db, item_id):
+    client.post(f"/api/v1/items/{item_id}/hide", json={"scope": "feed", "reason": "не тем"})
 
     assert client.get("/api/v1/items").json()["items"] == []
     assert client.get("/api/v1/items", params={"include_hidden": True}).json()["items"]

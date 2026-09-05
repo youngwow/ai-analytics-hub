@@ -80,13 +80,29 @@ def test_hiding_a_missing_card_says_so(service):
     assert excinfo.value.code == "item_not_found"
 
 
-def test_hidden_cards_leave_the_feed_but_stay_in_the_base(service, db, item_factory):
+def test_hiding_from_the_digest_keeps_the_card_in_the_feed(service, db, item_factory):
+    """Решение владельца от 2026-09-05: подготовка выжимки не чистит ленту всем сразу."""
     source = _source(db)
     ids = [_card(db, item_factory, source, external) for external in ("a", "b", "c")]
+
     service.set_visibility(ids[0], "digest")
 
-    assert len(db.items.list(limit=10)) == 2
+    assert len(db.items.list(limit=10)) == 3
+    assert db.items.get(ids[0]).visibility == "hidden_digest"
+
+
+@pytest.mark.parametrize("scope, expected", [("feed", "hidden_feed"), ("deleted", "deleted")])
+def test_hiding_from_the_feed_or_deleting_takes_the_card_out(
+    service, db, item_factory, scope, expected
+):
+    source = _source(db)
+    ids = [_card(db, item_factory, source, external) for external in ("a", "b", "c")]
+
+    service.set_visibility(ids[0], scope)
+
+    assert sorted(r["id"] for r in db.items.list(limit=10)) == ids[1:]
     assert len(db.items.list(limit=10, include_hidden=True)) == 3
+    assert db.items.get(ids[0]).visibility == expected
 
 
 def test_bulk_hiding_is_one_operation_over_many_cards(service, db, item_factory):
@@ -96,9 +112,20 @@ def test_bulk_hiding_is_one_operation_over_many_cards(service, db, item_factory)
     changed = service.bulk_visibility(ids, "digest", reason="дайджест для серверов")
 
     assert changed == 3
-    assert db.items.list(limit=10) == []
+    assert [db.items.get(i).visibility for i in ids] == ["hidden_digest"] * 3
+    assert len(db.items.list(limit=10)) == 3  # из ленты не пропали
     assert service.bulk_visibility(ids, "visible") == 3
-    assert len(db.items.list(limit=10)) == 3
+    assert [db.items.get(i).visibility for i in ids] == ["visible"] * 3
+
+
+def test_bulk_hiding_from_the_feed_empties_it(service, db, item_factory):
+    source = _source(db)
+    ids = [_card(db, item_factory, source, external) for external in ("a", "b", "c")]
+
+    assert service.bulk_visibility(ids, "feed", reason="источник удалён") == 3
+
+    assert db.items.list(limit=10) == []
+    assert len(db.items.list(limit=10, include_hidden=True)) == 3
 
 
 def test_bulk_hiding_an_empty_list_changes_nothing(service):

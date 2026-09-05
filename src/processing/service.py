@@ -367,6 +367,7 @@ class ProcessingService:
                 self._record_model_revisions(item_id, item)
                 self.db.items.add_entities(item_id, self._entities(draft))
                 self.db.items.link_sources(item_id, unit.members, unit.document_id)
+                self.db.search.rebuild(item_id)
                 if draft.type == "npa" and draft.npa_status:
                     self.db.items.add_event(
                         NpaEvent(
@@ -411,6 +412,7 @@ class ProcessingService:
         """A new publication about a tracked act: extend the card, never duplicate it."""
         added = self.db.items.link_sources(item.id, unit.members)
         self.db.clusters.grow(item.cluster_id, added)
+        self.db.search.rebuild(item.id)
         status = draft.npa_status
         if status and _advances(item.npa_status, status):
             item.npa_status = status
@@ -433,6 +435,7 @@ class ProcessingService:
             self._persist_derived(unit)
             added = self.db.items.link_sources(unit.join_item_id, unit.members)
             self.db.clusters.grow(unit.join_cluster_id, added, divergent=unit.divergent)
+            self.db.search.rebuild(unit.join_item_id)
 
     def _persist_derived(self, unit: _Unit) -> None:
         self.db.documents.set_derived(
@@ -508,6 +511,7 @@ class ProcessingService:
             self.db.items.update(item)
             for revision in changed:
                 self.db.items.add_revision(revision)
+            self.db.search.rebuild(item_id)
         return item
 
     def set_visibility(
@@ -575,6 +579,7 @@ class ProcessingService:
             self.db.items.update(item)
             if field == "tags":
                 self.db.tags.set_tags(item_id, restored, is_manual=False)
+            self.db.search.rebuild(item_id)
             self.db.items.add_revision(
                 ItemRevision(
                     item_id=item_id,
@@ -702,6 +707,7 @@ class ProcessingService:
             )
             item_id = self.db.items.add(item)
             self.db.items.link_sources(item_id, [document_id], document_id)
+            self.db.search.rebuild(item_id)
             report.items_new += 1
 
     def _find_duplicate(self, url: str, title: str, text: str) -> dict | None:
@@ -824,6 +830,7 @@ class ProcessingService:
             if "entities" in wanted:
                 self.db.items.clear_entities(item_id)
                 self.db.items.add_entities(item_id, self._entities(draft))
+            self.db.search.rebuild(item_id)
             for call in draft.calls:
                 call.item_id = item_id
                 self.db.llm_calls.add(call)

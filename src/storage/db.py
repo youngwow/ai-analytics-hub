@@ -316,7 +316,23 @@ CREATE INDEX IF NOT EXISTS idx_item_revisions_field
 """
 
 
-_MIGRATIONS: dict[int, str] = {1: _SCHEMA_V1, 2: _SCHEMA_V2, 3: _SCHEMA_V3}
+_SCHEMA_V4 = """
+CREATE VIRTUAL TABLE IF NOT EXISTS items_search USING fts5(
+    body,
+    tokenize = 'unicode61 remove_diacritics 2',
+    prefix = '2 3 4'
+);
+CREATE INDEX IF NOT EXISTS idx_item_sources_canonical ON item_sources(item_id, is_canonical);
+CREATE INDEX IF NOT EXISTS idx_items_type_priority ON items(type, priority);
+"""
+
+
+_MIGRATIONS: dict[int, str] = {
+    1: _SCHEMA_V1,
+    2: _SCHEMA_V2,
+    3: _SCHEMA_V3,
+    4: _SCHEMA_V4,
+}
 
 
 def _backfill_v3(conn: sqlite3.Connection) -> None:
@@ -352,7 +368,18 @@ def _backfill_v3(conn: sqlite3.Connection) -> None:
         )
 
 
-_AFTER_MIGRATION = {3: _backfill_v3}
+def _backfill_v4(conn: sqlite3.Connection) -> None:
+    """Наполнить поисковый индекс по уже существующим карточкам.
+
+    Строка индекса собирается из четырёх таблиц, поэтому её нельзя сложить
+    средствами одного SQL-скрипта миграции.
+    """
+    repo = SearchRepo(conn)
+    rebuilt = repo.rebuild_all()
+    log.info("поисковый индекс собран по %d карточкам", rebuilt)
+
+
+_AFTER_MIGRATION = {3: _backfill_v3, 4: _backfill_v4}
 
 
 class DuplicateSourceError(Exception):
@@ -396,6 +423,7 @@ class Database:
         self.source_runs = SourceRunRepo(self.conn)
         self.notes = ItemNoteRepo(self.conn)
         self.tags = ItemTagRepo(self.conn)
+        self.search = SearchRepo(self.conn)
 
     def _migrate(self) -> None:
         version = self.conn.execute("PRAGMA user_version").fetchone()[0]
@@ -878,7 +906,12 @@ class ItemRepo:
         include_hidden: bool = False,
     ) -> list[sqlite3.Row]:
         """Feed rows, newest first; `query` goes through items_fts."""
-        where: list[str] = [] if include_hidden else ["i.visibility = 'visible'"]
+        # Ленту очищает только `hidden_feed`; карточка, убранная из дайджеста,
+        # остаётся видимой — иначе подготовка адресной выжимки чистит ленту всем
+        # сразу (решение владельца от 2026-09-05).
+        where: list[str] = (
+            [] if include_hidden else ["i.visibility NOT IN ('hidden_feed', 'deleted')"]
+        )
         params: list = []
         if type_:
             where.append("i.type = ?")
@@ -1284,3 +1317,51 @@ class ItemTagRepo:
 
     def names(self, item_id: int) -> list[str]:
         return [t.tag for t in self.list(item_id)]
+
+
+class SearchRepo:
+    """Поисковый индекс: одна строка на карточку, шире самой карточки.
+
+    Текст собирается из четырёх таблиц, поэтому строка перестраивается целиком
+    (`DELETE` + `INSERT`), а не обновляется по частям: шесть триггеров с
+    частичными обновлениями стоили бы дороже и разъезжались бы (research.md, R-01).
+    """
+
+    _BODY_SQL = """
+        SELECT i.title, i.summary,
+               (SELECT group_concat(t.tag, ' ') FROM item_tags t WHERE t.item_id = i.id) AS tags,
+               (SELECT group_concat(e.value || ' ' || e.normalized_value, ' ')
+                  FROM entities e WHERE e.item_id = i.id) AS entities,
+               (SELECT d.norm_text FROM item_sources s JOIN documents d ON d.id = s.document_id
+                 WHERE s.item_id = i.id ORDER BY s.is_canonical DESC, d.id LIMIT 1) AS body
+          FROM items i WHERE i.id = ?
+    """
+
+    def __init__(self, conn: sqlite3.Connection):
+        self.conn = conn
+
+    def body_for(self, item_id: int) -> str:
+        row = self.conn.execute(self._BODY_SQL, (item_id,)).fetchone()
+        if row is None:
+            return ""
+        parts = [row["title"], row["summary"], row["tags"], row["entities"], row["body"]]
+        return "\n".join(p for p in parts if p)
+
+    def rebuild(self, item_id: int) -> None:
+        """Пересобрать строку карточки; вызывается из той же транзакции, что и запись."""
+        body = self.body_for(item_id)
+        self.conn.execute("DELETE FROM items_search WHERE rowid = ?", (item_id,))
+        if body.strip():
+            self.conn.execute(
+                "INSERT INTO items_search(rowid, body) VALUES (?, ?)", (item_id, body)
+            )
+
+    def remove(self, item_id: int) -> None:
+        self.conn.execute("DELETE FROM items_search WHERE rowid = ?", (item_id,))
+
+    def rebuild_all(self) -> int:
+        ids = [int(r["id"]) for r in self.conn.execute("SELECT id FROM items ORDER BY id")]
+        for item_id in ids:
+            self.rebuild(item_id)
+        self.conn.commit()
+        return len(ids)

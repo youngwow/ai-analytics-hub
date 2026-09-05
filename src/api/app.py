@@ -14,10 +14,12 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from ..common import get_logger
 from ..config import Config
+from ..feed.query import QueryError
 from ..paths import ProjectPaths
 from ..processing.service import ItemError
 from ..sources.manage import SourceError
 from .deps import Context
+from .routers import feed as feed_router
 from .routers import items as items_router
 from .routers import sources as sources_router
 
@@ -35,6 +37,7 @@ STATUS_BY_CODE = {
     "network_unreachable": 502,
     "telegram_preview_unavailable": 502,
     "validation_error": 400,
+    "invalid_cursor": 400,
 }
 TITLES = {
     400: "Некорректный запрос",
@@ -73,9 +76,13 @@ def create_app(config: Config | None = None, paths: ProjectPaths | None = None) 
 
     @app.exception_handler(SourceError)
     @app.exception_handler(ItemError)
+    @app.exception_handler(QueryError)
     async def service_error(request: Request, exc) -> JSONResponse:
         return problem(
-            STATUS_BY_CODE.get(exc.code, 400), exc.message, exc.code, exc.details
+            STATUS_BY_CODE.get(exc.code, 400),
+            exc.message,
+            exc.code,
+            getattr(exc, "details", None),
         )
 
     @app.exception_handler(RequestValidationError)
@@ -96,6 +103,8 @@ def create_app(config: Config | None = None, paths: ProjectPaths | None = None) 
     def health() -> dict:
         return {"status": "ok", "version": app.version}
 
+    # feed идёт первым: /items/facets должен победить /items/{item_id}
+    app.include_router(feed_router.router)
     app.include_router(sources_router.router)
     app.include_router(items_router.router)
     return app

@@ -8,6 +8,7 @@ global, which keeps them trivially testable via `Config.from_dict(...)`.
 from __future__ import annotations
 
 from dataclasses import MISSING, dataclass, field
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import yaml
 
@@ -127,6 +128,7 @@ class ApiConfig:
     host: str = "127.0.0.1"
     port: int = 8000
     docs: bool = True  # /docs и /openapi.json
+    timezone: str = "Europe/Moscow"  # чьи это сутки, когда фильтр получил голую дату
 
 
 _SECTIONS = {
@@ -257,3 +259,7 @@ class Config:
             raise ConfigError("config.yaml: api.port must be within [1, 65535]")
         if not self.api.host.strip():
             raise ConfigError("config.yaml: api.host must be non-empty")
+        try:
+            ZoneInfo(self.api.timezone)
+        except (ZoneInfoNotFoundError, ValueError) as e:
+            raise ConfigError(f"config.yaml: unknown api.timezone '{self.api.timezone}'") from e

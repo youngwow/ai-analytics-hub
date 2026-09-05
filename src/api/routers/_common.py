@@ -6,6 +6,7 @@ from typing import Iterator
 
 from fastapi import Depends, Request
 
+from ...feed.service import FeedService
 from ...processing.service import ProcessingService
 from ...sources.manage import SourceService
 from ...storage import Database
@@ -27,3 +28,7 @@ def get_sources(request: Request, db: Database = Depends(get_db)) -> SourceServi
 
 def get_processing(request: Request, db: Database = Depends(get_db)) -> ProcessingService:
     return request.app.state.context.processing(db)
+
+
+def get_feed(request: Request, db: Database = Depends(get_db)) -> FeedService:
+    return FeedService(request.app.state.context.config, db)

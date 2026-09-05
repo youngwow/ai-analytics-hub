@@ -7,13 +7,16 @@ import json
 import os
 import shutil
 from contextlib import contextmanager
+from datetime import datetime, timezone
 
 import pytest
+from fastapi.testclient import TestClient
 from support import JSON, MockRoutes
 
 from src import cli
+from src.api.app import create_app
 from src.config import Config
-from src.models import CollectReport, RawDocument, Resolution, Source
+from src.models import CollectReport, ItemNote, RawDocument, Resolution, Source
 from src.paths import DEFAULT_PATHS as REAL_PATHS
 from src.paths import ProjectPaths
 from src.sources import telegram_mtproto
@@ -153,8 +156,41 @@ def _db(paths: ProjectPaths):
          {"func": cli._cmd_telegram_logout, "action": "logout", "yes": False}),
         (["telegram", "logout", "--yes"], {"func": cli._cmd_telegram_logout, "yes": True}),
         (["import-url", "https://a.ru/x"], {"func": cli._cmd_import_url, "url": "https://a.ru/x"}),
-        (["docs"], {"func": cli._cmd_docs, "source": None, "limit": 20}),
+        (["docs"], {"func": cli._cmd_docs, "source": None, "limit": 20, "unprocessed": False}),
         (["docs", "--source", "1", "--limit", "5"], {"source": 1, "limit": 5}),
+        (["docs", "--unprocessed"], {"func": cli._cmd_docs, "unprocessed": True}),
+        # ── этап 1.3: лента, дайджест, состояние ──────────────────────────
+        (
+            ["items"],
+            {"func": cli._cmd_items, "q": None, "type": None, "npa_status": None,
+             "priority": None, "tag": None, "source": None, "date_from": None, "date_to": None,
+             "order": "published", "limit": 20, "cursor": None, "include_hidden": False},
+        ),
+        (
+            ["items", "--q", "КИИ", "--type", "npa", "--npa-status", "внесён",
+             "--priority", "high", "--priority", "medium", "--tag", "регуляторика",
+             "--tag", "тренды", "--source", "4", "--source", "17",
+             "--from", "2026-09-01", "--to", "2026-09-05", "--order", "priority",
+             "--limit", "50", "--cursor", "eyJ9", "--include-hidden"],
+            {"q": "КИИ", "type": "npa", "npa_status": "внесён",
+             "priority": ["high", "medium"], "tag": ["регуляторика", "тренды"],
+             "source": [4, 17], "date_from": "2026-09-01", "date_to": "2026-09-05",
+             "order": "priority", "limit": 50, "cursor": "eyJ9", "include_hidden": True},
+        ),
+        (
+            ["digest"],
+            {"func": cli._cmd_digest, "format": "markdown", "title": None,
+             "include_notes": False, "out": None, "order": "published", "priority": None},
+        ),
+        (
+            ["digest", "--priority", "high", "--tag", "регуляторика", "--from", "2026-09-01",
+             "--format", "json", "--title", "Дайджест 05.09", "--include-notes",
+             "--out", "digest.md"],
+            {"func": cli._cmd_digest, "priority": ["high"], "tag": ["регуляторика"],
+             "date_from": "2026-09-01", "format": "json", "title": "Дайджест 05.09",
+             "include_notes": True, "out": "digest.md"},
+        ),
+        (["status"], {"func": cli._cmd_status}),
     ],
     ids=lambda v: " ".join(v) if isinstance(v, list) else "",
 )
@@ -171,7 +207,11 @@ def test_build_parser_parses_every_command(argv, expected):
      ["discover", "q", "--collect"], ["search"], ["search", "q", "--days", "week"],
      ["search", "q", "--category", "telegram"], ["search", "q", "--category", "manual"],
      ["telegram"], ["telegram", "signin"], ["telegram", "status", "--yes"],
-     ["telegram", "login", "--yes"], ["telegram", "logout", "--phone", "+7999"]],
+     ["telegram", "login", "--yes"], ["telegram", "logout", "--phone", "+7999"],
+     ["items", "--type", "law"], ["items", "--priority", "urgent"],
+     ["items", "--order", "relevance"], ["items", "--npa-status", "подписан"],
+     ["items", "--limit", "много"], ["items", "--source", "не-число"],
+     ["digest", "--format", "html"], ["digest", "--cursor", "eyJ9"], ["status", "--limit", "5"]],
     ids=lambda v: " ".join(v) or "<empty>",
 )
 def test_build_parser_rejects_bad_input(argv):
@@ -1038,11 +1078,205 @@ def test_docs_lists_stored_documents(config, paths, capsys):
                         fetched_at="2026-09-02T12:00:00+00:00")
         )
     db.close()
-    assert cli._cmd_docs(_args(source=None, limit=20), config, paths) == 0
+    assert cli._cmd_docs(_args(source=None, limit=20, unprocessed=False), config, paths) == 0
     out = capsys.readouterr().out
     assert "Первый документ" in out
     assert "2026-09-02T07:00" in out
     assert "(1 documents total)" in out
+
+
+# ── лента, дайджест и состояние (task 1.3) ─────────────────────────────────
+
+FEED_ORDER = ("hidden_digest", "npa_high", "news_medium", "news_low", "npa_medium", "undated")
+
+
+def _table_ids(out: str) -> list[int]:
+    """Идентификаторы из первой колонки таблицы `items` / `docs`."""
+    return [int(line.split()[0]) for line in out.splitlines() if line[:1].isdigit()]
+
+
+def _parse(*argv: str) -> argparse.Namespace:
+    return cli.build_parser().parse_args(list(argv))
+
+
+@pytest.fixture
+def frozen_feed_clock(monkeypatch) -> str:
+    """`digest` и `status` смотрят на `utc_now()` внутри feed.service — пиним её."""
+    import src.feed.service as feed_service
+
+    monkeypatch.setattr(
+        feed_service, "utc_now", lambda: datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
+    )
+    return "2026-09-05"
+
+
+def test_items_on_an_empty_project_says_the_slice_is_empty(config, hub_paths, capsys):
+    assert cli._cmd_items(_parse("items"), config, hub_paths) == 0
+
+    out = capsys.readouterr().out
+    assert "по этому срезу карточек нет" in out
+    assert "(0 в срезе, показано 0," in out
+
+
+def test_items_prints_the_slice_with_its_size(config, hub_paths, corpus, capsys):
+    assert cli._cmd_items(_parse("items", "--limit", "50"), config, hub_paths) == 0
+
+    out = capsys.readouterr().out
+    assert out.splitlines()[0].split() == [
+        "id", "date", "type", "priority", "src", "источник", "title"
+    ]
+    assert _table_ids(out) == [corpus[key] for key in FEED_ORDER]
+    assert "(6 в срезе, показано 6," in out
+
+
+def test_items_marks_a_card_that_is_only_hidden_from_the_digest(config, hub_paths, corpus, capsys):
+    cli._cmd_items(_parse("items", "--limit", "50"), config, hub_paths)
+
+    assert "· Скрыто из дайджеста" in capsys.readouterr().out
+
+
+def test_items_hands_back_a_cursor_that_fetches_the_next_page(config, hub_paths, corpus, capsys):
+    assert cli._cmd_items(_parse("items", "--limit", "2"), config, hub_paths) == 0
+    first = capsys.readouterr().out
+    assert _table_ids(first) == [corpus["hidden_digest"], corpus["npa_high"]]
+    cursor = first.rsplit("следующая страница: --cursor ", 1)[1].strip()
+
+    assert cli._cmd_items(_parse("items", "--limit", "2", "--cursor", cursor),
+                          config, hub_paths) == 0
+
+    assert _table_ids(capsys.readouterr().out) == [corpus["news_medium"], corpus["news_low"]]
+
+
+def test_items_with_a_limit_out_of_range_returns_1(config, hub_paths, corpus, caplog):
+    assert cli._cmd_items(_parse("items", "--limit", "500"), config, hub_paths) == 1
+
+    assert "limit должен быть в диапазоне 1..200, получено 500" in caplog.text
+
+
+def test_items_with_a_broken_cursor_returns_1(config, hub_paths, corpus, caplog):
+    assert cli._cmd_items(_parse("items", "--cursor", "!!!!"), config, hub_paths) == 1
+
+    assert "курсор не разбирается" in caplog.text
+
+
+@pytest.mark.parametrize(
+    ("argv", "params"),
+    [
+        (["--priority", "high", "--priority", "medium"],
+         [("priority", "high"), ("priority", "medium")]),
+        (["--tag", "регуляторика"], [("tag", "регуляторика")]),
+        (["--type", "npa"], [("type", "npa")]),
+        (["--from", "2026-09-02", "--to", "2026-09-04"],
+         [("from", "2026-09-02"), ("to", "2026-09-04")]),
+        (["--order", "priority"], [("order", "priority")]),
+        (["--include-hidden"], [("include_hidden", "true")]),
+        (["--q", "законопроект"], [("q", "законопроект")]),
+    ],
+    ids=["priorities", "tag", "type", "dates", "order", "include-hidden", "query"],
+)
+def test_the_cli_and_the_api_return_the_same_ids_for_the_same_filters(
+    config, hub_paths, file_db, corpus, capsys, argv, params
+):
+    """Один и тот же `FeedQuery` на обеих поверхностях — принцип III конституции."""
+    assert cli._cmd_items(_parse("items", "--limit", "50", *argv), config, hub_paths) == 0
+    from_cli = _table_ids(capsys.readouterr().out)
+
+    body = TestClient(create_app(config, hub_paths)).get(
+        "/api/v1/items", params=[*params, ("limit", 50)]
+    ).json()
+
+    assert from_cli == [row["id"] for row in body["items"]]
+    assert len(from_cli) == body["total"]
+
+
+def test_docs_unprocessed_lists_only_what_has_no_card(
+    config, hub_paths, corpus, corpus_sources, document_factory, capsys
+):
+    document_factory(corpus_sources["media"], title="Ещё не обработан")
+
+    assert cli._cmd_docs(_parse("docs", "--unprocessed"), config, hub_paths) == 0
+
+    out = capsys.readouterr().out
+    assert "Ещё не обработан" in out
+    assert "Минцифры внесло законопроект" not in out
+    assert "(1 документов без карточки)" in out
+
+
+def test_docs_unprocessed_says_so_when_everything_is_processed(config, hub_paths, corpus, capsys):
+    assert cli._cmd_docs(_parse("docs", "--unprocessed"), config, hub_paths) == 0
+
+    out = capsys.readouterr().out
+    assert "всё обработано" in out
+    assert "(0 документов без карточки)" in out
+
+
+def test_digest_prints_the_export_grouped_by_priority(
+    config, hub_paths, corpus, capsys, frozen_feed_clock
+):
+    assert cli._cmd_digest(_parse("digest", "--priority", "high"), config, hub_paths) == 0
+
+    out = capsys.readouterr().out
+    assert out.startswith(f"# Дайджест {frozen_feed_clock}")
+    assert "## Высокий приоритет (1)" in out
+    assert "Скрыто из дайджеста" not in out  # hidden_digest не выгружается
+
+
+def test_digest_writes_to_a_file_when_asked(
+    config, hub_paths, tmp_path, corpus, capsys, frozen_feed_clock
+):
+    target = tmp_path / "digest.md"
+
+    assert cli._cmd_digest(_parse("digest", "--out", str(target)), config, hub_paths) == 0
+
+    assert capsys.readouterr().out.strip() == f"5 материал(ов) → {target}"
+    assert target.read_text(encoding="utf-8").startswith(f"# Дайджест {frozen_feed_clock}")
+
+
+def test_digest_includes_the_analyst_note_only_on_request(
+    config, hub_paths, file_db, corpus, capsys, frozen_feed_clock
+):
+    file_db.notes.add(ItemNote(item_id=corpus["npa_high"], body="внутренняя пометка"))
+
+    cli._cmd_digest(_parse("digest", "--priority", "high"), config, hub_paths)
+    assert "внутренняя пометка" not in capsys.readouterr().out
+
+    cli._cmd_digest(_parse("digest", "--priority", "high", "--include-notes"), config, hub_paths)
+    assert "> Заметка: внутренняя пометка" in capsys.readouterr().out
+
+
+def test_digest_with_a_bad_filter_returns_1(config, hub_paths, corpus, caplog):
+    args = _parse("digest", "--from", "2026-09-05", "--to", "2026-09-01")
+
+    assert cli._cmd_digest(args, config, hub_paths) == 1
+
+    assert "from не может быть позже to" in caplog.text
+
+
+def test_status_prints_the_gap_between_documents_and_cards(
+    config, hub_paths, corpus, corpus_sources, document_factory, capsys, frozen_feed_clock
+):
+    document_factory(corpus_sources["media"], title="Ещё не обработан")
+
+    assert cli._cmd_status(_parse("status"), config, hub_paths) == 0
+
+    lines = capsys.readouterr().out.splitlines()
+    assert lines[0] == "последний сбор: —"
+    assert lines[1] == "документов 9, карточек 8, без карточки 1"
+    assert lines[2] == "источники: active 3"
+
+
+def test_status_tables_the_overdue_sources(
+    config, hub_paths, file_db, source_factory, capsys, frozen_feed_clock
+):
+    source_factory("Молчит с утра", next_run_at="2026-09-05T11:00:00+00:00")
+    source_factory("Ждёт очереди", next_run_at="2026-09-05T13:00:00+00:00")
+
+    assert cli._cmd_status(_parse("status"), config, hub_paths) == 0
+
+    out = capsys.readouterr().out
+    assert "Молчит с утра" in out
+    assert "60 мин" in out
+    assert "Ждёт очереди" not in out
 
 
 def test_table_pads_columns():
