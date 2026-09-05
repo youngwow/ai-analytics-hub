@@ -476,10 +476,10 @@ def test_rerun_does_not_duplicate_documents_by_external_id(raw_config, db, now, 
 # ── source selection / force ───────────────────────────────────────────────
 
 
-def test_disabled_sources_are_polled_only_when_named(raw_config, db, now, tmp_path):
+def test_paused_sources_are_polled_only_when_named(raw_config, db, now, tmp_path):
     config = _config(raw_config, fetch_fulltext=False)
     routes = MockRoutes({RSS_URL: (200, rss_bytes([{"title": "a", "link": "https://example.ru/1"}]), RSS)})
-    source = _add(db, enabled=False)
+    source = _add(db, status="paused")
     collector = _collector(config, db, routes, now, tmp_path)
 
     report = collector.run()
@@ -812,11 +812,11 @@ def test_search_thin_hits_get_their_text_from_the_page(raw_config, db, fixture_b
 # ── collect_one ────────────────────────────────────────────────────────────
 
 
-def test_collect_one_polls_a_disabled_source_and_records_the_run(raw_config, db, fixture_bytes,
-                                                                  now, tmp_path):
+def test_collect_one_polls_a_paused_source_and_records_the_run(raw_config, db, fixture_bytes,
+                                                                now, tmp_path):
     config = _config(raw_config, fetch_fulltext=False)
     routes = _tavily_routes(fixture_bytes)
-    source = _search_source(db, enabled=False)
+    source = _search_source(db, status="paused")
     result, entry = _collector(config, db, routes, now, tmp_path).collect_one(source)
 
     assert result.error is None
@@ -834,7 +834,7 @@ def test_collect_one_polls_a_disabled_source_and_records_the_run(raw_config, db,
     assert (run["sources_ok"], run["sources_fail"], run["docs_new"]) == (1, 0, 4)
     assert run["started_at"] == run["finished_at"] == "2026-09-02T12:00:00+00:00"
     assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 1
-    assert db.sources.get(source.id).enabled is False
+    assert db.sources.get(source.id).status == "paused"  # an ad-hoc poll never resumes a source
 
 
 def test_collect_one_force_drops_the_cursor_and_re_asks_the_full_window(raw_config, db,

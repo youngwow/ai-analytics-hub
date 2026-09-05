@@ -22,11 +22,15 @@ from ..config import Config
 from ..models import CollectReport, FetchResult, FetchState, RawDocument, Source
 from ..paths import ProjectPaths
 from ..storage import Database
+from . import scheduler
 from .base import HostLimiter, build_adapters, make_client
 from .fulltext import FullTextFetcher
 from .telegram_mtproto import MtprotoReader, credentials_from_env, reader_factory
 
 log = get_logger("collector")
+
+# После стольких неудач подряд источник помечается сломанным (spec 1.4, US-4).
+FAILURES_TO_ERROR = 5
 
 
 def _placeholder_name(source: Source) -> bool:
@@ -67,11 +71,19 @@ class Collector:
     # ── run ────────────────────────────────────────────────────────────────
 
     def run(
-        self, source_ids: list[int] | None = None, backfill: bool = False, force: bool = False
+        self,
+        source_ids: list[int] | None = None,
+        backfill: bool = False,
+        force: bool = False,
+        due_only: bool = False,
     ) -> CollectReport:
         started = self.now()
         if source_ids:
             sources = [s for s in self.db.sources.list() if s.id in set(source_ids)]
+        elif due_only:
+            # `collect --watch` тикает часто и почти всегда вхолостую: расписание
+            # источника решает, чья очередь (scheduler.py).
+            sources = scheduler.due(self.db, now=started)
         else:
             sources = self.db.sources.list(enabled_only=True)
         sources = [s for s in sources if s.kind in self.adapters]
@@ -113,6 +125,7 @@ class Collector:
                             latency_ms,
                         )
                         self._tally(report, entry)
+                        scheduler.reschedule(self.db, source, now=self.now())
         finally:
             self.close()
         report.finished_at = to_utc_iso(self.now()) or ""
@@ -197,7 +210,29 @@ class Collector:
 
     # ── persistence (main thread) ──────────────────────────────────────────
 
-    def _persist(
+    def _persist(self, source: Source, *args, **kwargs) -> dict:
+        """Обёртка над записью результата: каждый опрос попадает в `source_runs`.
+
+        История нужна US-4 — по одному «последнему состоянию» нельзя отличить
+        источник, который молчит, от источника, который сломался неделю назад.
+        """
+        started = self.now()
+        entry = self._persist_result(source, *args, **kwargs)
+        try:
+            run_id = self.db.source_runs.start(source.id, to_utc_iso(started) or "")
+            error = entry.get("error") or ""
+            self.db.source_runs.finish(
+                run_id,
+                items_found=int(entry.get("seen") or 0),
+                items_new=int(entry.get("new") or 0),
+                error_code=_error_code(error) if error else "",
+                error_message=error,
+            )
+        except Exception as e:  # история не должна ронять сбор
+            log.debug("не записана история опроса #%s: %s", source.id, e)
+        return entry
+
+    def _persist_result(
         self,
         source: Source,
         state: FetchState,
@@ -224,11 +259,17 @@ class Collector:
             state.consecutive_failures += 1
             with self.db.transaction():
                 self.db.fetch_state.save(state)
+                # Молчащий источник и сломанный различаются только так: после порога
+                # он виден в списке как `error`, а не как обычный активный (US-4).
+                if state.consecutive_failures >= FAILURES_TO_ERROR and source.status == "active":
+                    self.db.sources.set_status(source.id, "error")
             log.warning("✗ %s: %s", source.name, result.error)
             return {**entry, "status": "failed", "error": result.error}
 
         if result.not_modified:
             state.last_error = None
+            if source.status == "error":
+                self.db.sources.set_status(source.id, "active")
             state.consecutive_failures = 0
             state.last_success_at = now_iso
             state.last_doc_count = 0
@@ -285,6 +326,8 @@ class Collector:
             state.consecutive_failures = 0
             state.last_success_at = now_iso
             state.last_doc_count = len(inserted)
+            if source.status == "error":
+                self.db.sources.set_status(source.id, "active")  # починился сам
             if seen_urls:
                 self.db.seen_urls.add(source.id, seen_urls, now_iso)
             self.db.fetch_state.save(state)
@@ -368,3 +411,28 @@ class Collector:
             doc_id = self.db.documents.insert(doc)
         log.info("imported %s as #%d (%d chars)", url, doc_id, len(doc.text))
         return doc_id, True
+
+
+# Словарь для UI: по коду видно, чинить сеть, парсер или доступ (US-4).
+_ERROR_CODES = (
+    ("timeout", "timeout"),
+    ("timed out", "timeout"),
+    ("не отвечает", "timeout"),
+    ("HTTP 4", "http_error"),
+    ("HTTP 5", "http_error"),
+    ("preview unavailable", "telegram_preview_unavailable"),
+    ("MTProto", "telegram_preview_unavailable"),
+    ("certificate", "network_unreachable"),
+    ("connect", "network_unreachable"),
+    ("DNS", "network_unreachable"),
+    ("parse", "parse_error"),
+    ("no adapter", "parse_error"),
+)
+
+
+def _error_code(error: str) -> str:
+    low = (error or "").lower()
+    for needle, code in _ERROR_CODES:
+        if needle.lower() in low:
+            return code
+    return "error"

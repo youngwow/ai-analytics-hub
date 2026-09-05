@@ -12,16 +12,17 @@ from __future__ import annotations
 
 import time
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import timedelta
 
-from ..common import get_logger, to_utc_iso, utc_now
+from ..common import get_logger, sha256_text, to_utc_iso, utc_now
 from ..config import Config
 from ..models import (
     Cluster,
     CompanyProfile,
     EntitySpan,
     Item,
+    ItemNote,
     ItemRevision,
     LlmCall,
     NpaEvent,
@@ -36,9 +37,21 @@ from .pipeline import Draft, Pipeline
 log = get_logger("processing")
 
 EDITABLE_FIELDS = ("title", "summary", "priority", "type", "tags", "npa_status", "analyst_note")
+# Fields a human may edit and therefore may want to revert to the model's version.
+REVERTIBLE_FIELDS = ("title", "summary", "priority", "type", "tags")
 # A later publication may only move a bill forward; a retrospective article must
 # not drag a card back to "анонс".
 _STATUS_ORDER = ("анонс", "разработка", "внесён", "рассмотрение", "принят", "действует", "архив")
+
+
+class ItemError(Exception):
+    """Ошибка, которую видит пользователь: машинный код плюс человеческий текст."""
+
+    def __init__(self, code: str, message: str, details: dict | None = None):
+        super().__init__(message)
+        self.code = code
+        self.message = message
+        self.details = details or {}
 
 
 @dataclass
@@ -106,6 +119,12 @@ class ProcessingService:
             "sources": self.db.items.sources(item_id),
             "events": self.db.items.events(item_id),
             "revisions": self.db.items.revisions(item_id),
+            "notes": self.db.notes.list(item_id),
+            "tags": self.db.tags.list(item_id),
+            "model_proposals": {
+                name: self.db.items.last_model_value(item_id, name)
+                for name in REVERTIBLE_FIELDS
+            },
         }
 
     # -- the run --
@@ -344,6 +363,8 @@ class ProcessingService:
                     published_at=unit.document.published_at,
                 )
                 item_id = self.db.items.add(item)
+                self.db.tags.set_tags(item_id, draft.tags, is_manual=False)
+                self._record_model_revisions(item_id, item)
                 self.db.items.add_entities(item_id, self._entities(draft))
                 self.db.items.link_sources(item_id, unit.members, unit.document_id)
                 if draft.type == "npa" and draft.npa_status:
@@ -363,6 +384,28 @@ class ProcessingService:
                 report.degraded += 1
             if draft.needs_review:
                 report.needs_review += 1
+
+    def _record_model_revisions(self, item_id: int, item: Item, previous: Item | None = None) -> None:
+        """Write what the model produced into the history.
+
+        Without this `revert` has nothing to return: the card would only ever hold
+        the human's value and the model's version would be lost (US-8).
+        """
+        for field_name in REVERTIBLE_FIELDS:
+            value = _as_text(getattr(item, field_name))
+            old = _as_text(getattr(previous, field_name)) if previous is not None else None
+            if previous is not None and old == value:
+                continue
+            self.db.items.add_revision(
+                ItemRevision(
+                    item_id=item_id,
+                    field=field_name,
+                    old_value=old,
+                    new_value=value,
+                    actor="model",
+                    source_of_change="llm",
+                )
+            )
 
     def _attach_to_npa(self, item: Item, unit: _Unit, draft: Draft, now: str) -> None:
         """A new publication about a tracked act: extend the card, never duplicate it."""
@@ -425,7 +468,9 @@ class ProcessingService:
 
     # -- editing --
 
-    def edit_item(self, item_id: int, fields: dict, actor: str = "user") -> Item:
+    def edit_item(
+        self, item_id: int, fields: dict, actor: str = "user", reason: str = ""
+    ) -> Item:
         """Apply an analyst's edit: mark the field, keep the before/after in history."""
         item = self.db.items.get(item_id)
         if item is None:
@@ -434,6 +479,9 @@ class ProcessingService:
         for name, value in fields.items():
             if value is None or name not in EDITABLE_FIELDS:
                 continue
+            if name in ("title", "summary") and not str(value).strip():
+                # Пустое саммари — не способ спрятать карточку, для этого есть hide.
+                raise ItemError("validation_error", f"поле «{name}» не может быть пустым")
             old = getattr(item, name)
             if old == value:
                 continue
@@ -444,18 +492,239 @@ class ProcessingService:
                     old_value=_as_text(old),
                     new_value=_as_text(value),
                     actor=actor,
+                    source_of_change="human",
+                    edit_reason=reason,
                 )
             )
             setattr(item, name, value)
-            if name not in item.edited_fields:
-                item.edited_fields.append(name)
+            if name not in item.manual_overrides:
+                item.manual_overrides.append(name)
         if not changed:
             return item
         with self.db.transaction():
+            if "tags" in fields and fields["tags"] is not None:
+                self.db.tags.set_tags(item_id, fields["tags"], is_manual=True)
+                item.tags = self.db.tags.names(item_id)
             self.db.items.update(item)
             for revision in changed:
                 self.db.items.add_revision(revision)
         return item
+
+    def set_visibility(
+        self, item_id: int, scope: str = "feed", reason: str = "", *, restore: bool = False
+    ) -> Item:
+        """Скрыть или вернуть карточку. Удаления нет — только состояние видимости."""
+        item = self.db.items.get(item_id)
+        if item is None:
+            raise ItemError("item_not_found", f"карточка #{item_id} не найдена")
+        target = {
+            "feed": "hidden_feed",
+            "digest": "hidden_digest",
+            "deleted": "deleted",
+            "visible": "visible",
+        }.get("visible" if restore else scope)
+        if target is None:
+            raise ItemError("validation_error", f"неизвестная область скрытия: {scope}")
+        self.db.items.set_visibility(item_id, target, "" if target == "visible" else reason)
+        item.visibility, item.hidden_reason = target, reason
+        return item
+
+    def bulk_visibility(self, item_ids: list[int], scope: str = "digest", reason: str = "") -> int:
+        """Подготовка дайджеста: одна атомарная операция, отменяется целиком."""
+        target = {"feed": "hidden_feed", "digest": "hidden_digest", "visible": "visible"}.get(scope)
+        if target is None:
+            raise ItemError("validation_error", f"неизвестная область скрытия: {scope}")
+        return self.db.items.set_visibility_bulk(item_ids, target, reason)
+
+    def add_note(self, item_id: int, body: str, author: str = "") -> ItemNote:
+        """Заметка аналитика: решение сотрудника, а не факт из источника (US-7)."""
+        if not body.strip():
+            raise ItemError("validation_error", "пустая заметка")
+        if self.db.items.get(item_id) is None:
+            raise ItemError("item_not_found", f"карточка #{item_id} не найдена")
+        note = ItemNote(item_id=item_id, body=body.strip(), author=author)
+        with self.db.transaction():
+            self.db.notes.add(note)
+        return note
+
+    def revert(self, item_id: int, field: str) -> Item:
+        """Вернуть версию модели из истории (US-8)."""
+        item = self.db.items.get(item_id)
+        if item is None:
+            raise ItemError("item_not_found", f"карточка #{item_id} не найдена")
+        if field not in REVERTIBLE_FIELDS:
+            raise ItemError(
+                "validation_error", f"revert доступен для {list(REVERTIBLE_FIELDS)}"
+            )
+        revision = self.db.items.last_model_value(item_id, field)
+        if revision is None or revision.new_value is None:
+            raise ItemError(
+                "nothing_to_revert",
+                f"у карточки #{item_id} нет версии модели для поля «{field}»",
+            )
+        current = getattr(item, field)
+        restored = (
+            [t.strip() for t in revision.new_value.split(",") if t.strip()]
+            if isinstance(current, list)
+            else revision.new_value
+        )
+        setattr(item, field, restored)
+        if field in item.manual_overrides:
+            item.manual_overrides.remove(field)
+        with self.db.transaction():
+            self.db.items.update(item)
+            if field == "tags":
+                self.db.tags.set_tags(item_id, restored, is_manual=False)
+            self.db.items.add_revision(
+                ItemRevision(
+                    item_id=item_id,
+                    field=field,
+                    old_value=_as_text(current),
+                    new_value=revision.new_value,
+                    actor="user",
+                    source_of_change="human",
+                    edit_reason="revert",
+                )
+            )
+        return item
+
+    def add_manual(
+        self,
+        *,
+        title: str = "",
+        url: str = "",
+        text: str = "",
+        published_at: str | None = None,
+        item_type: str = "news",
+        npa_status: str | None = None,
+        run_llm: bool = True,
+        profile_id: int | None = None,
+        force: bool = False,
+    ) -> dict:
+        """Ручной материал (US-12, US-13): PDF с почты, документ из закрытого чата.
+
+        Обязателен только заголовок — материал без ссылки это валидный случай.
+        """
+        if not title.strip() and not url.strip():
+            raise ItemError("validation_error", "нужен хотя бы заголовок или ссылка")
+        duplicate = None if force else self._find_duplicate(url, title, text)
+        if duplicate is not None:
+            raise ItemError(
+                "possible_duplicate",
+                f"похоже на карточку #{duplicate['item_id']}",
+                duplicate,
+            )
+        source = self.db.sources.ensure_manual()
+        now = to_utc_iso(utc_now()) or ""
+        document = RawDocument(
+            source_id=source.id,
+            external_id=f"manual:{sha256_text(title, url, text)[:16]}",
+            url=url,
+            title=title or url,
+            text=text,
+            published_at=published_at or now,
+            fetched_at=now,
+        )
+        document.compute_hash()
+        with self.db.transaction():
+            document_id = self.db.documents.insert(document)
+        rows = [self.db.conn.execute("SELECT * FROM documents WHERE id=?", (document_id,)).fetchone()]
+        report = ProcessingReport(documents=1)
+        if run_llm and self.provider is not None:
+            company = profile_mod.resolve(self.db, profile_id)
+            prompt_version = self.db.prompts.ensure(
+                prompts.STAGE, prompts.SYSTEM, self.config.llm.model,
+                {"temperature": self.config.llm.temperature},
+            )
+            units = self._prepare(rows)
+            self._draft_all([u for u in units if u.join_item_id is None], company)
+            for unit in units:
+                self._store(unit, company, prompt_version, report)
+        else:
+            self._store_manual(document, document_id, item_type, npa_status, now, report)
+        item_id = self.db.items.item_for_document(document_id)
+        if item_id is not None:
+            with self.db.transaction():
+                self.db.conn.execute(
+                    "UPDATE items SET origin='manual' WHERE id=?", (item_id,)
+                )
+                if item_type == "npa" and npa_status:
+                    self.db.conn.execute(
+                        "UPDATE items SET type='npa', npa_status=? WHERE id=?",
+                        (npa_status, item_id),
+                    )
+                    if not self.db.items.has_event(item_id, npa_status):
+                        self.db.items.add_event(
+                            NpaEvent(
+                                item_id=item_id,
+                                status=npa_status,
+                                occurred_at=published_at,
+                                source_url=url,
+                                created_by="user",
+                            )
+                        )
+        return {"document_id": document_id, "item_id": item_id, "report": report}
+
+    def _store_manual(
+        self,
+        document: RawDocument,
+        document_id: int,
+        item_type: str,
+        npa_status: str | None,
+        now: str,
+        report: ProcessingReport,
+    ) -> None:
+        """Карточка без модели: `run_llm=false` или провайдер недоступен.
+
+        Материал не теряется — он попадает в ленту деградированным (edge case).
+        """
+        norm = normalize.normalize(document.text or document.title)
+        with self.db.transaction():
+            self.db.documents.set_derived(
+                document_id, simhash=dedup.simhash(norm), norm_text=norm
+            )
+            cluster_id = self.db.clusters.add(
+                Cluster(canonical_document_id=document_id, created_at=now)
+            )
+            item = Item(
+                cluster_id=cluster_id,
+                type=item_type,
+                npa_status=npa_status,
+                title=document.title,
+                summary="\n".join(normalize.lead(norm, 3)),
+                priority="medium",
+                reasoning="Карточка заведена вручную, модель не вызывалась.",
+                confidence=0.3,
+                degraded=True,
+                origin="manual",
+                processed_at=now,
+                published_at=document.published_at,
+            )
+            item_id = self.db.items.add(item)
+            self.db.items.link_sources(item_id, [document_id], document_id)
+            report.items_new += 1
+
+    def _find_duplicate(self, url: str, title: str, text: str) -> dict | None:
+        """Сначала точный адрес, потом SimHash — эмбеддингов в этой установке нет."""
+        if url:
+            document_id = self.db.documents.find_by_url(url)
+            if document_id is not None:
+                item_id = self.db.items.item_for_document(document_id)
+                if item_id is not None:
+                    return {"item_id": item_id, "document_id": document_id, "reason": "url"}
+        fingerprint = dedup.simhash(normalize.normalize(f"{title}\n{text}"))
+        if not fingerprint:
+            return None
+        for row in self.db.documents.clustered_candidates(since=self._window_start()):
+            distance = dedup.hamming(fingerprint, row["simhash"] or "")
+            if distance <= self.config.processing.simhash_distance:
+                return {
+                    "item_id": row["item_id"],
+                    "document_id": row["id"],
+                    "reason": f"simhash d={distance}",
+                    "similarity": round(1 - distance / 64, 3),
+                }
+        return None
 
     def add_npa_event(
         self,
@@ -480,7 +749,7 @@ class ProcessingService:
         )
         with self.db.transaction():
             self.db.items.add_event(event)
-            if _advances(item.npa_status, status) and "npa_status" not in item.edited_fields:
+            if _advances(item.npa_status, status) and "npa_status" not in item.manual_overrides:
                 item.npa_status = status
                 self.db.items.update(item)
         return event
@@ -515,8 +784,20 @@ class ProcessingService:
             profile=company,
         )
         wanted = set(stages or ["summary", "priority", "type", "tags", "entities"])
-        protected = set(item.edited_fields) if keep_human_edits else set()
+        protected = set(item.manual_overrides) if keep_human_edits else set()
         now = to_utc_iso(utc_now()) or ""
+
+        # What the model proposes is recorded before anything is applied — including
+        # for fields the human has locked. That record is what `revert` and the
+        # «модель предлагает другое» banner read (US-8).
+        proposal = replace(
+            item,
+            summary=draft.summary_text,
+            priority=draft.priority,
+            type=draft.type,
+            tags=draft.tags,
+        )
+        self._record_model_revisions(item_id, proposal, previous=item)
 
         if "summary" in wanted and "summary" not in protected:
             item.summary = draft.summary_text
@@ -528,7 +809,9 @@ class ProcessingService:
             item.type = draft.type
             item.npa_key = draft.npa_key
         if "tags" in wanted and "tags" not in protected:
-            item.tags = draft.tags
+            # Заменяем только теги модели: ручные остаются (item_tags.is_manual).
+            self.db.tags.set_tags(item_id, draft.tags, is_manual=False)
+            item.tags = self.db.tags.names(item_id)
         item.confidence = draft.confidence
         item.degraded = draft.degraded
         item.needs_review = draft.needs_review

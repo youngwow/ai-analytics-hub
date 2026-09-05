@@ -21,12 +21,16 @@ from ..models import (
     EntitySpan,
     FetchState,
     Item,
+    ItemNote,
     ItemRevision,
+    ItemTag,
     LlmCall,
     NpaEvent,
     RawDocument,
     Source,
+    SourceRun,
 )
+from ..sources.textutil import normalized_source_url
 
 log = get_logger("db")
 
@@ -241,7 +245,114 @@ END;
 """
 
 
-_MIGRATIONS: dict[int, str] = {1: _SCHEMA_V1, 2: _SCHEMA_V2}
+_SCHEMA_V3 = """
+ALTER TABLE items RENAME COLUMN edited_fields TO manual_overrides;
+
+ALTER TABLE items ADD COLUMN visibility TEXT NOT NULL DEFAULT 'visible'
+    CHECK (visibility IN ('visible','hidden_feed','hidden_digest','deleted'));
+ALTER TABLE items ADD COLUMN hidden_reason TEXT NOT NULL DEFAULT '';
+ALTER TABLE items ADD COLUMN origin TEXT NOT NULL DEFAULT 'collected'
+    CHECK (origin IN ('collected','manual'));
+UPDATE items SET visibility = 'hidden_feed' WHERE is_hidden = 1;
+ALTER TABLE items DROP COLUMN is_hidden;
+CREATE INDEX IF NOT EXISTS idx_items_visibility ON items(visibility);
+
+ALTER TABLE sources ADD COLUMN status TEXT NOT NULL DEFAULT 'active'
+    CHECK (status IN ('active','paused','error','deleted'));
+UPDATE sources SET status = CASE enabled WHEN 1 THEN 'active' ELSE 'paused' END;
+ALTER TABLE sources DROP COLUMN enabled;
+ALTER TABLE sources ADD COLUMN normalized_url TEXT NOT NULL DEFAULT '';
+ALTER TABLE sources ADD COLUMN poll_interval TEXT NOT NULL DEFAULT '1h'
+    CHECK (poll_interval IN ('15m','1h','6h','24h'));
+ALTER TABLE sources ADD COLUMN next_run_at TEXT;
+ALTER TABLE sources ADD COLUMN category_hint TEXT
+    CHECK (category_hint IS NULL OR category_hint IN ('npa','news'));
+ALTER TABLE sources ADD COLUMN deleted_at TEXT;
+ALTER TABLE sources ADD COLUMN created_by TEXT NOT NULL DEFAULT '';
+CREATE UNIQUE INDEX IF NOT EXISTS idx_sources_normalized ON sources(normalized_url)
+    WHERE status <> 'deleted' AND normalized_url <> '';
+CREATE INDEX IF NOT EXISTS idx_sources_due ON sources(next_run_at)
+    WHERE status IN ('active', 'error');
+
+CREATE TABLE IF NOT EXISTS source_runs (
+    id            INTEGER PRIMARY KEY,
+    source_id     INTEGER NOT NULL REFERENCES sources(id) ON DELETE CASCADE,
+    started_at    TEXT NOT NULL,
+    finished_at   TEXT,
+    http_status   INTEGER,
+    items_found   INTEGER NOT NULL DEFAULT 0,
+    items_new     INTEGER NOT NULL DEFAULT 0,
+    error_code    TEXT NOT NULL DEFAULT '',
+    error_message TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS idx_source_runs_source ON source_runs(source_id, started_at DESC);
+
+CREATE TABLE IF NOT EXISTS item_notes (
+    id         INTEGER PRIMARY KEY,
+    item_id    INTEGER NOT NULL REFERENCES items(id) ON DELETE CASCADE,
+    body       TEXT NOT NULL,
+    author     TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_item_notes_item ON item_notes(item_id, created_at);
+INSERT INTO item_notes (item_id, body, author, created_at)
+    SELECT id, analyst_note, '', processed_at FROM items WHERE analyst_note <> '';
+
+CREATE TABLE IF NOT EXISTS item_tags (
+    item_id   INTEGER NOT NULL REFERENCES items(id) ON DELETE CASCADE,
+    tag       TEXT NOT NULL,
+    is_manual INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (item_id, tag)
+);
+CREATE INDEX IF NOT EXISTS idx_item_tags_tag ON item_tags(tag);
+INSERT OR IGNORE INTO item_tags (item_id, tag, is_manual)
+    SELECT i.id, j.value, 0 FROM items i, json_each(i.tags) j;
+
+ALTER TABLE item_revisions ADD COLUMN source_of_change TEXT NOT NULL DEFAULT 'human'
+    CHECK (source_of_change IN ('llm','human'));
+ALTER TABLE item_revisions ADD COLUMN edit_reason TEXT NOT NULL DEFAULT '';
+CREATE INDEX IF NOT EXISTS idx_item_revisions_field
+    ON item_revisions(item_id, field, created_at DESC);
+"""
+
+
+_MIGRATIONS: dict[int, str] = {1: _SCHEMA_V1, 2: _SCHEMA_V2, 3: _SCHEMA_V3}
+
+
+def _backfill_v3(conn: sqlite3.Connection) -> None:
+    """Fill `normalized_url` and start the schedule for sources that predate v3.
+
+    Not part of the SQL script: normalisation must be the same function the
+    resolver uses, otherwise the same channel gets two spellings and the unique
+    index stops catching duplicates.
+    """
+    from ..sources.textutil import normalized_source_url
+
+    now = _now_iso()
+    seen: dict[str, int] = {}
+    for row in conn.execute("SELECT id, name, url, fetch_url FROM sources ORDER BY id").fetchall():
+        key = normalized_source_url(row["fetch_url"] or row["url"])
+        if key in seen:
+            # The pool predates the unique index and already holds two spellings of
+            # one address. Keep both rows, leave the later one unnormalised (the
+            # index skips empty values) and say so — merging is the operator's call.
+            log.warning(
+                "источник #%s «%s» повторяет #%s по адресу %s — normalized_url оставлен пустым",
+                row["id"],
+                row["name"],
+                seen[key],
+                key,
+            )
+            key = ""
+        elif key:
+            seen[key] = int(row["id"])
+        conn.execute(
+            "UPDATE sources SET normalized_url=?, next_run_at=COALESCE(next_run_at, ?) WHERE id=?",
+            (key, now, row["id"]),
+        )
+
+
+_AFTER_MIGRATION = {3: _backfill_v3}
 
 
 class DuplicateSourceError(Exception):
@@ -282,6 +393,9 @@ class Database:
         self.profiles = ProfileRepo(self.conn)
         self.prompts = PromptRepo(self.conn)
         self.llm_calls = LlmCallRepo(self.conn)
+        self.source_runs = SourceRunRepo(self.conn)
+        self.notes = ItemNoteRepo(self.conn)
+        self.tags = ItemTagRepo(self.conn)
 
     def _migrate(self) -> None:
         version = self.conn.execute("PRAGMA user_version").fetchone()[0]
@@ -290,6 +404,10 @@ class Database:
                 self.conn.executescript(_MIGRATIONS[target])
                 self.conn.execute(f"PRAGMA user_version = {target}")
                 self.conn.commit()
+                after = _AFTER_MIGRATION.get(target)
+                if after is not None:
+                    after(self.conn)
+                    self.conn.commit()
                 log.info("schema migrated to v%d", target)
                 version = target
 
@@ -310,18 +428,27 @@ class SourceRepo:
         if existing is not None:
             raise DuplicateSourceError(existing)
         source.created_at = source.created_at or _now_iso()
+        source.normalized_url = source.normalized_url or normalized_source_url(
+            source.fetch_url or source.url
+        )
         cur = self.conn.execute(
-            "INSERT INTO sources (name, url, kind, category, fetch_url, enabled, created_at, notes) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO sources (name, url, kind, category, fetch_url, status, normalized_url, "
+            "poll_interval, next_run_at, category_hint, created_at, notes, created_by) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 source.name,
                 source.url,
                 source.kind,
                 source.category,
                 source.fetch_url,
-                int(source.enabled),
+                source.status,
+                source.normalized_url,
+                source.poll_interval,
+                source.next_run_at or source.created_at,
+                source.category_hint,
                 source.created_at,
                 source.notes,
+                source.created_by,
             ),
         )
         self.conn.commit()
@@ -330,16 +457,22 @@ class SourceRepo:
 
     def update(self, source: Source) -> None:
         self.conn.execute(
-            "UPDATE sources SET name=?, url=?, kind=?, category=?, fetch_url=?, enabled=?, notes=? "
-            "WHERE id=?",
+            "UPDATE sources SET name=?, url=?, kind=?, category=?, fetch_url=?, status=?, "
+            "normalized_url=?, poll_interval=?, next_run_at=?, category_hint=?, notes=?, "
+            "deleted_at=? WHERE id=?",
             (
                 source.name,
                 source.url,
                 source.kind,
                 source.category,
                 source.fetch_url,
-                int(source.enabled),
+                source.status,
+                source.normalized_url,
+                source.poll_interval,
+                source.next_run_at,
+                source.category_hint,
                 source.notes,
+                source.deleted_at,
                 source.id,
             ),
         )
@@ -350,27 +483,74 @@ class SourceRepo:
         return Source.from_row(row) if row else None
 
     def get_by_fetch_url(self, fetch_url: str) -> Source | None:
-        row = self.conn.execute("SELECT * FROM sources WHERE fetch_url=?", (fetch_url,)).fetchone()
+        """Удалённый источник не занимает адрес: его можно завести заново (US-11)."""
+        row = self.conn.execute(
+            "SELECT * FROM sources WHERE fetch_url=? AND status <> 'deleted'", (fetch_url,)
+        ).fetchone()
         return Source.from_row(row) if row else None
 
-    def list(self, enabled_only: bool = False) -> list[Source]:
-        sql = (
-            "SELECT * FROM sources" + (" WHERE enabled=1" if enabled_only else "") + " ORDER BY id"
-        )
-        return [Source.from_row(r) for r in self.conn.execute(sql)]
+    def list(
+        self,
+        enabled_only: bool = False,
+        *,
+        status: str | None = None,
+        kind: str | None = None,
+        include_deleted: bool = False,
+    ) -> list[Source]:
+        where, params = [], []
+        if enabled_only:
+            # `error` — флаг здоровья, а не пауза: сломанный источник продолжают
+            # опрашивать, иначе он никогда не починится сам.
+            where.append("status IN ('active', 'error')")
+        elif status == "active":
+            where.append("status = 'active'")
+        elif status:
+            where.append("status = ?")
+            params.append(status)
+        elif not include_deleted:
+            where.append("status <> 'deleted'")
+        if kind:
+            where.append("kind = ?")
+            params.append(kind)
+        sql = "SELECT * FROM sources" + (" WHERE " + " AND ".join(where) if where else "")
+        return [Source.from_row(r) for r in self.conn.execute(sql + " ORDER BY id", params)]
 
-    def set_enabled(self, source_id: int, enabled: bool) -> bool:
+    def get_by_normalized(self, normalized_url: str) -> Source | None:
+        """Duplicate check: three spellings of one address share this key."""
+        if not normalized_url:
+            return None
+        row = self.conn.execute(
+            "SELECT * FROM sources WHERE normalized_url=? AND status <> 'deleted' LIMIT 1",
+            (normalized_url,),
+        ).fetchone()
+        return Source.from_row(row) if row else None
+
+    def set_status(self, source_id: int, status: str) -> bool:
+        deleted_at = _now_iso() if status == "deleted" else None
         cur = self.conn.execute(
-            "UPDATE sources SET enabled=? WHERE id=?", (int(enabled), source_id)
+            "UPDATE sources SET status=?, deleted_at=? WHERE id=?", (status, deleted_at, source_id)
         )
         self.conn.commit()
         return cur.rowcount > 0
+
+    def due(self, now: str, limit: int = 100) -> list[Source]:
+        """Sources whose turn has come — the whole scheduler in one query."""
+        rows = self.conn.execute(
+            "SELECT * FROM sources WHERE status IN ('active', 'error') "
+            "AND (next_run_at IS NULL OR next_run_at <= ?) ORDER BY next_run_at LIMIT ?",
+            (now, limit),
+        )
+        return [Source.from_row(r) for r in rows]
+
+    def schedule(self, source_id: int, next_run_at: str) -> None:
+        self.conn.execute(
+            "UPDATE sources SET next_run_at=? WHERE id=?", (next_run_at, source_id)
+        )
+        self.conn.commit()
 
     def remove(self, source_id: int) -> bool:
-        """Hard delete; documents, fetch state and seen URLs cascade."""
-        cur = self.conn.execute("DELETE FROM sources WHERE id=?", (source_id,))
-        self.conn.commit()
-        return cur.rowcount > 0
+        """Soft delete (US-11): documents and cards stay, the source stops being polled."""
+        return self.set_status(source_id, "deleted")
 
     def ensure_manual(self) -> Source:
         """The built-in sink for `import-url` and hand-entered items."""
@@ -646,9 +826,9 @@ class ItemRepo:
 
     _COLUMNS = (
         "cluster_id, type, npa_status, npa_key, title, summary, priority, relevance_score, "
-        "reasoning, confidence, tags, analyst_note, is_hidden, is_archived, degraded, "
-        "needs_review, date_estimated, model_name, prompt_version, profile_version, "
-        "edited_fields, processed_at, published_at"
+        "reasoning, confidence, tags, analyst_note, visibility, hidden_reason, origin, "
+        "is_archived, degraded, needs_review, date_estimated, model_name, prompt_version, "
+        "profile_version, manual_overrides, processed_at, published_at"
     )
 
     def __init__(self, conn: sqlite3.Connection):
@@ -698,7 +878,7 @@ class ItemRepo:
         include_hidden: bool = False,
     ) -> list[sqlite3.Row]:
         """Feed rows, newest first; `query` goes through items_fts."""
-        where: list[str] = [] if include_hidden else ["i.is_hidden = 0"]
+        where: list[str] = [] if include_hidden else ["i.visibility = 'visible'"]
         params: list = []
         if type_:
             where.append("i.type = ?")
@@ -728,6 +908,41 @@ class ItemRepo:
 
     def count(self) -> int:
         return int(self.conn.execute("SELECT count(*) FROM items").fetchone()[0])
+
+    # -- visibility: ничего не удаляется физически --
+
+    def set_visibility(self, item_id: int, visibility: str, reason: str = "") -> bool:
+        cur = self.conn.execute(
+            "UPDATE items SET visibility=?, hidden_reason=? WHERE id=?",
+            (visibility, reason, item_id),
+        )
+        self.conn.commit()
+        return cur.rowcount > 0
+
+    def set_visibility_bulk(self, item_ids: Iterable[int], visibility: str, reason: str = "") -> int:
+        """Массовая операция под дайджест: одна транзакция, отменяется целиком."""
+        ids = list(dict.fromkeys(item_ids))
+        if not ids:
+            return 0
+        marks = ",".join("?" * len(ids))
+        with self.conn:
+            cur = self.conn.execute(
+                f"UPDATE items SET visibility=?, hidden_reason=? WHERE id IN ({marks})",
+                [visibility, reason, *ids],
+            )
+        return cur.rowcount
+
+    def hide_by_source(self, source_id: int) -> int:
+        """`--purge-items`: карточки источника уходят из ленты, но остаются в базе."""
+        cur = self.conn.execute(
+            "UPDATE items SET visibility='hidden_feed', hidden_reason='источник удалён' "
+            "WHERE visibility='visible' AND id IN ("
+            "  SELECT s.item_id FROM item_sources s JOIN documents d ON d.id = s.document_id"
+            "  WHERE d.source_id = ?)",
+            (source_id,),
+        )
+        self.conn.commit()
+        return cur.rowcount
 
     # -- entities --
 
@@ -814,14 +1029,16 @@ class ItemRepo:
 
     def add_revision(self, revision: ItemRevision) -> int:
         cur = self.conn.execute(
-            "INSERT INTO item_revisions (item_id, field, old_value, new_value, actor, created_at) "
-            "VALUES (?, ?, ?, ?, ?, ?)",
+            "INSERT INTO item_revisions (item_id, field, old_value, new_value, actor, "
+            "source_of_change, edit_reason, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 revision.item_id,
                 revision.field,
                 revision.old_value,
                 revision.new_value,
                 revision.actor,
+                revision.source_of_change,
+                revision.edit_reason,
                 revision.created_at or _now_iso(),
             ),
         )
@@ -833,12 +1050,21 @@ class ItemRepo:
         )
         return [ItemRevision.from_row(r) for r in rows]
 
+    def last_model_value(self, item_id: int, field: str) -> ItemRevision | None:
+        """The newest value the model proposed for a field — what `revert` restores."""
+        row = self.conn.execute(
+            "SELECT * FROM item_revisions WHERE item_id=? AND field=? AND source_of_change='llm' "
+            "ORDER BY created_at DESC, id DESC LIMIT 1",
+            (item_id, field),
+        ).fetchone()
+        return ItemRevision.from_row(row) if row else None
+
     def edited_share(self, since: str | None = None) -> float:
         """Share of cards an analyst touched — the honest proxy for model quality."""
         total = self.count()
         if not total:
             return 0.0
-        sql = "SELECT count(*) FROM items WHERE edited_fields <> '[]'"
+        sql = "SELECT count(*) FROM items WHERE manual_overrides <> '[]'"
         params: list = []
         if since:
             sql += " AND processed_at >= ?"
@@ -966,3 +1192,95 @@ class LlmCallRepo:
             "FROM llm_calls" + (" WHERE " + " AND ".join(where) if where else "")
         )
         return self.conn.execute(sql, params).fetchone()
+
+
+class SourceRunRepo:
+    """History of polls. `fetch_state` keeps the last state; this keeps the story."""
+
+    def __init__(self, conn: sqlite3.Connection):
+        self.conn = conn
+
+    def start(self, source_id: int, started_at: str | None = None) -> int:
+        cur = self.conn.execute(
+            "INSERT INTO source_runs (source_id, started_at) VALUES (?, ?)",
+            (source_id, started_at or _now_iso()),
+        )
+        self.conn.commit()
+        return int(cur.lastrowid)
+
+    def finish(
+        self,
+        run_id: int,
+        *,
+        items_found: int = 0,
+        items_new: int = 0,
+        http_status: int | None = None,
+        error_code: str = "",
+        error_message: str = "",
+    ) -> None:
+        self.conn.execute(
+            "UPDATE source_runs SET finished_at=?, items_found=?, items_new=?, http_status=?, "
+            "error_code=?, error_message=? WHERE id=?",
+            (
+                _now_iso(),
+                items_found,
+                items_new,
+                http_status,
+                error_code,
+                error_message[:500],
+                run_id,
+            ),
+        )
+        self.conn.commit()
+
+    def history(self, source_id: int, limit: int = 20) -> list[SourceRun]:
+        rows = self.conn.execute(
+            "SELECT * FROM source_runs WHERE source_id=? ORDER BY started_at DESC, id DESC LIMIT ?",
+            (source_id, limit),
+        )
+        return [SourceRun.from_row(r) for r in rows]
+
+
+class ItemNoteRepo:
+    def __init__(self, conn: sqlite3.Connection):
+        self.conn = conn
+
+    def add(self, note: ItemNote) -> int:
+        cur = self.conn.execute(
+            "INSERT INTO item_notes (item_id, body, author, created_at) VALUES (?, ?, ?, ?)",
+            (note.item_id, note.body, note.author, note.created_at or _now_iso()),
+        )
+        self.conn.commit()
+        return int(cur.lastrowid)
+
+    def list(self, item_id: int) -> list[ItemNote]:
+        rows = self.conn.execute(
+            "SELECT * FROM item_notes WHERE item_id=? ORDER BY id", (item_id,)
+        )
+        return [ItemNote.from_row(r) for r in rows]
+
+
+class ItemTagRepo:
+    """Tags with provenance: reprocessing may only replace what the model put there."""
+
+    def __init__(self, conn: sqlite3.Connection):
+        self.conn = conn
+
+    def set_tags(self, item_id: int, tags: Iterable[str], *, is_manual: bool = False) -> None:
+        """Replace tags of one origin; the other origin is left untouched."""
+        self.conn.execute(
+            "DELETE FROM item_tags WHERE item_id=? AND is_manual=?", (item_id, int(is_manual))
+        )
+        self.conn.executemany(
+            "INSERT OR IGNORE INTO item_tags (item_id, tag, is_manual) VALUES (?, ?, ?)",
+            [(item_id, t, int(is_manual)) for t in dict.fromkeys(tags)],
+        )
+
+    def list(self, item_id: int) -> list[ItemTag]:
+        rows = self.conn.execute(
+            "SELECT * FROM item_tags WHERE item_id=? ORDER BY is_manual DESC, tag", (item_id,)
+        )
+        return [ItemTag.from_row(r) for r in rows]
+
+    def names(self, item_id: int) -> list[str]:
+        return [t.tag for t in self.list(item_id)]

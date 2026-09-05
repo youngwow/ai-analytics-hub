@@ -101,7 +101,7 @@ def _db(paths: ProjectPaths):
         (
             ["collect"],
             {"func": cli._cmd_collect, "source": None, "backfill": False, "force": False,
-             "watch": False, "interval": 900},
+             "watch": False, "interval": 60},
         ),
         (
             ["collect", "--source", "1", "--source", "2", "--backfill", "--force", "--watch",
@@ -208,9 +208,9 @@ def test_collect_watch_stops_cleanly_on_keyboard_interrupt(config, paths, capsys
     args = _args(source=None, backfill=False, force=False, watch=True, interval=42)
     assert cli._cmd_collect(args, config, paths, sleep=sleep) == 0
     assert calls == [42]
-    out = capsys.readouterr().out
-    assert out.count("new documents;") == 1
-    assert out.strip() == "0 new documents; sources ok=0 not_modified=0 failed=0"
+    # Тик по расписанию, на котором никого не оказалось, молчит: иначе цикл раз в
+    # минуту печатает строку «0 new documents» и хоронит в ней настоящие прогоны.
+    assert capsys.readouterr().out.strip() == ""
 
 
 def test_collect_without_watch_runs_once_and_returns_zero(config, paths, capsys):
@@ -229,7 +229,7 @@ def test_collect_returns_1_when_every_polled_source_failed(monkeypatch, config, 
         def __init__(self, *a, **k):
             pass
 
-        def run(self, source_ids=None, backfill=False, force=False):
+        def run(self, source_ids=None, backfill=False, force=False, due_only=False):
             return CollectReport(sources_fail=2, per_source=[{"status": "failed"}] * 2)
 
     monkeypatch.setattr(cli, "Collector", StubCollector)
@@ -264,16 +264,16 @@ def test_guess_category(url, kind, expected):
 @pytest.fixture
 def domain_sources(db) -> Database:
     """Enabled media/regulator sites plus every kind that must never become a domain."""
-    for name, url, kind, category, enabled in [
-        ("Ведомости", "https://www.vedomosti.ru", "rss", "media", True),
-        ("ЦБ", "https://www.cbr.ru", "rss", "regulator", True),
-        ("Дума", "http://duma.gov.ru/", "html", "regulator", True),
-        ("Канал", "https://t.me/cit_gov", "telegram", "telegram", True),
-        ("Выключен", "https://old.ru", "html", "media", False),
-        ("Поиск", SearchQuery("q").to_url(), "search", "media", True),
+    for name, url, kind, category, status in [
+        ("Ведомости", "https://www.vedomosti.ru", "rss", "media", "active"),
+        ("ЦБ", "https://www.cbr.ru", "rss", "regulator", "active"),
+        ("Дума", "http://duma.gov.ru/", "html", "regulator", "active"),
+        ("Канал", "https://t.me/cit_gov", "telegram", "telegram", "active"),
+        ("Выключен", "https://old.ru", "html", "media", "paused"),
+        ("Поиск", SearchQuery("q").to_url(), "search", "media", "active"),
     ]:
         db.sources.add(Source(name=name, url=url, kind=kind, category=category,
-                              fetch_url=url, enabled=enabled))
+                              fetch_url=url, status=status))
     db.sources.ensure_manual()
     return db
 
@@ -353,17 +353,40 @@ def test_sources_list_empty_and_populated(config, paths, capsys):
     assert out.splitlines()[0].split()[:3] == ["id", "kind", "category"]
 
 
-def test_sources_toggle_and_remove(config, paths, capsys):
+def test_sources_toggle_switches_the_status_and_reports_a_missing_id(config, paths, capsys):
     db = Database(paths.db_path)
     source = db.sources.add(Source(name="A", url="https://a.ru", kind="rss", category="media",
                                    fetch_url="https://a.ru/rss"))
     db.close()
     assert cli._cmd_sources_toggle(_args(id=source.id, enable=False), config, paths) == 0
     assert capsys.readouterr().out.strip() == f"source #{source.id} disabled"
+    with _db(paths) as db:
+        assert db.sources.get(source.id).status == "paused"
+    assert cli._cmd_sources_toggle(_args(id=source.id, enable=True), config, paths) == 0
+    with _db(paths) as db:
+        assert db.sources.get(source.id).status == "active"
     assert cli._cmd_sources_toggle(_args(id=999, enable=True), config, paths) == 1
+    assert "no source #999" in capsys.readouterr().err
+
+
+def test_sources_remove_soft_deletes_and_keeps_the_documents(config, paths, capsys):
+    db = Database(paths.db_path)
+    source = db.sources.add(Source(name="A", url="https://a.ru", kind="rss", category="media",
+                                   fetch_url="https://a.ru/rss"))
+    with db.transaction():
+        db.documents.insert(
+            RawDocument(source_id=source.id, external_id="a", url="https://a.ru/a",
+                        title="Заголовок", fetched_at="2026-09-02T12:00:00+00:00")
+        )
+    db.close()
     assert cli._cmd_sources_remove(_args(id=source.id), config, paths) == 0
-    assert capsys.readouterr().out.strip() == f"removed source #{source.id} and its 0 documents"
-    assert cli._cmd_sources_remove(_args(id=source.id), config, paths) == 1
+    assert capsys.readouterr().out.strip() == f"removed source #{source.id} and its 1 documents"
+    with _db(paths) as db:
+        assert db.sources.get(source.id).status == "deleted"
+        assert db.documents.count(source.id) == 1  # US-11: материалы остаются
+        assert db.sources.list() == []
+    assert cli._cmd_sources_remove(_args(id=999), config, paths) == 1
+    assert "no source #999" in capsys.readouterr().err
 
 
 def test_sources_resolve_updates_kind_and_resets_cursor(monkeypatch, config, paths, capsys):
@@ -456,8 +479,8 @@ def test_sources_seed_honours_enabled_false_for_new_sources_only(config, paths, 
     assert "+ #3 [rss/media] Ведомости → https://www.vedomosti.ru/rss/news\n" in out
     assert "seed: 3 added, 0 already present, 0 failed" in out
     with _db(paths) as db:
-        assert [s.enabled for s in db.sources.list()] == [False, True, True]
-        db.sources.set_enabled(1, True)
+        assert [s.status for s in db.sources.list()] == ["paused", "active", "active"]
+        db.sources.set_status(1, "active")
 
     # an existing source is reported, never toggled back off by the seed file
     assert cli._cmd_sources_seed(_args(file=str(seed)), config, paths) == 0
@@ -465,7 +488,7 @@ def test_sources_seed_honours_enabled_false_for_new_sources_only(config, paths, 
     assert f"= #1 [search/media] Поиск: ИИ → {search_url}\n" in out
     assert "(off)" not in out
     with _db(paths) as db:
-        assert db.sources.get(1).enabled is True
+        assert db.sources.get(1).active is True
 
 
 # ── resolve / discover / import / docs ─────────────────────────────────────
@@ -620,7 +643,7 @@ def test_search_stores_hits_and_digest_and_leaves_the_source_off(config, paths, 
 
     with _db(paths) as db:
         source = db.sources.get(1)
-        assert (source.kind, source.category, source.name, source.enabled) == (
+        assert (source.kind, source.category, source.name, source.active) == (
             "search", "media", SEARCH_QUERY, False
         )
         assert source.fetch_url == source.url == SearchQuery(SEARCH_QUERY).to_url()
@@ -649,7 +672,7 @@ def test_search_options_shape_the_query_and_the_source(config, paths, capsys, of
     assert "hint:" not in out
     with _db(paths) as db:
         source = db.sources.get(1)
-        assert (source.name, source.category, source.enabled) == ("ИИ-поиск", "regulator", True)
+        assert (source.name, source.category, source.active) == ("ИИ-поиск", "regulator", True)
         assert source.fetch_url == SearchQuery(SEARCH_QUERY, ["gov.ru", "cbr.ru"], 3, "general",
                                                False).to_url()
         assert source.notes == "Tavily: general, 3 дн., домены: cbr.ru, gov.ru, без сводки"
@@ -671,7 +694,7 @@ def test_search_rerun_marks_known_hits_and_save_enables_the_existing_source(
     assert [p.get("days") for p in payloads] == [7, 7]  # force=True: the cursor never narrows it
     assert all("start_date" not in p for p in payloads)
     with _db(paths) as db:
-        assert db.sources.get(1).enabled is True
+        assert db.sources.get(1).active is True
         assert len(db.sources.list()) == 1
         assert db.documents.count(1) == 4
         assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 2
@@ -684,7 +707,7 @@ def test_search_rerun_without_save_does_not_disable_a_saved_source(config, paths
     assert cli._cmd_search(_search_args(), config, paths) == 0
     assert "[on]" in capsys.readouterr().out
     with _db(paths) as db:
-        assert db.sources.get(1).enabled is True
+        assert db.sources.get(1).active is True
 
 
 def test_search_max_limits_printed_rows_not_the_counts(config, paths, capsys, offline_collector,
@@ -761,7 +784,7 @@ def test_search_expands_domain_presets_from_enabled_sources(config, paths, offli
         db.sources.add(Source(name="ЦБ", url="https://www.cbr.ru", kind="rss",
                               category="regulator", fetch_url="https://www.cbr.ru/rss/RssPress"))
         db.sources.add(Source(name="Выключен", url="https://old.ru", kind="html", category="media",
-                              fetch_url="https://old.ru", enabled=False))
+                              fetch_url="https://old.ru", status="paused"))
     assert cli._cmd_search(_search_args(domains="@all,extra.ru"), config, paths) == 0
     payload = _payloads(offline_collector)[0]
     assert payload["include_domains"] == ["cbr.ru", "extra.ru", "vedomosti.ru"]

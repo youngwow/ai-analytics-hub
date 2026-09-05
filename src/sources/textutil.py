@@ -93,3 +93,31 @@ def looks_like_html(body: bytes) -> bool:
     """True when a response body is an HTML page rather than a feed/sitemap."""
     head = body.lstrip(b"\xef\xbb\xbf \t\r\n")[:256].lower()
     return head.startswith(b"<!doctype html") or head.startswith(b"<html")
+
+
+_TG_PATH_RE = re.compile(r"^/s/(?P<channel>[A-Za-z0-9_]+)")
+
+
+def normalized_source_url(url: str) -> str:
+    """Canonical spelling of a source address — the key that catches duplicates.
+
+    `https://t.me/rfrit`, `t.me/rfrit/` and `https://t.me/s/rfrit` are one source,
+    so the preview prefix and the trailing slash are stripped before comparing.
+    """
+    if not url:
+        return ""
+    cleaned = clean_url(url) or url
+    parts = urlsplit(cleaned if "://" in cleaned else f"https://{cleaned}")
+    host = parts.netloc.lower().removeprefix("www.")
+    path = parts.path.rstrip("/")
+    if host == "t.me":
+        match = _TG_PATH_RE.match(path)
+        if match:
+            path = f"/{match.group('channel')}"
+    if parts.scheme in ("", "http", "https"):
+        # The query is part of the identity: the three pravo.gov.ru feeds share a
+        # path and differ only by `block=`. clean_url has already dropped tracking
+        # parameters, so what is left is meaningful.
+        query = f"?{parts.query}" if parts.query else ""
+        return f"{host}{path}{query}".lower()
+    return f"{parts.scheme}://{host}{path}{('?' + parts.query) if parts.query else ''}".lower()

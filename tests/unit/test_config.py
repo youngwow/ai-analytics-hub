@@ -7,6 +7,7 @@ import yaml
 
 from src.config import (
     MTPROTO_MODES,
+    ApiConfig,
     Config,
     ConfigError,
     LLMConfig,
@@ -16,6 +17,9 @@ from src.config import (
     TelegramConfig,
 )
 from src.paths import DEFAULT_PATHS
+
+# Sections every key of which carries a default — `Config` fills them in itself.
+_SECTIONS = {"llm": LLMConfig, "processing": ProcessingConfig, "api": ApiConfig}
 
 
 def test_from_dict_builds_every_section(raw_config):
@@ -37,13 +41,21 @@ def test_scraper_config_is_frozen(config):
         config.scraper.concurrency = 1  # type: ignore[misc]
 
 
-@pytest.mark.parametrize(
-    "section", ["scraper", "telegram", "sitemap", "tavily", "llm", "processing"]
-)
-def test_missing_section_raises(raw_config, section):
+@pytest.mark.parametrize("section", ["scraper", "telegram", "sitemap", "tavily"])
+def test_missing_required_section_raises(raw_config, section):
+    """Only sections with keys that have no default stay mandatory."""
     del raw_config[section]
     with pytest.raises(ConfigError, match=f"missing or non-mapping section '{section}'"):
         Config.from_dict(raw_config)
+
+
+@pytest.mark.parametrize("section", ["llm", "processing", "api"])
+def test_section_whose_keys_all_have_defaults_may_be_absent(raw_config, section):
+    """An older config.yaml must keep loading after a new section is introduced."""
+    raw_config.pop(section, None)
+    assert section not in raw_config
+    cfg = Config.from_dict(raw_config)
+    assert getattr(cfg, section) == _SECTIONS[section]()
 
 
 def test_non_mapping_section_raises(raw_config):
@@ -394,8 +406,6 @@ def test_processing_section_may_be_empty_and_falls_back_to_defaults(raw_config):
         candidate_window_days=7,
         simhash_distance=8,
         cosine_threshold=0.86,
-        grounding=True,
-        needs_review_ratio=0.5,
         borderline_low=0.35,
         borderline_high=0.5,
     )
@@ -410,8 +420,6 @@ def test_processing_keys_are_read_when_present(raw_config):
         "candidate_window_days": 1,
         "simhash_distance": 0,
         "cosine_threshold": 0,
-        "grounding": False,
-        "needs_review_ratio": 1,
         "borderline_low": 0.1,
         "borderline_high": 0.9,
     }
@@ -419,8 +427,7 @@ def test_processing_keys_are_read_when_present(raw_config):
     assert (pr.concurrency, pr.max_new_per_run) == (4, 10)
     assert (pr.max_chars, pr.chunk_chars) == (4000, 4000)
     assert (pr.candidate_window_days, pr.simhash_distance) == (1, 0)
-    assert pr.grounding is False
-    assert (pr.cosine_threshold, pr.needs_review_ratio) == (0, 1)
+    assert pr.cosine_threshold == 0
     assert (pr.borderline_low, pr.borderline_high) == (0.1, 0.9)
 
 
@@ -468,9 +475,7 @@ def test_window_and_simhash_distance_bounds(raw_config, overrides):
         Config.from_dict(raw_config)
 
 
-@pytest.mark.parametrize(
-    "name", ["cosine_threshold", "needs_review_ratio", "borderline_low", "borderline_high"]
-)
+@pytest.mark.parametrize("name", ["cosine_threshold", "borderline_low", "borderline_high"])
 @pytest.mark.parametrize("value", [-0.01, 1.01], ids=["below-zero", "above-one"])
 def test_processing_ratios_outside_zero_to_one_raise(raw_config, name, value):
     raw_config["processing"][name] = value
@@ -500,5 +505,38 @@ def test_repo_config_yaml_loads_the_llm_and_processing_sections():
     assert cfg.processing.candidate_window_days == 7
     assert cfg.processing.simhash_distance == 8
     assert cfg.processing.cosine_threshold == 0.86
-    assert cfg.processing.grounding is True
+    assert (cfg.processing.borderline_low, cfg.processing.borderline_high) == (0.35, 0.5)
+
+
+# ── api (task 1.4) ─────────────────────────────────────────────────────────
+
+
+def test_api_section_falls_back_to_defaults_when_absent(raw_config):
+    assert "api" not in raw_config
+    assert Config.from_dict(raw_config).api == ApiConfig(host="127.0.0.1", port=8000, docs=True)
+
+
+def test_api_keys_are_read_when_present(raw_config):
+    raw_config["api"] = {"host": "0.0.0.0", "port": 9001, "docs": False}
+    api = Config.from_dict(raw_config).api
+    assert (api.host, api.port, api.docs) == ("0.0.0.0", 9001, False)
+
+
+@pytest.mark.parametrize("port", [0, -1, 65536], ids=["zero", "negative", "above-range"])
+def test_api_port_outside_the_valid_range_raises(raw_config, port):
+    raw_config["api"] = {"port": port}
+    with pytest.raises(ConfigError, match=r"api.port must be within \[1, 65535\]"):
+        Config.from_dict(raw_config)
+
+
+@pytest.mark.parametrize("host", ["", "   "], ids=["empty", "blank"])
+def test_api_host_must_be_non_empty(raw_config, host):
+    raw_config["api"] = {"host": host}
+    with pytest.raises(ConfigError, match="api.host must be non-empty"):
+        Config.from_dict(raw_config)
+
+
+def test_repo_config_yaml_loads_the_api_section():
+    cfg = Config.load(DEFAULT_PATHS.config_path)
+    assert (cfg.api.host, cfg.api.port, cfg.api.docs) == ("127.0.0.1", 8000, True)
     assert (cfg.processing.borderline_low, cfg.processing.borderline_high) == (0.35, 0.5)
