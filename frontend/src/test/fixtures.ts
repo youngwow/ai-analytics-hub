@@ -6,3 +6,7 @@ export const card: ItemCard = { item: { ...item, cluster_id: 10, analyst_note: '
 export const filters = { sources: [source], priorities: ['high', 'medium', 'low'], types: ['news', 'npa'], tags: ['API'], npa_statuses: ['анонс', 'рассмотрение', 'действует', 'архив'], orders: ['published', 'priority', 'processed'], timezone: 'Europe/Moscow' }
 export const status = { last_collect_at: null, documents: 1, items: 1, unprocessed: 0, sources: { active: 1 }, stale_sources: [], timezone: 'Europe/Moscow' }
 export const health = { status: 'ok', app: 'hub', environment: 'local', version: '1', checks: { repository: 'ok' } }
+
+export const processingRun = { id: 7, started_at: '2026-01-01T00:00:00Z', finished_at: null, status: 'running', trigger: 'api', params: {}, documents: 0, clusters: 0, items_new: 0, items_joined: 0, items_updated: 0, degraded: 0, needs_review: 0, calls: 0, failed: 0, elapsed_s: 0, error: '' }
+export const processing = { running: null, last: null, unprocessed: 1, llm_available: false }
+export const collection = { running: false, busy: false, interval_seconds: 900, started_at: null, next_tick_at: null, cycles: 0, last_error: '', due_sources: 1, last_collect: null }

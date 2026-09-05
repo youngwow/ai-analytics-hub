@@ -7,6 +7,12 @@ beforeEach(() => vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('
 afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals() })
 describe('HTTP endpoint contracts', () => {
   const cases: [string, string, () => Promise<unknown>, unknown?][] = [
+    ['/processing', 'GET', () => api.processing()], ['/processing/runs?limit=20', 'GET', () => api.processingRuns()],
+    ['/processing/runs/7', 'GET', () => api.processingRun(7)], ['/processing/runs', 'POST', () => api.startProcessing({ limit: 10, force: false }), { limit: 10, force: false }],
+    ['/collection', 'GET', () => api.collection()], ['/collection/start', 'POST', () => api.startCollection(60), { interval_seconds: 60 }],
+    ['/collection/stop', 'POST', () => api.stopCollection()], ['/collection/runs', 'POST', () => api.collect({ due_only: true, backfill: false, force: false }), { due_only: true, backfill: false, force: false }],
+    ['/items/1/events', 'POST', () => api.addEvent(1, { status: 'слушания', note: 'Комментарий', source_url: '' }), { status: 'слушания', note: 'Комментарий', source_url: '' }],
+    ['/items/1/archive', 'POST', () => api.archive(1)], ['/items/1/unarchive', 'POST', () => api.unarchive(1)],
     ['/health', 'GET', () => api.health()], ['/health/ready', 'GET', () => api.ready()], ['/filters', 'GET', () => api.filters()], ['/status', 'GET', () => api.status()],
     ['/items', 'GET', () => api.feed({})], ['/items/facets', 'GET', () => api.facets({})], ['/documents', 'GET', () => api.documents({})],
     ['/items/1', 'GET', () => api.card(1)], ['/items', 'POST', () => api.createItem(manual), manual],

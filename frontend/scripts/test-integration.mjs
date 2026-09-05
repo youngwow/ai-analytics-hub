@@ -43,6 +43,14 @@ try {
   const { api, ApiError, request } = await server.ssrLoadModule('/src/api/client.ts')
   let checks = 0
   const check = (condition, message) => { assert.ok(condition, message); checks++ }
+  async function until(read, ready) {
+    for (let attempt = 0; attempt < 100; attempt++) {
+      const result = await read()
+      if (ready(result)) return result
+      await new Promise(resolveWait => setTimeout(resolveWait, 100))
+    }
+    throw new Error('Background operation did not finish within 10 seconds')
+  }
   check((await api.ready()).status === 'ok', 'readiness through frontend proxy')
   check((await api.health()).status === 'ok', 'health')
   check((await api.status()).items === 0, 'isolated database starts empty')
@@ -60,6 +68,8 @@ try {
   let card = await api.card(id)
   check(card.item.degraded && card.item.origin === 'manual', 'missing model is explicitly marked')
   check(card.sources.length === 1, 'original document linked')
+  const event = await api.addEvent(id, { status: 'разработка', occurred_at: '2026-09-05T10:00:00Z', source_url: '', note: 'Первая стадия' })
+  check(event.id && (await api.card(id)).item.npa_status === 'разработка', 'NPA event advances status')
   await api.editItem(id, { title: 'Новая редакция НПА', summary: 'Саммари аналитика.', priority: 'high', type: 'npa', npa_status: 'действует', tags: ['регуляторика', 'проверка'], edit_reason: 'wrong_focus' })
   const query = { q: 'редакция', type: 'npa', npa_status: 'действует', priority: ['high'], tag: ['регуляторика'], order: 'priority' }
   check((await api.feed(query)).items[0]?.id === id, 'combined feed filters and search')
@@ -72,6 +82,14 @@ try {
   check(digest.items === 1 && digest.body.includes('Новая редакция НПА'), 'Markdown digest uses edited material')
   const json = await api.digest({}, 'json', '', true)
   check(json.items === 1 && typeof JSON.parse(json.body) === 'object', 'JSON digest')
+  await api.addEvent(id, { status: 'Слушания', source_url: '', note: 'Срок рассмотрения' })
+  check((await api.card(id)).events.some(event => event.status === 'Слушания'), 'custom event persists in chronology')
+  await api.archive(id)
+  check((await api.card(id)).item.is_archived, 'archive persisted')
+  check((await api.feed({})).total === 0 && (await api.feed({ archived: 'only' })).total === 1, 'archive filter')
+  check((await api.digest({ archived: 'include' }, 'markdown', '', false)).items === 0, 'digest always excludes archive')
+  await api.unarchive(id)
+  check(!(await api.card(id)).item.is_archived && (await api.feed({})).total === 1, 'unarchive persisted')
   await api.hideItem(id, 'digest', 'Адресный обзор')
   check((await api.digest({}, 'markdown', '', false)).items === 0, 'hidden item excluded from digest')
   await api.unhideItem(id)
@@ -96,11 +114,12 @@ try {
   await api.restoreSource(sourceId)
   check((await api.source(sourceId)).status === 'active', 'source restored')
   // Exercise real RSS detection and collection using a loopback-only test feed.
-  let feedUnavailable = false
+  let feedUnavailable = false; let secondArticle = false
   feedServer = createHttpServer((request, response) => {
     if (feedUnavailable) { response.writeHead(503); response.end('Feed temporarily unavailable'); return }
     response.setHeader('Content-Type', 'application/rss+xml')
-    response.end(`<?xml version="1.0"?><rss version="2.0"><channel><title>Integration RSS</title><link>http://127.0.0.1/</link><description>Test-only source</description><item><title>RSS integration document</title><link>http://127.0.0.1:${feedServer.address().port}/article</link><guid>integration-rss-1</guid><pubDate>${new Date().toUTCString()}</pubDate><description>${'Local integration test article. '.repeat(30)}</description></item></channel></rss>`)
+    const extra = secondArticle ? `<item><title>Second queue document</title><link>http://127.0.0.1:${feedServer.address().port}/second</link><guid>integration-rss-2</guid><pubDate>${new Date().toUTCString()}</pubDate><description>Independent second document for pagination.</description></item>` : ''
+    response.end(`<?xml version="1.0"?><rss version="2.0"><channel><title>Integration RSS</title><link>http://127.0.0.1/</link><description>Test-only source</description><item><title>RSS integration document</title><link>http://127.0.0.1:${feedServer.address().port}/article</link><guid>integration-rss-1</guid><pubDate>${new Date().toUTCString()}</pubDate><description>${'Local integration test article. '.repeat(30)}</description></item>${extra}</channel></rss>`)
   })
   feedServer.listen(0, '127.0.0.1'); await once(feedServer, 'listening')
   const feedUrl = `http://127.0.0.1:${feedServer.address().port}/rss.xml`
@@ -121,6 +140,29 @@ try {
   const failedRun = await api.refreshSource(added.id)
   check(!!failedRun.error_code, 'failed collection is returned as a run rather than thrown as an HTTP error')
   check((await api.sourceHealth(added.id)).consecutive_failures === 1, 'failed poll updates health history')
+  feedUnavailable = false; secondArticle = true
+  const moved = await api.editSource(added.id, { url: feedUrl.replace('/rss.xml', '/moved.xml'), type: 'rss', fetch_url: feedUrl.replace('/rss.xml', '/moved.xml') })
+  check(moved.id === added.id && moved.url.endsWith('/moved.xml'), 'source relocated without changing its ID')
+  check((await api.sourceHealth(added.id)).documents === 1, 'relocation preserves original documents')
+  const previousCycle = (await api.collection()).last_collect?.id
+  await api.collect({ source_ids: [added.id], due_only: false, backfill: false, force: false })
+  const cycle = await until(() => api.collection(), state => !state.busy && state.last_collect?.id !== previousCycle)
+  check(cycle.last_collect.docs_new === 1, 'background one-off collection adds the second document')
+  const firstPage = await api.documents({ source_id: [added.id], limit: 1 })
+  check(firstPage.total === 2 && firstPage.next_cursor, 'document cursor returned')
+  const secondPage = await api.documents({ source_id: [added.id], limit: 1, cursor: firstPage.next_cursor })
+  check(secondPage.documents.length === 1 && secondPage.documents[0].id !== firstPage.documents[0].id && !secondPage.next_cursor, 'next document page has no duplicate')
+  check(!(await api.processing()).llm_available, 'isolated processing explicitly has no LLM')
+  const run = await api.startProcessing({ source_id: added.id, limit: 2, force: false })
+  check(run.id && run.status === 'running', 'processing accepted as a background run')
+  const completed = await until(() => api.processingRun(run.id), result => result.status !== 'running')
+  check(completed.status === 'done' && completed.documents === 2 && completed.degraded > 0, 'processing completes with honest degraded results')
+  check((await api.processingRuns()).runs.some(entry => entry.id === run.id), 'processing history includes completed run')
+  check((await api.documents({ source_id: [added.id] })).total === 0, 'processed documents leave the queue')
+  const started = await api.startCollection(900)
+  check(started.running, 'automatic monitoring starts')
+  await until(() => api.collection(), result => !result.busy)
+  check(!(await api.stopCollection()).running, 'automatic monitoring stops')
   try { await api.card(999999); assert.fail('missing card should fail') }
   catch (error) { check(error instanceof ApiError && error.status === 404, 'real HTTP problem translated by frontend') }
   console.log(`PASS: ${checks} live integration checks (frontend client → Vite proxy → unchanged backend).`)

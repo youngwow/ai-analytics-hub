@@ -25,11 +25,11 @@ If the backend is unavailable, the interface shows an error and retry controls. 
 ## Screens
 
 - **Мониторинг:** server search and filters, pagination, original links, grouped publications, review flags, bulk visibility changes and manual material creation.
-- **Карточка материала:** title, summary, category, tags, priority and type editing; NPA status; entities and AI reasoning; notes, revision history, model-version restoration, hide/delete/restore.
-- **НПА:** lifecycle registry, status filters including archive, current state and event history.
+- **Карточка материала:** title, summary, category, tags, priority and type editing; NPA status and dated events; archive/unarchive; entities and AI reasoning; notes, revision history, model-version restoration, hide/delete/restore.
+- **НПА:** lifecycle registry, status filters including archive, current state, event creation/history and archive retrieval.
 - **Дайджест:** filtered server snapshot in Markdown or JSON, optional analyst notes, seven-day preset, temporary export editing and download. The backend limits each digest to 200 items; the UI explains this limit.
-- **Источники:** RSS, regulator sites, Telegram and saved search; URL detection and preview; creation, schedule editing, pause/resume, refresh, health history, deletion and restoration.
-- **Сбор и обработка:** real document/material counts, readiness, stale sources and the unprocessed document queue.
+- **Источники:** RSS, regulator sites, Telegram and saved search; URL detection and preview; creation, schedule/URL/type/fetch-address editing, pause/resume, refresh, health history, deletion and restoration.
+- **Сбор и обработка:** real counts and readiness, paginated document queue, AI processing runs with status/history, automatic monitor start/stop and one-off collection. Background status refreshes every five seconds while this screen is visible.
 
 Missing backend capabilities have visible placeholders. The [requirement and API mapping](docs/backend-integration.md) records what is implemented and what still depends on backend work.
 

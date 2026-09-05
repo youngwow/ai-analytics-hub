@@ -113,7 +113,7 @@ describe('material CRUD, notes, history and originals', () => {
   })
   it('shows NPA events and restores the chosen model field', async () => {
     h.handle(call => call.url.pathname === '/api/v1/items/101' ? json({ ...card, item: { ...card.item, type: 'npa', npa_status: 'рассмотрение' }, events: [{ id: 1, status: 'анонс', created_at: '2026-01-01', note: 'Событие сервера' }], model_proposals: { summary: { id: 2, new_value: 'Предложение модели' } } }) : undefined)
-    await h.launch(); await openCard(); expect(dialog().textContent).toContain('Событие сервера'); expect(h.button('Добавить событие / срок').disabled).toBe(true)
+    await h.launch(); await openCard(); expect(dialog().textContent).toContain('Событие сервера'); expect(h.button('Добавить событие / срок').disabled).toBe(false)
     await h.click('Вернуть версию модели: summary'); expect(mutation('/items/101/revert')!.body).toEqual({ field: 'summary' })
   })
   it('hides, unhides, deletes and restores through distinct backend actions', async () => {
@@ -236,7 +236,7 @@ describe('digest and processing capabilities', () => {
   it('loads the unprocessed queue with only its supported filters and marks missing controls', async () => {
     await h.launch('#status'); await h.field('Источник', '1'); const params = path('/documents').at(-1)!.url.searchParams
     expect(params.get('source_id')).toBe('1'); expect(params.has('priority')).toBe(false); expect(params.has('type')).toBe(false)
-    expect(h.button('Обработать очередь ИИ').disabled).toBe(true); expect(h.button('Запустить автоматический мониторинг').disabled).toBe(true)
+    expect(h.button('Обработать очередь ИИ').matches(':disabled')).toBe(false); expect(h.button('Запустить автоматический мониторинг').disabled).toBe(false)
     await h.click('Проверить процесс'); expect(path('/health')).toHaveLength(1)
   })
 })

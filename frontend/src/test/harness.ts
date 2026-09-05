@@ -2,7 +2,7 @@ import { beforeEach, afterEach, vi } from 'vitest'
 import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import App from '../App.vue'
-import { card, filters, health, item, source, status } from './fixtures'
+import { card, filters, health, item, source, status, processing, processingRun, collection } from './fixtures'
 export interface Call { url: URL; method: string; body: Record<string, unknown> | undefined; signal: AbortSignal | null | undefined }
 export type Handler = (call: Call) => Response | Promise<Response> | undefined
 export const json = (body: unknown, code = 200) => new Response(JSON.stringify(body), { status: code, headers: { 'Content-Type': 'application/json' } })
@@ -35,7 +35,14 @@ export function harness() {
       if (path === '/items/101/revert') return json({ item: currentCard.item, manual_overrides: [] })
       if (path === '/items/101/hide') { currentCard.item.visibility = call.body?.scope === 'feed' ? 'hidden_feed' : 'hidden_digest'; return json({ id: 101, visibility: currentCard.item.visibility }) }
       if (path === '/items/101/unhide' || path === '/items/101/restore') { currentCard.item.visibility = 'visible'; return json({ id: 101, visibility: 'visible' }) }
-      if (path === '/documents') return json({ documents: [], total: 0, took_ms: 1 })
+      if (path === '/items/101/events') { const event = { id: 1, item_id: 101, ...call.body, created_at: '2026-01-01', created_by: 'user' }; currentCard.events.push(event as typeof currentCard.events[number]); return json(event, 201) }
+      if (path === '/items/101/archive' || path === '/items/101/unarchive') { currentCard.item.is_archived = path.endsWith('/archive'); return json({ id: 101, is_archived: currentCard.item.is_archived }) }
+      if (path === '/processing') return json(processing)
+      if (path === '/processing/runs' && call.method === 'POST') return json(processingRun, 202)
+      if (path === '/processing/runs') return json({ runs: [] })
+      if (path === '/processing/runs/7') return json(processingRun)
+      if (path.startsWith('/collection')) return json(collection, path.endsWith('/runs') ? 202 : 200)
+      if (path === '/documents') return json({ documents: [], total: 0, next_cursor: null, took_ms: 1 })
       if (path === '/sources' && call.method === 'GET') return json({ sources: [source] })
       if (path === '/sources' && call.method === 'POST') return json({ ...source, id: 2, name: call.body?.title }, 201)
       if (path === '/sources/probe') return json({ resolved_type: 'rss', feed_url: source.url, title: source.name, detection_method: 'feed', suggested_poll_interval: '1h', already_exists: false, already_exists_source_id: null, preview: [], warnings: [], note: '' })

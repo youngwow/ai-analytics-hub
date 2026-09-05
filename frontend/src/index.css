@@ -274,3 +274,7 @@ textarea.form-control { resize: vertical; }
 fieldset { min-width: 0; }
 input[type='checkbox'] { accent-color: var(--primary); }
 @media (max-width: 767px) { .form-grid { grid-template-columns: 1fr; } .filter-toolbar .field-label { flex: 1 1 130px; } .filter-toolbar .form-control { width: 100%; max-width: none; } }
+
+.status-view { overflow-y: auto; }
+.status-view > * { flex-shrink: 0; }
+.status-view > .table-scroll { flex: none; min-height: 180px; }
