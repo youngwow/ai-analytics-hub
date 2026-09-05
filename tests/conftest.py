@@ -1,4 +1,5 @@
-"""Fixtures shared by the ingestion tests. Everything runs offline against MockTransport."""
+"""Fixtures shared by the tests. Everything runs offline: MockTransport for HTTP,
+`FakeLLM` for the model."""
 
 from __future__ import annotations
 
@@ -8,7 +9,9 @@ import pytest
 from support import MockRoutes, default_raw_config, read_fixture
 
 from src.config import Config
+from src.processing import service as service_mod
 from src.storage import Database
+from src.storage import db as db_mod
 
 
 @pytest.fixture
@@ -33,6 +36,19 @@ def db():
 def now() -> datetime:
     """The injected clock: 2026-09-02T12:00:00Z, the day the fixtures were captured."""
     return datetime(2026, 9, 2, 12, 0, 0, tzinfo=timezone.utc)
+
+
+@pytest.fixture
+def frozen_clock(monkeypatch, now):
+    """Freeze the clock the processing layer stamps rows with.
+
+    `processed_at`, `created_at` and the dedup candidate window all come from
+    `utc_now()`; pinning it keeps timestamps assertable and the seven-day window
+    fixed relative to the documents the tests insert.
+    """
+    for module in (db_mod, service_mod):
+        monkeypatch.setattr(module, "utc_now", lambda: now)
+    return now
 
 
 @pytest.fixture

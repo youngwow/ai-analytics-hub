@@ -9,6 +9,8 @@ from src.config import (
     MTPROTO_MODES,
     Config,
     ConfigError,
+    LLMConfig,
+    ProcessingConfig,
     ScraperConfig,
     TavilyConfig,
     TelegramConfig,
@@ -35,7 +37,9 @@ def test_scraper_config_is_frozen(config):
         config.scraper.concurrency = 1  # type: ignore[misc]
 
 
-@pytest.mark.parametrize("section", ["scraper", "telegram", "sitemap", "tavily"])
+@pytest.mark.parametrize(
+    "section", ["scraper", "telegram", "sitemap", "tavily", "llm", "processing"]
+)
 def test_missing_section_raises(raw_config, section):
     del raw_config[section]
     with pytest.raises(ConfigError, match=f"missing or non-mapping section '{section}'"):
@@ -290,3 +294,211 @@ def test_load_reads_yaml_file(tmp_path, raw_config):
 def test_load_missing_file_raises_config_error(tmp_path):
     with pytest.raises(ConfigError, match="config.yaml not found"):
         Config.load(str(tmp_path / "nope.yaml"))
+
+
+# ── llm (task 1.2) ─────────────────────────────────────────────────────────
+
+
+def test_llm_section_may_be_empty_and_falls_back_to_defaults(raw_config):
+    raw_config["llm"] = {}
+    assert Config.from_dict(raw_config).llm == LLMConfig(
+        host="https://ollama.com",
+        model="glm-5.3-flash",
+        api_key_env="OLLAMA_API_KEY",
+        embed_model="embeddinggemma",
+        embed_dimensions=768,
+        request_timeout=90.0,
+        max_retries=2,
+        retry_backoff=2.0,
+        temperature=0.2,
+    )
+
+
+def test_llm_keys_are_read_when_present(raw_config):
+    raw_config["llm"] = {
+        "host": "http://localhost:11434",
+        "model": "qwen3:8b",
+        "api_key_env": "LOCAL_KEY",
+        "embed_model": "bge-m3",
+        "embed_dimensions": 1024,
+        "request_timeout": 30,
+        "max_retries": 0,
+        "retry_backoff": 0,
+        "temperature": 0,
+    }
+    llm = Config.from_dict(raw_config).llm
+    assert (llm.host, llm.model, llm.api_key_env) == ("http://localhost:11434", "qwen3:8b", "LOCAL_KEY")
+    assert (llm.embed_model, llm.embed_dimensions) == ("bge-m3", 1024)
+    assert (llm.request_timeout, llm.max_retries, llm.retry_backoff) == (30, 0, 0)
+    assert llm.temperature == 0
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [{"model": ""}, {"model": "   "}, {"host": ""}, {"host": "\t"}],
+    ids=["empty-model", "blank-model", "empty-host", "blank-host"],
+)
+def test_empty_llm_model_or_host_raises(raw_config, overrides):
+    raw_config["llm"].update(overrides)
+    with pytest.raises(ConfigError, match=r"llm.model and llm.host must be non-empty"):
+        Config.from_dict(raw_config)
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [{"request_timeout": 0}, {"request_timeout": -1}, {"max_retries": -1}, {"retry_backoff": -0.5}],
+    ids=["zero-timeout", "negative-timeout", "negative-retries", "negative-backoff"],
+)
+def test_llm_timeout_and_retry_bounds(raw_config, overrides):
+    raw_config["llm"].update(overrides)
+    with pytest.raises(ConfigError, match=r"llm.request_timeout must be > 0"):
+        Config.from_dict(raw_config)
+
+
+def test_zero_retries_and_zero_backoff_are_accepted(raw_config):
+    raw_config["llm"].update(max_retries=0, retry_backoff=0)
+    llm = Config.from_dict(raw_config).llm
+    assert (llm.max_retries, llm.retry_backoff) == (0, 0)
+
+
+@pytest.mark.parametrize("value", [0, -1, -768], ids=["zero", "negative", "negative-default"])
+def test_embed_dimensions_below_one_raises(raw_config, value):
+    raw_config["llm"]["embed_dimensions"] = value
+    with pytest.raises(ConfigError, match=r"llm.embed_dimensions must be >= 1"):
+        Config.from_dict(raw_config)
+
+
+@pytest.mark.parametrize("value", [-0.1, 2.1, 3], ids=["below-zero", "just-above-two", "three"])
+def test_temperature_outside_zero_to_two_raises(raw_config, value):
+    raw_config["llm"]["temperature"] = value
+    with pytest.raises(ConfigError, match=r"llm.temperature must be within \[0, 2\]"):
+        Config.from_dict(raw_config)
+
+
+@pytest.mark.parametrize("value", [0, 0.2, 1, 2], ids=["zero", "default", "one", "two"])
+def test_temperature_inside_the_range_is_accepted(raw_config, value):
+    raw_config["llm"]["temperature"] = value
+    assert Config.from_dict(raw_config).llm.temperature == value
+
+
+# ── processing (task 1.2) ──────────────────────────────────────────────────
+
+
+def test_processing_section_may_be_empty_and_falls_back_to_defaults(raw_config):
+    raw_config["processing"] = {}
+    assert Config.from_dict(raw_config).processing == ProcessingConfig(
+        concurrency=2,
+        max_new_per_run=200,
+        max_chars=12000,
+        chunk_chars=6000,
+        candidate_window_days=7,
+        simhash_distance=8,
+        cosine_threshold=0.86,
+        grounding=True,
+        needs_review_ratio=0.5,
+        borderline_low=0.35,
+        borderline_high=0.5,
+    )
+
+
+def test_processing_keys_are_read_when_present(raw_config):
+    raw_config["processing"] = {
+        "concurrency": 4,
+        "max_new_per_run": 10,
+        "max_chars": 4000,
+        "chunk_chars": 4000,
+        "candidate_window_days": 1,
+        "simhash_distance": 0,
+        "cosine_threshold": 0,
+        "grounding": False,
+        "needs_review_ratio": 1,
+        "borderline_low": 0.1,
+        "borderline_high": 0.9,
+    }
+    pr = Config.from_dict(raw_config).processing
+    assert (pr.concurrency, pr.max_new_per_run) == (4, 10)
+    assert (pr.max_chars, pr.chunk_chars) == (4000, 4000)
+    assert (pr.candidate_window_days, pr.simhash_distance) == (1, 0)
+    assert pr.grounding is False
+    assert (pr.cosine_threshold, pr.needs_review_ratio) == (0, 1)
+    assert (pr.borderline_low, pr.borderline_high) == (0.1, 0.9)
+
+
+@pytest.mark.parametrize("key", ["concurrency", "max_new_per_run"])
+@pytest.mark.parametrize("value", [0, -1])
+def test_processing_counts_below_one_raise(raw_config, key, value):
+    raw_config["processing"][key] = value
+    with pytest.raises(
+        ConfigError, match="processing.concurrency and max_new_per_run must be >= 1"
+    ):
+        Config.from_dict(raw_config)
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [
+        {"chunk_chars": 12001},
+        {"max_chars": 1000, "chunk_chars": 2000},
+        {"chunk_chars": 0},
+        {"max_chars": 0, "chunk_chars": 0},
+    ],
+    ids=["chunk-above-max", "chunk-above-smaller-max", "zero-chunk", "zero-max"],
+)
+def test_chunk_chars_must_fit_inside_max_chars(raw_config, overrides):
+    raw_config["processing"].update(overrides)
+    with pytest.raises(
+        ConfigError, match=r"processing.chunk_chars must be within \[1, max_chars\]"
+    ):
+        Config.from_dict(raw_config)
+
+
+def test_chunk_chars_equal_to_max_chars_is_accepted(raw_config):
+    raw_config["processing"].update(max_chars=5000, chunk_chars=5000)
+    assert Config.from_dict(raw_config).processing.chunk_chars == 5000
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [{"candidate_window_days": 0}, {"simhash_distance": -1}, {"simhash_distance": 65}],
+    ids=["zero-window", "negative-distance", "distance-above-64"],
+)
+def test_window_and_simhash_distance_bounds(raw_config, overrides):
+    raw_config["processing"].update(overrides)
+    with pytest.raises(ConfigError, match="processing.candidate_window_days >= 1"):
+        Config.from_dict(raw_config)
+
+
+@pytest.mark.parametrize(
+    "name", ["cosine_threshold", "needs_review_ratio", "borderline_low", "borderline_high"]
+)
+@pytest.mark.parametrize("value", [-0.01, 1.01], ids=["below-zero", "above-one"])
+def test_processing_ratios_outside_zero_to_one_raise(raw_config, name, value):
+    raw_config["processing"][name] = value
+    with pytest.raises(ConfigError, match=rf"processing.{name} must be within \[0, 1\]"):
+        Config.from_dict(raw_config)
+
+
+def test_borderline_low_above_high_raises(raw_config):
+    raw_config["processing"].update(borderline_low=0.6, borderline_high=0.5)
+    with pytest.raises(ConfigError, match="borderline_low must be <= borderline_high"):
+        Config.from_dict(raw_config)
+
+
+def test_equal_borderline_bounds_are_accepted(raw_config):
+    raw_config["processing"].update(borderline_low=0.5, borderline_high=0.5)
+    pr = Config.from_dict(raw_config).processing
+    assert (pr.borderline_low, pr.borderline_high) == (0.5, 0.5)
+
+
+def test_repo_config_yaml_loads_the_llm_and_processing_sections():
+    cfg = Config.load(DEFAULT_PATHS.config_path)
+    assert (cfg.llm.host, cfg.llm.model) == ("https://ollama.com", "glm-5.3-flash")
+    assert cfg.llm.api_key_env == "OLLAMA_API_KEY"
+    assert (cfg.llm.embed_model, cfg.llm.embed_dimensions) == ("embeddinggemma", 768)
+    assert (cfg.llm.request_timeout, cfg.llm.max_retries, cfg.llm.temperature) == (300, 2, 0.2)
+    assert (cfg.processing.max_chars, cfg.processing.chunk_chars) == (12000, 6000)
+    assert cfg.processing.candidate_window_days == 7
+    assert cfg.processing.simhash_distance == 8
+    assert cfg.processing.cosine_threshold == 0.86
+    assert cfg.processing.grounding is True
+    assert (cfg.processing.borderline_low, cfg.processing.borderline_high) == (0.35, 0.5)

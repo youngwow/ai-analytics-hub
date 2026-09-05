@@ -1,4 +1,4 @@
-.PHONY: install test lint format seed collect watch tg-login tg-status happy-pr happy-gr
+.PHONY: install test lint format seed collect watch tg-login tg-status process quality happy-pr happy-gr
 
 install:
 	uv sync
@@ -32,3 +32,9 @@ happy-pr:
 
 happy-gr:
 	bash scripts/happy_path_gr.sh
+
+process:
+	uv run python -m src process
+
+quality:
+	uv run python -m src quality --gold

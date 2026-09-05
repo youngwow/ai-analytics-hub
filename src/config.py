@@ -85,11 +85,48 @@ class TavilyConfig:
     language: str = ""  # ISO 639-1; boosts hits and steers the answer's language; "" → not sent
 
 
+@dataclass(frozen=True)
+class LLMConfig:
+    """Провайдер модели. По умолчанию GLM-5.3 в Ollama Cloud (см. research.md, R-01)."""
+
+    host: str = "https://ollama.com"
+    model: str = "glm-5.3-flash"
+    api_key_env: str = "OLLAMA_API_KEY"
+    embed_model: str = "embeddinggemma"
+    embed_dimensions: int = 768
+    request_timeout: float = 90.0
+    max_retries: int = 2
+    retry_backoff: float = 2.0
+    temperature: float = 0.2
+    # Tri-state on purpose: None means "do not send the parameter". A reasoning
+    # model then keeps its chain of thought in `message.thinking` and leaves
+    # `content` clean; think=False makes it reason inside `content` instead.
+    think: bool | None = None
+    max_output_tokens: int = -1  # -1: no cap — a truncated answer is a wasted call
+
+
+@dataclass(frozen=True)
+class ProcessingConfig:
+    """Пайплайн 1.2: окна, пороги и бюджеты обработки."""
+
+    concurrency: int = 2
+    max_new_per_run: int = 200
+    max_chars: int = 12000
+    chunk_chars: int = 6000
+    candidate_window_days: int = 7
+    simhash_distance: int = 8  # правки-перепечатки дают 2-4; разные документы — от 18
+    cosine_threshold: float = 0.86
+    borderline_low: float = 0.35
+    borderline_high: float = 0.5
+
+
 _SECTIONS = {
     "scraper": ScraperConfig,
     "telegram": TelegramConfig,
     "sitemap": SitemapConfig,
     "tavily": TavilyConfig,
+    "llm": LLMConfig,
+    "processing": ProcessingConfig,
 }
 
 
@@ -113,6 +150,8 @@ class Config:
     telegram: TelegramConfig
     sitemap: SitemapConfig
     tavily: TavilyConfig
+    llm: LLMConfig = field(default_factory=LLMConfig)
+    processing: ProcessingConfig = field(default_factory=ProcessingConfig)
     raw: dict = field(default_factory=dict, repr=False)
 
     @classmethod
@@ -162,4 +201,40 @@ class Config:
             raise ConfigError(
                 "config.yaml: telegram.request_timeout must be > 0 and "
                 "flood_sleep_threshold >= 0"
+            )
+        llm = self.llm
+        if not llm.model.strip() or not llm.host.strip():
+            raise ConfigError("config.yaml: llm.model and llm.host must be non-empty")
+        if llm.request_timeout <= 0 or llm.max_retries < 0 or llm.retry_backoff < 0:
+            raise ConfigError(
+                "config.yaml: llm.request_timeout must be > 0, max_retries and "
+                "retry_backoff >= 0"
+            )
+        if llm.embed_dimensions < 1:
+            raise ConfigError("config.yaml: llm.embed_dimensions must be >= 1")
+        if llm.max_output_tokens == 0 or llm.max_output_tokens < -1:
+            raise ConfigError("config.yaml: llm.max_output_tokens must be -1 or a positive number")
+        if not 0 <= llm.temperature <= 2:
+            raise ConfigError("config.yaml: llm.temperature must be within [0, 2]")
+        pr = self.processing
+        if pr.concurrency < 1 or pr.max_new_per_run < 1:
+            raise ConfigError(
+                "config.yaml: processing.concurrency and max_new_per_run must be >= 1"
+            )
+        if pr.max_chars < 1 or pr.chunk_chars < 1 or pr.chunk_chars > pr.max_chars:
+            raise ConfigError(
+                "config.yaml: processing.chunk_chars must be within [1, max_chars]"
+            )
+        if pr.candidate_window_days < 1 or not 0 <= pr.simhash_distance <= 64:
+            raise ConfigError(
+                "config.yaml: processing.candidate_window_days >= 1 and "
+                "simhash_distance within [0, 64]"
+            )
+        for name in ("cosine_threshold", "borderline_low", "borderline_high"):
+            value = getattr(pr, name)
+            if not 0 <= value <= 1:
+                raise ConfigError(f"config.yaml: processing.{name} must be within [0, 1]")
+        if pr.borderline_low > pr.borderline_high:
+            raise ConfigError(
+                "config.yaml: processing.borderline_low must be <= borderline_high"
             )

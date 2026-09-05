@@ -228,3 +228,5 @@ data/*.session
 data/*.session-journal
 data/telegram.session
 .DS_Store
+.specify
+specs
