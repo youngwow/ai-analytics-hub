@@ -9,7 +9,7 @@
 from __future__ import annotations
 
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from dataclasses import dataclass, field, replace
 from datetime import timedelta
 
@@ -129,7 +129,7 @@ class ProcessingService:
         try:
             report = self._run(
                 limit=limit, source_id=source_id, since=since, profile_id=profile_id,
-                force=force, dry_run=dry_run,
+                force=force, dry_run=dry_run, progress_run_id=record.id if record else None,
             )
         except Exception as e:
             if record is not None:
@@ -191,14 +191,22 @@ class ProcessingService:
         profile_id: int | None = None,
         force: bool = False,
         dry_run: bool = False,
+        progress_run_id: int | None = None,
     ) -> ProcessingReport:
         started = time.monotonic()
         report = ProcessingReport()
+
+        def publish() -> None:
+            report.elapsed_s = time.monotonic() - started
+            if progress_run_id is not None:
+                self.db.processing_runs.progress(progress_run_id, _counters(report))
+
         limit = limit or self.config.processing.max_new_per_run
         rows = self.db.documents.unprocessed(
             limit=limit, source_id=source_id, since=since, force=force
         )
         report.documents = len(rows)
+        publish()
         if not rows:
             report.elapsed_s = time.monotonic() - started
             return report
@@ -216,6 +224,7 @@ class ProcessingService:
 
         units = self._prepare(rows, embed=not dry_run) if rows else []
         report.clusters = len(units)
+        publish()
         if dry_run:
             report.items_updated = len(carded)
             report.elapsed_s = time.monotonic() - started
@@ -229,9 +238,7 @@ class ProcessingService:
             {"temperature": self.config.llm.temperature},
         )
 
-        fresh = [u for u in units if u.join_item_id is None]
-        self._draft_all(fresh, company)
-        for unit in units:
+        def save_unit(unit: _Unit) -> None:
             try:
                 if unit.join_item_id is not None:
                     self._join(unit)
@@ -243,6 +250,13 @@ class ProcessingService:
             except Exception as e:  # one bad document must not lose the whole batch
                 report.failed += 1
                 log.error("документ #%s не обработан: %s", unit.document_id, e)
+            publish()
+
+        for unit in units:
+            if unit.join_item_id is not None:
+                save_unit(unit)
+        fresh = [u for u in units if u.join_item_id is None]
+        self._draft_all(fresh, company, on_ready=save_unit)
 
         for item_id in dict.fromkeys(carded):
             try:
@@ -251,6 +265,7 @@ class ProcessingService:
             except (ItemError, ValueError, LookupError) as e:
                 report.failed += 1
                 log.error("карточка #%s не пересобрана: %s", item_id, e)
+            publish()
         report.elapsed_s = time.monotonic() - started
         return report
 
@@ -336,7 +351,7 @@ class ProcessingService:
             log.warning("эмбеддинги недоступны (%s): кластеризация только по SimHash", e)
             return []
 
-    def _draft_all(self, units: list[_Unit], company: CompanyProfile) -> None:
+    def _draft_all(self, units: list[_Unit], company: CompanyProfile, on_ready=None) -> None:
         """The slow part: one model call per cluster, bounded by processing.concurrency."""
         if not units:
             return
@@ -354,9 +369,32 @@ class ProcessingService:
         if workers == 1:
             for unit in units:
                 work(unit)
+                if on_ready is not None:
+                    on_ready(unit)
             return
-        with ThreadPoolExecutor(max_workers=workers, thread_name_prefix="llm") as pool:
-            list(pool.map(work, units))
+        # Keep only worker-count requests in flight. Consume completion order so
+        # one slow response cannot hide all other results or configuration errors.
+        pool = ThreadPoolExecutor(max_workers=workers, thread_name_prefix="llm")
+        remaining = iter(units)
+        pending = {pool.submit(work, unit): unit for unit in [next(remaining) for _ in range(workers)]}
+        try:
+            while pending:
+                done, _ = wait(pending, return_when=FIRST_COMPLETED)
+                for future in done:
+                    unit = pending.pop(future)
+                    future.result()
+                    if on_ready is not None:
+                        on_ready(unit)  # SQLite stays on the owner thread.
+                for _ in done:
+                    unit = next(remaining, None)
+                    if unit is not None:
+                        pending[pool.submit(work, unit)] = unit
+        except BaseException:
+            # Running HTTP calls may finish, but never write cards after failure.
+            pool.shutdown(wait=False, cancel_futures=True)
+            raise
+        else:
+            pool.shutdown(wait=True)
 
     def _store(
         self,

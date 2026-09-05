@@ -65,6 +65,17 @@ class ProcessingRunRepo:
         run.id = int(cur.lastrowid)
         return run
 
+    def progress(self, run_id: int, counters: dict) -> None:
+        """Publish committed results while a run is still executing."""
+        fields = ("documents", "clusters", "items_new", "items_joined", "items_updated",
+                  "degraded", "needs_review", "calls", "failed", "elapsed_s")
+        self.conn.execute(
+            "UPDATE processing_runs SET " + ", ".join(f"{name}=?" for name in fields)
+            + " WHERE id=? AND status='running'",
+            [counters.get(name, 0) for name in fields] + [run_id],
+        )
+        self.conn.commit()
+
     def finish(self, run_id: int, counters: dict, finished_at: str | None = None) -> None:
         """Закрыть прогон отчётом: `counters` — поля `ProcessingReport` по именам."""
         self.conn.execute(

@@ -59,6 +59,21 @@ describe('document pagination', () => {
   })
 })
 describe('processing and collection', () => {
+  it('keeps processing available when collection status fails', async () => {
+    h.handle(call => call.url.pathname === '/api/v1/collection' ? json({ detail: 'Сбор временно недоступен' }, 503) : undefined)
+    await h.launch('#status')
+    expect(h.button('Обработать очередь ИИ').matches(':disabled')).toBe(false)
+    await h.click('Обработать очередь ИИ')
+    expect(last('/processing/runs').body).toEqual({ limit: 10, force: false })
+  })
+  it('shows processing progress and terminal errors outside collapsed history', async () => {
+    h.handle(call => call.url.pathname === '/api/v1/processing' ? json({ ...processing, running: null, last: { ...processingRun, status: 'failed', documents: 10, items_new: 2, error: 'chat: HTTP 401', finished_at: '2026-01-01T00:02:00Z' } }) : undefined)
+    await h.launch('#status')
+    const status = h.app().get('[aria-label="Текущая обработка"]')
+    expect(status.text()).toContain('Новых карточек: 2'); expect(status.text()).toContain('chat: HTTP 401')
+    expect(status.element.closest('details')).toBeNull()
+    expect(h.button('Обработать очередь ИИ').matches(':disabled')).toBe(false)
+  })
   it('submits processing options and reports acceptance rather than completion', async () => {
     await h.launch('#status'); await h.field('Лимит обработки', '12'); await h.field('Источник обработки', '1')
     await h.click('Обработать очередь ИИ')
