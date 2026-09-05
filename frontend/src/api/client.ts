@@ -1,4 +1,4 @@
-import type { Digest, Documents, Facets, Feed, FeedQuery, Filters, Health, Item, ItemCard, ItemCreate, ItemUpdate, ManualResult, Note, Probe, Revision, Source, SourceCreate, SourceHealth, SourceRun, SourceUpdate, Status, Visibility } from './types'
+import type { CollectionStatus, CollectionRunRequest, ProcessingStatus, ProcessingRun, ProcessingRunRequest, NpaEventCreate, Digest, Documents, Facets, Feed, FeedQuery, Filters, Health, Item, ItemCard, ItemCreate, ItemUpdate, ManualResult, Note, Probe, Revision, Source, SourceCreate, SourceHealth, SourceRun, SourceUpdate, Status, Visibility } from './types'
 
 export class ApiError extends Error {
   constructor(message: string, public status = 0, public code = '', public details?: Record<string, unknown>) { super(message); this.name = 'ApiError' }
@@ -51,6 +51,17 @@ function isHealth(value: unknown): value is Health {
 }
 const post = <T>(path: string, body?: unknown, timeout?: number) => request<T>(path, { method: 'POST', body, timeout })
 export const api = {
+  processing: () => request<ProcessingStatus>('/processing'),
+  processingRuns: () => request<{ runs: ProcessingRun[] }>('/processing/runs', { query: { limit: 20 } }),
+  processingRun: (id: number) => request<ProcessingRun>(`/processing/runs/${id}`),
+  startProcessing: (body: ProcessingRunRequest) => post<ProcessingRun>('/processing/runs', body),
+  collection: () => request<CollectionStatus>('/collection'),
+  startCollection: (interval_seconds: number) => post<CollectionStatus>('/collection/start', { interval_seconds }),
+  stopCollection: () => post<CollectionStatus>('/collection/stop'),
+  collect: (body: CollectionRunRequest) => post<CollectionStatus>('/collection/runs', body),
+  addEvent: (id: number, body: NpaEventCreate) => post<ItemCard['events'][number]>(`/items/${id}/events`, body),
+  archive: (id: number) => post<{ id: number; is_archived: boolean }>(`/items/${id}/archive`),
+  unarchive: (id: number) => post<{ id: number; is_archived: boolean }>(`/items/${id}/unarchive`),
   health: () => request<Health>('/health'), ready: () => request<Health>('/health/ready', { acceptDegradedHealth: true }),
   filters: () => request<Filters>('/filters'), status: () => request<Status>('/status'),
   feed: (query: FeedQuery, signal?: AbortSignal) => request<Feed>('/items', { query, signal }),

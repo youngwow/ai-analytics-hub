@@ -486,6 +486,58 @@ POLL_INTERVALS = ("15m", "1h", "6h", "24h")
 EDIT_REASONS = ("hallucination", "wrong_focus", "wrong_priority", "other")
 
 
+PROCESSING_RUN_STATUSES = ("running", "done", "failed")
+
+
+@dataclass
+class ProcessingRun:
+    """Один прогон обработки: кто запустил, с чем, что получилось (таблица `processing_runs`)."""
+
+    started_at: str
+    finished_at: str | None = None
+    status: str = "running"
+    trigger: str = "cli"
+    params: dict = field(default_factory=dict)
+    documents: int = 0
+    clusters: int = 0
+    items_new: int = 0
+    items_joined: int = 0
+    items_updated: int = 0
+    degraded: int = 0
+    needs_review: int = 0
+    calls: int = 0
+    failed: int = 0
+    elapsed_s: float = 0.0
+    error: str = ""
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "ProcessingRun":
+        try:
+            params = json.loads(row["params"] or "{}")
+        except (TypeError, ValueError):
+            params = {}
+        return cls(
+            id=row["id"],
+            started_at=row["started_at"],
+            finished_at=row["finished_at"],
+            status=row["status"],
+            trigger=row["trigger"],
+            params=params if isinstance(params, dict) else {},
+            documents=int(row["documents"]),
+            clusters=int(row["clusters"]),
+            items_new=int(row["items_new"]),
+            items_joined=int(row["items_joined"]),
+            items_updated=int(row["items_updated"]),
+            degraded=int(row["degraded"]),
+            needs_review=int(row["needs_review"]),
+            calls=int(row["calls"]),
+            failed=int(row["failed"]),
+            elapsed_s=float(row["elapsed_s"] or 0.0),
+            error=row["error"] or "",
+        )
+
+
 @dataclass
 class SourceRun:
     """One poll of one source — without this history a silent source and a broken

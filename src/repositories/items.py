@@ -164,6 +164,12 @@ class SqliteItemRepository(ItemRepository):
         self.conn.commit()
         return cur.rowcount > 0
 
+    def set_archived(self, item_id: int, archived: bool) -> bool:
+        cur = self.conn.execute(
+            "UPDATE items SET is_archived=? WHERE id=?", (int(archived), item_id)
+        )
+        return cur.rowcount > 0
+
     def set_visibility_bulk(self, item_ids: Iterable[int], visibility: str, reason: str = "") -> int:
         """Массовая операция под дайджест: одна транзакция, отменяется целиком."""
         ids = list(dict.fromkeys(item_ids))

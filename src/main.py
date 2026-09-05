@@ -20,7 +20,7 @@ from . import __version__
 from .api import api_router
 from .api.problem import problem
 from .config import get_config, get_paths, get_settings
-from .dependencies import get_llm_provider
+from .dependencies import get_collection_watcher, get_llm_provider
 from .exceptions import AppError
 from .repositories import Database
 from .utils import configure_logging, get_logger
@@ -35,12 +35,19 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     get_config()  # ConfigError всплывает здесь, а не на первом запросе
     db = Database(paths.db_path)  # открывает и мигрирует схему на этом потоке
     version = db.conn.execute("PRAGMA user_version").fetchone()[0]
+    # Прогон обработки не переживает перезапуск: всё «running» — провал, а не вечная очередь.
+    abandoned = db.processing_runs.abandon_running("процесс API перезапущен во время прогона")
     db.close()  # соединения живут по запросу; это никогда не хранится в app.state
+    if abandoned:
+        log.warning("прогонов обработки помечено проваленными после перезапуска: %d", abandoned)
     log.info(
         "запуск %s (%s): корень %s, схема v%s", settings.app_name, settings.environment,
         paths.root, version,
     )
     yield
+    watcher = get_collection_watcher()
+    if watcher.running:
+        watcher.stop()
     provider = get_llm_provider()
     if provider is not None:
         provider.close()

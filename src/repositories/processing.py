@@ -9,6 +9,7 @@ from ..models import (
     CollectReport,
     CompanyProfile,
     LlmCall,
+    ProcessingRun,
 )
 from ..utils import get_logger, to_utc_iso, utc_now
 
@@ -41,6 +42,87 @@ class RunRepo:
 
     def latest(self) -> sqlite3.Row | None:
         return self.conn.execute("SELECT * FROM collect_runs ORDER BY id DESC LIMIT 1").fetchone()
+
+
+class ProcessingRunRepo:
+    """История прогонов обработки: очередь ИИ видна и из CLI, и из дашборда."""
+
+    def __init__(self, conn: sqlite3.Connection):
+        self.conn = conn
+
+    def start(self, params: dict, trigger: str = "cli", started_at: str | None = None) -> ProcessingRun:
+        run = ProcessingRun(
+            started_at=started_at or (to_utc_iso(utc_now()) or ""),
+            status="running",
+            trigger=trigger,
+            params=dict(params),
+        )
+        cur = self.conn.execute(
+            "INSERT INTO processing_runs (started_at, status, trigger, params) VALUES (?, ?, ?, ?)",
+            (run.started_at, run.status, run.trigger, json.dumps(run.params, ensure_ascii=False)),
+        )
+        self.conn.commit()
+        run.id = int(cur.lastrowid)
+        return run
+
+    def finish(self, run_id: int, counters: dict, finished_at: str | None = None) -> None:
+        """Закрыть прогон отчётом: `counters` — поля `ProcessingReport` по именам."""
+        self.conn.execute(
+            "UPDATE processing_runs SET status='done', finished_at=?, documents=?, clusters=?, "
+            "items_new=?, items_joined=?, items_updated=?, degraded=?, needs_review=?, calls=?, "
+            "failed=?, elapsed_s=? WHERE id=?",
+            (
+                finished_at or (to_utc_iso(utc_now()) or ""),
+                int(counters.get("documents", 0)),
+                int(counters.get("clusters", 0)),
+                int(counters.get("items_new", 0)),
+                int(counters.get("items_joined", 0)),
+                int(counters.get("items_updated", 0)),
+                int(counters.get("degraded", 0)),
+                int(counters.get("needs_review", 0)),
+                int(counters.get("calls", 0)),
+                int(counters.get("failed", 0)),
+                float(counters.get("elapsed_s", 0.0)),
+                run_id,
+            ),
+        )
+        self.conn.commit()
+
+    def fail(self, run_id: int, error: str, finished_at: str | None = None) -> None:
+        self.conn.execute(
+            "UPDATE processing_runs SET status='failed', finished_at=?, error=? WHERE id=?",
+            (finished_at or (to_utc_iso(utc_now()) or ""), error[:500], run_id),
+        )
+        self.conn.commit()
+
+    def get(self, run_id: int) -> ProcessingRun | None:
+        row = self.conn.execute("SELECT * FROM processing_runs WHERE id=?", (run_id,)).fetchone()
+        return ProcessingRun.from_row(row) if row else None
+
+    def running(self) -> ProcessingRun | None:
+        row = self.conn.execute(
+            "SELECT * FROM processing_runs WHERE status='running' ORDER BY id DESC LIMIT 1"
+        ).fetchone()
+        return ProcessingRun.from_row(row) if row else None
+
+    def latest(self) -> ProcessingRun | None:
+        row = self.conn.execute("SELECT * FROM processing_runs ORDER BY id DESC LIMIT 1").fetchone()
+        return ProcessingRun.from_row(row) if row else None
+
+    def list(self, limit: int = 20) -> list[ProcessingRun]:
+        rows = self.conn.execute(
+            "SELECT * FROM processing_runs ORDER BY id DESC LIMIT ?", (limit,)
+        )
+        return [ProcessingRun.from_row(r) for r in rows]
+
+    def abandon_running(self, error: str) -> int:
+        """Прогон не переживает перезапуск процесса: всё «running» на старте — провал."""
+        cur = self.conn.execute(
+            "UPDATE processing_runs SET status='failed', finished_at=?, error=? WHERE status='running'",
+            (to_utc_iso(utc_now()) or "", error[:500]),
+        )
+        self.conn.commit()
+        return cur.rowcount
 
 
 class ProfileRepo:

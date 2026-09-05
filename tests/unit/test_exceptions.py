@@ -12,6 +12,11 @@ import pytest
 from src.dependencies import get_source_service
 from src.exceptions import (
     AppError,
+    CollectionBusyError,
+    CollectionError,
+    CollectionNotRunningError,
+    CollectionRunningError,
+    CollectionValidationError,
     InvalidCursorError,
     ItemError,
     ItemNotFoundError,
@@ -19,9 +24,13 @@ from src.exceptions import (
     NetworkUnreachableError,
     NothingToRevertError,
     PossibleDuplicateError,
+    ProcessingBusyError,
+    ProcessingError,
+    ProcessingValidationError,
     QueryError,
     QueryValidationError,
     RepositoryUnavailableError,
+    RunNotFoundError,
     SourceError,
     SourceExistsError,
     SourceNotFoundError,
@@ -33,6 +42,13 @@ from src.exceptions import (
 PROBLEM = "application/problem+json"
 
 LEAVES = [
+    (ProcessingValidationError, 400, "validation_error", ProcessingError),
+    (RunNotFoundError, 404, "run_not_found", ProcessingError),
+    (ProcessingBusyError, 409, "processing_busy", ProcessingError),
+    (CollectionValidationError, 400, "validation_error", CollectionError),
+    (CollectionRunningError, 409, "collection_running", CollectionError),
+    (CollectionNotRunningError, 409, "collection_not_running", CollectionError),
+    (CollectionBusyError, 409, "collection_busy", CollectionError),
     (SourceValidationError, 400, "validation_error", SourceError),
     (SourceExistsError, 409, "source_exists", SourceError),
     (SourceNotFoundError, 404, "source_not_found", SourceError),
@@ -63,7 +79,11 @@ def test_each_leaf_maps_to_one_status_and_one_code(cls, status, code, family):
     assert isinstance(error, AppError)
 
 
-@pytest.mark.parametrize("family", [SourceError, ItemError, QueryError], ids=lambda c: c.__name__)
+@pytest.mark.parametrize(
+    "family",
+    [SourceError, ItemError, QueryError, ProcessingError, CollectionError],
+    ids=lambda c: c.__name__,
+)
 def test_a_family_base_is_a_400_validation_error_by_default(family):
     error = family("текст")
     assert (error.status_code, error.code) == (400, "validation_error")
@@ -92,6 +112,16 @@ def test_details_default_to_an_empty_dict_and_are_kept_when_given():
 def test_a_missing_detail_falls_back_to_the_class_docstring():
     assert SourceNotFoundError().detail == "Источник не найден."
     assert AppError().detail == "Внутренняя ошибка."
+    assert CollectionBusyError().detail == "Цикл сбора уже выполняется — дождитесь его конца."
+    assert ProcessingBusyError().detail == "Обработка уже идёт — дождитесь завершения прогона."
+
+
+def test_the_families_do_not_overlap():
+    """CLI ловит ошибки семействами: прогон и сбор не должны попадать под `except ItemError`."""
+    for leaf in (ProcessingBusyError, RunNotFoundError):
+        assert not issubclass(leaf, (SourceError, ItemError, QueryError, CollectionError))
+    for leaf in (CollectionBusyError, CollectionRunningError):
+        assert not issubclass(leaf, (SourceError, ItemError, QueryError, ProcessingError))
 
 
 def test_the_bare_base_is_an_internal_error():

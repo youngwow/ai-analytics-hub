@@ -137,6 +137,10 @@ class DocumentRepository(ABC):
     def clustered_candidates(self, since: str | None = None, limit: int = 2000) -> list[sqlite3.Row]:
         """Already-carded documents a new one could join — the dedup blocking pool."""
 
+    @abstractmethod
+    def count_unprocessed(self) -> int:
+        """Сколько собранных документов ещё не получили карточку."""
+
 
 class ItemRepository(ABC):
     """Карточки: чтение, видимость, сущности, связи с документами, история."""
@@ -182,6 +186,10 @@ class ItemRepository(ABC):
     @abstractmethod
     def set_visibility(self, item_id: int, visibility: str, reason: str = "") -> bool:
         """См. реализацию SQLite."""
+
+    @abstractmethod
+    def set_archived(self, item_id: int, archived: bool) -> bool:
+        """Перевести карточку в архив или вернуть из него; `True`, если строка нашлась."""
 
     @abstractmethod
     def set_visibility_bulk(self, item_ids: Iterable[int], visibility: str, reason: str = "") -> int:
@@ -274,8 +282,10 @@ class FeedRepository(ABC):
         """Теги, которые реально стоят на карточках, по убыванию частоты."""
 
     @abstractmethod
-    def documents(self, query: DocumentQuery) -> tuple[list[dict], int]:
-        """Собрано, но без карточки: страница и общее число."""
+    def documents(
+        self, query: DocumentQuery, position: tuple | None = None
+    ) -> tuple[list[dict], int]:
+        """Собрано, но без карточки: страница (`limit + 1` строк от курсора) и общее число."""
 
     @abstractmethod
     def unprocessed_count(self) -> int:

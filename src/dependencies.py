@@ -19,6 +19,11 @@ from .config import Config, Settings, get_config, get_paths, get_settings
 from .paths import ProjectPaths
 from .processing.llm import OllamaProvider, build_provider
 from .repositories import Database
+from .services.collection_service import (
+    CollectionService,
+    CollectionWatcher,
+    run_collection_cycle,
+)
 from .services.feed_service import FeedService
 from .services.health import HealthService
 from .services.item_service import ItemService
@@ -61,8 +66,19 @@ def get_tavily_key(config: ConfigDep, paths: PathsDep) -> str:
     return load_env_secret(config.tavily.api_key_env, paths.env_path)
 
 
+@lru_cache
+def get_collection_watcher() -> CollectionWatcher:
+    """Наблюдатель сбора на весь процесс: один поток, состояние «запущен» — свойство процесса."""
+    config, paths = get_config(), get_paths()
+    key = load_env_secret(config.tavily.api_key_env, paths.env_path)
+    return CollectionWatcher(
+        lambda: run_collection_cycle(config, paths, tavily_key=key, due_only=True)
+    )
+
+
 LLMProviderDep = Annotated[OllamaProvider | None, Depends(get_llm_provider)]
 TavilyKeyDep = Annotated[str, Depends(get_tavily_key)]
+CollectionWatcherDep = Annotated[CollectionWatcher, Depends(get_collection_watcher)]
 
 
 def get_collector(config: ConfigDep, paths: PathsDep, db: DatabaseDep, tavily_key: TavilyKeyDep) -> Collector:
@@ -92,9 +108,16 @@ def get_health_service(settings: SettingsDep, db: DatabaseDep) -> HealthService:
     return HealthService(settings, db)
 
 
+def get_collection_service(
+    config: ConfigDep, db: DatabaseDep, watcher: CollectionWatcherDep
+) -> CollectionService:
+    return CollectionService(config, db, watcher)
+
+
 CollectorDep = Annotated[Collector, Depends(get_collector)]
 SourceServiceDep = Annotated[SourceService, Depends(get_source_service)]
 ItemServiceDep = Annotated[ItemService, Depends(get_item_service)]
 ProcessingServiceDep = Annotated[ProcessingService, Depends(get_processing_service)]
 FeedServiceDep = Annotated[FeedService, Depends(get_feed_service)]
 HealthServiceDep = Annotated[HealthService, Depends(get_health_service)]
+CollectionServiceDep = Annotated[CollectionService, Depends(get_collection_service)]

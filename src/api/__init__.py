@@ -7,12 +7,14 @@
 
 from fastapi import APIRouter
 
-from .routes import feed, health, items, sources
+from .routes import collection, feed, health, items, processing, sources
 
 api_router = APIRouter()
 api_router.include_router(health.router)
 api_router.include_router(sources.router)
 api_router.include_router(items.router)
 api_router.include_router(feed.router)
+api_router.include_router(processing.router)
+api_router.include_router(collection.router)
 
 __all__ = ["api_router"]

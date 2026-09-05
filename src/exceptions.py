@@ -126,6 +126,75 @@ class NothingToRevertError(ItemError):
     code = "nothing_to_revert"
 
 
+# ── обработка (очередь ИИ) ─────────────────────────────────────────────────
+
+
+class ProcessingError(AppError):
+    """Ошибка запуска обработки."""
+
+    status_code = 400
+    code = "validation_error"
+
+
+class ProcessingValidationError(ProcessingError):
+    """Параметры прогона не проходят проверку."""
+
+    status_code = 400
+    code = "validation_error"
+
+
+class RunNotFoundError(ProcessingError):
+    """Прогон обработки не найден."""
+
+    status_code = 404
+    code = "run_not_found"
+
+
+class ProcessingBusyError(ProcessingError):
+    """Обработка уже идёт — дождитесь завершения прогона."""
+
+    status_code = 409
+    code = "processing_busy"
+
+
+# ── сбор (автоматический мониторинг) ───────────────────────────────────────
+
+
+class CollectionError(AppError):
+    """Ошибка управления сбором."""
+
+    status_code = 400
+    code = "validation_error"
+
+
+class CollectionValidationError(CollectionError):
+    """Параметры сбора не проходят проверку."""
+
+    status_code = 400
+    code = "validation_error"
+
+
+class CollectionRunningError(CollectionError):
+    """Автоматический мониторинг уже запущен."""
+
+    status_code = 409
+    code = "collection_running"
+
+
+class CollectionNotRunningError(CollectionError):
+    """Автоматический мониторинг не запущен."""
+
+    status_code = 409
+    code = "collection_not_running"
+
+
+class CollectionBusyError(CollectionError):
+    """Цикл сбора уже выполняется — дождитесь его конца."""
+
+    status_code = 409
+    code = "collection_busy"
+
+
 # ── фильтр ленты ───────────────────────────────────────────────────────────
 
 

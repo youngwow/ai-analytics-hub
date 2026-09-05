@@ -44,7 +44,7 @@ async function bulk(scope: 'feed' | 'digest' | 'visible') {
 </script>
 <template>
   <div class="view-column">
-    <FilterBar v-model="filters" :npa="npa" />
+    <FilterBar v-model="filters" :npa="npa" archive />
     <div class="toolbar gap-3 py-2"><label class="text-[11px] flex items-center gap-2"><input v-model="includeHidden" type="checkbox" />Показать скрытые и удалённые</label><span v-if="data.facets" class="text-[11px] text-muted">Высокий: {{ data.facets.by_priority.high ?? 0 }} · Средний: {{ data.facets.by_priority.medium ?? 0 }} · Низкий: {{ data.facets.by_priority.low ?? 0 }}</span><span class="ml-auto text-[11px]" role="status">{{ data.feed.total }} материалов</span><button class="outline-button" @click="adding = true">+ Добавить {{ npa ? 'НПА' : 'материал' }}</button><button class="text-link" :disabled="loading" @click="load()">Обновить</button></div>
     <div v-if="selected.length" class="toolbar gap-2 py-2"><span>Выбрано: {{ selected.length }}</span><input v-model="reason" class="form-control bulk-reason" aria-label="Причина скрытия" placeholder="Причина (необязательно)" /><button class="secondary-button" :disabled="actionBusy" @click="bulk('digest')">Исключить из дайджеста</button><button class="secondary-button" :disabled="actionBusy" @click="bulk('feed')">Скрыть из ленты</button><button class="secondary-button" :disabled="actionBusy" @click="bulk('visible')">Вернуть в ленту</button></div>
     <p v-if="dateError || error || actionError" class="feedback-bar" role="alert">{{ dateError || error || actionError }}<button v-if="!dateError" class="text-link" @click="load()">Повторить</button></p><p v-if="actionMessage" class="feedback-bar" role="status">{{ actionMessage }}</p>

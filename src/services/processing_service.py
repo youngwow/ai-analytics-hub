@@ -14,8 +14,25 @@ from dataclasses import dataclass, field, replace
 from datetime import timedelta
 
 from ..config import Config
-from ..exceptions import ItemError, ItemNotFoundError, ItemValidationError, PossibleDuplicateError
-from ..models import Cluster, CompanyProfile, EntitySpan, Item, LlmCall, NpaEvent, RawDocument
+from ..exceptions import (
+    ItemError,
+    ItemNotFoundError,
+    ItemValidationError,
+    PossibleDuplicateError,
+    ProcessingBusyError,
+    RunNotFoundError,
+)
+from ..models import (
+    Cluster,
+    CompanyProfile,
+    EntitySpan,
+    Item,
+    LlmCall,
+    NpaEvent,
+    ProcessingRun,
+    RawDocument,
+)
+from ..paths import ProjectPaths
 from ..processing import dedup, normalize, prompts
 from ..processing import profile as profile_mod
 from ..processing.llm import EmbeddingProvider, LlmError, LLMProvider
@@ -91,8 +108,90 @@ class ProcessingService:
         profile_id: int | None = None,
         force: bool = False,
         dry_run: bool = False,
+        run_id: int | None = None,
+        trigger: str = "cli",
     ) -> ProcessingReport:
-        """Turn unprocessed documents into cards. Idempotent: a repeat run adds none."""
+        """Turn unprocessed documents into cards. Idempotent: a repeat run adds none.
+
+        Every real run (not `dry_run`) is recorded in `processing_runs`, so the
+        dashboard sees the queue the same way the CLI does. `run_id` continues a
+        record created by `enqueue()`; otherwise a record is opened here.
+        """
+        params = {"limit": limit, "source_id": source_id, "since": since,
+                  "profile_id": profile_id, "force": force}
+        record: ProcessingRun | None = None
+        if not dry_run:
+            record = (
+                self.db.processing_runs.get(run_id)
+                if run_id is not None
+                else self.db.processing_runs.start(params, trigger=trigger)
+            )
+        try:
+            report = self._run(
+                limit=limit, source_id=source_id, since=since, profile_id=profile_id,
+                force=force, dry_run=dry_run,
+            )
+        except Exception as e:
+            if record is not None:
+                self.db.processing_runs.fail(record.id, f"{type(e).__name__}: {e}")
+            raise
+        if record is not None:
+            self.db.processing_runs.finish(record.id, _counters(report))
+        return report
+
+    # -- run history (the AI queue as the dashboard sees it) --
+
+    def enqueue(
+        self,
+        *,
+        limit: int | None = None,
+        source_id: int | None = None,
+        since: str | None = None,
+        profile_id: int | None = None,
+        force: bool = False,
+        trigger: str = "api",
+    ) -> ProcessingRun:
+        """Open a run record for a background run; one run at a time."""
+        busy = self.db.processing_runs.running()
+        if busy is not None:
+            raise ProcessingBusyError(
+                f"обработка уже идёт (прогон #{busy.id} с {busy.started_at})",
+                {"run_id": busy.id},
+            )
+        if limit is not None and limit < 1:
+            raise ItemValidationError("limit должен быть >= 1")
+        params = {"limit": limit, "source_id": source_id, "since": since,
+                  "profile_id": profile_id, "force": force}
+        return self.db.processing_runs.start(params, trigger=trigger)
+
+    def get_run(self, run_id: int) -> ProcessingRun:
+        run = self.db.processing_runs.get(run_id)
+        if run is None:
+            raise RunNotFoundError(f"прогон #{run_id} не найден")
+        return run
+
+    def list_runs(self, limit: int = 20) -> list[ProcessingRun]:
+        return self.db.processing_runs.list(limit)
+
+    def queue_status(self) -> dict:
+        """Что видит кнопка «Обработать очередь»: идёт ли прогон, что было в последний раз."""
+        return {
+            "running": self.db.processing_runs.running(),
+            "last": self.db.processing_runs.latest(),
+            "unprocessed": self.db.documents.count_unprocessed(),
+            "llm_available": self.provider is not None,
+        }
+
+    def _run(
+        self,
+        *,
+        limit: int | None = None,
+        source_id: int | None = None,
+        since: str | None = None,
+        profile_id: int | None = None,
+        force: bool = False,
+        dry_run: bool = False,
+    ) -> ProcessingReport:
         started = time.monotonic()
         report = ProcessingReport()
         limit = limit or self.config.processing.max_new_per_run
@@ -641,6 +740,43 @@ class ProcessingService:
         closer = getattr(self.provider, "close", None)
         if callable(closer):
             closer()
+
+
+def run_in_background(
+    config: Config,
+    paths: ProjectPaths,
+    run_id: int,
+    params: dict,
+    provider: LLMProvider | None = None,
+) -> None:
+    """Прогон после ответа `POST /processing/runs`: своё соединение, общий провайдер.
+
+    Соединение запроса к этому моменту закрыто, а SQLite-соединение принадлежит
+    одному потоку. Ошибка уже записана в `processing_runs` внутри `run()`.
+    """
+    db = Database(paths.db_path)
+    try:
+        service = ProcessingService(config, db, provider=provider, embedder=provider)
+        service.run(run_id=run_id, trigger="api", **params)
+    except Exception as e:  # фоновая задача не должна ронять процесс
+        log.error("прогон обработки #%s завершился ошибкой: %s", run_id, e)
+    finally:
+        db.close()
+
+
+def _counters(report: ProcessingReport) -> dict:
+    return {
+        "documents": report.documents,
+        "clusters": report.clusters,
+        "items_new": report.items_new,
+        "items_joined": report.items_joined,
+        "items_updated": report.items_updated,
+        "degraded": report.degraded,
+        "needs_review": report.needs_review,
+        "calls": report.calls,
+        "failed": report.failed,
+        "elapsed_s": report.elapsed_s,
+    }
 
 
 def match_text(candidates, match) -> str:

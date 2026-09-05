@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from .domain import EDIT_REASONS, ITEM_TYPES, POLL_INTERVALS, PRIORITIES
+from .domain import EDIT_REASONS, ITEM_TYPES, KINDS, NPA_STATUSES, POLL_INTERVALS, PRIORITIES
 
 
 class _Request(BaseModel):
@@ -32,12 +32,19 @@ class SourceCreateRequest(_Request):
 
 
 class SourceUpdateRequest(_Request):
-    """Частичное обновление — применяются только присланные поля."""
+    """Частичное обновление — применяются только присланные поля.
+
+    `url` / `type` / `fetch_url` переселяют источник на другой адрес: документы
+    остаются, курсор сбрасывается, дубль по адресу — 409.
+    """
 
     title: str | None = None
     poll_interval: str | None = Field(default=None, examples=list(POLL_INTERVALS))
     category_hint: str | None = None
     status: str | None = None
+    url: str | None = None
+    type: str | None = Field(default=None, examples=list(KINDS))
+    fetch_url: str | None = None
 
 
 class ItemCreateRequest(_Request):
@@ -81,6 +88,39 @@ class NoteCreateRequest(_Request):
 
 class RevertRequest(_Request):
     field: str
+
+
+class NpaEventCreateRequest(_Request):
+    """Событие в хронологии карточки: статус НПА из словаря двигает карточку,
+    любое другое (слушания, срок) просто ложится в историю."""
+
+    status: str = Field(min_length=1, max_length=64, examples=list(NPA_STATUSES))
+    occurred_at: str | None = None
+    source_url: str = ""
+    note: str = ""
+
+
+class ProcessingRunRequest(_Request):
+    """Параметры прогона обработки — те же, что у `python -m src process`."""
+
+    limit: int | None = Field(default=None, ge=1)
+    source_id: int | None = None
+    since: str | None = None
+    profile_id: int | None = None
+    force: bool = False
+
+
+class CollectionStartRequest(_Request):
+    interval_seconds: int = 900
+
+
+class CollectionRunRequest(_Request):
+    """Разовый цикл сбора: все включённые источники или только те, чья очередь пришла."""
+
+    source_ids: list[int] | None = None
+    due_only: bool = False
+    backfill: bool = False
+    force: bool = False
 
 
 class DigestRequest(_Request):

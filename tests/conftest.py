@@ -11,7 +11,7 @@ from fastapi.testclient import TestClient
 from support import FakeLLM, MockRoutes, default_raw_config, news_answer, read_fixture
 
 from src.config import Config, get_config, get_paths, get_settings
-from src.dependencies import get_llm_provider
+from src.dependencies import get_collection_watcher, get_llm_provider
 from src.main import create_app
 from src.models import Cluster, Item
 from src.paths import ProjectPaths
@@ -21,13 +21,21 @@ from src.repositories import documents as documents_mod
 from src.repositories import items as items_mod
 from src.repositories import processing as processing_repo_mod
 from src.repositories import sources as sources_mod
+from src.services import collection_service as collection_mod
+from src.services import item_service as item_mod
 from src.services import processing_service as processing_mod
 from src.services import source_service as source_mod
 from src.sources import scheduler as scheduler_mod
 
 # The no-argument providers behind `create_app()`; every test starts and ends
 # with them empty so no test sees another test's root or config.
-CACHED_PROVIDERS = (get_settings, get_paths, get_config, get_llm_provider)
+CACHED_PROVIDERS = (
+    get_settings,
+    get_paths,
+    get_config,
+    get_llm_provider,
+    get_collection_watcher,
+)
 
 # Every module that stamps a stored row with `utc_now()` imported the name, so
 # each one is pinned separately by `frozen_clock`.
@@ -38,7 +46,9 @@ CLOCK_MODULES = (
     items_mod,
     processing_repo_mod,
     processing_mod,
+    item_mod,
     source_mod,
+    collection_mod,
     scheduler_mod,
 )
 
@@ -46,6 +56,18 @@ CLOCK_MODULES = (
 def clear_provider_caches() -> None:
     for provider in CACHED_PROVIDERS:
         provider.cache_clear()
+
+
+def stop_leaked_watcher() -> None:
+    """A watcher thread a test started must not outlive it.
+
+    Only the cached instance is looked at: building one just to stop it would
+    read the config of a root the test may not have prepared.
+    """
+    if get_collection_watcher.cache_info().currsize:
+        watcher = get_collection_watcher()
+        if watcher.running:
+            watcher.stop(timeout=1.0)
 
 
 @pytest.fixture(autouse=True)
@@ -58,6 +80,7 @@ def _isolated_hub_root(tmp_path, monkeypatch):
     monkeypatch.setenv("HUB_ROOT", str(tmp_path))
     clear_provider_caches()
     yield
+    stop_leaked_watcher()
     clear_provider_caches()
 
 

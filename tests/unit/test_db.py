@@ -21,9 +21,12 @@ from src.models import (
     Source,
 )
 from src.repositories import Database, DuplicateSourceError
-from src.repositories.database import MANUAL_FETCH_URL, MANUAL_SOURCE_NAME
+from src.repositories.database import _MIGRATIONS, MANUAL_FETCH_URL, MANUAL_SOURCE_NAME
 
 NOW = "2026-09-02T12:00:00+00:00"
+# «Схема доведена до конца»: литерал новейшего шага живёт в его собственном
+# файле миграции (`test_migration_v5.py`), здесь проверяется, что цепочка прошла целиком.
+CURRENT_VERSION = max(_MIGRATIONS)
 
 
 def _source(**overrides) -> Source:
@@ -74,7 +77,7 @@ def _seeded_documents(db: Database, count: int = 1, **overrides) -> list[int]:
 
 
 def test_schema_version_and_pragmas(db):
-    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
     assert db.conn.execute("PRAGMA foreign_keys").fetchone()[0] == 1
     tables = {
         r[0] for r in db.conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
@@ -88,7 +91,7 @@ def test_file_database_creates_parent_dir_and_uses_wal(tmp_path):
     try:
         assert path.exists()
         assert database.conn.execute("PRAGMA journal_mode").fetchone()[0] == "wal"
-        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
     finally:
         database.close()
 
@@ -515,7 +518,7 @@ def test_reopening_a_database_keeps_v2_data_and_does_not_remigrate(tmp_path):
 
     second = Database(path)
     try:
-        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
         assert second.items.count() == 1
         assert second.items.get(item_id).title == "Минцифры расширило реестр"
         assert [r["id"] for r in second.items.list(query="реестр")] == [item_id]

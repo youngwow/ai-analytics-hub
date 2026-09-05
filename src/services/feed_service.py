@@ -97,10 +97,18 @@ class FeedService:
     def documents(self, query: DocumentQuery) -> dict:
         """Собрано, но карточки ещё нет: US-12. Это не лента — у документа нет типа."""
         started = time.monotonic()
-        rows, total = self.repository.documents(query)
+        position = query.decode_cursor()
+        rows, total = self.repository.documents(query, position)
+        has_more = len(rows) > query.limit
+        rows = rows[: query.limit]
+        cursor = None
+        if has_more and rows:
+            last = rows[-1]
+            cursor = query.encode_cursor(last["published_at"], int(last["id"]))
         return {
             "documents": rows,
             "total": total,
+            "next_cursor": cursor,
             "took_ms": int((time.monotonic() - started) * 1000),
         }
 
@@ -116,8 +124,8 @@ class FeedService:
         limit: int = 200,
     ) -> dict:
         """Выгрузка среза. Ничего не сохраняет: дайджест — это срез, а не сущность."""
-        # Скрытое из дайджеста не выгружается никогда, что бы ни просили фильтры.
-        prepared = replace(query, include_hidden=False, limit=limit, cursor=None)
+        # Скрытое из дайджеста и архив не выгружаются никогда, что бы ни просили фильтры.
+        prepared = replace(query, include_hidden=False, archived="exclude", limit=limit, cursor=None)
         rows = [
             self._row(r)
             for r in self.repository.page(prepared, None)[:limit]

@@ -8,7 +8,7 @@ from .database import MANUAL_FETCH_URL, MANUAL_SOURCE_NAME, Database
 from .documents import SqliteDocumentRepository
 from .feed import SqliteFeedRepository
 from .items import ClusterRepo, ItemNoteRepo, ItemTagRepo, SearchRepo, SqliteItemRepository
-from .processing import LlmCallRepo, ProfileRepo, PromptRepo, RunRepo
+from .processing import LlmCallRepo, ProcessingRunRepo, ProfileRepo, PromptRepo, RunRepo
 from .repository_interface import (
     DocumentRepository,
     DuplicateSourceError,
@@ -31,6 +31,7 @@ __all__ = [
     "ItemRepository",
     "ItemTagRepo",
     "LlmCallRepo",
+    "ProcessingRunRepo",
     "ProfileRepo",
     "PromptRepo",
     "RunRepo",

@@ -18,9 +18,11 @@ from ...models.requests import (
     ItemCreateRequest,
     ItemUpdateRequest,
     NoteCreateRequest,
+    NpaEventCreateRequest,
     RevertRequest,
 )
 from ...models.responses import (
+    ArchiveResponse,
     BulkResponse,
     FacetsResponse,
     FeedResponse,
@@ -28,6 +30,7 @@ from ...models.responses import (
     ItemEditResponse,
     ManualItemResponse,
     NoteResponse,
+    NpaEventResponse,
     RevisionListResponse,
     RevisionResponse,
     VisibilityResponse,
@@ -136,3 +139,32 @@ def revert(item_id: ItemId, payload: RevertRequest, service: ItemServiceDep) -> 
 )
 def add_note(item_id: ItemId, payload: NoteCreateRequest, service: ItemServiceDep) -> NoteResponse:
     return NoteResponse.from_domain(service.add_note(item_id, payload.body, payload.author))
+
+
+@router.post(
+    "/{item_id}/events",
+    response_model=NpaEventResponse,
+    status_code=status.HTTP_201_CREATED,
+    summary="Событие в хронологии: статус НПА, слушания, срок",
+)
+def add_event(
+    item_id: ItemId, payload: NpaEventCreateRequest, service: ItemServiceDep
+) -> NpaEventResponse:
+    event = service.add_npa_event(
+        item_id,
+        payload.status,
+        occurred_at=payload.occurred_at,
+        source_url=payload.source_url,
+        note=payload.note,
+    )
+    return NpaEventResponse.from_domain(event)
+
+
+@router.post("/{item_id}/archive", response_model=ArchiveResponse, summary="В архив: из ленты и дайджеста, но не из поиска")
+def archive_item(item_id: ItemId, service: ItemServiceDep) -> ArchiveResponse:
+    return ArchiveResponse.from_domain(service.set_archived(item_id, True))
+
+
+@router.post("/{item_id}/unarchive", response_model=ArchiveResponse, summary="Вернуть из архива")
+def unarchive_item(item_id: ItemId, service: ItemServiceDep) -> ArchiveResponse:
+    return ArchiveResponse.from_domain(service.set_archived(item_id, False))

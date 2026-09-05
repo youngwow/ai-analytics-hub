@@ -16,7 +16,7 @@ from ..sources.textutil import normalized_source_url
 from ..utils import get_logger, to_utc_iso, utc_now
 from .documents import SqliteDocumentRepository
 from .items import ClusterRepo, ItemNoteRepo, ItemTagRepo, SearchRepo, SqliteItemRepository
-from .processing import LlmCallRepo, ProfileRepo, PromptRepo, RunRepo
+from .processing import LlmCallRepo, ProcessingRunRepo, ProfileRepo, PromptRepo, RunRepo
 from .repository_interface import DuplicateSourceError
 from .sources import (
     MANUAL_FETCH_URL,
@@ -323,11 +323,37 @@ CREATE INDEX IF NOT EXISTS idx_items_type_priority ON items(type, priority);
 """
 
 
+# v5: очередь ИИ видна из дашборда — прогоны обработки хранятся, а не живут в памяти процесса.
+_SCHEMA_V5 = """
+CREATE TABLE IF NOT EXISTS processing_runs (
+    id            INTEGER PRIMARY KEY,
+    started_at    TEXT NOT NULL,
+    finished_at   TEXT,
+    status        TEXT NOT NULL DEFAULT 'running' CHECK (status IN ('running','done','failed')),
+    trigger       TEXT NOT NULL DEFAULT 'cli',
+    params        TEXT NOT NULL DEFAULT '{}',
+    documents     INTEGER NOT NULL DEFAULT 0,
+    clusters      INTEGER NOT NULL DEFAULT 0,
+    items_new     INTEGER NOT NULL DEFAULT 0,
+    items_joined  INTEGER NOT NULL DEFAULT 0,
+    items_updated INTEGER NOT NULL DEFAULT 0,
+    degraded      INTEGER NOT NULL DEFAULT 0,
+    needs_review  INTEGER NOT NULL DEFAULT 0,
+    calls         INTEGER NOT NULL DEFAULT 0,
+    failed        INTEGER NOT NULL DEFAULT 0,
+    elapsed_s     REAL NOT NULL DEFAULT 0,
+    error         TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS idx_processing_runs_status ON processing_runs(status, id DESC);
+"""
+
+
 _MIGRATIONS: dict[int, str] = {
     1: _SCHEMA_V1,
     2: _SCHEMA_V2,
     3: _SCHEMA_V3,
     4: _SCHEMA_V4,
+    5: _SCHEMA_V5,
 }
 
 
@@ -405,6 +431,7 @@ class Database:
         self.profiles = ProfileRepo(self.conn)
         self.prompts = PromptRepo(self.conn)
         self.llm_calls = LlmCallRepo(self.conn)
+        self.processing_runs = ProcessingRunRepo(self.conn)
         self.source_runs = SourceRunRepo(self.conn)
         self.notes = ItemNoteRepo(self.conn)
         self.tags = ItemTagRepo(self.conn)

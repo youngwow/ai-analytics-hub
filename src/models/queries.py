@@ -20,6 +20,8 @@ from ..utils import parse_datetime
 from .domain import ITEM_TYPES, NPA_STATUSES, PRIORITIES
 
 ORDERS = ("published", "priority", "processed")
+# Архив: по умолчанию не показывается, но по запросу — вместе с лентой или отдельно.
+ARCHIVED_MODES = ("exclude", "include", "only")
 MAX_LIMIT = 200
 DEFAULT_LIMIT = 20
 
@@ -39,6 +41,7 @@ class FeedQuery:
     limit: int = DEFAULT_LIMIT
     cursor: str | None = None
     include_hidden: bool = False
+    archived: str = "exclude"
 
     @classmethod
     def build(
@@ -56,6 +59,7 @@ class FeedQuery:
         limit: int | None = None,
         cursor: str | None = None,
         include_hidden: bool = False,
+        archived: str | None = None,
         timezone_name: str = "Europe/Moscow",
     ) -> "FeedQuery":
         """Собрать и проверить фильтр. Всё, что не проходит, — `QueryValidationError`."""
@@ -69,6 +73,8 @@ class FeedQuery:
             if type == "news":
                 raise QueryValidationError("npa_status не применяется к type=news")
         _one_of(order, ORDERS, "order")
+        archived = archived or "exclude"
+        _one_of(archived, ARCHIVED_MODES, "archived")
 
         limit = DEFAULT_LIMIT if limit is None else _int(limit, "limit")
         if not 1 <= limit <= MAX_LIMIT:
@@ -93,6 +99,7 @@ class FeedQuery:
             limit=limit,
             cursor=cursor,
             include_hidden=bool(include_hidden),
+            archived=archived,
         )
 
     # -- курсор --
@@ -111,31 +118,18 @@ class FeedQuery:
                 self.date_to.isoformat() if self.date_to else None,
                 self.order,
                 self.include_hidden,
+                self.archived,
             ],
             ensure_ascii=False,
         )
         return hashlib.blake2b(payload.encode("utf-8"), digest_size=8).hexdigest()
 
     def encode_cursor(self, published_at: str | None, item_id: int) -> str:
-        raw = json.dumps(
-            {"p": published_at, "i": int(item_id), "fp": self.fingerprint()}, ensure_ascii=False
-        )
-        return base64.urlsafe_b64encode(raw.encode("utf-8")).decode("ascii")
+        return _encode_cursor(self.fingerprint(), published_at, item_id)
 
     def decode_cursor(self) -> tuple[str | None, int] | None:
         """Разобрать курсор и убедиться, что он от этого же среза."""
-        if not self.cursor:
-            return None
-        try:
-            payload = json.loads(base64.urlsafe_b64decode(self.cursor.encode("ascii")))
-            position = (payload["p"], int(payload["i"]))
-            fingerprint = payload["fp"]
-        except (ValueError, KeyError, TypeError, binascii.Error) as e:
-            raise InvalidCursorError("курсор не разбирается") from e
-        if fingerprint != self.fingerprint():
-            # Иначе следующая страница молча отдала бы другой срез.
-            raise InvalidCursorError("курсор относится к другому набору фильтров")
-        return position
+        return _decode_cursor(self.cursor, self.fingerprint())
 
 
 @dataclass
@@ -147,6 +141,7 @@ class DocumentQuery:
     date_to: datetime | None = None
     q: str = ""
     limit: int = DEFAULT_LIMIT
+    cursor: str | None = None
     rejected: tuple[str, ...] = field(default_factory=tuple)
 
     @classmethod
@@ -163,7 +158,49 @@ class DocumentQuery:
             date_to=feed.date_to,
             q=feed.q,
             limit=feed.limit,
+            cursor=feed.cursor,
         )
+
+    # -- курсор: та же схема, что у ленты, но отпечаток только из фильтров документа --
+
+    def fingerprint(self) -> str:
+        payload = json.dumps(
+            [
+                self.q,
+                sorted(self.source_ids),
+                self.date_from.isoformat() if self.date_from else None,
+                self.date_to.isoformat() if self.date_to else None,
+            ],
+            ensure_ascii=False,
+        )
+        return hashlib.blake2b(payload.encode("utf-8"), digest_size=8).hexdigest()
+
+    def encode_cursor(self, published_at: str | None, document_id: int) -> str:
+        return _encode_cursor(self.fingerprint(), published_at, document_id)
+
+    def decode_cursor(self) -> tuple[str | None, int] | None:
+        return _decode_cursor(self.cursor, self.fingerprint())
+
+
+def _encode_cursor(fingerprint: str, published_at: str | None, row_id: int) -> str:
+    raw = json.dumps({"p": published_at, "i": int(row_id), "fp": fingerprint}, ensure_ascii=False)
+    return base64.urlsafe_b64encode(raw.encode("utf-8")).decode("ascii")
+
+
+def _decode_cursor(cursor: str | None, fingerprint: str) -> tuple[str | None, int] | None:
+    """Разобрать курсор и убедиться, что он от этого же среза."""
+    if not cursor:
+        return None
+    try:
+        payload = json.loads(base64.urlsafe_b64decode(cursor.encode("ascii")))
+        position = (payload["p"], int(payload["i"]))
+        stamp = payload["fp"]
+    except (ValueError, KeyError, TypeError, binascii.Error) as e:
+        raise InvalidCursorError("курсор не разбирается") from e
+    if stamp != fingerprint:
+        # Иначе следующая страница молча отдала бы другой срез.
+        raise InvalidCursorError("курсор относится к другому набору фильтров")
+    return position
 
 
 def _unique(values) -> list:

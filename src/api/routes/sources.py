@@ -85,6 +85,9 @@ def update_source(
         poll_interval=payload.poll_interval,
         category_hint=payload.category_hint,
         status=payload.status,
+        url=payload.url,
+        kind=payload.type,
+        fetch_url=payload.fetch_url,
     )
     return SourceResponse.from_domain(source)
 

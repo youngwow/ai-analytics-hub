@@ -12,17 +12,21 @@ import pytest
 from pydantic import ValidationError
 
 from src.models import (
+    CollectReport,
     EntitySpan,
     Item,
     ItemNote,
     ItemRevision,
     ItemTag,
     NpaEvent,
+    ProcessingRun,
     Source,
     SourceRun,
 )
 from src.models.queries import DocumentQuery, FeedQuery
 from src.models.responses import (
+    ArchiveResponse,
+    CollectionStatusResponse,
     DigestResponse,
     DocumentsResponse,
     EntityResponse,
@@ -36,6 +40,9 @@ from src.models.responses import (
     NoteResponse,
     NpaEventResponse,
     ProbeResponse,
+    ProcessingRunListResponse,
+    ProcessingRunResponse,
+    ProcessingStatusResponse,
     RevisionResponse,
     SourceResponse,
     SourceRunResponse,
@@ -43,12 +50,28 @@ from src.models.responses import (
     TagResponse,
     VisibilityResponse,
 )
+from src.services.collection_service import CollectionService, CollectionWatcher
 from src.services.item_service import ItemService
+from src.services.processing_service import ProcessingService
 from src.services.source_service import ProbeResult
 
 NOW = "2026-09-05T09:00:00+00:00"
 
+
+def _run(**overrides) -> ProcessingRun:
+    base = dict(
+        started_at=NOW, finished_at=NOW, status="done", trigger="api",
+        params={"limit": 5, "source_id": None, "since": "2026-09-01", "profile_id": None,
+                "force": False},
+        documents=3, clusters=2, items_new=2, items_joined=1, items_updated=0, degraded=1,
+        needs_review=1, calls=4, failed=0, elapsed_s=1.5, error="", id=8,
+    )
+    return ProcessingRun(**{**base, **overrides})
+
+
 ROUND_TRIPS = [
+    (ProcessingRunResponse, _run()),
+    (ProcessingRunResponse, _run(status="failed", finished_at=None, error="RuntimeError: x", id=9)),
     (
         SourceResponse,
         Source(
@@ -106,7 +129,9 @@ ROUND_TRIPS = [
 
 
 @pytest.mark.parametrize(
-    ("response_cls", "obj"), ROUND_TRIPS, ids=[cls.__name__ for cls, _ in ROUND_TRIPS]
+    ("response_cls", "obj"),
+    ROUND_TRIPS,
+    ids=[f"{cls.__name__}-{i}" for i, (cls, _) in enumerate(ROUND_TRIPS)],
 )
 def test_from_domain_round_trips_every_dataclass_field(response_cls, obj):
     assert response_cls.from_domain(obj).model_dump() == asdict(obj)
@@ -216,6 +241,102 @@ def test_item_edit_response_lists_the_manual_overrides_next_to_the_card():
 def test_health_response_only_knows_ok_and_degraded():
     with pytest.raises(ValidationError, match="status"):
         HealthResponse(status="down", app="hub", version="0.2.0", environment="local")
+
+
+def test_archive_response_carries_only_the_id_and_the_flag():
+    item = Item(cluster_id=1, id=4, is_archived=True, visibility="hidden_feed")
+
+    assert ArchiveResponse.from_domain(item).model_dump() == {"id": 4, "is_archived": True}
+
+
+# ── очередь ИИ ─────────────────────────────────────────────────────────────
+
+
+def test_processing_run_response_only_knows_the_three_statuses():
+    with pytest.raises(ValidationError, match="status"):
+        ProcessingRunResponse.from_domain(_run(status="queued"))
+
+
+def test_processing_run_list_response_wraps_the_history_in_order():
+    runs = [_run(id=2), _run(id=1)]
+
+    response = ProcessingRunListResponse(runs=[ProcessingRunResponse.from_domain(r) for r in runs])
+
+    assert [r.id for r in response.runs] == [2, 1]
+    assert response.model_dump() == {"runs": [asdict(r) for r in runs]}
+
+
+def test_processing_status_response_wraps_the_open_and_the_last_run():
+    open_run, last = _run(id=3, status="running", finished_at=None), _run(id=2)
+
+    response = ProcessingStatusResponse.from_domain(
+        {"running": open_run, "last": last, "unprocessed": 4, "llm_available": False}
+    )
+
+    assert response.model_dump() == {
+        "running": asdict(open_run),
+        "last": asdict(last),
+        "unprocessed": 4,
+        "llm_available": False,
+    }
+
+
+def test_processing_status_response_accepts_an_empty_queue():
+    response = ProcessingStatusResponse.from_domain(
+        {"running": None, "last": None, "unprocessed": 0, "llm_available": True}
+    )
+
+    assert response.model_dump() == {
+        "running": None, "last": None, "unprocessed": 0, "llm_available": True,
+    }
+
+
+def test_processing_status_response_accepts_what_the_service_returns(config, db):
+    service = ProcessingService(config, db, provider=None, embedder=None)
+    run = service.enqueue(limit=2)
+
+    response = ProcessingStatusResponse.from_domain(service.queue_status())
+
+    assert response.running.id == response.last.id == run.id
+    assert (response.unprocessed, response.llm_available) == (0, False)
+
+
+# ── сбор ───────────────────────────────────────────────────────────────────
+
+
+def test_collection_status_response_accepts_what_the_service_returns(config, db, frozen_clock):
+    service = CollectionService(config, db, CollectionWatcher(lambda: CollectReport()))
+    db.runs.add(
+        CollectReport(
+            started_at=NOW, finished_at=NOW, sources_ok=2, sources_fail=1, sources_not_modified=0,
+            docs_new=5,
+        )
+    )
+
+    payload = service.status()
+
+    response = CollectionStatusResponse.model_validate(payload)
+    assert response.model_dump() == payload
+    assert (response.running, response.due_sources, response.last_collect.docs_new) == (
+        False, 0, 5
+    )
+
+
+def test_collection_status_response_accepts_an_idle_service_without_a_collect(config, db):
+    payload = CollectionService(config, db, CollectionWatcher(lambda: CollectReport())).status()
+
+    assert CollectionStatusResponse.model_validate(payload).last_collect is None
+
+
+def test_collection_status_response_requires_the_whole_collect_run():
+    payload = {
+        "running": False, "busy": False, "interval_seconds": 900, "started_at": None,
+        "next_tick_at": None, "cycles": 0, "last_error": "", "due_sources": 0,
+        "last_collect": {"id": 1, "docs_new": 5},
+    }
+
+    with pytest.raises(ValidationError, match="last_collect"):
+        CollectionStatusResponse.model_validate(payload)
 
 
 # ── словари FeedService проходят свои схемы без потерь ─────────────────────

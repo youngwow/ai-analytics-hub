@@ -38,11 +38,26 @@ export interface Status { last_collect_at: string | null; documents: number; ite
 export interface Filters { sources: Pick<Source, 'id' | 'name' | 'kind' | 'category' | 'status'>[]; tags: string[]; npa_statuses: string[]; priorities: string[]; types: string[]; orders: string[]; timezone: string }
 export interface Facets { total: number; by_priority: Record<string, number>; by_type: Record<string, number>; by_source: { source_id: number; name: string; count: number }[]; top_tags: { tag: string; count: number }[]; took_ms: number }
 export interface Feed { items: FeedItem[]; total: number; next_cursor: string | null; took_ms: number }
-export interface Documents { documents: { id: number; title: string | null; url: string; source_id: number; source_name: string | null; published_at: string | null; chars: number | null }[]; total: number; took_ms: number }
+export interface Documents { documents: { id: number; title: string | null; url: string; source_id: number; source_name: string | null; published_at: string | null; chars: number | null }[]; total: number; next_cursor: string | null; took_ms: number }
 export interface Digest { title: string; generated_at: string; items: number; format: 'markdown' | 'json'; body: string }
-export interface FeedQuery { q?: string; type?: string; npa_status?: string; priority?: string[]; tag?: string[]; source_id?: number[]; from?: string; to?: string; order?: string; limit?: number; cursor?: string; include_hidden?: boolean }
+export interface FeedQuery { q?: string; type?: string; npa_status?: string; priority?: string[]; tag?: string[]; source_id?: number[]; from?: string; to?: string; order?: string; limit?: number; cursor?: string; include_hidden?: boolean; archived?: 'exclude' | 'include' | 'only' }
 export interface ItemUpdate { title?: string; summary?: string; type?: ItemType; npa_status?: string; priority?: Priority; tags?: string[]; edit_reason?: string }
 export interface ItemCreate { title: string; url: string; raw_text: string; type: ItemType; npa_status?: string; published_at?: string; run_llm: boolean; force: boolean }
 export interface SourceCreate { url: string; title: string; type: string; poll_interval: string; category_hint: string | null; backfill_limit: number; created_by: string }
-export interface SourceUpdate { title?: string; poll_interval?: string; category_hint?: string; status?: SourceStatus }
+export interface SourceUpdate { url?: string; type?: string; fetch_url?: string; title?: string; poll_interval?: string; category_hint?: string; status?: SourceStatus }
 export interface ManualResult { id: number | null; document_id: number; origin: string; processing_status: string }
+
+export interface NpaEventCreate { status: string; occurred_at?: string; source_url: string; note: string }
+export interface ProcessingRunRequest { limit?: number; source_id?: number; since?: string; profile_id?: number; force: boolean }
+export interface ProcessingRun {
+  id: number; started_at: string; finished_at: string | null; status: 'running' | 'done' | 'failed'; trigger: string
+  params: Record<string, unknown>; documents: number; clusters: number; items_new: number; items_joined: number
+  items_updated: number; degraded: number; needs_review: number; calls: number; failed: number; elapsed_s: number; error: string
+}
+export interface ProcessingStatus { running: ProcessingRun | null; last: ProcessingRun | null; unprocessed: number; llm_available: boolean }
+export interface CollectionRunRequest { source_ids?: number[]; due_only: boolean; backfill: boolean; force: boolean }
+export interface CollectionStatus {
+  running: boolean; busy: boolean; interval_seconds: number; started_at: string | null; next_tick_at: string | null
+  cycles: number; last_error: string; due_sources: number
+  last_collect: { id: number; started_at: string; finished_at: string; sources_ok: number; sources_fail: number; sources_not_modified: number; docs_new: number } | null
+}

@@ -11,7 +11,7 @@ from ..config import Config
 from ..exceptions import ItemNotFoundError, ItemValidationError, NothingToRevertError
 from ..models import Item, ItemNote, ItemRevision, NpaEvent
 from ..repositories import Database
-from ..utils import get_logger
+from ..utils import get_logger, parse_datetime, to_utc_iso, utc_now
 
 log = get_logger("items")
 
@@ -195,9 +195,19 @@ class ItemService:
         note: str = "",
         actor: str = "user",
     ) -> NpaEvent:
-        item = self.db.items.get(item_id)
-        if item is None:
-            raise ItemNotFoundError(f"карточка #{item_id} не найдена")
+        """Событие в хронологии: статус НПА, слушания, срок. Статус из словаря двигает карточку."""
+        item = self._require(item_id)
+        status = (status or "").strip()
+        if not status:
+            raise ItemValidationError("пустой статус события")
+        if len(status) > 64:
+            raise ItemValidationError("статус события длиннее 64 символов")
+        occurred_at = occurred_at or None
+        if occurred_at:
+            moment = parse_datetime(occurred_at)
+            if moment is None:
+                raise ItemValidationError(f"дата события не разбирается: {occurred_at!r}")
+            occurred_at = to_utc_iso(moment)
         event = NpaEvent(
             item_id=item_id,
             status=status,
@@ -205,13 +215,47 @@ class ItemService:
             source_url=source_url,
             note=note,
             created_by=actor,
+            created_at=to_utc_iso(utc_now()) or "",
         )
         with self.db.transaction():
-            self.db.items.add_event(event)
-            if advances_status(item.npa_status, status) and "npa_status" not in item.manual_overrides:
+            event.id = self.db.items.add_event(event)
+            # Новость не получает статус НПА от события; у НПА статус движется только вперёд
+            # и не затирает правку человека.
+            if (
+                item.type == "npa"
+                and advances_status(item.npa_status, status)
+                and "npa_status" not in item.manual_overrides
+            ):
                 item.npa_status = status
                 self.db.items.update(item)
         return event
+
+    # -- архив --
+
+    def set_archived(self, item_id: int, archived: bool, *, actor: str = "user") -> Item:
+        """Архив — не удаление: карточка уходит из ленты и дайджеста, но остаётся в поиске.
+
+        Для НПА снимается и уникальность `npa_key`: следующая публикация о том же
+        акте заведёт новую карточку, а не присоединится к архивной.
+        """
+        item = self._require(item_id)
+        if item.is_archived == archived:
+            return item
+        with self.db.transaction():
+            self.db.items.set_archived(item_id, archived)
+            self.db.items.add_revision(
+                ItemRevision(
+                    item_id=item_id,
+                    field="is_archived",
+                    old_value=str(int(item.is_archived)),
+                    new_value=str(int(archived)),
+                    actor=actor,
+                    source_of_change="human",
+                    edit_reason="archive" if archived else "unarchive",
+                )
+            )
+        item.is_archived = archived
+        return item
 
     # -- history --
 

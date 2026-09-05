@@ -19,7 +19,7 @@ from ..exceptions import (
     SourceValidationError,
     UnsupportedSourceError,
 )
-from ..models import POLL_INTERVALS, SOURCE_STATUSES, FetchState, Source, SourceRun
+from ..models import KINDS, POLL_INTERVALS, SOURCE_STATUSES, FetchState, Source, SourceRun
 from ..paths import ProjectPaths
 from ..repositories import Database
 from ..sources import scheduler
@@ -215,9 +215,14 @@ class SourceService:
         poll_interval: str | None = None,
         category_hint: str | None = None,
         status: str | None = None,
+        url: str | None = None,
+        kind: str | None = None,
+        fetch_url: str | None = None,
     ) -> Source:
-        """Переименовать, сменить частоту, поставить на паузу."""
+        """Переименовать, сменить частоту, поставить на паузу, переехать на другой адрес."""
         source = self.get(source_id)
+        if url is not None or kind is not None or fetch_url is not None:
+            self._relocate(source, url=url, kind=kind, fetch_url=fetch_url)
         if poll_interval is not None:
             if poll_interval not in POLL_INTERVALS:
                 raise SourceValidationError(f"periodicity must be one of {list(POLL_INTERVALS)}"
@@ -239,6 +244,63 @@ class SourceService:
                 source.next_run_at = to_utc_iso(utc_now())
         self.db.sources.update(source)
         return source
+
+    def _relocate(
+        self, source: Source, *, url: str | None, kind: str | None, fetch_url: str | None
+    ) -> None:
+        """Сменить адрес или тип существующего источника, не заводя второй.
+
+        Документы остаются на том же `source_id`; курсор и валидаторы сбрасываются,
+        потому что относятся к старой ленте. Дубль по нормализованному адресу —
+        409, как и при создании.
+        """
+        new_url = (source.url if url is None else url).strip()
+        if not new_url:
+            raise SourceValidationError("пустая ссылка")
+        if kind is not None and kind not in KINDS:
+            raise SourceValidationError(f"type must be one of {list(KINDS)}")
+        new_kind = kind or ""
+        new_fetch = (fetch_url or "").strip()
+        address_changed = new_url != source.url or bool(new_fetch and new_fetch != source.fetch_url)
+        if not new_kind or not new_fetch:
+            if address_changed or (new_kind and new_kind != source.kind):
+                probed = self.probe(new_url, with_preview=False)
+                if probed.resolved_type == "unsupported":
+                    raise UnsupportedSourceError(
+                        f"не удалось определить, как опрашивать {new_url}", {"note": probed.note}
+                    )
+                new_kind = new_kind or probed.resolved_type
+                new_fetch = new_fetch or probed.feed_url or new_url
+            else:
+                new_kind = new_kind or source.kind
+                new_fetch = new_fetch or source.fetch_url
+        normalized = normalized_source_url(new_fetch or new_url)
+        existing = self.db.sources.get_by_normalized(normalized)
+        if existing is not None and existing.id != source.id:
+            raise SourceExistsError(
+                f"{new_url} уже добавлен как источник #{existing.id} «{existing.name}»",
+                {"source_id": existing.id},
+            )
+        # `sources.fetch_url` уникален и для удалённых: их адрес возвращают через restore,
+        # а не переездом другого источника на него.
+        for deleted in self.db.sources.list(status="deleted"):
+            if deleted.id != source.id and (
+                deleted.fetch_url == new_fetch or deleted.normalized_url == normalized
+            ):
+                raise SourceExistsError(
+                    f"{new_url} принадлежит удалённому источнику #{deleted.id} «{deleted.name}» — "
+                    "верните его через restore, а не переезжайте на его адрес",
+                    {"source_id": deleted.id, "status": "deleted"},
+                )
+        changed = (source.url, source.kind, source.fetch_url) != (new_url, new_kind, new_fetch)
+        if new_kind != source.kind:
+            source.category = _guess_category(new_url, new_kind)
+        source.url, source.kind, source.fetch_url = new_url, new_kind, new_fetch
+        source.normalized_url = normalized
+        if changed:
+            with self.db.transaction():
+                self.db.fetch_state.reset(source.id)
+            source.next_run_at = to_utc_iso(utc_now())
 
     def pause(self, source_id: int) -> Source:
         return self.update(source_id, status="paused")

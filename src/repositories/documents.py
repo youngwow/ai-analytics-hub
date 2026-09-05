@@ -70,6 +70,15 @@ class SqliteDocumentRepository(DocumentRepository):
         params.append(limit)
         return list(self.conn.execute(sql, params))
 
+    def count_unprocessed(self) -> int:
+        """Очередь обработки: собрано, не скрыто и без карточки."""
+        return int(
+            self.conn.execute(
+                "SELECT count(*) FROM documents d LEFT JOIN item_sources s "
+                "ON s.document_id = d.id WHERE s.document_id IS NULL AND d.hidden = 0"
+            ).fetchone()[0]
+        )
+
     def count(self, source_id: int | None = None) -> int:
         if source_id is None:
             return int(self.conn.execute("SELECT count(*) FROM documents").fetchone()[0])

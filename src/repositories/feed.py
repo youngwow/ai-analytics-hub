@@ -17,6 +17,7 @@ import sqlite3
 
 from ..models.queries import DocumentQuery, FeedQuery
 from ..utils import to_utc_iso
+from .documents import SqliteDocumentRepository
 from .repository_interface import FeedRepository
 
 _WORD_RE = re.compile(r"[^\W_]+", re.UNICODE)
@@ -83,6 +84,10 @@ def where(query: FeedQuery) -> tuple[list[str], list]:
 
     if not query.include_hidden:
         clauses.append("i.visibility NOT IN ('hidden_feed', 'deleted')")
+    if query.archived == "exclude":
+        clauses.append("i.is_archived = 0")
+    elif query.archived == "only":
+        clauses.append("i.is_archived = 1")
     if query.type:
         clauses.append("i.type = ?")
         params.append(query.type)
@@ -258,8 +263,13 @@ class SqliteFeedRepository(FeedRepository):
             )
         ]
 
-    def documents(self, query: DocumentQuery) -> tuple[list[dict], int]:
-        """Собрано, но карточки ещё нет: у документа нет ни приоритета, ни типа, ни тегов."""
+    def documents(
+        self, query: DocumentQuery, position: tuple | None = None
+    ) -> tuple[list[dict], int]:
+        """Собрано, но карточки ещё нет: у документа нет ни приоритета, ни типа, ни тегов.
+
+        Страница — `limit + 1` строк (так видно, есть ли следующая), `total` — без курсора.
+        """
         clauses = ["d.hidden = 0", "s.document_id IS NULL"]
         params: list = []
         if query.source_ids:
@@ -279,22 +289,21 @@ class SqliteFeedRepository(FeedRepository):
             "FROM documents d LEFT JOIN item_sources s ON s.document_id = d.id "
             "JOIN sources src ON src.id = d.source_id WHERE " + " AND ".join(clauses)
         )
+        total = int(self.conn.execute("SELECT count(*) " + base, params).fetchone()[0])
+        page_clause, page_params = "", []
+        if position:
+            page_clause = " AND (COALESCE(d.published_at, ''), d.id) < (?, ?)"
+            page_params = [position[0] or "", position[1]]
         rows = self.conn.execute(
             "SELECT d.id, d.title, d.url, d.source_id, src.name AS source_name, "
-            "d.published_at, length(d.text) AS chars " + base
+            "d.published_at, length(d.text) AS chars " + base + page_clause
             + " ORDER BY COALESCE(d.published_at, '') DESC, d.id DESC LIMIT ?",
-            [*params, query.limit],
+            [*params, *page_params, query.limit + 1],
         )
-        total = int(self.conn.execute("SELECT count(*) " + base, params).fetchone()[0])
         return [dict(r) for r in rows], total
 
     def unprocessed_count(self) -> int:
-        return int(
-            self.conn.execute(
-                "SELECT count(*) FROM documents d LEFT JOIN item_sources s "
-                "ON s.document_id = d.id WHERE s.document_id IS NULL AND d.hidden = 0"
-            ).fetchone()[0]
-        )
+        return SqliteDocumentRepository(self.conn).count_unprocessed()
 
     def sources_by_status(self) -> dict[str, int]:
         return {

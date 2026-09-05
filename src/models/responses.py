@@ -13,7 +13,17 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from .domain import EntitySpan, Item, ItemNote, ItemRevision, ItemTag, NpaEvent, Source, SourceRun
+from .domain import (
+    EntitySpan,
+    Item,
+    ItemNote,
+    ItemRevision,
+    ItemTag,
+    NpaEvent,
+    ProcessingRun,
+    Source,
+    SourceRun,
+)
 
 
 class ProblemResponse(BaseModel):
@@ -292,6 +302,15 @@ class RevisionListResponse(BaseModel):
     revisions: list[RevisionResponse]
 
 
+class ArchiveResponse(BaseModel):
+    id: int | None
+    is_archived: bool
+
+    @classmethod
+    def from_domain(cls, item: Item) -> ArchiveResponse:
+        return cls(id=item.id, is_archived=item.is_archived)
+
+
 class ManualItemResponse(BaseModel):
     id: int | None
     document_id: int
@@ -390,6 +409,7 @@ class DocumentEntry(BaseModel):
 class DocumentsResponse(BaseModel):
     documents: list[DocumentEntry]
     total: int
+    next_cursor: str | None = None
     took_ms: int
 
 
@@ -417,3 +437,79 @@ class StatusResponse(BaseModel):
     sources: dict[str, int]
     stale_sources: list[StaleSourceEntry]
     timezone: str
+
+
+# ── обработка (очередь ИИ) ─────────────────────────────────────────────────
+
+
+class ProcessingRunResponse(BaseModel):
+    id: int | None
+    started_at: str
+    finished_at: str | None
+    status: Literal["running", "done", "failed"]
+    trigger: str
+    params: dict
+    documents: int
+    clusters: int
+    items_new: int
+    items_joined: int
+    items_updated: int
+    degraded: int
+    needs_review: int
+    calls: int
+    failed: int
+    elapsed_s: float
+    error: str
+
+    @classmethod
+    def from_domain(cls, run: ProcessingRun) -> ProcessingRunResponse:
+        return cls(**asdict(run))
+
+
+class ProcessingRunListResponse(BaseModel):
+    runs: list[ProcessingRunResponse]
+
+
+class ProcessingStatusResponse(BaseModel):
+    """Что видит кнопка «Обработать очередь ИИ»."""
+
+    running: ProcessingRunResponse | None
+    last: ProcessingRunResponse | None
+    unprocessed: int
+    llm_available: bool
+
+    @classmethod
+    def from_domain(cls, status: dict) -> ProcessingStatusResponse:
+        return cls(
+            running=ProcessingRunResponse.from_domain(status["running"]) if status["running"] else None,
+            last=ProcessingRunResponse.from_domain(status["last"]) if status["last"] else None,
+            unprocessed=status["unprocessed"],
+            llm_available=status["llm_available"],
+        )
+
+
+# ── сбор (автоматический мониторинг) ───────────────────────────────────────
+
+
+class CollectRunResponse(BaseModel):
+    id: int
+    started_at: str
+    finished_at: str
+    sources_ok: int
+    sources_fail: int
+    sources_not_modified: int
+    docs_new: int
+
+
+class CollectionStatusResponse(BaseModel):
+    """Состояние фонового мониторинга плюс последний цикл из `collect_runs`."""
+
+    running: bool
+    busy: bool
+    interval_seconds: int
+    started_at: str | None
+    next_tick_at: str | None
+    cycles: int
+    last_error: str
+    due_sources: int
+    last_collect: CollectRunResponse | None
