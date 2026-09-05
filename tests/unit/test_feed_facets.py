@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import pytest
 
-from src.feed.query import FeedQuery
-from src.feed.service import FACET_SOURCES_LIMIT, FACET_TAGS_LIMIT
+from src.models.queries import FeedQuery
+from src.services.feed_service import FACET_SOURCES_LIMIT, FACET_TAGS_LIMIT
 
 
 def _by_source(facets: dict) -> dict[str, int]:

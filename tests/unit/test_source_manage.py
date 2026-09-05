@@ -1,4 +1,4 @@
-"""src/sources/manage.py — probe, create, pause, soft delete, restore, health.
+"""src/services/source_service.py — probe, create, pause, soft delete, restore, health.
 
 Every HTTP call goes through `MockRoutes`: `SourceService` builds its client with
 `make_client`, so that one name is what the tests replace. Nothing here reaches
@@ -11,10 +11,11 @@ import httpx
 import pytest
 from support import HTML_UTF8, RSS, MockRoutes, raising, rss_bytes
 
+from src.exceptions import SourceError, SourceExistsError
 from src.models import POLL_INTERVALS, RawDocument, Resolution, Source
-from src.sources import manage
+from src.services import source_service as manage
+from src.services.source_service import SourceService
 from src.sources.base import make_client
-from src.sources.manage import SourceError, SourceService
 
 FEED_URL = "https://feed.example.ru/rss.xml"
 SITE_URL = "https://www.cableman.ru/"
@@ -601,9 +602,14 @@ def test_health_of_a_missing_source_is_a_named_error(service):
 
 
 def test_source_error_carries_a_machine_code_and_details():
-    error = SourceError("source_exists", "уже добавлен", {"source_id": 7})
+    """Код и статус живут на классе; текст и подробности — на экземпляре."""
+    error = SourceExistsError("уже добавлен", {"source_id": 7})
+
     assert (error.code, error.message, error.details) == (
         "source_exists", "уже добавлен", {"source_id": 7}
     )
+    assert error.detail == error.message
+    assert error.status_code == 409
     assert str(error) == "уже добавлен"
-    assert SourceError("x", "y").details == {}
+    assert isinstance(error, SourceError)
+    assert SourceExistsError("y").details == {}

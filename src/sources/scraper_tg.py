@@ -24,9 +24,9 @@ from urllib.parse import urlsplit
 import httpx
 from selectolax.parser import HTMLParser, Node
 
-from ..common import get_logger, parse_datetime, to_utc_iso
 from ..config import ScraperConfig, TelegramConfig
 from ..models import FetchResult, FetchState, RawDocument, Source
+from ..utils import get_logger, parse_datetime, to_utc_iso
 from .base import HostLimiter, fetch
 from .telegram_mtproto import (
     LOGIN_HINT,

@@ -12,7 +12,8 @@ from datetime import datetime, timezone
 
 import pytest
 
-from src.feed.query import DEFAULT_LIMIT, MAX_LIMIT, DocumentQuery, FeedQuery, QueryError
+from src.exceptions import QueryError
+from src.models.queries import DEFAULT_LIMIT, MAX_LIMIT, DocumentQuery, FeedQuery
 
 
 def _utc(*parts) -> datetime:

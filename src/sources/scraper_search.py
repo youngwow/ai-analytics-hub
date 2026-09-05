@@ -17,9 +17,9 @@ from urllib.parse import parse_qs, urlencode, urlsplit
 
 import httpx
 
-from ..common import get_logger, parse_datetime, to_utc_iso
 from ..config import ScraperConfig, TavilyConfig
 from ..models import FetchResult, FetchState, RawDocument, Source
+from ..utils import get_logger, parse_datetime, to_utc_iso
 from .base import HostLimiter
 from .fulltext import tidy
 from .scraper_llm import TAVILY_SEARCH_URL, Candidate, TavilyError, TavilySearch, clean_page_text

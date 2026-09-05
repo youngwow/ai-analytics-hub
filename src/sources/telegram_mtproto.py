@@ -23,10 +23,10 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Callable, Protocol
 
-from ..common import get_logger, load_env_secret, to_utc_iso
 from ..config import TelegramConfig
 from ..models import RawDocument
 from ..paths import ProjectPaths
+from ..utils import get_logger, load_env_secret, to_utc_iso
 from .textutil import title_from_text
 
 log = get_logger("telegram.mtproto")

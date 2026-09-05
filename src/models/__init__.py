@@ -1,0 +1,78 @@
+"""Модели: доменные dataclass'ы, фильтры ленты и pydantic-схемы HTTP-границы.
+
+`from src.models import Item` продолжает работать: домен реэкспортируется целиком.
+Схемы запросов и ответов импортируются явно из `requests` / `responses`, чтобы
+сервисы и репозитории не тянули pydantic.
+"""
+
+from .domain import (
+    CATEGORIES,
+    EDIT_REASONS,
+    ENTITY_ROLES,
+    ITEM_TAGS,
+    ITEM_TYPES,
+    KINDS,
+    NPA_STATUSES,
+    POLL_INTERVALS,
+    PRIORITIES,
+    SOURCE_STATUSES,
+    VISIBILITIES,
+    Cluster,
+    CollectReport,
+    CompanyProfile,
+    EntitySpan,
+    FetchResult,
+    FetchState,
+    Item,
+    ItemNote,
+    ItemRevision,
+    ItemTag,
+    LlmCall,
+    NpaEvent,
+    RawDocument,
+    Resolution,
+    Source,
+    SourceRun,
+)
+from .queries import (
+    DEFAULT_LIMIT,
+    MAX_LIMIT,
+    ORDERS,
+    DocumentQuery,
+    FeedQuery,
+)
+
+__all__ = [
+    "CATEGORIES",
+    "Cluster",
+    "CollectReport",
+    "CompanyProfile",
+    "DEFAULT_LIMIT",
+    "DocumentQuery",
+    "EDIT_REASONS",
+    "ENTITY_ROLES",
+    "EntitySpan",
+    "FeedQuery",
+    "FetchResult",
+    "FetchState",
+    "ITEM_TAGS",
+    "ITEM_TYPES",
+    "Item",
+    "ItemNote",
+    "ItemRevision",
+    "ItemTag",
+    "KINDS",
+    "LlmCall",
+    "MAX_LIMIT",
+    "NPA_STATUSES",
+    "NpaEvent",
+    "ORDERS",
+    "POLL_INTERVALS",
+    "PRIORITIES",
+    "RawDocument",
+    "Resolution",
+    "SOURCE_STATUSES",
+    "Source",
+    "SourceRun",
+    "VISIBILITIES",
+]

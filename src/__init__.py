@@ -1,1 +1,3 @@
-"""ai-analytics-hub: ingestion layer (task 1.1 — сбор данных)."""
+"""ai-analytics-hub: сбор, обработка и выдача отраслевых новостей и НПА."""
+
+__version__ = "0.2.0"

@@ -14,9 +14,9 @@ from dataclasses import dataclass
 import httpx
 import trafilatura
 
-from ..common import get_logger, parse_datetime, to_utc_iso
 from ..config import ScraperConfig
 from ..models import RawDocument
+from ..utils import get_logger, parse_datetime, to_utc_iso
 from .base import HostLimiter, fetch
 
 log = get_logger("fulltext")

@@ -17,11 +17,11 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from ..common import get_logger, load_env_secret, parse_datetime, to_utc_iso, utc_now
 from ..config import Config
 from ..models import CollectReport, FetchResult, FetchState, RawDocument, Source
 from ..paths import ProjectPaths
-from ..storage import Database
+from ..repositories import Database
+from ..utils import get_logger, load_env_secret, parse_datetime, to_utc_iso, utc_now
 from . import scheduler
 from .base import HostLimiter, build_adapters, make_client
 from .fulltext import FullTextFetcher

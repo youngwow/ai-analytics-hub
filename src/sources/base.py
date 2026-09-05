@@ -15,9 +15,9 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from ..common import get_logger
 from ..config import Config
 from ..models import FetchResult, FetchState, Source
+from ..utils import get_logger
 
 if TYPE_CHECKING:  # only for the annotation; importing it eagerly would pull in telethon paths
     from .telegram_mtproto import MtprotoReader

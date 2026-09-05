@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 import yaml
+from pydantic import ValidationError
 
 from src.config import (
     MTPROTO_MODES,
@@ -13,6 +14,7 @@ from src.config import (
     LLMConfig,
     ProcessingConfig,
     ScraperConfig,
+    Settings,
     TavilyConfig,
     TelegramConfig,
 )
@@ -508,35 +510,70 @@ def test_repo_config_yaml_loads_the_llm_and_processing_sections():
     assert (cfg.processing.borderline_low, cfg.processing.borderline_high) == (0.35, 0.5)
 
 
-# ── api (task 1.4) ─────────────────────────────────────────────────────────
+# ── api (task 1.4): only the domain knob stays in YAML ─────────────────────
 
 
 def test_api_section_falls_back_to_defaults_when_absent(raw_config):
     assert "api" not in raw_config
-    assert Config.from_dict(raw_config).api == ApiConfig(host="127.0.0.1", port=8000, docs=True)
+    assert Config.from_dict(raw_config).api == ApiConfig(timezone="Europe/Moscow")
 
 
-def test_api_keys_are_read_when_present(raw_config):
+def test_api_timezone_is_read_when_present(raw_config):
+    raw_config["api"] = {"timezone": "Asia/Novosibirsk"}
+    assert Config.from_dict(raw_config).api.timezone == "Asia/Novosibirsk"
+
+
+@pytest.mark.parametrize("zone", ["Mars/Olympus", ""], ids=["unknown", "empty"])
+def test_an_unknown_api_timezone_raises(raw_config, zone):
+    raw_config["api"] = {"timezone": zone}
+    with pytest.raises(ConfigError, match="unknown api.timezone"):
+        Config.from_dict(raw_config)
+
+
+def test_legacy_host_port_and_docs_keys_in_the_api_section_are_ignored(raw_config):
+    """An older config.yaml still loads: deployment knobs moved to `Settings`."""
     raw_config["api"] = {"host": "0.0.0.0", "port": 9001, "docs": False}
-    api = Config.from_dict(raw_config).api
-    assert (api.host, api.port, api.docs) == ("0.0.0.0", 9001, False)
 
+    cfg = Config.from_dict(raw_config)
 
-@pytest.mark.parametrize("port", [0, -1, 65536], ids=["zero", "negative", "above-range"])
-def test_api_port_outside_the_valid_range_raises(raw_config, port):
-    raw_config["api"] = {"port": port}
-    with pytest.raises(ConfigError, match=r"api.port must be within \[1, 65535\]"):
-        Config.from_dict(raw_config)
-
-
-@pytest.mark.parametrize("host", ["", "   "], ids=["empty", "blank"])
-def test_api_host_must_be_non_empty(raw_config, host):
-    raw_config["api"] = {"host": host}
-    with pytest.raises(ConfigError, match="api.host must be non-empty"):
-        Config.from_dict(raw_config)
+    assert cfg.api == ApiConfig(timezone="Europe/Moscow")
+    assert not hasattr(cfg.api, "port")
 
 
 def test_repo_config_yaml_loads_the_api_section():
     cfg = Config.load(DEFAULT_PATHS.config_path)
-    assert (cfg.api.host, cfg.api.port, cfg.api.docs) == ("127.0.0.1", 8000, True)
+    assert cfg.api == ApiConfig(timezone="Europe/Moscow")
+    assert set(cfg.raw["api"]) == {"timezone"}
     assert (cfg.processing.borderline_low, cfg.processing.borderline_high) == (0.35, 0.5)
+
+
+# ── Settings: the process knobs that left config.yaml ──────────────────────
+
+
+def test_settings_defaults_match_what_the_api_section_used_to_carry():
+    settings = Settings(_env_file=None)
+    assert (settings.host, settings.port, settings.docs) == ("127.0.0.1", 8000, True)
+    assert (settings.api_prefix, settings.environment, settings.debug) == ("/api/v1", "local", False)
+    assert settings.cors_origins == ["*"]
+
+
+@pytest.mark.parametrize("port", [0, -1, 65536], ids=["zero", "negative", "above-range"])
+def test_settings_port_outside_the_valid_range_raises(port):
+    with pytest.raises(ValidationError, match="port"):
+        Settings(_env_file=None, port=port)
+
+
+def test_settings_environment_is_one_of_three_names():
+    with pytest.raises(ValidationError, match="environment"):
+        Settings(_env_file=None, environment="staging")
+
+
+def test_settings_ignore_the_secrets_that_live_in_the_same_env_file(tmp_path):
+    """`.env` also holds API keys; they are read by `load_env_secret`, not modelled here."""
+    env_file = tmp_path / ".env"
+    env_file.write_text("OLLAMA_API_KEY=secret\nPORT=8123\n", encoding="utf-8")
+
+    settings = Settings(_env_file=str(env_file))
+
+    assert settings.port == 8123
+    assert not hasattr(settings, "ollama_api_key")

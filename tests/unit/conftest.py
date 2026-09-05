@@ -11,8 +11,8 @@ import itertools
 
 import pytest
 
-from src.feed.service import FeedService
 from src.models import EntitySpan, RawDocument, Source
+from src.services.feed_service import FeedService
 
 NOW = "2026-09-05T09:00:00+00:00"
 # Расписание по умолчанию — заведомо в будущем: иначе `status()` объявил бы

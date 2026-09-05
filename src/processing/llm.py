@@ -10,14 +10,15 @@ is retried and then degrades to the extractive baseline.
 from __future__ import annotations
 
 import json
+import threading
 import time
 from dataclasses import dataclass, field
 from typing import Any, Protocol, Sequence
 
 import httpx
 
-from ..common import get_logger
 from ..config import LLMConfig
+from ..utils import get_logger
 
 log = get_logger("llm")
 
@@ -72,6 +73,9 @@ class OllamaProvider:
     api_key: str = ""
     sleep: Any = time.sleep
     _client: Any = field(default=None, init=False, repr=False)
+    # One provider is shared by the API process and its worker threads; the lazy
+    # connect must not race two clients into existence.
+    _lock: Any = field(default_factory=threading.Lock, init=False, repr=False)
 
     def _connect(self):
         if self._client is not None:
@@ -80,10 +84,12 @@ class OllamaProvider:
             raise LlmConfigError(NO_KEY)
         from ollama import Client  # imported here so nothing else depends on the SDK
 
-        headers = {"Authorization": f"Bearer {self.api_key}"} if self.api_key else {}
-        self._client = Client(
-            host=self.config.host, headers=headers, timeout=self.config.request_timeout
-        )
+        with self._lock:
+            if self._client is None:
+                headers = {"Authorization": f"Bearer {self.api_key}"} if self.api_key else {}
+                self._client = Client(
+                    host=self.config.host, headers=headers, timeout=self.config.request_timeout
+                )
         return self._client
 
     def _call(self, what: str, fn):

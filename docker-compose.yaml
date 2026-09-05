@@ -1,0 +1,68 @@
+name: ai-analytics-hub
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+      target: runtime
+    image: ai-analytics-hub:local
+    container_name: ai-analytics-hub-api
+    init: true
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      ENVIRONMENT: local
+      LOG_LEVEL: INFO
+      HUB_ROOT: /app
+      HOST: 0.0.0.0
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - ./data:/app/data            # SQLite + WAL переживают пересборку образа
+      - ./src:/app/src:ro           # dev: --reload подхватывает правки без пересборки
+      - ./config.yaml:/app/config.yaml:ro
+      - ./sources.json:/app/sources.json:ro
+    command:
+      - uvicorn
+      - src.main:create_app
+      - --factory
+      - --host
+      - "0.0.0.0"
+      - --port
+      - "8000"
+      - --reload
+      - --reload-dir
+      - /app/src
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: runtime
+    image: ai-analytics-hub-frontend:local
+    init: true
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8080}:8080"
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

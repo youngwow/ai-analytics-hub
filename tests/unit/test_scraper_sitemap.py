@@ -9,9 +9,9 @@ import httpx
 import pytest
 from support import GZIP, XML, MockRoutes, raising
 
-from src.common import MOSCOW
 from src.models import FetchState, Source
 from src.sources.scraper_sitemap import SitemapAdapter, SitemapEntry, has_lastmod, parse_sitemap
+from src.utils import MOSCOW
 
 UTC = timezone.utc
 PLUS3 = timezone(timedelta(hours=3))

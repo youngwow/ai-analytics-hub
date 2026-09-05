@@ -12,9 +12,9 @@ from datetime import datetime, timezone
 
 import pytest
 
-from src.feed import digest as digest_mod
-from src.feed.query import FeedQuery
 from src.models import ItemNote
+from src.models.queries import FeedQuery
+from src.services import digest as digest_mod
 
 GENERATED_AT = datetime(2026, 9, 5, 6, 0, tzinfo=timezone.utc)
 
@@ -22,7 +22,7 @@ GENERATED_AT = datetime(2026, 9, 5, 6, 0, tzinfo=timezone.utc)
 @pytest.fixture
 def frozen_generated_at(monkeypatch) -> str:
     """`generated_at` берётся из `utc_now()` — пиним её, а не читаем часы."""
-    import src.feed.service as service_mod
+    import src.services.feed_service as service_mod
 
     monkeypatch.setattr(service_mod, "utc_now", lambda: GENERATED_AT)
     return "2026-09-05T06:00:00+00:00"

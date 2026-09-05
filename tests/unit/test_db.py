@@ -1,4 +1,4 @@
-"""src/storage/db.py — schema, repositories and cascades on an in-memory SQLite."""
+"""src/repositories — schema, repositories and cascades on an in-memory SQLite."""
 
 from __future__ import annotations
 
@@ -20,8 +20,8 @@ from src.models import (
     RawDocument,
     Source,
 )
-from src.storage import Database, DuplicateSourceError
-from src.storage.db import MANUAL_FETCH_URL, MANUAL_SOURCE_NAME
+from src.repositories import Database, DuplicateSourceError
+from src.repositories.database import MANUAL_FETCH_URL, MANUAL_SOURCE_NAME
 
 NOW = "2026-09-02T12:00:00+00:00"
 

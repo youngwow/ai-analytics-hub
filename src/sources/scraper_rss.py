@@ -7,9 +7,9 @@ from datetime import datetime
 import feedparser
 import httpx
 
-from ..common import get_logger, normalize_ws, parse_datetime, struct_time_to_datetime, to_utc_iso
 from ..config import ScraperConfig
 from ..models import FetchResult, FetchState, RawDocument, Source
+from ..utils import get_logger, normalize_ws, parse_datetime, struct_time_to_datetime, to_utc_iso
 from .base import HostLimiter, fetch
 from .textutil import clean_summary, clean_url, html_to_text, looks_like_html, strip_html
 

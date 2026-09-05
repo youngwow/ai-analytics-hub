@@ -9,8 +9,8 @@ from __future__ import annotations
 
 import pytest
 
-from src.feed import search
-from src.feed.query import FeedQuery
+from src.models.queries import FeedQuery
+from src.repositories import feed as search
 
 
 def _ids(result: dict) -> list[int]:

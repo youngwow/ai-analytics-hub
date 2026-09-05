@@ -16,9 +16,9 @@ from __future__ import annotations
 import time
 from dataclasses import dataclass, field
 
-from ..common import get_logger
 from ..config import LLMConfig, ProcessingConfig
 from ..models import CompanyProfile, LlmCall
+from ..utils import get_logger
 from . import normalize, prompts
 from .llm import Completion, LlmConfigError, LlmError, LLMProvider
 from .schema import RESULT_SCHEMA, InvalidResponse, ParsedResult, parse_result

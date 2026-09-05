@@ -1,0 +1,13 @@
+# Only the frontend build inputs belong in this context.
+**
+!Dockerfile
+!.npmrc
+!package.json
+!package-lock.json
+!index.html
+!tsconfig.json
+!vite.config.ts
+!nginx.conf
+!src/
+!src/**
+src/imports/

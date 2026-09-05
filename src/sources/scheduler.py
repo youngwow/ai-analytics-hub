@@ -10,8 +10,8 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from ..common import parse_datetime, to_utc_iso, utc_now
 from ..models import Source
+from ..utils import parse_datetime, to_utc_iso, utc_now
 
 INTERVAL_SECONDS = {"15m": 900, "1h": 3600, "6h": 21600, "24h": 86400}
 DEFAULT_INTERVAL = "1h"

@@ -18,7 +18,7 @@ NOW = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
 @pytest.fixture(autouse=True)
 def frozen_feed_clock(monkeypatch) -> datetime:
     """`status()` сравнивает расписание с `utc_now()` — пиним её, а не читаем часы."""
-    import src.feed.service as service_mod
+    import src.services.feed_service as service_mod
 
     monkeypatch.setattr(service_mod, "utc_now", lambda: NOW)
     return NOW

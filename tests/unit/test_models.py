@@ -6,7 +6,6 @@ import json
 
 import pytest
 
-from src.common import sha256_text
 from src.models import (
     POLL_INTERVALS,
     SOURCE_STATUSES,
@@ -22,6 +21,7 @@ from src.models import (
     Source,
     SourceRun,
 )
+from src.utils import sha256_text
 
 
 def test_raw_document_hash_uses_title_and_text():

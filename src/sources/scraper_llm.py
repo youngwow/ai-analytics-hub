@@ -13,8 +13,8 @@ from dataclasses import dataclass, field
 
 import httpx
 
-from ..common import get_logger
 from ..config import TavilyConfig
+from ..utils import get_logger
 
 log = get_logger("tavily")
 

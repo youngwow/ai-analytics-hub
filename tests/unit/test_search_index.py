@@ -1,4 +1,4 @@
-"""src/storage/db.py::SearchRepo — одна строка индекса на карточку.
+"""src/repositories/items.py::SearchRepo — одна строка индекса на карточку.
 
 Строка шире карточки: заголовок, саммари, теги, значения сущностей и текст
 канонического оригинала. Она пересобирается целиком при каждой записи, поэтому
@@ -11,16 +11,17 @@ import pytest
 from support import FakeLLM, news_answer
 
 from src.models import EntitySpan, ItemRevision, RawDocument
-from src.processing.service import ProcessingService
+from src.services.item_service import ItemService
+from src.services.processing_service import ProcessingService
 
 NOW = "2026-09-05T09:00:00+00:00"
 ORIGINAL = "Ко второму чтению подготовлены поправки о трансграничной передаче."
 
 
 @pytest.fixture
-def processing(config, file_db) -> ProcessingService:
-    """Правки и пересборка без сети: провайдер — `FakeLLM`."""
-    return ProcessingService(config, file_db, provider=FakeLLM(news_answer()), embedder=None)
+def items(config, file_db) -> ItemService:
+    """Правки и откат не зовут модель — сервис карточек без провайдера."""
+    return ItemService(config, file_db)
 
 
 def _indexed(db, expression: str) -> list[int]:
@@ -157,25 +158,25 @@ def test_rebuild_all_reports_and_covers_every_card(file_db, card_factory, source
 # ── синхронизация при записи ───────────────────────────────────────────────
 
 
-def test_editing_the_title_moves_the_card_in_the_index(file_db, processing, indexed_card):
-    processing.edit_item(indexed_card, {"title": "Совершенно новый заголовок"})
+def test_editing_the_title_moves_the_card_in_the_index(file_db, items, indexed_card):
+    items.edit_item(indexed_card, {"title": "Совершенно новый заголовок"})
 
     assert _indexed(file_db, '"новый"*') == [indexed_card]
     assert _indexed(file_db, '"Комитет"*') == []
 
 
-def test_editing_the_summary_moves_the_card_in_the_index(file_db, processing, indexed_card):
-    processing.edit_item(indexed_card, {"summary": "Переписано аналитиком вручную."})
+def test_editing_the_summary_moves_the_card_in_the_index(file_db, items, indexed_card):
+    items.edit_item(indexed_card, {"summary": "Переписано аналитиком вручную."})
 
     assert _indexed(file_db, '"аналитиком"*') == [indexed_card]
     assert _indexed(file_db, '"Обсуждение"*') == []
 
 
 def test_a_hand_added_tag_reaches_the_index_next_to_the_models_own(
-    file_db, processing, indexed_card
+    file_db, items, indexed_card
 ):
     """Правка заменяет только ручные теги, поэтому в индексе оказываются оба."""
-    processing.edit_item(indexed_card, {"tags": ["персданные"]})
+    items.edit_item(indexed_card, {"tags": ["персданные"]})
 
     assert _indexed(file_db, '"персданные"*') == [indexed_card]
     assert _indexed(file_db, '"регуляторика"*') == [indexed_card]
@@ -191,7 +192,7 @@ def test_dropping_a_model_tag_takes_it_out_of_the_index(file_db, indexed_card):
     assert _indexed(file_db, '"регуляторика"*') == []
 
 
-def test_revert_puts_the_model_version_back_into_the_index(file_db, processing, indexed_card):
+def test_revert_puts_the_model_version_back_into_the_index(file_db, items, indexed_card):
     file_db.items.add_revision(
         ItemRevision(
             item_id=indexed_card,
@@ -203,10 +204,10 @@ def test_revert_puts_the_model_version_back_into_the_index(file_db, processing, 
         )
     )
     file_db.conn.commit()
-    processing.edit_item(indexed_card, {"title": "Ручной заголовок"})
+    items.edit_item(indexed_card, {"title": "Ручной заголовок"})
     assert _indexed(file_db, '"Ручной"*') == [indexed_card]
 
-    processing.revert(indexed_card, "title")
+    items.revert(indexed_card, "title")
 
     assert _indexed(file_db, '"аккредитацию"*') == [indexed_card]
     assert _indexed(file_db, '"Ручной"*') == []

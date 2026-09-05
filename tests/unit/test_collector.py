@@ -19,7 +19,6 @@ from support import (
     rss_bytes,
 )
 
-from src.common import parse_datetime
 from src.config import Config
 from src.models import FetchResult, FetchState, RawDocument, Source
 from src.paths import ProjectPaths
@@ -27,6 +26,7 @@ from src.sources.collector import Collector
 from src.sources.scraper_llm import TAVILY_SEARCH_URL
 from src.sources.scraper_search import SearchQuery
 from src.sources.telegram_mtproto import MtChannel, MtPost
+from src.utils import parse_datetime
 
 RSS_URL = "https://feed.example.ru/rss.xml"
 TG_URL = "https://t.me/s/cit_gov"

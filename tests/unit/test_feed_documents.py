@@ -8,7 +8,8 @@ from __future__ import annotations
 
 import pytest
 
-from src.feed.query import DocumentQuery, QueryError
+from src.exceptions import QueryError
+from src.models.queries import DocumentQuery
 
 
 def _titles(result: dict) -> list[str]:

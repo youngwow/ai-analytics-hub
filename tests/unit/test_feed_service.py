@@ -12,9 +12,9 @@ from datetime import datetime
 import pytest
 
 from src.config import Config
-from src.feed.query import DocumentQuery, FeedQuery
-from src.feed.service import FeedService, local_today
 from src.models import ITEM_TAGS, ITEM_TYPES, NPA_STATUSES, PRIORITIES
+from src.models.queries import DocumentQuery, FeedQuery
+from src.services.feed_service import FeedService, local_today
 
 
 def _ids(result: dict) -> list[int]:
@@ -294,7 +294,7 @@ def test_the_service_reads_its_timezone_from_the_config(raw_config, file_db):
 
 
 def test_local_today_is_the_date_in_the_configured_zone(config, monkeypatch):
-    import src.feed.service as service_mod
+    import src.services.feed_service as service_mod
 
     class FrozenDatetime(datetime):
         @classmethod

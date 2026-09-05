@@ -1,0 +1,32 @@
+# Держит контекст сборки маленьким и гарантирует, что ни .env, ни .venv,
+# ни база не попадут в слой образа.
+
+.git/
+.gitignore
+.dockerignore
+
+# Локальное окружение и кэши
+.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Секреты и локальное состояние
+.env
+.envrc
+data/
+
+# Не нужно для запуска сервиса
+.claude/
+.specify/
+specs/
+tests/
+docs/
+context/
+scripts/
+docker-compose*.yaml
+*.md
+!README.md

@@ -16,8 +16,9 @@
 Реализован **этап 1.4 — управление источниками и данными**: ссылка добавляется одним полем
 (система сама находит ленту и показывает превью), у каждого источника своя периодичность опроса и
 история прогонов, правки аналитика переживают переобработку и обратимы, а удаления нет нигде —
-только скрытие и мягкое удаление. Поверх сервисов поднят HTTP-API (`python -m src serve`), на
-который в 1.3 сядет дашборд.
+только скрытие и мягкое удаление. Поверх сервисов поднят HTTP-API (`python -m src serve` или
+`docker compose up --build`) в раскладке Model-Service-Repository: маршруты → сервисы →
+репозитории, ответы описаны схемами в `/docs`. На него в 1.3 сядет дашборд.
 
 Реализован **этап 1.2 — интеллектуальная обработка**: собранные документы схлопываются в
 кластеры и превращаются в карточки ленты — саммари в 3–5 предложений, сущности «кто / что /
@@ -36,9 +37,14 @@ uv run python -m src docs --limit 20       # что собрали
 uv run python -m src process --limit 20    # обработать: саммари, тип, приоритет (нужен OLLAMA_API_KEY)
 uv run python -m src items --priority high # лента: что важно прочитать первым
 uv run python -m src collect --watch --interval 900   # опрашивать каждые 15 минут
+uv run python -m src serve                 # HTTP-API на 127.0.0.1:8000, схема на /docs
+docker compose up --build                  # то же в контейнере: data/ монтируется томом
 ```
 
-`make install | seed | collect | watch | tg-login | tg-status | process | quality | test | lint | happy-pr | happy-gr` — те же команды.
+`make install | seed | collect | watch | tg-login | tg-status | process | quality | serve | docker-up | test | lint | happy-pr | happy-gr` — те же команды.
+
+Адрес, порт, `/docs` и CORS — параметры окружения (`HOST`, `PORT`, `DOCS`, `CORS_ORIGINS` в `.env`,
+см. `.env.example`); корень данных переопределяется переменной `HUB_ROOT`.
 
 ## Команды
 
@@ -72,7 +78,7 @@ uv run python -m src collect --watch --interval 900   # опрашивать к�
 | `revert <id> --field summary\|title\|priority\|tags` | Вернуть версию модели из истории правок |
 | `revisions <id>` | История правок: кто, когда, было/стало |
 | `add-item [--url …] --title … [--no-llm] [--force]` | Завести материал вручную; дубль распознаётся по адресу и по SimHash |
-| `serve [--host] [--port]` | Поднять HTTP-API, документация на `/docs` |
+| `serve [--host] [--port] [--reload]` | Поднять HTTP-API (uvicorn, фабрика `src.main:create_app`), документация на `/docs` |
 | `items [--q …] [--type] [--npa-status] [--priority]… [--tag]… [--source ID]… [--from] [--to] [--order] [--cursor] [--include-hidden]` | Лента: фильтры комбинируются, поиск идёт по карточке, тегам, сущностям и тексту оригинала |
 | `digest [те же фильтры] [--format markdown\|json] [--include-notes] [--out FILE]` | Выгрузка среза для отправки руководителю |
 | `status` | Когда собирали, сколько без карточки, какие источники просрочены |
@@ -158,9 +164,12 @@ uv run python -m src serve                                    # HTTP-API на :8
 поиске; источник помечается удалённым, а собранные из него материалы остаются — НПА живёт дольше,
 чем ссылка, по которой он пришёл.
 
-HTTP-API повторяет те же операции по адресам `/api/v1/sources` и `/api/v1/items`; ошибки —
-`application/problem+json` с машинным `code`. Логики в обработчиках нет: они зовут те же методы
-сервисов, что и CLI, поэтому дашборд 1.3 добавит экраны, а не вторую реализацию.
+HTTP-API повторяет те же операции по адресам `/api/v1/sources` и `/api/v1/items` (плюс
+`POST /api/v1/sources/{id}/refresh` — внеочередной опрос для демо); ошибки —
+`application/problem+json` с машинным `code`, у каждого ответа есть схема в `/openapi.json`.
+Логики в обработчиках нет: они зовут те же методы сервисов, что и CLI, поэтому дашборд 1.3
+добавит экраны, а не вторую реализацию. `GET /api/v1/health` и `/health/ready` — для
+оркестратора: готовность падает в 503, когда база не отвечает.
 
 ## Лента, поиск и дайджест
 
@@ -327,17 +336,29 @@ process ──► S0 нормализация ──► S1 SimHash + эмбед�
   `scraper_search.py` — запрос Tavily как источник; `scraper_llm.py` — HTTP-обёртка Tavily.
 - `src/sources/fulltext.py` — trafilatura для материалов, где в ленте только анонс; не больше двух
   одновременных запросов к одному хосту (gov.ru банит бурсты).
-- `src/processing/service.py` — `ProcessingService`: единственная точка входа этапа 1.2, на неё сядет
-  и будущий REST. Медленные вызовы модели — в воркерах, все записи — на главном потоке.
+- `src/services/` — слой сервисов, один на CLI и HTTP: `ProcessingService` (прогон, ручной материал,
+  переобработка — всё, что зовёт модель; медленные вызовы — в воркерах, записи — на главном потоке),
+  `ItemService` (правка, видимость, заметки, история), `SourceService` (probe, расписание, здоровье,
+  `refresh`), `FeedService` (лента, фасеты, дайджест, `status`), `HealthService`.
 - `src/processing/llm.py` — провайдер модели, единственный модуль с `import ollama`; наружу торчат
   протоколы `LLMProvider` / `EmbeddingProvider`, поэтому тесты не знают об SDK.
 - `src/processing/pipeline.py` — S2–S6 над одним кластером: один structured-output вызов, проверка
   ответа, fail-safe по приоритету, экстрактивный baseline при отказе модели.
-- `src/processing/dedup.py`, `normalize.py`, `grounding.py` — SimHash и косинус без numpy,
-  нормализация с сохранением offsets, проверка саммари на опору в оригинале.
-- `src/storage/db.py` — `data/hub.db`: `sources`, `documents`, `fetch_state`, `seen_urls`,
-  `collect_runs` (v1) плюс `clusters`, `items`, `entities`, `item_sources`, `npa_events`,
-  `item_revisions`, `company_profiles`, `prompt_versions`, `llm_calls` и `items_fts` (v2).
+- `src/processing/dedup.py`, `normalize.py` — SimHash и косинус без numpy, нормализация с
+  сохранением offsets.
+- `src/repositories/` — `Database` (`data/hub.db`, соединение на запрос, миграции по
+  `PRAGMA user_version` = 4) и SQLite-репозитории по агрегатам: `sources`, `documents`, `items`,
+  `processing`, `feed` (читающие запросы ленты). Контракты для сервисов — `repository_interface.py`
+  (`SourceRepository`, `DocumentRepository`, `ItemRepository`, `FeedRepository`).
+- `src/models/` — доменные dataclass'ы (`domain.py`), фильтр ленты (`queries.py`) и pydantic-схемы
+  HTTP-границы (`requests.py`, `responses.py` с `from_domain()`); дальше границы pydantic не идёт.
+- `src/api/routes/` — тонкие маршруты (`health`, `sources`, `items`, `feed`); `src/dependencies.py` —
+  единственное место связывания (`Annotated[..., Depends()]`); `src/exceptions.py` — иерархия
+  `AppError` со статусом и кодом на классе; `src/main.py` — фабрика `create_app()`, lifespan, CORS,
+  единый обработчик ошибок в `problem+json`.
+- `src/config.py` — `Config` из `config.yaml` (домен) и `Settings` из окружения/`.env` (процесс:
+  адрес, порт, CORS, уровень логов, `HUB_ROOT`). `src/Dockerfile` + `docker-compose.yaml` —
+  контейнер с healthcheck на `/api/v1/health/ready`.
 - `config.yaml` — окно первого сбора, таймауты, лимиты, параметры Tavily (`days`, `country`, `language`)
   и Telegram (`mtproto`, `max_posts`, `concurrency`), модель и пороги обработки (`llm`, `processing`).
 
@@ -345,7 +366,11 @@ process ──► S0 нормализация ──► S1 SimHash + эмбед�
 
 ```bash
 uv run pytest -q             # тесты офлайн, HTTP через httpx.MockTransport + tests/fixtures/
-uv run ruff check src tests
+uv run ruff check src tests  # make lint / make test — те же команды
+uv run python -m src serve --reload   # API с автоперезапуском; или make docker-up
 ```
+
+Тесты собирают приложение фабрикой `create_app()` на временном `HUB_ROOT`, поэтому `.env`
+разработчика в тестах не читается; модель подменяется через `app.dependency_overrides`.
 
 Проектная документация — в `docs/`.

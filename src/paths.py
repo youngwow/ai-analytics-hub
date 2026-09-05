@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 # src/paths.py → src/ → project root
 _PKG_DIR = os.path.dirname(os.path.abspath(__file__))
-_DEFAULT_ROOT = os.path.dirname(_PKG_DIR)
+DEFAULT_ROOT = os.path.dirname(_PKG_DIR)
 
 
 @dataclass(frozen=True)
@@ -27,7 +27,7 @@ class ProjectPaths:
 
     @classmethod
     def from_root(cls, root: str | None = None) -> "ProjectPaths":
-        root = root or os.environ.get("HUB_ROOT") or _DEFAULT_ROOT
+        root = root or os.environ.get("HUB_ROOT") or DEFAULT_ROOT
         return cls(
             root=root,
             data_dir=os.path.join(root, "data"),
