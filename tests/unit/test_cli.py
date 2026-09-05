@@ -210,7 +210,7 @@ def test_collect_watch_stops_cleanly_on_keyboard_interrupt(config, paths, capsys
     assert calls == [42]
     out = capsys.readouterr().out
     assert out.count("new documents;") == 1
-    assert out.strip() == "0 new documents; sources ok=0 not_modified=0 failed=0"
+    assert out.strip() == "0 new documents; sources ok=0 partial=0 not_modified=0 failed=0"
 
 
 def test_collect_without_watch_runs_once_and_returns_zero(config, paths, capsys):

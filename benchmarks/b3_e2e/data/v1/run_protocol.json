@@ -1,0 +1,82 @@
+{
+  "freeze_before_run": [
+    "dataset checksums",
+    "B1 configuration",
+    "B2 configuration",
+    "system prompt",
+    "risk policy",
+    "release policy"
+  ],
+  "machine_runs": [
+    {
+      "scenario": "A",
+      "modes": [
+        "fixed",
+        "search",
+        "hybrid"
+      ],
+      "purpose": [
+        "value proxy",
+        "H1",
+        "H3",
+        "H4 content",
+        "H5 content"
+      ]
+    },
+    {
+      "scenario": "B",
+      "modes": [
+        "fixed",
+        "search",
+        "hybrid"
+      ],
+      "purpose": [
+        "value proxy",
+        "H1",
+        "H3",
+        "H4 content",
+        "H5 content"
+      ]
+    },
+    {
+      "scenario": "D1_critical",
+      "modes": [
+        "hybrid"
+      ],
+      "purpose": [
+        "critical safety",
+        "urgent path",
+        "H2 prerequisite",
+        "H4 safety"
+      ]
+    },
+    {
+      "scenario": "D2_event_boundary",
+      "modes": [
+        "hybrid"
+      ],
+      "purpose": [
+        "H3 false-merge boundary"
+      ]
+    },
+    {
+      "scenario": "D3_npa_history",
+      "modes": [
+        "hybrid"
+      ],
+      "purpose": [
+        "NPA identity",
+        "version history",
+        "stale report resistance"
+      ]
+    }
+  ],
+  "human_tasks": {
+    "value": "Cross-over: operator 1 does A manually and B with product; operator 2 does the reverse. Measure collection, analysis, packaging, waiting and correction separately.",
+    "H2": "On saved outputs compare review-all and review-risk-only; no-review is measured from raw output and receives no hidden correction.",
+    "H3": "Use different balanced event clusters for flat and event views; measure time and recovery of unique facts and positions.",
+    "H4": "Compare manual cleaning of one common release with checking PR/GR/HEAD releases; critical core must remain everywhere required.",
+    "H5": "On different balanced flows ask recipient to name main events, critical items and evidence using full queue versus top layer with drill-down."
+  },
+  "reporting": "Never merge machine quality, human time and product hypotheses into one number. Synthetic outcomes are preliminary proxy evidence."
+}

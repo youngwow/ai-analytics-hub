@@ -151,6 +151,15 @@ def test_first_and_second_run_over_every_adapter(raw_config, db, fixture_bytes, 
     assert (by_id[sitemap.id]["new"], by_id[sitemap.id]["seen"]) == (3, 3)
     assert (by_id[html.id]["new"], by_id[html.id]["seen"]) == (38, 38)
     assert all(e["status"] == "ok" for e in report.per_source)
+    assert (
+        by_id[rss.id]["fulltext_attempted"],
+        by_id[rss.id]["fulltext_extracted"],
+        by_id[rss.id]["fulltext_fallback"],
+    ) == (1, 1, 0)
+    assert (
+        by_id[sitemap.id]["fulltext_attempted"],
+        by_id[sitemap.id]["fulltext_extracted"],
+    ) == (3, 3)
 
     # rss: full text came from the feed for 3 items and from the page for the 4th
     assert _stored_ids(db, rss.id) == [
@@ -275,6 +284,34 @@ def test_failed_source_is_recorded_and_the_run_continues(raw_config, db, now, tm
     collector.run()
     assert db.fetch_state.get(bad.id).consecutive_failures == 2
     assert db.runs.latest()["sources_fail"] == 1
+
+
+def test_recoverable_warning_is_reported_as_partial(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    source = _add(db)
+    collector = _collector(config, db, MockRoutes({}), now, tmp_path)
+    collector.adapters["rss"].fetch = lambda *args, **kwargs: FetchResult(
+        documents=[
+            RawDocument(
+                source_id=source.id,
+                external_id="one",
+                url="https://example.ru/one",
+                title="Сохранённый материал",
+            )
+        ],
+        warnings=["child request: HTTP 500"],
+    )
+
+    report = collector.run()
+
+    assert (report.sources_ok, report.sources_partial, report.sources_fail, report.docs_new) == (
+        0,
+        1,
+        0,
+        1,
+    )
+    assert report.per_source[0]["status"] == "partial"
+    assert report.per_source[0]["warnings"] == ["child request: HTTP 500"]
 
 
 def test_success_after_failure_clears_error_and_counter(raw_config, db, now, tmp_path):

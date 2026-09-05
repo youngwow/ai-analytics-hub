@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="ru"><head><title>В США раскрыли последствия вмешательства НАТО в украинский конфликт: Политика: Мир: Lenta.ru</title><meta charset="utf-8" /><script>(function () {
+   try {
+      var PROCESS_COOKIE = "auth_in_process=1";
+      var REFERRER_LS_KEY = "saved_referrer";
+
+      function hasCookie() {
+        return document.cookie
+          .split("; ")
+          .indexOf(PROCESS_COOKIE) !== -1;
+      }
+
+      function setCookie() {
+        document.cookie = PROCESS_COOKIE + "; path=/"
+      }
+
+      function isSsoRef(url) {
+        return /^https?:\/\/id(-\w+)?\.sber\.ru/i.test(url);
+      }
+
+      function isInternalRef(url) {
+        return /^https?:\/\/([a-z0-9-]+\.)*lenta\.ru(\/|$)/i.test(url);
+      }
+
+      var originalReferrer = document.referrer;
+
+      var resolvedReferrer = (function() {
+        try {
+          if (isInternalRef(originalReferrer) || originalReferrer === '') {
+            var saved = localStorage.getItem(REFERRER_LS_KEY);
+            if (saved !== null) {
+              localStorage.removeItem(REFERRER_LS_KEY);
+              return saved;
+            }
+          }
+        } catch(e) {}
+        if (isSsoRef(originalReferrer)) return '';
+        return originalReferrer;
+      })();
+
+      Object.defineProperty(document, 'referrer', {
+        get: function() { return resolvedReferrer; }
+      });
+
+      var params = new URLSearchParams(window.location.search);
+      var isSSOReturn = params.has("state") && (params.has("error") || params.has("code"));
+
+      if (!isSSOReturn && !hasCookie()) {
+        try {
+          var ref = originalReferrer;
+          var isRootPage = window.location.pathname === '/';
+          if (isRootPage && !isSsoRef(ref) && !isInternalRef(ref) && ref !== '') {
+            localStorage.setItem(REFERRER_LS_KEY, ref);
+          }
+        } catch(e) {}
+      }
+
+      if (isSSOReturn && !hasCookie()) {
+        setCookie();
+      }
+
+      if (hasCookie()) {
+        document.documentElement.classList.add('_auth-in-process');
+      }
+   } catch (e) {}
+})();</script><meta content="#292929" name="theme-color" /><link href="https://lenta.ru/rss/google-newsstand/main/" rel="alternate" type="application/rss+xml" /><link href="https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/" rel="canonical" /><link href="/manifest.json" rel="manifest" /><link rel="icon" type="image/x-icon" href="https://icdn.lenta.ru/favicon.ico" /><link rel="apple-touch-icon" type="image/x-icon" href="https://icdn.lenta.ru/images/icons/icon-256x256.png" size="256x256" /><link rel="apple-touch-icon" type="image/x-icon" href="https://icdn.lenta.ru/images/icons/icon-192x192.png" size="192x192" /><link rel="apple-touch-icon" type="image/x-icon" href="https://icdn.lenta.ru/images/icons/icon-152x152.png" size="152x152" /><link rel="apple-touch-icon" type="image/x-icon" href="https://icdn.lenta.ru/images/icons/icon-120x120.png" size="120x120" /><link rel="apple-touch-icon" type="image/x-icon" href="https://icdn.lenta.ru/images/icons/icon-76x76.png" size="76x76" /><meta content="max-image-preview:large" name="robots" /><meta content="index, follow" name="robots" /><meta content="НАТО серьезно пострадала в результате конфликта на Украине, заявил американский политолог, профессор Чикагского университета Джон Миршаймер в эфире на YouTube-канале. По его словам, альянсу был нанесен серьезный ущерб" name="og:description"></meta><meta content="НАТО серьезно пострадала в результате конфликта на Украине, заявил американский политолог, профессор Чикагского университета Джон Миршаймер в эфире на YouTube-канале. По его словам, альянсу был нанесен серьезный ущерб" name="description"></meta><meta content="article" property="og:type" /><meta content="Lenta.RU" property="og:site_name" /><meta content="В США раскрыли последствия вмешательства НАТО в украинский конфликт" property="og:title"></meta><meta content="В США раскрыли последствия вмешательства НАТО в украинский конфликт: Политика: Мир: Lenta.ru" property="title"></meta><meta content="https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/share_9966c0185c1d58ad76c6382d3da96742.jpg" property="og:image" /><meta content="https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/" property="og:url" /><meta content="summary_large_image" property="twitter:card" /><meta content="@lentaruofficial" property="twitter:site" /><meta content="228661749" property="twitter:site:id" /><meta content="265602470229425" property="fb:app_id" /><script type="application/ld+json">{"@context":"http://schema.org","@type":"NewsArticle","headline":"В США раскрыли последствия вмешательства НАТО в украинский конфликт","description":"НАТО серьезно пострадала в результате конфликта на Украине, заявил американский политолог, профессор Чикагского университета Джон Миршаймер в эфире на YouTube-канале. По его словам, альянсу был нанесен серьезный ущерб","name":"В США раскрыли последствия вмешательства НАТО в украинский конфликт","alternativeHeadline":"Политолог Миршаймер: НАТО серьезно пострадала из-за вмешательства в конфликт на Украине","url":"https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/#articleBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt","mainEntityOfPage":{"@type":"WebPage","@id":"https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/#articleBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"},"thumbnailUrl":["https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/square_1280_5712ff0a080bfabecca20eaa2e60950c.jpg","https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_4_3_9aa4eae64f16fc04f81060ba602a818d.jpg","https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_16_9_1825a1d4339500496bd233d1e9bb1ac5.jpg"],"dateCreated":"2026-09-05T02:47:00+03:00","datePublished":"2026-09-05T02:47:00+03:00","dateModified":"2026-09-05T02:51:17+03:00","author":{"@type":"Person","name":"Марина Совина","url":"https://lenta.ru/parts/authors/sovina/"},"publisher":{"@type":"Organization","name":"Lenta.ru","url":"https://lenta.ru/","logo":{"@type":"ImageObject","url":"https://icdn.lenta.ru/assets/webpack/images/lenta_logo_transparent.78bc0e5e.png","width":302,"height":60}},"image":[{"@type":"ImageObject","representativeOfPage":"true","url":"https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/square_1280_5712ff0a080bfabecca20eaa2e60950c.jpg","width":1280,"height":1280},{"@type":"ImageObject","representativeOfPage":"true","url":"https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_4_3_9aa4eae64f16fc04f81060ba602a818d.jpg","width":1280,"height":960},{"@type":"ImageObject","representativeOfPage":"true","url":"https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_16_9_1825a1d4339500496bd233d1e9bb1ac5.jpg","width":1280,"height":720}],"articleBody":{"@type":"Text","@id":"https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/#articleBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"},"text":"НАТО серьезно пострадала в результате конфликта на Украине, заявил американский политолог, профессор Чикагского университета Джон Миршаймер в эфире на YouTube-канале. По его словам, альянсу был нанесен серьезный ущерб. «И это очень хорошо заметно по тому, что Америка заинтересована в сокращении своего присутствия в Европе, уменьшении своего влияния в НАТО и, по сути, в том, чтобы позволить европейцам играть гораздо более важную роль в управлении альянсом. Так что, я думаю, у альянса серьезные проблемы», — сказал он. Миршаймер усомнился, что Европа сможет достичь консенсуса по вопросу вступления Украины в НАТО. Аналитик добавил, что с полученным ущербом страна не сможет стать ни частью этого блока, ни частью ЕС. Ранее президент Украины Владимир Зеленский заявил, что Киеву непонятно, почему стране все еще не предложили членство в НАТО. Он добавил, что в Киеве членство в альянсе также считают одним из условий послевоенных гарантий Украине."}</script><link href="https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/amp/" rel="amphtml" /><link rel="stylesheet" href="https://icdn.lenta.ru/assets/webpack/owlBundle.c34e6426.css" media="all" /><script src="https://icdn.lenta.ru/assets/webpack/vendorsOwl.c9db3a88.js" defer="defer"></script><script src="https://icdn.lenta.ru/assets/webpack/owlBundle.c9db3a88.js" defer="defer"></script><link rel="stylesheet" href="https://icdn.lenta.ru/assets/webpack/topicPageOwl.1116dacb.css" media="all" /><script src="https://icdn.lenta.ru/assets/webpack/topicPageOwl.c9db3a88.js" defer="defer"></script><script>window.CAPIRS_CONFIG = window.CAPIRS_CONFIG || {};</script><script>(function(
+  url,
+  system,
+  pepper,
+  blackList,
+  bannersForTiming,
+  functionCapirsLoadName,
+  ) {
+      function stringify(obj) {
+        var str = '';
+        for (const key in obj) {
+          if (obj[key]) {
+            if (str) {
+              str += ', ';
+            }
+            str += (key + '="' + obj[key] + '"');
+          }
+        }
+        return '{' + str + '}';
+      }
+
+      function statusCounter(status) {
+        if (typeof status === 'string') {
+          return status;
+        }
+        return status ? 'success' : 'fail';
+      }
+
+      function hystogramQuantile(range) {
+        if (range <= 1000) return (Math.floor(range / 100) + 1) * 100;
+        if (range <= 1500) return 1500;
+        if (range <= 2000) return 2000;
+        if (range <= 3000) return 3000;
+        if (range <= 4000) return 4000;
+        if (range <= 5000) return 5000;
+        if (range <= 7500) return 7500;
+        if (range <= 10000) return 10000;
+        return '+Inf';
+      }
+
+      function send(metric, type, labels, value) {
+        var body = '# TYPE ' + metric + ' ' + type + '\n' + metric + ' ' + stringify(labels) + ' ' + (value || 1);
+        return fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain',
+            'X-Media-Atlas-Auth': 'basic ' + pepper,
+          },
+          body: body,
+        });
+      }
+
+      function logCounterCapirs(status) {
+        return send('app_request_count', 'counter', {
+          app: 'front',
+          system: system,
+          resource: 'capirs',
+          status: statusCounter(status),
+          direction: 'out',
+        });
+      }
+
+      function logCounterAdv(blockId, status) {
+        return send('app_request_count', 'counter', {
+          app: 'front',
+          system: system,
+          resource: 'adv',
+          kind: blockId,
+          status: statusCounter(status),
+          direction: 'out',
+        });
+      }
+
+      function logTimeCapirs(range) {
+        return send('app_request_time_bucket', 'histogram', {
+          app: 'front',
+          system: system,
+          resource: 'capirs',
+          direction: 'out',
+          level: 'request',
+          le: hystogramQuantile(range),
+        });
+      }
+
+      function logTimeAdv(blockId, range) {
+        return send('app_request_time_bucket', 'histogram', {
+          app: 'front',
+          system: system,
+          resource: 'adv',
+          kind: blockId,
+          direction: 'out',
+          level: 'request',
+          le: hystogramQuantile(range),
+        });
+      }
+
+      function logAdvSuccess(blockId) {
+        return logCounterAdv(blockId, true);
+      }
+
+      function logAdvFailure(blockId) {
+        return logCounterAdv(blockId, false);
+      }
+
+      if (functionCapirsLoadName) {
+        window[functionCapirsLoadName] = logCounterCapirs;
+      }
+
+      var bannersForTimingLoadedHash = {};
+
+      for (var i = 0; i < bannersForTiming.length; ++i) {
+        bannersForTimingLoadedHash[bannersForTiming[i]] = 0;
+      }
+
+      window.begun_new_callbacks = window.begun_new_callbacks || [];
+      window.begun_new_callbacks.push({
+        'lib': {
+          'init': initializer,
+        },
+      });
+
+      var startInitDate = Date.now();
+      var startDate;
+
+      function initializer() {
+        startDate = Date.now();
+        logTimeCapirs(startDate - startInitDate);
+        window.Begun.Autocontext.Callbacks.register({
+          block: {
+            draw: function(feed) {
+              if (!blackList.includes(feed.blocks[0].id)) {
+                logAdvSuccess(feed.blocks[0].id);
+
+                if (bannersForTiming.includes(feed.blocks[0].id) && !bannersForTimingLoadedHash[feed.blocks[0].id]) {
+                  logTimeAdv(feed.blocks[0].id, Date.now() - startDate);
+                  bannersForTimingLoadedHash[feed.blocks[0].id] = 1;
+                }
+              }
+            },
+            unexist: function(success, block) {
+              if (!blackList.includes(parseInt(block.block_id, 10))) {
+                logAdvFailure(block.block_id);
+              }
+            },
+          },
+        });
+      }
+
+    }
+)(
+  "https://err.lenta.ru/atlas/metrics/",
+  "lenta",
+  "cm9vdDppcXVlY2FocmFoMW9vbTZsZTBFZWhlZTBjYThvb3ZldU1laW42UmVj",
+  [],
+  [432172886],
+  "capirsOnLoad"
+);</script><script src="//ssp.rambler.ru/capirs_async.js" async="async" onload="capirsOnLoad(true);" onerror="capirsOnLoad(false);"></script><script>window._lentaData = window._lentaData || {};
+window._lentaData.puids = {"puid6":"LENTA_WORLD","puid18":"LENTA_WORLD_POLITIC","puid15":"news","puid26":null,"puid48":null,"puid58":"kiev:ssha:ukraina","puid60":"zelenskiy-vladimir:mirshaymer-dzhon","puid59":"checked:military:bc","puid62":null};
+window._lentaData.version = 'owl';</script><script>window.Ya || (window.Ya = {});
+window.yaContextCb = window.yaContextCb || [];
+window.Ya.adfoxCode || (window.Ya.adfoxCode = {});
+window.Ya.adfoxCode.hbCallbacks || (window.Ya.adfoxCode.hbCallbacks = []);</script><script async="" src="https://yandex.ru/ads/system/context.js"></script><script async="" src="https://id.sber.ru/profile/external_partners/WEB_PROFILE.umd.js"></script></head><body id="body"><div class="inject-sprite"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol fill="none" viewBox="0 0 14 15" id="ui-author"><path fill="#999" stroke="#999" stroke-linejoin="round" stroke-width="1.5" d="M7 8C8.83453 8 10.8238 9.65119 12 11.5C11.3333 12.6667 9.4 13.5 7 13.5C4.6 13.5 2.66667 12.6667 2 11.5C3.17618 9.65119 5.16547 8 7 8Z" /><path fill="#999" d="M10 3C10 4.65685 8.65685 6 7 6C5.34315 6 4 4.65685 4 3C4 1.34315 5.34315 0 7 0C8.65685 0 10 1.34315 10 3Z" /></symbol><symbol viewBox="0 0 252 42" id="ui-logo"><title>logo_Lenta_big</title><path fill="currentColor" fill-rule="evenodd" d="M35.6,2245.5 C35.6,2239.4 42.1,2239.2 49.7,2239.2 L50.8,2239.2 L50.8,2232.6 L49.4,2232.6 C41.8,2232.6 36.9,2232.1 36.9,2227.9 C36.9,2224.2 39.9,2223.1 43.8,2223.1 C48.9,2223.1 51.7,2224.2 53.8,2225.7 L53.8,2217.8 C51.7,2216.8 48.4,2216 43.8,2216 C35.1,2216 28.3,2219.3 28.3,2227.5 C28.3,2230.8 29.9,2234.9 34.6,2235.8 C29.8,2236.6 26.9,2241 26.9,2245.5 C26.9,2254.7 34.5,2258 43.8,2258 C50.5,2258 55,2257.1 58,2255 L58,2246.7 C55.8,2249 51,2250.9 45.5,2250.9 C41.2,2250.9 35.6,2249.5 35.6,2245.5 Z M132.6,2216.9 L89.1,2216.9 L89.1,2240.4 L62.5,2216 L62.1,2216 L62.1,2257.1 L70.7,2257.1 L70.7,2234.5 L97.4,2258 L97.8,2258 L97.8,2224 L110.8,2224 L110.8,2257.1 L119.4,2257.1 L119.4,2224 L132.6,2224 L132.6,2216.9 Z M11.7,2217.1 L3,2217.1 L3,2257 L25.8,2257 L25.8,2249.3 L11.7,2249.3 L11.7,2217.1 Z M214.3,2232.6 C214.3,2222.6 207.9,2217.1 197.2,2217.1 L184.5,2217.1 L184.5,2257 L193.1,2257 L193.1,2248.2 L197.2,2248.2 C198.4,2248.2 199.5,2248.2 200.6,2248 L208.5,2257 L218.7,2257 L208.3,2244.9 C212.1,2242 214.3,2237.6 214.3,2232.6 Z M196.3,2241.2 L193.1,2241.2 L193.1,2224.1 L196.4,2224.1 C202.6,2224.1 205.6,2227.2 205.6,2232.6 C205.6,2237.4 202.4,2241.2 196.3,2241.2 Z M174.7,2248.6 C172.1,2248.6 170,2250.6 170,2253.2 C170,2255.9 172.1,2258 174.7,2258 C177.2,2258 179.3,2255.9 179.3,2253.2 C179.3,2250.6 177.2,2248.6 174.7,2248.6 Z M246.3,2217.1 L246.3,2238.1 C246.3,2246.9 242.9,2250.9 237.4,2250.9 C231.7,2250.9 228.4,2246.9 228.4,2238.1 L228.4,2217.1 L219.7,2217.1 L219.7,2236.2 C219.7,2249.6 224.5,2258 237.4,2258 C250.3,2258 255,2249.4 255,2236.2 L255,2217.1 L246.3,2217.1 Z M145.5,2216 L145.1,2216 L124.3,2257 L133.6,2257 L136.6,2250.3 L154.4,2250.3 L157.6,2257 L166.9,2257 L145.5,2216 Z M139.7,2243.5 L145.3,2231.5 L151.1,2243.5 L139.7,2243.5 L139.7,2243.5 Z" transform="translate(-3 -2216)" /></symbol></defs></svg></div><div class="banner _no-mb js-banner" data-config-name="block_pad_id_579524752_432172862"></div><div class="banner js-banner js-banner-fullscreen" data-config-name="desktop_fullscreen"></div><div class="layout js-layout"><div class="layout__auth-overlay"><div class="spinner-loader"></div></div><div class="layout__black-header"></div><div class="layout__menu"><div class="menu js-menu _hide"><div class="menu__overlay js-menu-overlay"></div><div class="menu__container"><nav class="menu__nav"><ul class="menu__nav-list"><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/">Главное</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/russia/">Россия</a></li><li class="menu__nav-item _active"><a class="menu__nav-link _is-extra" href="/rubrics/world/">Мир</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/ussr/">Бывший СССР</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/economics/">Экономика</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/forces/">Силовые структуры</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/science/">Наука и техника</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/autolenta/">Авто</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/culture/">Культура</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/sport/">Спорт</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/media/">Интернет и СМИ</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/style/">Ценности </a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/travel/">Путешествия</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/life/">Из жизни</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/realty/">Среда обитания</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/wellness/">Забота о себе</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" style="color: #82ECAD" href="/twz/">Теперь вы знаете</a></li><li class="menu__nav-item"><a class="menu__nav-link _is-extra" href="/rubrics/vybory2026">Выборы в Госдуму 2026</a></li><li class="menu__nav-separator"></li><li class="menu__socials"><ul class="social-links"><li class="social-links__item"><a target="_blank" aria-label="Открыть Вконтакте" rel="noreferrer" class="social-links__link" href="https://vk.com/lentaru?utm_source=lentasocialbuttons&amp;utm_campaign=vk"><svg class="social-links__icon _vk"><use xlink:href="#ui-social-vk"></use></svg></a></li><li class="social-links__item"><a target="_blank" aria-label="Открыть Телеграм" rel="noreferrer" class="social-links__link" href="https://t.me/lentadnya/?utm_source=lentasocialbuttons&amp;utm_campaign=tlgrm"><svg class="social-links__icon _tg"><use xlink:href="#ui-social-tg"></use></svg></a></li><li class="social-links__item"><a target="_blank" aria-label="Открыть Одноклассники" rel="noreferrer" class="social-links__link" href="https://ok.ru/lentaru/?utm_source=lentasocialbuttons&amp;utm_campaign=ok"><svg class="social-links__icon _ok"><use xlink:href="#ui-social-ok"></use></svg></a></li><li class="social-links__item"><a target="_blank" aria-label="Открыть " rel="noreferrer" class="social-links__link" href="https://max.ru/lentaru?utm_source=lentasocialbuttons&amp;utm_campaign=max"><svg class="social-links__icon _max"><use xlink:href="#ui-social-max"></use></svg></a></li></ul></li><li class="menu__nav-item"><a class="menu__nav-link" href="/parts/exclusives/">Эксклюзивы</a></li><li class="menu__nav-item"><a class="menu__nav-link" href="/parts/text/">Статьи</a></li><li class="menu__nav-item"><a class="menu__nav-link" href="/parts/photo/">Фото</a></li><li class="menu__nav-item"><a class="menu__nav-link" href="/specprojects/editor_choice/">Спецпроекты</a></li><li class="menu__nav-item"><a class="menu__nav-link" href="/tags/researches/">Исследования</a></li><li class="menu__nav-item"><a class="menu__nav-link" href="/minigames">Мини-игры</a></li><li class="menu__nav-separator"></li><li class="menu__nav-item"><a class="menu__nav-link" target="_blank" rel="noreferrer" href="https://lenta.ru/archive/">Архив</a></li><li class="menu__search js-menu-search"><div class="search-bar"><input class="search-bar__input js-search-bar-input" name="query" placeholder="поиск..." required="" type="text" /><button aria-label="Найти" class="search-bar__submit js-search-bar-submit" type="submit"><svg class="search-bar__submit-icon"><use xlink:href="#ui-search"></use></svg></button></div></li></ul></nav></div></div></div><div class="layout__container"><div class="layout__header-ghost js-layout-header-anchor"></div><div class="layout__header js-layout-header"><header class="header js-site-header"><div class="header__billboard-platform header_fixed_special"></div><div class="scroll-bar js-scroll-bar _hidden"></div><div class="header__left"><button aria-label="Открыть меню" class="header__burger js-burger-to-menu" type="button"></button><a aria-label="На главную" class="header__logo" href="/"><svg class="header__logo-icon"><use xlink:href="#ui-logo"></use></svg></a></div><!--noindex--><div class="header__center"><time class="header__time js-header-time"></time></div><!--/noindex--><!--noindex--><div class="header__right js-header-right"><div class="custom-banner js-custom-banner _disabled"></div><div class="goodnews js-goodnews _hide"><label class="goodnews__label"><span class="goodnews__title">Лента добра</span><input class="goodnews__checkbox js-goodnews-tumbler" type="checkbox" /><span class="goodnews__tumbler"></span><div class="goodnews__tooltip _turn-on"><div class="goodnews__tooltip-text">Хочешь видеть только хорошие новости? Жми!</div><svg class="goodnews__tooltip-balloon"><use xlink:href="#ui-speech-balloon"></use></svg><svg class="goodnews__tooltip-smile"><use xlink:href="#ui-smile"></use></svg></div><div class="goodnews__tooltip _turn-off _hidden"><div class="goodnews__tooltip-text">Вернуться в обычную ленту?</div><svg class="goodnews__tooltip-balloon"><use xlink:href="#ui-speech-balloon"></use></svg></div></label></div><div class="header__my"><div id="elk-widgets-trigger"></div><div class="my-icon js-my-icon _hidden _header"><button class="my-icon__button">Войти</button><div class="my-icon__avatar js-elk-trigger-container"><svg class="my-icon__avatar-icon"><use xlink:href="#ui-userpic"></use></svg><div class="my-icon__avatar-sber js-my-avatar-sber"><svg class="my-icon__avatar-sber"><use xlink:href="#ui-userpic-sber"></use></svg></div></div></div></div></div><!--/noindex--></header></div><div class="vk-video-popup js-vk-video-popup"><div class="vk-video-popup__wrap js-vk-video-wrap"><iframe class="vk-video-popup__iframe"></iframe><div class="vk-video-popup__overlay js-vk-video-overlay"></div></div><div class="vk-video-popup__controls js-vk-video-controls"><p>Реклама</p><div class="vk-video-popup__dots js-vk-video-dots"><span></span><span></span><span></span></div><div class="vk-video-popup__close js-vk-video-popup-close"></div><div class="vk-video-popup__tooltip js-vk-video-popup-tooltip"><div class="vk-video-popup__tooltip-content">Реклама. 12+. ООО «Единое Видео». VK Видео: vkvideo.ru<br />Соглашение: vkvideo.ru/legal/terms. VK - ВК. erid: 2RanynDT8xa.</div></div></div></div><div class="banner js-banner" data-config-name="desktop_show_up"></div><div class="banner js-banner js-geo-banner" data-config-name="billboard" id="billboard"></div><main class="layout__content js-site-container"><div class="topic-page__wrap js-topic" data-test-id="topic" data-topic-type="news" id="newsBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"><div class="topic-page__anchor-wrap"><div class="topic-page__anchor js-topic-page-anchor" data-id="newsBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt" data-topic-type="news"></div></div><div class="rubric-header"><div class="rubric-header__title-wrap"><div class="rubric-header__title">Мир</div></div><div class="rubric-header__container _world"><a class="rubric-header__link" href="/rubrics/world/">Все</a><a class="rubric-header__link _active" href="/rubrics/world/politic/">Политика</a><a class="rubric-header__link" href="/rubrics/world/society/">Общество</a><a class="rubric-header__link" href="/rubrics/world/accident/">Происшествия</a><a class="rubric-header__link" href="/rubrics/world/conflict/">Конфликты</a><a class="rubric-header__link" href="/rubrics/world/crime/">Преступность</a></div></div><div class="topic-page g-application _news"><div class="topic-page__container"><div class="topic-page__header"><div class="topic-header _news"><div class="topic-header__info"><div class="topic-header__left-box"><div class="topic-header__item"><button class="bookmark js-bookmark" data-topic-link="/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/"><svg class="bookmark__icon"><use xlink:href="#ui-bookmark"></use></svg></button></div><a class="topic-header__item topic-header__time" href="/2026/09/05/">02:47, 5 сентября 2026</a><span class="topic-header__updated-at">&nbsp;(обновлено: 02:51, 5 сентября 2026)</span><a class="topic-header__item topic-header__rubric" href="/rubrics/world/">Мир</a></div><div class="topic-header__sharings"><div class="sharings js-sharings"></div></div></div></div></div><div class="topic-page__content _news"><div class="topic-body _news"><h1 class="topic-body__titles"><span class="topic-body__title">В США раскрыли последствия вмешательства НАТО в украинский конфликт</span></h1><div class="topic-body__title-yandex">Политолог Миршаймер: НАТО серьезно пострадала из-за вмешательства в конфликт на Украине</div><div class="topic-authors _opened"><a class="topic-authors__author" href="/parts/authors/sovina/"><div class="topic-authors__photo-wrap"><img alt="Марина Совина" class="topic-authors__photo" loading="lazy" src="https://icdn.lenta.ru/images/2021/05/17/16/20210517163235241/portrait_981036c45c6aed8cc3e94afa5925b9ac.jpg" /></div><div class="topic-authors__info-wrap"><span class="topic-authors__name">Марина Совина</span><span class="topic-authors__job"> (ночной редактор)</span></div></a></div><div class="topic-body__origins"></div><div class="topic-body__title-image js-title-image"><figure class="picture _news"><div class="picture__image-wrap"><a class="topic-body__title-image-zoom" href="/comments/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/"><svg class="topic-body__title-image-icons"><use xlink:href="#ui-zoom_icons"></use></svg><img class="picture__image" height="160" loading="lazy" src="https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/owl_detail_240_ec6436d4e1c00d1dfce6beb25b1ddbf1.jpg" width="240" /></a></div><figcaption class="description"><p class="description__credits">Фото: Valentyn Ogirenko / Reuters</p></figcaption></figure></div><div class="topic-body__content js-topic-body-content" id="articleBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"><p class="topic-body__content-text">НАТО серьезно пострадала в результате конфликта на Украине, заявил американский политолог, профессор Чикагского университета Джон Миршаймер в эфире на <a href="https://www.youtube.com/watch?v=JzSq74Xwrqk" target="_blank">YouTube</a>-канале.</p><p class="topic-body__content-text">По его словам, альянсу был нанесен серьезный ущерб. «И это очень хорошо заметно по тому, что Америка заинтересована в сокращении своего присутствия в Европе, уменьшении своего влияния в НАТО и, по сути, в том, чтобы позволить европейцам играть гораздо более важную роль в управлении альянсом. Так что, я думаю, у альянса серьезные проблемы», — сказал он.</p><p class="topic-body__content-text">Миршаймер усомнился, что Европа сможет достичь консенсуса по вопросу вступления Украины в НАТО. Аналитик добавил, что с полученным ущербом страна не сможет стать ни частью этого блока, ни частью ЕС.</p><p class="topic-body__content-text">Ранее президент Украины Владимир Зеленский <a href="https://lenta.ru/news/2026/07/29/zelenskiy-raskritikoval-pozitsiyu-nato-po-ukraine/" target="_blank">заявил</a>, что Киеву непонятно, почему стране все еще не предложили членство в НАТО. Он добавил, что в Киеве членство в альянсе также считают одним из условий послевоенных гарантий Украине.</p><script>window._lentaData = window._lentaData || {};
+window._lentaData.s2s = window._lentaData.s2s || [];
+window._lentaData.s2s.push({"announce":"***","url_for_logo":"https://lenta.ru/brief/2026/08/24/rossiya/","url_for_scroll":"https://lenta.ru/brief/2026/08/24/rossiya/","label_image":{"original":{"width":140,"height":70,"url":"https://icdn.lenta.ru/images/2026/08/28/10/20260828105017721/original_cd8761a8a9bd7387a4e83219dff0698e.png"}},"desktop_image":{"original":{"width":1280,"height":854,"url":"https://icdn.lenta.ru/images/2026/08/28/10/20260828105024126/original_ac12673d6cacb9e2576fe5c2898de371.jpg"}},"mobile_image":{"original":{"width":320,"height":474,"url":"https://icdn.lenta.ru/images/2026/08/28/10/20260828105029460/original_1cd1a98425b5a3d790565a7637c6c728.jpg"}},"is_advertisable":false});</script></div></div><div class="topic-body-ghost js-topic-body-anchor"></div><div class="topic-footer js-topic-footer"><div class="box-external-video"><div class="box-external-video__eagle js-video-eagle" data-template="10740" data-vid="record::4bd343a1-f6c1-420f-91df-a04ef6742627" id="eagleplayer-4bd343a1-f6c1-420f-91df-a04ef6742627-news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"></div></div><script>window._lentaData = window._lentaData || {};
+window._lentaData.s2s = window._lentaData.s2s || [];
+window._lentaData.s2s.push({"announce":"Вот это да!","url_for_logo":"https://mirsupreme.lenta.ru","url_for_scroll":"https://mirsupreme.lenta.ru","label_image":{"original":{"width":150,"height":70,"url":"https://icdn.lenta.ru/images/2025/03/21/11/20250321111123693/original_5756b6dff01f7069776b482fc946b718.png"}},"desktop_image":{"original":{"width":1280,"height":854,"url":"https://icdn.lenta.ru/images/2025/03/21/11/20250321111152053/original_ae5efa117997884bf6d6ee35ae561ee3.jpg"}},"mobile_image":{"original":{"width":1280,"height":854,"url":"https://icdn.lenta.ru/images/2025/03/21/11/20250321111157936/original_ae5efa117997884bf6d6ee35ae561ee3.jpg"}},"is_advertisable":false});</script><div class="opinion"><!--noindex--><div class="emoji-bar js-emoji-bar"><div class="emoji-bar__title">Что думаете?</div><ul class="emoji-bar__emoji-list js-emoji-list"></ul></div><!--/noindex--><div class="comments"><a class="comments__btn" href="/comments/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/">Обсудить<span class="comments__count js-comments-count" id="comments-count-news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"></span></a></div></div><div class="banner js-banner" data-config-name="100%x240"></div></div></div><div class="topic-aside"></div></div><div class="sidebar"><div class="sidebar__okko banner js-banner" data-config-name="okko_top"></div><div class="sidebar-topnews"><h2 class="sidebar-topnews__title">Последние новости</h2><div class="sidebar-topnews__topics"><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/long-vsu-poluchili-prikaz-soblyudat-rezhim-tishiny-kiev-prekratit-ogon-na-neskolko-dney-s-chem-svyazno-reshenie-ukrainy/"><div class="card-mini__text"><span class="card-mini__title">ВСУ получили приказ соблюдать режим тишины. Киев прекратит огонь на несколько дней. С чем связано это решение?</span><div class="card-mini__info"><time class="card-mini__info-item">00:48</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/v-op-otsenili-uvolnenie-uchiteley-za-foto-v-kupalnikah/"><div class="card-mini__text"><span class="card-mini__title">В ОП оценили увольнение учителей за фото в купальниках</span><div class="card-mini__info"><time class="card-mini__info-item">02:40</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="https://lenta.news/news/2026/09/05/raskryto-znachenie-osvobozhdeniya-vs-rossii-sela-gruzskoe-v-dnr/"><div class="card-mini__text"><span class="card-mini__title">Раскрыто значение освобождения ВС России села Грузское в ДНР</span><div class="card-mini__info"><time class="card-mini__info-item">02:13</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/tramp-raskryl-dohody-ot-chempionata-mira-po-futbolu/"><div class="card-mini__text"><span class="card-mini__title">Трамп раскрыл доходы от чемпионата мира по футболу</span><div class="card-mini__info"><time class="card-mini__info-item">02:10</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/v-rossii-raskryli-tsel-ugroz-zelenskogo-v-adres-grazhdanskoy-aviatsii/"><div class="card-mini__text"><span class="card-mini__title">В России раскрыли цель угроз Зеленского в адрес гражданской авиации</span><div class="card-mini__info"><time class="card-mini__info-item">01:56</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="https://lenta.news/news/2026/09/05/v-es-zayavili-ob-isterike-zelenskogo/"><div class="card-mini__text"><span class="card-mini__title">В ЕС заявили об истерике Зеленского</span><div class="card-mini__info"><time class="card-mini__info-item">01:47</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/miroshnik-raskryl-zelenskiy-svyazyvaet-prilyot-drona-v-ofis-sbu-s-rossiey/"><div class="card-mini__text"><span class="card-mini__title">В МИД России раскрыли позицию Зеленского по прилету дрона в офис СБУ</span><div class="card-mini__info"><time class="card-mini__info-item">01:40</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/stalo-izvestno-ob-ozhidanii-novyh-sanktsiy-ssha-protiv-mus/"><div class="card-mini__text"><span class="card-mini__title">Стало известно об ожидании новых санкций США против МУС</span><div class="card-mini__info"><time class="card-mini__info-item">01:31</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/marochko-rasskazal-o-strategicheskom-uspehe-vs-rossii/"><div class="card-mini__text"><span class="card-mini__title">Марочко рассказал о стратегическом успехе ВС России</span><div class="card-mini__info"><time class="card-mini__info-item">01:16</time></div></div></a><a class="card-mini _compact _sidebar-topnews" data-testid="card-mini" href="/news/2026/09/05/shkolnikam-dali-sovet-o-pravilnom-noshenii-ryukzaka/"><div class="card-mini__text"><span class="card-mini__title">Школьникам дали совет о правильном ношении рюкзака</span><div class="card-mini__info"><time class="card-mini__info-item">00:40</time></div></div></a></div><a class="sidebar-topnews__button" target="_blank" href="/parts/news/">Все новости</a></div><div class="sidebar__sticky"><div class="banner js-banner" data-config-name="240x400"></div><div class="banner banner-card js-banner" data-config-name="300x300"></div></div></div><script>window._lentaData = window._lentaData || {};
+window._lentaData.infinityScroll = true;</script><script class="json-topic-info" type="application/json">{
+  "type":  "NewsArticle",
+  "headline": "В США раскрыли последствия вмешательства НАТО в украинский конфликт",
+  "alternativeHeadline": "Политолог Миршаймер: НАТО серьезно пострадала из-за вмешательства в конфликт на Украине",
+  "url": "https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/#newsBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/#newsBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"
+  },
+  "thumbnailUrl": ["https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/square_1280_5712ff0a080bfabecca20eaa2e60950c.jpg","https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_4_3_9aa4eae64f16fc04f81060ba602a818d.jpg","https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_16_9_1825a1d4339500496bd233d1e9bb1ac5.jpg"],
+  "dateCreated": "2026-09-05T02:47:00+03:00",
+  "dateUpdated": "2026-09-05T02:51:17+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Марина Совина",
+    "url": "https://lenta.ru/parts/authors/sovina/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lenta.ru",
+    "url": "https://lenta.ru/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://icdn.lenta.ru/assets/webpack/images/lenta_logo_pwa.78bc0e5e.png",
+      "width": 302,
+      "height": 60
+    }
+  },
+  "image": [{"@type":"ImageObject","representativeOfPage":"true","url":"https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/square_1280_5712ff0a080bfabecca20eaa2e60950c.jpg","width":1280,"height":1280},{"@type":"ImageObject","representativeOfPage":"true","url":"https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_4_3_9aa4eae64f16fc04f81060ba602a818d.jpg","width":1280,"height":960},{"@type":"ImageObject","representativeOfPage":"true","url":"https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/wide_16_9_1825a1d4339500496bd233d1e9bb1ac5.jpg","width":1280,"height":720}],
+  "articleBody": {
+    "@type": "Text",
+    "@id": "#newsBody_news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt"
+  },
+  "title": "В США раскрыли последствия вмешательства НАТО в украинский конфликт: Политика: Мир: Lenta.ru",
+  "ogTitle": "В США раскрыли последствия вмешательства НАТО в украинский конфликт",
+  "description": "",
+  "text": "НАТО серьезно пострадала в результате конфликта на Украине, заявил американский политолог, профессор Чикагского университета Джон Миршаймер в эфире на YouTube-канале. По его словам, альянсу был нанесен серьезный ущерб. «И это очень хорошо заметно по тому, что Америка заинтересована в сокращении своего присутствия в Европе, уменьшении своего влияния в НАТО и, по сути, в том, чтобы позволить европейцам играть гораздо более важную роль в управлении альянсом. Так что, я думаю, у альянса серьезные проблемы», — сказал он. Миршаймер усомнился, что Европа сможет достичь консенсуса по вопросу вступления Украины в НАТО. Аналитик добавил, что с полученным ущербом страна не сможет стать ни частью этого блока, ни частью ЕС. Ранее президент Украины Владимир Зеленский заявил, что Киеву непонятно, почему стране все еще не предложили членство в НАТО. Он добавил, что в Киеве членство в альянсе также считают одним из условий послевоенных гарантий Украине.",
+  "link": "/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/",
+  "linkWithParams": "/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/",
+  "isGood": false,
+  "ogImage": "https://icdn.lenta.ru/images/2026/09/05/02/20260905025125223/share_9966c0185c1d58ad76c6382d3da96742.jpg",
+  "partSlug": "",
+  "rubricSlug": "world",
+  "id": "37d461f1ef4675a662e07c889b8fcd60"
+}</script></div><!--noindex--><div class="traffic-exchange js-traffic-exchange" data-type="owl_horizontal" id="news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt_exchange_bottom"><script>window._lentaData = window._lentaData || {};
+window._lentaData.exchange = window._lentaData.exchange || {};
+window._lentaData.exchange.banners = window._lentaData.exchange.banners || [];
+window._lentaData.exchange.banners.push({
+  blockId: "99317",
+  type: "smi2",
+  markup: "\u003cdiv id=\"unit_99317\"\u003e\u003ca href=\"https://smi2.ru/\"\u003eНовости СМИ2\u003c/a\u003e\u003c/div\u003e",
+  elementId: "news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt_exchange_bottom"
+});</script><script>window._lentaData = window._lentaData || {};
+window._lentaData.exchange = window._lentaData.exchange || {};
+window._lentaData.exchange.banners = window._lentaData.exchange.banners || [];
+window._lentaData.exchange.banners.push({
+  blockId: "24787",
+  type: "24smi",
+  markup: "\u003cdiv class=\"smi24__informer smi24__auto\" data-smi-blockid=\"24787\"\u003e\u003c/div\u003e",
+  elementId: "news-2026-09-05-v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt_exchange_bottom"
+});</script></div><!--/noindex--></div><div class="topic-page__infinity-scroll-loader js-infinity-scroll-loader _show"><svg class="topic-page__loader-svg"><use xlink:href="#ui-loader"></use></svg></div></main><div class="megaboard-container"><div class="banner js-banner" data-config-name="block_pad_id_579524606_432172862"></div></div><div class="layout__footer-s2s js-s2s-container"></div><div class="layout__footer-ghost js-layout-footer-anchor"></div><div class="layout__footer js-layout-footer"><div class="footer"><div class="footer__menu"><div class="footer__links"><a class="footer__link" href="/info/">Редакция</a><a class="footer__link" href="/info/posts/sales">Реклама</a><a class="footer__link" href="/info/posts/contacts">Контакты</a><a class="footer__link" href="/parts/pressreleases/">Пресс-релизы</a><a class="footer__link" href="mailto:it@lenta-co.ru">Техподдержка</a><a class="footer__link" href="/specprojects/">Спецпроекты</a><a target="_blank" class="footer__link" href="https://ramblergroup.com/career">Вакансии</a><a class="footer__link" href="/rss">RSS</a><a class="footer__link" href="/legal/">Правовая информация</a><a class="footer__link" href="/minigames">Мини-игры</a></div></div><div class="footer__versions"><div class="footer__copyright">&copy; 1999&ndash;2026 ООО «Лента.Ру»</div><div class="footer__erratum"><div class="footer__erratum-text">Нашли опечатку? Нажмите</div><div class="footer__erratum-dark">Ctrl+Enter</div></div><div class="footer__age-limit">18+</div></div></div></div></div><div class="goodnews-popup js-goodnews-popup _hide"><!--noindex--><div class="goodnews-popup__wrap"><div class="goodnews-popup__text"><div class="goodnews-popup__title">Лента добра деактивирована.</div><div class="goodnews-popup__subtitle">Добро пожаловать в реальный мир.</div></div></div><!--/noindex--></div><div class="missed-news js-missed-news"><button class="missed-news__alert js-missed-news-alert"><span class="missed-news__title js-missed-news-count" data-count="0">Новые материалы</span></button><div class="missed-news__popup js-missed-news-popup"><div class="missed-news__popup-content"><button class="missed-news__close js-missed-news-close"></button><div class="missed-news__list-wrap js-missed-news-wrap"></div><a class="missed-news__button js-parts-button" target="_blank" href="/parts/news/">Все новости</a></div></div></div><div class="cookies-notification js-cookies-notification"><div class="cookies-notification__message">На сайте используются cookies. Продолжая использовать сайт, вы принимаете&nbsp;<a target="_blank" rel="noreferrer" class="cookies-notification__link" href="/info/posts/terms_of_use/">условия</a></div><div class="cookies-notification__confirm js-cookies-confirm">Ok<div class="cookies-notification__progress-bar"><svg class="cookies-notification__progress-circle" viewBox="0 0 32 32"><circle class="cookies-notification__progress-circle-bg" cx="16" cy="16" fill="none" r="14" stroke="#595959" stroke-width="2"></circle><circle class="cookies-notification__progress-circle-fg js-progress-circle" cx="16" cy="16" fill="none" r="14" stroke="#fff" stroke-width="2"></circle></svg></div></div></div></div><script>(function(m,e,t,r,i,k,a){
+  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.webvisor.org/metrika/tag_ww.js', 'ym');
+ym(27714477, 'init', {
+  webvisor:true,
+  clickmap:true,
+  accurateTrackBounce:true,
+  trackLinks:true,
+  defer: true,
+  params: {
+    app_type: 'Web - Desktop',
+    mode: "default",
+    news_type: "bad"
+  }
+});</script><noscript><div><img alt="" src="//mc.yandex.ru/watch/27714477" style="position:absolute; left:-9999px;" /></div></noscript><script>function isLocalStorageEnabled() {
+  try {
+    window.localStorage;
+    return true;
+  } catch {
+    return false;
+  }
+}
+function getCookie(name) {
+  const regexp = new RegExp(`(?:^|; )${name}=(.*?)(?:;|$)`);
+  const result = document.cookie.match(regexp);
+  return result && result[1];
+}
+var PROJECT_ID = 80674;
+(function (w, d, c) {
+  (w[c] = w[c] || []).push(function() {
+    var abRecSys = (getCookie('ab-5966') === '1') ? 'test' : 'control';
+    var options = {
+      project: PROJECT_ID,
+      chapters: ["Главная_страница","Страница_подраздела","lenta.ru"], // Chapters страницы
+      attributes_dataset: ["lenta"],
+      user_id: isLocalStorageEnabled() && localStorage.getItem('user_id') || null,
+      pubId: getCookie('lid'),
+      pubScope: '.lenta.ru',
+      ramblerId: null,
+      email: null,
+      splits: [`scroll_web_${abRecSys}`],
+      checkInit: true
+    };
+    try {
+      w.top100Counter = new top100(options);
+    } catch(e) { }
+  });
+
+  var n = d.getElementsByTagName("script")[0],
+    s = d.createElement("script"),
+    f = function () { n.parentNode.insertBefore(s, n); };
+  s.type = "text/javascript";
+  s.async = true;
+  s.src =
+    (d.location.protocol == "https:" ? "https:" : "http:") +
+    "//st.top100.ru/top100/top100.js";
+
+  if (w.opera == "[object Opera]") {
+    d.addEventListener("DOMContentLoaded", f, false);
+  } else { f(); }
+})(window, document, "_top100q");</script><noscript><img src="//counter.rambler.ru/top100.cnt?pid=80674" /></noscript><script>(function(win, doc, cb) {
+  (win[cb] = win[cb] || []).push(function() {
+    var options = {
+      'account': 'rambler_ru',
+      'tmsec': "lenta_world"
+    };
+    try {
+      tnsCounterRambler_ru = new TNS.TnsCounter(options);
+    } catch(e) { }
+  });
+
+  var tnsscript = doc.createElement('script');
+  tnsscript.type = 'text/javascript';
+  tnsscript.async = true;
+  tnsscript.src = ('https:' == doc.location.protocol ? 'https:' : 'http:') +
+    '//www.tns-counter.ru/tcounter.js';
+  var s = doc.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(tnsscript, s);
+})(window, this.document, 'tnscounter_callback');</script><noscript><img alt="" height="0" src="//www.tns-counter.ru/V13a****rambler_ru/ru/UTF-8/tmsec=lenta_world/" width="0" /></noscript><script>var _tmr = window._tmr || (window._tmr = []);
+_tmr.push({id: "3311946", type: "pageView", start: (new Date()).getTime()});
+(function (d, w, id) {
+  if (d.getElementById(id)) return;
+  var ts = d.createElement("script");
+  ts.type = "text/javascript";
+  ts.async = true;
+  ts.id = id;
+  ts.src = "https://top-fwz1.mail.ru/js/code.js";
+  var f = function () {
+    var s = d.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(ts, s);
+  };
+  if (w.opera == "[object Opera]") {
+    d.addEventListener("DOMContentLoaded", f, false);
+  } else {
+    f();
+  }
+})(document, window, "tmr-code");</script><noscript><div><img alt="Top.Mail.Ru" src="https://top-fwz1.mail.ru/counter?id=3311946;js=na" style="position:absolute;left:-9999px;" /></div></noscript><script>window._lentaData = window._lentaData || {};
+window._lentaData.branding = "";
+window._lentaData.okkoSport = "{\"erid_header\":\"2RanymKLuop\",\"erid_board\":\"2Ranykrf8jc\",\"board_link\":\"https://okko.sport/sport/live_event/uefachampionsleague-final-25-26?utm_source=lenta\u0026utm_medium=fix\u0026utm_campaign=sbrm_media_b4sw_uefachampionsleague_may26\u0026utm_content=special\u0026utm_term=banner_main_banner_Y2026052518244221\",\"topline_link\":\"https://okko.sport/sport/live_event/uefachampionsleague-final-25-26?utm_source=lenta\u0026utm_medium=fix\u0026utm_campaign=sbrm_media_b4sw_uefachampionsleague_may26\u0026utm_content=special\u0026utm_term=banner_main_logo_Y2026052518244714\",\"utm_header\":\"\",\"utm_board\":\"\",\"matches\":[{\"homeTeamName\":\"ПСЖ\",\"awayTeamName\":\"Арсенал\",\"start_at\":1780156800,\"game_id\":1302918,\"landingUrl\":\"https://okko.sport/sport/live_event/okko-sport-football?utm_source=lenta\u0026utm_medium=fix\u0026utm_campaign=sbrm_media_b4sw_uefachampionsleague_may26\u0026utm_content=special\u0026utm_term=banner_main_psg-arsenal_Y2026052520424790\",\"match_utm_header\":\"\",\"match_utm_board\":\"\",\"toplineDisplay\":true}]}";
+window._lentaData.geoBanners = "{}";
+
+
+window._lentaData.info = window._lentaData.info || {};
+window._lentaData.info = {
+  ...window._lentaData.info,
+  section: "world"
+}
+
+function getXuid() {
+  const result = document.cookie.match(/(?:^|; )lid=(.*?)(?:;|$)/);
+  return result && result[1];
+}
+window._config_aab = {
+  publisherFirstParty: {
+    uid: getXuid(),
+    scope: '.lenta.ru'
+  }
+};</script></body></html>

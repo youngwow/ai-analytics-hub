@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Новое на сайте</title>
+    <description>Новое на сайте</description>
+    <copyright>Банк России</copyright>
+    <atom:link href="https://www.cbr.ru/rss/RssNews" rel="self" type="application/rss+xml" />
+    <link>https://www.cbr.ru/development/RSS/</link>
+    <language>ru-RU</language>
+    <lastBuildDate>Fri, 04 Sep 2026 19:05:42 +0300</lastBuildDate>
+    <item>
+      <title>Реестр лицензий на осуществление клиринговой деятельности</title>
+      <link>https://www.cbr.ru/registries/rcb/#a_14172</link>
+      <guid isPermaLink="false">ID_9286</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 19:05:42 +0300</pubDate>
+    </item>
+    <item>
+      <title>Реестр операторов обмена цифровых финансовых активов</title>
+      <link>https://www.cbr.ru/registries/admissionfinmarket/#a_150412</link>
+      <guid isPermaLink="false">ID_35763</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 19:05:41 +0300</pubDate>
+    </item>
+    <item>
+      <title>Реестр лицензий бирж и торговых систем</title>
+      <link>https://www.cbr.ru/registries/rcb/#a_14174</link>
+      <guid isPermaLink="false">ID_9289</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 19:05:41 +0300</pubDate>
+    </item>
+    <item>
+      <title>Финансовые активы и обязательства домашних хозяйств по отдельным финансовым инструментам</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/households/#a_135596page</link>
+      <guid isPermaLink="false">ID_60755</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 17:51:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Информационный бюллетень «Сведения о рынке ипотечного жилищного кредитования в России» № 7 (75) • Июль 2026 года</title>
+      <link>https://www.cbr.ru/statistics/bank_sector/mortgage/mortgage_lending_market/#a_108513</link>
+      <guid isPermaLink="false">ID_60754</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 17:43:25 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Денежные агрегаты — оценка</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/dkfs/#a_144421page</link>
+      <guid isPermaLink="false">ID_60753</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 17:33:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Динамические ряды показателей отдельных таблиц сборника «Статистические показатели банковского сектора Российской Федерации»</title>
+      <link>https://www.cbr.ru/statistics/bank_sector/review/#a_115862file</link>
+      <guid isPermaLink="false">ID_60752</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 16:25:51 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>«Статистические показатели банковского сектора Российской Федерации» (Интернет–версия) № 287 за июль 2026 года</title>
+      <link>https://www.cbr.ru/statistics/bank_sector/review/#a_48871</link>
+      <guid isPermaLink="false">ID_60751</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 16:25:51 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Вмененная ставка валютного свопа овернайт в юанях</title>
+      <link>https://www.cbr.ru/hd_base/impliedratecny/</link>
+      <guid isPermaLink="false">ID_57989</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 16:13:02 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Инсайдерская информация Банка России</title>
+      <link>https://www.cbr.ru/analytics/insideinfo/</link>
+      <guid isPermaLink="false">ID_30486</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 16:01:23 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Решения Банка России в отношении участников финансового рынка</title>
+      <link>https://www.cbr.ru/rbr/rbr_fr/</link>
+      <guid isPermaLink="false">ID_9973</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 15:49:56 +0300</pubDate>
+    </item>
+    <item>
+      <title>Финансовые активы и обязательства сектора «Домашние хозяйства» по отдельным финансовым инструментам (ежемесячные данные)</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/households/#a_133181</link>
+      <guid isPermaLink="false">ID_28865</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 15:15:20 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Операции сектора «Домашние хозяйства» с финансовыми активами и обязательствами по отдельным финансовым инструментам (ежемесячные данные)</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/households/#a_133183</link>
+      <guid isPermaLink="false">ID_28867</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 15:15:19 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Денежная база (в узком определении, ежемесячные значения)</title>
+      <link>https://www.cbr.ru/hd_base/mb_nd/mb_nd_month/</link>
+      <guid isPermaLink="false">ID_10285</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 15:11:31 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Ставки группы MIACR</title>
+      <link>https://www.cbr.ru/hd_base/mkr/mkr_base/</link>
+      <guid isPermaLink="false">ID_9975</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 15:07:17 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Индекс и срочная версия RUONIA</title>
+      <link>https://www.cbr.ru/hd_base/ruonia/sv_ruonia/</link>
+      <guid isPermaLink="false">ID_26025</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 15:01:26 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Ставка RUONIA</title>
+      <link>https://www.cbr.ru/hd_base/ruonia/</link>
+      <guid isPermaLink="false">ID_39944</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 14:22:19 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Среднемесячные фактические ставки по кредитам, предоставленным московскими банками (MIACR, MIACR-IG, MIACR-B)</title>
+      <link>https://www.cbr.ru/hd_base/mkr/mkr_monthes/</link>
+      <guid isPermaLink="false">ID_10270</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 13:20:42 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Интерактивное представление актуальных статистических данных</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/svs/interactive/</link>
+      <guid isPermaLink="false">ID_23055</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 12:42:36 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Основные направления развития статистической деятельности Банка России на период 2026 – 2030 годов</title>
+      <link>https://www.cbr.ru/about_br/publ/stat/#a_198031file</link>
+      <guid isPermaLink="false">ID_60750</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 11:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Денежная база (в узком определении, еженедельные значения)</title>
+      <link>https://www.cbr.ru/hd_base/mb_nd/mb_nd_weekly/</link>
+      <guid isPermaLink="false">ID_10139</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 11:00:00 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Статистика национальной платежной системы</title>
+      <link>https://www.cbr.ru/statistics/nps/psrf/</link>
+      <guid isPermaLink="false">ID_60749</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 10:30:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Развитие национальной платежной системы в II квартале 2026 года</title>
+      <link>https://www.cbr.ru/analytics/nps/#a_190292</link>
+      <guid isPermaLink="false">ID_60748</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 10:30:00 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Долг организаций и домашних хозяйств по банковским кредитам и выпущенным долговым ценным бумагам</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/dkfs/#a_54742</link>
+      <guid isPermaLink="false">ID_10287</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 09:57:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Обеспечение по операциям РЕПО c Банком России в валюте Российской Федерации</title>
+      <link>https://www.cbr.ru/hd_base/infodirectreporub/</link>
+      <guid isPermaLink="false">ID_6734</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 09:28:50 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Условия заключения сделок «валютный своп» по продаже иностранной валюты за рубли</title>
+      <link>https://www.cbr.ru/hd_base/swap_info/sell/</link>
+      <guid isPermaLink="false">ID_33664</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 09:25:03 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Реестр приостановленных лицензий профессиональных участников рынка ценных бумаг</title>
+      <link>https://www.cbr.ru/registries/rcb/#a_14177</link>
+      <guid isPermaLink="false">ID_9295</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 09:19:13 +0300</pubDate>
+    </item>
+    <item>
+      <title>Депозиты банков в Банке России</title>
+      <link>https://www.cbr.ru/hd_base/ostat_depo_new/</link>
+      <guid isPermaLink="false">ID_10163</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 09:11:24 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>«Мониторинг региональных рисков недобросовестных действий в ОСАГО» № 28 • на 01.07.2026</title>
+      <link>https://www.cbr.ru/analytics/insurance/#a_98692</link>
+      <guid isPermaLink="false">ID_60747</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 07:00:00 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Условия предоставления кредитов постоянного действия</title>
+      <link>https://www.cbr.ru/DKP/creditco/</link>
+      <guid isPermaLink="false">ID_4076</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 06:13:05 +0300</pubDate>
+      <category>Денежно-кредитная политика</category>
+    </item>
+    <item>
+      <title>Условия проведения Банком России депозитных операций постоянного действия</title>
+      <link>https://www.cbr.ru/DKP/depfNew/</link>
+      <guid isPermaLink="false">ID_11215</guid>
+      <description />
+      <pubDate>Fri, 04 Sep 2026 01:01:20 +0300</pubDate>
+      <category>Денежно-кредитная политика</category>
+    </item>
+    <item>
+      <title>Информация о ценных бумагах, принимаемых в обеспечение по кредитам Банка России на 04.09.2026</title>
+      <link>https://www.cbr.ru/hd_base/BankPapers/</link>
+      <guid isPermaLink="false">ID_10072</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 21:26:51 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Новое измерение заякоренности инфляционных ожиданий: динамика и детерминанты для России</title>
+      <link>https://www.cbr.ru/ec_research/ser/#a_198035page</link>
+      <guid isPermaLink="false">ID_60745</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 19:04:42 +0300</pubDate>
+    </item>
+    <item>
+      <title>Тенденции на рынке МФО за II квартал 2026 года</title>
+      <link>https://www.cbr.ru/analytics/microfinance/#a_103884</link>
+      <guid isPermaLink="false">ID_60744</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 18:04:17 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Комментарии Банка России: Динамика международных резервов Российской Федерации</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/external_sector/ir/#a_165045page</link>
+      <guid isPermaLink="false">ID_60743</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 16:00:01 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Международные резервы Российской Федерации (еженедельные значения на конец отчетной даты)</title>
+      <link>https://www.cbr.ru/hd_base/mrrf/mrrf_7d/</link>
+      <guid isPermaLink="false">ID_10204</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 16:00:00 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Указание Банка России от 22.07.2026 № 7419-У</title>
+      <link>https://www.cbr.ru/Queries/UniDbQuery/File/90134/8578</link>
+      <guid isPermaLink="false">ID_60742</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 14:55:00 +0300</pubDate>
+      <category>Документы</category>
+    </item>
+    <item>
+      <title>Организации, с которыми Банк России заключил соглашения (договоры) о распространении памятных и инвестиционных монет</title>
+      <link>https://www.cbr.ru/cash_circulation/memorable_coins/list_org_coins/</link>
+      <guid isPermaLink="false">ID_60740</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 13:46:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Указание Банка России от 15.07.2026 № 7418-У</title>
+      <link>https://www.cbr.ru/Queries/UniDbQuery/File/90134/8577</link>
+      <guid isPermaLink="false">ID_60739</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 12:43:00 +0300</pubDate>
+      <category>Документы</category>
+    </item>
+    <item>
+      <title>«Вестник Банка России» № 29 (2618) от 3 сентября 2026 года</title>
+      <link>https://www.cbr.ru/Queries/XsltBlock/File/131643/-1/2618</link>
+      <guid isPermaLink="false">ID_60738</guid>
+      <description />
+      <pubDate>Thu, 03 Sep 2026 11:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Доклад «Региональная экономика: комментарии ГУ» № 46 • сентябрь 2026 года</title>
+      <link>https://www.cbr.ru/analytics/dkp/reg_review/#a_118418</link>
+      <guid isPermaLink="false">ID_60737</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 19:00:00 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Аналитические показатели недельного новостного индекса</title>
+      <link>https://www.cbr.ru/ec_research/mb/#a_131254</link>
+      <guid isPermaLink="false">ID_28496</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 18:56:33 +0300</pubDate>
+    </item>
+    <item>
+      <title>Новостной индекс деловой активности в августе 2026 года</title>
+      <link>https://www.cbr.ru/ec_research/mb/#a_62316</link>
+      <guid isPermaLink="false">ID_60736</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 17:52:10 +0300</pubDate>
+    </item>
+    <item>
+      <title>Обзор финансового сектора</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/dkfs/#a_54704</link>
+      <guid isPermaLink="false">ID_2724</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 17:36:37 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Обзор других финансовых организаций</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/dkfs/#a_54701</link>
+      <guid isPermaLink="false">ID_6292</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 17:36:36 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Финансовые счета системы национальных счетов Российской Федерации</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/fafbs/#a_185550page</link>
+      <guid isPermaLink="false">ID_60734</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 17:22:36 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Ответы на вопросы о системе быстрых переводов ценных бумаг</title>
+      <link>https://www.cbr.ru/faq/rsts/</link>
+      <guid isPermaLink="false">ID_60733</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 16:33:40 +0300</pubDate>
+    </item>
+    <item>
+      <title>Указание Банка России от 13.07.2026 № 7417-У</title>
+      <link>https://www.cbr.ru/Queries/UniDbQuery/File/90134/8576</link>
+      <guid isPermaLink="false">ID_60732</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 15:39:00 +0300</pubDate>
+      <category>Документы</category>
+    </item>
+    <item>
+      <title>Макроэкономический опрос Банка России</title>
+      <link>https://www.cbr.ru/statistics/ddkp/#a_120880page</link>
+      <guid isPermaLink="false">ID_60731</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 15:38:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Указание Банка России от 25.05.2026 № 7353-У</title>
+      <link>https://www.cbr.ru/Queries/UniDbQuery/File/90134/8575</link>
+      <guid isPermaLink="false">ID_60729</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 15:34:00 +0300</pubDate>
+      <category>Документы</category>
+    </item>
+    <item>
+      <title>Аналитический обзор «Банковский сектор» за II квартал 2026 года</title>
+      <link>https://www.cbr.ru/analytics/bank_sector/analytical_review_bs/#a_123445</link>
+      <guid isPermaLink="false">ID_60728</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 12:00:00 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>«Вестник Банка России» № 28 (2617) от 2 сентября 2026 года</title>
+      <link>https://www.cbr.ru/Queries/XsltBlock/File/131643/-1/2617</link>
+      <guid isPermaLink="false">ID_60725</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 11:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Информационное сообщение об отражении в отчетности по форме 0420162 «Сведения о деятельности страховщика» сведений об осуществлении страховой организацией отдельных видов страхования жизни</title>
+      <link>https://www.cbr.ru/projects_xbrl/explan/#a_197960file</link>
+      <guid isPermaLink="false">ID_60727</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 10:08:30 +0300</pubDate>
+    </item>
+    <item>
+      <title>Информационное сообщение о составлении отчетности страховщиков в связи с вступлением в силу Указания Банка России от 06.04.2026 № 7341-У «О внесении изменений в Положение Банка России от 17.06.2025 № 858-П»</title>
+      <link>https://www.cbr.ru/projects_xbrl/explan/#a_197959file</link>
+      <guid isPermaLink="false">ID_60726</guid>
+      <description />
+      <pubDate>Wed, 02 Sep 2026 10:08:30 +0300</pubDate>
+    </item>
+    <item>
+      <title>Решение Совета директоров Банка России об установлении периода, в течение которого не подлежит применению ограничение значения полной стоимости потребительского займа, обязательства по которому обеспечены ипотекой, в отношении ипотечных МКК</title>
+      <link>https://www.cbr.ru/rbr/dir_decisions/rsd_2026-08-28_44_01/</link>
+      <guid isPermaLink="false">ID_60724</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 19:09:11 +0300</pubDate>
+    </item>
+    <item>
+      <title>Бюллетень «О чем говорят тренды» № 6 (89) / Сентябрь 2026 года</title>
+      <link>https://www.cbr.ru/ec_research/mb/#a_16760</link>
+      <guid isPermaLink="false">ID_60722</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 18:40:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Информация о ходе ликвидационных процедур в отношении негосударственных пенсионных фондов</title>
+      <link>https://www.cbr.ru/RSCI/likvid_npf/#a_170851</link>
+      <guid isPermaLink="false">ID_25492</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 15:05:59 +0300</pubDate>
+    </item>
+    <item>
+      <title>Информация о ходе ликвидационных процедур в отношении субъектов страхового дела, конкурсным управляющим (ликвидатором)  которых является ГК «АСВ»</title>
+      <link>https://www.cbr.ru/insurance/#a_120071</link>
+      <guid isPermaLink="false">ID_57972</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 15:05:58 +0300</pubDate>
+    </item>
+    <item>
+      <title>Основные производные показатели динамики обменного курса рубля</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/external_sector/er/#a_172664</link>
+      <guid isPermaLink="false">ID_46885</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 14:17:28 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Итоги депозитных аукционов</title>
+      <link>https://www.cbr.ru/hd_base/itogidepauct/</link>
+      <guid isPermaLink="false">ID_10166</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 13:30:59 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Информация об операциях РЕПО (13:30)</title>
+      <link>https://www.cbr.ru/hd_base/repo/</link>
+      <guid isPermaLink="false">ID_19242</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 13:30:53 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Списки саморегулируемых организаций арбитражных управляющих</title>
+      <link>https://www.cbr.ru/registries/sro/#a_46909</link>
+      <guid isPermaLink="false">ID_14680</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 11:22:52 +0300</pubDate>
+    </item>
+    <item>
+      <title>Прогноз факторов формирования ликвидности банковского сектора для определения лимита по рыночным операциям Банка России на срок 1 неделя</title>
+      <link>https://www.cbr.ru/statistics/pffl/</link>
+      <guid isPermaLink="false">ID_19135</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 11:03:13 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Ломбардный список Банка России</title>
+      <link>https://www.cbr.ru/analytics/lombardlist/</link>
+      <guid isPermaLink="false">ID_9896</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 10:47:06 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Параметры аукционов РЕПО в рублях</title>
+      <link>https://www.cbr.ru/hd_base/dirrepoauctionparam/</link>
+      <guid isPermaLink="false">ID_19239</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 10:46:39 +0300</pubDate>
+      <category>Базы данных</category>
+    </item>
+    <item>
+      <title>Значения показателя рыночной процентной ставки (РПС) для целей расчета резервов по ипотечным ссудам в рамках Положения Банка России № 590-П</title>
+      <link>https://www.cbr.ru/statistics/bank_sector/rps_590-p/#a_145759</link>
+      <guid isPermaLink="false">ID_34118</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 09:51:51 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Условия проведения депозитного аукциона «тонкой настройки»</title>
+      <link>https://www.cbr.ru/DKP/depoAuction/#thin</link>
+      <guid isPermaLink="false">ID_37428</guid>
+      <description />
+      <pubDate>Tue, 01 Sep 2026 09:42:57 +0300</pubDate>
+      <category>Денежно-кредитная политика</category>
+    </item>
+    <item>
+      <title>Динамика максимальной процентной ставки (по вкладам в российских рублях) десяти кредитных организаций, привлекающих наибольший объём депозитов физических лиц</title>
+      <link>https://www.cbr.ru/statistics/avgprocstav/</link>
+      <guid isPermaLink="false">ID_19727</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 18:40:56 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Решение Совета директоров Банка России о внесении изменений в Решение Совета директоров Банка России от 
+9 декабря 2025 года об обеспечении обособленного учета российских ценных бумаг, еврооблигаций и замещающих облигаций</title>
+      <link>https://www.cbr.ru/rbr/dir_decisions/rsd_2026-08-28_34_02/</link>
+      <guid isPermaLink="false">ID_60720</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 18:39:06 +0300</pubDate>
+    </item>
+    <item>
+      <title>Решение Совета директоров Банка России о требованиях к деятельности держателей реестра владельцев ценных бумаг и депозитариев при введении и прекращении временного управления ценными бумагами</title>
+      <link>https://www.cbr.ru/rbr/dir_decisions/rsd_2026-08-28_34_01/</link>
+      <guid isPermaLink="false">ID_60719</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 18:39:06 +0300</pubDate>
+    </item>
+    <item>
+      <title>Обзор событий в сфере противодействия отмыванию доходов, полученных преступным путем, и финансированию терроризма за период с 1 по 30 июня и с 1 по 31 июля 2026 года</title>
+      <link>https://www.cbr.ru/counteraction_m_ter/reveiw_podft/#a_111821</link>
+      <guid isPermaLink="false">ID_60718</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 18:18:15 +0300</pubDate>
+    </item>
+    <item>
+      <title>Календарь публикации официальной аналитической информации на сентябрь 2026 года</title>
+      <link>https://www.cbr.ru/calendar/#t2</link>
+      <guid isPermaLink="false">ID_60432</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 18:00:01 +0300</pubDate>
+    </item>
+    <item>
+      <title>Перечень кредитных потребительских кооперативов и сельскохозяйственных кредитных потребительских кооперативов, соответствующих требованиям пункта 3 части 7 статьи 10 Федерального закона от 29 декабря 2006 года № 256-ФЗ</title>
+      <link>https://www.cbr.ru/registries/microfinance/#a_145913</link>
+      <guid isPermaLink="false">ID_35461</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 17:55:49 +0300</pubDate>
+    </item>
+    <item>
+      <title>Разработка проектов нормативных актов, регулирующих отчетность кредитных организаций</title>
+      <link>https://www.cbr.ru/statistics/reporting/optimization/#a_159181</link>
+      <guid isPermaLink="false">ID_39825</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 17:40:41 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>О проектном финансировании строительства жилья в II квартале 2026 года</title>
+      <link>https://www.cbr.ru/analytics/bank_sector/#a_120863</link>
+      <guid isPermaLink="false">ID_60717</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 17:00:00 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Основные показатели деятельности негосударственных пенсионных фондов в разрезе субъектов Российской Федерации и иностранных государств за II квартал 2026 года</title>
+      <link>https://www.cbr.ru/statistics/RSCI/#a_131301</link>
+      <guid isPermaLink="false">ID_60716</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 16:31:01 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Сводные данные форм бухгалтерской (финансовой) отчетности негосударственных пенсионных фондов за II квартал 2026 года</title>
+      <link>https://www.cbr.ru/statistics/RSCI/#a_162013</link>
+      <guid isPermaLink="false">ID_60715</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 16:31:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Основные показатели деятельности негосударственных пенсионных фондов по состоянию на 30.06.2026</title>
+      <link>https://www.cbr.ru/finmarket/supervision/sv_coll/ops_npf/2026/#a_197292file</link>
+      <guid isPermaLink="false">ID_60714</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 16:31:00 +0300</pubDate>
+      <category>Финансовые рынки</category>
+    </item>
+    <item>
+      <title>Динамические ряды основных показателей деятельности негосударственных пенсионных фондов на 30.06.2026</title>
+      <link>https://www.cbr.ru/statistics/RSCI/npf_stat/#a_130741file</link>
+      <guid isPermaLink="false">ID_60713</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 16:31:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Обзор ключевых показателей негосударственных пенсионных фондов за II квартал 2026 года</title>
+      <link>https://www.cbr.ru/analytics/RSCI/activity_npf/rewiew_npf/#a_85256</link>
+      <guid isPermaLink="false">ID_60712</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 16:30:00 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Извещение о возможности предъявления требований, ООО РНКО "ЦИФРОВЫЕ РЕШЕНИЯ"</title>
+      <link>https://www.cbr.ru/finorg/foinfo/?ogrn=1247700832884&amp;li=2#likvid</link>
+      <guid isPermaLink="false">ID_60711</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 16:01:59 +0300</pubDate>
+    </item>
+    <item>
+      <title>Основные направления единой государственной денежно-кредитной политики на 2027 год и период 2028 и 2029 годов (проект от 31 августа 2026 года)</title>
+      <link>https://www.cbr.ru/about_br/publ/ondkp/#a_195228page</link>
+      <guid isPermaLink="false">ID_60709</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 14:00:01 +0300</pubDate>
+    </item>
+    <item>
+      <title>Сведения о поступивших заявках арбитражных управляющих на включение в Список арбитражных управляющих в деле о банкротстве финансовой организации</title>
+      <link>https://www.cbr.ru/registries/sro/#a_65382</link>
+      <guid isPermaLink="false">ID_14898</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 13:39:43 +0300</pubDate>
+    </item>
+    <item>
+      <title>Квартальные финансовые счета СНС</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/fafbs/#a_71913</link>
+      <guid isPermaLink="false">ID_53899</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 13:38:41 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Балансы финансовых активов и обязательств СНС</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/fafbs/#a_71914</link>
+      <guid isPermaLink="false">ID_53901</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 13:34:27 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Балансы финансовых активов и обязательств СНС (временные ряды)</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/fafbs/#a_71922</link>
+      <guid isPermaLink="false">ID_53897</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 13:34:26 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Квартальные финансовые счета СНС (временные ряды)</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/fafbs/#a_71921</link>
+      <guid isPermaLink="false">ID_53895</guid>
+      <description />
+      <pubDate>Mon, 31 Aug 2026 13:34:25 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Основные показатели бухгалтерского баланса и отчета о финансовых результатах управляющих компаний на 30.06.2026</title>
+      <link>https://www.cbr.ru/statistics/RSCI/#a_161699</link>
+      <guid isPermaLink="false">ID_60708</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 17:08:42 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Динамические ряды основных показателей деятельности управляющих компаний</title>
+      <link>https://www.cbr.ru/statistics/RSCI/uk_stat/</link>
+      <guid isPermaLink="false">ID_60707</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 17:08:42 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Динамические ряды основных показателей деятельности доверительных управляющих</title>
+      <link>https://www.cbr.ru/statistics/RSCI/du_stat/</link>
+      <guid isPermaLink="false">ID_60706</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 17:08:42 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Обзор ключевых показателей управляющих компаний за II квартал 2026 года</title>
+      <link>https://www.cbr.ru/analytics/RSCI/review_uk/#a_156354</link>
+      <guid isPermaLink="false">ID_60705</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 17:07:00 +0300</pubDate>
+      <category>Информационно-аналитические материалы</category>
+    </item>
+    <item>
+      <title>Обзор рынка ипотечного жилищного кредитования за июль 2026 года</title>
+      <link>https://www.cbr.ru/statistics/bank_sector/mortgage/#a_143737</link>
+      <guid isPermaLink="false">ID_60704</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 13:58:11 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Ипотека</title>
+      <link>https://www.cbr.ru/statistics/bank_sector/mortgage/</link>
+      <guid isPermaLink="false">ID_14979</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 13:57:41 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Информация о программно-технических средствах в системе наличного денежного обращения Российской Федерации на 01.07.2026</title>
+      <link>https://www.cbr.ru/statistics/cash_circulation/#a_154214</link>
+      <guid isPermaLink="false">ID_60703</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 11:23:27 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Проекты нормативных документов Банка России для публичного обсуждения</title>
+      <link>https://www.cbr.ru/project_na/?tab.current=t2#a_6820</link>
+      <guid isPermaLink="false">ID_60702</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 11:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Приказ Банка России от 24.08.2026 № ОД-1475</title>
+      <link>https://www.cbr.ru/Crosscut/LawActs/File/12234</link>
+      <guid isPermaLink="false">ID_60701</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 10:30:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Сведения о размещенных и привлеченных средствах</title>
+      <link>https://www.cbr.ru/statistics/bank_sector/sors/</link>
+      <guid isPermaLink="false">ID_19309</guid>
+      <description />
+      <pubDate>Fri, 28 Aug 2026 10:03:14 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Доля инвестиций нерезидентов в объеме выпусков облигаций федерального займа</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/external_sector/pofi/#a_164863</link>
+      <guid isPermaLink="false">ID_45317</guid>
+      <description />
+      <pubDate>Thu, 27 Aug 2026 16:41:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Выпущенные на внутреннем рынке долговые ценные бумаги, включенные в сектор устойчивого развития</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/sec_st/#a_148398page</link>
+      <guid isPermaLink="false">ID_60699</guid>
+      <description />
+      <pubDate>Thu, 27 Aug 2026 16:40:00 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+    <item>
+      <title>Выпущенные на внутреннем рынке долговые ценные бумаги, включенные в сектор устойчивого развития</title>
+      <link>https://www.cbr.ru/statistics/macro_itm/sec_st/#a_149409</link>
+      <guid isPermaLink="false">ID_35554</guid>
+      <description />
+      <pubDate>Thu, 27 Aug 2026 16:36:12 +0300</pubDate>
+      <category>Статистика</category>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1"><![endif]-->
+<meta id="metaViewport" name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+    (function detectMobile(){
+        var w = window.innerWidth, min = 420, _ = function(a){document.getElementById('metaViewport').setAttribute('content',a)};
+
+        if (w < min) {_('width='+min)} else {_('width=device-width,minimum-scale=1')};
+        w = _ = null;
+    })();
+</script>
+
+<base href="http://www.fsb.ru/">
+<title>Информация о способах связи с ФСБ России :: Федеральная Служба Безопасности</title>
+
+<!--[if IE]>
+<script>
+function toAbsURL(s) {
+var l = location, h, p, f, i;
+if (/^\w+:/.test(s)) {
+return s;
+}
+h = l.protocol + '//' + l.host + (l.port!=''?(':' + l.port):'');
+if (s.indexOf('/') == 0) {
+return h + s;
+}
+p = l.pathname.replace(/\/[^\/]*$/, '');
+f = s.match(/\.\.\//g);
+if (f) {
+s = s.substring(f.length * 3);
+for (i = f.length; i+=-1;) {
+p = p.substring(0, p.lastIndexOf('/'));
+}
+}
+return h + p + '/' + s;
+}
+var base = document.getElementsByTagName('base')[0];
+base.href = toAbsURL(base.href);
+</script>
+<![endif]-->
+
+<meta name="description" content="Информация о способах связи с ФСБ России"/>
+<meta name="keywords" content=""/>
+<meta name="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="fsb/rss.htm%21contenttype%3Dxml.html"/>
+<link href="styles/fsb2019/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="styles/fsb2019/all.css" rel="stylesheet" type="text/css" media="all">
+<!--[if lt IE 8]><link href="styles/fsb/ie_fix.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+<script src="scripts/fsb2019/bundle.js"></script>
+
+<script>
+    jQuery.noConflict();
+</script>
+
+</head>
+<body>
+
+<div class="hdr">
+<div class="container">
+  <a href="fsb.htm" class="logo"><span class="title">федеральная служба безопасности
+            Российской Федерации</span></a>
+
+</div>
+
+
+
+</div>
+<div id="menu">
+	<div class="sw tablet"></div>
+	<div class="sw mobile"></div>
+    <div class="container">
+        <div class="tbl">
+			<a href="fsb/leadership.htm" class="itm">Руководство</a>
+			<a href="fsb/structure.htm" class="itm">Структура</a>
+			<a href="fsb/supplement.htm" class="itm s">Справочная информация</a>
+			<a href="fsb/service.htm" class="itm">Служба</a>
+			<a href="fsb/study.htm" class="itm">Учеба</a>
+			<a href="fsb/press.htm" class="itm">Пресс-служба</a>
+			<a href="fsb/gosuslugi.htm" class="itm">Государственные услуги</a>
+			<a href="fsb/corruption.htm" class="itm">Противодействие коррупции</a>
+			<a href="javascript:" onClick="jQuery('.main_search').toggleClass('open').find(':text').focus();" class="toggle_search"></a>
+            <a href="javascript:" onClick="window.toggle_easy&&toggle_easy();" class="spec_version"></a>
+        </div>
+
+        <form class="main_search" action="fsb/sh.htm">
+            <input type="text" name="query" value="">
+            <div class="close" onClick="jQuery('.main_search').removeClass('open').find(':text').val('');"></div>
+            <button type="submit"></button>
+        </form>
+    </div>
+</div><div class="specbar">
+<div class="bar">
+ <span class="size">Размер шрифта <a class="plus" onclick="text_size_increase();"></a> <a
+  class="minus" onclick="text_size_decrease();"></a></span> <span class="theme">Цвет: <a
+  class="theme1" onClick="set_style({theme:'theme1'});">&nbsp;</a> <a class="theme2"
+                                                                      onClick="set_style({theme:'theme2'});">
+ &nbsp;</a> <a class="theme3" onClick="set_style({theme:'theme3'});">&nbsp;</a></span> <a
+  onClick="jQuery('#settings_bar').toggle();" class="settings btn">Доп. настройки:</a>
+ <a href="javascript:" onClick="toggle_easy()" class="vers btn">Обычная версия сайта</a></div>
+<div id="settings_bar" class="set">
+ <p><b>Интервал между буквами и строками:</b> <a onClick="set_style({kern:'kern1'})"
+                                                 class="sw kern1">Стандартный</a> <a
+   onClick="set_style({kern:'kern2'})" class="sw kern2">Средний</a> <a
+   onClick="set_style({kern:'kern3'})" class="sw kern3">Большой</a></p>
+
+ <p><a onClick="jQuery('#settings_bar').hide()" class="btn">Свернуть настройки</a> <b>Шрифт:</b>
+  <a onClick="set_style({font:'font1'})" class="sw font1">Arial</a> <a
+    onClick="set_style({font:'font2'})" class="sw font2">Times New Roman</a></p>
+</div>
+</div>
+<a name="up"></a><section class="main clearfix">
+
+      <div id="content" class="clearfix">
+             <!-- pubstatic -->
+
+<div class="notify clearfix">
+<div class="hold">
+<div class="col1" style="width: 98%">Если вы обладаете любой информацией о совершенных или готовящихся терактах, просьба обращаться в ФСБ&nbsp;России по телефонам:</div>
+
+<div class="col1" style="width: 98%"><span style="color:#0099cc;"><span style="font-size:18px;"><strong>+7 (495) 224-22-22 8 (800) 224-22-22</strong>&nbsp;</span></span></div>
+
+<div class="col1" style="width: 98%"><span style="font-size:22px;"><strong><span style="color:#FF0000;">ВНИМАНИЕ: сотрудники ФСБ России с указанных на сайте номеров телефонов никогда не звонят, в том числе через интернет-мессенджеры!!!</span> </strong></span></div>
+</div>
+
+<div class="hold_ps"><strong><strong><strong>Для получения информации о порядке выезда из Российской Федерации и въезда в Российскую Федерацию российских и иностранных граждан (лиц без гражданства), выдачи пропусков для въезда (прохода) лиц и транспортных средств в пограничную зону, выдачи разрешения на неоднократное пересечение иностранными судами государственной границы Российской Федерации на море обращаться в <a href="fsb/webreception.htm"><span style="font-weight:600;">ЭЛЕКТРОННУЮ ПРИЕМНУЮ</span></a> ФСБ&nbsp;России<br />
+<br />
+Для получения справочной информации обращаться в <a href="http://ps.fsb.ru/fps/contact/department.htm"><span style="font-weight:600;">ПОГРАНИЧНЫЕ ОРГАНЫ</span></a></strong></strong></strong></div>
+</div><div class="hold">
+              <div class="row"></div>
+              <!-- pubstatic -->
+
+<h1>Информация о способах связи с ФСБ России</h1>
+
+<div class="orderedList">
+<h2 class="title2"><span class="n">1.</span> Приём сообщений в форме электронного документа</h2>
+
+<p>Если Вы хотите отправить информацию, относящуюся к компетенции ФСБ России, воспользуйтесь, пожалуйста, <a href="fsb/webreception.htm">электронной приемной</a>.<br />
+Для лучшей организации работы по Вашей информации просьба указать Ваши контактные реквизиты (телефон, адрес электронной почты, почтовый адрес и т.п.).</p>
+
+<p><a class="push webreception-push scale" href="fsb/webreception.htm">Электронная приемная</a></p>
+
+<h2 class="title2"><span class="n">2.</span> Телефон доверия ФСБ России</h2>
+
+<table class="det">
+	<tbody>
+		<tr>
+			<td>для междугородних звонков</td>
+			<td><b>8 (495) 224-22-22</b></td>
+		</tr>
+		<tr>
+			<td>для международных звонков</td>
+			<td><b>+7 (495) 224-22-22</b></td>
+		</tr>
+		<tr>
+			<td>логический номер</td>
+			<td><b>8-800-224-22-22</b></td>
+		</tr>
+		<tr>
+			<td>для СМС сообщений</td>
+			<td><b>8-916-240-24-84</b></td>
+		</tr>
+	</tbody>
+</table>
+&nbsp;
+
+<p><a class="more" href="fsb/smi/overview/single.htm%21id%3D10342461%40fsbSmi.html">Подробнее</a></p>
+&nbsp;
+
+<p>Телефон доверия ФСБ России является средством прямой связи граждан с органами федеральной службы безопасности, используемым для сообщения информации (в том числе анонимно):</p>
+
+<ul class="list2">
+	<li>о подготавливаемых, совершаемых или совершенных противоправных деяниях, дознание и предварительное следствие по которым отнесены законодательством Российской Федерации к ведению органов федеральной службы, о лицах, их подготавливающих, совершающих или совершивших;</li>
+	<li>о событиях или действиях, создающих угрозу национальной безопасности, а также по другим вопросам, рассмотрение которых отнесено к компетенции органов федеральной службы безопасности.</li>
+</ul>
+
+<p>Для ФСБ России важна любая информация, которая поможет выявить и пресечь деятельность иностранных спецслужб, предотвратить террористические акты, выявить преступления коррупционной направленности, обеспечить безопасность государства и его граждан.</p>
+
+<h2 class="title2"><span class="n">3.</span> Пограничная служба ФСБ России</h2>
+<a class="more" href="http://ps.fsb.ru">САЙТ</a> <a class="more" href="http://ps.fsb.ru/fps/contact.htm">КОНТАКТНЫЕ ДАННЫЕ ПОГРАНИЧНЫХ ОРГАНОВ</a>
+
+<h2 class="title2"><span class="n">4.</span> Справочный телефон ФСБ России<br />
+(в том числе по вопросам предоставления государственных услуг)</h2>
+
+<h4>8 (495) 224-70-69 (круглосуточно)</h4>
+
+<h2 class="title2"><span class="n">5.</span> Приёмная ФСБ России</h2>
+
+<h4>8 (495) 624-31-58</h4>
+
+<p>Управление делами (УД) ФСБ России<br />
+Москва, 107031, ул.Кузнецкий мост, дом 22 (прием граждан круглосуточно)</p>
+<br />
+<a class="more" href="fsb/smi/overview/single.htm%21id%3D10342452%40fsbSmi.html">КАК ПОПАСТЬ НА ПРИЕМ В ФСБ И С КАКИМИ ВОПРОСАМИ СТОИТ ОБРАЩАТЬСЯ НА ЛУБЯНКУ</a> <a class="more" href="fsb/smi/interview/single.htm%21id%3D10342717%40fsbSmi.html">КТО СЕГОДНЯ СТУЧИТ В ДВЕРИ ПРИЕМНОЙ ФСБ, КОТОРАЯ РАБОТАЕТ КРУГЛОСУТОЧНО</a> <a class="more" href="fsb/smi/interview/single.htm%21id%3D10342764%40fsbSmi.html">В ГОСТИ НА ЛУБЯНКУ</a>
+
+<h2 class="title2"><span class="n">6.</span> Центр общественных связей ФСБ России (ЦОС)</h2>
+
+<h4>тел.: 8 (495) 914-39-08</h4>
+
+<h4>факс: 8 (495) 625-05-78</h4>
+
+<p>Москва, 107031, ул. Большая Лубянка, дом 1</p>
+
+<p>Электронная почта: <span class="text-primary">fsb<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">7.</span> Департамент военной контрразведки ФСБ России</h2>
+
+<p>Электронная почта: <span class="text-primary">uvkr<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">8.</span> Военно-медицинское управление (ВМУ) ФСБ России</h2>
+
+<p>Электронная почта: <span class="text-primary">vmu<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">9.</span> Антитеррористический центр/Центр специального назначения ФСБ России</h2>
+
+<p>Служба по защите конституционного строя и борьбе с терроризмом</p>
+
+<h2 class="title2"><span class="n">10.</span> Следственное управление ФСБ России</h2>
+
+<p>В соответствии с действующим законодательством электронные обращения, не содержащие фамилии, имени и отчества автора (последнее &ndash; при наличии), адреса электронной почты (обратного почтового адреса), признаются анонимными, не рассматриваются, ответ на них не дается.</p>
+
+<p>В Следственном управлении ФСБ России рассматриваются обращения, содержащие фактические данные о совершении преступлений, отнесенных к компетенции органов федеральной службы безопасности и связанных с государственной изменой или шпионажем; разглашением или незаконным получением сведений, составляющих государственную тайну, либо утратой документов, содержащих указанную тайну; террористическим актом; организацией террористического сообщества или его деятельности и участием в них; содействием террористической деятельности; публичными призывами к осуществлению экстремистской деятельности либо террористической деятельности, публичным оправданием терроризма или его пропагандой; прохождением обучения в целях осуществления террористической деятельности; наемничеством; совершением акта международного терроризма; организацией незаконного вооруженного формирования или участием в нем; диверсией; вооруженным мятежом; насильственным захватом власти или насильственным удержанием власти; публичными призывами к осуществлению действий, направленных на нарушение территориальной целостности Российской Федерации; противоправным изменением Государственной границы Российской Федерации, повлекшим тяжкие последствия; посягательством на жизнь государственного или общественного деятеля; угоном судна воздушного или водного транспорта либо железнодорожного подвижного состава; незаконным экспортом из Российской Федерации или передачей сырья, материалов, оборудования, технологий, научно-технической информации, незаконным выполнением работ (оказанием услуг), которые могут быть использованы при создании оружия массового поражения, вооружения и военной техники, а также незаконной разработкой, производством, накоплением, приобретением или сбытом оружия массового поражения; незаконным проникновением на охраняемый объект, сопряженным с умышленным созданием угрозы распространения сведений, составляющих государственную тайну; нарушением требований обеспечения безопасности и антитеррористической защищенности объектов топливно-энергетического комплекса; неправомерным воздействием на информационные, телекоммуникационные и автоматизированные системы управления государственных органов Российской Федерации; контрабандой наличных денежных средств и (или) денежных инструментов, сильнодействующих, ядовитых, отравляющих, взрывчатых, радиоактивных веществ, радиационных источников, ядерных материалов, огнестрельного оружия или его основных частей, взрывных устройств, боеприпасов, оружия массового поражения, средств его доставки, иного вооружения, иной военной техники, а также материалов и оборудования, которые могут быть использованы при их создании, а равно стратегически важных товаров и ресурсов или культурных ценностей либо особо ценных диких животных и водных биологических ресурсов, а также наркотических средств, психотропных веществ, их прекурсоров или аналогов, растений либо их частей, содержащих их, инструментов или оборудования, находящихся под специальным контролем и используемых для изготовления наркотических средств или психотропных веществ; незаконным пересечением Государственной границы Российской Федерации, совершенным группой лиц по предварительному сговору или организованной группой либо с применением насилия или с угрозой его применения; организацией незаконной миграции, совершенной группой лиц по предварительному сговору или организованной группой либо в целях совершения преступления на территории Российской Федерации.</p>
+
+<p>В Следственном управлении ФСБ России рассматриваются обращения в отношении действий (бездействия) должностных лиц Следственного управления ФСБ России, а также действий, решений руководителей следственных органов (подразделений) и следователей органов федеральной службы безопасности по материалам проверок сообщений о преступлениях и уголовным делам, находящимся в их производстве.</p>
+
+<p>Обращения по другим вопросам следует отсылать на иные адреса электронной почты ФСБ России, приведенные на сайте, с учетом положений Федерального закона &laquo;О федеральной службе безопасности&raquo;.</p>
+
+<p>Сообщения обрабатываются один раз в день, кроме выходных и праздничных дней.</p>
+
+<h2 class="title2"><span class="n">11.</span> Центр специальной техники<br />
+(ЦСТ) ФСБ России</h2>
+
+<p>Электронная почта: <span class="text-primary">cst<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">12.</span> Управление международного сотрудничества ФСБ России</h2>
+
+<p>Электронная почта: <span class="text-primary">ums<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">13.</span> Управление радиоконтрразведки ФСБ России</h2>
+
+<p>Электронная почта: <span class="text-primary">rkr<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">14.</span> Управление оперативно-технических мероприятий (УОТМ) ФСБ России</h2>
+
+<p>Электронная почта: <span class="text-primary">uotm<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2">Управление телекоммуникаций Центра оперативно-технических мероприятий ФСБ России</h2>
+
+<p>Принимаются обращения в рамках взаимодействия с операторами связи, провайдерами хостинга, владельцами автономных систем в информационно-телекоммуникационной сети &quot;Интернет&quot; и организаторами распространения информации, оказывающими услуги на территории Московского региона, по вопросам реализации СОРМ (Системы Оперативно-Разыскных Мероприятий).</p>
+
+<p>Обращения направлять вложением электронной копии подписанного документа на бланке организации.</p>
+
+<p>Электронная почта: <span class="text-primary">sorm<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">15.</span> <a href="http://www.academy.fsb.ru/" style="color: #434444;" target="_blank">Академия ФСБ России</a></h2>
+
+<p>Электронная почта: <span class="text-primary">academy<span class="icon_at">fsb.ru</span></span></p>
+
+<h2 class="title2"><span class="n">16.</span> Центр по лицензированию, сертификации и защите государственной тайны ФСБ России<br />
+(ЦЛСЗ ФСБ России)</h2>
+
+<h4>телефон (факс): 8 (495) 914-30-73</h4>
+
+<p>Москва, 107031, Большая Лубянка, дом 2</p>
+
+<h2 class="title2"><span class="n">17.</span> Контактная информация:</h2>
+
+<h4>факс: 8 (495) 914-26-32</h4>
+
+<p>почтовый адрес: г. Москва, 107031, ул. Большая Лубянка, дом 1<br />
+адрес электронной почты: <span class="text-primary">fsb<span class="icon_at">fsb.ru</span></span></p>
+</div></div>
+
+      </div>
+
+
+
+
+      <div id="sbar"><div class="hold"><div class="menu2">
+	<ul>
+		<li>
+			<a href="fsb/supplement.htm" class="active"><span class="title">Справочная информация</span></a>
+		<ul>
+		<li>
+			<a href="fsb/supplement/contact.htm" class="active"><span class="title">Информация о способах связи с ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/contact_ter_org.htm"><span class="title">Информация о способах связи с территориальными органами ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="http://ps.fsb.ru/fps/contact.htm"><span class="title">Контактные данные Пограничной службы ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/contantr/mm.htm"><span class="title">Отделы по административным округам</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/service.htm"><span class="title">Служба в ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/study.htm"><span class="title">Учеба в ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/archive.htm"><span class="title">Центральный архив ФСБ России</span></a>
+		<ul>
+		<li>
+			<a href="fsb/supplement/archive/izdaniya.htm"><span class="title">Перечень изданий, на основе материалов Центрального архива ФСБ России</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/supplement/ipoteka.htm"><span class="title">Накопительно-ипотечная система жилищного обеспечения военнослужащих ФСБ России</span></a>
+		<ul>
+		<li>
+			<a href="fsb/supplement/ipoteka/npa.htm"><span class="title">Нормативные правовые акты</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/ipoteka/ira.htm"><span class="title">Информационно-разъяснительные материалы</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/supplement/veteran.htm"><span class="title">Ветеранские организации</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/obzor.htm"><span class="title">Обзор обращений граждан и организаций в ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="fsb/supplement/uplata_gos_poshliny.htm"><span class="title">Уплата государственной пошлины</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/npd.htm"><span class="title">Нормативные правовые акты</span></a>
+		<ul>
+		<li>
+			<a href="fsb/npd/obzhalovanue.htm"><span class="title">Судебный и административный порядок обжалования нормативных правовых актов, решений, действий (бездействия) ФСБ России, её территориальных органов и их должностных лиц</span></a>
+		</li>
+		<li>
+			<a href="fsb/npd/terror.htm"><span class="title">Единый федеральный список организаций, в том числе иностранных и международных организаций, признанных в соответствии с законодательством Российской Федерации террористическими</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="http://ps.fsb.ru/fps/smi/smi.htm"><span class="title">СМИ, учреждённые ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="fsb/simbols.htm"><span class="title">Официальная символика ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="fsb/goscontrol.htm"><span class="title">Государственный контроль (надзор)</span></a>
+		</li>
+		<li>
+			<a href="fsb/science.htm"><span class="title">Научно-техническое сотрудничество</span></a>
+		</li>
+		<li>
+			<a href="fsb/international.htm"><span class="title">Международное сотрудничество</span></a>
+		<ul>
+		<li>
+			<a href="fsb/international/meeting.htm"><span class="title">Заявление участников XVIII Совещания руководителей спецслужб, органов безопасности и правоохранительных органов</span></a>
+		</li>
+		<li>
+			<a href="fsb/international/kommyunike.htm"><span class="title">Коммюнике XVIII Совещания руководителей спецслужб, органов безопасности и правоохранительных органов</span></a>
+		</li>
+		<li>
+			<a href="fsb/international/ksps.htm"><span class="title">Комиссия по сотрудничеству в сфере предварительного следствия  при Совете руководителей органов безопасности и специальных служб государств - участников Содружества Независимых Государств</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/comment.htm"><span class="title">ФСБ России комментирует</span></a>
+		<ul>
+		<li>
+			<a href="fsb/comment/remark.htm"><span class="title">Комментарии официальных представителей ФСБ</span></a>
+		</li>
+		<li>
+			<a href="fsb/comment/rukov.htm"><span class="title">Выступления руководства</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/smi.htm"><span class="title">ФСБ России в зеркале прессы</span></a>
+		<ul>
+		<li>
+			<a href="fsb/smi/interview.htm"><span class="title">Интервью и публикации по истории отечественных органов безопасности</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/history.htm"><span class="title">История</span></a>
+		<ul>
+		<li>
+			<a href="fsb/history/creation.htm"><span class="title">История создания</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/leaders.htm"><span class="title">Краткие биографии руководителей</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/book.htm"><span class="title">Дайджесты книг</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/author.htm"><span class="title">Авторские публикации</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/readings.htm"><span class="title">Исторические чтения на Лубянке</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/organibezvov.htm"><span class="title">Органы безопасности в годы Великой Отечественной войны</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/yubiley.htm"><span class="title">Юбилей Андропова</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/pogranichnik.htm"><span class="title">Проект ежемесячного публицистического и литературно-художественного журнала «Пограничник» — «Портрет ветерана Великой Отечественной войны»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material.htm"><span class="title">Архивные материалы</span></a>
+		<ul>
+		<li>
+			<a href="fsb/history/archival_material/Smersh_women.htm"><span class="title">«ПОД БОМБЕЖКОЙ И АРТОГНЕМ ПРОТИВНИКА…»: ЖЕНЩИНЫ-СОТРУДНИКИ КОНТРРАЗВЕДКИ «СМЕРШ»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Vadis.htm"><span class="title">ВОЕННЫЙ КОНТРРАЗВЕДЧИК АЛЕКСАНДР ВАДИС: К 120-ЛЕТИЮ СО ДНЯ РОЖДЕНИЯ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Kaliningrad.htm"><span class="title">ВЗЯТИЕ КЁНИГСБЕРГА, АПРЕЛЬ 1945 ГОДА: НСДАП «…ПРИКАЗЫВАЕТ РАССТРЕЛЯТЬ ОСТАВШИХСЯ В ГОРОДЕ ВОЕННОПЛЕННЫХ И ГРАЖДАНСКОЕ НАСЕЛЕНИЕ, ВЫВЕЗЕННОЕ ИЗ ОККУПИРОВАННЫХ ОБЛАСТЕЙ СОВЕТСКОГО СОЮЗА»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Pechi.htm"><span class="title">В ВОПРОСАХ УНИЧТОЖЕНИЯ ЛЮДЕЙ НЕМЕЦКИЕ ИНЖЕНЕРЫ КРЕМАТОРИЕВ И ГАЗОВЫХ КАМЕР СРАВНИВАЛИ СЕБЯ С САМОЛЕТОСТРОИТЕЛЯМИ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Osterreich.htm"><span class="title">«…ПРИКАЗ О СТРЕЛЬБЕ БЕЗ ПРЕДУПРЕЖДЕНИЯ ПРИ ПОПЫТКЕ К БЕГСТВУ ДЕЙСТВОВАЛ ЛИШЬ ПО ОТНОШЕНИЮ К РУССКИМ ПЛЕННЫМ»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Selivanovskiy.htm"><span class="title">ВОЕННЫЙ КОНТРРАЗВЕДЧИК НИКОЛАЙ СЕЛИВАНОВСКИЙ: К 125-ЛЕТИЮ СО ДНЯ РОЖДЕНИЯ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Veidling.htm"><span class="title">«ЕДИНСТВЕННЫМ, КОМУ БЫЛО СООБЩЕНО О САМОУБИЙСТВЕ ФЮРЕРА… – ЭТО БЫЛ МАРШАЛ СТАЛИН»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/shtalag.htm"><span class="title">«ПО ИНСТРУКЦИЯМ ГЕРМАНСКИХ СПЕЦСЛУЖБ»: КАК НЕМЦЫ УЧИЛИ УКРАИНЦЕВ НЕНАВИДЕТЬ РУССКИХ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Shtolce_and_Bens.htm"><span class="title">Из показаний Э.Штольце и А.Бизанца</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/genocid.htm"><span class="title">«СИСТЕМАТИЧЕСКАЯ РАБОТА ПО ОЧИЩЕНИЮ ВОСТОКА… ИМЕЛА СВОЕЙ ЦЕЛЬЮ ВОЗМОЖНО ПОЛНУЮ ЛИКВИДАЦИЮ ЕВРЕЕВ…»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Volinskaya_reznya.htm"><span class="title">КАК УКРАИНСКИЕ ЧЕКИСТЫ ЛИКВИДИРОВАЛИ ПАЛАЧА  ВОЛЫНИ – ДМИТРИЯ КЛЯЧКИВСКОГО</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Kupyak.htm"><span class="title">ОУНОВСКИЙ УБИЙЦА И ГРАБИТЕЛЬ ДМИТРИЙ КУПЯК – ЕЩЕ ОДИН ПРЕСТУПНИК, СКРЫВАВШИЙСЯ В КАНАДЕ: «ЧЕМ БОЛЬШЕ БУДЕТ УБИЙСТВ, ТЕМ ПОКОРНЕЕ БУДЕТ НАСЕЛЕНИЕ. САМОСТОЯТЕЛЬНУЮ УКРАИНУ МОЖНО ЗАВОЕВАТЬ ТОЛЬКО МЕТОДОМ ТЕРРОРА…»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Dzerzhinskiy.htm"><span class="title">НЕИЗВЕСТНЫЙ ФЕЛИКС ДЗЕРЖИНСКИЙ: «РЫЦАРЬ ИНДУСТРИАЛИЗАЦИИ», СТРОИТЕЛЬ ЭКОНОМИЧЕСКОГО ФУНДАМЕНТА СОВЕТСКОГО СОЮЗА (МАТЕРИАЛЫ К 100-ЛЕТИЮ СО ДНЯ СМЕРТИ ПРЕДСЕДАТЕЛЯ ВСНХ И ОГПУ СССР Ф.Э. ДЗЕРЖИНСКОГО).</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Himoruzhie.htm"><span class="title">«…ГЕРМАНСКИЙ ФАШИЗМ ВТАЙНЕ ГОТОВИТ НОВОЕ ЧУДОВИЩНОЕ ЗЛОДЕЯНИЕ – ШИРОКОЕ ПРИМЕНЕНИЕ ОТРАВЛЯЮЩИХ ВЕЩЕСТВ»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Simchich.htm"><span class="title">ГЛАВАРЯ ОУНОВСКОЙ БАНДЫ, УБИВШЕГО «19 ЖИТЕЛЕЙ ПОЛЬСКОЙ НАЦИОНАЛЬНОСТИ (ЖЕНЩИН, СТАРИКОВ И ДЕТЕЙ)», ЗЕЛЕНСКИЙ НАГРАДИЛ ЗВЕЗДОЙ ГЕРОЯ УКРАИНЫ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Shevchenko.htm"><span class="title">«ЖАДНОСТЬ ПОСЛЕДНЕГО УМА ЛИШАЕТ»: ИСТОРИЯ О ТОМ, КАК КОНТРРАЗВЕДЧИКИ ОБЕЗВРЕДИЛИ АГЕНТА ДВУХ РАЗВЕДОК</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Kurskaya_bitva.htm"><span class="title">НЕВИДИМЫЙ ФРОНТ КУРСКОЙ БИТВЫ: КУРСКИЕ КОНТРРАЗВЕДЧИКИ В БОРЬБЕ С ДИВЕРСАНТАМИ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Den_shahtera.htm"><span class="title">Ф.Э. ДЗЕРЖИНСКИЙ: «НЕОБХОДИМО СНАБДИТЬ ГОРНЯКОВ ПРОДОВОЛЬСТВИЕМ И ТОПЛИВОМ»</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/archival_material/Haylar.htm"><span class="title">ЗВЕРСТВА ЯПОНЦЕВ В ХАЙЛАРЕ: «…ГОЛОВЫ ЖЕРТВ БЫЛИ ОТРУБЛЕНЫ ОРУДИЕМ РУБЯЩЕГО ТИПА С ПРИМЕНЕНИЕМ БОЛЬШОЙ СИЛЫ»</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/history/Pogib_v_boyah_za_Rodinu.htm"><span class="title">Погиб в боях за Родину</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/red_book.htm"><span class="title">"Красная книга" КГБ СССР</span></a>
+		<ul>
+		<li>
+			<a href="fsb/history/red_book/England.htm"><span class="title">"Красная книга" КГБ СССР: Англия</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/red_book/Canada.htm"><span class="title">"Красная книга" КГБ СССР: Канада</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/history/heroes.htm"><span class="title">Герои госбезопасности</span></a>
+		<ul>
+		<li>
+			<a href="fsb/history/heroes/Karasev.htm"><span class="title">КАРАСЕВ ВИКТОР АЛЕКСАНДРОВИЧ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/heroes/Serebryakov.htm"><span class="title">СЕРЕБРЯКОВ АНДРЕЙ МИХАЙЛОВИЧ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/heroes/Medvedev.htm"><span class="title">МЕДВЕДЕВ ДМИТРИЙ НИКОЛАЕВИЧ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/heroes/Kudrya.htm"><span class="title">КУДРЯ ИВАН ДАНИЛОВИЧ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/heroes/Mirkovskiy.htm"><span class="title">МИРКОВСКИЙ ЕВГЕНИЙ ИВАНОВИЧ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/heroes/OrlovskiyKP.htm"><span class="title">ОРЛОВСКИЙ КИРИЛЛ ПРОКОФЬЕВИЧ</span></a>
+		</li>
+		<li>
+			<a href="fsb/history/heroes/KizhevatovAM.htm"><span class="title">КИЖЕВАТОВ АНДРЕЙ МИТРОФАНОВИЧ</span></a>
+		</li>
+		</ul>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/supplement/advice.htm"><span class="title">Советы профессионалов</span></a>
+		</li>
+		<li>
+			<a href="http://ps.fsb.ru/"><span class="title">Пограничная служба ФСБ России</span></a>
+		</li>
+		<li>
+			<a href="http://clsz.fsb.ru/"><span class="title">Центр по лицензированию, сертификации и защите государственной тайны ФСБ России (ЦЛСЗ ФСБ России)</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya.htm"><span class="title">Премия ФСБ России</span></a>
+		<ul>
+		<li>
+			<a href="fsb/premiya/2006.htm"><span class="title">Архив премий</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2008.htm"><span class="title">2008 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2009.htm"><span class="title">2009 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2010.htm"><span class="title">2010 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2011.htm"><span class="title">2011 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2012.htm"><span class="title">2012 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2013.htm"><span class="title">2013 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2014.htm"><span class="title">2014 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2015.htm"><span class="title">2015 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2016.htm"><span class="title">2016 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2017.htm"><span class="title">2017 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2018.htm"><span class="title">2018 год</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2019-2020.htm"><span class="title">2019 - 2020 гг.</span></a>
+		</li>
+		<li>
+			<a href="fsb/premiya/2021-2024.htm"><span class="title">2021 - 2024 гг.</span></a>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/media.htm"><span class="title">Мультимедиа</span></a>
+		<ul>
+		<li>
+			<a href="fsb/media/video.htm"><span class="title">Видеоматериалы</span></a>
+		</li>
+		<li>
+			<a href="fsb/media/photomaterials.htm"><span class="title">Фотоматериалы</span></a>
+		<ul>
+		<li>
+			<a href="fsb/media/photomaterials/145_let_Dzerzhinsky.htm"><span class="title">К 145-летию со дня рождения Ф.Э.Дзержинского</span></a>
+		</li>
+		</ul>
+		</li>
+		</ul>
+		</li>
+		<li>
+			<a href="fsb/webreception.htm"><span class="title">Электронная приемная</span></a>
+		</li>
+		</ul>
+</div></div></div>
+  </section>
+
+      <a href="fsb/supplement/contact.htm%21_print%3Dtrue.html" id="print_page_link" style="display:none"></a>
+
+  <div id="ftr">
+	<div class="container">
+		<a href="fsb.htm" class="logo"><span class="title">федеральная служба безопасности Российской Федерации</span></a>
+
+		<div style="float:right">
+			<a href="http://nac.gov.ru"><img alt="Национальный антитеррористический комитет" height="100" src="images/banners/nac.png" style="margin: 5px 20px 20px -10px" width="300" class="scale"></a>
+			
+			<a href="http://www.dynamo.su/" class="banner_dinamo">Всероссийское физкультурно-спортивное Общество «ДИНАМО»</a>
+		</div>	
+
+		<br class="clear">
+
+<!-- pubstatic -->
+
+<div class="contacts">
+<p class="phone">Телефон доверия:<br />
+(495) 224-2222 (круглосуточно)</p>
+
+<p class="addr">107031, г.Москва,<br />
+ул.Большая Лубянка, дом 1</p>
+
+<p class="print-page" onclick="print_page();">Версия для печати</p>
+<a class="push webreception-push text-center scale" href="fsb/webreception.htm">Электронная<br />
+приемная</a></div><ul class="ftr_menu clearfix">
+	<li><a href="fsb/supplement.htm" class="itm">Справочная информация</a></li>
+	<li><a href="fsb/service.htm" class="itm">Служба</a></li>
+	<li><a href="fsb/study.htm" class="itm">Учеба</a></li>
+	<li><a href="fsb/history.htm" class="itm">История</a></li>
+	<li><a href="fsb/supplement/advice.htm" class="itm">Советы профессионалов</a></li>
+	<li><a href="fsb/goscontrol.htm" class="itm">Государственный контроль (надзор)</a></li>
+	<li><a href="fsb/premiya.htm" class="itm">Премия ФСБ России</a></li>
+	<li><a href="fsb/simbols.htm" class="itm">Официальная символика ФСБ России</a></li>
+	<li><a href="fsb/comment.htm" class="itm">ФСБ России комментирует</a></li>
+	<li><a href="fsb/npd.htm" class="itm">Нормативные правовые акты</a></li>
+	<li><a href="http://ps.fsb.ru/" class="itm">Пограничная служба ФСБ России</a></li>
+	<li><a href="fsb/international.htm" class="itm">Международное сотрудничество</a></li>
+	<li><a href="fsb/science.htm" class="itm">Научно-техническое сотрудничество</a></li>
+	<li><a href="http://ps.fsb.ru/fps/smi/smi.htm" class="itm">СМИ, учреждённые ФСБ России</a></li>
+	<li><a href="fsb/smi.htm" class="itm">ФСБ России в зеркале прессы</a></li>
+	<li><a href="fsb/regions.htm" class="itm">Территориальные органы ФСБ России</a></li>
+	<li><a href="fsb/media.htm" class="itm">Мультимедиа</a></li>
+	<li><a href="fsb/sitemap.htm" class="itm">Карта сайта</a></li>
+	</ul><hr>
+    <!-- pubstatic -->
+
+<p class="copy"><span class="pull-left">&copy; Федеральная служба безопасности Российской Федерации, 1999&nbsp;-&nbsp;2026&nbsp;г.</span> <span class="pull-right">При использовании материалов ссылка на сайт ФСБ&nbsp;России обязательна.</span></p></div>
+</div>
+
+</body>
+</html>

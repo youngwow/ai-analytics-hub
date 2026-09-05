@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CIO: канал IT руководителей – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="CIO: канал IT руководителей">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/n9GCDtEMzLzw39s4z6606b7of0Wu6i25W1Caic1bRiDAvV8796o_RZ0Rwc16zZiVvXiVvunlSZmHkujtXXw8-9xsrO1Dfo5hjTh_Pljurg4mmgWo_D_Y77skzaw_V0YIECjKLrO4HPfirZHx0fGTQYCH4pNMTrLkizvDWp1y-bUj22Wl3j5lZTB1JIsHUcCS2JMBTs77dG0H5s89niRZ0KTH886aKpvWowD7dOzyx1fTAUjlKWi8ozs7T1DxjW93Lhd6A1J3xxaIduKf_KCtwJmzWys4-V7gtR3NYV_xOa0BaHfNKtdv2i1BLfR-anREsPr4_sVDWWFsB12ovvHr4w.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Канал руководителей IT компаний и подразделений, CIO, СDO, CDTO. 
+По рекламе и предложить пост: @KaterinaCORS
+Лицензия:
+https://www.gosuslugi.ru/snet/67599753c577eb7c526ec141
+Правила группы: https://t.me/cio_channel/4">
+
+<meta property="twitter:title" content="CIO: канал IT руководителей">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/n9GCDtEMzLzw39s4z6606b7of0Wu6i25W1Caic1bRiDAvV8796o_RZ0Rwc16zZiVvXiVvunlSZmHkujtXXw8-9xsrO1Dfo5hjTh_Pljurg4mmgWo_D_Y77skzaw_V0YIECjKLrO4HPfirZHx0fGTQYCH4pNMTrLkizvDWp1y-bUj22Wl3j5lZTB1JIsHUcCS2JMBTs77dG0H5s89niRZ0KTH886aKpvWowD7dOzyx1fTAUjlKWi8ozs7T1DxjW93Lhd6A1J3xxaIduKf_KCtwJmzWys4-V7gtR3NYV_xOa0BaHfNKtdv2i1BLfR-anREsPr4_sVDWWFsB12ovvHr4w.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=cio_channel">
+
+<meta property="al:android:url" content="tg://resolve?domain=cio_channel">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Канал руководителей IT компаний и подразделений, CIO, СDO, CDTO. 
+По рекламе и предложить пост: @KaterinaCORS
+Лицензия:
+https://www.gosuslugi.ru/snet/67599753c577eb7c526ec141
+Правила группы: https://t.me/cio_channel/4
+">
+
+    <link rel="prev" href="/s/cio_channel?before=8374">
+<link rel="canonical" href="/s/cio_channel?before=8394">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/cio_channel">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/cio_channel" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor4" data-content="Cр"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">CIO: канал IT руководителей</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/cio_channel">@cio_channel</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">11K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">4.81K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">109</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">58</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">5.33K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Канал руководителей IT компаний и подразделений, CIO, СDO, CDTO. <br/>По рекламе и предложить пост: <a href="https://t.me/KaterinaCORS" target="_blank">@KaterinaCORS</a><br/>Лицензия:<br/><a href="https://www.gosuslugi.ru/snet/67599753c577eb7c526ec141" target="_blank" rel="noopener">https://www.gosuslugi.ru/snet/67599753c577eb7c526ec141</a><br/>Правила группы: <a href="https://t.me/cio_channel/4" target="_blank" rel="noopener">https://t.me/cio_channel/4</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=f9ef3a4ef128ea79ac_12183906170790160738">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=f9ef3a4ef128ea79ac_12183906170790160738">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/cio_channel">
+        <i class="tgme_page_photo_image bgcolor4" data-content="Cр"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">CIO: канал IT руководителей</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">11K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/cio_channel">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/cio_channel?before=8374" class="tme_messages_more js-messages_more" data-before="8374"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8374" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM3NCwidCI6MTc4ODU2NTYyNywiaCI6IjM1YzEwN2FhZDI2NzQyY2E3ZiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5239948753999961793 1220020641_460005057" href="https://t.me/cio_channel/8374" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/BJzYRePDs3tI-_NLZf9nsV6URv7U4SjyUoXFA6Wj5mc_W84w7cvzDelCJe1CVFrwpN3Cx_5oRNGWKLsS7xbuhJGUtbGvzXNQL-ZAc83OwexnblMMo4SUm1ZKsktqrHQJNyqFgreiAvQQEyJI3ElSeW9x6O-FgmKpxDL2XOoP9IFO18AqXLaxKF6QGYnxdaO_xkn_r36u_n5JPlC_Oyy73yYgBXeIjQQ_nenXPNIRZvI1g4m-rtYfjg-EBe82uecYT1rOtpRr1aqyzhhiZzVaWUMMf829aOEy6gcqZV9-brR4pz2IekYi_Z5hchC9UGoB1GpE7UusbyDQs2jRsPM4JQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Минцифры хочет отделить сайты из «белого списка» в специальные IP-подсети для борьбы с VPN // </b><a href="https://t.me/mincifry/6060" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>Новости Минцифры</u></b></a><br/><br/>Минцифры попросило российских хостинг-провайдеров, CDN-сервисы и компании веб-защиты выделить IP-адреса ресурсов из «белого списка» в отдельные подсети. Мера должна помешать VPN и сайтам с запрещенным контентом использовать ту же инфраструктуру, что и разрешенные сервисы, и таким образом сохранять доступность во время ограничений мобильного интернета.&nbsp;<br/><br/>Проблема связана с архитектурой современного интернета. Один IP-адрес или одна подсеть могут одновременно использоваться десятками сайтов через CDN, анти-DDoS-сервисы и облачные платформы. Если адрес такой инфраструктуры оказывается разрешенным для работы во время ограничений, доступ потенциально сохраняют и другие размещенные на нем ресурсы. Этим же механизмом могут пользоваться VPN-сервисы.<br/><br/>Предлагаемая схема предполагает создание отдельной сетевой инфраструктуры исключительно для согласованных ресурсов. Сторонние клиенты не смогут получать IP-адреса из таких диапазонов. Механизм также должен сделать маршрутизацию разрешенного трафика более предсказуемой и упростить контроль за тем, какие именно сервисы продолжают работать при ограничениях. Инициативу, по имеющимся данным, поддержала ФСБ.<br/><br/>Для провайдеров переход может оказаться технически сложным. Уже используемые подсети содержат множество легальных сервисов, поэтому часть клиентов придется вручную переносить на новые адреса. Представители отрасли также оценивают аренду одной сети из 256 IP-адресов примерно в 30 тыс. рублей в месяц, причем крупным распределенным сервисам отдельные диапазоны могут потребоваться в нескольких локациях.<br/><br/>«Белые списки» используются в России для сохранения доступа к социально значимым сервисам во время ограничений мобильного интернета. Ранее Минцифры уже признавало, что масштабировать такой механизм без ограничений невозможно: к апрелю 2026 года в перечне находилось более 500 сервисов, а его дальнейшее расширение упиралось в пропускную способность инфраструктуры.<br/><br/>Новая схема фактически делает «белый список» не только логическим перечнем разрешенных сайтов, но и отдельным сегментом сетевой инфраструктуры. Если она будет реализована, возможность обходить ограничения за счет размещения VPN или другого сервиса рядом с разрешенным ресурсом в общей CDN- или хостинговой подсети должна заметно сократиться.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8374" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AC.png')"><b>🤬</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A1.png')"><b>🤡</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">667</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8374"><time datetime="2026-09-01T08:48:42+00:00" class="time">08:48</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8375" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM3NSwidCI6MTc4ODU2NTYyNywiaCI6IjQ1NmUzNmVlZjdiMjNlODQ3NiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5239948753999962007 1220020641_460005271" href="https://t.me/cio_channel/8375" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/LYb1qeQqZ60uZjZkd2vV8HaCF60mjOiMluz663it5ABol4vTN2c2UksGwsA1GdLuWGzLTEVBcajNDtcZgTkZ2rD6857nogzNT0YNNf4cJ_HASe7CKFejDHnKF5ydQnwfX80Oqoe0Y02ik6l6K4EcqyUJ1hvkFcNasvWHZvNxv5GWwqkCUOv-FbxxOToxZOwlKp05hSp2uai_Yl1oSXwAF1czZKzN4tqNTSu4MCUSBT-GFe64uB4gS8Yg3B_UX8m6I0oAjPcRZ1XUl8wXXc2C0rfdysVgLb329ghTuHrL2nujw4efEM_JrBEQQflemVBf7t9Ybs3QfzdpjvG9F3lBBQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Динамика роста ИТ-рынка ускорится с 4% в 2026 году до 10% в 2028 году //</b><a href="https://ict.moscow/analytics/prognoz-razvitiia-rossiiskogo-rynka-it-do-2028-2030-godov/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u> ICT. Moscow</u></b></a><br/><br/>ИТ-холдинг Т1 представил прогноз развития ИТ-рынка в России до 2030 года. В основе материала — собственные данные компании. Авторы сделали предположение о показателях ИТ-рынка в целом, его сегментов и о факторах развития.<br/><br/><b>Ключевые выводы:</b><br/><br/>• по итогам 2026 года ИТ-рынок вырастет на 4%, ожидают в Т1. К 2028 году динамика роста ускорится как минимум до 10%. Среднегодовой прирост отрасли на горизонте 2025–2028 годов прогнозируется на уровне 8%, в 2029–2030 годах — на уровне 13%;<br/><br/>• увеличение расходов на ИТ российских компаний в 2025–2028 годах может происходить неравномерно: наибольшие перспективы в ритейле (CAGR 12,8%), обрабатывающих отраслях высоких переделов (12,4%), ИТ и E-commerce (11,3%);<br/><br/>• для ряда сегментов рынка будет заметно усиление влияния ИИ: облачных сервисов (CAGR 22%), ИИ-оборудования (CAGR 19%), а также смежных ПО и услуг. Рынок решений и услуг в области искусственного интеллекта сохранит высокие темпы роста — CAGR в 2025–2028 годах составит 22%;<br/><br/>• долгосрочный тренд на рост облачных сервисов сохранится. Но в 2026 году динамика замедлится до уровня около 20%;<br/><br/>• рынок информационной безопасности и отраслевых решений сохранит темпы роста выше ИТ-рынка.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8375" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AE.png')"><b>🤮</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92A9.png')"><b>💩</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">754</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/cio_channel/8375"><time datetime="2026-09-01T10:46:51+00:00" class="time">10:46</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8376" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM3NiwidCI6MTc4ODU2NTYyNywiaCI6IjQ0OTgwZTA1MDQ1Zjk4ZDUxYyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5239948753999962634 1220020641_460005898" href="https://t.me/cio_channel/8376" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/VDPU-FjYWwQl-klRVj2V4nlZWvvsg1QYXQf1_PDeyOPrA_y941LwsC-GqlyGhqNUOoHe6ums3hIEZXI9iaJWFMwqRIJ3lo3NiNjecAYlKxEDSzEPfFUKMejVQ8Ppk_2NT2yahBrScnz7zgYO2oPVewN56r5z9wvRj-jWFT4Y4340fFmaFnJtT41QuqUc0I_-yGRXKPeZ6H2uS2qtjhJ5o5TvX8msFCsd_gGMDC2fSK_HA1mnl6knuMLkWXUDcecf7kU43zSlbbNI2_Gaq_gjRKKxgaO0Ffbwx8oVOXEVTvydMWQdc9G6Y60qRroe2pHSYarCHLFjDingOwmRZYovrA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В России вступил в силу закон о развитии и поддержке ИИ // </b><a href="https://www.rbc.ru/rbcfreenews/6a94f5e99a794701b8bbd133" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>РБК</u></b></a><br/><br/>В России с 1 сентября вступили в силу положения закона об искусственном интеллекте (ИИ), которые устанавливают меры поддержки развития этих технологий. Документ<a href="http://publication.pravo.gov.ru/Document/View/0001202607260003?index=1" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> <u>опубликован</u></a> на портале правовых актов.<br/><br/>Закон закрепляет понятие ИИ в российском законодательстве. Он также устанавливает правила для разработки и использования больших фундаментальных моделей — систем с не менее чем 1 млрд параметров, способных выполнять сложные интеллектуальные задачи на уровне человека или выше.<br/><br/>Кроме того, вводятся понятия суверенных и национальных ИИ-моделей. Суверенные модели должны полностью разрабатываться российскими компаниями, а национальные могут использовать зарубежные компоненты и открытые решения.<br/><br/>Правительство будет определять меры господдержки разработчиков таких моделей, а также случаи, когда организации смогут использовать только суверенные или национальные ИИ-решения.<br/><br/>Отдельные положения закона начнут действовать с марта 2027 года. Они установят правила маркировки контента, созданного с помощью ИИ, а также требования к использованию результатов интеллектуальной деятельности для обучения таких систем.&nbsp;<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8376" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">755</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8376"><time datetime="2026-09-01T14:38:11+00:00" class="time">14:38</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8377" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM3NywidCI6MTc4ODU2NTYyNywiaCI6IjlmNDNmMjVjNmVmZTQ5YjliZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5239948753999962961 1220020641_460006225" href="https://t.me/cio_channel/8377" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/GQoHxI4RCFO_vM2uPGsiqyHOYJIDn1Jm6czTRgT4N40CjIIoi6fpQ1g8Slb-NMKhsNgqn-Z-UCNgb5IuHG93CxNQ6uC1ktksccLLiAz4JKkBGOb47_a7lpMLKpg1QWWJYaz1gMdy6636U6H5nOFmEKQ12OVopj5gErnV7PHK_eageRuiPhnM9m_yYO4Z-aWEyS9fbwtiPmpsITyf24bGChGP-lbZbldeBFm2RDWSqEr-u4EWMrcRsLbFo-6hVDtuMiFMlOSJQ5Uo0SZ1QYwNEdGDwfXXGMg_SREH9p_q2WCTBevUeVoVR2-S-TeIRCzNoEwvQjUZ4yJUxch8eWjNkg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>72 млрд к 2032-му: российский ERP-рынок вырастет вдвое // </b><a href="https://tass.ru/ekonomika/28060859" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>ТАСС</u></b></a><br/><br/>К 2032 году совокупный объем российского рынка ERP-систем может достигнуть 72,1 млрд рублей, тогда как в 2025 году этот показатель составлял 31,9 млрд рублей. В период с 2026 по 2032 год среднегодовой темп роста рынка, как ожидается, замедлится до 12,4% - против 15,3% в 2023-2025 годах.<br/><br/>Тем не менее даже при таком снижении динамики отрасль сохранит устойчивый двузначный прирост, а абсолютный объем за семь лет увеличится более чем вдвое. Эксперты Kept выделяют пять ключевых драйверов, которые обеспечат развитие ERP-сегмента в прогнозируемый период:<br/><br/>- <b>отложенный спрос</b> - компании, которые откладывали модернизацию, теперь запускают проекты.<br/>- <b>импортозамещение</b> - активный уход с SAP/Oracle на отечественные платформы.<br/>- <b>операционная эффективность</b> - бизнес ищет способы сокращать издержки через автоматизацию.<br/>- <b>зрелость российских решений</b> - локальные ERP-системы закрывают всё больше отраслевых потребностей.<br/>- <b>регуляторное давление</b> - требования к цифровому суверенитету сохраняются и могут ужесточиться.<br/><br/>Сочетание этих факторов позволит рынку уверенно расти даже при общем замедлении темпов по сравнению с предыдущими тремя годами. А при дополнительных стимулирующих мерах со стороны регуляторов фактические цифры и вовсе могут оказаться выше прогнозных.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8377" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">704</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8377"><time datetime="2026-09-01T18:28:27+00:00" class="time">18:28</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8378" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM3OCwidCI6MTc4ODU2NTYyNywiaCI6Ijg1OTE3ODUxY2QyYWY0YjI0MyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242613265811055568 1220641021_460006352" href="https://t.me/cio_channel/8378" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/XZ2jGFhUwQOhgRnenbTI3tjm8M_sUYyhRka_Qo3HmY28CgmHm1HDO29p7Sulh_OYRKLmPio_2GW8DZHcDk_obC4xSnsw3M7G-xdIuOyXYf35ozjiSMrQhRPZGvTE3R6gtkjWYPAAGatfvlsRutgscUqHMCBTRyVIq-3HSBo-Rp0YTrLNJ-d7IExcrHFsc8jS3Xc2xnZr0m_xusvAgDdkt6QOx-3ztCbQAlYn52Ky77sZ921jsQUqozu9lJLz2jPDL4B-cBCjsSwSzhr0bCWJKZADO5C5CuqDIkNymogR6BIyjTe5-YjrJbAejz81UAzK2xLW5dqLUL_hkMX4QuMZwQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В Китае появился «детский сад» для роботов // </b><a href="https://ria.ru/20260902/pekin-2114783852.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>РИА</u></b></a><br/><br/>В<a href="https://www.gazeta.ru/tags/geo/pekin.shtml" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> </a>Пекине открылся «детский сад» для роботов, где ученые исследуют альтернативный подход к их обучению. Об этом пишет китайское издание<a href="https://www.globaltimes.cn/page/202609/1369570.shtml" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> </a>Global Times.<br/><br/>Журналисты отмечают, что принципиально иной подход к обучению дроидов состоит в том, что исследователи хотят, чтобы роботы учились посредством тактильного восприятия, проб и ошибок и собственного опыта, а не на том, что им демонстрируют люди.<br/><br/>Например, как пишет издание, если робот врезается в стену во время обучения ходьбе, то это столкновение становится частью его опыта. Машина записывает произошедшее, пытается еще раз пройти, корректируя свои движения, чтобы избежать той же ошибки. В данном случае, отмечает Global Times сама неудача становится данными для обучения.<br/><br/>Предполагается, что непрерывное обучение позволит роботу адаптироваться уже после начала эксплуатации, в том числе к ситуациям, которых не было в первоначальном обучении.<br/><br/>Центр для обучения роботов был создан совместными усилиями китайской компании Tashan Technology, специализирующейся на тактильных сенсорах, и командой под руководством канадского ученого-информатика, специалиста в области искусственного интеллекта (ИИ) Ричарда Саттона.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8378" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">652</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/cio_channel/8378"><time datetime="2026-09-02T08:37:16+00:00" class="time">08:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8379" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM3OSwidCI6MTc4ODU2NTYyNywiaCI6Ijc3ZDk0OTA2MjI3ZGU2OGZmYiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242613265811055791 1220641021_460006575" href="https://t.me/cio_channel/8379" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/tU9co4YAbFYuNUmTXKvHshfJKqBj1l9i3thjIowNnDUqY6Rmd2i2uNorNnsO4oOLQWU0OUH706HZ5wZmG83ET8XqURmvA0RpMdrBNnSoEWSWv1xBuk1rQY_ynefHSy8LCRvSuooQyLM0NQqbdANz5fWms1vN3U0zxnC8bmBSqNkg4ohvCS7pGaJovigRO1vb05DB8gGJhhItxOVaD0yHOw0EaBKXS0NEZncreJTi2Labj0ZnLeJttlzedutYZWVlh1FDf0lKhJuH6mcAldgVDnN2MjeYI-Am9ry9FnIKDNdeovABR0oeS0C2PKCOI9OL6GveOosIz3IsPZBtLhH98g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Минцифры дорабатывает проект о выборе ИИ-помощника на мобильных устройствах // </b><a href="https://www.kommersant.ru/doc/8923657" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>Коммерсантъ</u></b></a><br/><br/>Минцифры обсуждает доработку правил предустановки отечественных приложений на ввозимые в Россию устройства. Инициатива предусматривает расширение требований в отношении браузера «Яндекс» и ИИ-помощника «Алиса AI».<br/><br/>В начале августа Минцифры опубликовало проект постановления, предлагающий ввести выбор системного помощника при первом включении устройства, однако позже документ был снят с портала. Сейчас он дорабатывается. В Минцифре добавили, что предлагаемые изменения «находятся в стадии обсуждения с отраслью».<br/><br/>В ведомстве подчеркнули, что речь не идет о создании преимуществ для конкретного сервиса, а новые правила должны сбалансировать положение отечественных и встроенных решений производителей.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8379" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">655</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8379"><time datetime="2026-09-02T10:27:36+00:00" class="time">10:27</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8380" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6IjgzODBnIiwidCI6MTc4ODU2NTYyNywiaCI6IjBmYjI3OGUwNzFlNzdmNDYyMyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_one_media js-message_media"><div class="media_supported_cont"><div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:133.333%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:604px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:225px;height:225px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/hHU79FpBe7A9TfgmYb_EDyvpUVDXMYEn9xfOhRBFb2itxw-wreyhdDHTwY0qdkFlCQ4JRZTvaossxC5Fq_luB1sNBhDrvJkLQ4hl9OosIOTstCP7pLYhkcHOv4S41nb6geOcpRKp9BjyLqrFp2EycO7KYq0i7dJLBjIHHjeJlDn5FoCIue0umvpPr9UoDg1Ks6uYKboz30i5W30Kqbw8jxZU491q1lX6hjUe1ygXa532OyH0mkIRlc4hsy4P4myta5MIq90u1YAtDC3DjY9cvNQKTOOx7gr4PlKVdg0YrOO_jgjNyHH9yfjvav75hDVEQY2mlxYfu118vyD9OYkfiQ.jpg')" data-ratio="1" href="https://t.me/cio_channel/8380?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:227px;top:0px;width:226px;height:225px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/RKU3EajFmvlYQNRmgu6FMF0me-p-moFqnjHD3HJYuLn44B68PBQegDfA_LaarM6TYqHYse0uwfHWkBOBAqC_N_EMJNopgbgA8BWC3JU4jbazfTokrDE7EbeOqMl_t9RwGydYTypZH4HQgl3GmCYdlaObMJHuL8rlO7azTL_I_dW-qBeEGla73h3wj2N0RFXPJQvmXiqvyh4VtzY1wVlSkwbPrcoc5kyWTxj2QyJS8WVQmzWZ0i3-hrnKf9hEbbTCZ3gI3aMdH-w5jlCPjN2S4Rb7rgDcqZ9rk6UhvBgYTmRA0k-JT36cr5P-mS1GTK6YzGXQhsyUjYzA0KCv18TYGA.jpg')" data-ratio="1" href="https://t.me/cio_channel/8381?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:227px;width:225px;height:225px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/GunFtvZPZisVwRVHV8pbnkchTQ-o0OTLdmvusR268skF4MNDYe5mcVktNnVAng6MO-IFt0R-VezlovLtyy3UoZaesEQj7DdQcmbgh84Vshee5-sNrZiXVTv9hM_BVVnjrowMn9Ao6sE_Gwxe30Dx0pxNIT0db9v6-1EyKixkbxKbMwLPsYN_Y2Jl02isJ00vjVvu9gP8Gb4EmG9YHuH-jOCfbIRf7SQaYrSPcNIA2eiuiz5oCpPXDKfvHt5QqRDW0LCzJ-Ntlzd5NC48Y_IIDrLXTYKYa_EzsjXMR9mzP3wm-vO3boB_kE9HXINzke8zttDLgoQY9RGCyqkSfzC1hg.jpg')" data-ratio="1" href="https://t.me/cio_channel/8382?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:227px;top:227px;width:226px;height:225px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/NnTyJludCDMrDUs644k5Q_bJHWq4ZM-YBEGzhA-vZIguP2dgzklLkLpFesIgsGI4ZxeTBPzMK_yGNzeLz5G73UZqSs6N_zaqL7cOPMUkXBFBIvJ_VW89mjFnIiqxARNGjeNxdsueibJWn6L8w4W9gy77qVGLnoZjbE1Aa0FRQH_V1Sf7AAAfkoR3NmlN2OX1AVP1cAExBK8CuNAYUU743AjWBt4vP0uufFUqu2O5b_CiNo4XqxI-9FvAYxE7b8LK6fF3f3U43-FNWLhE0hvxHFoZyEwklfHi3Wj8ZKo_35dxQ8yd3PVSghZd3C69HKskfKdilUYeR82BUiy9PxN1PA.jpg')" data-ratio="1" href="https://t.me/cio_channel/8383?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:454px;width:150px;height:150px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/egGW3arzgroVgLQFEX38TLCFSE4nVyPyIkO1QuiTT14Glzc_9m42uwG30Y0JE30MjFoDVsu08duDqrhlpDUjM6vfIkRO1QrYFVBl3QZKaljZcn9XqG8qp7rGo2fy5rLPkZfw5axpJDLiWkzFVnEYTkgakm0fHAGkqjzPmlaJknlK5CO76OsYmotpdrJ-dazgpgjLwUfTIGBLBR1WZ5v4V-hSp8ykbynxzChmjEm_gei6r4A9eB8dNjp6YHGOKm6C4t_c-JSaCvlfATAtzDtYAOga4L47mK-IclxuXm1pvZ-t8AKoZIWZVj3US5bGbTScO613fyKm1RCPYInPm0vQEw.jpg')" data-ratio="1" href="https://t.me/cio_channel/8384?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:152px;top:454px;width:150px;height:150px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/ojzn7-Hl0Po41-4k1PohmnJHlHMfaduU9Zc7fR_q38UBdK-O5GQVCn3F9Ul7sw1v6oNFzd3ky-BcjKcsqM2LW8nj9LOClRBxuRVrHeqmX2caHisQDrBrp_4PwtRk3fg2OT1UHOL63puBptOSUHn_UYhpA_QsEJWpbjb8CGFkPN7lImdQUpvCSrbzXTARvaxxJuJMf6H_ToSwYZtQ2LgMCvI6e1XQ-KhLtJV4wM_HjUjX8IV0xysr3SCcsQFfvZ36ezeYsMrAbrzKnHACZUms7xPpVS2lR9CP1hJm46no54qzMHfdA8-SmMdzz4xaEfEI0q1s-d_6k5l-4208dpSNKg.jpg')" data-ratio="1" href="https://t.me/cio_channel/8385?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:304px;top:454px;width:149px;height:150px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/BsZBcYi45e7GDqP0_Pi28jK3IeIySEpvmeVIxvAV8DxJ4YuiKUJKIAPJ_bx8AsClVJ7JboBTkZ4aV-xSimXg8qwI1PQyZVCKFJBe2Y_baTgKU1col4NdH1T0KbMZnd4EeL5deVMNXjNn5aO1MRJ1OAYLXZF4eYVyUJVRv2nqpPSz_OwfP8YQZeyuGqFudaktcWNgo3WNCV2-PMYrDbUCq3qFL-_odtTjKIARYqcH0HQOOxvAKnfpvRQZlKmslFyIwlK-1KPjZ4mt3qUCTHdrS8tVkhn2jntKbr1U921YJXh0taW28TW_evAmRfZE-xGSNZgz36KI_xl8WxjXSIPhbw.jpg')" data-ratio="1" href="https://t.me/cio_channel/8386?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5231190481999769412"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <b>Что станет приоритетом для рынка ITSM и ESM в ближайшие годы?</b><br/><br/>Когда сервисная команда только выходит за пределы ИТ, главная боль — навести порядок: свести процессы в одну систему, избавиться от разрозненных таблиц и почты. Но что беспокоит команды, которые этот этап уже прошли? <br/><br/><tg-emoji emoji-id="5231236777452253483"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F97AF.png')"><b>🗯</b></i></tg-emoji>Мы решили сравнить ответы зрелых сервисных команд с ответами широкого рынка, и разрыв оказался больше, чем ожидали.<br/><br/>На конференции ITSMF 2026 мы собрали 56 анкет участников — среди посетителей были представители ВТБ, Яндекса, Альфа-Банка, Райффайзен Банка и РТК ЦОД — и сопоставили ответы со срезом всего рынка. Получилось <a href="https://simpleone.ru/materials/state-of-the-russian-service-management-market-in-2026?utm_source=cio_channel_telegram&amp;amp;utm_medium=post&amp;amp;utm_campaign=itsm_esm_research_2026" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">исследование</a> о том, какие задачи для большинства компаний станут актуальны через год-два, если судить по опыту тех, кто уже прошёл этот путь.<br/><br/>Главные цифры — на карточках выше, а подробный отчёт можно скачать на сайте.<br/><br/><b><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9497.png')"><b>🔗</b></i> </b><a href="https://simpleone.ru/materials/state-of-the-russian-service-management-market-in-2026?utm_source=cio_channel_telegram&amp;amp;utm_medium=post&amp;amp;utm_campaign=itsm_esm_research_2026" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Узнать состояние рынка управления услугами</b></a><br/><br/><i>Реклама. ООО &quot;СИМПЛ 1&quot;, ИНН: 9725013892<br/>erid: 2SDnjcVs651</i></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8380?single" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8380" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">682</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><span class="tgme_widget_message_from_author" dir="auto">Ekaterina</span>,&nbsp;<a class="tgme_widget_message_date" href="https://t.me/cio_channel/8380"><time datetime="2026-09-02T12:59:01+00:00" class="time">12:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8387" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM4NywidCI6MTc4ODU2NTYyNywiaCI6IjZhMzk0Y2NkZDVjNTI1ODZhMSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5247116865438424605 1221689597_460004893" href="https://t.me/cio_channel/8387" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Z0o04NmDkESlUMuovKSZ8htP1pjwuO5pQtnLGWRKAUYS2fkL19U5eIIyQwwddH4rdssGzqsTSLbjThb_-3zmrGV1P8X5OCahOPV2k64UTBFc5hqTHTiGaNLiIFjBIsjuyBjSwPbx-OfTX7Fikco-Z6lYBzeh0gZlKoSj6VwT1Edxqpzrp_-2TezNJWMZK0kpSTD1HcL1XF0zvJzyi-nTPU2vJEbpfbPapjVVavfKKvck6XUX8FG6L2KmG5Swp9sxnPH7JliiP0rH5OUPmeJG6srr_yG4b9TWQ-guPGZTZl37WL6QYZfKuwbsB-jdlxNrCuR1ILX-FsZmtoDGI2emng.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Компании, интегрирующие ИИ в работу, рискуют стать мишенью мошенников // </b><a href="https://ria.ru/20260903/ii-2115139871.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>РИА</u></b></a><br/><br/>Компании, активно внедряющие искусственный интеллект в работу с клиентами, документами, почтой и внутренними информационными системами, могут стать целью мошенников, следует из исследования сервиса Smart Business ALert (SBA) компании ЕСА ПРО.<br/><br/>По словам экспертов, получив действующий API-ключ, третьи лица могут отправлять запросы за счет владельца и расходовать оплаченные токены.&nbsp;<br/><br/>Кроме того, если ключ открывает доступ к корпоративному агенту, последствия могут быть еще серьезнее: злоумышленник получает возможность взаимодействовать с подключенными файлами, историей обращений, базами данных и рабочими инструментами.&nbsp;<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8387" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">635</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8387"><time datetime="2026-09-03T09:27:27+00:00" class="time">09:27</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8388" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM4OCwidCI6MTc4ODU2NTYyNywiaCI6Ijc5MGE5YWEyNzNhYmEzN2MxNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5247116865438424933 1221689597_460005221" href="https://t.me/cio_channel/8388" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/reKTBW7dF7YInjtRuAtpRms0HgMgkSoKF6NBYDiIJNIu6TMI5V-F9eOC0a8kc4u3mYzJOC03cvLdlPCMxfNs-KCRNJpnGqZ4QpWShhTmipi07oNXMNF8vrNGSqsDk0rvNDHIja8fA818-ZA7a3yFghS5dQyZGDrMdrkbzSFiQ7Av0E_SIMC0hKlNeV0J_AWkHuiPSHJzr9V7Lhy7m3LtpDrK5pl0HJivDeTzLjwBt6YUfas11Ta4a5eWEn4rQptP7gxUrarQYo8Ra28EuPlQzVCOwzEz9NHMq8YbC6FURfClFyg2igbDVPeBcclmgjitHI5WMQoE7JiUEzCb7CPP-w.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Почти половина российских компаний намерены увеличить потребление облачных и ИИ-сервисов // </b><a href="https://ict.moscow/analytics/48-rossiiskikh-kompanii-namereny-uvelichit-potreblenie-oblachnykh-i-ii-servisov/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>ICT. Moscow</u></b></a><br/><br/>По<a href="https://ict.moscow/analytics/48-rossiiskikh-kompanii-namereny-uvelichit-potreblenie-oblachnykh-i-ii-servisov/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> </a>данным опроса MWS Cloud среди более 503 представителей российского бизнеса, увеличить потребление услуг ИИ-провайдеров намерены 48% респондентов, платформ для создания ИИ-агентов — 46%. Рост использования облачных систем хранения и обработки данных ожидают 45% компаний, облачных сервисов для работы с базами данных и облачных технологий для бизнеса — по 44%.<br/><br/>Такой эффект наблюдается на фоне увеличения цен на ИТ-оборудование, которого ожидают 48% респондентов, на GPU-ресурсы — 47%.<br/><br/>Помимо высокой стоимости, 18% опрошенных сталкиваются с трудностями при поиске оборудования в нужной конфигурации и с дефицитом запасных частей для ремонта. Еще 19% отмечают необходимость обновления или ремонта техники, 17% — нехватку кадров и инженеров. Найти технику в нужной конфигурации сложно 23% пользователей гибридной модели и 12% пользователей публичного облака.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8388" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">645</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8388"><time datetime="2026-09-03T12:08:35+00:00" class="time">12:08</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8389" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM4OSwidCI6MTc4ODU2NTYyNywiaCI6ImRmMzhmNzNlMGRjYjhjMjQzYyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244814372125745078 1221153506_460005302" href="https://t.me/cio_channel/8389" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/k2UDtSGXGzfnLNeMBuxjcDu-1s-Fr8pMP6uGaaltYx4pKir9KHz_DuTqjTOBGBE5V6v9vmu2IGB4cN6Hnvivf7bNYFeABaYb0Xg8PG6vUXQlN_p-cPQc9FonGlopMboU9r1r8FlnfyoZuHwhj66J1Q8nyJ4D3mI7sVURBN0YaTQPgGucsRbbh7gTeDAa-XdDeUkkBURAaoX8o5tffegVYOvKPwmLSPsAsd9DHzDQBYkRITbkeHtV9cDF9jDcwR8g6ATbiy5gLItq_fMrr6ISZL1HbJMTc4yYkLa2IMeGxU7cdpf64ap0cxAo3ZB0VoXb-Leafk97Wi0kLkVGEzpCag.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:29.125%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>ИТ-команды всё меньше хотят тратить время на инфраструктуру ради самой инфраструктуры.</b><br/><br/>И это логично: чем больше времени уходит на поддержку базовых мощностей, тем меньше остаётся на развитие продуктов. Поэтому появляются решения, где выделенные серверы можно использовать без необходимости самостоятельно собирать вокруг них весь инфраструктурный стек.<br/><br/>Yandex B2B Tech как раз <a href="https://www.cnews.ru/news/line/2026-09-02_yandex_b2b_tech_predstavila_novyj" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">представила</a> новый формат частного облака — Yandex BareMetal Extend. В нём инфраструктура заказчика физически отделена от публичного облака, но при этом компания получает уже подготовленную среду для работы.<br/><br/>Доступны три варианта: виртуализация, Kubernetes<i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/C2AE.png')"><b>®</b></i> и платформа для разработки приложений Stackland. В зависимости от задач на такой инфраструктуре можно запускать в безопасной инфраструктуре контейнерные приложения на выделенных серверах или критичные бизнес-системы на готовой виртуализации<br/><br/>При этом выделенные серверы остаются физически изолированными, а инфраструктуру можно объединять с облаком или локальной средой приватного соединения. Yandex BareMetal также соответствует первому уровню защищённости персональных данных.<br/><br/>В итоге получается модель, где компании не приходится выбирать между безопасностью данных и скоростью запуска новых ИТ-сервисов : можно сохранить контроль над ресурсами и при этом снять с ИТ-команды часть инфраструктурных задач.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">756</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><span class="tgme_widget_message_from_author" dir="auto">Ekaterina</span>,&nbsp;<a class="tgme_widget_message_date" href="https://t.me/cio_channel/8389"><time datetime="2026-09-03T14:01:51+00:00" class="time">14:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8390" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM5MCwidCI6MTc4ODU2NTYyNywiaCI6IjFhY2FlMmJjNWUwOTczY2MyZSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5247116865438425617 1221689597_460005905" href="https://t.me/cio_channel/8390" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Bo2b9RxaRmKrC_JBFaAd_tBSam-hLNl9-4_Ppcc8OWOhM2RYHyCPlqVD0PHg3Uyq1gDX_z-bJdxJpMlTffXAg6eAR0vGDhq1mYmDRiZqCiPyv1OkTPt5hcnDD8PQJUOCCk64tW5noqedoREXbanoEW-PDydr18bnjgyol4XlQhQQj9IaaF12VLg7tHgZzPr88khtPM_lB8W_0B35rkJJLbY1sKKrbNogOVcZ8LgHVqFjT5gxSCvitzb2PdQ3dUyDRveJVQtBw-m53ScSp6ZaY-y0aRRPC_Q-cSBXlGgx9cWsReRUXCZp96rRyzCmxhoZeiSi8-rGl_dPdy0Gi_jqkg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Перебои с доступом к популярным ИИ-сервисам // </b><a href="https://www.vesti.ru/ns/v-ryade-stran-polzovateli-soobshchili-o-sboyakh-chatgpt" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>Вести</u></b></a><br/><br/>Пользователи чат-бота ChatGPT, разработанного OpenAI, в нескольких странах сообщают о масштабных сбоях в его работе. Об этом свидетельствуют данные сервиса Downdetector, который отслеживает неполадки и отключения популярных интернет-платформ.<br/><br/>Первые жалобы на работу ChatGPT начали поступать примерно в 17.25 мск. Больше всего сообщений о сбоях зафиксировано в США – почти 13 тысяч. Также о проблемах сообщают пользователи из Канады, Бразилии, Великобритании, Франции, Германии, Нидерландов, Японии и других стран.<br/><br/>Кроме того, пользователи жалуются на неполадки в работе Codex – платформы OpenAI, предназначенной для задач, связанных с программированием.<br/><br/>По данным Downdetector, сбои также затронули другие ИИ-сервисы. Жалобы поступают на работу чат-бота Grok, созданного компанией xAI Илона Маска, а также Claude AI, разработанного Anthropic.&nbsp;<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8390" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">629</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8390"><time datetime="2026-09-03T18:39:01+00:00" class="time">18:39</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8391" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM5MSwidCI6MTc4ODU2NTYyNywiaCI6IjE0ZWRmNmEwM2IzZjM4NzNhMCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5246838688996597669 1221624829_460005285" href="https://t.me/cio_channel/8391" style="width:650px;background-image:url('https://cdn4.telesco.pe/file/s8n-3d_PsF0LMHLhi9o5fy8Sto6OpvXVZlM10RYUbfzD_yOdOH3_74Q9M9R25Yz8hbU0J9cepB3xkHyt6eHjqS9JF8FBJsjBAWEPKT36g7dawRAY3Sh3lJFIR4f3c8oJIHpEYIxxpJQ74XVVbEl7S1FlqCM5UliaLNQE8jLduSDmX9hKnjVwTCOQVpS4SJ-7sU4BabEqjJYUTW6VHT9GUVkS83FO1sy0soYj7MLQGTt4Eky5wkni73_dwSImJtdL-MRVCfGoc6QR3yx43wCjS_9VaiYcnMlOU9FJRddeUa4JkSik2siW2E2OdnQ6FMiKN9Q3Gl9BDgTdz_U80uWaXQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:111.07692307692%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Лишь 12% организаций могут подтвердить реальный бизнес-эффект от внедрения ИИ // </b><a href="https://ict.moscow/analytics/praktiki-vnedreniia-ii-v-rossiiskom-biznese-v-2026-godu/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>ICT. Moscow</u></b></a><br/><br/>ГК «Корус Консалтинг» опубликовала результаты опроса о практиках внедрения искусственного интеллекта в российском бизнесе в 2026 году. Респондентами стали больше 80 человек, в том числе топ-менеджеры, руководители цифровой трансформации, ИТ и ИИ.<br/><br/>Авторы изучили методы управления ИИ-инициативами, выявили ключевые ограничения, определили уровень инвестиций на внедрение и приоритетные задачи для рынка.<br/><br/><b><i>Некоторые выводы:</i></b><br/><br/>• больше чем у 50% компаний нет стратегии по внедрению ИИ. У 30% она упомянута как перспектива без целей и бюджета;<br/><br/>• наиболее зрелый подход к внедрению ИИ среди опрошенных демонстрируют компании нефтегазового и финансового секторов;<br/><br/>• семь из десяти компаний пока не могут ответить, какой вклад ИИ приносит бизнесу. 44% не измеряют эффект, четверть считают только отдельные показатели, но не связывают их с финансовыми результатами. Лишь 12% компаний могут подтвердить реальный бизнес-эффект от внедрения;<br/><br/>• в нефтегазовом секторе все респонденты уже сформировали практики оценки ИИ-инициатив: 67% отслеживают KPI отдельных функций, 33% измеряют влияние искусственного интеллекта на экономику компании;<br/><br/>• 45% компаний развивают ИИ через точечные инструменты под конкретные задачи и не выстраивают единую технологическую среду;<br/><br/>• 75% опрошенных компаний направляют на ИИ меньше 5% ИТ-бюджета, только 5% организаций выделяют больше 15%.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8391" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">496</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8391"><time datetime="2026-09-04T07:32:18+00:00" class="time">07:32</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8392" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM5MiwidCI6MTc4ODU2NTYyNywiaCI6ImU3NjdkNzE5ODhkZWMyNzcwYSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5246709732603534263 1221594804_460004279" href="https://t.me/cio_channel/8392" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/pRq8-dsINma1EDMPIkIkPrg6-NI41Csqft4rY4PX_WSDk3Zvs5pBrW0QQxjt6o_dw3hID6QHJnZIfU6Uq9V7OF3qGUEZueBLvt7Cl79pRiLY7XDbBiYMrT4Rhs4jcL1i_JaeUe6T35ZDjc3B0oxUt4r5p6zrdmYJp_gbGjAc8B8x4ZF0VkXdlkxK4nFVzeUnrMOiprUN7lSniHJmS4lxyF7wH4AHEI72VwCk6AQIepJ8izCyGa8wp4d8Tw9FVvqukQgJxb42nmNl2hKja_1AF0ryCWxwIa4z1bPHxoKTIry2kLXTxTEEtaFKMjGIpGO2HO-teIoVgPW0WmaGRg5S6w.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:61%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Как «Петрович» перевел внутренние сервисы в единую систему — и какой получил результат</b><br/><br/>Приглашаем на SimpleOne Case Day&nbsp;— конференцию о реальном опыте цифровой трансформации крупного бизнеса.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F938D.png')"><b>📍</b></i> Санкт-Петербург, м. Беговая, БЦ Space<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9793.png')"><b>🗓</b></i> 10 сентября<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F959D.png')"><b>🕝</b></i> Начало в 14:30<br/><br/>В центре программы — проект СТД «Петрович»: как компания перешла от разрозненных систем к единой цифровой среде для управления внутренними сервисами, какие задачи решала, с какими сложностями столкнулась и какого результата удалось добиться.<br/><br/><b>Что разберём:</b><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i> почему «Петрович» решил менять подход к управлению внутренними сервисами;<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i> как проходило внедрение ESM-системы SimpleOne для управления корпоративными сервисами;<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i> какие технологические решения использовали;<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i> сколько ресурсов и денег удалось сэкономить и какие метрики изменились;<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i> что уже реализовано и какие задачи компания планирует решать дальше.<br/><br/>Главное, зачем стоит прийти: реализованную E<b>SM-систему в СТД «Петрович» покажут вживую</b> с настройками, интеграциями и реальными процессами, которые компания использует каждый день.<br/><br/><b>Вы увидите:</b><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i>Автоматизацию подготовки актов сверки — подготовка одного акта сократилась с 3 дней до 1 минуты<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i>Процесс работы с просроченной задолженностью — цикл от выявления долга до взыскания сократился на 15 дней<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i>CRM для розничных клиентов с единой карточкой клиента, объектов и историей обращений<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i>Электронные чек-листы с возможностью работы офлайн<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i>Корпоративный портал — единое окно для более чем 9 000 сотрудников<br/><br/><b>Спикеры:</b><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i> Владислав Бердичевский, CIO «Петрович-Тех»<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i> Анастасия Китаева, ИТ Бизнес-партнер «Петрович-Тех»<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i> Илья Радченко, директор по платформенным продуктам SimpleOne, корпорация ITG<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i> Владимир Лялеко, директор центра управления ИТ ГК «Медиа-тел»<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i> Алексей Пастушенок, технический директор центра управления ИТ ГК «Медиа-тел»<br/><br/>После деловой программы — неформальное общение, знакомство с коллегами и обмен опытом внедрения цифровых сервисов.<br/><br/><b>Участие бесплатное, но количество мест ограничено.</b><br/>Если вы отвечаете за ИТ, внутренние сервисы или цифровую трансформацию и хотите посмотреть, как подобные проекты работают в крупном бизнесе, —&nbsp;<b>регистрируйтесь на SimpleOne Case Day.</b><br/><a href="https://simpleone.ru/events/simpleone-case-day-esm-transformation-at-std-petrovich-the-experiences-of-petrovich-tech-and-media-tel?utm_source=telegram_cio_channel&amp;amp;utm_medium=tg&amp;amp;utm_campaign=simpleone_case_day_petrovich&amp;amp;utm_term=telegram_cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><br/><b>Регистрация</b></a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>4</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">423</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><span class="tgme_widget_message_from_author" dir="auto">Ekaterina</span>,&nbsp;<a class="tgme_widget_message_date" href="https://t.me/cio_channel/8392"><time datetime="2026-09-04T09:34:01+00:00" class="time">09:34</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cio_channel/8393" data-view="eyJjIjotMTQ2ODIxOTA1NywicCI6ODM5MywidCI6MTc4ODU2NTYyNywiaCI6ImMwMmNmNzg5ZDY4MjM3Yzc0NCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cio_channel"><i class="tgme_widget_message_user_photo bgcolor4" data-content="C"><img src="https://cdn4.telesco.pe/file/oCf2ty6mC7V15cRvWDqLmn-Mk7doPzy4-a5I7xSAsZtfWe9Nc3JiYU4BbOKEL-IGs091gHTQ4OGRjnzNw47L2Dv7PAECcFAs5_Ufdbrl5TL6o23s3T5jzRrctuX5U531qxAZjILGBUovKHC97pWlBG-5Pktx2y3TS6xXSBCafwiOOTj2FpoUeVRhRHfDr5pNtO18qos-TZasiOAgd4ozVQ5SkUTaDTD0A24f06p9T_ibqPQkResNlEZ6852MsFW71JCPVVy9_L1bVJd2gcL9OnverLbc40ZpkH5dx-8TT-cgBUfbauNZbj9_-oE1yCwDQlmQcbFrGBkHQp8U20EOBA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cio_channel"><span dir="auto">CIO: канал IT руководителей</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5246838688996597939 1221624829_460005555" href="https://t.me/cio_channel/8393" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/uFSD9bw4prt_uRBEiOYCwddrE-pw9-1ctDO82TIqiPFM-hUuusWjoP6X6VROf4nZipKdAPKf3GzUN3WemYnRiHyNFEiZR2cd2IjMyOxkfwkNPMOI-ULcalXJ8o9NTDXC3558LU4WVk8dQaKZdCiP-Bcp9143FKQU-1tA0NskdwamHS20ny4VDwuE71oRdtJAbqa4KjreF4EUEt1xmYTrCw5JMiwWiJJkIQCNi_ujmZo75X2JlXoNdaoWQwCETHUv4rJGR8QP3NdygogJzoogTiOUAuLdZj0YXqlJRDY4lCH1vdc3vhHw3Mzm-QIwumUc3rzzud2OiB6nWodn3thw4w.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>IТ-ассоциации выступили против готовящейся реформы отрасли связи // </b><a href="https://www.rbc.ru/technology_and_media/03/09/2026/6a99675f9a79474527666dd1" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b><u>РБК</u></b></a><br/><br/>Ведомство предлагает перейти от 17 видов лицензий к трем категориям: базовой (1 млн руб.), универсальной (10 млн руб.) и генеральной (50 млн руб.). Также вводятся требования к уставному капиталу — от 5 млн до 1 млрд руб. в зависимости от типа лицензии.<br/><br/>Среди других инициатив:<br/>- обязанность устанавливать СОРМ до начала оказания услуг;<br/>- запрет на оказание услуг связи для ИП;<br/>- минимальные ежегодные отчисления в резерв универсального обслуживания — 1 млн руб.;<br/>- передача сети оператора, лишившегося лицензии, крупному игроку в регионе.<br/><br/><b>Позиция Минцифры</b>: изменения направлены на то, чтобы на рынке остались только надежные операторы, мотивированные на качественную работу и способные инвестировать в модернизацию. В ведомстве заявляют, что уход недобросовестных игроков не скажется на отрасли негативно, а преимущества для абонентов — повышение качества и доступности услуг.<br/><br/><b>Против реформы выступили профильные ассоциации на круглом столе в «Российской газете» 3 сентября.</b><br/><br/><b>АРПП «Отечественный софт»</b> указывает, что уход тысяч региональных операторов лишит ИТ-отрасль крупного сегмента клиентов и полигона для тестирования решений. Крупные операторы, которые останутся, преимущественно разрабатывают софт собственными силами, что делает рынок неустойчивым и ставит под вопрос достижение цифрового суверенитета.<br/><br/><b>Ассоциация участников отрасли ЦОД</b> отмечает, что реформа не учитывает дата-центры, которые также обладают лицензиями на услуги связи. Деградация региональных сетей может повлиять на единую цифровую инфраструктуру в целом.<br/><br/><b>АСТО</b> приводит данные: на рынке широкополосного доступа совокупная доля региональных операторов составляет 45%, в сегменте B2C — 55%. В 27 регионах после реформы может не остаться ни одного регионального оператора, еще в 12 регионах рынок сократится на 30–49%.<br/><br/><b>«Ростелесеть»</b> заявляет, что требования по охвату и отчислениям сделают работу невозможной для малых операторов в небольших населенных пунктах и отдельных районах городов-миллионников. Слияния небольших игроков, на которые ссылаются в Минцифры, технически займут 1–2 года и не решат проблему.<br/><br/><b>АМОР</b> обращает внимание, что инструменты борьбы с недобросовестными операторами уже существуют — с 2024 года штрафы за нарушения в области СОРМ выросли до 1 млн руб., с июля 2026-го введен штраф до 10 млн руб. за повторное нарушение. Также отмечается, что передача сетей крупным игрокам при лишении лицензии не предусматривает соразмерного возмещения и затрагивает право собственности.<br/><br/><tg-emoji emoji-id="5334853932915114338"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i></tg-emoji> <a href="https://vk.com/cio_club" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO ВКонтакте</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/cio_channel" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Канал CIO в Максе</a> <br/><tg-emoji emoji-id="5449407131675558756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji> <a href="https://max.ru/join/oEWKEkdIMeAUmEQG6WkJD9g1Wrejf8VRH-qiGfoUOzE" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Чат CIO в Максе</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cio_channel/8393" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">364</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cio_channel/8393"><time datetime="2026-09-04T11:35:27+00:00" class="time">11:35</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 129.41ms -->

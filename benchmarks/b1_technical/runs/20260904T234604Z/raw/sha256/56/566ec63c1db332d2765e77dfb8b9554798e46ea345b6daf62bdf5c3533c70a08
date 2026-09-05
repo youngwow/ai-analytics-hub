@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="http://www.nalog.gov.ru/rss/" rel="self" type="application/rss+xml" />
+<title>Федеральная налоговая служба</title> 
+<link>http://www.nalog.gov.ru/</link>
+<description>www.nalog.gov.ru</description> 
+<generator>www.nalog.gov.ru</generator> 
+<image>
+  <url>http://www.nalog.gov.ru/css/ul/i/sign.png</url>
+  <title>Федеральная налоговая служба</title>
+  <link>http://www.nalog.gov.ru/</link>
+</image><item>
+<title>Тимур Шиналиев: ЭКГ-рейтинг и Сервис оценки — это дополняющие друг друга системы</title>
+<guid isPermaLink="true">http://www.nalog.gov.ru/rn77/news/activities_fts/16647217/</guid>
+<pubDate>Thu, 03 Sep 2026 11:30:11 GMT</pubDate>
+<category>Деятельность ФНС России</category>
+<link>http://www.nalog.gov.ru/rn77/news/activities_fts/16647217/</link>
+<description>
+<![CDATA[<img src="http://www.nalog.gov.ru/cdn/image/2819282/image_icon.jpg" />]]>
+</description> 
+<comments>http://www.nalog.gov.ru/rn77/news/activities_fts/16647217/</comments>
+</item><item>
+<title>Как применяются повышающие коэффициенты при налогообложении земельного участка, предназначенного для жилищного строительства</title>
+<guid isPermaLink="true">http://www.nalog.gov.ru/rn77/news/activities_fts/16646618/</guid>
+<pubDate>Thu, 03 Sep 2026 09:30:42 GMT</pubDate>
+<category>Деятельность ФНС России</category>
+<link>http://www.nalog.gov.ru/rn77/news/activities_fts/16646618/</link>
+<description>
+<![CDATA[<img src="http://www.nalog.gov.ru/cdn/image/2819168/image_icon.jpg" />]]>
+</description> 
+<comments>http://www.nalog.gov.ru/rn77/news/activities_fts/16646618/</comments>
+</item></channel></rss>

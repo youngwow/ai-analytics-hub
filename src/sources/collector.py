@@ -99,9 +99,15 @@ class Collector:
                         pool.submit(self._poll, s, states[s.id], client, started, since, backfill): s
                         for s in sources
                     }
+                    completed = []
                     for fut in as_completed(futures):
                         source = futures[fut]
-                        result, latency_ms = fut.result()
+                        completed.append((source, *fut.result()))
+                    # Network work remains concurrent, while persistence order is
+                    # stable. Global URL dedupe must not depend on which worker won.
+                    for source, result, latency_ms in sorted(
+                        completed, key=lambda row: row[0].id or 0
+                    ):
                         entry = self._persist(
                             source,
                             states[source.id],
@@ -171,6 +177,9 @@ class Collector:
         if status == "ok":
             report.sources_ok += 1
             report.docs_new += entry["new"]
+        elif status == "partial":
+            report.sources_partial += 1
+            report.docs_new += entry["new"]
         elif status == "not_modified":
             report.sources_not_modified += 1
         else:
@@ -238,6 +247,12 @@ class Collector:
             return {**entry, "status": "not_modified"}
 
         first_run = state.first_run
+        entry.update(
+            warnings=list(result.warnings),
+            fulltext_attempted=0,
+            fulltext_extracted=0,
+            fulltext_fallback=0,
+        )
         candidates = result.documents
         entry["seen"] = len(candidates)
         docs = self._drop_known(source, candidates)
@@ -259,7 +274,12 @@ class Collector:
             and self.config.scraper.fetch_fulltext
             and any(d.needs_fulltext for d in docs)
         ):
-            self.fulltext.enrich(client, docs)
+            targets = [d for d in docs if d.needs_fulltext and d.url]
+            entry["fulltext_attempted"] = len(targets)
+            entry["fulltext_extracted"] = self.fulltext.enrich(client, docs)
+            entry["fulltext_fallback"] = sum(
+                bool(d.text or d.summary) for d in targets if not d.text
+            )
         if source.kind in ("html", "sitemap") and first_run and since is not None:
             # First look at a list page / undated sitemap entries: only keep what we
             # can date inside the window, otherwise the whole site menu becomes "news".
@@ -301,14 +321,20 @@ class Collector:
             len(inserted),
             latency_ms,
         )
-        return {**entry, "status": "ok", "new": len(inserted), "new_external_ids": inserted}
+        return {
+            **entry,
+            "status": "partial" if result.warnings else "ok",
+            "new": len(inserted),
+            "new_external_ids": inserted,
+        }
 
     def _drop_known(self, source: Source, docs: list[RawDocument]) -> list[RawDocument]:
         """Skip documents already stored, by (source, external_id) or by URL.
 
         The URL rule is skipped for section/home URLs and for documents without
         one (search digests): some regulator feeds link every item to the same
-        landing page.
+        landing page. Persistence order is stable, so cross-source URL ownership
+        cannot change with thread scheduling.
         """
         own = {source.url.rstrip("/"), source.fetch_url.rstrip("/")}
         out: list[RawDocument] = []

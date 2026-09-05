@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>&#x41E;&#x444;&#x438;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43E;&#x43F;&#x443;&#x431;&#x43B;&#x438;&#x43A;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x43E;&#x432;&#x44B;&#x445; &#x430;&#x43A;&#x442;&#x43E;&#x432;</title>
+
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="196x196" href="/favicon/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="160x160" href="/favicon/favicon-160.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon/favicon-57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/favicon/favicon-60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/favicon/favicon-72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/favicon/favicon-76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/favicon/favicon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/favicon/favicon-120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon/favicon-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon/favicon-152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicon/favicon-180.png" />
+    <link rel="apple-touch-icon" href="/favicon/favicon-57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon-60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/favicon-72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/favicon-76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/favicon-114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/favicon-152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/favicon/favicon-144.png" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+
+    <meta name="robots">
+    <meta name="keywords">
+    <meta name="description">
+
+    <script src="/app/bundle.js?v=JyS5_g04Nx1ex98yNLfNLYOOq07hWM0v9Lq1oq-A7iA"></script>
+    <script src="/lib/es6-shim/es6-shim.min.js"></script>
+    <script src="/lib/es6-promise/es6-promise.min.js"></script>
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <link href="/lib/select2/css/select2.min.css" rel="stylesheet" />
+
+    <link href="/lib/select2-theme-bootstrap4/dist/select2-bootstrap.css" rel="stylesheet" />
+    <script src="/lib/select2/js/select2.min.js" defer></script>
+    <script src="/lib/select2/js/i18n/ru.js" defer></script>
+    <script src="/js/url-helper.js"></script>
+
+    <script type="text/javascript">EntryPoint.common()</script>
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/app/bundle.css?v=3JT2kB8CYknmAQZDHp_6Z9d2vIn_3kOsGh_x0SsMZSg" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <header>
+                <div class="header-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="logo">
+                                    <a href=http://pravo.gov.ru><img class="img-responsive" alt="Официальное опубликование правовых актов" src="/images/logo.png"></a>
+                                </div>
+                                <div class="site-title">Официальное опубликование правовых актов</div>
+                                <div class="site-titleES">ОФИЦИАЛЬНОЕ ОПУБЛИКОВАНИЕ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-button notforprint"></div>
+                <div class="mobile-menu notforprint">
+                    <i class="mobile-menu-close"></i>
+                    <div class="mobile-menu-container">
+                        <ul>
+
+<li>
+    <a title="На главную страницу портала" class="main-item with-icon" href="http://pravo.gov.ru">
+        <i class="icon icon-home"></i>
+    </a>
+</li>
+<li>
+    <a class="main-item " href=/documents/council_2/daily title="05 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Сегодня</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/council_2/weekly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x430;&#x44F; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44F;, &#x441; &#x43F;&#x43E;&#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x430; &#x43F;&#x43E; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; - c 31 &#x43F;&#x43E; 06 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Неделя</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/council_2/monthly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x441;&#x44F;&#x446; - &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44C;">Месяц</a>
+</li>
+<li>
+    <a class="main-item " href=/search/council_2>ПОИСК <i class="fa fa-search faright"></i></a>
+</li>
+<li>
+    <a class="main-item " href=/calendar/council_2>КАЛЕНДАРЬ ОПУБЛИКОВАНИЯ <i class="far fa-calendar-alt faright"></i></a>
+</li>                        </ul>
+                    </div>
+                </div>
+                <div class="top_menu notforprint" id="navbarSupportedContent">
+                    <div class="container">
+                        <div class="row">
+                            <ul class="float-left">
+
+<li>
+    <a title="На главную страницу портала" class="main-item with-icon" href="http://pravo.gov.ru">
+        <i class="icon icon-home"></i>
+    </a>
+</li>
+<li>
+    <a class="main-item " href=/documents/council_2/daily title="05 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Сегодня</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/council_2/weekly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x430;&#x44F; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44F;, &#x441; &#x43F;&#x43E;&#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x430; &#x43F;&#x43E; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; - c 31 &#x43F;&#x43E; 06 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Неделя</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/council_2/monthly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x441;&#x44F;&#x446; - &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44C;">Месяц</a>
+</li>
+<li>
+    <a class="main-item " href=/search/council_2>ПОИСК <i class="fa fa-search faright"></i></a>
+</li>
+<li>
+    <a class="main-item " href=/calendar/council_2>КАЛЕНДАРЬ ОПУБЛИКОВАНИЯ <i class="far fa-calendar-alt faright"></i></a>
+</li>                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="overlay"></div>
+                
+
+        <div class="container breadcrumbs-container notforprint">
+            <div class="breadcrumbs-line ">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumbs-period-info">
+                            <ol class="breadcrumb">
+                                        <li class="breadcrumb-item breadcrumb-item-home">
+                                            <a href="/">Официальное опубликование</a>
+                                        </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<form name="search" method="get" id="consultant-search">
+    <div class="container">
+        <input type="hidden" value="council_2" id="block" name="block" />
+        <input type="hidden" id="category" name="category" />
+        <input type="hidden" id="period" name="periodType" />
+
+
+        <input type="hidden" value="1" id="index" name="index" />
+<div class="row">
+    <div class="col-md-9 col-sm-12">
+            <div class="title-h1">
+                &#x413;&#x43E;&#x441;&#x443;&#x434;&#x430;&#x440;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x430;&#x44F; &#x414;&#x443;&#x43C;&#x430; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x421;&#x43E;&#x431;&#x440;&#x430;&#x43D;&#x438;&#x44F; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+            </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+
+<div class="notforprint float-right text-right">
+    <div class="documents-menu-item">
+        <span>Документов на странице:</span>
+        <select id="rangeSizeSelect" class="" data-minimum-results-for-search="Infinity" name="pageSize" data-val="true" data-val-required="The PageSize field is required."><option value="10">10</option>
+<option selected="selected" value="30">30</option>
+<option value="100">100</option>
+<option value="200">200</option>
+</select>
+    </div>
+    <div>
+        <a href="#print" onclick="window.print();" class="documents-menu-item">
+            <span>
+                Печать списка документов -
+            </span>
+            <img alt="Печать" border="0" src="/images/print.png" />
+        </a>
+    </div>
+</div>
+    </div>
+    <div class="col-12">
+        <div class="title-h6 text-center">
+            СПИСОК ОПУБЛИКОВАННЫХ ПРАВОВЫХ АКТОВ 
+        </div>
+    </div>
+</div>
+        <div id="documentListDiv">
+
+
+<div style="margin-top: 10px;" class="page-navigation-count notforprint">
+    Показаны на странице: с 1
+    по 30
+    из 62
+</div>
+
+<div class="page-navigation notforprint"><span class='disableGo'><i class='fas fa-caret-left'></i></span >  <span class='page-current'>1</span>  <a href='/documents/block/council_2?index=2' class='' onClick='gotourl("/documents/block/council_2#index=2"); return false;'>2</a>  <a href='/documents/block/council_2?index=3' class='' onClick='gotourl("/documents/block/council_2#index=3"); return false;'>3</a>  <a title='Следующая' href='/documents/block/council_2?index=2' class='' onClick='gotourl("/documents/block/council_2#index=2"); return false;'><i class='fas fa-caret-right'></i></a></div>
+<div class="documents-container">
+    <div class="documents-table">
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        1
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202509250008">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202509250008" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 25.09.2025 № 9115-8 ГД<br /> "О назначении Изотовой Галины Сергеевны на должность заместителя Председателя Счетной палаты Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202509250008</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">25.09.2025</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202509250008" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">39 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        2
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202509230014">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202509230014" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 23.09.2025 № 9068-8 ГД<br /> "О назначении Щапова Михаила Викторовича на должность аудитора Счетной палаты Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202509230014</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">23.09.2025</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202509230014" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">37 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        3
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202509230013">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202509230013" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 23.09.2025 № 9067-8 ГД<br /> "О назначении Шилкова Данила Евгеньевича на должность аудитора Счетной палаты Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202509230013</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">23.09.2025</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202509230013" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">37 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        4
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202509230015">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202509230015" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 23.09.2025 № 9066-8 ГД<br /> "О назначении Нилова Олега Анатольевича на должность аудитора Счетной палаты Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202509230015</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">23.09.2025</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202509230015" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">37 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        5
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202509230012">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202509230012" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 23.09.2025 № 9065-8 ГД<br /> "О назначении Каграманяна Игоря Николаевича на должность аудитора Счетной палаты Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202509230012</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">23.09.2025</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202509230012" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">37 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        6
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202509230011">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202509230011" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 23.09.2025 № 9064-8 ГД<br /> "О назначении Зайцева Максима Сергеевича на должность аудитора Счетной палаты Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202509230011</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">23.09.2025</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202509230011" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">37 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        7
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202507080013">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202507080013" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 08.07.2025 № 8624-8 ГД<br /> "Об утверждении Никитина Андрея Сергеевича Министром транспорта Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202507080013</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">08.07.2025</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202507080013" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        8
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140092">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140092" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6087-8 ГД<br /> "Об утверждении Шадаева Максута Игоревича Министром цифрового развития, связи и массовых коммуникаций Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140092</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140092" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">37 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        9
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140082">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140082" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6086-8 ГД<br /> "Об утверждении Чекункова Алексея Олеговича Министром Российской Федерации по развитию Дальнего Востока и Арктики"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140082</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140082" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">36 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        10
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140091">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140091" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6085-8 ГД<br /> "Об утверждении Цивилева Сергея Евгеньевича Министром энергетики Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140091</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140091" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">34 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        11
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140086">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140086" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6084-8 ГД<br /> "Об утверждении Фалькова Валерия Николаевича Министром науки и высшего образования Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140086</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140086" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">36 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        12
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140077">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140077" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6083-8 ГД<br /> "Об утверждении Файзуллина Ирека Энваровича Министром строительства и жилищно-коммунального хозяйства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140077</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140077" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">38 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        13
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140087">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140087" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6082-8 ГД<br /> "Об утверждении Старовойта Романа Владимировича Министром транспорта Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140087</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140087" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">34 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        14
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140088">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140088" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6081-8 ГД<br /> "Об утверждении Силуанова Антона Германовича Министром финансов Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140088</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140088" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">33 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        15
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140079">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140079" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6080-8 ГД<br /> "Об утверждении Решетникова Максима Геннадьевича Министром экономического развития Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140079</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140079" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">36 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        16
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140078">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140078" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6079-8 ГД<br /> "Об утверждении Мурашко Михаила Альбертовича Министром здравоохранения Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140078</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140078" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        17
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140090">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140090" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6078-8 ГД<br /> "Об утверждении Любимовой Ольги Борисовны Министром культуры Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140090</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140090" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">34 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        18
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140093">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140093" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6077-8 ГД<br /> "Об утверждении Лут Оксаны Николаевны Министром сельского хозяйства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140093</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140093" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        19
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140081">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140081" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6076-8 ГД<br /> "Об утверждении Кравцова Сергея Сергеевича Министром просвещения Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140081</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140081" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">34 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        20
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140084">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140084" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6075-8 ГД<br /> "Об утверждении Котякова Антона Олеговича Министром труда и социальной защиты Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140084</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140084" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">36 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        21
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140083">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140083" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6074-8 ГД<br /> "Об утверждении Козлова Александра Александровича Министром природных ресурсов и экологии Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140083</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140083" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">36 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        22
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140085">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140085" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6073-8 ГД<br /> "Об утверждении Дегтярева Михаила Владимировича Министром спорта Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140085</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140085" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">34 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        23
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140089">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140089" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 14.05.2024 № 6072-8 ГД<br /> "Об утверждении Алиханова Антона Андреевича Министром промышленности и торговли Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140089</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140089" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        24
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140048">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140048" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 13.05.2024 № 6071-8 ГД<br /> "Об утверждении Чернышенко Дмитрия Николаевича Заместителем Председателя Правительства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140048</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140048" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        25
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140047">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140047" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 13.05.2024 № 6070-8 ГД<br /> "Об утверждении Хуснуллина Марата Шакирзяновича Заместителем Председателя Правительства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140047</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140047" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">116 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        26
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140046">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140046" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 13.05.2024 № 6069-8 ГД<br /> "Об утверждении Трутнева Юрия Петровича Заместителем Председателя Правительства Российской Федерации – полномочным представителем Президента Российской Федерации в Дальневосточном федеральном округе"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140046</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140046" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">42 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        27
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140045">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140045" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 13.05.2024 № 6068-8 ГД<br /> "Об утверждении Савельева Виталия Геннадьевича Заместителем Председателя Правительства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140045</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140045" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        28
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140044">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140044" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 13.05.2024 № 6067-8 ГД<br /> "Об утверждении Патрушева Дмитрия Николаевича Заместителем Председателя Правительства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140044</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140044" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        29
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140043">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140043" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 13.05.2024 № 6066-8 ГД<br /> "Об утверждении Оверчука Алексея Логвиновича Заместителем Председателя Правительства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140043</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140043" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">36 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        30
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202405140042">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202405140042" class="documents-item-name">
+                                Постановление Государственной Думы Федерального Собрания Российской Федерации от 13.05.2024 № 6065-8 ГД<br /> "Об утверждении Новака Александра Валентиновича Заместителем Председателя Правительства Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202405140042</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">14.05.2024</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202405140042" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">116 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>
+
+<div style="margin-top: 10px;" class="page-navigation-count notforprint">
+    Показаны на странице: с 1
+    по 30
+    из 62
+</div>
+
+<div class="page-navigation notforprint"><span class='disableGo'><i class='fas fa-caret-left'></i></span >  <span class='page-current'>1</span>  <a href='/documents/block/council_2?index=2' class='' onClick='gotourl("/documents/block/council_2#index=2"); return false;'>2</a>  <a href='/documents/block/council_2?index=3' class='' onClick='gotourl("/documents/block/council_2#index=3"); return false;'>3</a>  <a title='Следующая' href='/documents/block/council_2?index=2' class='' onClick='gotourl("/documents/block/council_2#index=2"); return false;'><i class='fas fa-caret-right'></i></a></div>        </div>
+    </div>
+</form>
+
+
+
+            </main>
+        </div>
+        <footer class="notforprint">
+            <div class="footer">
+                <div class="footer-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-7 footer-certificates">
+
+                                <span class="footer-text">
+                                    <a href="http://pravo.gov.ru/upload/medialibrary/aea/aea92c7a1a0cb2c5e8c2104cf6aceaff.jpg" target="_blank">Свидетельство о&nbsp;регистрации СМИ №&nbsp;ФС77-47467</a>
+                                </span>
+                                <span class="footer-text" style="padding-left: 10px;">
+                                    <a href="http://pravo.gov.ru/upload/medialibrary/eaf/eafafedba15eba345ea36007b7bbd994.jpg" target="_blank">Электронный паспорт ФГИС №&nbsp;ФС77110096</a>
+                                </span>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+
+                                <div class="footer-buttons">
+                                    <div class="soc-block soc-top">
+                                        <a class="footer-item" href="/rss" title="RSS каналы"><img class="footer-item-icon" alt="RSS каналы" src="/images/rss-logo.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="HTML конструктор" href="/HtmlConstructor"><img class="footer-item-icon" alt="HTML конструктор" src="/images/html-code.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="Открытые данные" href="/OpenData"><img class="footer-item-icon" alt="Открытые данные" src="/images/registry-editor.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="API интерфейс" href="/help"><img class="footer-item-icon" alt="API интерфейс" src="/images/api.svg"></a>
+                                                <div>
+                                                    <script type="text/javascript" src="/js/counter-yandex.js"></script>
+                                                    <noscript><div><img src="https://mc.yandex.ru/watch/25702331" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+                                                    <!-- /Yandex.Metrika counter -->
+                                                </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/site.js?v=R8u1rEpscBH6axYHCUUniS65iRQ4UBaenIV39gnO9wo"></script>
+    <script src="/js/menu.js?v=AbPet1jOZejrSykwqkhCRnsfF56meR48uMZ8ByrgbXE"></script>
+
+    <link href="/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <script src="/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/lib/bootstrap-datepicker/locales/bootstrap-datepicker.ru.min.js"></script>
+
+    
+    <script type="text/javascript" src="/js/documents.js?t=1"></script>
+
+</body>
+</html>

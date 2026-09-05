@@ -1,0 +1,551 @@
+{
+  "metadata": {
+    "benchmark": "B1-technical",
+    "started_at": "2026-09-04T23:55:19.746263+00:00",
+    "run_id": "20260904T235519Z",
+    "python": "3.12.14",
+    "platform": "macOS-26.6.1-arm64-arm-64bit",
+    "sample_per_source": 3,
+    "timeout_seconds": 20.0,
+    "collector_concurrency": 8,
+    "telegram_transport": "web-preview",
+    "tavily_enabled": true,
+    "finished_at": "2026-09-04T23:56:06.158098+00:00"
+  },
+  "live": {
+    "wall_ms": 38056.421,
+    "sources": 53,
+    "sources_ok": 53,
+    "sources_failed": 0,
+    "documents_stored": 131,
+    "documents_with_content": 130,
+    "documents_with_date": 128,
+    "http_exchanges": 143,
+    "raw_blobs": 136,
+    "response_bytes": 28401558,
+    "user_cpu_seconds": 4.732,
+    "system_cpu_seconds": 0.594,
+    "peak_rss_mb": 216.44,
+    "captures": "benchmarks/b1_technical/runs/20260904T235519Z/captures.jsonl"
+  },
+  "search_artifacts": [
+    {
+      "number": 1,
+      "method": "POST",
+      "url": "https://api.tavily.com/search",
+      "started_at": "2026-09-04T23:55:24.622245+00:00",
+      "elapsed_ms": 1217.155,
+      "status": 200,
+      "request_body_sha256": "1cab3d2bdefeceae13805ffe27e9c6163873a4641eede66b2bc8afdd90213683",
+      "response_body_sha256": "fe171819457431a0a7d1a0ca5a9b776a8515a40e9b7a0f41921f92fb5e698b22",
+      "request_file": "search_artifacts/01_request.json",
+      "response_file": "search_artifacts/01_response.json"
+    },
+    {
+      "number": 2,
+      "method": "POST",
+      "url": "https://api.tavily.com/search",
+      "started_at": "2026-09-04T23:55:24.435080+00:00",
+      "elapsed_ms": 4323.185,
+      "status": 200,
+      "request_body_sha256": "b41272a987bc8e171379b07345e898539d0f76525ff4095db44ed83ac1f3f3a1",
+      "response_body_sha256": "d8f06f9674cff9dceedb8f9c06f5e26e6bef9cab04ef5b1365305a4e869fa75a",
+      "request_file": "search_artifacts/02_request.json",
+      "response_file": "search_artifacts/02_response.json"
+    }
+  ],
+  "load": {
+    "levels": [
+      1,
+      8,
+      24
+    ],
+    "repeats_per_source": 5,
+    "by_kind": {
+      "html": [
+        {
+          "workers": 1,
+          "requests": 15,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 620,
+          "latency_ms": {
+            "p50": 2.88,
+            "p95": 6.695,
+            "p99": 6.695,
+            "max": 6.695
+          },
+          "throughput_requests_per_second": 291.18
+        },
+        {
+          "workers": 8,
+          "requests": 15,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 620,
+          "latency_ms": {
+            "p50": 9.646,
+            "p95": 17.426,
+            "p99": 17.426,
+            "max": 17.426
+          },
+          "throughput_requests_per_second": 660.82
+        },
+        {
+          "workers": 24,
+          "requests": 15,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 620,
+          "latency_ms": {
+            "p50": 11.127,
+            "p95": 17.934,
+            "p99": 17.934,
+            "max": 17.934
+          },
+          "throughput_requests_per_second": 629.6
+        }
+      ],
+      "rss": [
+        {
+          "workers": 1,
+          "requests": 120,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 8440,
+          "latency_ms": {
+            "p50": 7.269,
+            "p95": 21.178,
+            "p99": 48.633,
+            "max": 60.453
+          },
+          "throughput_requests_per_second": 102.52
+        },
+        {
+          "workers": 8,
+          "requests": 120,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 8440,
+          "latency_ms": {
+            "p50": 48.055,
+            "p95": 191.126,
+            "p99": 436.043,
+            "max": 595.081
+          },
+          "throughput_requests_per_second": 100.38
+        },
+        {
+          "workers": 24,
+          "requests": 120,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 8440,
+          "latency_ms": {
+            "p50": 142.542,
+            "p95": 687.554,
+            "p99": 834.429,
+            "max": 863.498
+          },
+          "throughput_requests_per_second": 100.86
+        }
+      ],
+      "search": [
+        {
+          "workers": 1,
+          "requests": 10,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 140,
+          "latency_ms": {
+            "p50": 1.675,
+            "p95": 3.642,
+            "p99": 3.642,
+            "max": 3.642
+          },
+          "throughput_requests_per_second": 406.59
+        },
+        {
+          "workers": 8,
+          "requests": 10,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 140,
+          "latency_ms": {
+            "p50": 4.471,
+            "p95": 18.344,
+            "p99": 18.344,
+            "max": 18.344
+          },
+          "throughput_requests_per_second": 417.39
+        },
+        {
+          "workers": 24,
+          "requests": 10,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 140,
+          "latency_ms": {
+            "p50": 5.924,
+            "p95": 18.181,
+            "p99": 18.181,
+            "max": 18.181
+          },
+          "throughput_requests_per_second": 406.66
+        }
+      ],
+      "sitemap": [
+        {
+          "workers": 1,
+          "requests": 10,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 1320,
+          "latency_ms": {
+            "p50": 5.359,
+            "p95": 250.814,
+            "p99": 250.814,
+            "max": 250.814
+          },
+          "throughput_requests_per_second": 8.02
+        },
+        {
+          "workers": 8,
+          "requests": 10,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 1320,
+          "latency_ms": {
+            "p50": 1173.885,
+            "p95": 1341.666,
+            "p99": 1341.666,
+            "max": 1341.666
+          },
+          "throughput_requests_per_second": 7.42
+        },
+        {
+          "workers": 24,
+          "requests": 10,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 1320,
+          "latency_ms": {
+            "p50": 1161.763,
+            "p95": 1272.3,
+            "p99": 1272.3,
+            "max": 1272.3
+          },
+          "throughput_requests_per_second": 7.85
+        }
+      ],
+      "telegram": [
+        {
+          "workers": 1,
+          "requests": 110,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 1810,
+          "latency_ms": {
+            "p50": 2.377,
+            "p95": 4.496,
+            "p99": 5.761,
+            "max": 5.817
+          },
+          "throughput_requests_per_second": 366.54
+        },
+        {
+          "workers": 8,
+          "requests": 110,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 1810,
+          "latency_ms": {
+            "p50": 11.134,
+            "p95": 21.999,
+            "p99": 30.223,
+            "max": 40.801
+          },
+          "throughput_requests_per_second": 588.71
+        },
+        {
+          "workers": 24,
+          "requests": 110,
+          "success_percent": 100.0,
+          "stable_sources_percent": 100.0,
+          "replay_misses": 0,
+          "documents": 1810,
+          "latency_ms": {
+            "p50": 23.599,
+            "p95": 62.5,
+            "p99": 82.062,
+            "max": 92.354
+          },
+          "throughput_requests_per_second": 549.98
+        }
+      ]
+    }
+  },
+  "deterministic_guardrails": {
+    "benchmark": "B1-D",
+    "manifest_version": "1.0",
+    "captured_at": "2026-09-02T12:00:00+00:00",
+    "generated_at": "2026-09-04T23:56:06.158011+00:00",
+    "scenario_count": 8,
+    "passed": 8,
+    "recall_percent": 100.0,
+    "required_field_accuracy_percent": 100.0,
+    "guardrails": {
+      "conditional_get": true,
+      "timeout_is_typed_failure": true,
+      "recovery_returns_all_documents": true
+    },
+    "operational": {
+      "failed_source_did_not_stop_other": true,
+      "recovery_backfilled_available_documents": true,
+      "repeat_created_no_duplicates": true,
+      "documents_after_first": 4,
+      "documents_after_recovery": 6,
+      "documents_after_repeat": 6
+    },
+    "rows": [
+      {
+        "id": "rss-yandex-fulltext",
+        "kind": "rss",
+        "passed": true,
+        "expected": 4,
+        "observed": 4,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 0.892
+      },
+      {
+        "id": "rss-cbr-fulltext",
+        "kind": "rss",
+        "passed": true,
+        "expected": 2,
+        "observed": 2,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 2.135
+      },
+      {
+        "id": "atom",
+        "kind": "rss",
+        "passed": true,
+        "expected": 2,
+        "observed": 2,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 0.401
+      },
+      {
+        "id": "telegram-preview",
+        "kind": "telegram",
+        "passed": true,
+        "expected": 4,
+        "observed": 4,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 0.877
+      },
+      {
+        "id": "telegram-media-only",
+        "kind": "telegram",
+        "passed": true,
+        "expected": 1,
+        "observed": 1,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 0.452
+      },
+      {
+        "id": "sitemap-urlset",
+        "kind": "sitemap",
+        "passed": true,
+        "expected": 3,
+        "observed": 3,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 0.134
+      },
+      {
+        "id": "html-list",
+        "kind": "html",
+        "passed": true,
+        "expected": 38,
+        "observed": 38,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 2.742
+      },
+      {
+        "id": "search-tavily",
+        "kind": "search",
+        "passed": true,
+        "expected": 4,
+        "observed": 4,
+        "missing_ids": [],
+        "field_failures": [],
+        "error": null,
+        "latency_ms": 0.405
+      }
+    ]
+  },
+  "limitations": [
+    "Telegram использует web-preview: MTProto credentials/session отсутствуют в доступном .env.",
+    "Техническая полезность означает доставленные документы с содержимым, а не релевантность GS Labs.",
+    "Recall по всем live-доменам не заявляется без независимой ручной разметки raw snapshots.",
+    "Нагрузочный replay измеряет adapter/ingestion code на локальных байтах, а не пропускную способность внешних сайтов."
+  ],
+  "methods": [
+    {
+      "method": "html",
+      "configured_sources": 3,
+      "live_success_percent": 100.0,
+      "sources_with_documents_percent": 100.0,
+      "stored_documents": 3,
+      "content_percent": 100.0,
+      "date_percent": 100.0,
+      "complete_document_percent": 100.0,
+      "adapter_latency_p50_ms": 552,
+      "adapter_latency_p95_ms": 570,
+      "load_workers": 24,
+      "load_success_percent": 100.0,
+      "load_stability_percent": 100.0,
+      "load_p95_ms": 17.934,
+      "load_throughput_rps": 629.6,
+      "replay_misses": 0,
+      "replay_stability_speed_rank": 1,
+      "live_speed_rank": 1,
+      "technical_coverage_rank": 4
+    },
+    {
+      "method": "rss",
+      "configured_sources": 24,
+      "live_success_percent": 100.0,
+      "sources_with_documents_percent": 95.83,
+      "stored_documents": 65,
+      "content_percent": 98.46,
+      "date_percent": 100.0,
+      "complete_document_percent": 98.46,
+      "adapter_latency_p50_ms": 758,
+      "adapter_latency_p95_ms": 1073,
+      "load_workers": 24,
+      "load_success_percent": 100.0,
+      "load_stability_percent": 100.0,
+      "load_p95_ms": 687.554,
+      "load_throughput_rps": 100.86,
+      "replay_misses": 0,
+      "replay_stability_speed_rank": 4,
+      "live_speed_rank": 3,
+      "technical_coverage_rank": 1
+    },
+    {
+      "method": "search",
+      "configured_sources": 2,
+      "live_success_percent": 100.0,
+      "sources_with_documents_percent": 100.0,
+      "stored_documents": 8,
+      "content_percent": 100.0,
+      "date_percent": 62.5,
+      "complete_document_percent": 62.5,
+      "adapter_latency_p50_ms": 1229,
+      "adapter_latency_p95_ms": 4328,
+      "load_workers": 24,
+      "load_success_percent": 100.0,
+      "load_stability_percent": 100.0,
+      "load_p95_ms": 18.181,
+      "load_throughput_rps": 406.66,
+      "replay_misses": 0,
+      "replay_stability_speed_rank": 2,
+      "live_speed_rank": 4,
+      "technical_coverage_rank": 3
+    },
+    {
+      "method": "sitemap",
+      "configured_sources": 2,
+      "live_success_percent": 100.0,
+      "sources_with_documents_percent": 50.0,
+      "stored_documents": 3,
+      "content_percent": 100.0,
+      "date_percent": 100.0,
+      "complete_document_percent": 100.0,
+      "adapter_latency_p50_ms": 3076,
+      "adapter_latency_p95_ms": 5332,
+      "load_workers": 24,
+      "load_success_percent": 100.0,
+      "load_stability_percent": 100.0,
+      "load_p95_ms": 1272.3,
+      "load_throughput_rps": 7.85,
+      "replay_misses": 0,
+      "replay_stability_speed_rank": 5,
+      "live_speed_rank": 5,
+      "technical_coverage_rank": 5
+    },
+    {
+      "method": "telegram",
+      "configured_sources": 22,
+      "live_success_percent": 100.0,
+      "sources_with_documents_percent": 86.36,
+      "stored_documents": 52,
+      "content_percent": 100.0,
+      "date_percent": 100.0,
+      "complete_document_percent": 100.0,
+      "adapter_latency_p50_ms": 629,
+      "adapter_latency_p95_ms": 854,
+      "load_workers": 24,
+      "load_success_percent": 100.0,
+      "load_stability_percent": 100.0,
+      "load_p95_ms": 62.5,
+      "load_throughput_rps": 549.98,
+      "replay_misses": 0,
+      "replay_stability_speed_rank": 3,
+      "live_speed_rank": 2,
+      "technical_coverage_rank": 2
+    }
+  ],
+  "rankings": {
+    "live_speed": [
+      "html",
+      "telegram",
+      "rss",
+      "search",
+      "sitemap"
+    ],
+    "technical_coverage": [
+      "rss",
+      "telegram",
+      "search",
+      "html",
+      "sitemap"
+    ],
+    "replay_stability_speed": [
+      "html",
+      "search",
+      "telegram",
+      "rss",
+      "sitemap"
+    ]
+  }
+}

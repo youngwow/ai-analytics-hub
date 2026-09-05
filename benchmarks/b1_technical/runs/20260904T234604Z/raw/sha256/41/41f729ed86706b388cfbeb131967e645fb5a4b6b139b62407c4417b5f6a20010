@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>АРПЭ – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="АРПЭ">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/pRJLitfnPKpUQsGPD99yDVWaK9JSnFEk3PJMHnDplTCxjvy7MO37ngSDH0P48fMIEBeSof3NJ58MpaLqZA8tpLUQ5dANV0iuKJDUtgYbWszLAcWXqAr3XvYxLqhv4iGNb0RVJPtKTO55voHQ08-Xou6_trWSU5yPTuutaTnO5EBp8J9HfFFQgOo-E_Vqr844B_OYM-H4foMVevaisOakz9MJzCxGefFCey3eldOcrjibwgfcf5nkANNyKNXIw9r2QKk2vIF_eWOBdGEXBIAVb0yWyfR2Q52qWIapiQcV1SLMwWUbzUS3g_NauQG_r_EgUnfTBD5OwJhMbrLenJ_8tQ.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Ассоциация разработчиков и производителей электроники (АРПЭ) – некоммерческое объединение российских компаний электронной промышленности.
+
+Стать членом Ассоциации
+https://arpe.ru/about-association/become-a-member-of-the-Association/">
+
+<meta property="twitter:title" content="АРПЭ">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/pRJLitfnPKpUQsGPD99yDVWaK9JSnFEk3PJMHnDplTCxjvy7MO37ngSDH0P48fMIEBeSof3NJ58MpaLqZA8tpLUQ5dANV0iuKJDUtgYbWszLAcWXqAr3XvYxLqhv4iGNb0RVJPtKTO55voHQ08-Xou6_trWSU5yPTuutaTnO5EBp8J9HfFFQgOo-E_Vqr844B_OYM-H4foMVevaisOakz9MJzCxGefFCey3eldOcrjibwgfcf5nkANNyKNXIw9r2QKk2vIF_eWOBdGEXBIAVb0yWyfR2Q52qWIapiQcV1SLMwWUbzUS3g_NauQG_r_EgUnfTBD5OwJhMbrLenJ_8tQ.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=arperf">
+
+<meta property="al:android:url" content="tg://resolve?domain=arperf">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Ассоциация разработчиков и производителей электроники (АРПЭ) – некоммерческое объединение российских компаний электронной промышленности.
+
+Стать членом Ассоциации
+https://arpe.ru/about-association/become-a-member-of-the-Association/
+">
+
+    <link rel="prev" href="/s/arperf?before=7212">
+<link rel="canonical" href="/s/arperf?before=7232">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/arperf">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/arperf" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">АРПЭ</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/arperf">@arperf</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">3.66K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">927</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">58</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">13</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">6.84K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Ассоциация разработчиков и производителей электроники (АРПЭ) – некоммерческое объединение российских компаний электронной промышленности.<br/><br/>Стать членом Ассоциации<br/><a href="https://arpe.ru/about-association/become-a-member-of-the-Association/" target="_blank" rel="noopener">https://arpe.ru/about-association/become-a-member-of-the-Association/</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=f9c496beac3e017b17_5555259484970114473">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=f9c496beac3e017b17_5555259484970114473">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/arperf">
+        <i class="tgme_page_photo_image bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">АРПЭ</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">3.66K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/arperf">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/arperf?before=7212" class="tme_messages_more js-messages_more" data-before="7212"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7212" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxMiwidCI6MTc4ODU2NTU2OCwiaCI6Ijc0ZDYzYjY0ZDgxMmM1MWY3YSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5224240194582685271 1216363207_460006999" href="https://t.me/arperf/7212" style="width:700px;background-image:url('https://cdn4.telesco.pe/file/Ua-VUBBHVltNP2jOO3HtIhO9QyG_tTlHvf4s15kL8f38V6XZvOL40Rg730Sxq0E6g1jPtTAj5gFX5PqoEfu5bBK-IbIkqeQdkC-A2x2Z9G5NtA8ThdtTobr54hIUKGB0huhmwg_xWoDDuPSNaqncrrvt91r6E8XtMFYJpufZhoKeeT42nMMVPLQk0qzbgT-ZBA0IGeMwVE_iyC1PIqJJ1XrCCuq6q6gyzI-YH8pD40yV4w-9mdrfEWGb6LnBjVZCgvJ9cn53sb-hrrRQLKVw-kKkL9T4UeXDeGVQB2Aph6v-5coJDGGcac0I37A0I1O7xKAyng2DzheX8gK4PDv2uA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.571428571429%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Самого убыточного производителя чипов в России оценили в 9 миллиардов</b><br/><br/>Зеленоградский производитель чипов «Ангстрем» оценен почти в 9 млрд руб. <br/>Завод находится в предбанкротном состоянии. Его долги превышают 245 млрд рублей — в 28 раз выше самой стоимости.<br/>Несмотря на тяжелое финансовое положение,&nbsp;АО «Ангстрем»&nbsp;остается стратегическим предприятием. Завод работает в интересах&nbsp;Минобороны, российских госкорпораций и более чем 700 потребителей в единой цепи кооперации, выполняющих&nbsp;государственные&nbsp;оборонные заказы.<br/><br/><a href="https://www.cnews.ru/news/top/2026-08-27_samyj_ubytochnyj_proizvoditel" target="_blank" rel="noopener">https://www.cnews.ru/news/top/2026-08-27_samyj_ubytochnyj_proizvoditel</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7212" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA5B0.png')"><b>🥰</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">706</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7212"><time datetime="2026-08-28T07:01:03+00:00" class="time">07:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7213" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxMywidCI6MTc4ODU2NTU2OCwiaCI6IjU0ZWNhNzBlZWIzN2I2MDMzYSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5224240194582685272 1216363207_460007000" href="https://t.me/arperf/7213" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/TfodN9Yfb-UhRQGmpQIFUMuVriP_66u2YBE3Wrl973ftVbb8k6MqDwrsDLYzowsqwDayOw-vv6_rgT1k_N6hLILDKCA9dgDbtD3TYmEkjI8D41VlfxIzwC0Rqk6_4vZXltK1HEjCEyAibpwIwC5Zh1bODOwd4HhywvJN1R6lkqgPdPWN9iNZ5L_2AGJK8fMUSBioyop4FM1-dxiIoFXreF-0OvDfiDfvG13dN8uxkGLTRqVLrRJJVuGtRAU0nhSpUxy9tuo3KP7httQjpbGHR46wYWw1vBYa28pOGC1unNfqGVQ5YQqn-ypuM2L8WdpkEyrPfzAwZYaz2h_f3ZM8bg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:58.875%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Лазер для фотонной революции</b><br/><br/>Группа ученых из СПбГУ, Алферовского университета, НИУ ВШЭ — Санкт-Петербург, СПбГЭТУ ЛЭТИ и МФТИ создала плазмон-поляритонный нанолазер в синем диапазоне. Это еще один шаг по направлению к эпохе фотонных вычислений.<br/><br/>Стратегическая цель исследовательских групп, работающих над несколькими разновидностями нанолазеров, — создание фотонных интегральных схем и — в перспективе — фотонных компьютеров. Переход от электрического сигнала к оптическому позволит кардинально увеличить скорость передачи данных и снизить энергопотребление.<br/><br/><a href="https://stimul.online/articles/science-and-technology/lazer-dlya-fotonnoy-revolyutsii/" target="_blank" rel="noopener">https://stimul.online/articles/science-and-technology/lazer-dlya-fotonnoy-revolyutsii/</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7213" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">697</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7213"><time datetime="2026-08-28T10:04:27+00:00" class="time">10:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7214" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxNCwidCI6MTc4ODU2NTU2OCwiaCI6IjkzNmZmODllZTVhMGUzODcyZSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Ученые Санкт-Петербургского государственного электротехнического университета &quot;ЛЭТИ&quot;, Физико-технического института им. А. Ф. Иоффе РАН и Санкт-Петербургского государственного университета впервые синтезировали кристаллы оксида галлия, легированные железом, которые проявляют магнитные свойства при комнатной температуре. Это открывает путь к созданию новых видов сверхэффективной памяти для электронных устройств будущего.<br/><br/><a href="https://tass.ru/nauka/28052611" target="_blank" rel="noopener">https://tass.ru/nauka/28052611</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7214" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div><a class="tgme_widget_message_link_preview" href="https://tass.ru/nauka/28052611">
+  
+  <div class="link_preview_site_name accent_color" dir="auto">TACC</div>
+  <i class="link_preview_image" style="background-image:url('https://cdn4.telesco.pe/file/K9w2XOOlldb5LhVUaYsqGuGZgYvJxaUwAtWJnH8yIERByjbkk62ELR_ilpa8PVXo74gKXzmawHKkicV4ligUZjjmAO91Pc_sw1XLFNDlL0jrCMLtd-aH74jQXER7QOqUOyrYi8jML9ldHSLOmZOAeDiT3irsxzWMoD83UpM3pBnrS-in3FAek2dn-D0w8ZMtBx-w1kg4lEXzSSk3Ji2dsejpvyz4v_LRSUKbzw-x06fI5A1QtGVSmEtudTeojrfY8UwemlIpZF8QKXprLBLDlVGB6d-I9MdH0vamIu66Ja668bHYelrTAcpmSQk4YYN1Uw6mxuOOVo8kWxw2sWclEA.jpg');padding-top:52.5%"></i>
+  <div class="link_preview_title" dir="auto">Создали материал для энергоэффективной электроники нового поколения</div>
+  <div class="link_preview_description" dir="auto">Кристаллы оксида галлия, легированные железом, проявили магнитные свойства при комнатной температуре</div>
+</a>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">677</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7214"><time datetime="2026-08-28T13:01:45+00:00" class="time">13:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7215" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxNSwidCI6MTc4ODU2NTU2OCwiaCI6ImU1Y2UxNDkxMjNiN2E3OWFlMCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5226491994396368764 1216887495_460005244" href="https://t.me/arperf/7215" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/q1AE0y6SOwRL4t99IHWfZK_6_2r1NMd1pFJaAoEMQpolYHfuN_NsZFDxl9x4ANrJ6MPxz42JcX1Am-D4h85MiBy3a1UPdPCIhVJ-ni5gIq0gXPN5LTt4P4oGhffHl1lTQc4oyENsn8m8zQufitzm-vl9XmTHRjOrIYbIVWusNUL_c2he1TaKZ7ThbJV1ZoI8GLoaz00pTpT177SfqEvITft6C3vJYJBdcIjjY9P_DpLHeF_-2RlMrKQbiEKBeNHxiZAKa5_iVa6nu2E13veC7Tq_8R1rvB7pouF49x9CPqPj6nuSrde4FPMFpE2S2V3OtzpUwngFdtM8TLraZ386jg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>TSMC изучает необычные диэлектрики для транзисторов атомарного размера — появилась надежда на прорыв</b><br/><br/>Уменьшение размеров транзисторов и цепей в целом всегда было простым путём к повышению производительности чипов. Всё это работало ровно до того момента, как размеры элементов вплотную приблизились к масштабу атомов. На дыбы встала сама физика материалов, электрические и физические свойства которых перестали выполнять свои задачи — точно и под полным контролем передавать электрические сигналы. Диэлектрики не стали исключением и тоже пошли в разнос.<br/><br/><a href="https://3dnews.ru/1147609/tsmc-izuchaet-neobichnie-dielektriki-dlya-tranzistorov-atomarnogo-razmera-poyavilas-nadegda-na-proriv" target="_blank" rel="noopener">https://3dnews.ru/1147609/tsmc-izuchaet-neobichnie-dielektriki-dlya-tranzistorov-atomarnogo-razmera-poyavilas-nadegda-na-proriv</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7215" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">714</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7215"><time datetime="2026-08-28T16:04:44+00:00" class="time">16:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7216" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxNiwidCI6MTc4ODU2NTU2OCwiaCI6IjAzODc2ZmNhZmUyODU2ZmJkOCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5235756526616649244 1219044562_460004892" href="https://t.me/arperf/7216" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/dpKxM-Q1yAv1TqMtD-wuzLS0GmpYke7i-LSAoGI_xvL20mf_dd9DU5VyZPVFem2bVnTV_px3jcyQkkG1gjzFh1I84od8KPhfahqRGwhMhHGkcCGwcl9hTfSrrgBsLffMD7ooJFGYeGyFyKpxNIIelalsXtfqZZwrdE_CstzyK8wJW1BMmwBzHNNRUcrennTru0DaHi6cmPjm_XLCzXksGpUMUXEv3jmJTNJn-jEqy0TyDnHytXdwOIm4qWHwhoR7Lh9W3lt-nK0egPtxHXvfsA95q0GXjO719J8CoU1ib6KXTBxNLjRLpmfZfw87w0Wb4HjpHSIgXTigouPkfrc4IQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Частная компания получит от властей 1,5 миллиарда на создание установок для производства чипов. Они заменят оборудование из США и Франции</b><br/><br/>Минпромторг заключил контракт на 1,5 млрд рублей на разработку установки молекулярно-лучевой эпитаксии с петербургской компанией «НТО» (SemiTEq). Оборудование должно заменить американское и французское оборудование для производства чипов.<br/><br/><a href="https://www.cnews.ru/news/top/2026-08-28_chastnaya_kompaniya_poluchila" target="_blank" rel="noopener">https://www.cnews.ru/news/top/2026-08-28_chastnaya_kompaniya_poluchila</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7216" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">579</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7216"><time datetime="2026-08-31T07:01:07+00:00" class="time">07:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7217" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxNywidCI6MTc4ODU2NTU2OCwiaCI6ImU4ZmU2YWJmNjk4MzVjYTViNCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5235756526616649331 1219044562_460004979" href="https://t.me/arperf/7217" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/gfoyJAs5pNPZkcsb11YwsSgD1ZNolXGMjn_SLRZnQMAnGyMohfSylci0-CGcTs6JK08NwvbrVpj0cJcIHvna89DvV1ilvanCAS8qZDiAb-iH_wgSPsFnumFi3MqDuP0oxXfrTZYSbvA2yoq_QqQzzwSsWZw6S6PFymGQ9gYDe_V-98kNu1bhu5M_zStxznnS1f0YAMQ7MbcoL5802bbxtJslDukCJGq3I4pzW0bg0QJCsHiNdytm2VXXl9Tmi7W2PMlynDF2Dku11ZPzxjcimZ8GIm7F7Le1afvJujQio7vgbC2__O49vaLUI64AXOPvM2xY0C7Fmq1b1KcobB-NQw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Дайджест новостей и событий </b><b><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji></b><b> АРПЭ № 126 // 31.08.2026</b><br/><br/><b><tg-emoji emoji-id="5442663320056243760"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/31E283A3.png')"><b>1️⃣</b></i></tg-emoji></b><b> Приглашаем на круглый стол АРПЭ «Создание аппаратной платформы на основе чиплетной технологии для высоконагруженных вычислений» на &nbsp;«Микроэлектроника 2026»</b><br/><tg-emoji emoji-id="5332395974671217550"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F938D.png')"><b>📍</b></i></tg-emoji> <i>30 сентября 2026, Сириус, «Микроэлектроника 2026», зал №15, 15:00 - 16:30 .</i><br/><tg-emoji emoji-id="5224736245665511429"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8EA4.png')"><b>🎤</b></i></tg-emoji> Модератор - Исполнительный директор АРПЭ Иван Покровский<br/><b><u>Цели и задачи:</u></b><br/><blockquote expandable><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>Оценить технологический задел, созданный российскими разработчиками микропроцессоров, микропроцессорных ядер и сложно-функциональных блоков, определить направления развития и специализации компаний.<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>Согласовать возможности развития вычислительной чиплетной платформы, объединяющей решения многих российских дизайн-центров.<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>Уточнить приоритетные технологические задачи создания и развития платформы: стандартизация &nbsp;межчиплетных интерфейсов, средства проектирования и верификации, обеспечение кибербезопасности и др.<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>Согласовать подходы государственного регулирования рынка чиплетных микропроцессорных платформ: требования локализации, требования доверенности, технические стандарты и др.<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>Определить механизмы финансирования НИОКР, запуска в производство и внедрений платформы в информационную инфраструктуру.<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>Инициировать создание межведомственной рабочей группы с участием Минпромторга, РАН, госкорпораций и индустриальных партнёров для разработки детального плана мероприятий Проекта.</blockquote><br/><tg-emoji emoji-id="5472239203590888751"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93A9.png')"><b>📩</b></i></tg-emoji> Пожалуйста, присылайте ваши предложения по участию с докладами на info@arpe.ru<br/><br/><tg-emoji emoji-id="5440856856811546732"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/32E283A3.png')"><b>2️⃣</b></i></tg-emoji> <b>Будем рады участию в треке обзорно-дискуссионных заседаний «Доверенные ПАК и ЭКБ для критической гражданской инфраструктуры» на «Микроэлектроника 2026»</b><br/><tg-emoji emoji-id="5332395974671217550"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F938D.png')"><b>📍</b></i></tg-emoji><i>30 сентября 2026, Сириус, «Микроэлектроника 2026», зал №5, 10:00-11:30</i><br/><tg-emoji emoji-id="5224736245665511429"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8EA4.png')"><b>🎤</b></i></tg-emoji> С докладом<b> «Доверенное контрактное производство»</b> на мероприятии <b>выступит Исполнительный директор АРПЭ Иван Покровский</b>.<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2989D.png')"><b>☝️</b></i> Развивая успешный опыт работы Секции №5 на прошлых форумах «Микроэлектроника», секция&nbsp;«Доверенные ПАК и ЭКБ для критической гражданской инфраструктуры»&nbsp;проводится в форматах обзорных докладов, докладов и сообщений участников. Секция организована в формате следующих мероприятий:<br/><tg-emoji emoji-id="5431520014521872408"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> Предконференция №1 «Доверенная и экстремальная электроника», 7–11 сентября 2026 года (Москва).<br/><tg-emoji emoji-id="5431520014521872408"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> Трек обзорно-дискуссионных заседаний «Доверенные ПАК и ЭКБ для регулируемых рынков КИИ», 28 сентября – 2 октября 2026 года на основной части Форума (Федеральная территория «Сириус», Университет «Сириус»).<br/><tg-emoji emoji-id="5264983602512292019"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> Трек посвящён тематике создания и контроля работоспособности изделий микроэлектроники и оптоэлектроники общего и специального назначения, в том числе, радиационно-стойких, <a href="https://microelectronica.pro/nauchnaya-conferenciya/trek-obzorno-diskussionnyih-zasedaniy/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">подробнее &gt;&gt;</a><br/><br/><b><tg-emoji emoji-id="5440768865816554344"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/33E283A3.png')"><b>3️⃣</b></i></tg-emoji></b><b> Embedded Bar #21 с АРПЭ</b> <b>в Сириусе </b><br/><tg-emoji emoji-id="5332395974671217550"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F938D.png')"><b>📍</b></i></tg-emoji><i>29 сентября 2026, ресторан </i><a href="https://yandex.ru/maps/-/CTHhV6Iy" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>&quot;Грузинские обычаи&quot;</i></a>, <i>Нижнеимеретинская 171к1.</i><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8DBA.png')"><b>🍺</b></i> Embedded bar – это закрытое мероприятие в уникальном для отрасли формате (пиво сразу), <b>интересные «живые» доклады</b> <b>про железо и софт от опытных спикеров</b>, много новых знакомств и контактов в записной книжке.<br/><tg-emoji emoji-id="6001526766714227911"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91A5.png')"><b>👥</b></i></tg-emoji> Аудитория мероприятия – разработчики уровня middle и выше, менеджеры и C-Level (руководители).<br/><tg-emoji emoji-id="5224736245665511429"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8EA4.png')"><b>🎤</b></i></tg-emoji> Модератором выступит Евгений Мамаев, руководитель дизайн-центра ICL.<br/><tg-emoji emoji-id="5463154755054349837"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i></tg-emoji> Докладчики подтверждены, регистрацию открываем уже через пару дней, следите за анонсами в каналах АРПЭ&#33;</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7217" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">492</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7217"><time datetime="2026-08-31T08:59:06+00:00" class="time">08:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7218" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxOCwidCI6MTc4ODU2NTU2OCwiaCI6ImEzMzM3MGIwNGZhZjkwMTYwZSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b><tg-emoji emoji-id="5443137574640035334"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/34E283A3.png')"><b>4️⃣</b></i></tg-emoji></b><b> АРПЭ проводит опрос инвестиционных потребностей компаний - членов Ассоциации для взаимодействия с фондами</b><br/>Многие инвестиционные проекты и планы развития сейчас приостановлены из-за нехватки финансирования. В то же время инвестиционные фонды располагают значительными ресурсами и подбирают перспективные проекты для вложения средств, в их распоряжении триллионы рублей, часть средств запланирована для инвестиций в высокотехнологичные отрасли, в том числе в электронную промышленность.<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2989D.png')"><b>☝️</b></i>Мы хотим <b>связать инвестиционные потребности компаний с возможностями фондов, подготовить предложения, как настроить инструменты инвестиционной поддержки</b>. <br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F998F.png')"><b>🙏</b></i> Будем признательны, если в рамках опроса поделитесь, какие инвестиции нужны вашей компании - какой примерно объем, на какие направления, в какой форме?<br/><tg-emoji emoji-id="5309992579146725913"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9396.png')"><b>📖</b></i></tg-emoji> По итогу опроса мы сформируем карту инвестиционных проектов отрасли&nbsp;- она станет ориентиром для привлечения как финансовых, так и стратегических инвесторов.<br/><tg-emoji emoji-id="5199779839975903327"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9497.png')"><b>🔗</b></i></tg-emoji>Ссылку на анкету предоставим по запросу на info@arpe.ru<br/><br/><tg-emoji emoji-id="5440369558412077267"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/35E283A3.png')"><b>5️⃣</b></i></tg-emoji><b> В середине сентября АРПЭ планирует провести Круглый стол по обсуждению назревших изменений в 719 ПП, а также всей системы требований и преференций для российской продукции</b><br/>Основной вопрос повестки – актуализация системы требований и преференций, применяемых в отношении электронной продукции, предназначенной для регулируемых государством рынков, а также критической информационной инфраструктуры. К участию приглашаем представителей ФГБУ «ВНИИР», отраслевых объединений и заинтересованных предприятий российской электронной отрасли. Итоги обсуждения и&nbsp; согласованную&nbsp; отраслевую позицию планируем представить в Минпромторг России.<br/><tg-emoji emoji-id="5253742260054409879"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C89.png')"><b>✉️</b></i></tg-emoji>  Если вы заинтересованы в участии, пожалуйста, напишите на info@arpe.ru, мы направим вам проект предложений АРПЭ с анкетой.<br/><br/><tg-emoji emoji-id="5442852929977459454"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/36E283A3.png')"><b>6️⃣</b></i></tg-emoji><b> Минэкономразвития РФ приглашает на российско-индийскую B2B-встречу по вычислительному и серверному оборудованию</b><br/>Мероприятие состоится <u>3 сентября в 12:00 (МСК) в формате видеоконференции</u> и будет направлено на установление прямых контактов между российскими импортерами и индийскими поставщиками.<br/>В рамках встречи планируется обсудить возможности взаимодействия по следующим направлениям:<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>серверное и высокопроизводительное вычислительное оборудование, включая решения для ЦОД и систем искусственного интеллекта;<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>системы хранения данных и серверные компоненты, включая платы, модули памяти и твердотельные накопители;<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>сетевое оборудование и сопутствующая инфраструктура;<br/><tg-emoji emoji-id="5389016644498501462"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FBA.png')"><b>⏺</b></i></tg-emoji>решения для жидкостного охлаждения ЦОД и высокопроизводительных вычислительных систем.<br/>Рабочий язык встречи – английский.<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2989D.png')"><b>☝️</b></i>Приглашаются компании для участия и выступления с презентациями о закупочных интересах в отношении указанной продукции.<br/>Регистрацию необходимо пройти до 14:00 (МСК) 1 сентября 2026.<br/><tg-emoji emoji-id="5199779839975903327"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9497.png')"><b>🔗</b></i></tg-emoji>Ссылку на регистрацию и контакты для взаимодействия направим по запросу на info@arpe.ru<br/><br/><tg-emoji emoji-id="5440704437012146106"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/37E283A3.png')"><b>7️⃣</b></i></tg-emoji> <b>Вниманию предприятий, производящих и использующих российское оптоволокно</b><br/>Вышло <a href="https://disk.yandex.ru/i/PLBdjs8LYAwJwA" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">постановление Правительства РФ от 19 августа 2026 г. N 1026 «О ВНЕСЕНИИ&nbsp; ИЗМЕНЕНИЙ В ПОСТАНОВЛЕНИЕ ПРАВИТЕЛЬСТВА РОССИЙСКОЙ ФЕДЕРАЦИИ ОТ 17 ИЮЛЯ 2015 Г. N 719</a>».<br/>Постановление упростило требования к &quot;российскости&quot; по кодам &quot;27.31.11.000 &quot;Кабели волоконно-оптические, состоящие из волокон с индивидуальными оболочками&quot; и&nbsp; <a href="http://27.31.12.120/" target="_blank" rel="noopener">27.31.12.120</a>&nbsp; &quot;Кабели волоконно-оптические, кроме составленных из волокон с индивидуальными оболочками&quot;.<br/><br/><tg-emoji emoji-id="5443136780071084818"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/38E283A3.png')"><b>8️⃣</b></i></tg-emoji><b> Вниманию производителей производственного оборудования и комплектующих к нему</b><br/>На Федеральном портале проектов нормативно-правовых актов размещен <a href="https://regulation.gov.ru/projects/170490/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">проект постановления Правительства Российской Федерации «О внесении изменений в постановление Правительства Российской Федерации от 17 июля 2015 г. № 719»</a>.<br/>Проект предусматривает введение балльных требований на оборудование для производства печатных плат (всего 13 кодов).<br/>В текущей редакции проект не предусматривает обязательного применения в оборудовании отечественных &nbsp;мониторов, компьютеров, источников питания, электродвигателей, печатных плат и ЭКБ (кроме контроллеров).<br/><tg-emoji emoji-id="5321369870204421405"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87A8F09F87A6.png')"><b>🇨🇦</b></i></tg-emoji> Дата окончания общественного обсуждения - 05 сентября 2026.<br/><br/><tg-emoji emoji-id="5438296875914508296"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438155253662891474"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438484986892140625"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438155253662891474"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438366196686667439"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><br/><a href="https://arpe.ru/about-association/become-a-member-of-the-Association/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Присоединяйтесь к АРПЭ</a> <tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> <br/><tg-emoji emoji-id="5395732581780040886"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA49D.png')"><b>🤝</b></i></tg-emoji> Вместе мы сможем больше&#33;</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7218" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">565</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7218"><time datetime="2026-08-31T09:01:06+00:00" class="time">09:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7219" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIxOSwidCI6MTc4ODU2NTU2OCwiaCI6IjRkNGY3MWNmZDYxODRlYjMwYSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Зеленоградское предприятие «Ангстрем» по итогам полугодия ушло в убыток на 112 млн руб. Завод продолжает нести бремя долга перед <a href="http://%D0%92%D0%AD%D0%91.%D0%A0%D0%A4/" target="_blank" rel="noopener">ВЭБ.РФ</a> в 238 млрд руб. Но при этом остается стратегическим для страны : доля гособоронзаказа в его выручке составляет более 90%.<br/><br/><a href="https://www.cnews.ru/news/top/2026-08-31_strategicheskij_proizvoditel" target="_blank" rel="noopener">https://www.cnews.ru/news/top/2026-08-31_strategicheskij_proizvoditel</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7219" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div><a class="tgme_widget_message_link_preview" href="https://cnews.ru/news/top/2026-08-31_strategicheskij_proizvoditel">
+  
+  <div class="link_preview_site_name accent_color" dir="auto">CNews.ru</div>
+  <i class="link_preview_image" style="background-image:url('https://cdn4.telesco.pe/file/ezcAYIrZI8l2kUlN5fWBa6CJMJYGB2Du9Eoc3KsbEyXyMI-3ZKKhKERVasH0v9-2sGGG-NipeuvlJ84wdzrCJhrpVG0_Fm_n9GU_saNaLdBPM84VEPs7rSLI4vh4H0oxwgcLaOcfMgI0asBDN6XL8uZwHZ3w0ruG8cK39K7LLdGrJhMQKbtI43a2rDLkk42NGyzRL7LAHhvRtqIty5-9JlWGLVzKxGneI_iuz8ULrUa2mIqUbU5a08R_tgZAlFYl-g73UV_q_B8X5qpYntmRG1C_GIfwIQaICGcecZFbtHSdrxwklVpB_8Vx0kocrwB5AwYcjGbGXLTgr3AoZigamg.jpg');padding-top:66.375%"></i>
+  <div class="link_preview_title" dir="auto">Стратегический производитель чипов ушел в многомилионный убыток - CNews</div>
+  <div class="link_preview_description" dir="auto">Зеленоградское предприятие «Ангстрем» по итогам полугодия ушло в убыток на 112 млн руб. Завод продолжает нести бремя долга перед ВЭБ.РФ в 238 млрд руб. Но при этом остается стратегическим для страны.</div>
+</a>
+<div class="tgme_widget_message_reactions js-message_reactions"></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">587</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7219"><time datetime="2026-09-01T07:03:59+00:00" class="time">07:03</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7220" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyMCwidCI6MTc4ODU2NTU2OCwiaCI6ImYzYzI1ZDViOWFmNmY1YTUwNCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5237941728667445542 1219553344_460007718" href="https://t.me/arperf/7220" style="width:640px;background-image:url('https://cdn4.telesco.pe/file/qO00dnr18FfQxZ03VT5P5d2nrfXQ_4ANeJ3WbFy9Dk5y9-63EwRvKciuQbdLO5YXKcUHRbPwC8eCi8YjYOkLIqfHvoiNEQF92wrBTr24eUFwLWZA3krpX5-9_-6RY7AH0mS79cDlBOuVQaE9Q79hCDELK4lC4QdTCm47LsSw1wDgFUqjBojgltWMVp7t3Tf1bXb1XM_spg4W-YOB32l1nooffT4UAh_WsUhfKhT82-O21_Ds-8VNg2BufAAv6in12b9W-05h_FMOfAlvQrXrSyDp7f3UMte164PAGqqLQ7K_jkTMW1N9zDCoaQ-Cx5wCAMDAar54W3F1wnPyr6baqQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Госзаказчики стали закупать сетевое оборудование небольшими партиями</b><br/><i>Эксперты связывают дробление с изменением правил закупок отечественного оборудования</i><br/><br/>В первом полугодии 2026&nbsp;г. государственные структуры стали чаще проводить более мелкие закупки коммутаторов и маршрутизаторов: число процедур выросло на 19,2% до 3063 единиц, тогда как совокупная начальная максимальная цена (НМЦ; верхняя граница, по которой заказчик готов заключить сделку) сократилась на 40,2% до 2,25 млрд руб. Такие данные содержатся в анализе закупок сетевого оборудования, которым поделилась с «Ведомостями» АО «Единая электронная торговая площадка» («Росэлторг»). Преобладание относительно небольших закупок подтвердил представитель системы по работе с тендерами «Тендерплан».<br/><br/><a href="https://www.vedomosti.ru/technology/articles/2026/09/01/1225112-goszakazchiki-stali-zakupat-setevoe-oborudovanie/" target="_blank" rel="noopener">https://www.vedomosti.ru/technology/articles/2026/09/01/1225112-goszakazchiki-stali-zakupat-setevoe-oborudovanie/</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7220" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">549</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7220"><time datetime="2026-09-01T10:02:14+00:00" class="time">10:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7221" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyMSwidCI6MTc4ODU2NTU2OCwiaCI6ImRjMTNhMWJmY2MxMmVhNmU2MCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5237941728667445546 1219553344_460007722" href="https://t.me/arperf/7221" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/kEt6_wffjnUCGYr9ZpyPrd2VS_80OO2PsNFsshf3CUz1_5KD1moOsuhX7Cch8-PapXWL0B-LmIxBqtsngPJi51xGLOJVUHXPPMmYKR1SMfqjEcEwt2vJm1uoXqaCLgDBKTqechRxhJ8sYLow92iqyy7A_ou7nDmIGhIRq8pWE38bN6D3U9vUos-BkSWHaa3h-qJ098epHcdlIq_16R_3C4vFb3yuhrHBuCbZ8ZrlL7LxOwh-LhEs12o19NspGYWQE6KIT1oYHVW3M5CCCxp8Bs90VyLyRdviIrgVhnq7szGeLEkebyiY7U8tNjXqureCsqjga_CBbQ6-vycVgkrfUw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Революционная технология преобразует тепло в холод без электромотора</b><br/><br/>Исследователи из Германии и Японии создали прототип охлаждающего устройства, которое работает не от электричества, а от тепла — например, от отработанного тепла промышленного оборудования или солнечных батарей. Две ультратонкие пленки из никель-титанового сплава с эффектом памяти формы преобразуют тепловую энергию в механическую работу, а затем в охлаждение, открывая путь к экологичным твердотельным холодильным системам без выброса парниковых газов.<br/><br/><a href="https://hightech.plus/2026/08/31/revolyucionnaya-tehnologiya-preobrazuet-teplo-v-holod-bez-elektromotora" target="_blank" rel="noopener">https://hightech.plus/2026/08/31/revolyucionnaya-tehnologiya-preobrazuet-teplo-v-holod-bez-elektromotora</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7221" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">532</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7221"><time datetime="2026-09-01T13:04:00+00:00" class="time">13:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7222" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyMiwidCI6MTc4ODU2NTU2OCwiaCI6ImY3M2Q4OTYzOTlhYzA5MjU5MSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5240193528481127796 1220077632_460004724" href="https://t.me/arperf/7222" style="width:700px;background-image:url('https://cdn4.telesco.pe/file/HK1kd7mbdiyvT-TBy809rXG1RpcIlRl-Tqc1gS278ejPBZevfjQ8fVIdvRDMdKiybBZeZ54u2z7x8ot9vOtN8WSyOFwGCFyUy7h8nAddtGBSA8ek04r-Ta1VATjMXqMbhlW8HMhMweFPwbcXSY4GKRjo1_dAQpzsna39nWDHPx6xGxvOfAVPQxz23lDll1u8Ilq5Q2en1SsnMwahsHqKGno_MCJAULbX2edw4Ppm6Cjw5VgebWDZbaNYmNbM61ruemRJ31Yx9zYrerbsg5qYNyQB2kxGH9WRMDTOc8Z6__Nh7hA6rcja1KdZpyz1JDPzlPOXCjYW375g5GKLM1nlOg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.142857142857%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В России массово исчезают телеком-компании. Слишком закрутили гайки</b><br/><br/>Всего за год количество телеком-компаний в России сократилось на 6%. Рынок быстро консолидируется – небольшие фирмы или закрываются, или объединяются с более крупными. Одна из ключевых причин – ужесточение требований со стороны регулирующих органов и 100-кратный рост госпошлины за лицензию. За семь лет число таких компаний сократилось более чем на 30%.<br/><br/><a href="https://www.cnews.ru/news/top/2026-09-01_v_rossii_massovo_ischezayut" target="_blank" rel="noopener">https://www.cnews.ru/news/top/2026-09-01_v_rossii_massovo_ischezayut</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7222" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">550</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7222"><time datetime="2026-09-01T16:03:43+00:00" class="time">16:03</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7223" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyMywidCI6MTc4ODU2NTU2OCwiaCI6IjE2NjcyNGU2NDBiMTVkNTMwZSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7223" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">528</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7223"><time datetime="2026-09-02T07:00:59+00:00" class="time">07:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7224" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyNCwidCI6MTc4ODU2NTU2OCwiaCI6IjIzYWE4MTcyNmE0YzU1NjY2ZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242445328294812493 1220601920_460004173" href="https://t.me/arperf/7224" style="width:723px;background-image:url('https://cdn4.telesco.pe/file/QHmLx_viVeQOYWKcCDf_DkgYJjAWG9G8xyC52lttSz6chW7Bf0fL1SYUtrU-etapATKXh25ccE9m-I9UE6_8P8Qndg4-_p1puHbyLY_MeofpUK2h0QsZsdt2XPhwTQ28UE2hDvasT3HVtPpVFme4etLh6h8bcr22eYCG6sFl5KoYdRTD2xKRRWpI01gnPtZkkPE_6TQA2rMYGTAFBMbBm5fxfRGCmHs2X3YpdLVyHRehzkGOgn2RwxD0RoFgUaRPiCEqGFBDJbJ_9qcpyJFDPkcAl-qiCarqG_8GeUFGoxNX6MsNL_E__t6PEo1JOdxjP3Kuodgdo3Q5mQrTNaaaNQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:67.634854771784%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Стойки за ценой не постоят</b><br/><i>Дата-центры готовятся к исполнению нового указа о безопасности инфраструктуры</i><br/><br/>Указ президента, позволяющий вводить временное государственное управление в отношении имущества компаний за ненадлежащую защиту объектов критической инфраструктуры, уже повлиял на работу центров обработки данных. Операторы ЦОДов теперь должны подтвердить наличие комплексной системы предотвращения инцидентов — от физической защиты и противодействия БПЛА до киберустойчивости. Расходы на модернизацию, по оценкам участников рынка, приведут к росту стоимости их услуг.<br/><br/><a href="https://www.kommersant.ru/doc/8923600" target="_blank" rel="noopener">https://www.kommersant.ru/doc/8923600</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7224" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">567</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7224"><time datetime="2026-09-02T10:00:16+00:00" class="time">10:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7225" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyNSwidCI6MTc4ODU2NTU2OCwiaCI6Ijk5OWMxY2M0NTU4NjRlN2NlNiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242445328294812490 1220601920_460004170" href="https://t.me/arperf/7225" style="width:640px;background-image:url('https://cdn4.telesco.pe/file/vuAR_7Sxnt8uf2wLDdMtEO7-N21SfcIh_C43d24vPFbJJWLo6P5zRyu_AohHioFfPbjnC_C6wfEjCZt4klrvqIdEUyo6XDxaGA0GVPN2EWuk4NIECIEqoFh3prcXEhPbNek-UGhNx28qJ0wlPuXdPHNUpdNdBHLNTx4OVOicXkS0Na9MhbMbxEVAoKN-iQVvbuuu-fIExEHpnW645S97dJyTv0O0Se6OAxVtMJJDKVaKeNTVB9d3dB3C8fbDt5xGvKkx83vNhQCxEepc91eMljm6kuvDbGnET-AjrnWM-Hz0-1N47ifSicSWUTZO3oNucM8429PPqNRihmmwbt9zyA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Власти обсуждают налоговые льготы разработчикам отечественных ИИ-моделей</b><br/><i>Среди них – налоговый вычет и пониженные социальные взносы</i><br/><br/>В рамках подготовки подзаконных актов для вступившего в июле закона об ИИ ведется разработка мер поддержки разработчиков национальных и суверенных больших фундаментальных моделей искусственного интеллекта (ИИ). Среди них – ежегодный региональный инвестиционный налоговый вычет по налогу на прибыль из бюджета в сумме расходов, понесенных на создание модели ИИ. Об этом говорится в предложениях АНО «Цифровая экономика» по стимулированию отрасли, направленных в Минцифры в конце июля.<br/><br/><a href="https://www.vedomosti.ru/technology/articles/2026/09/02/1225447-vlasti-obsuzhdayut-lgoti-razrabotchikam-otechestvennih-ii-modelei" target="_blank" rel="noopener">https://www.vedomosti.ru/technology/articles/2026/09/02/1225447-vlasti-obsuzhdayut-lgoti-razrabotchikam-otechestvennih-ii-modelei</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7225" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">498</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7225"><time datetime="2026-09-02T13:01:54+00:00" class="time">13:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7226" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyNiwidCI6MTc4ODU2NTU2OCwiaCI6IjUzZDAwMGQyNTk3YTMxOWY2NyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242566300343672881 1220630086_460005425" href="https://t.me/arperf/7226" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/JtIKkSE3zHDbJ3bjg82nxYUcYPIgMhfK6ePp-dWKzjaPK7Ah1CIwUf9UqAWZNSwdUHWnMjGhAyB9RODbpNEcxfYboH2IsWdjQa2q7kDZFmZ-OHOReZCm3cVtYqpKhECX1J_9Mzwpf7Qv8D7AOWxHNGHacdNpYS-k0O3KxNKLQzu3c3fPUg82PHR2NBLAf6UAiN5P5B0BLlN0Jitg80ANsToJIFQqmLlvhfQMGEWv-IfoPSaTxIxUrGWH19FRkhAezH5W5IQ4TM9KT_W61p0N4r5JEH8kDLUVmzfJtG4IE9K5RxILWYPoIN0m67xAm7Gu37dAivqhlPI6dP2-s5U-kQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Обеспечим микро- и наноэлектронику отечественными материалами</b><br/><a href="https://microelectronica.pro/nauchnaya-conferenciya/materialyi-mikro-i-nanoelektroniki-sektsiya_13" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><br/>На секции №13 научной конференции Форума</a>&nbsp;обсудят поиск новых перспективных материалов с уникальными физическими свойствами в увязке с развитием новых методов диагностики.<br/>В условиях санкций быстрый переход российской промышленности на отечественные материалы для микроэлектроники стал и остается чрезвычайно актуальной задачей. Кроме того, перспективы развития микро- и особенно наноэлектроники определяются поиском новых материалов (особенно низкоразмерных) и решений, на основе которых будет возможно создание принципиально новой элементной базы.<br/><br/><a href="https://arpe.ru/~IxEGI" target="_blank" rel="noopener">https://arpe.ru/~IxEGI</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7226" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">494</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7226"><time datetime="2026-09-02T16:04:14+00:00" class="time">16:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7227" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyNywidCI6MTc4ODU2NTU2OCwiaCI6IjRlYzQ5MzQyZDg5M2IwNTBjMSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5244818100157357921 1221154374_460005217" href="https://t.me/arperf/7227" style="width:700px;background-image:url('https://cdn4.telesco.pe/file/s1jD1cm1wztNX1B6LaBxh-bDG-NXnFPd34RZ4hKDwZQtdSrV5xxh-TfBCjW8LNr3KZF6jLP8Hxc4eeQTVWj8TxTQ8gQFs8b52c56zusXysbogCagfcOWNYI6meuuPHhiZOWPtnVf_XYSsY8wrpz45lAxPLgnVq_I_aKknwCi6C_rTYOGBsyj3ZffQVUYCxlKnOJmQr3nvwUz3f9Igawt1EF_vogLDEFAmxpjAICIs8hlwKF8aV_9QRwQU_VfRMNFXs3b_gV1eSWQkkPiNmCHvxLd1K9mjQ4ZKido88QlrLs49hQfRYBCoN513PbdjfqK3oNtdfNBPE8zfb1sYtf4AA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.714285714286%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Признана банкротом «дочка» крупного ИТ-холдинга с многомиллиардными долгами</b><br/><br/>Арбитражный суд Москвы признал банкротом ООО «Мобильные и Компьютерные Технологии» — структуру ИТ-холдинга Fplus, занимавшуюся оптовой торговлей электроникой. Сумма требований кредиторов, включая ББР БАНК и <a href="http://%D0%92%D0%AD%D0%91.%D0%A0%D0%A4/" target="_blank" rel="noopener">ВЭБ.РФ</a>, превысила 3,6 млрд рублей. Банкротство «МКТ» стало частью системного кризиса холдинга, затронувшего его головную компанию, «дочки» и владельца Алексея Мельникова.<br/><br/><a href="https://www.cnews.ru/news/top/2026-09-02_struktura_krupnogo_it-holdinga" target="_blank" rel="noopener">https://www.cnews.ru/news/top/2026-09-02_struktura_krupnogo_it-holdinga</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7227" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">496</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7227"><time datetime="2026-09-03T07:03:55+00:00" class="time">07:03</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7228" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyOCwidCI6MTc4ODU2NTU2OCwiaCI6ImUyMjAxZWJmMjZhMjkwYTUyYyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5244818100157358483 1221154374_460005779" href="https://t.me/arperf/7228" style="width:742px;background-image:url('https://cdn4.telesco.pe/file/N-Jz4U_cabODNYgJ20M2eEIAmnOvrRrvLBWDLhpRa2ggllWwJHr09ja8i7cWMJIFkBrAPxtXBwHvjII_w8aXzlwOsoHnbuDpTzMTUwVH-kUfukW1nWsdNcjOopdcWl7A3aUeIUmVU3aNDoGbbp4AhYyBk4V7CsYIbRvmudUEE7nHECt2ymc-ZA0ulwcHGqgZQ7Vv5pLW7D1_W6kJD3p6XxXRSH3Zg0oI4r1Nqa-NylX2k0ASoJ6Ld4PMxbY-RlJlEBs97CHatNKhcSOnAleOnM6kt7ScqReDgEAtu7Lo8fDSRXPIs4pfnb2HxVzduXYRtoXxYeL0oDpDS7TszDHYnw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:65.902964959569%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Чипы — дело наживное</b><br/><i>«ИКС Холдинг» инвестирует 35&nbsp;млрд рублей в микроэлектронику на Дальнем Востоке</i><br/><br/>Группа компаний «ИКС Холдинг» запустит два полупроводниковых проекта в Приморском крае к 2030 году. Инвестиции в производство микросхем и другой продукции составляют больше 35&nbsp;млрд руб. Участники рынка объясняют выбор места для строительства выгодными экономическими условиями и близостью к Китаю как центру комплектующих и материалов.<br/><br/><a href="https://www.kommersant.ru/doc/8924498" target="_blank" rel="noopener">https://www.kommersant.ru/doc/8924498</a><br/><br/><tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> в <a href="https://max.ru/channel_arpe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">МАХ</a> <tg-emoji emoji-id="5456166744479533085"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>| <a href="https://vk.com/arpe_rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a> <tg-emoji emoji-id="5278229754099540071"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7228" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">515</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7228"><time datetime="2026-09-03T07:59:06+00:00" class="time">07:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7229" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIyOSwidCI6MTc4ODU2NTU2OCwiaCI6ImNmMGE0NTU2Zjc2ZDhkMzlhMSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7229" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.12K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7229"><time datetime="2026-09-03T09:02:56+00:00" class="time">09:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7230" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIzMCwidCI6MTc4ODU2NTU2OCwiaCI6IjM5ZTY2YWU1ZjZjNTc5MDI3NyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7230" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">418</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7230"><time datetime="2026-09-04T07:00:29+00:00" class="time">07:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="arperf/7231" data-view="eyJjIjotMTI0NzIxNTEwMSwicCI6NzIzMSwidCI6MTc4ODU2NTU2OCwiaCI6IjBjZjk2ODc5YTM1MTJiZjkzMyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/arperf"><i class="tgme_widget_message_user_photo bgcolor6" data-content="А"><img src="https://cdn4.telesco.pe/file/G5lab3o1CBzriw7K3vLxGhbv8rr7r-8F17Vie4MFbl8aczInpEVamrAcR3pPNIh7u02npnIPetXKzU3Z6NMAMI84fqsVouCLr4xcmvpxAg6xJ1lw5T5gO5rcN5NMLLIKQMt_SeF0A7zQwt3F419lOsyv3FMRCxevYqNTPlAzU8war-Hx3oP3anYl00j6x675-mNYPjdboR-3MY_gQ1wwYPxKpPDPkN0mTqE9hLbFb-dM2L1NUF2pa3EYMZmh0q9ojMgyOJHE4ab0t9FbqmomEcUsOjd5kNgq9XCAv_djU68I7E6Y6HxfOEr3BchAjc7fTfnf4A75_QIrVGz5bILyHw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/arperf"><span dir="auto">АРПЭ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5247034384886471362 1221670393_460004034" href="https://t.me/arperf/7231" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Pbi8SleoZEd6BOR_fU5pIMB_xbew5H7VCEYueWRDYniENoNvdht2vUvNstewgeToWPiKCb-rS37LXrADIdqXz3q6kGkHx54OCLevCUKpG9s-Dj8Dx5hLFb0a9fmUJFGSAJ4EpWxNgE2GjJoHOTUSMojCoiKJEIyAsplBe6ZFfuzITK303Kq76wgu6_b065RuxJwZ8xD2fSeaI9DSlQWLmtQF3xGyMMcfCnnK0qAKpqnPWr3gUjSiK8PpsXpiEkY-PS00LvzPNWYS3H4rfXGyYc2m_6cDJCIC68opGorCL5an9W23TNFzgufQ4gpwLPwIyU9lieY7fhmKTXQeFryWcw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:57.125%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Российский рынок электронных компонентов продолжает сокращаться</b><br/><br/>По результатам исследования АРПЭ российский рынок электронных компонентов сократился в 2025 году на 22% в рублевом исчислении и составил 302 млрд рублей. В долларовом исчислении сокращение составило 14%, объем рынка 3,54 млрд долларов.<br/><br/>В 2026 году сокращение рынка продолжается. По итогам первого полугодия оно составило 10% в рублевом и 8% в долларовом исчислении. Ожидается, что по итогам всего 2026 года разница с 2025 сократится на пару процентов статистически на фоне значительного сокращения во втором полугодии 2025 года.<br/><br/>Сокращение охватывает все сегменты рынка по областями применений. Только автомобильная электроника может показать положительную динамику в несколько процентов в 2026 году, но это сложно назвать ростом, скорее небольшое восстановление после 40% провала в 2025 году. <br/><br/>Продолжается консолидация рынка заказчиков - доля крупнейших 20 компаний составляет уже около 50% всего рынка электронных компонентов, доля небольших компаний сокращается.<br/>При сохранении текущих экономических тенденций, дефицита бюджетов государственных и корпоративных заказчиков, участники рынка не ожидают перелома тенденции и возобновления роста в ближайшие годы.<br/> <br/>Для заказа отчета маркетингового исследования <a href="https://arpe.ru/activities/analytics/#EC2026" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">«Российский рынок электронных компонентов 2025 – 2026»</a>, пожалуйста, направляйте заявки на info@arpe.ru <br/>Стоимость отчета 170 тыс ₽. Для членов АРПЭ и АСПЭК 85 тыс ₽.<br/><br/><a href="https://arpe.ru/~8arwH" target="_blank" rel="noopener">https://arpe.ru/~8arwH</a><br/><tg-emoji emoji-id="5438296875914508296"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438155253662891474"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438484986892140625"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438155253662891474"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><tg-emoji emoji-id="5438366196686667439"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E380B0.png')"><b>〰️</b></i></tg-emoji><br/><a href="https://arpe.ru/about-association/become-a-member-of-the-Association/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Присоединяйтесь к АРПЭ</a> <tg-emoji emoji-id="5226984145648902756"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i></tg-emoji> <br/><tg-emoji emoji-id="5395732581780040886"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA49D.png')"><b>🤝</b></i></tg-emoji> Вместе мы сможем больше&#33;</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/arperf/7231" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">391</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/arperf/7231"><time datetime="2026-09-04T11:12:09+00:00" class="time">11:12</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 117.83ms -->

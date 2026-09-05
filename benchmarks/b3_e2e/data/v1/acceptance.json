@@ -1,0 +1,90 @@
+{
+  "scenario_id": "UI_ACCEPTANCE",
+  "purpose": "Pass/fail verification of mandatory product operations; not a product hypothesis.",
+  "initial_fixture_ids": [
+    "A07",
+    "A11",
+    "A12",
+    "A13",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21"
+  ],
+  "manual_material": {
+    "id": "MANUAL-01",
+    "title": "Письмо ассоциации о сроке перехода на стандарт доступности",
+    "raw_text": "Ассоциация просит увеличить переходный период добровольного стандарта доступности с шести до двенадцати месяцев. Письмо не изменяет официальный срок и является позицией ассоциации.",
+    "source_url": "https://manual.example.invalid/manual-01"
+  },
+  "steps": [
+    {
+      "id": "AC1",
+      "action": "add_source",
+      "expected": "Источник появляется в настройках и может быть включён."
+    },
+    {
+      "id": "AC2",
+      "action": "disable_source",
+      "expected": "Новые элементы источника не собираются, старые и происхождение не удаляются."
+    },
+    {
+      "id": "AC3",
+      "action": "add_manual_material",
+      "input": "MANUAL-01",
+      "expected": "Материал появляется с признаком ручного добавления и сохранённым оригиналом."
+    },
+    {
+      "id": "AC4",
+      "action": "edit_ai_result",
+      "target": "A07",
+      "fields": [
+        "title",
+        "summary",
+        "category",
+        "importance",
+        "tags"
+      ],
+      "expected": "Правка отделена от оригинала и AI-версии."
+    },
+    {
+      "id": "AC5",
+      "action": "hide_and_restore",
+      "target": "A21",
+      "expected": "Скрытый элемент остаётся доступным в исключённых и восстанавливается без потери истории."
+    },
+    {
+      "id": "AC6",
+      "action": "search_and_filter",
+      "queries": [
+        "18 сентября",
+        "NPA-A",
+        "CAS"
+      ],
+      "filters": [
+        "source",
+        "date",
+        "category",
+        "importance"
+      ],
+      "expected": "Находятся соответствующие сохранённые материалы; ответ и измеренное время фиксируются."
+    },
+    {
+      "id": "AC7",
+      "action": "open_original",
+      "target": "A12",
+      "expected": "Открывается сохранённый оригинал и источник, а не только AI-саммари."
+    },
+    {
+      "id": "AC8",
+      "action": "release",
+      "recipients": [
+        "PR",
+        "GR",
+        "HEAD"
+      ],
+      "expected": "Зафиксированы состав, версия, канал и время выпуска; critical core не теряется."
+    }
+  ]
+}

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>РСпектр: связь, ИТ, кибербезопасность – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="РСпектр: связь, ИТ, кибербезопасность">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/JvGVhShYjIvgJs8UyvjBdHCaZ1VObzvvH4LX5-OMg9ZFE3bJarnCGiB36vsYl33uwxXjUElosXHdeQR2Yt6xYFxCG3jQIw5VgdbpYlvPcy6IViGupoyXJLtkKTePOjngrUjzCi3GrdHEDpaTo424DIzETvmn4iAl3KIHRJ2VKC8gcPmjcxhp2HUtMbGRaNCwv4Qi8VgaC9kAmM4ZNwmdgdNkqM9gxHMacRoJol1wB2iZFfdnMVD1zd_mCN5-F_C-ci12abv_KWpQX3x4f9p6XqeQvWXbwInEsVnTIrvy2lapCqK8iJELDTHakxfc55ix3fvg-O9joTLSDnWrMDea3g.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Телеграм-канал портала RSpectr.com
+
+Самое интересное о связи, ИТ, кибербезопасности, медиа и регулировании в этих сферах.
+
+Контакт:">
+
+<meta property="twitter:title" content="РСпектр: связь, ИТ, кибербезопасность">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/JvGVhShYjIvgJs8UyvjBdHCaZ1VObzvvH4LX5-OMg9ZFE3bJarnCGiB36vsYl33uwxXjUElosXHdeQR2Yt6xYFxCG3jQIw5VgdbpYlvPcy6IViGupoyXJLtkKTePOjngrUjzCi3GrdHEDpaTo424DIzETvmn4iAl3KIHRJ2VKC8gcPmjcxhp2HUtMbGRaNCwv4Qi8VgaC9kAmM4ZNwmdgdNkqM9gxHMacRoJol1wB2iZFfdnMVD1zd_mCN5-F_C-ci12abv_KWpQX3x4f9p6XqeQvWXbwInEsVnTIrvy2lapCqK8iJELDTHakxfc55ix3fvg-O9joTLSDnWrMDea3g.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=rspectr">
+
+<meta property="al:android:url" content="tg://resolve?domain=rspectr">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Телеграм-канал портала RSpectr.com
+
+Самое интересное о связи, ИТ, кибербезопасности, медиа и регулировании в этих сферах.
+
+Контакт:
+">
+
+    <link rel="prev" href="/s/rspectr?before=13307">
+<link rel="canonical" href="/s/rspectr?before=13327">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/rspectr">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/rspectr" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor2" data-content="Рк"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/rspectr">@rspectr</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">3.36K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">7.36K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">78</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">10</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">9.76K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Телеграм-канал портала <a href="http://RSpectr.com/" target="_blank" rel="noopener">RSpectr.com</a><br/><br/>Самое интересное о связи, ИТ, кибербезопасности, медиа и регулировании в этих сферах.<br/><br/>Контакт:</div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=200e5744c08f1e2314_3343586539734404330">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=200e5744c08f1e2314_3343586539734404330">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/rspectr">
+        <i class="tgme_page_photo_image bgcolor2" data-content="Рк"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">3.36K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/rspectr">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/rspectr?before=13307" class="tme_messages_more js-messages_more" data-before="13307"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13307" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMDcsInQiOjE3ODg1NjU1NzAsImgiOiJhZjViYzExNzAxMzQxNTUzZGYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5361618223943585377 1248349022_460000865" href="https://t.me/rspectr/13307" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/cO9028F8YO_jv-ynNhkJWVTWG9RwjRUL7xvp-ZHyW9_qHGzRILL5qykmGMIf_9BpA-eRvVQrbius2b_FWqXuoujpOXj00bfmGxYbfKjx4HXcdJdU4XAij8fJA87txEUbVgK_QhBKd4fjfB8jMLh2_akZBwpC7LZntR7jmontHqkQwfrup0dOmn2hxxFd8KpEJDG-drdMGvuWmfYF-K6Nu96R_0VTvqkTggvKOxn43QKt9zG9D6nko8QJ9j5wMmzf-bf2LWuu6dDr2fnoNc9jSXuiipOG68LgafeCqBOzsc93_jqgYolYIsPpzbWiLkdbKIBAza0z-rpUz-rQzBkF4g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:55%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Умеренный рост: чем запомнился 2025 год телекому, ИТ-индустрии и информбезопасности</b><br/><br/>Россия в этом году с появлением национального мессенджера MAX добилась полного цифрового суверенитета, заявил президент РФ Владимир Путин в ходе «Прямой линии» 19 декабря. Также, по его словам, количество преступлений, связанных с мошенничеством, сократилось на 7%, а ущерб от них – на треть. <br/><br/>О том, каким был этот год для отечественной отрасли ИТ, кибербезопасности и телеком-отрасли, а также о том, чего ожидают эксперты от наступающего 2026 года, – в <a href="https://rspectr.com/articles/umerennyj-rost?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">материале</a> RSpectr.<br/><br/><i>Изображение: создано с помощью инструментов генеративного ИИ, RSpectr</i></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">506</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rspectr/13307"><time datetime="2025-12-25T09:00:48+00:00" class="time">09:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13308" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMDgsInQiOjE3ODg1NjU1NzAsImgiOiI0YjQ2NTdkMzdhOWIzYmI0NzIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/grfc_ru/681"><span dir="auto">ГРЧЦ — Главный радиочастотный центр</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_video_player not_supported js-message_video_player" href="https://t.me/rspectr/13308"><i class="tgme_widget_message_video_thumb" style="background-image:url('https://cdn4.telesco.pe/file/HsduOwop32TNwOB-jOTWcH08zos5jDRfG1WRYaopBn3OkWHQehVzKgl6qzIVal0ZS3QiITHJcGPr89jFa7yYZlweKcBhRI5m1W3G6fcfHytG6613QQFIDTghMUFA4HpEjoSsQ7zw2NNfxjIC-U5r6dKUOHxbybb7p8ahvfIHGbS4rohf-lBBB1gYakg-Y9_MWxkVNZs92Sf6VZp3E_F-_fsDW_x4t3goEuQ2ClGAfB_gWzEKo8b1d3ryFUVeRJziO39AvRJanQI0wb3h5SYSeUmzqgikJjTCVrkdbSqD5zFQiWE8ST4oL4SwU9eXxoDknUuh7ifaJYldpsiPdNIuDg')"></i>
+
+<div class="tgme_widget_message_video_wrap" style="width:1080px;padding-top:133.33333333333%">
+  
+</div>
+<div class="message_video_play js-message_video_play"></div>
+<time class="message_video_duration js-message_video_duration">0:46</time>
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Media is too big</div>
+    <span class="message_media_view_in_telegram">VIEW IN TELEGRAM</span>
+  </div>
+</div></a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5319098940606399620"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8E89.png')"><b>🎉</b></i></tg-emoji> <b>Главный радиочастотный центр: 25 лет обеспечиваем эфир без помех&#33;</b><br/><br/>Наша история началась четверть века назад. В мире технологий это целая эпоха со множеством переменных. Но неизменными остаются наши главные функции – контролировать использование радиочастотного спектра, осуществлять мониторинг и защиту информационного пространства. <br/><br/><b>Сегодня Главный радиочастотный центр – это:</b><br/><br/><i><tg-emoji emoji-id="5366241416475329057"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29EA1.png')"><b>➡️</b></i></tg-emoji></i><i> <b>8 филиалов</b> по всей стране<br/></i><i><tg-emoji emoji-id="5366241416475329057"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29EA1.png')"><b>➡️</b></i></tg-emoji></i><i> <b>Более 5 тыс. экспертов</b> в сфере связи, ИТ, кибербезопасности, data-аналитики и персональных данных</i><br/><br/><b>Наша сила – в специалистах и профильных центрах:</b><br/><br/><tg-emoji emoji-id="5366493191753185992"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> <b>Блок подразделений в сфере связи – <i>историческое ядро ГРЧЦ. </i></b><i>Обеспечивает порядок и контроль использования радиочастот и радиоэлектронных средств.</i><br/><tg-emoji emoji-id="5366493191753185992"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji><b> Департамент организации мониторинга средств массовых коммуникаций.</b> <i>Круглосуточно мониторит информационное пространство на предмет запрещенного контента и цифровых угроз.</i><br/><tg-emoji emoji-id="5366493191753185992"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji><b> Центр мониторинга и управления сетью связи общего пользования.</b> <i>Выявляет киберугрозы, отражает DDoS-атаки и обеспечивает устойчивую работу Рунета и сетей связи. </i><br/><tg-emoji emoji-id="5366493191753185992"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> <b>Научно-технический центр.</b> <i>Анализирует технологические тренды и разрабатывает прототипы ИТ-систем федерального значения. </i><br/><tg-emoji emoji-id="5366493191753185992"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> <b>Центр правовой помощи гражданам в цифровой среде.</b> <i>Бесплатно помогает жителям всех регионов страны, которые стали жертвами онлайн-мошенников или столкнулись с незаконной обработкой своих персональных данных. </i><br/><br/><i>Спасибо каждому, кто создает историю ГРЧЦ вместе с нами&#33; Этот юбилей – наша общая победа&#33; </i><i><tg-emoji emoji-id="5366507378030167801"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤️</b></i></tg-emoji></i></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rspectr/13308" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">429</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rspectr/13308"><time datetime="2025-12-25T09:08:50+00:00" class="time">09:08</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13309" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMDksInQiOjE3ODg1NjU1NzAsImgiOiIwOTFkM2U0ZDU1ZDc2NjdiMzAifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>В МГУ испытали 72-кубитный квантовый компьютер на атомной платформе</b><br/><br/>В Москве ученые физического факультета Московского государственного университета имени М. В. Ломоносова (МГУ), участвующие в «квантовом проекте», повысили размерность прототипа квантового вычислителя на одиночных нейтральных атомах рубидия до 72 кубитов.<br/><br/>Квантовый регистр с новым показателем был <a href="https://rspectr.com/novosti/v-mgu-ispytali-72-kubitnyj-kvantovyj-kompyuter-na-atomnoj-platforme?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">создан</a>&nbsp;научной группой Центра квантовых технологий факультета в ходе контрольного эксперимента, проведенного в рамках реализации дорожной карты по квантовым вычислениям, курируемой госкорпорацией «Росатом». Точность двухкубитной операции была продемонстрирована на уровне 94 %.<br/><br/>С проведением эксперимента вычислитель университета вошел в лидерскую тройку российских квантовых компьютеров, достигших рубежа в 70 кубитов. Ранее в рамках контрольных экспериментов научными группами «квантового проекта» были продемонстрированы 70-кубитный процессор на ионах иттербия и 72-кубитный вычислитель на ионах кальция.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">591</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13309"><time datetime="2025-12-25T09:31:33+00:00" class="time">09:31</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13310" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTAsInQiOjE3ODg1NjU1NzAsImgiOiI0OTAyYjM0NjYzMGEzZjE0YTUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>&nbsp;<b>ФАС проверит информацию о повышении тарифов на услуги связи. При наличии оснований ведомство </b><a href="https://tass.ru/ekonomika/26010313" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">примет</a><b>&nbsp;меры антимонопольного реагирования</b></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">537</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13310"><time datetime="2025-12-25T10:00:31+00:00" class="time">10:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13311" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTEsInQiOjE3ODg1NjU1NzAsImgiOiIzYzczNjY4MWZmOTMwMzhhZmQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>APT-группировки нацелились на российский госсектор</b><br/><br/>Основной сценарий атак строится вокруг шпионажа и подрыва работы инфраструктуры, при этом противники все чаще уходят от шумных техник и действуют скрытно и методично, говорится в отчете ГК «Гарда».<br/><br/>Анализ публичных отчетов <a href="https://rspectr.com/novosti/apt-gruppirovki-naczelilis-na-rossijskij-gossektor" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">подтверждает</a> высокий уровень кибердавления на российские организации и устойчивый интерес злоумышленников к государственному и промышленному сегментам. <br/><br/>Отправной точкой компрометации инфраструктуры стал фишинг. Анализ показал, что каждая из выявленных группировок работала против российских государственных учреждений. Следом по частоте атак идут промышленность и энергетика, затем телекоммуникации и образование. В ряде кампаний злоумышленники комбинировали кражу данных с их последующим уничтожением, а в других – выстраивали долгосрочное присутствие, чтобы выкачивать документы и учетные данные.<br/><br/>Злоумышленники делают ставку на две стратегии: таргетированные рассылки и маскировку вредоносных файлов под легитимные документы и утилиты. Причем контент писем подстраивается под профиль жертвы, повышая тем самым вероятность открытия и запуска нагрузки.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">676</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13311"><time datetime="2025-12-25T11:05:52+00:00" class="time">11:05</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13312" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTIsInQiOjE3ODg1NjU1NzAsImgiOiI3MjU0ZTZmMzhjYjE4ZTQ1NmYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Т8 и «ТрансТелеКом» успешно протестировали 400G на 1400 км на действующей DWDM-сети</b><br/><br/>Испытания проводились на DWDM-платформе «Ангара» российского вендора Т8. Длительный тест прошел без ошибок, что подтверждает готовность решения к коммерческим внедрениям.<br/><br/>Компании Т8 и ТрансТелеКом <a href="https://rspectr.com/novosti/t8-i-transtelekom-uspeshno-protestirovali-400g-na-1400-km-na-dejstvuyushhej-dwdm-seti?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">провели</a>&nbsp;успешное тестирование магистральных каналов 400G DP-QPSK на участке волоконно-оптической DWDM-сети Москва – Воронеж – Мичуринск – Саратов протяженностью 1400 км. Испытания проводились в условиях высокой спектральной загрузки на реальной DWDM-сети. <br/><br/><blockquote>«Преимущество проведенных испытаний перед лабораторными исследованиями – в точном воспроизведении всех технических параметров рабочего процесса транзита данных. Коллеги убедительно продемонстрировали высокий потенциал предложенного ими решения, и мы надеемся, что в перспективе расстояние возможной передачи сигнала без регенерации будет увеличено до 4000 километров», – прокомментировал заместитель генерального директора – технический директор «Компания ТрансТелеКом» Андрей Грачев.</blockquote></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">688</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13312"><time datetime="2025-12-25T11:50:32+00:00" class="time">11:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13313" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTMsInQiOjE3ODg1NjU1NzAsImgiOiI1ZGU0NWI0YzUxOGE3MTQ0NjQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>T2 сократила количество обращений по вопросам мошенничества на 50%</b><br/><br/>За год оператор обработал 280 тыс. запросов и сократил количество обращений по вопросам мошенничества на линию «Антифрод» на 50%.<br/><br/>Специализированная линия помощи для пострадавших клиентов стала частью направления по обеспечению безопасности абонентов компании. Ранее такие запросы <a href="https://rspectr.com/novosti/t2-sokratila-kolichestvo-obrashhenij-po-voprosam-moshennichestva-na-50?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">обрабатывались</a>&nbsp;на первой линии поддержки, а в конце декабря 2024 года оператор выделил отдельный центр компетенций для работы с обращениями по теме мошенничества. За 2025 год инициатива трансформировалась из канала оперативной помощи в комплексный сценарий противодействия мошенничеству.<br/><br/>В топе тем обращений на горячую линию стабильно остается взлом аккаунта на портале «Госуслуг» – на него приходится 65% всех запросов. При этом мошеннические сценарии продолжают эволюционировать: если ранее одной из самых распространенных схем были звонки под предлогом продления договора с оператором, то сегодня злоумышленники используют десятки вариаций легенд – от доставки цветов и посылок до записи к врачу или диспансеризации.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">599</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13313"><time datetime="2025-12-25T12:27:43+00:00" class="time">12:27</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13314" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6IjEzMzE0ZyIsInQiOjE3ODg1NjU1NzAsImgiOiJjNGJkZjQ5MjhmNGE0ZDNkYzMifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:44.592%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:202px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:225px;height:202px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/Cc8lHig-boqN2OKodZtwvyHZW4CgnfsZ_1LsYqEwHgW06493Y8yjgvCS-APIS1wTsoyy2Q6cvzRMmeDehhb36aQ07Qp7yBkN0-_sAP6c76tKGSmAu2PP2RCmsLaXQ1eXbSohkFoYU5blVROdwSabBRUY27WgBQOPhcqKMAyuF14vrcyLrQakXf1GvhdW7lehqjhTySgY_AfWrvLaA0lSaGlCjL63y_y4IFD5C4KqHHLq99J5A9TlgWnlFGyKqeL-ZIqd-du042ZLJuvp43Opn54YKXsehLreh410yUtctAxOZuIM-0aaKKCv63hjh97Ol6v0jVJYKXoM64Iz-P0U1g.jpg')" data-ratio="0.885" href="https://t.me/rspectr/13314?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:137px;right:137px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-27px;bottom:-26px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:227px;top:0px;width:226px;height:202px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/jIDRxbzL2mstuTnrSFK5O79iSb671WUUqNPxMJMPWC-wMz4FML5x4PoZ-jnfgwk1LdFJ2ShqT9bo-3EYfHdEwZSXYT9HBof80MnKJiyvbE6wCiPC-4CvqSF0iEDmA1x9vEGcuWfQNCZGybd8kpVfRydHzH5mfD6x8l-iQjsCuMOPY1w3k4wUrVzWaGlc4iuU8lkdyEAlKAPK7duQHpfE6qJ_bOymDyvjjCVwRSK0JlKgKlyes9gLq-1ixjw_UoJRDS30Uvdy8_lRSRcuUgGCWv8_axgKXBXv1mw26vTzVs1_lGjTLaacJEsrGZH9_tsbANGYylap9WmUiWU4KWIBVw.jpg')" data-ratio="1.1111111111111" href="https://t.me/rspectr/13315?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:114px;right:114px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Половина российского бизнеса перешла на отечественные ИБ-решения </b><br/><br/>Более 52% компаний <a href="https://rspectr.com/infographics/rol-ib-v-kompaniyah?%20utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">завершили</a> миграцию на российские продукты в сфере кибербезопасности по тем категориям, по которым это планировалось, показал опрос, проведенный фондом «Росконгресс». <br/><br/>Около 27% организаций намерены завершить миграцию в течение двух лет. Не планируют импортозамещение лишь пятая часть (21%) опрошенных.<br/><br/><i>Изображение: RSpectr, Freepik</i></div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">576</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rspectr/13314"><time datetime="2025-12-25T13:53:24+00:00" class="time">13:53</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13316" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTYsInQiOjE3ODg1NjU1NzAsImgiOiJmOGFmMWFmN2NlNjNmYzA1MjIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5361618223943586262 1248349022_460001750" href="https://t.me/rspectr/13316" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/EyfVOJ6LQJ-oyWJw4vp-3RR5tAWST231gbAzIoW02-ZOEq_08gOJHj4tEXThAhIi9Lo_9cP4cXKD1ukdDzp5LQNjc0rAT3JKTTEMd8wwDVJ-ajfaZsJMyAfUKJRlED9D6ekUJSmDwwvZDyo-41BIu9S8JnGucPlPmNe3NlT8JIsCxpx4CFne_fNSiLd4aUt3El0bUFkfgr771Pz4mKWFlNiVbKUKBuf1It3rggvo2AwLV6Bq1SH_COL7OJptMMX0MAFH7Dy_upplxhJB5H0wnlwtbrINSPGFgUKAstVP1lm-AwWeF_G6QAZ_FqzrDd-4mnHQWsuRQnF3pKis00vQUw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">При этом около трети отдали бы предпочтение «неубиваемым» моделям, которые ассоциируются с надежностью, долговечностью и возможностью отдохнуть от цифровой перегрузки.<br/><br/>Компания Unisimka провела исследование, чтобы выяснить, как россияне относятся к телефонам из прошлого и зачем они их используют. Эмоциональная реакция россиян на телефон из прошлого в качестве подарка в целом положительная: более половины опрошенных (58%) признались, что искренне обрадовались бы такому презенту. <br/><br/>Однако почти каждый второй респондент <a href="https://rspectr.com/novosti/bolee-poloviny-rossiyan-mechtayut-poluchit-v-podarok-na-novyj-god-telefon-iz-proshlogo?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">продемонстрировал</a> более сдержанную или критическую реакцию. 14% в первую очередь усомнились бы в серьезности подарка и восприняли его как розыгрыш, а 10% поблагодарили бы дарителя, но при этом испытали разочарование. <br/><br/>Негативная реакция в явном виде встречается реже: 6% опрошенных признались, что обиделись бы, а другие 7% пересмотрели бы отношения с дарителем после такого подарка. <br/><br/><i>Изображение: Freepik</i></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">657</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13316"><time datetime="2025-12-25T14:00:11+00:00" class="time">14:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13317" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTcsInQiOjE3ODg1NjU1NzAsImgiOiI4OTE2NzU0YzI0MWEyMmRlNTIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>МВД с помощью центра безопасности МАХ в 2025 году задержало более 40 мошенников</b><br/><br/>Партнерство нацмессенджера с лидирующими российскими компаниями в области кибербезопасности позволило заблокировать более 700 тыс. подозрительных аккаунтов, удалить более 1 млн вредоносных файлов. <br/><br/>Совместно с правоохранительными органами более 100 человек <a href="https://rspectr.com/novosti/mvd-s-pomoshhyu-czentra-bezopasnosti-mah-v-2025-godu-zaderzhalo-bolee-40-moshennikov?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">выведены</a>&nbsp;из-под влияния злоумышленников, а благодаря антифрод-сотрудничеству со Сбером от мошенников было спасено более 300 млн рублей граждан.<br/><br/>В 2025 году через кнопку «Пожаловаться» пользователи направили около 600 тыс. жалоб. Среднее время рассмотрения пользовательского запроса составило не более 5 минут.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">761</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13317"><time datetime="2025-12-25T14:48:40+00:00" class="time">14:48</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13318" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTgsInQiOjE3ODg1NjU1NzAsImgiOiIyOWI4MTVmZWEzY2ZhOTVhOTgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Число ежедневных пользователей MAX достигло 46,4 млн</b><br/><br/>Показатель соответствует 37,7% населения России, следует из информации Mediascope.<br/><br/>Количество ежедневных пользователей мессенджера MAX по данным на 22 декабря 2025 г. составило 46,4 млн человек, <a href="https://rspectr.com/novosti/chislo-ezhednevnyh-polzovatelej-max-dostiglo-464-mln?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">пишут </a>«Ведомости».<br/><br/>Прежде нацмессенджер обнародовал статистику использования сервисов платформы. Так, с момента ее запуска пользователи отправили более 6,5 млрд сообщений и совершили свыше 2 млрд звонков. Блогеры, компании и госорганизации создали в MAX свыше 122 000 публичных каналов с числом подписчиков, превышающих 35 млн.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">708</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13318"><time datetime="2025-12-26T07:30:28+00:00" class="time">07:30</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13319" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMTksInQiOjE3ODg1NjU1NzAsImgiOiIyZGZkOGI0NjM0YjRjM2FiYTAifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5363884248688955631 1248876622_460001519" href="https://t.me/rspectr/13319" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/q30FJ4s8wbsVQ_1RB-6ShbrZg-sF7Z-BwSv77QKkVwletyDxLDz1tf5K5fQQI3lautVV1O7E_ANTmSYQkeLyf5rzC5IgvgYLO0IYCBWWa-ifhWiYZ2195icchoXXhIEEX7cotYuU7n70IHgpo84qXh8_Mq6WbRF9S6kyDdfkm04kQ_w6H_C7zuVI9rKKqRnpxSvytyVwbOa356Y1ybLxCHvo5mXLkwuzkkA0vcAE6wudF9baiySktigf6M8m5T4tL4xmwY2EpVz_znQI23YZaGk-QO5nkFbiFApEk3j-I2oG7EEa1j9S8K1aUQZ3_jm4YAqbfSWz7rey72yPO5iqoQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Имеют ИБ-стратегию лишь 42% предприятий, 27% – разрабатывают, говорится в исследовании MWS Cloud.<br/><br/>Наличие стратегии внедрения информационной безопасности напрямую <a href="https://rspectr.com/novosti/tret-rossijskih-kompanij-ne-imeyut-u-sebya-strategii-vnedreniya-ib?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">зависит</a> от величины бизнеса. В крупнейшем бизнесе ее имеют 68% компаний, ещё 22% – разрабатывают. В крупном сегменте эта доля составляет 58% и 24% соответственно. В микро- и малом бизнесе – 31% и 28%.<br/><br/> В 66% случаев решение о внедрении средств ИБ принимает директор по инфраструктуре, в 18% – генеральный директор и в 8% – директор по кибербезопасности. Чаще всего – в 31% случаев – процесс внедрения ИБ занимает 1–3 месяца, в 24% случаев – от 3 месяцев до полугода, в 18% случаев – менее месяца, в 14% случаев – более года.<br/><br/><i>Изображение: создано с помощью инструментов генеративного ИИ, RSpectr</i></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">821</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13319"><time datetime="2025-12-26T08:32:33+00:00" class="time">08:32</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13320" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMjAsInQiOjE3ODg1NjU1NzAsImgiOiIzMmQyMmFjOWRkM2RiMmZjZmEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> <b>В 2025 году сотрудники УБК МВД России совместно с коллегами из регионов предотвратили мошеннические преступления в отношении более чем 10 тыс. граждан</b><br/><br/>Сумма предотвращенного ущерба превысила 2,5 млрд рублей. Задержано 432 курьера, причастных к транспортировке похищенных средств.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">843</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rspectr/13320"><time datetime="2025-12-26T08:40:52+00:00" class="time">08:40</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13321" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMjEsInQiOjE3ODg1NjU1NzAsImgiOiI0NTViNjBiYTBlZjBlYzVkODEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Минцифры опубликовало </b><a href="https://digital.gov.ru/documents/prikaz-minczifry-rossii-%E2%84%96-1202-ob-utverzhdenii-metodiki-oczenki-effektivnosti-nalogovyh-rashodov-rossijskoj-federaczii-ponizhennye-tarify-strahovyh-vznosov-dlya-rossijskih-organiza" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">методику </a><b>оценки эффективности налоговых льгот для ИТ-компаний</b></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">887</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rspectr/13321"><time datetime="2025-12-26T08:48:46+00:00" class="time">08:48</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13322" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMjIsInQiOjE3ODg1NjU1NzAsImgiOiI4NmJiYzQ1ZGU0YjFlNjZkN2YifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Названы самые популярные схемы мошенничества на Новый год</b><br/><br/>На фоне роста онлайн-покупок и предновогодней активности, мошенники усиливают атаки на пользователей. Они используют социальную инженерию, создавая у людей ложное чувство срочности или играя на желании выгодно подготовиться к празднику, предупредили в ВТБ.<br/><br/>Наиболее популярными схемами на новогодних праздниках <a href="https://rspectr.com/novosti/nazvany-samye-populyarnye-shemy-moshennichestva-na-novyj-god" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">станут</a>:<br/><br/>– Фишинг в праздничной упаковке. Злоумышленники массово рассылают «трогательные» новогодние истории, письма о «подарках от Деда Мороза» или уведомления о доставке. Ссылки в таких сообщениях ведут на фишинговые сайты или служат для распространения вирусов для хищения данных банковских карт и учетных записей.<br/><br/>– Фейковые магазины и билеты. Мошенники создают сайты-двойники известных маркетплейсов или продают поддельные билеты на новогодние шоу и детские елки. После оплаты товар не поступает, а доступ на мероприятие оказывается недействительным. Часто злоумышленники используют агрессивную рекламу в соцсетях и мессенджерах, заманивая пользователей ограниченным «праздничным предложением».<br/><br/>– Социальные ловушки. Под видом новогодних розыгрышей и конкурсов в соцсетях мошенники для «получения приза» выманивают реквизиты карт или личные данные. Отдельную опасность представляют файлы с якобы корпоративными фотографиями, особенно с расширением .apk для Android, которые на самом деле содержат вредоносное программное обеспечение.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.1K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13322"><time datetime="2025-12-26T09:26:05+00:00" class="time">09:26</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13323" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMjMsInQiOjE3ODg1NjU1NzAsImgiOiI4ZGQ3YzZiZjgzYmVlNDgyMGYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Дмитрий Григоренко подвел итоги работы по цифровизации госуслуг и сервисов  <br/></b><br/>Реализован план по запуску всех 70 федеральных и 425 региональных жизненных ситуаций, сообщил вице-премьер – руководитель аппарата правительства.<br/><br/>Внедрены все федеральные и региональные жизненные ситуации, запланированные к запуску в 2025 году. Теперь на портале Госуслуг, а также региональных порталах и сайтах <a href="https://rspectr.com/novosti/dmitrij-grigorenko-podvel-itogi-raboty-po-czifrovizaczii-gosuslug-i-servisov?utm_source=telegram" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">работает</a>&nbsp;70 федеральных жизненных ситуаций и 425 региональных. <br/><br/>В числе самых востребованных федеральных сервисов уходящего года: «Поступление в вуз», «Получение налогового вычета» и «Защита от мошенников в сети».<br/><br/>В 2026 году продолжится развитие запущенных жизненных ситуаций, внедрение новых государственных сервисов проактивного формата, а также строгий контроль качества оказания всех государственных услуг.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.56K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13323"><time datetime="2025-12-26T10:25:19+00:00" class="time">10:25</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13324" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMjQsInQiOjE3ODg1NjU1NzAsImgiOiJhNzJmZWJiNzlkMTVkMGIxMDIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>В РФ в 2022-2025 годах выявили почти 1 млн фишинговых сайтов</b><br/><br/>За это время было найдено 988 тыс. вредоносных ресурсов, следует из статистики Минцифры России по состоянию на 18 декабря.<br/><br/>Связанных с запрещенным контентом <a href="https://rspectr.com/novosti/v-rf-v-2022-2025-godah-vyyavili-pochti-1-mln-fishingovyh-sajtov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">выявили</a>&nbsp;почти 400 тыс. ресурсов, с деструктивным – порядка 150 тыс. У более 37 тыс. были выявлены нарушения законодательства в области персональных данных.<br/><br/>С целью блокировки фишинговых ресурсов было направлено почти 800 тыс. обращений в различные ведомства: более 302 тыс. и 139 тыс. в Генпрокуратуру и Роскомнадзор, а также свыше 99 тыс. в ЦБ РФ, 140 тыс. – в ФНС, 76 тыс. – в НКЦКИ при ФСБ РФ, более 29 тыс. – в МВД, более 9 тыс. – в центр «Доменный патруль».</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.97K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13324"><time datetime="2025-12-26T12:19:32+00:00" class="time">12:19</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13325" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMjUsInQiOjE3ODg1NjU1NzAsImgiOiIxZDdhY2RmOGZkMWUxMDJlYjUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29D97.png')"><b>❗️</b></i><b>Госдума: в России не будут вводить штрафы за использование VPN </b><br/><br/>Об этом заявил первый заместитель председателя комитета по информационной политике, информационным технологиям и связи Госдумы Антон Горелкин. В России ответственность за VPN грозит лишь тем, кто использует его для совершения преступлений, подчеркнул он. <br/><br/><blockquote>«Это считается отягчающим обстоятельством. Также запрещено рекламировать способы обхода блокировок и призывать к их использованию. Никакие другие штрафы не планируются и не обсуждаются», – подчеркнул депутат.</blockquote></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.46K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13325"><time datetime="2025-12-26T13:08:37+00:00" class="time">13:08</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rspectr/13326" data-view="eyJjIjotMTMxMTgwNTI0NSwicCI6MTMzMjYsInQiOjE3ODg1NjU1NzAsImgiOiI0OGZhNGJmMjIyMzBiMjEyNjUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rspectr"><i class="tgme_widget_message_user_photo bgcolor2" data-content="Р"><img src="https://cdn4.telesco.pe/file/ogkRn3hYIwuONWuF_dcqfuyqINtfXyJoNXGho9RhCwcXwKrqAYiIW_Px9UhNUpcBUko7iaj-A150gnYBEL4oAYYBMQrjYH_jm9plosDemHjxIMHHZmQ-yARktc3jir9CXx0bBD4qOwhAD8cUjaZfo5fsbShAhdmoG3GsPleBWQU88c8MxGfv04CH6zXBiiBlZDEwuI98L0EVtss8_ls683pTdHd_17SUtMYSM2sqY7li7tzFwwsbdbOd7F7d2LIHplLodjof2yUUQy0f39UDL8Chx9ETV_A22bHChVMrt0tS62F7SpLut4jIQHrQqgeCJStAWd7lx0rEmLymVa1Z7g.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rspectr"><span dir="auto">РСпектр: связь, ИТ, кибербезопасность</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>МАХ стал опекуном морского зайца Макса в Московском зоопарке</b><br/><br/>Партнерство стало частью социальной инициативы нацмессенджера по поддержке культурных институций и развитию образовательного контента.<br/><br/>В рамках сотрудничества в мессенджере<a href="https://www.vesti.ru/article/4848051" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">&nbsp;появился</a>&nbsp;официальный канал, который ведется от лица ластоногого. Подписчики смогут следить за повседневной жизнью Макса и других обитателей зоопарка, читать забавные истории, наблюдения за посетителями и познавательные факты о животных.<br/><br/>Партнерство с мессенджером позволяет донести идеи сохранения биоразнообразия и ответственного отношения к природе в легком формате, особенно для молодого поколения, отметила генеральный директор Московского зоопарка Светлана Акулова.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>16</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>7</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.75K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rspectr/13326"><time datetime="2025-12-26T14:06:45+00:00" class="time">14:06</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 95.07ms -->

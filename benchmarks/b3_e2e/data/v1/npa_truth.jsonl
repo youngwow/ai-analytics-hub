@@ -1,0 +1,3 @@
+{"object_id":"NPA-A","current_stage":"introduced","current_version":"v2_2026-08-24","history_ids":["A17","A18"],"stale_or_secondary_ids":["A19"],"required_change":"Дата предлагаемого применения перенесена с 1 марта на 1 сентября 2027 года."}
+{"object_id":"NPA-B","current_stage":"revised_draft","current_version":"v2_12_month_log","history_ids":["B17","B18"],"stale_or_secondary_ids":["B19"],"required_change":"В новой редакции при новом URL добавлен срок хранения журнала 12 месяцев."}
+{"object_id":"NPA-D3","current_stage":"revised_draft","current_version":"v2_connected_screens_12_months","history_ids":["D301","D302"],"stale_or_secondary_ids":["D303"],"required_change":"Область изменена на приложения на подключённых экранах, срок снижен с 24 до 12 месяцев."}

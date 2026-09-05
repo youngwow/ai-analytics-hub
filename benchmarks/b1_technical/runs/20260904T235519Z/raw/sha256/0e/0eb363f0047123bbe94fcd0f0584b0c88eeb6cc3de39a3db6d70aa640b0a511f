@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Телеспутник – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="Телеспутник">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/ulygY_tO0hAneBbnZGfwGgC1-B58xCsQXZj2QZdxKXz967Hl5rW1LbcMSaMG55XQNK9d_Abv2zopV_NtSe9ltOIVp6wTKDdVJPM99uBcAj_YWDAosA7hpfdv1bYZnyJEjGxYhrmi_vwzn-r30oWUZgwl6Fpb8O3kUvAcmwdcocXqNYvGDv6kNUwyhxz1iDD4Ct7ExjULdiaFqwNdzk1zw7JHAJ8w28WHXLTltSU5o5nEzOqzS57VwAe1CsnMxn1IoQOOBV4VF7wd7KCgBmEgHW5xw9K7baE85Vm7cbztwGd0RnyFjgnBYeUSXBNAOKNS8NNVbsx9CwL_5krUSapidg.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Новости телекоммуникаций, ИТ, электроники,  цифровизации и медиабизнеса.
+VK: https://vk.com/telesputnik
+Дзен: https://dzen.ru/telesputnik
+Сайт: www.telesputnik.ru
+Связь: telesputnik@telesputnik.ru
+https://gosuslugi.ru/snet/67a3280ca16f1b55428a546b">
+
+<meta property="twitter:title" content="Телеспутник">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/ulygY_tO0hAneBbnZGfwGgC1-B58xCsQXZj2QZdxKXz967Hl5rW1LbcMSaMG55XQNK9d_Abv2zopV_NtSe9ltOIVp6wTKDdVJPM99uBcAj_YWDAosA7hpfdv1bYZnyJEjGxYhrmi_vwzn-r30oWUZgwl6Fpb8O3kUvAcmwdcocXqNYvGDv6kNUwyhxz1iDD4Ct7ExjULdiaFqwNdzk1zw7JHAJ8w28WHXLTltSU5o5nEzOqzS57VwAe1CsnMxn1IoQOOBV4VF7wd7KCgBmEgHW5xw9K7baE85Vm7cbztwGd0RnyFjgnBYeUSXBNAOKNS8NNVbsx9CwL_5krUSapidg.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=telesputnik">
+
+<meta property="al:android:url" content="tg://resolve?domain=telesputnik">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Новости телекоммуникаций, ИТ, электроники,  цифровизации и медиабизнеса.
+VK: https://vk.com/telesputnik
+Дзен: https://dzen.ru/telesputnik
+Сайт: www.telesputnik.ru
+Связь: telesputnik@telesputnik.ru
+https://gosuslugi.ru/snet/67a3280ca16f1b55428a546b
+">
+
+    <link rel="prev" href="/s/telesputnik?before=14451">
+<link rel="canonical" href="/s/telesputnik?before=14472">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/telesputnik">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/telesputnik" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">Телеспутник</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/telesputnik">@telesputnik</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">32.9K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">3.71K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">443</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">7</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">11.2K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Новости телекоммуникаций, ИТ, электроники,  цифровизации и медиабизнеса.<br/>VK: <a href="https://vk.com/telesputnik" target="_blank" rel="noopener">https://vk.com/telesputnik</a><br/>Дзен: <a href="https://dzen.ru/telesputnik" target="_blank" rel="noopener">https://dzen.ru/telesputnik</a><br/>Сайт: <a href="http://www.telesputnik.ru/" target="_blank" rel="noopener">www.telesputnik.ru</a><br/>Связь: telesputnik@telesputnik.ru<br/><a href="https://gosuslugi.ru/snet/67a3280ca16f1b55428a546b" target="_blank" rel="noopener">https://gosuslugi.ru/snet/67a3280ca16f1b55428a546b</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=917bff6df01201aa95_14253517030254125266">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=917bff6df01201aa95_14253517030254125266">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/telesputnik">
+        <i class="tgme_page_photo_image bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">Телеспутник</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">32.9K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/telesputnik">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/telesputnik?before=14451" class="tme_messages_more js-messages_more" data-before="14451"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14451" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTEsInQiOjE3ODg1NjYxMjQsImgiOiIxNDFkY2ZiYTQ3NGI0N2MxZmIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5247202257978204766 1221709479_460005982" href="https://t.me/telesputnik/14451" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/FevKEh0Xu7GaqAVZ-4PswnNCV4FUqw6LV_PqW737TUEl00ooVjF6wgTgFSTCGjALCxfeeFYT33SqJjSeEz3zyOBV1TskZFfeggVfNzNxX1L9ZgJj4rm0oCqOVZBQijB1Tq2Dl8wW5vpppGTdG9sgDGzGHUFRjF3eXPA9DrIn_9SQrS9_XxN9fkkCQev8J34_89NIJAn4OdjTutwgk2LCNUXwGeZJ8hPSaJ6YQ16xoMV-YWPeypN0y8idcvku-9BBc3leYN4Pay9VXZGFaoNB57x0gBjzRl3emGSmM8HmB9lQI2iPtsjXQpe_DomQmKU_sBFXJ3uvAMzJQqEydwXyJg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Александр Панёв назначен директором по контенту онлайн-кинотеатра «КИОН» </b><br/><br/>Онлайн-кинотеатр «КИОН» <a href="https://telesputnik.ru/materials/companies/news/aleksandr-panyov-naznacen-direktorom-po-kontentu-onlain-kinoteatra-kion" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">объявил</a> о назначении Александра Панёва на должность директора по контенту. На новом посту специалист займется развитием библиотеки и стратегии платформы.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.82K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14451"><time datetime="2026-09-03T10:09:51+00:00" class="time">10:09</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14452" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTIsInQiOjE3ODg1NjYxMjQsImgiOiJhMTEzODkxYjBlYjc3ZTczMWEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5247202257978204786 1221709479_460006002" href="https://t.me/telesputnik/14452" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/A22sQlOfL_Ipk4QuWe1sARBYqxTRWaU3i380B7jrxus1ZVlmEa1kvWYfHFG_eqTLnhxy7FP1yjxFtZGo5Mp1Et3yys6av8IIUy9Nr2GXW9HkoXbmWWHKIhJHJv4AQvvgGUNN72NB1JesmaDO9wYX89IruZqO5lxJ0TzAJWCcye02AtLQ64W77uCYzHz7gxSRvgF0V7O4Sz_xfOJtV6sxl3r90xuhIW4TQ6CU_DjGyDAq6zPIyYvDoTx_9xdu-iy64JKwOmVgAxnXHgPy2n_n7fNQXukeyZ6mnakH8_tXI9hdUgvLZzGMBpxl02wu4qUWzK7pgmfVrjfdHvMuJEg0og.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Новый сезон на «Первом ТВЧ»: космос, охота, принцессы и Балтийский флот</b><br/><br/>Осень на телеканалах «Первого ТВЧ» <a href="https://telesputnik.ru/materials/content/news/novyi-sezon-na-pervom-tvc-kosmos-oxota-princessy-i-baltiiskii-flot" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>начинается</u></a> с масштабного обновления эфира. Зрителей ждут громкие премьеры, новые сезоны полюбившихся проектов и неожиданные форматы. Чтобы не запутаться в многообразии сентябрьских новинок, мы собрали главные события по каждому каналу отдельно.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.87K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14452"><time datetime="2026-09-03T10:25:34+00:00" class="time">10:25</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14453" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTMsInQiOjE3ODg1NjYxMjQsImgiOiI3NzJlNzYxMmJiOWI5NzQ0ZDUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5247202257978204857 1221709479_460006073" href="https://t.me/telesputnik/14453" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/UCBJqOoV6OU2OhHhOR8RInQiogO8_Ztc11e505dQKDITwtCe6cgfhSi5UXTcIg1PYg7BfQe0bSjjW-Pz0B2TokmYGmxK7MqoAvIjLYDftXWMg8oK2F10TEnsgfgZfVpJN34h6lkuKqH7jSdUKpIbaFYZvhXNwJHsGEB6vnxDOJt5v0jFURYBMIfCcnFWZF-w19WTN44uuYZ6TWgLHTuaPr5gWIER7IDfnPxhBvCfzv-KcS_T_iIpNM5Hzf47ulCSWx1MnVXNMeWPgY-xztHycHFgWeyT91GUHt3czKyE-jhwde7nZm8oA03IK_wij4cELnB0hB8jBegFDrLNBZ4S_g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Азиатско-Тихоокеанский регион стал лидером по производству сериалов для стримингов </b><br/><br/>Азиатско-Тихоокеанский регион (АТР) впервые в истории<a href="https://telesputnik.ru/materials/content/news/aziatsko-tixookeanskii-region-stal-liderom-po-proizvodstvu-serialov-dlya-strimingov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> стал </a>крупнейшим мировым рынком по объему заказов на производство оригинальных сериалов. По итогам первой половины 2026 года на долю региона пришлось 36% всех новых проектов от ведущих глобальных стриминговых платформ, что позволило ему подняться с третьего места на первое.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.53K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14453"><time datetime="2026-09-03T11:16:33+00:00" class="time">11:16</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14454" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTQsInQiOjE3ODg1NjYxMjQsImgiOiJlMWUwNTZhMDUyZTdiOGJlMmYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5247202257978204993 1221709479_460006209" href="https://t.me/telesputnik/14454" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/kLuRRPUptr9qipsVlqTOUcnS1qSK2H7Cr9RPXrJUPgB98vHn7pw8ZAtDrm1QH2HDEh0ZCcAA6AyBAasPu9rjsnHPJxMcS4T-7C3XTcTpsKAOzLHaZ2FTbjNZ8zeCBXixNEq0S6-HzmLarn1sD_qM9n232qqX4ThLn6AuaOQb3q9AVn2BUUwumUMNJszhP_2I2zDHRLvAPWUu7o5j5gbKjluRL2k2P49275Yrmmztg45ivOgDuG7Gn4UhVfKU9JVO444P1BiG3_h_Pukybt8lpGAImHGJOGTrTnpSNPR3haeAu8Q48UUmUa10zbKdxAVsCIvk0imrwmzFv9Jbkp8g2w.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5289830237427766094"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA5B9.png')"><b>🥹</b></i></tg-emoji><tg-emoji emoji-id="5289967856769863619"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9885.png')"><b>😅</b></i></tg-emoji><tg-emoji emoji-id="5291831176791622125"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9882.png')"><b>😂</b></i></tg-emoji><tg-emoji emoji-id="5289786939862452417"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A3.png')"><b>🤣</b></i></tg-emoji><tg-emoji emoji-id="5292042815600101073"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA5B2.png')"><b>🥲</b></i></tg-emoji><b>Минфин готовится к продаже компании «Леста» частному инвестору</b><br/><br/>Российские власти намерены реализовать активы компании «Леста», занимающейся разработкой игр «Мир танков» и «Мир кораблей», частному инвестору. Завершение сделки ожидается в течение ближайших двух месяцев. Эксперт в беседе с «Телеспутником»<a href="https://telesputnik.ru/materials/companies/news/minfin-gotovitsya-k-prodaze-kompanii-lesta-castnomu-investoru" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> назвал</a> вероятного покупателя.</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/telesputnik/14454" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.41K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/telesputnik/14454"><time datetime="2026-09-03T12:44:30+00:00" class="time">12:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14455" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTUsInQiOjE3ODg1NjYxMjQsImgiOiI3OWIxZDlhNmU3NDQ1NmRiOWUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5247202257978205316 1221709479_460006532" href="https://t.me/telesputnik/14455" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/LJZ2PLTT5Fhat_9qD4ftCJv84eP7n9tmPjgLrZQWkKW3U08Cg46g8zc5gif9zfY3Ag6NmzboKumZPN8J-8kQqVkCKDZ5pHUEQ62jHMFIo6Yb-KH3hIQn3U13k7qmoQOMGQjgQmCQZV4y7RtqZ1po3fihK0P3X2fe-AlUHAtJlBIp2bZvmo6o59YkzQRpFumyFsX_6AYFVmu7S7STMym4ddg2EI8NRk5mG3ID3i1-kNzR6AvRTqYZjD-2YKYlytje1Ewg8tzIvCnJHpU4riUDvPYgywQVEaQHd0tAmvZnmBYnj2rR7bxjLGC4OiBd-kQgh__gH4eJ0wPs2U0bqK0m0w.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Абонентам разъяснили правила блокировки сим-карт через «Госуслуги» </b><br/><br/>Операторы связи могут <a href="https://telesputnik.ru/materials/gov/news/abonentam-razyasnili-pravila-blokirovki-sim-kart-cerez-gosuslugi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">отказать </a>абонентам в блокировке сим-карт в некоторых случаях. Причиной отклонения запроса может стать несоответствие информации клиента в договоре с телеком-компанией и его данными на «Госуслугах».</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.75K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14455"><time datetime="2026-09-03T13:49:12+00:00" class="time">13:49</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14456" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTYsInQiOjE3ODg1NjYxMjQsImgiOiJmNDg5NTA0ZmM2ZDM5MWI2MjQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5247202257978205360 1221709479_460006576" href="https://t.me/telesputnik/14456" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/p971Hf9qcdec9zyBvyiCi-TpR6HdyKrmbTzUVa1Hkr_YHcmu8gScj3uhRx_uyw0UwaKPH7qryX_EX9Bx2wO-KaQ2uYCNcY6qP14IZ6Z7_zGdD7CisevN7HgFyAc00_BqDLpMShGqzyu-EFfpiazunbFfsqpJMsbJ2gF8yyzdWcAJ2yaF_Oei40T955uWN4OgLu60UeP3ZVsO6ClMhsrKTzm-OG4rz_ALB1UM98TqfhOspU_o_ssQgpbTfSEZocWFaogQMBLYM5ITUq93ZqXi-QBmpje5RgW2LpERN3gpvqUjBjkQi2IzLbYkCwrsrBKDWtTwGUSsb7YpQF8N2qF6ig.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Реформа связи способна уничтожить телеком-рынок в 27 регионах России </b><br/><br/>В случае принятия критических изменений, которые предполагает обсуждаемая в отрасли реформа связи, <a href="https://telesputnik.ru/materials/hipe/news/reforma-svyazi-sposobna-unictozit-telekom-rynok-v-27-regionax-rossii" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">27 регионов России могут остаться без регионального телеком-рынка</a>. Такие данные привел директор ассоциации телекоммуникационных операторов (АСТО) Алексей Леонтьев.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.13K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14456"><time datetime="2026-09-03T14:30:57+00:00" class="time">14:30</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14457" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTcsInQiOjE3ODg1NjYxMjQsImgiOiJmMzQwNGIzMzJkNDJiMjdkNzAifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5247202257978205363 1221709479_460006579" href="https://t.me/telesputnik/14457" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/WTo6I8LVrSlCnB7OCTFd_CNPdNVXgE7_vwj4Vdzrl3vkT3vfjj5TaBRbK9RAsIN1nUw07bUCmv5NFfxXTNnVmpBgUFO-38J9oWCSipyUz7Z7u3nxJb3OiHD_CXOqSelttcRlHYKcgoFw6qiv5hLSegA9KxzRzwo7m19MsKtFoVEzYhmXnZEUF3r4m1pwzUTuUMF9IcDGZ_Y9KEJpPC4jAYVAHcyqcnrmyb21b7CNOgtzf9dKpOXrpSuMPZeCTc55XQQ5nLBtLwPxw02IclklvyEwneJ45az8EXChP6sobsSnPizJGHkjIGPsGfALeFK1iUFqzmVOhRbtzeJl0Q3p3Q.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Могут просто «выключить»: как реформа связи может отразиться на рынке платного ТВ</b><br/><br/>Обсуждаемая в отрасли реформа связи<a href="https://telesputnik.ru/materials/gov/news/mogut-prosto-vyklyucit-kak-reforma-svyazi-mozet-otrazitsya-na-rynke-platnogo-tv" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> может существенно повлиять</a> не только на малых операторов связи, но и на смежные рынки. В том числе на отрасль платного телевидения. Сегодня для компаний, которые производят контент, региональные операторы связи порой являются «подушкой безопасности» и существенным источником дохода. Такое мнение в ходе высказал президент ассоциации «Ростелесеть» Олег Грищенко.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.78K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14457"><time datetime="2026-09-03T14:36:48+00:00" class="time">14:36</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14458" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTgsInQiOjE3ODg1NjYxMjQsImgiOiIyZWMyZGNlZDc4YTE1NWRiZDEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5247202257978205400 1221709479_460006616" href="https://t.me/telesputnik/14458" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/KpQsKl07MI4LZgFEyt1XRwEKLow2QqqDobYwFRM473Zcy1kkf_NA6U0E1Fn1R-lnKblhwqqpcvtvGJfyzJiPiypjkV7wHcPeS6mt0o9SX-dLNkyJY7vQbwIPkmELWPdvJhybZlMlersTe3RArZwhYlFIorRCLfXXVTYepVD49EDM1iLFVQ6apGdCUJH1n6w73Upw2DGvrcm7RIAQZkKzgmNqsnzC2FxyoKzFt9NOuoO34r_U1ZqHE_iLvK7iQQiOboMtQCLfJULDMv1_YVcAo37yRz61_td76uswCGvpwf0EAOjGp0d9t1B12Yys6ij0_r0QsOwBuFsay8flOaH1Zg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>На конференции «КонТех 2026» обсудят тренды отрасли цифрового телевидения </b><br/><br/>18 ноября в Москве <a href="https://telesputnik.ru/materials/companies/news/na-konferencii-kontex-2026-obsudyat-trendy-otrasli-cifrovogo-televideniya" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">состоится</a> XI ежегодная конференция «КонТех 2026. Контент и технологии для цифрового ТВ в России». На площадке обсудят актуальные тренды, проблемы и задачи российской отрасли цифрового телевидения.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.83K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/telesputnik/14458"><time datetime="2026-09-03T14:52:43+00:00" class="time">14:52</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14459" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NTksInQiOjE3ODg1NjYxMjQsImgiOiJlYjBlODQ5Y2Q5YjEyODU2MGYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Сегодня в фокусе «Телеспутника»:</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>Минфин<a href="https://telesputnik.ru/materials/companies/news/minfin-gotovitsya-k-prodaze-kompanii-lesta-castnomu-investoru" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> готовится</u></a> к продаже компании «Леста» частному инвестору<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>Могут просто «выключить»: как реформа связи может<a href="https://telesputnik.ru/materials/gov/news/mogut-prosto-vyklyucit-kak-reforma-svyazi-mozet-otrazitsya-na-rynke-platnogo-tv" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> отразиться</u></a> на рынке платного ТВ<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>«ИКС Холдинг»<a href="https://telesputnik.ru/materials/elektronika/news/iks-xolding-sozdast-na-dalnem-vostoke-proizvodstvo-mikroelektroniki-dlya-kosmosa" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> создаст</u></a> на Дальнем Востоке производство микроэлектроники для космоса<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>Квантовые коммуникации<a href="https://telesputnik.ru/materials/gov/news/kvantovye-kommunikacii-oxvatyat-vse-regionalnye-stolicy-dalnego-vostoka-k-2030-godu" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> охватят</u></a> все региональные столицы Дальнего Востока к 2030 году<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>Александр Панёв<a href="https://telesputnik.ru/materials/companies/news/aleksandr-panyov-naznacen-direktorom-po-kontentu-onlain-kinoteatra-kion" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> назначен</u></a> директором по контенту онлайн-кинотеатра «КИОН»<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>Азиатско-Тихоокеанский регион<a href="https://telesputnik.ru/materials/content/news/aziatsko-tixookeanskii-region-stal-liderom-po-proizvodstvu-serialov-dlya-strimingov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> стал</u></a> лидером по производству сериалов для стримингов<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>Реформа связи<a href="https://telesputnik.ru/materials/hipe/news/reforma-svyazi-sposobna-unictozit-telekom-rynok-v-27-regionax-rossii" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> способна</u></a> уничтожить телеком-рынок в 27 регионах России<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>Новый сезон на «Первом ТВЧ»: космос, охота, принцессы и Балтийский флот<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>Абонентам<a href="https://telesputnik.ru/materials/gov/news/abonentam-razyasnili-pravila-blokirovki-sim-kart-cerez-gosuslugi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> разъяснили</u></a> правила блокировки сим-карт через «Госуслуги»<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>НМГ<a href="https://telesputnik.ru/materials/media/news/nmg-priobretaet-kontrolnuyu-dolyu-v-id-komsomolskaya-pravda" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> приобретает</u></a> контрольную долю в ИД «Комсомольская правда»<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>На конференции «КонТех 2026»<a href="https://telesputnik.ru/materials/companies/news/na-konferencii-kontex-2026-obsudyat-trendy-otrasli-cifrovogo-televideniya" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> обсудят</u></a> тренды отрасли цифрового телевидения<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>Для российской микро- и наноэлектроники<a href="https://telesputnik.ru/materials/novosti-kompanii/news/dlya-rossiiskoi-mikro-i-nanoelektroniki-trebuyutsya-otecestvennye-materialy" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u> требуются</u></a> отечественные материалы</div>
+<div class="tgme_widget_message_reactions js-message_reactions"></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.9K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14459"><time datetime="2026-09-03T15:10:40+00:00" class="time">15:10</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14461" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjEsInQiOjE3ODg1NjYxMjQsImgiOiJmNzg5M2M4OTBlNzQ4YWVjNjgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170751562 1222140541_460004426" href="https://t.me/telesputnik/14461" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/k8BUhU7tUACd8xoLZ-ViuipPKlRwTFdNh9AC5TtXo71F-wZDObS5r8mZZN13fEtoxyQxc76oUmzKt7f1Pz5PSgU4WGzDLwWiZFG5yFHjTp_DvxaDPERaKEL_S4h0YOO2mqpro61HvkNwvL502jh82DQzvEcnpRb7IXCQPtfG0C8Sp2GVu9cetRRSFIxAZAbDxp-voEGH8L4bnZzO6hQcr1yZ34pX6_gEIwRZufonRzNYmNoHOHmFrONsLKpbp2MAOc8ncKq3-oz_VHYFsKIMa9aCzyVSuQRjqNQYeDWyKW88Txc29afqQiUMkG7WSsQGeO4Y9rp7MOdcz22rEPRTmQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В России прорабатывают создание 30–40 межрегиональных хабов ЦОД</b><br/><br/>В России <a href="https://telesputnik.ru/materials/trends/news/v-rossii-prorabatyvayut-sozdanie-30-40-mezregionalnyx-xabov-cod" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">обсуждается создание</a> межрегиональных кластеров центров обработки данных (ЦОД), которые объединят вычислительные мощности для нескольких субъектов и упростят доступ к электроэнергии. Инициатива находится на стадии проработки в Уральском, Приволжском федеральных округах и Ленинградской области, при этом речь может идти о строительстве 30–40 таких хабов.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.99K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14461"><time datetime="2026-09-04T07:39:40+00:00" class="time">07:39</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14462" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjIsInQiOjE3ODg1NjYxMjQsImgiOiIwNmViZjFiYjZhOTE3OGVjMjgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170751643 1222140541_460004507" href="https://t.me/telesputnik/14462" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/PFqJCAqmoG-woZj6TZR0sVL1qneSZ2ZVKKCqyPJ-a9owtpo3x5HI_QnyHgzbaMxADNL5O_IuGI9yQCVgOFPO_WoBZcVMHpFYfbBFIU5GEaQ13wN4azTPeEyhzTRwE5S93jY_azTBoFwE3N_sUApUcuTUaJ6pkbaniielLyKzH-F3lW1z0YKKHO2jX6BsRjfpIHDHV9Z7fg1x456MT45T2gMW31A_BzxQjSVQm9725KENqaRY-5tgsMx5vFQpZNhFD4y5IfMdBkAVsUmE0l-TGrfPxVhEDAlzYV-RJOVsub3jyBQYg4JRLmVoyod6sfkkjhaLKqcj0NO0nWtjBRF5Vg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В ЕС рекомендовали отменить санкции против одного из российских мобильных операторов</b><br/><br/>Генеральный адвокат Суда ЕС Андреа Бьонди <a href="https://telesputnik.ru/materials/hipe/news/v-es-rekomendovali-otmenit-sankcii-protiv-odnogo-iz-rossiiskix-mobilnyx-operatorov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рекомендовал</a> отменить санкции против российского оператора мобильной связи «Мегафон», указав на отсутствие доказательств и нарушение прав компании на защиту.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.89K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14462"><time datetime="2026-09-04T08:38:42+00:00" class="time">08:38</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14463" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjMsInQiOjE3ODg1NjYxMjQsImgiOiJmNjIwZTQ4YjZmNzg3ODYxNDkifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249053655170751856 1222140541_460004720" href="https://t.me/telesputnik/14463" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/HPqltU9FrYY1A2-WRz8UlnebQveqCIEviyd-2ecd0Zd0e0sKT6YImn5EMNjVcvECkSionwIWLnNkJL-qmMD40IVDCrj8n5CQUlEV0cs5nuJBTOjEZktiy27AnSAe7xBtDLkKrhCvHlWQmOCQsYx8CYl9gfx_jaFvdmOUD7VpcLXBtM4j2zeqbN07UE4WvEPeRthghf5zXAUE368DYKSDzXPgI56bYrTgm9poVJKJk_z4FrhOAWEMJqd6aKkzljlU9IkUx_nFTYZrBYruePvrs-DnCX6WIxs7-Bvyb26X65spqFvBxNqi8UiLjUo4bh35Kf0cQev3fii_Z_uUu6eFRA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5289830237427766094"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA5B9.png')"><b>🥹</b></i></tg-emoji><tg-emoji emoji-id="5289967856769863619"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9885.png')"><b>😅</b></i></tg-emoji><tg-emoji emoji-id="5291831176791622125"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9882.png')"><b>😂</b></i></tg-emoji><tg-emoji emoji-id="5289786939862452417"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A3.png')"><b>🤣</b></i></tg-emoji><tg-emoji emoji-id="5292042815600101073"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA5B2.png')"><b>🥲</b></i></tg-emoji><b>Три лицензии и удар по регионам: как в России могут измениться правила игры на телеком-рынке</b><br/><br/>Реформа лицензирования, готовящаяся Минцифры, может привести к исчезновению региональных операторов в 27 субъектах и оставить без связи более 50 млн граждан. Такие данные обнародовали представители отраслевых ассоциаций в ходе пресс-конференции <a href="https://telesputnik.ru/materials/gov/article/tri-licenzii-i-udar-po-regionam-kak-v-rossii-mogut-izmenitsya-pravila-igry-na-telekom-rynke" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">«Реформа телеком-отрасли — что ждёт российский рынок связи?»</a>. По их расчётам, финансовые и географические пороги универсальной лицензии вытесняют компании с выручкой до 200 млн рублей.</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/telesputnik/14463" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.78K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/telesputnik/14463"><time datetime="2026-09-04T10:44:11+00:00" class="time">10:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14464" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjQsInQiOjE3ODg1NjYxMjQsImgiOiI3YmFkZTQ5Mzk3ZTIwMzI4MjIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170751948 1222140541_460004812" href="https://t.me/telesputnik/14464" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/oQEexNopbFEztET4YFGDwf8174oI8GRncAC6NC61ufQUDVBh6TfNtESfgpCxRFtD6Vhwa8srhlwMO1i29EZ4nOpobZHs6N08rTpSD3I4tj9kqJZzEPSWIMyz7CKyczuXUiFBXeihSlGXdrnJ7HQJaeTSQyA0IjQKTwLO0OyyvQDtGoh4t9RxqiMZmyAham3xJssVwkogb_mwJvH46YQ4Zi7rQ-pm_eeVvOKFvU7FcvqewLMPVtacs12zE46UOU-EsDfQFRZWduy1Cb1kL9RMUCjIrDBXLEJ9Fpyn_KYsAYSIb4jPRH3KLjzvg-39qaCbMd29R25RZIEczB0acyZnbw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Организаторы «Микроэлектроники» назвали тему первой предконференции</b><br/><br/>С 7 по 10 сентября в Москве на площадке консорциума НИЯУ МИФИ и АО «ЭНПО СПЭЛС» <a href="https://telesputnik.ru/materials/novosti-kompanii/news/organizatory-mikroelektroniki-nazvali-temu-pervoi-predkonferencii" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">пройдет предконференция №1</a> «Доверенная и экстремальная электроника» в рамках российского форума «Микроэлектроника 2026».</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.48K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14464"><time datetime="2026-09-04T11:34:42+00:00" class="time">11:34</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14465" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjUsInQiOjE3ODg1NjYxMjQsImgiOiI3M2IzZjZjODkxOTY5NzQ0N2YifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170752028 1222140541_460004892" href="https://t.me/telesputnik/14465" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/GAdCsxUPochA8_hKgX8K44ld_xM8Fh1vUQTpRaXckCYBt-dmvjWci37Ex956zFfJYAI9qjD8vgzexkX9m--PwO1673U-QhzPkBRPeC25cFIFyZO9qh5DJ2912tC9KiDERU5fc0SGWzFuVr-i8KeAtNOcCIsyktDtWgLnVexKhmHiYVu8uCudV5AFW7C-DopPNKKKhPYWlsvC38SRsazGLJ3pJ_S38G6uWuRotCD_mAc-ZJTgbte3p8EVrqvgJFlec-rjdfaluGe-jEIWjgKbC3ObTg2HsobgxuDezavCXti4xRlfWsv99zXdosBaez410MIFh-veXi8NFF95G-wVvQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>ФСБ ужесточила требования к криптозащите внешних сервисов для госсистем</b><br/><br/>ФСБ <a href="https://telesputnik.ru/materials/gov/news/fsb-uzestocila-trebovaniya-k-kriptozashhite-vnesnix-servisov-dlya-gossistem" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">распространила</a> требования по криптозащите на внешние облачные сервисы и аппаратные компоненты, обеспечивающие работу государственных информационных систем.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.33K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14465"><time datetime="2026-09-04T12:37:03+00:00" class="time">12:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14466" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjYsInQiOjE3ODg1NjYxMjQsImgiOiJiYTNiNjUyYjRhNTNlM2RhNzEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170752061 1222140541_460004925" href="https://t.me/telesputnik/14466" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/GO6PaRlk5HgFKHQD9i7E5wsswkl4QqrSxF7yZ5wocwYWYALhDNAyPsdU9GN5dw7BfnLRt9Et7-g-sSambrRWXOd5iSdTGdix3G87uoEEXhK7xGXKXNukRsbOPhtx9vfK28qawQw_WZDRwOD8yErdjwSvgp1TQuu6qswMxqs5ZbsJDGPnkY-Y131xOBMyvnJAovBbXKxs4A_MF_oR34VxJXsiIU48DcbzKYzAo-7IV2Hq9gw4a9sG93UojF6HIwsyZzLJgf0jzGyxNDj38b4lL-pFJA_T9f5thEP4xrMoMoBmRIvK6CD5IN2TAnqN-in7UPotxIKkkugyRTN_MKQdVw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Теперь и на федеральном ТВ: шоу «Без сценария» выходит в «Большом эфире»</b><br/><br/>Шоу о культуре и искусстве «Без сценария» Президентского фонда культурных инициатив <a href="https://telesputnik.ru/materials/companies/news/teper-i-na-federalnom-tv-sou-bez-scenariya-vyxodit-v-bolsom-efire" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">вошло в эфирную сетку</a> «Триколор». Всего зрители увидят 12 эпизодов проекта, которые уже собрали 22,2 млн просмотров в интернете.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.54K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14466"><time datetime="2026-09-04T13:03:02+00:00" class="time">13:03</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14467" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjcsInQiOjE3ODg1NjYxMjQsImgiOiJhYzUzMWVkM2ZkYTBjYWRmNTEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170752090 1222140541_460004954" href="https://t.me/telesputnik/14467" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/n_ROdr-RfwnnlAIyMR7eCUxbYS5cUkaLqxzRz0OWcG7-BRwcVFZ4XTbcq98tDHF4bnpwY6Yd8FduPAq6hG8U_BSWp3jnZ5L2s6xida18jTFou-VvjhzSVciGUgwzYzy5g7GJN7iRhUbh66HAs-JdHKxWPMS4S96NPtqMXl06hyhQQYUAgEq6-KvdJbVJUmnXD25oDr_Dys0T5dz3TGcjNIHxD6zrMQYb8lDrr0cDqjPnoiqyhaXP6rYFjInUCp-jIZdi6SDlnJ2Oprdz984Yc_Mp_fUyTjNlgSbHjsE0xyVJW-MHUh9pdoR6puRs2ejn9l2_CiIpUX76AMycf71CLQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Для российской микро- и наноэлектроники требуются отечественные материалы</b><br/><br/>Поиск новых перспективных материалов с уникальными физическими свойствами в увязке с развитием новых методов диагностики обсудят российские ученые на секции №13 научной конференции форума «Микроэлектроника 2026» в Сириусе, <a href="https://telesputnik.ru/materials/novosti-kompanii/news/dlya-rossiiskoi-mikro-i-nanoelektroniki-trebuyutsya-otecestvennye-materialy" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">сообщила</a> пресс-служба.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.68K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14467"><time datetime="2026-09-04T13:25:15+00:00" class="time">13:25</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14468" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjgsInQiOjE3ODg1NjYxMjQsImgiOiIwNzk5M2U3ODliMGYwODRhYTQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170752165 1222140541_460005029" href="https://t.me/telesputnik/14468" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/U5R3ewUxsRYzk43zKJJR3mLehv90JXucuqw4t7e0XW2wVvC8FzEofLiw-f4lsBpHsHg80AsETLT0OBRNmUaANrj5XWwR3WqmqqKeupXD3rr9rPJlHTEHJUK7Kj9IHoNhgYk7aGRp82R80p8vF0g0HpUnufxmropozhffUnkUpQfSIpt5XKg4AzuPDQ63dA_urCh9BJX1Z4IMmwLScf6FM7FwG6yFidJFjmbhLX13YCMrTr93uHPb8h0OW1KYabuZ4OglMyFCnxdVyFDEThVXzOHL1go_UMRS_FHvkUA_GLEXMhtTS_HCeMXl1WhcLyzOoQ7Hgx6O6rFrYk5zX3w57Q.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В «Комфортеле» рассказали, чего заказчики ждут от отечественных ИТ-разработчиков</b><br/><br/>Заказчики из бизнеса и госсектора ждут от отечественных разработчиков не дорогих и сложных решений, а простых, надежных и доступных продуктов. Такое мнение <a href="https://telesputnik.ru/materials/companies/news/v-komfortele-rasskazali-cego-zakazciki-zdut-ot-otecestvennyx-it-razrabotcikov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">высказал</a> руководитель направления системной интеграции «Комфортел» Сергей Ладан.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.72K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14468"><time datetime="2026-09-04T14:13:42+00:00" class="time">14:13</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14469" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NjksInQiOjE3ODg1NjYxMjQsImgiOiJiMDAyZjViNzQ3MDdjMzExMGIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170752197 1222140541_460005061" href="https://t.me/telesputnik/14469" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/J1hOQVgLo42LAcMzfujVKKsvnNbsk08FX9DKhdJfWgSqxUZasEwnTtywpVHAc8gLmeKyL8oIfhr0eysAD-hgPXpux-JBvYqljubJEAxQnz0I-Gi3luhH9ZRgctHsmIA0p5H7d5X5kKn4rwQDfjJN8psoyVAl3l9REfRlJMNVUfkN7L-VKx-29nCmalxgeiQiMEReKhtnQ82Qky-HzkloyroFzixF-F0LT76Ca2cTVOPlPQYciIXFUzoaz8WX80rA6j4dMhUPaJPgYGmssXc7TR04L2aTk6RNWdjXwPWpZ720oXxbp5JXBJ5eCfaB-HWhAxKLiEuQqxupkpndT4j1Pw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Герман Греф оценил вклад искусственного интеллекта в экономику РФ</b><br/><br/>Председатель правления Сбербанка Герман Греф на ВЭФ-2026 <a href="https://telesputnik.ru/materials/money/news/german-gref-ocenil-vklad-iskusstvennogo-intellekta-v-ekonomiku-rf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">оценил</a> текущее влияние ИИ на ВВП России менее чем в 1% и спрогнозировал резкий рост эффективности технологии.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.82K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14469"><time datetime="2026-09-04T14:43:26+00:00" class="time">14:43</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14470" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NzAsInQiOjE3ODg1NjYxMjQsImgiOiI0OWE0MjNkNTA0NzI4YjE0OTEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>На этой неделе в фокусе «Телеспутника»:</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> Алексей Бырдин (Ассоциация «Интернет-видео»): <a href="https://telesputnik.ru/materials/media/news/aleksei-byrdin-associaciya-internet-video-put-onlain-kinoteatra-deep-legkim-ne-budet" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">путь онлайн-кинотеатра DEEP легким не будет</a><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> DDR пятого поколения <a href="https://telesputnik.ru/materials/tech/news/ddr-pyatogo-pokoleniya-lokalizovali-v-rossii-po-novym-trebovaniyam" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">локализовали</a> в России по новым требованиям<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> Как <a href="https://telesputnik.ru/materials/tech/news/kak-novye-usloviya-mogut-uskorit-razvitie-setei-5g-v-rossii" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">новые условия могут ускорить</a> развитие сетей 5G в России<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> Витрина вместо каталога: <a href="https://telesputnik.ru/materials/content/mneniya/vitrina-vmesto-kataloga-novaya-realnost-rossiiskix-onlain-kinoteatrov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">новая реальность</a> российских онлайн-кинотеатров<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> <a href="https://telesputnik.ru/materials/content/news/vtoroi-ekran-pervaya-skripka" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Второй экран – первая скрипка</a><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> Василий Ящук (Kokoc Group): Rutube <a href="https://telesputnik.ru/materials/content/news/vasilii-yashhuk-kokoc-group-rutube-uvelicivaet-svoi-reklamnyi-inventar" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">увеличивает</a> свой рекламный инвентарь<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> Минфин <a href="https://telesputnik.ru/materials/companies/news/minfin-gotovitsya-k-prodaze-kompanii-lesta-castnomu-investoru" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">готовится</a> к продаже компании «Леста» частному инвестору<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i> Могут просто «выключить»: как реформа связи <a href="https://telesputnik.ru/materials/gov/news/mogut-prosto-vyklyucit-kak-reforma-svyazi-mozet-otrazitsya-na-rynke-platnogo-tv" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">может отразиться на рынке платного ТВ</a><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>Три лицензии и удар по регионам: как в России <a href="https://telesputnik.ru/materials/gov/article/tri-licenzii-i-udar-po-regionam-kak-v-rossii-mogut-izmenitsya-pravila-igry-na-telekom-rynke" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">могут измениться правила игры</a> на телеком-рынке</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.71K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/telesputnik/14470"><time datetime="2026-09-04T15:40:31+00:00" class="time">15:40</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="telesputnik/14471" data-view="eyJjIjotMTA1MzE5NjEyNywicCI6MTQ0NzEsInQiOjE3ODg1NjYxMjQsImgiOiIzMjZhOTk1OTdhMzY1ZGJiMDgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/telesputnik"><i class="tgme_widget_message_user_photo bgcolor4" data-content="Т"><img src="https://cdn4.telesco.pe/file/CKjXFgBglUduGTSn1e_Ahk6EZPoCF2BnHr7N4VBzjle3Bpmj-oNv8G2qCd8QshbkTuF19pvQX2tgPKcdD9my_oS_SkV9lmjG8GqsewYraiu9A3AJjN4b1vHpadrt_rKMsSi4J9TG3m2ZQ6mQY7wi0O8MNr1OHN3qT3yYuya7oGyUL-Xro02FoazlG0wbjelw2X9KAVwZRAJ6Nw7kZcBqEoSxftJKoi6xDUC2szCsQf9CDmHHNCthvlO1iua6csRo0HL0n1MyXTi-m5Lvc7By6F2PAdSVWaMi0dtIGzJ5FsjvvoAur4jU8_yISHySnga_sy3PiyjKjwmepn7Yq7tG5w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/telesputnik"><span dir="auto">Телеспутник</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249053655170752470 1222140541_460005334" href="https://t.me/telesputnik/14471" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/mXjvd3zob1JkUkJ10mX_lEohFYmkqHzeBxJZ0qZYAfGOIrvuGswT-6y9hhSYg0ZYOfUGk5Zp86OoL7pxjdb_2z_xUbH2YTEasje2zqza8KFOzoHQGuILjrP1kKMjpZBGXnfWUxvwuZfN1Fu7OqKLXwpLhW5AVPWuxKUq-q-t7zKspEOojnquRaeZ_VQ2uBCjz_4C9hISQjDP13PytJPfYhUE-ogm16nlycRZpWaqa7IUBtunJ8TBZrrHr1KqIzorJDbmWS6P8BDAuFR3W3OTBU2ns8n-RQpK_-pqRJSYBs_ArPJXtYw5KYfba-YGd109GYeKXirOYf2nOEMOmNOWvA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:60%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>«Телеспутник-Экспресс»: что из себя представляет мобильная связь 5G</b><br/><br/>Минцифры России сообщило об утверждении новых условий запуска 5G в стране. До конца 2026 года 5G должен появиться в четырех региональных центрах. 31 декабря 2027 года услуги связи пятого поколения должны заработать во всех городах-миллионниках. К 2030-му список населенных пунктов с работающим 5G должен расшириться до 49, к 2035 году – до 84.&nbsp;Что из себя&nbsp; представляет новый стандарт связи и почему в России до сих пор не появился? Разбирались в новом выпуске «Телеспутник-Экспресс».&nbsp;<br/><br/><b>Смотрите видео </b><a href="https://vkvideo.ru/video-46499225_456240379" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ВК</b></a>|<a href="https://rutube.ru/video/private/1050f1764e35895e3e750a3e8fd365c6/?p=9ICytgrjC8S99msyGUcH2Q" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Rutube</b></a><b>|</b><a href="https://ok.ru/video/17615968012829" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ОК</b></a><b>|</b><a href="https://dzen.ru/video/watch/6a9ae8ff466ba66194286104" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дзен</b></a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.84K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/telesputnik/14471"><time datetime="2026-09-04T16:51:39+00:00" class="time">16:51</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 58.58ms -->

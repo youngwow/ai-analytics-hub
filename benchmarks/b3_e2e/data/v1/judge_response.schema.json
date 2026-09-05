@@ -1,0 +1,168 @@
+{
+  "type": "object",
+  "required": [
+    "object_results",
+    "safety_gates",
+    "hypothesis_results",
+    "limitations"
+  ],
+  "properties": {
+    "object_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "expected_object_id",
+          "inclusion",
+          "membership",
+          "required_meanings",
+          "unsupported_claims",
+          "lost_positions",
+          "role_correctness",
+          "evidence_validity"
+        ],
+        "properties": {
+          "expected_object_id": {
+            "type": "string"
+          },
+          "inclusion": {
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "membership": {
+            "enum": [
+              "pass",
+              "partial",
+              "fail"
+            ]
+          },
+          "required_meanings": {
+            "enum": [
+              "pass",
+              "partial",
+              "fail"
+            ]
+          },
+          "unsupported_claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "claim",
+                "reason",
+                "item_ids"
+              ]
+            }
+          },
+          "lost_positions": {
+            "type": "array"
+          },
+          "role_correctness": {
+            "enum": [
+              "pass",
+              "partial",
+              "fail"
+            ]
+          },
+          "evidence_validity": {
+            "enum": [
+              "pass",
+              "partial",
+              "fail"
+            ]
+          }
+        }
+      }
+    },
+    "safety_gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gate",
+          "verdict",
+          "item_ids"
+        ],
+        "properties": {
+          "gate": {
+            "type": "string"
+          },
+          "verdict": {
+            "enum": [
+              "pass",
+              "fail",
+              "not_tested"
+            ]
+          },
+          "item_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "hypothesis_results": {
+      "type": "object",
+      "properties": {
+        "value_proxy": {
+          "enum": [
+            "supported",
+            "mixed",
+            "not_supported",
+            "not_tested"
+          ]
+        },
+        "H1": {
+          "enum": [
+            "supported",
+            "mixed",
+            "not_supported",
+            "not_tested"
+          ]
+        },
+        "H2_prerequisites": {
+          "enum": [
+            "supported",
+            "mixed",
+            "not_supported",
+            "not_tested"
+          ]
+        },
+        "H3": {
+          "enum": [
+            "supported",
+            "mixed",
+            "not_supported",
+            "not_tested"
+          ]
+        },
+        "H4_proxy": {
+          "enum": [
+            "supported",
+            "mixed",
+            "not_supported",
+            "not_tested"
+          ]
+        },
+        "H5_content_proxy": {
+          "enum": [
+            "supported",
+            "mixed",
+            "not_supported",
+            "not_tested"
+          ]
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

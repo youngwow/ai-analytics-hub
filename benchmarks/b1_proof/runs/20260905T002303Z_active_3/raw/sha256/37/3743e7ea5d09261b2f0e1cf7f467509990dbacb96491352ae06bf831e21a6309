@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ТАСС – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="ТАСС">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/dKPPYrBQKAYbbrgr-sEYp2L3L7TfgsdpVED-Zq9J4ndejKxIAX5H7Zeccsl8y1lrBk9Eisrv324gNi1z9W5QQWkANEg4lY2rSXqsqnKAlEG7mXkv0OEnrjfEYTJfXgbDQbvGFHjHax2I_6ld2b6HEgQhm8YPQz26_KXGVr1eYMoPxwOs7EqFPEMHF6E12ZZpf67lpHIA5jqss9yrgLISa4mOt6bfuRlOKnIS2PkAqeD6B5Qj5HTKPtZQp3Wt5LW1lX1CgVv7dJ-xV13fFiCeNQiRbdobH62YV3q3m-DIHs1GDHK1Uh9ivmXgemoCDVCKws0QDEOO5GdF8Tyhszj4qw.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Главные новости агентства ТАСС https://tass.ru
+
+Регистрация в перечне РКН: https://knd.gov.ru/license?id=673f0f77290fef0e012d86a9&amp;registryType=bloggersPermission">
+
+<meta property="twitter:title" content="ТАСС">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/dKPPYrBQKAYbbrgr-sEYp2L3L7TfgsdpVED-Zq9J4ndejKxIAX5H7Zeccsl8y1lrBk9Eisrv324gNi1z9W5QQWkANEg4lY2rSXqsqnKAlEG7mXkv0OEnrjfEYTJfXgbDQbvGFHjHax2I_6ld2b6HEgQhm8YPQz26_KXGVr1eYMoPxwOs7EqFPEMHF6E12ZZpf67lpHIA5jqss9yrgLISa4mOt6bfuRlOKnIS2PkAqeD6B5Qj5HTKPtZQp3Wt5LW1lX1CgVv7dJ-xV13fFiCeNQiRbdobH62YV3q3m-DIHs1GDHK1Uh9ivmXgemoCDVCKws0QDEOO5GdF8Tyhszj4qw.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=tass_agency">
+
+<meta property="al:android:url" content="tg://resolve?domain=tass_agency">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Главные новости агентства ТАСС https://tass.ru
+
+Регистрация в перечне РКН: https://knd.gov.ru/license?id=673f0f77290fef0e012d86a9&amp;registryType=bloggersPermission
+">
+
+    <link rel="prev" href="/s/tass_agency?before=393813">
+<link rel="canonical" href="/s/tass_agency?before=393833">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/tass_agency">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/tass_agency" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">ТАСС</span></div>
+              <div class="tgme_channel_info_header_labels"><i class="verified-icon"> ✔</i></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/tass_agency">@tass_agency</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">568K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">59.8K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">44.8K</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">31</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">55.1K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Главные новости агентства ТАСС <a href="https://tass.ru/" target="_blank" rel="noopener">https://tass.ru</a><br/><br/>Регистрация в перечне РКН: <a href="https://knd.gov.ru/license?id=673f0f77290fef0e012d86a9&amp;registryType=bloggersPermission" target="_blank" rel="noopener">https://knd.gov.ru/license?id=673f0f77290fef0e012d86a9&amp;registryType=bloggersPermission</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=bd57347a5796323f4e_13255519051269089322">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=bd57347a5796323f4e_13255519051269089322">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/tass_agency">
+        <i class="tgme_page_photo_image bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">ТАСС</span></div>
+          <div class="tgme_header_labels"><i class="verified-icon"> ✔</i></div>
+        </div>
+        <div class="tgme_header_counter">568K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/tass_agency">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/tass_agency?before=393813" class="tme_messages_more js-messages_more" data-before="393813"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393813" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODEzLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiZWZlOGRhZjdkNTA3MzA5NDNiIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/393783" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">Главное из заявлений МИД РФ на фоне угроз Киева в отношении гражданской авиации:  <tg-emoji emoji-id="5411119851873772287"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪</b></i></tg-emoji>Россия направила генеральному секретарю ИКАО срочное обращение в связи с угрозами Украины по отношению к гражданской авиации;  <tg-emoji emoji-id="5411119851873772287"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪</b></i></tg-emoji>РФ бескомпромиссно привержена обеспечению безопасности…</div>
+</a>
+<a class="tgme_widget_message_photo_wrap 5249404296300798755 1222222181_460006179" href="https://t.me/tass_agency/393813" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/qjYve2OS8dx0O2kRsCBnRRH_DXZVB_J3eKH0rNoCsaY4xP3dNUXcyCccUO5xf51c61z9u_PpsH1oufV-wdNnu11_PxPwBT6hDnU_x1hL44UdbtupvLhbM4e0K1sv9dJz8uxBpHBhzD6Zld9IlyoM4O4LNI92c26xFEO8OBCar7_WucX54bfw48saRF6gEYRciXR6A7t69BeopUxxngXqbMMcDUBfKgI5AdrnP6q_Z7URCBmQkUzrfSFltxjdLuswdP4qM-8cFi97gYff4aOA5RQ5eIF5fMbpiaLTQ4wx2UFSuwdc_J80NwDthUpiS0Wl6hv-V0h2aw2f8fs_mOZwAQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b><i>&quot;Все это — абсолютная точка невозврата&quot;.</i></b> Заявления Зеленского об ударах по авиационной инфраструктуре РФ обрубили возможности поддерживающих его стран отмежеваться от терроризма, заявила Мария Захарова в эфире радио &quot;Комсомольская правда&quot;.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">25.1K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393813"><time datetime="2026-09-04T18:11:02+00:00" class="time">18:11</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393814" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODE0LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiYjJjZDUwZGI4N2Y4NDdhN2I5In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5359549161643456918"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9AA8.png')"><b>🚨</b></i></tg-emoji> Три человека, в том числе 14-летняя девочка, ранены в результате атак ВСУ в Белгородской области, сообщает оперштаб.</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393814" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">22.8K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393814"><time datetime="2026-09-04T18:21:16+00:00" class="time">18:21</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393815" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODE1LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiYTdiMDM2OWI0MzcwZDJjNTU1In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249404296300798828 1222222181_460006252" href="https://t.me/tass_agency/393815" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/JdqdDlwND3BvbpmylGFnZWQ0YHDkDvHZ5pE9bUCr1O5JuDHqm7-YBWDzHAbW4CU8fAFjdE_revruHfbZXStTd4QwdxXW8oIfCjBzc7Qvp2CvA7SvU3R4_tpFu4EnpRsk5k5-6HqMTBtcGM5nI2pBPQP4afs-CL_xBIkIX6bLesJbX-FLWgtTyvWgK0AXw7j7ze8WyB7QyibcsCvnVU5db4_IB06_Ssja6UfhhTUNL0N3DAPkaZMO0xIpAGb9UECaRo58FmgPzeVWeV4a-Ut9is2lfDHX2zss_GfRwnBmJY3GQRI379KcFU_zojleYe6CK6Hw5J_wy76gOfKGqTFrDg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5411620941413229706"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29D97.png')"><b>❗️</b></i></tg-emoji>Трамп не подтвердил, что Уиткофф везет в РФ новые предложения по урегулированию на Украине, заявил, что он призовет положить конец конфликту.<br/><br/><tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/tass_agency" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подпишись на ТАСС в &quot;Максе&quot;</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393815" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">20.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393815"><time datetime="2026-09-04T18:57:51+00:00" class="time">18:57</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393816" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODE2LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiMjZmZDU5YzE1OWVhYTcxMjVhIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/393815" "><i class="tgme_widget_message_reply_thumb" style="background-image:url('https://cdn4.telesco.pe/file/hVb2pTbIKykGzGGa3RWjAKcVhmJOjIY9YbXz4HRWJZcwCvQIOgIrCWlUnFiuUsmPctIZMC3yQY3pVjBXP635COSzQlVxo3_pc6DIPmvViHqhw2Zh9WTjJ-fgQVcDdcd8i9sqCUhgUE1BFAYtAhQrKji_WmXczkEgrGpBRwUwiU67t4P94RLadaw3-C413UPGcARAUVmu1EYj5gZ4F3ZE2ujNyWOZm3JQ45s60mFqOxqE4TLm0-pzaJrktNAvMCPvC7pWaipPYqNRwyIcPtT7ID-b_T9neZ-CI7jZdRzfHpPdFqtUD9jAoYu-vPV3SAfClwNwjiILrHr2K5WuVChhZg.jpg')"></i>
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto"><tg-emoji emoji-id="5411620941413229706"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29D97.png')"><b>❗️</b></i></tg-emoji>Трамп не подтвердил, что Уиткофф везет в РФ новые предложения по урегулированию на Украине, заявил, что он призовет положить конец конфликту.  <tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> Подпишись на ТАСС в &quot;Максе&quot;</div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto">Трамп убежден, что может быть &quot;хороший шанс&quot; на урегулирование на Украине по итогам челночной дипломатии представителей США.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">20.4K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393816"><time datetime="2026-09-04T18:58:39+00:00" class="time">18:58</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393817" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODE3LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiY2RkOWM0YmQ3M2YzZTJkMWVjIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/393803" "><i class="tgme_widget_message_reply_thumb" style="background-image:url('https://cdn4.telesco.pe/file/h6mRBiNAB_KanSmxyo2uw26MFRiqONJAPp8O3doZpTTglKWLcUull1fs3ejrlzNUcIygqBjsQ_VIjTJnAU-XrbOUQrkGZaUNA7Ewx3eF7XWFcXHBhve1jO7SkSh-2cITS0SBif2lG0kg45edavX8TcNIULAHufllSXZhcIelqsBrk4NA4MJ0YO0E1StM3n23ITjf7rG4Gxf2204c-p7Z-nRjby23g4Zh-gxn_jDi4l4Q9PwzIz0WRDbGoauCBekjRx3Tlxs8wJQE8JH9izEFOpeGdZ7DKDJIQ8nX_Zn3p1LE6G3CQ0NY3w2Edxfxio7KGvOhiy4VZOcV9XamHBEG0A')"></i>
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto"><tg-emoji emoji-id="5409144403140812728"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji> В Берлине у Русского дома проходит демонстрация против его закрытия, передает корреспондент ТАСС.  Видео и фото: Вячеслав Филиппов/ТАСС  <tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji> Подпишись на ТАСС в &quot;Максе&quot;</div>
+</a>
+<div class="media_supported_cont"><a class="tgme_widget_message_video_player not_supported js-message_video_player" href="https://t.me/tass_agency/393817"><i class="tgme_widget_message_video_thumb" style="background-image:url('https://cdn4.telesco.pe/file/e5ASjdFtTn2O6CefTEtjbqppJHXue5m-51ajSkGL9tCw-z13dzCkT9WP8IMaQmt9y1wDXCqUz7eNbhgzsCS96BzBRwf2C1zcj5bcTycuqKjxQIeyZebms63WZ-_5MjZZBQbSSUvFNuFGTQrLbv_WPKXDgO9UH5Nq4SLqroPpW4-gTK2WW6D0j_HlJTnZPtvDP7dUcfGGks3kItBpHeWv35ZEiFko-MXUTyudrKyVD8l3X4MiVO71pBtOHmrUMEcMwoqI5jVC4gJiwsxBEvCPPSpbacg1kfbGQVt-tR9eoVqPbdnDYizbbNkEDcndoTJVbGuKksGaj4xPweliE_jUXA')"></i>
+
+<div class="tgme_widget_message_video_wrap" style="width:1920px;padding-top:56.25%">
+  
+</div>
+<div class="message_video_play js-message_video_play"></div>
+<time class="message_video_duration js-message_video_duration">0:57</time>
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Media is too big</div>
+    <span class="message_media_view_in_telegram">VIEW IN TELEGRAM</span>
+  </div>
+</div></a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5413480035187170376"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji> Правительство ФРГ, закрывая Русский дом и сжигая мосты между Германией и Россией, готовит страну к длительному конфликту с РФ. Об этом заявил сопредседатель берлинского отделения партии BSW Александер Кинг.<br/><br/>Видео: Вячеслав Филиппов/ТАСС<br/><br/><tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji> <a href="https://max.ru/tass_agency" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подпишись на ТАСС в &quot;Максе&quot;</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393817" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">21K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393817"><time datetime="2026-09-04T19:09:02+00:00" class="time">19:09</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393818" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODE4LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiN2FmZjQwYzY1YWYzYTNmOGQ1In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Трамп уверен, что Россия не стремится атаковать страны НАТО.<br/><br/><blockquote>&quot;Я разговариваю с ним. Я очень хорошо его знаю. Путин не стремится атаковать территорию НАТО&quot;, — заявил президент США, отвечая на просьбу прокомментировать утверждения о намерении РФ напасть на страны НАТО.</blockquote></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">21.1K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393818"><time datetime="2026-09-04T19:19:42+00:00" class="time">19:19</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393819" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODE5LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiNmZlOTQwM2QxNTMwMjRjNWU5In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/393783" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">Главное из заявлений МИД РФ на фоне угроз Киева в отношении гражданской авиации:  <tg-emoji emoji-id="5411119851873772287"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪</b></i></tg-emoji>Россия направила генеральному секретарю ИКАО срочное обращение в связи с угрозами Украины по отношению к гражданской авиации;  <tg-emoji emoji-id="5411119851873772287"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪</b></i></tg-emoji>РФ бескомпромиссно привержена обеспечению безопасности…</div>
+</a>
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">В штаб-квартире ИКАО подтвердили ТАСС, что получили срочное послание Москвы об угрозах Киева в отношении гражданской авиации.<br/><br/><tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/tass_agency" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подпишись на ТАСС в &quot;Максе&quot;</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393819" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">17.6K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393819"><time datetime="2026-09-04T19:57:46+00:00" class="time">19:57</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393820" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODIwLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiYWNjYjc3OThkNzZhNmYwZTlhIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/352387" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">Из ОАЭ в РФ депортирован сооснователь финансовой пирамиды &quot;Финико&quot;, от деятельности которой более 7 700 человек лишились суммарно свыше 1 млрд рублей. Об этом ТАСС сообщила Ирина Волк.  Злоумышленник действовал в составе преступного сообщества с 2018 по 2021…</div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Экс-главе Минкомсвязи Никифорову заочно предъявили обвинение по делу о финансовой пирамиде &quot;Финико&quot;</b>, пишет &quot;Коммерсантъ&quot; со ссылкой на источники.<br/><br/>Вкладчикам &quot;Финико&quot; обещали доходность до 25% годовых. Потерпевшими по делу признаны около 8 тыс. человек, сумма ущерба оценивается примерно в 5 млрд рублей.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">22.9K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393820"><time datetime="2026-09-04T20:18:01+00:00" class="time">20:18</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393821" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODIxLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiNzJiZDRjNzZmYWQ2MjRlMjFmIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Россияне из Польши и Прибалтики смогут проголосовать у погранпереходов</b>, сообщил ТАСС член ЦИК РФ Павел Андреев.<br/><br/>Десять участков для голосования будут организованы на выборах в Госдуму в Калининградской, Псковской и Ленинградской областях у погранпереходов с Польшей, Литвой, Латвией и Эстонией.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">10.7K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/tass_agency/393821"><time datetime="2026-09-04T21:29:02+00:00" class="time">21:29</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393822" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODIyLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiNWVkMDJjZDBhOTUzNDc1OTczIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Энергоснабжение Херсонской области частично нарушено из-за атаки ВСУ, сообщил губернатор Сальдо.<br/><br/><tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/tass_agency" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подпишись на ТАСС в &quot;Максе&quot;</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393822" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">9.14K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393822"><time datetime="2026-09-04T21:44:59+00:00" class="time">21:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393823" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODIzLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiZmY3Mzk1OTg5ZDI2N2UxOTc2In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/393819" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">В штаб-квартире ИКАО подтвердили ТАСС, что получили срочное послание Москвы об угрозах Киева в отношении гражданской авиации.  <tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> Подпишись на ТАСС в &quot;Максе&quot;</div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>ООН и ИКАО должны осудить угрозы Киева гражданской авиации в РФ,</b> заявил ТАСС экс-сотрудник ЦРУ и Госдепа США Ларри Джонсон.<br/><br/><blockquote>&quot;Речь идет о террористической угрозе. Нет совершенно никакого оправдания атакам на самолеты гражданской авиации&quot; — отметил он.</blockquote></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">8.63K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393823"><time datetime="2026-09-04T21:57:08+00:00" class="time">21:57</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393824" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODI0LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiNTYzNzJkMTU5NjFlMWQxYmU4In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/391331" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">VK подала иск против Apple из-за удаления приложений холдинга из маркета AppStore, уточнили ТАСС в VK.</div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto">Суд рассмотрит иск VK к Apple из-за удаления приложений из App Store 27 октября, сказано в материалах дела, с которыми ознакомился ТАСС.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">7.89K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393824"><time datetime="2026-09-04T22:09:01+00:00" class="time">22:09</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393825" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODI1LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiYjY0ZmE4MTg2ODEyODVhYmM0In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/393819" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">В штаб-квартире ИКАО подтвердили ТАСС, что получили срочное послание Москвы об угрозах Киева в отношении гражданской авиации.  <tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> Подпишись на ТАСС в &quot;Максе&quot;</div>
+</a>
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249146542428464701 1222162168_460006973" href="https://t.me/tass_agency/393825" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/EwDIdaAX58AtL412GAGlZM6Y7TC_kuq9DJszSxgHGEp_gmxd4j44q59mf9Mifr9w2RNQGAQ3HtRiZrL_DS8FzEO8_TVdiP20PX_vxgSdvd-wB9kPxxcUcN37BtqKUl8Y9xL_SnEPLTIxGm7_9uGuBk46OdSzvCuoqUufi1Au9nQqC9AFcsm6xRsOilw2lfiOrSnt6kELdVcXy9EEqn9dBzZVF-RaDoE4HO2dnOxCTy_bT97M9M8yl-rIWg75D0IQjoJLWsVXXDcw7tglD0LVNUUROrlakSfSupzRE1Eq1nwfrSLAAESz9NGQvKH86bT3hOL9pFuWEpKAyiCYiUbNMg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Угрозы Киева в адрес гражданской авиации нацелены на срыв контактов РФ и США</b>, заявил &quot;Известиям&quot; Родион Мирошник:<br/><br/><blockquote>&quot;Для Европы и для Зеленского как интерфейса европейских усилий сами контакты и сам диалог между Вашингтоном и Москвой — раздражающий фактор&quot;.</blockquote><br/><br/><tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/tass_agency" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подпишись на ТАСС в &quot;Максе&quot;</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393825" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">8.01K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393825"><time datetime="2026-09-04T22:16:01+00:00" class="time">22:16</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393826" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODI2LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiMDc3MjgzY2EyMWI3YWIzMjE0In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/tass_agency/382269" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">ТАСС</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">Трое судей МУС оспорили санкции США в суде, сообщил ТАСС дипломатический источник.  Кимберли Прост, Соломи Босса и Рейн Алапини-Гансу утверждают, что Трамп выходит за пределы полномочий главы государства и нарушает Пятую поправку к Конституции США, вводя эти…</div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto">Страны МУС ожидают новых санкций США против суда в ближайшее время, сообщил ТАСС дипломатический источник.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">6.84K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393826"><time datetime="2026-09-04T22:28:01+00:00" class="time">22:28</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393827" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODI3LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiMjdjMjg4MjEzNmQ1ZWUyYmQxIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Венгрия продлевает режим ЧС в связи с угрозой нелегальной миграции</b>, несмотря на возражения руководства ЕС.<br/><br/>Как сообщил премьер-министр Мадьяр, найти компромисс с Брюсселем пока не удалось и особый правовой режим будет действовать в Венгрии по меньшей мере до конца года.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">6.19K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393827"><time datetime="2026-09-04T22:44:01+00:00" class="time">22:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393828" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODI4LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiMTg0OTM3ZmZmMjkwNDZlNDlmIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_video_player not_supported js-message_video_player" href="https://t.me/tass_agency/393828"><i class="tgme_widget_message_video_thumb" style="background-image:url('https://cdn4.telesco.pe/file/EXgIulMbs8B6HxV9c6cKlWdPI1ERenbHHpdWLu8Dx7ezxe8wEsdBZTOz_SF1WQrTRml22-xStnKOyvZrOj8i9zYm9lV_PxylVhX4VBGbykAvhZl0u3OhbC0jHXkcrvysFL0fsCk6D9dAplReQf0HKaD3FKRn8Dy6ltxHpQl-B2rjO5YPr7wGxtli2oqKeTp02UQd_ObG67M4Ev0bO_tb5bIy9O30U1m8vWQ6v-cKrt22SpnCqh3ibknlUEey5FD6QaQc2QEP4BVce1yy-HSzd1tuQFU9pVIldnZZRX-YHnjHBt9PqkM3vEQJm4oyyyj3DRXrHFEX5FuVTbV-7rt_wA')"></i>
+
+<div class="tgme_widget_message_video_wrap" style="width:1920px;padding-top:56.25%">
+  
+</div>
+<div class="message_video_play js-message_video_play"></div>
+<time class="message_video_duration js-message_video_duration">3:10</time>
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Media is too big</div>
+    <span class="message_media_view_in_telegram">VIEW IN TELEGRAM</span>
+  </div>
+</div></a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5409144403140812728"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji> Увольнять учителей за публикацию фото в купальниках нельзя, заявила в интервью ТАСС на ВЭФ член ОП РФ Ольга Голышенкова.<br/><br/>Видео: ТАСС<br/><br/><a href="?q=%23%D0%92%D0%AD%D0%A42026">#ВЭФ2026</a><br/><br/><tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/tass_agency" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подпишись на ТАСС в &quot;Максе&quot;</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393828" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">5.61K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393828"><time datetime="2026-09-04T22:59:01+00:00" class="time">22:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393829" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODI5LCJ0IjoxNzg4NTY3Nzg3LCJoIjoiYzhlNWI3NTEzODI2Nzc4MGVlIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">9-классники, планирующие поступать в колледжи, <b>могут сдавать ОГЭ только по русскому и математике.</b> Этот эксперимент продолжается в ряде регионов РФ, сообщил в интервью ТАСС глава Минпросвещения Кравцов.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">4.51K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393829"><time datetime="2026-09-04T23:16:01+00:00" class="time">23:16</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393830" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODMwLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiNjg3Yjk4NjU3YWQ0NjRlM2I4In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Средняя зарплата свыше 900 тыс. рублей в РФ отмечена лишь в одной сфере </b>— морского пастбищного рыбоводства, выяснил ТАСС, изучив материалы Росстата.<br/><br/>Также специалисты, работающие в деятельности по аренде и лизингу медицинского оборудования, в среднем получали 728 882 рубля.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.95K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393830"><time datetime="2026-09-04T23:41:01+00:00" class="time">23:41</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393831" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODMxLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiMGFlYjk2MTFkNTRjYzYyNjg2In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_video_player not_supported js-message_video_player" href="https://t.me/tass_agency/393831"><i class="tgme_widget_message_video_thumb" style="background-image:url('https://cdn4.telesco.pe/file/RG7vb7hEAG1LJaQ0yx0wZi4DdgvEj2-Tuu74Qv3ctLjQzqykW5FJj0VERZRhw3-pMwMqMKVk2SvWz0bL6B1EjYaVST0xioIsa1gGxN-HwErthBOsj6LEBoXUBUspomsO-ycT5wNb9rsF3UB5p-LZh19N1w0ml7Cb3LC2RRt_rgEVCkPJ2a0u9lyoWKXiYS4TLCeXdl-hXSI4qIPRw_mVY0IlV8qdioAGuOFpcOoxFpW_PSFp-XViw1a4d1P14TrBLb8ibTPHugf5fVNtFGxLkkwRqhcvHDoOlAENzAf6JJJHAod--BhnD0smbMcP8a3EWbpd0Vf5zi06wONKpnK6Bg')"></i>
+
+<div class="tgme_widget_message_video_wrap" style="width:1920px;padding-top:56.25%">
+  
+</div>
+<div class="message_video_play js-message_video_play"></div>
+<time class="message_video_duration js-message_video_duration">0:59</time>
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Media is too big</div>
+    <span class="message_media_view_in_telegram">VIEW IN TELEGRAM</span>
+  </div>
+</div></a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5411369793200602206"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B9.png')"><b>📹</b></i></tg-emoji> <b>Практических занятий по финансовой культуре в школах должно быть больше,</b> заявила в интервью ТАСС на полях ВЭФ член комитета СФ по бюджету и финрынкам Дягилева.<br/><br/>Видео: ТАСС<br/><br/><a href="?q=%23%D0%92%D0%AD%D0%A42026">#ВЭФ2026</a><br/><br/><tg-emoji emoji-id="5411312309358307768"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/tass_agency" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подпишись на ТАСС в &quot;Максе&quot;</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tass_agency/393831" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.25K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393831"><time datetime="2026-09-05T00:04:49+00:00" class="time">00:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tass_agency/393832" data-view="eyJjIjotMTA1MDgyMDY3MiwicCI6MzkzODMyLCJ0IjoxNzg4NTY3Nzg3LCJoIjoiNWZhZDIzNTJjMjU5ODdkNzVkIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tass_agency"><i class="tgme_widget_message_user_photo bgcolor6" data-content="Т"><img src="https://cdn4.telesco.pe/file/AcHnFiZLmXWkKv-LjBAoUScmBoJohoJkCxYG0w8hW4kMGKz9N5xDYxD87MTypLsUmIKRFtyl0NmcdTo1MizSF9JUh08Tu_eBHxNWlX3dZ_2dGt95qnI80sRA_6JEZYRlR_dS0VUWA7LNlD-jdxNJdEbrtTRyIJkhQpX9V_sNWUUg3ELuRzk_8Em6BZMlPky-_oj6lQIph0criM_5s7dxT8UKGN8N5MGJ4lLaFutpMvKePliJaxzXkr7YMcP9nsSgictvdceB6JRcaYbR2NxmKSxWPGr60Ke8M9BkVTKeH-P_U2YtRF5TkbP-ryfMwjYRE3Lp3p4ELjMlAZUkEiQXTA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tass_agency"><span dir="auto">ТАСС</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Силы РФ выбили ВСУ из Новогришина ДНР, село перешло в серую зону, сообщил ТАСС военный эксперт Андрей Марочко.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">610</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tass_agency/393832"><time datetime="2026-09-05T00:16:01+00:00" class="time">00:16</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 69.05ms -->

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ЦИПР – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="ЦИПР">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/pA83sdmsMDbCmaGgtH1bLYpb6B2t6aFl87S92VmJPKgnrUSpDPbKMKAWZaWEcXdnCzihppZxDzwzo_65dQfzZp1Cdzm4Ihdl24AP13PLt9PLyMS5hyeWBR37dseR17_7lS1eF2_19mjy1j5BqhFuXcWueMRSupeUe6zVvmg8HpehWbJHPQ5ju6VDtX0TPqkhy6aZ720JbE4Q4cWeODTd_lUhrvNB3-yfPehQsaIjZO1rT8_GkCDJUKImsbz4KX3no6tioAHm4Ca7FsMhNn9Q8bapTWiJMfc9U8ECO-vDKq2DuRECdpzO6rG-M2ElA0fydzkS-Y0-tGtLF8HWRLj4Hw.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Новостной канал ЦИПР. Ключевые новости из мира цифровой экономики и ИТ.
+
+Чат-бот: @cipr2026_help_bot
+
+Мы в MAX: https://max.ru/icipr
+
+Регистрация в перечне РКН: https://knd.gov.ru/license?id=67373ced9d804a279bb34045&amp;registryType=bloggersPermission">
+
+<meta property="twitter:title" content="ЦИПР">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/pA83sdmsMDbCmaGgtH1bLYpb6B2t6aFl87S92VmJPKgnrUSpDPbKMKAWZaWEcXdnCzihppZxDzwzo_65dQfzZp1Cdzm4Ihdl24AP13PLt9PLyMS5hyeWBR37dseR17_7lS1eF2_19mjy1j5BqhFuXcWueMRSupeUe6zVvmg8HpehWbJHPQ5ju6VDtX0TPqkhy6aZ720JbE4Q4cWeODTd_lUhrvNB3-yfPehQsaIjZO1rT8_GkCDJUKImsbz4KX3no6tioAHm4Ca7FsMhNn9Q8bapTWiJMfc9U8ECO-vDKq2DuRECdpzO6rG-M2ElA0fydzkS-Y0-tGtLF8HWRLj4Hw.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=icipr">
+
+<meta property="al:android:url" content="tg://resolve?domain=icipr">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Новостной канал ЦИПР. Ключевые новости из мира цифровой экономики и ИТ.
+
+Чат-бот: @cipr2026_help_bot
+
+Мы в MAX: https://max.ru/icipr
+
+Регистрация в перечне РКН: https://knd.gov.ru/license?id=67373ced9d804a279bb34045&amp;registryType=bloggersPermission
+">
+
+    <link rel="prev" href="/s/icipr?before=9913">
+<link rel="canonical" href="/s/icipr?before=9936">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/icipr">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/icipr" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">ЦИПР</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/icipr">@icipr</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">15.7K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">4.99K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">662</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">33</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">3.85K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Новостной канал ЦИПР. Ключевые новости из мира цифровой экономики и ИТ.<br/><br/>Чат-бот: <a href="https://t.me/cipr2026_help_bot" target="_blank">@cipr2026_help_bot</a><br/><br/>Мы в MAX: <a href="https://max.ru/icipr" target="_blank" rel="noopener">https://max.ru/icipr</a><br/><br/>Регистрация в перечне РКН: <a href="https://knd.gov.ru/license?id=67373ced9d804a279bb34045&amp;registryType=bloggersPermission" target="_blank" rel="noopener">https://knd.gov.ru/license?id=67373ced9d804a279bb34045&amp;registryType=bloggersPermission</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=917bff6df01201aa95_14253517030254125266">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=917bff6df01201aa95_14253517030254125266">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/icipr">
+        <i class="tgme_page_photo_image bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">ЦИПР</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">15.7K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/icipr">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/icipr?before=9913" class="tme_messages_more js-messages_more" data-before="9913"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9913" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6Ijk5MTNnIiwidCI6MTc4ODU2NjEyMywiaCI6Ijc0NTU1ZWE5YTAxZGExZWZmMSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_one_media js-message_media"><div class="media_supported_cont"><div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:133.333%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:604px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:297px;height:604px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/c99vLo2Bag_Ppr7tCC6696WQD4cRIVTOvDiYmSF2ncaZVj4HkVBfm1GIN1yPhz6mT0Vu_v8S5YgRg2iGZulfmHpZVuxzRuxV63OJy38hI2oV0QFnXdD_jnnizYQZWMgFmGhkQOk8Jj2m6sL4Y4M8jadYeFycXia5zCjdBx1zLappW4vINdFq_9k3L1zbiZSLJdxEjsppF6NlV2LkOdVsW7j3DS04qtFekcrmdM-_RSbage1GWqJsWjCK8VZMYFOmMbtgnWjXWraMCa7D1C6Cr3GXO2azQ6JXcKQNFXDbHvQXTKBPgA8Yk5rdC0AgaXfvJClav8K5TKARWeTWx1imXQ.jpg')" data-ratio="0.8" href="https://t.me/icipr/9913?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:19px;bottom:19px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-94px;right:-93px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:299px;top:0px;width:154px;height:200px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/H4OpTDrzTztBBwlOjSmog_yrossQ5nrHxYEQajF_NYOmcOq-PvIeKlKuNksB_ZC11S8dOVpisteCZVhjTAN77ZmH6SvbkWloleBDBUSfWrA0QPnYugrxZdQfGcyH9TJcmKEDctpVPk4wSyFgkFuXSXtihKAvdn1rfeFh5xq0VD8sqj2pd_yqEvcJmXkHVOoZ45TX7kxz8Szd4Jiqhyk6k_DimWPkNQzQbT4_k4iLeB-2f8YIB8JZ5hrYt87TVfcwAh5aGXAiW92v9LqSjmzce6hNCT9GaKSEqMFddoFNFE_3ALHzGvk05GZeDYSKJsFeokzDFSs97HIrweT6pfWuCw.jpg')" data-ratio="0.8" href="https://t.me/icipr/9914?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:19px;bottom:19px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-3px;right:-3px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:299px;top:202px;width:154px;height:200px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/NWjkUYfoz9HUYbuoWLDIVM9XmzaLaaEoNgy8yuM4z1SkU3m2jteUN1mTVyruVyl_psRySjYuPrY9hRFn784oCTmS0hGxktCnIhgNPbvv2njwl2VwpIcYF6PT24kKCLDWyX0YIwF4RRZH34Lcbf7OxQxaJLLbuHAJGUSlg4p1s-Aq9B7yzy4KbOhRt2rHdOkfP9uKPX_n4ZYw5ya5kqJJhsSTymOY7Sl0K-_znOiGHdH0QUpa6uZlNqF9pZmpz9BbpnEHS82k8rHR5Is7-GNM7m2FZNIVaVYzQ4jpVhZivPdYZ-CatZ-kvNcHkWDrfxVPcY-4rfGWM4EmhT2w8i_m5w.jpg')" data-ratio="0.8" href="https://t.me/icipr/9915?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:19px;bottom:19px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-3px;right:-3px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:299px;top:404px;width:154px;height:200px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/Ib5RWGEjdvIxfzEQNu2HFMxiy0pq3gKzfPd26c7v8U0iBZOy4jGqfB7CbcymQTLSrA6d5gBOBYNLf33im7TeKFcAdjJPx_1aPE29-lbS6RyivJkfShg1qUwqyVGURcsyK3DtMzyfHBvPdiDRNTW6bG0C5h9oPpF5unVi4Tu0ulAylVRqGBAIA5WruMuDvI1fu8lxcvSvvcsDul5CF3vXUMpSfTJLcN1_xSxFRpptQvwnHjq8qTrDAaa0HeYbZ15IMz2MRlewVsGZE0lrKKYi3kTnkoisXkmiuiF2RzZn23jGPjRRxWDeHw-tQI2qJMmOQ_Nmr_aiNKPq5zxpfy8-ug.jpg')" data-ratio="0.8" href="https://t.me/icipr/9916?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:19px;bottom:19px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-3px;right:-3px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5318757331792589732"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C90.png')"><b>🌐</b></i></tg-emoji> <b>Интернет со скоростью света | Как технология Li-Fi меняет представление о связи?</b><br/><br/>Пока радиоволны Wi-Fi сталкиваются с перегрузкой сетей, задержками и ограничениями по частотам, учёные и инженеры развивают альтернативу — передачу данных через обычный световые волны. <br/><br/>В карточках рассказываем, как работает эта технология <tg-emoji emoji-id="5334585368610116553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i></tg-emoji><br/><br/><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>MAX<b>.</b></i></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9913?single" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9913" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>71</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>32</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>28</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>11</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.64K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9913"><time datetime="2026-08-31T07:01:28+00:00" class="time">07:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9917" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkxNywidCI6MTc4ODU2NjEyMywiaCI6ImI2YTkwOGI1NzQ3YWU0NzM4MyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b>5G в России: операторы готовы к запуску</b><br/><br/>Российские операторы единодушно <a href="https://www.kommersant.ru/doc/8922528?from=doc_vrez" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">поддержали</a> решение ГКРЧ о выделении частот для сетей пятого поколения.<br/><br/><b>Что предусмотрено:</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> каждому оператору — по 90 МГц в диапазоне 4,63–4,99 ГГц без аукционов<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> возможность развивать 5G на уже используемых LTE-частотах<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> до 1 сентября 2026 года — использование зарубежных базовых станций<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> с 2027 года — поэтапный переход на отечественное оборудование, который завершится к концу 2031 года<br/><br/><b>Операторы заявляют о готовности</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> «Мегафон» уже протестировал различные сценарии перехода на 5G и ожидает, что технология ускорит цифровизацию промышленности, логистики и городского хозяйства<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> МТС сообщил, что за 10 лет подготовки вложил около 50 млрд рублей в модернизацию, компания уже эксплуатирует 4G-станции «ИРТЕИ» и готовится к установке первых 5G-базовых станций<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> в Т2 подчеркнули, что впервые речь идет о реальном коммерческом запуске, а не тестировании, и заявили о технической готовности начать предоставление услуг в ближайшее время<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> «Билайн» также приветствовал решение ГКРЧ<br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9917" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>75</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>59</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>7</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.73K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9917"><time datetime="2026-08-31T13:08:34+00:00" class="time">13:08</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9918" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6Ijk5MThnIiwidCI6MTc4ODU2NjEyMywiaCI6ImE1ZWYxODVjZGQ0MTRlZDA4OSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_one_media js-message_media"><div class="media_supported_cont"><div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:83.002%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:376px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:149px;height:187px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/vPKq60G3bwnpEUQ5SWyeZ1YelzvqxyrqUq_l7AY0lYOw19XX69MrH_kS_qPolkHAV6SLrMMirlgD5HWR3Y1_gTuiKUkieaaCCpDgyUv94syHC7UiA6TFMojr4t9_7kQ8ObKNTtJIgZ4fq6yCqUUKdYZUg2RubQtpGex9Xs6fgcU8OjUiSgFoKxAf6WbLniBstbFZXgcYwIc347LjIZOw3yOVw0X59FkpSlGymfcpXjxp41JPuDBJULKDmpHHK4dtOoCk1o73JSHKn5U7DM5Hv8MbW8R3-LHkwGTwlRJdEu4fV6T3u0eJ6ygdrsBkoQIffW9D0lRp18Lo8DJMqrseFA.jpg')" data-ratio="0.8" href="https://t.me/icipr/9918?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:151px;top:0px;width:149px;height:187px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/AXzL3eaYCftvds8eeObscZHkfRO5cWE1oZ7aXgWlemEH0We8jtzFrxWSDeKNbBGU97g39-Bax9CTMpp64RDqtskOAQT3Kqn5MAMcB-31cpI-51cBXCYaetXSDydnjoB2caOQXTFJC0WFXCa4Ac2Ae3AjlyvLkc5BpNi9fIrWymA64l0RIXlzUIEYZoBNfkOP4zcrA_8tSDCSAdDbuyYuHNMJYVHaVDhdCSMS6TEx4VrVN5LoKfygvTxCGRAkRNHLFw3xx5XFYBwMn01WFx6efagsml0xxVRrl8YHxAhHr3tCgg2o0MTvzUPbuPplU7YpXlQGBSfXp3GapctKH7iNUA.jpg')" data-ratio="0.8" href="https://t.me/icipr/9919?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:302px;top:0px;width:151px;height:187px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/eTw921McARf1bvj-qaVNeai4uyliH4LVQRPrJVRXxtrerARLlCznVmRzFQKbIm2tgljUljCb3X9P2lMkqtfXnpm6V-E38RniBs4_tSBsPH8X4MXEIc8rL_NmxE6JoHUSTKpfV4IaVXlGffzvNYan-3xkn0cJgjBClT1oGUNNj0jxNHwSVMWETeitKLu4ehoeKdQn8htz-ab0C8xXRnZh3n_e-X82sUWDhIVzYBxRYVKLw3DIuH6dnpFxh-2oG0NFAdyT8Rdk5hbw08t4sXNE5MJ6-lzwcOtEGTlxzLHefzd69ajpEmpvRHdGwNHl3kUDySxZEOuPBB-p3Ri7XFFlzQ.jpg')" data-ratio="0.8" href="https://t.me/icipr/9920?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:189px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/iYVcD7xnQ42x5fvlIoUsjtkGu5vzxFTgDOV1SZPWaQEhleM80XPwyoixQ4Wf08nGpvMm0uNuMlSVclNDwTX6mXdqk_oqPKZJ-zikzGcTYSKovG9hs4LSsdbwWvM8vSqsTM3kTGCzIEVDXGk5o-sPgwRNufvLhv190oWWJ3UrqID1Pxofi7c2wP1DvE8eGlj2shCJ1B5-t44UY0fMlgNR8H4bD8msZd201cOXIhpBRb1IkK-d7oINx7ENA6LpIX9Bj7MXKhnE3SPYSoMbJxoxiuP2Nx3WT1WkHhOk-yk2_HokDvT_P4FWyZqk1hbtqRdmjuSm9iIQpquX0UeJMtls4A.jpg')" data-ratio="0.8" href="https://t.me/icipr/9921?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:151px;top:189px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/K_i8ipsI3gQAnUhs7ZCqHxV1mKTzT4twfXw-ysA97aT2XSM_vabTDYs1tiNnWF21471JZM89XjLIdrV0Dmza0WYLYrkCACLOB5rz9Kce4XCp-bp3XQdUZOGUe80Pi0ZZyWXBYtshFq0CVp3hcXes3xwGgg2O6Fncav-k_DMuW5ZCgwgqQM5m5SwSJPBCuUOmLuxIW1VqxkGbTZb9FbMNr4dOwrAoOKWNKXa4jsNqKC4dsPvvrhSYUyvjsy2ZYvyoFMdpkBQh9UCJXWuFpspaKSo6PH3CF_ZHKjXdpeuhqQsbn-0r9EAktAKyizsculwzF19aqH6hSC0EyFkCg8oDfw.jpg')" data-ratio="0.8" href="https://t.me/icipr/9922?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:302px;top:189px;width:151px;height:187px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/YY3F-p5zk2UeJLJAE5BCyzlHnlLjwmA7QtHW79fmv3tSs0atoXjPrPeIbK1PWkObp6IkZpO6Er8upeBuOHbYZS3l5OW9HCeRjhXN2HVZt4WyxqPvXscVRaa2i7foDlGlzxAecvcJa3lCbKccvW5AdFu4Z27hIzEWrtjA928JELibYuSFiR5QQNdHT01YM99BUMWNqJlsgzp2fHR-1IY1sd6p_Ezm1iE-CGiUs_nEUyxnsENFl5n9ruewdigbKC2pYcvP5D0_p0zoZOA5p9M7T_DzjChJ-S34Fmp1DQ81d8-T9nrtlkLYniTbrYnoZLhHuCywFNTIKCnWq1MYuV1VWQ.jpg')" data-ratio="0.8" href="https://t.me/icipr/9923?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Его именем названы кратеры на Луне и Марсе <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C96.png')"><b>🌖</b></i></b><br/><br/>Под руководством Георгия Бабакина советская космонавтика научила роботов посадке на небесные тела, управлению на расстоянии сотен тысяч километров и автоматическому возвращению на Землю.<br/><br/>Рассказываем о человеке, благодаря которому на Луне появился первый колёсный след <tg-emoji emoji-id="5334566182991205934"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AD90.png')"><b>⭐</b></i></tg-emoji><br/><br/><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>MAX<b>.</b></i></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9918?single" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9918" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>69</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>35</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>22</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>8</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.58K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9918"><time datetime="2026-08-31T15:04:35+00:00" class="time">15:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9924" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkyNCwidCI6MTc4ODU2NjEyMywiaCI6IjI4NWRkOTcxYWQ2OWVlNThjNSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_video_player blured js-message_video_player" href="https://t.me/icipr/9924"><i class="tgme_widget_message_video_thumb" style="background-image:url('https://cdn4.telesco.pe/file/HOZTH7zfENxx50TXL6dMXgRWU9gy3mcAsUXbADaMFhIDSKqQJ1iq8HGU2U9Qlq5sFTGUrvQh8vFp9BTZ-LUMV1qnE6Nu68w9Tdfe6_33sKPrcxuHu3rBaWi5hJHmNBgZpvAaOqizW1UxWZmY-TV5cs2XRLUg6rczDj-_jxy2ycd7ufscv-IzptBMfoG9BKn2VU7zYSmPFzgk_vP39nQ4vLSlDDojDw4lCerADZNFDf8Lpzog2JIJv3Y_Z8HG64FuGe-alqd24sAd88JSJN5njgle3OFEhf19ztOURLNoXGH3rr3bVbcPH8gbBXVZFD_nRENjnK36fGRYkOqVDLFX9w')"></i>
+<video src="https://cdn4.telesco.pe/file/9a2cc393be.mp4?token=bDXlsfOk-RChRnwYr7ZExhzyzcXFLbgGB9lNrG9SuajE0M2caffu-S3WhYBHXfAohzEVrUsXqLfvcx4A_SlFHgV79ofef99hgHaO88ns6oD3GpCJkVqCQypHIGOc-rDfWl1mmaDDy17U3RR7qgu_-ZPY-eOXP4H3csuC0E7f9IBf1ml3Fn1mdT1rY2qDx8yDkalhlkhLDjollag4ecyTsqvufjZU-klFRur7inzCnXnHKanTPth0fdt3HP1jB-24aVdxjZIXQmDbwdYS2NJeuLyVzX08DdP9resYn2AlwSJSgdz-fmGIQrBnIgDq4VBQRejHoZ3bAXzSD31pc9TUMw" class="tgme_widget_message_video blured js-message_video_blured" width="100%" height="100%" muted></video>
+<div class="tgme_widget_message_video_wrap" style="width:480px;padding-top:133.33333333333%">
+  <video src="https://cdn4.telesco.pe/file/9a2cc393be.mp4?token=bDXlsfOk-RChRnwYr7ZExhzyzcXFLbgGB9lNrG9SuajE0M2caffu-S3WhYBHXfAohzEVrUsXqLfvcx4A_SlFHgV79ofef99hgHaO88ns6oD3GpCJkVqCQypHIGOc-rDfWl1mmaDDy17U3RR7qgu_-ZPY-eOXP4H3csuC0E7f9IBf1ml3Fn1mdT1rY2qDx8yDkalhlkhLDjollag4ecyTsqvufjZU-klFRur7inzCnXnHKanTPth0fdt3HP1jB-24aVdxjZIXQmDbwdYS2NJeuLyVzX08DdP9resYn2AlwSJSgdz-fmGIQrBnIgDq4VBQRejHoZ3bAXzSD31pc9TUMw" class="tgme_widget_message_video js-message_video" width="100%" height="100%"></video>
+</div>
+<div class="message_video_play js-message_video_play"></div>
+<time class="message_video_duration js-message_video_duration">0:17</time>
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">This media is not supported in your browser</div>
+    <span class="message_media_view_in_telegram">VIEW IN TELEGRAM</span>
+  </div>
+</div></a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5334921235052663950"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C90.png')"><b>🌐</b></i></tg-emoji><b> Вы знали, что 99% межконтинентального трафика идет по дну океана?</b><br/><br/>Вопреки популярному мифу, спутники обеспечивают лишь доли процента мирового интернет-трафика. Настоящий фундамент глобальной сети — это подводные волоконно-оптические кабели.<br/><br/><b><u>Как они устроены?</u></b><br/><tg-emoji emoji-id="5334750029066314210"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji>  <b>Сердцевина из волокон:</b> внутри кабеля — стеклянные нити (оптоволокно) толщиной с человеческий волос. По ним со скоростью света передаются данные с помощью лазерных импульсов.<br/><tg-emoji emoji-id="5334750029066314210"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji>  <b>Многослойная броня:</b> чтобы выдержать давление и внешние угрозы, кабель защищают слоями меди, вазелинового геля, алюминия, поликарбоната и стальной проволоки.<br/><tg-emoji emoji-id="5334750029066314210"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji>  <b>Усилители сигнала:</b> раз в 50–100 км в кабель встроены подводные репитеры, которые разгоняют угасающий лазерный луч.<br/><br/>Сегодня океанское дно оплетают сотни подводных систем общей протяженностью более 1,3 млн километров. Этого хватило бы, чтобы обернуть Землю по экватору больше 30 раз.<br/><br/><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>MAX<b>.</b></i></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9924" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>70</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>27</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>24</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>16</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.63K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9924"><time datetime="2026-09-01T13:32:20+00:00" class="time">13:32</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9925" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkyNSwidCI6MTc4ODU2NjEyMywiaCI6ImUzZjI1MjQyMzVjOTYzMjcxNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Минцифры предложило правила выдачи российских сертификатов для подписи кода</b><br/><br/>Минцифры <a href="https://www.forbes.ru/tekhnologii/567652-mincifry-predlozilo-pravila-vydaci-rossijskih-sertifikatov-dla-podpisi-koda?utm_source=forbes&amp;amp;utm_campaign=interesting-today" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">вынесло</a> на общественное обсуждение проект приказа, который прописывает систему сертификатов безопасности Национального удостоверяющего центра (НУЦ).<br/><br/><b>Что предлагается:</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> выдавать сертификаты для сайтов, программного кода и корпоративных систем<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> использовать два типа криптографии — российскую (ГОСТ) и международную (RSA)<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> указывать в сертификате подписи кода данные о владельце программы, назначение ключа и срок действия<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> внедрить электронную метку в установочные файлы, чтобы ОС могла идентифицировать издателя программы<br/><br/>Если приказ будет принят, он вступит в силу 1 марта 2027 года.<br/><br/><b>Зачем это нужно</b><br/><br/>Инициатива должна обеспечить защиту российского ПО на случай отзыва западными удостоверяющими центрами сертификатов подписи кода. При этом эксперты отмечают: российские сертификаты, вероятнее всего, будут работать преимущественно внутри России. <br/><br/>Отдельный вопрос — стоимость внедрения. Эксперты считают наиболее обоснованным обязательное использование таких сертификатов для госзакупок и критического ПО. Для небольших разработчиков дополнительные требования могут стать барьером.<br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9925" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>66</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>22</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>22</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>20</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.63K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9925"><time datetime="2026-09-01T14:46:46+00:00" class="time">14:46</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9926" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkyNiwidCI6MTc4ODU2NjEyMywiaCI6ImMwZjFkM2M1YjBkZjNlNWIwNCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b>У «Алисы AI» могут появиться расширенные права на мобильных устройствах</b><br/><br/>Минцифры <a href="https://www.kommersant.ru/doc/8923559" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">обсуждает</a> новые правила предустановки отечественных приложений, которые могут предоставить ИИ-помощнику «Алиса AI» расширенные права на мобильных устройствах и доступ к другим приложениям пользователя.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> <b>Что может измениться:</b> «Алиса AI» сможет получить доступ к системным функциям, приложениям, уведомлениям и авторизации, а также потенциально — к банковским приложениям и данным, которые они собирают.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> <b>Зачем это нужно:</b> в Минцифры заявляют, что изменения должны обеспечить равные условия для интеграции и развития отечественных ИИ-технологий и устранить преимущества встроенных решений производителей устройств.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> <b>Что говорят эксперты:</b> они предупреждают о риске монополизации рынка и возможном негативном восприятии сервиса пользователями, если новые правила приведут к его навязыванию.<br/><br/>Инициатива пока находится на стадии обсуждения с отраслью.<br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9926" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>71</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>46</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>20</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.85K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9926"><time datetime="2026-09-02T13:21:20+00:00" class="time">13:21</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9927" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkyNywidCI6MTc4ODU2NjEyMywiaCI6Ijk1MGNhYmYwNzliZjQ2OTU3MyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242687611694948282 1220658331_460005306" href="https://t.me/icipr/9927" style="width:640px;background-image:url('https://cdn4.telesco.pe/file/OnDSpNXYIuLvjB3nV8swPf6XT0BgMJ5dG-Ir3hVTiygziPnBBwoCN-GZ16dMyqfXIFp1jWO98lh-UC646gxfOWDm2Krhs40ujOyVB6kO43OTFNcxzcdjaZppZhRlVK8eChnUyr9IjCYeYdgdX_lmB_jItMcu7vWl0ec7_7vBWDcOlAPPcHVVMWY8d9jog4IpPkEN2ye5AJr8ZtKLq-QWLOXa_DfGw8WMZS9cnmgliLuNx339Gg0icAUBXn8JiLB7JtiR6XCayCWGj2-plUbWAaObG6c-4Syeed9uGwWdAXv_zWf3d2s4fl2fCrmyCJXyC1KJ2rGfZdTd5acfOlY9wA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:125%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5337302931857249324"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i></tg-emoji> <b>Соберите свой осенний образ с </b><a href="https://cipr-shop.ru/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>мерчем ЦИПР и Тех-Френдли Викенд</b></a><br/><br/>Смена сезона — отличный повод обновить гардероб и добавить в повседневные наряды технологичные детали. <br/><br/>В коллекциях конференции и фестиваля найдутся вещи для любой погоды и задач: от ветровок, дождевиков и футболок до вместительных шопперов, кофейных кружек и лаконичных аксессуаров.<br/><br/><u>Выбирайте и заказывайте понравившиеся позиции</u> <tg-emoji emoji-id="5334648066542704205"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AC87.png')"><b>⬇</b></i></tg-emoji><br/><br/><tg-emoji emoji-id="5334808032599643113"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i></tg-emoji> по прямой ссылке: <a href="https://cipr-shop.ru/" target="_blank" rel="noopener"><b>https://cipr-shop.ru/</b></a><br/><tg-emoji emoji-id="5334808032599643113"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i></tg-emoji> или через раздел «Мерч» в главном меню на <a href="https://cipr.ru/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>сайте ЦИПР</b></a><br/><br/>Доставка осуществляется по всей России сервисом СДЭК.<br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9927" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>65</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>47</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>11</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>7</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">4.13K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9927"><time datetime="2026-09-03T07:02:33+00:00" class="time">07:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9928" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkyOCwidCI6MTc4ODU2NjEyMywiaCI6IjAzMmM4Yzc1MDFkM2ZlNzJjNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b>«ИКС Холдинг» вложит ₽35 млрд в производство полупроводников в Приморье</b><br/><br/>До 2030 года «ИКС Холдинг» <a href="https://www.rbc.ru/technology_and_media/03/09/2026/6a987d999a79479a4f73099b?from=my_rbc" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">создаст</a> в Приморском крае комплекс по выпуску сложных полупроводников для космоса, связи и радиоэлектроники. По проектной мощности площадка должна стать крупнейшим в России производством такого профиля.<br/><br/><b>Что будут выпускать:</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> более 5 млн сверхвысокочастотных микросхем в год<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> до 500 тыс. фотоэлектрических преобразователей для космической отрасли<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> компоненты на основе арсенида и нитрида галлия<br/><br/>Площадь комплекса превысит 35 тыс. кв. м, будет создано около 500 рабочих мест для инженерных специалистов. Основной спрос на продукцию сформируют компании группы — Yadro и «Бюро 1440». В дальнейшем холдинг планирует поставлять компоненты и другим компаниям.<br/><br/><b>Почему Приморье: </b>близость к Азиатско-Тихоокеанскому региону, научно-инженерная база ДВФУ, доступ к кадровым ресурсам и возможность использования специальных экономических режимов.<br/><br/>Проект должен способствовать формированию собственной элементной базы и снижению импортной зависимости в производстве сложных электронных систем.<br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9928" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>71</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>51</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>9</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>9</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.62K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9928"><time datetime="2026-09-03T11:42:45+00:00" class="time">11:42</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9929" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkyOSwidCI6MTc4ODU2NjEyMywiaCI6ImRiMWU0MWFlZWJkMjY0NTc4MSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242483660877930785 1220610845_460005665" href="https://t.me/icipr/9929" style="width:640px;background-image:url('https://cdn4.telesco.pe/file/h-I3Uugz8WNrD1dcTemCM3XZXbaRl2h3_PPa7xt5OvbamogITsY_3t5lEouEXgtAyCokemeMJJQbqdMxPGCAzp2YUMLBkKz3nMRxfgar7PHvzg4EiuR2eFAWfqe-iuChvL_kxV5Rq3V70yAaSE8q-Hohq_JD0wTEH-de6BEJxDDy2WyJy5r6kRWz5_zBKLxVOB4Lyig9Yx5PEaqP_XBbMuGK0pu87ljdhCgd1ckrjTqwVa3xmJm1xYWPtta_ViHgXmruNIOBAlvNYa27Nuc4B_3Ot-7AbtbGf8WEd9qAPvuXLJGqYvY0CFAQh98WOYeNLyjFpmyHe-ubRz5kUXAhOw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:125%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5334592060169166164"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8F86.png')"><b>🏆</b></i></tg-emoji><tg-emoji emoji-id="5334982077559378365"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8F86.png')"><b>🏆</b></i></tg-emoji> <b>ЦИПР выступает партнёром профессиональной премии Клуба ИТ-директоров </b><a href="https://t.me/official_4cio" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>4CIO</b></a><b> «</b><a href="https://hedgehog.4cio.ru/about" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Хрустальный ёж</b></a><b>» </b><br/><br/>Лидеры цифровой индустрии поборются за победу в <tg-emoji emoji-id="5334835567634977847"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/31E283A3.png')"><b>1️⃣</b></i></tg-emoji><tg-emoji emoji-id="5334594422401177567"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji> номинациях: от вклада в технологический суверенитет и развитие экосистемы до создания новых сообществ и проведения главных ИТ-событий года.<br/><br/><tg-emoji emoji-id="5334688349040971875"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29D97.png')"><b>❗️</b></i></tg-emoji> Победителей выберет экспертное жюри из числа лидеров публичного голосования. В числе экспертов этого года — <b>программный директор ЦИПР </b><a href="https://t.me/Ilina_Aleks" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Александра Ильина</b></a>.<br/><br/>Церемония награждения состоится на юбилейном XX Конгрессе «<a href="https://pv2026.4cio.ru/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подмосковные вечера</a>», который пройдёт 23–25 сентября.<br/><br/>Уже 20 лет «Подмосковные вечера» собирают лидеров ИТ-отрасли для обмена опытом и открытого диалога. В программе этого года: разбор практических кейсов, выставка отечественного ПО и оборудования, а также традиционный футбольный матч.<br/><br/><tg-emoji emoji-id="5334738282330758327"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9590.png')"><b>🕐</b></i></tg-emoji> Успейте выдвинуть кандидата или подать заявку до 14 сентября <a href="https://hedgehog.4cio.ru/login" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>на сайте премии</b></a>.<br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9929" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>67</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>29</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>22</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>18</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.75K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9929"><time datetime="2026-09-03T15:59:33+00:00" class="time">15:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9930" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6Ijk5MzBnIiwidCI6MTc4ODU2NjEyMywiaCI6ImU0N2EwYzNhNWMzNjJkODBhYiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_one_media js-message_media"><div class="media_supported_cont"><div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:103.753%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:470px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:224px;height:281px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/qKKcKMKbWH976ovPQgSkJGlsrrF9LBnt0D3FLiGcpjBcpDHPqXnCXgtlpu8piZUD1kyXkOrPnSrP5TWGQIU_Xegby0i4Dqz4ss3VlS39LoufFU3LSgnw-pHc2byeVqs5QgWCBNN3MDha1jeFteijHkJ9V47wQNTNEjG6EPZlhRCrTKT8QcOCYL8N7k8wAYWvia4uWpaR3o2sMYHvvgJoJDMqOwZo8MBRDBtXXBQGbjTlP60AOogZ_G1xuYvbxKih-v8Pv7jSWniduu4VI_fjFQ7vtjNL2iyV8SHOVnhj8oiNrGW_NUAFUE_j_zfFlx0r3B6t5CDOtHsnsJGao1wtDQ.jpg')" data-ratio="0.8" href="https://t.me/icipr/9930?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:38px;right:39px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:226px;top:0px;width:227px;height:281px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/ZGc7Ez3gNaLB0aSID6eaUmWwUHa1E79-tfP9OpF4tq84pEmzO1xhpNmUZOsHl3Ix242Hn3PSWeDdiIROOmlalYQy1lqUmDSZDRGtMqVBqnG90KlUMlcPpQSfPoudyPjfYJWM35nKMrhFoBZxbXFOpEEVYIKvgRxqfYa02x3uN7SExREy8mB2XTbNc-3YnmRLu9rKc6Lc5uTA6_QESUUMk-0ZvaszszVMByoQX7PcmP8lundHVeSKURNsGM2ZGHJ204ZEGDA-TSiM2V5y7gHEg_6r2R-i0QeCArQO3nLBRAiX9-OOVGD4EH239tp7p6eAlKdl1vSeJft5iKavPoP9zQ.jpg')" data-ratio="0.8" href="https://t.me/icipr/9931?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:38px;right:39px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-2px;bottom:-1px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:283px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/XxNymNvH1mLoHGvaoGJAjPj7pfZXxPdtT_OGTAhEI46VZqsSq5jOfEGm9JmS4Glsa6GUuMFIBA1RmtY82eSlqLgxSHYfZQZGr3ARKDP1xbtG83uZUhtozJZs4qHBs99HqBPiE7OA7QGIQwF5zHM8rpVx4IRYFzjvvgpsY6Tl5P9PfGInbSHYm1O9wQeOK-tIrt820OIuzDrv30su3LDU_IME0o3BHBZXvKTg8y2TMPbZtUTPNw05Tn3tMw9YDPPl4w0NR8X_ieG0n6qq0SDCroEMTkoK3cdA9IwRteookk-DrvMG92JodN8RkfQ6JTgDr-N48v1ki0cPK1U-4nQ75g.jpg')" data-ratio="0.8" href="https://t.me/icipr/9932?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:38px;right:39px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:151px;top:283px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/VBfZfSP1zBT93JRUGNiO38jKEXagr4-H7Tba5s9E0HmxHjK7FyBkka8g2-SSj_erL_7-057jdyJCfxRjtN87ff78x_abEQJuq56CoX6unJE62ErYEdXe51fhPmrHRFw6kTm88xtoS8w6d6Ma_2HBIETlGLSxwuhCHEMU1rMQrZiOmCzZ6Cyg8pv2yfA2T4JITy6q_xi8UkfbSkdk5-m2aPm_nW5qZjknLvDax4N1U_802U8jYCmvD5BJbkHyNjaTsk1JlsM81ibWA-Vx4W2LIeEaAxCUjQzVJdudbGXGuEyoxS-7i1H9vkQayJhMqnxYKkBS598MEJFWqUiipqUXrQ.jpg')" data-ratio="0.8" href="https://t.me/icipr/9933?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:38px;right:39px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:302px;top:283px;width:151px;height:187px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/oBKQhhtk0U_wPMpopUmV-FH8DPLbywqHRGJk1eWuoHnn1WZ-ELayVsecIp53E9OCgS9sEmwJUT1bCPF8bJGld3mfTaMa0JjiRaBIaQPCmk_4LTP4aMU24sbc1LrkldzWT1S_h8rM1Sg-JWZjy64W-B9I8Q3GEMTFOX9P6AeZUiDQZ3n4Y0ZzF6J1X6lZHBPZ0Ptk-MKKk1o6fiRxxcpKFv9SylQKpomvP3g1gMs0J_NP6ppDOGk1FdQCXK9dGq8U0xAAZPVetweZlipqX0_K6cb4-Y5BgliKHXPwZccbLYwrxomTM9aTGP_qYmv2Z3vPIL1fs0JK7wbneeYAO3WtSQ.jpg')" data-ratio="0.8" href="https://t.me/icipr/9934?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:38px;right:39px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5390993368836749563"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji> <b>Как физически ощутить виртуальную реальность?</b><br/><br/>Мы привыкли воспринимать технологии через картинку и звук, но сегодня гаптика позволяет цифровому миру буквально прикасаться к нам.<br/><br/>Разбираемся, как работают устройства с обратной связью, где они используются прямо сейчас и как изменят наше будущее <tg-emoji emoji-id="5334887961941023038"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji><br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9930?single" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9930" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>72</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>29</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>25</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>19</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.31K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9930"><time datetime="2026-09-04T08:00:39+00:00" class="time">08:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="icipr/9935" data-view="eyJjIjotMTA4NjM4ODYzMCwicCI6OTkzNSwidCI6MTc4ODU2NjEyMywiaCI6IjgwNTIxZDIwNzE2ZmUxZTQ4OSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/icipr"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Ц"><img src="https://cdn4.telesco.pe/file/jm32bJRcbPh-hdGKDKFKysw18uP-lJigqX6eXYtA8Cy_a67J230ERAbvsROLjx8SREeYex_TXu9-ZF0-eTb5su4dw3WFew_qZb59GxehwWl43f_2aFhsfl_auHE0x6cB1SV9frJEg7u--oJPcZlSjCkZptf8bg4A6-lUj5Xoe1O0i2ft9jMVExiH6esPxDD2Pmeu4SFYMrqTcxSedIBOhJoDTgKvA9E6shqy5lG9ffOKkjVbU1THXr3z65pwjE6DAteOAyE5OA1G6A-WTz9VqFZP_H5QcHNw5JMYr6HBugeBL9-dOJ97x5fnS3dm2YHEoi4-iwjlQe4ZGxY1GJUbZQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/icipr"><span dir="auto">ЦИПР</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Что умеет российская платформа ИИ-агентов GigaCowork</b><br/><br/>В мае 2026 года на ЦИПР‑2026 «Сбер» представил <a href="https://trends.rbc.ru/trends/industry/cmrm/6a959944d2218d13ecc35dae?from=mainpage" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">GigaCowork</a> — платформу для создания и управления ИИ-агентами в компаниях. Она позволяет делегировать агентам регулярные задачи: анализ документов, сбор информации, подготовку отчетов и работу с данными из разных систем.<br/><br/><b>Как это работает:</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> сотрудник ставит задачу на естественном русском языке — программирование не требуется<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> агент самостоятельно подбирает нужные навыки и при необходимости подключает внешние системы через MCP-коннекторы<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> результат возвращается в виде готового документа, таблицы или отчета<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> повторяющиеся задачи можно сохранять как команды или запускать по расписанию<br/><br/><b>Где применяют: </b>юристы могут проверять договоры, HR — собирать шорт-листы кандидатов из ATS, продажи — готовить квартальные отчеты с данными из CRM, 1С и Power BI.<br/><br/><b>Главные особенности: </b>российские серверы и соответствие 152-ФЗ, командные пространства с приватными личными сессиями, тарификация по пользователям безлимитными токенами и агентный движок, который разбивает сложную задачу на последовательность действий.<br/><br/>При этом у платформы есть ограничения: сервис появился только в мае 2026 года, публичных тарифов пока нет, для нестандартных систем могут потребоваться собственные MCP-коннекторы, а качество результата зависит от того, насколько подробно сотрудник описал задачу.<br/><br/>В сравнении с Claude Cowork главное преимущество GigaCowork для российских компаний — работа в российском контуре и соответствие требованиям к данным.<br/><br/><u><tg-emoji emoji-id="5380034489198089396"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B2.png')"><b>📲</b></i></tg-emoji></u><b><i>Подписывайтесь на канал ЦИПР в </i></b><a href="https://max.ru/icipr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i><u>MAX</u></i></a><b><i>.</i></b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/icipr/9935" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>65</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>28</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>20</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>19</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.49K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/icipr/9935"><time datetime="2026-09-04T12:00:13+00:00" class="time">12:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 109.32ms -->

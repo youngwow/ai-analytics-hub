@@ -151,6 +151,9 @@ class FetchResult:
     not_modified: bool = False
     error: str | None = None
     source_title: str | None = None  # title the site/channel reports about itself
+    # Recoverable subrequest/parser failures. The source may still return useful
+    # documents, but the collector must expose the run as partial, never as clean ok.
+    warnings: list[str] = field(default_factory=list)
 
     @property
     def ok(self) -> bool:
@@ -172,6 +175,7 @@ class CollectReport:
     started_at: str = ""
     finished_at: str = ""
     sources_ok: int = 0
+    sources_partial: int = 0
     sources_fail: int = 0
     sources_not_modified: int = 0
     docs_new: int = 0
@@ -180,6 +184,7 @@ class CollectReport:
     def summary_line(self) -> str:
         return (
             f"{self.docs_new} new documents; sources ok={self.sources_ok} "
+            f"partial={self.sources_partial} "
             f"not_modified={self.sources_not_modified} failed={self.sources_fail}"
         )
 

@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" >
+
+  <channel>
+    <title><![CDATA[Все новости подряд]]></title>
+    <link>https://habr.com/ru/news/</link>
+    <description><![CDATA[Все новости подряд на Хабре]]></description>
+    <language>ru</language>
+    <managingEditor>editor@habr.com</managingEditor>
+    <generator>habr.com</generator>
+    <pubDate>Sat, 05 Sep 2026 00:21:47 GMT</pubDate>
+    
+    
+      <image>
+        <link>https://habr.com/ru/</link>
+        <url>https://habrastorage.org/webt/ym/el/wk/ymelwk3zy1gawz4nkejl_-ammtc.png</url>
+        <title>Хабр</title>
+      </image>
+    
+
+    
+      
+        
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Nvidia представила PAIR — утилиту, с помощью которой объединяет несколько ПК и распределяет между ними AI‑задачи]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078660/</guid>
+		<link>https://habr.com/ru/news/1078660/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078660</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4bb/24e/70b/4bb24e70becc2e5ddb7225db0d02f4f7.jpg" /><p>Nvidia <a href="https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/" rel="noopener nofollow">выпустила</a> инструмент PAIR (Personal AI Router), который объединяет несколько компьютеров в&nbsp;локальной сети и распределяет между ними задачи по&nbsp;запуску AI‑моделей. В&nbsp;один кластер можно подключить ПК с&nbsp;видеокартами Nvidia, системы DGX Spark и Mac. Код инструмента открыт.</p> <a href="https://habr.com/ru/articles/1078660/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 15:56:41 GMT</pubDate>
+    <dc:creator><![CDATA[daniilshat]]></dc:creator>
+		
+		<category><![CDATA[nvidia]]></category><category><![CDATA[PAIR]]></category><category><![CDATA[ollama]]></category><category><![CDATA[lm studio]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[машинное обучение]]></category><category><![CDATA[софт]]></category><category><![CDATA[распределённые вычисления]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[H3 Max Director генерирует управляемый видеопоток в реальном времени]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/bothub/news/1078652/</guid>
+		<link>https://habr.com/ru/companies/bothub/news/1078652/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078652</link>
+		<description><![CDATA[<p>Новая версия H3 Max генерирует не отдельные клипы с последующей склейкой, а единый непрерывный видеопоток. Модель сохраняет контекст сцены, персонажей и происходящего, а промпт можно менять прямо во время генерации, направляя сюжет на ходу. </p><p>Посмотреть технологию в действии можно на <strong><a href="http://fal.live">fal.live</a></strong>. Там запущено несколько бесконечных AI-эфиров, а зрители сами предлагают, что должно произойти дальше, фактически управляя развитием сюжета.</p><p>Публичная версия пока ограничена сессиями до двух минут. Более длинные Director-сессии fal постепенно открывает для одобренных сценариев.</p><p>До 14 сентября генерация на официальных ресурсах стоит <strong>$0,02 за секунду</strong> — это промо-цена со скидкой 75%. Затем тариф вырастет до $0,08 за секунду.</p><p>При этом каждая сессия оплачивается минимум за минуту работы. То есть минимальный запуск сейчас обходится в $1,20, а после окончания акции — уже в $4,80. </p><p>fal называет H3 Max Director первой frontier-видеомоделью с нативной непрерывной генерацией в реальном времени. Пока технология выглядит скорее экспериментом, но направление понятное: вместо генерации готового ролика пользователь получает видеопоток, которым можно управлять по мере его появления.</p><p><strong>API:</strong> <a href="https://fal.ai/models/minimax/h3-max/director?utm_source=chatgpt.com">H3 Max Director</a><br><strong>Эфир:</strong> <a href="http://fal.live">fal.live</a></p> <a href="https://habr.com/ru/articles/1078652/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 15:33:44 GMT</pubDate>
+    <dc:creator><![CDATA[DashaPasha (BotHub)]]></dc:creator>
+		
+		<category><![CDATA[H3 Max Director]]></category><category><![CDATA[fal AI]]></category><category><![CDATA[генерация видео]]></category><category><![CDATA[AI-видео]]></category><category><![CDATA[видеогенерация в реальном времени]]></category><category><![CDATA[непрерывный видеопоток]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[MiniMax H3]]></category><category><![CDATA[управление видео]]></category><category><![CDATA[генеративное видео]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Гипотеза панспермии начала понемногу переходить из статуса крамольной к статусу экстравагантной, но обсуждаемой]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078552/</guid>
+		<link>https://habr.com/ru/news/1078552/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078552</link>
+		<description><![CDATA[<p>В&nbsp;июльском номере научного журнала Springer Nature&nbsp;была опубликована <a href="https://link.springer.com/article/10.1007/s11084-026-09728-6" rel="noopener nofollow">статья</a>, название которой можно примерно перевести как «Следствие публикации Муди с&nbsp;соавторами для&nbsp;жизнеспособности гипотезы земного абиогенеза». В&nbsp;упомянутой в&nbsp;заголовке статьи работе возраст последнего общего предка всех живых организмов с&nbsp;помощью метода молекулярных часов&nbsp;был оценен в 4.2&nbsp;млрд. лет (при этом, как&nbsp;я показал в&nbsp;одной из&nbsp;своих <a href="https://habr.com/ru/articles/1018862/" rel="noopener nofollow">статей</a> на&nbsp;Хабре, даже эта цифра, похоже, занижена минимум на 200&nbsp;млн. лет). </p> <a href="https://habr.com/ru/articles/1078552/#habracut">Читать далее, если новость интересна</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 15:17:51 GMT</pubDate>
+    <dc:creator><![CDATA[Combinator_30]]></dc:creator>
+		
+		<category><![CDATA[научно-популярное]]></category><category><![CDATA[происхождение жизни]]></category><category><![CDATA[панспермия]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Агенты Cursor научились собирать приложения для iOS и macOS]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/bothub/news/1078642/</guid>
+		<link>https://habr.com/ru/companies/bothub/news/1078642/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078642</link>
+		<description><![CDATA[<p>Namespace интегрировала свою облачную инфраструктуру Devboxes с Cursor Cloud Agents. Сам Cursor по-прежнему отвечает за агентный цикл и управление задачей, а выполнение действий — работа с репозиторием, запуск команд, сборка и тестирование — переносится в изолированные окружения Namespace.</p><p>Devboxes — это полноценные среды разработки с кодом, тестами, базами данных и сетевым доступом. Агенту можно выбрать конфигурацию машины, ОС, базовый образ и репозиторий.</p><p>Главное нововведение — поддержка macOS-инстансов на Apple Silicon M5. Теперь Cursor Cloud Agents могут работать на реальном Mac: собирать и тестировать приложения для iOS и macOS, что невозможно в обычном Linux-окружении. Linux поддерживается уже сейчас, Windows обещают добавить позже.</p> <a href="https://habr.com/ru/articles/1078642/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 15:03:25 GMT</pubDate>
+    <dc:creator><![CDATA[DashaPasha (BotHub)]]></dc:creator>
+		
+		<category><![CDATA[Cursor Cloud Agents]]></category><category><![CDATA[Cursor AI]]></category><category><![CDATA[Namespace Devboxes]]></category><category><![CDATA[AI-агенты]]></category><category><![CDATA[агенты для программирования]]></category><category><![CDATA[облачная разработка]]></category><category><![CDATA[iOS разработка]]></category><category><![CDATA[macOS разработка]]></category><category><![CDATA[автономное программирование]]></category><category><![CDATA[AI coding agents]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Google дал издателям кнопку «любимый источник»]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078578/</guid>
+		<link>https://habr.com/ru/news/1078578/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078578</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4c8/e5e/802/4c8e5e802cd4a81555103ff9f08a436b.jpg" /><p>Google запустил инструмент, который вроде&nbsp;бы должен помочь издателям отбить трафик, потерянный из‑за ИИ‑ответов в&nbsp;поиске. Называется Preferred Sources: издатель встраивает к&nbsp;себе кнопку, читатель жмёт&nbsp;— и сигнализирует поиску, что&nbsp;хочет видеть этот ресурс чаще в&nbsp;выдаче, в&nbsp;Discover и в&nbsp;Google News. Механику ещё в&nbsp;мае раскатили на&nbsp;AI Mode и AI Overviews, и там пользователи <strong>уже добавили 345 000&nbsp;уникальных источников</strong>. По&nbsp;данным самого Google, такой читатель кликает по&nbsp;ссылкам любимого издания вдвое чаще (<a href="https://techcrunch.com/2026/08/20/google-gives-publishers-a-new-way-to-fight-ai-driven-traffic-losses/" rel="noopener nofollow">TechCrunch, 2026</a>).</p><p>А&nbsp;теперь давайте спокойно разберём, что&nbsp;здесь на&nbsp;самом деле.</p> <a href="https://habr.com/ru/articles/1078578/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 13:22:48 GMT</pubDate>
+    <dc:creator><![CDATA[neuromamontov]]></dc:creator>
+		
+		<category><![CDATA[Google]]></category><category><![CDATA[SEO]]></category><category><![CDATA[накрутка]]></category><category><![CDATA[AI Overviews]]></category><category><![CDATA[поисковая выдача]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Cohere выпустила Parse 5: модель извлекает данные из сложных документов в Markdown]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/selectel/news/1078320/</guid>
+		<link>https://habr.com/ru/companies/selectel/news/1078320/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078320</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a9c/590/b6e/a9c590b6ea69540d45cb4aff80befe28.jpg" /><p>Компания Cohere выпустила коммерческую мультимодальную модель <a href="https://cohere.com/blog/parse">Parse 5</a> (parse-v5.0), которая помогает разработчикам извлекать структурированные данные из сложных корпоративных документов. Модель содержит 2,4 млрд параметров и конвертирует PDF-документы, включая финансовые отчеты и научные статьи, в Markdown. Одновременно Parse 5 определяет координаты ограничивающих рамок (bounding boxes) для каждого элемента, чтобы распознанный текст можно было сопоставить с исходным файлом.</p> <a href="https://habr.com/ru/articles/1078320/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 13:00:20 GMT</pubDate>
+    <dc:creator><![CDATA[EkaterinaKoposova (Selectel)]]></dc:creator>
+		
+		<category><![CDATA[cohere]]></category><category><![CDATA[parse 5]]></category><category><![CDATA[llm]]></category><category><![CDATA[multimodal]]></category><category><![CDATA[ocr]]></category><category><![CDATA[markdown]]></category><category><![CDATA[parsebench]]></category><category><![CDATA[python]]></category><category><![CDATA[selectel]]></category><category><![CDATA[deepstack]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Lexar представила внешний SSD толщиной 3,8 мм; ради этого пришлось отказаться от порта USB‑C]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078590/</guid>
+		<link>https://habr.com/ru/news/1078590/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078590</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/92a/ff8/b9c/92aff8b9ca495477dc66a2bf078a0143.jpg" /><p>Lexar на&nbsp;выставке IFA 2026&nbsp;<a href="https://www.lexar.com/global/products/Lexar-Muse-Ultra-Slim-Portable-SSD/" rel="noopener nofollow">представила</a> внешний накопитель Muse. Компания называет его самым тонким портативным SSD в&nbsp;мире: толщина корпуса в&nbsp;центральной части составляет всего 3,8&nbsp;мм, а&nbsp;возле краёв&nbsp;— до 1&nbsp;мм. Для&nbsp;такого результата инженерам пришлось заменить порт USB‑C на&nbsp;подпружиненные контакты.</p> <a href="https://habr.com/ru/articles/1078590/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 12:59:33 GMT</pubDate>
+    <dc:creator><![CDATA[daniilshat]]></dc:creator>
+		
+		<category><![CDATA[lexar]]></category><category><![CDATA[muse]]></category><category><![CDATA[ssd]]></category><category><![CDATA[накопители]]></category><category><![CDATA[гаджеты]]></category><category><![CDATA[устройства]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Perfscale news #9. GPU, LLM, Docker images]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1077874/</guid>
+		<link>https://habr.com/ru/news/1077874/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1077874</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a4c/3dd/1f2/a4c3dd1f23df866b136f6d2736992c4e.webp" /><p>Наконец-то можно тестировать GPU-нагрузку так же просто, как и HTTP. А еще вышли docker образы! Приветствую, любители нагрузки. Сегодня в выпуске ... </p> <a href="https://habr.com/ru/articles/1077874/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 12:50:19 GMT</pubDate>
+    <dc:creator><![CDATA[Vitalics]]></dc:creator>
+		
+		<category><![CDATA[нагрузочное тестирование]]></category><category><![CDATA[нагрузочные тесты]]></category><category><![CDATA[нагрузочное тестрование]]></category><category><![CDATA[perfscale]]></category><category><![CDATA[performance]]></category><category><![CDATA[llm]]></category><category><![CDATA[gpu]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[«Первые в космосе»: ПСБ отправил банковские карты на орбиту]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/psb/news/1076772/</guid>
+		<link>https://habr.com/ru/companies/psb/news/1076772/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1076772</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/dae/06a/5a0/dae06a5a008dd82eb3b95cfa9e56a8d1.png" /><p>В июле ПСБ реализовал необычный проект, объединяющий банковские технологии и российскую космонавтику. Вместе с экипажем космической экспедиции на орбиту отправили зарплатные банковские карты ПСБ.</p><p>Старт космической миссии состоялся 14 июля с космодрома Байконур. В состав экипажа вошли космонавты Анна Кикина, Петр Дубров и астронавт Анил Менон. Возвращение космического корабля «Союз МС-29» ожидается 26 июля. После завершения миссии карты вернутся на Землю и будут вручены сотрудникам предприятий Госкорпорации «Роскосмос».</p><p>Проект стал продолжением участия ПСБ в инициативе&nbsp;<strong>«Первые в космосе»</strong>. Ранее банк уже выступил партнером запуска ракеты с фирменной символикой ПСБ, а новый этап подтвердил развитие долгосрочного сотрудничества с предприятиями ракетно-космической отрасли.</p> <a href="https://habr.com/ru/articles/1076772/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 12:20:17 GMT</pubDate>
+    <dc:creator><![CDATA[LilouX (ПСБ)]]></dc:creator>
+		
+		<category><![CDATA[космос]]></category><category><![CDATA[роскосмос]]></category><category><![CDATA[запуск ракет]]></category><category><![CDATA[банковские карты]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[GLM-5.3 уже в GPT Model Hub: новая модель Z.ai для разработки и ИИ-агентов]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/mws/news/1078530/</guid>
+		<link>https://habr.com/ru/companies/mws/news/1078530/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078530</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/49e/eff/a12/49eeffa12b0827e3dbf5cfd8c6431fea.jpg" /><p>Привет, Хабр! Мы добавили GLM 5.3 в MWS GPT Model Hub — сервис для работы с LLM через OpenAI-совместимый API внутри MWS Cloud Platform.</p><p>GLM 5.3 — новая флагманская модель Z.ai. Она рассчитана на сложные задачи в кодинге, агентные сценарии и многошаговые запросы, где важно не только сгенерировать ответ, но и удержать контекст, план действий и последовательность шагов.</p><p>По данным Z.ai, на собственном Code Bench результат GLM 5.3 в задачах программирования вырос на 50% по сравнению с GLM 5.2. На Terminal-Bench 3.0 показатель увеличился с 4,6 до 28,3.</p> <a href="https://habr.com/ru/articles/1078530/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 12:00:25 GMT</pubDate>
+    <dc:creator><![CDATA[MTCWebServices (MWS Cloud)]]></dc:creator>
+		
+		<category><![CDATA[mwscloudplatform]]></category><category><![CDATA[MWS Cloud]]></category><category><![CDATA[glm 5.3]]></category><category><![CDATA[LLM]]></category><category><![CDATA[GPT]]></category><category><![CDATA[MWS GPT Model Hub]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Google ставит б/у плашки DDR4 в новые AI-серверы]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/selectel/news/1078484/</guid>
+		<link>https://habr.com/ru/companies/selectel/news/1078484/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078484</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/40c/7ea/f48/40c7eaf4879a0e68429c4d9ce38358b7.png" /><p>Удорожание и дефицит полупроводниковой памяти внесли серьезные коррективы в архитектурное планирование крупнейших облачных провайдеров. На недавнем саммите Нихил Черян, старший директор по инфраструктуре цепочек поставок Google, <a href="https://wccftech.com/google-is-now-pulling-ddr4-modules-out-of-retired-servers-and-reusing-them-in-new-ai-servers/">заявил</a>, что основным узким местом ИИ-инфраструктуры окончательно стала память (как неожиданно). Если ранее производительность системы упиралась преимущественно в вычислительную мощность чипов, то сегодня подсистемы памяти формируют порядка 75% стоимости комплектующих <a href="https://selectel.ru/solutions/ai-infrastructure/ai-marketplace/?utm_source=habr.com&amp;utm_medium=referral&amp;utm_campaign=ai-marketplace_news_reuse-ddr4_040926_content">современного AI-сервера</a>.</p><p>Чтобы снизить капитальные затраты и обойти логистические ограничения, Google развернула внутреннюю систему «вторичной переработки» вычислительных узлов. Компания извлекает модули оперативной памяти стандарта DDR4 из списанных серверов предыдущих поколений и повторно интегрирует их в актуальную ИИ-инфраструктуру.</p> <a href="https://habr.com/ru/articles/1078484/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 11:00:11 GMT</pubDate>
+    <dc:creator><![CDATA[A_Rat (Selectel)]]></dc:creator>
+		
+		<category><![CDATA[selectel]]></category><category><![CDATA[google]]></category><category><![CDATA[ddr4]]></category><category><![CDATA[ai-серверы]]></category><category><![CDATA[ddr5]]></category><category><![CDATA[повторное использование]]></category><category><![CDATA[hbm3e]]></category><category><![CDATA[axion]]></category><category><![CDATA[dram]]></category><category><![CDATA[искусственный интеллект]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[ChatGPT добавил поддержку WebMCP во встроенный браузер]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078534/</guid>
+		<link>https://habr.com/ru/news/1078534/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078534</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/9ea/899/b07/9ea899b07820311de43eb58e74d617e3.png" /><p>OpenAI добавил в&nbsp;десктопный браузер ChatGPT поддержку стандарта <em>WebMCP</em>, и за&nbsp;этой технической строчкой прячется вещь поинтереснее самой технологии: веб только что&nbsp;негласно поделили на&nbsp;сайты, которые умеют разговаривать с&nbsp;агентами, и сайты, мимо которых агент просто проходит (<a href="https://www.searchenginejournal.com/chatgpt-adds-webmcp-support/587237/" rel="noopener nofollow">Search Engine Journal, 2026</a>). Происходит это не&nbsp;в&nbsp;гипотетическом 2027-м, а&nbsp;прямо сейчас, в&nbsp;текущей вкладке.</p><p><em>WebMCP</em>&nbsp;— стандарт экспериментальный, черновик W3C Web ML Community Group, в&nbsp;официальный трек стандартизации он ещё не&nbsp;попал. И он не&nbsp;нов: работает уже как&nbsp;минимум несколько месяцев. Новость ровно в&nbsp;том, что&nbsp;его поддержку добавили во&nbsp;встроенный браузер десктопного приложения ChatGPT&nbsp;— пока только на&nbsp;моделях GPT-5.6&nbsp;Sol и Terra, без&nbsp;Enterprise и Edu. То есть перед нами не&nbsp;запуск с&nbsp;нуля, а&nbsp;сигнал: технология выходит из&nbsp;песочницы в&nbsp;продукт, которым пользуются люди.</p> <a href="https://habr.com/ru/articles/1078534/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 10:38:54 GMT</pubDate>
+    <dc:creator><![CDATA[neuromamontov]]></dc:creator>
+		
+		<category><![CDATA[WebMCP]]></category><category><![CDATA[ChatGPT]]></category><category><![CDATA[агентный веб]]></category><category><![CDATA[GEO]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[ИИ-агенты]]></category><category><![CDATA[MCP]]></category><category><![CDATA[OpenAI]]></category><category><![CDATA[продвижение сайтов]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Basis Workplace 3.4: виртуализация приложений и работа в нескольких средах одновременно]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/basis/news/1078508/</guid>
+		<link>https://habr.com/ru/companies/basis/news/1078508/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078508</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/d36/7a0/6f1/d367a06f1bffde287295d04dcbe0cd31.png" /><p>Ключевыми изменениями релиза 3.4 стали возможность работы с несколькими инсталляциями с одного рабочего места, поддержка виртуализации приложений и нативный инструмент миграции с Basis Workplace второго поколения. Помимо этого, мы расширили инструментарий управления пулами и виртуальными рабочими местами, добавили новые сценарии развертывания и средства управления сертификатами, а также обновили протокол Basis Connect.</p> <a href="https://habr.com/ru/articles/1078508/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 10:35:26 GMT</pubDate>
+    <dc:creator><![CDATA[Basis_Habr (Базис)]]></dc:creator>
+		
+		<category><![CDATA[basis workplace]]></category><category><![CDATA[vdi]]></category><category><![CDATA[виртуализация десктопов]]></category><category><![CDATA[обновление]]></category><category><![CDATA[basis connect]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Microsoft ужесточит требования к подписанию драйверов для Windows 11 и Server 2025]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078526/</guid>
+		<link>https://habr.com/ru/news/1078526/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078526</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f56/522/f92/f56522f92af12ee23a1dce5c744be48b.jpg" /><p>С&nbsp;марта 2027&nbsp;года все драйверы, представленные для&nbsp;аттестации через программу WHCP, <a href="https://www.neowin.net/news/microsoft-is-making-windows-11-and-server-2025-driver-signing-requirements-tougher/" rel="noopener nofollow">должны </a>будут сопровождаться спецификацией Software Bill of Materials (<a href="https://habr.com/ru/companies/mws/articles/781602/" rel="noopener nofollow">SBOM</a>) и заявлением Vulnerability Exploitability Exchange (VEX). Если производитель не&nbsp;предоставит хотя&nbsp;бы один из&nbsp;этих документов или&nbsp;они не&nbsp;пройдут проверку, драйвер не&nbsp;получит подпись.</p> <a href="https://habr.com/ru/articles/1078526/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 10:26:41 GMT</pubDate>
+    <dc:creator><![CDATA[AnnieBronson]]></dc:creator>
+		
+		<category><![CDATA[windows server 2025]]></category><category><![CDATA[windows 11]]></category><category><![CDATA[sbom]]></category><category><![CDATA[драйверы]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Ugreen выпустила пауэрбанк MagFlow Pro со встроенным жидкостным охлаждением]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078522/</guid>
+		<link>https://habr.com/ru/news/1078522/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078522</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/d26/1e3/c8d/d261e3c8d319d8d66584fafd97a35920.jpg" /><p>Китайская Ugreen <a href="https://eu.ugreen.com/products/magflow-pro-magnetic-power-bank-10000mah-qi2-25w" rel="noopener nofollow">выпустила</a> внешний аккумулятор MagFlow Pro со встроенным жидкостным охлаждением. Стоимость устройства для&nbsp;проводной и беспроводной зарядки составляет $150. Производитель называет свой продукт первой в&nbsp;мире системой жидкостного охлаждения в&nbsp;пауэрбанке с&nbsp;беспроводной зарядкой.</p> <a href="https://habr.com/ru/articles/1078522/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 10:21:05 GMT</pubDate>
+    <dc:creator><![CDATA[Travis_Macrif]]></dc:creator>
+		
+		<category><![CDATA[ugreen]]></category><category><![CDATA[пауэрбанки]]></category><category><![CDATA[внешние аккумуляторы]]></category><category><![CDATA[внешние батареи]]></category><category><![CDATA[беспроводная зарядка]]></category><category><![CDATA[жидкостное охлаждение]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[В Selectel появилась конфигурация облачных серверов с 4хH200 на NVLink]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/selectel/news/1077208/</guid>
+		<link>https://habr.com/ru/companies/selectel/news/1077208/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1077208</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/3ee/868/29c/3ee86829cf911fa8134b2bb78c3657fa.png" /><p>Привет, Хабр! В ru-6a теперь доступен <a href="https://my.selectel.ru/registration?destination=/vpc/default/servers/create&amp;pk_vid=6c96cc620331b6c8178826573960f5d3/?utm_source=habr.com&amp;utm_medium=referral&amp;utm_campaign=cloud_news_h200_040926_content">выделенный облачный сервер с видеокартами H200</a>, которые объединены через NVLink. Сервер представляет собой виртуальную машину размером с хост на выделенных ядрах. Все ресурсы выделяются только для одного клиента, других на этом хосте нет.&nbsp;</p><p>Конфигурация имеет четыре видеокарты H200 на 141 ГБ каждый, которые объединены аппаратными NVLink-мостами в единый NVLink-домен. Таким образом, пользователь получает 564 ГБ HBM3e VRAM на одну виртуальную машину, скорость в приватной сети и при доступе в интернет 10 Гбит/с по умолчанию и возможность добавить в сервер локальный диск.&nbsp;</p><p>Четыре H200, связанные через NVLink напрямую, позволяют обмениваться данными почти в семь раз быстрее, чем через PCIe. Такой подход позволяет запускать одну модель на всех картах с увеличенной производительностью относительно обычных ВМ без NVLink. Арендовать конфигурацию можно только в регионе ru-6a.&nbsp;</p> <a href="https://habr.com/ru/articles/1077208/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 10:00:06 GMT</pubDate>
+    <dc:creator><![CDATA[erbanovanastasia (Selectel)]]></dc:creator>
+		
+		<category><![CDATA[selectel]]></category><category><![CDATA[nvidia]]></category><category><![CDATA[h200]]></category><category><![CDATA[видеокарты]]></category><category><![CDATA[gpu]]></category><category><![CDATA[облако]]></category><category><![CDATA[облачные серверы]]></category><category><![CDATA[сервер]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Anbernic представила RG DS Plus — двухэкранную портативную консоль в стиле Nintendo DS]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078504/</guid>
+		<link>https://habr.com/ru/news/1078504/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078504</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8ac/3de/08d/8ac3de08db58f3dbef3532437e1f650f.jpg" /><p>Anbernic <a href="https://retrododo.com/anbernic-announces-rg-ds-plus-clamshell-handheld/" rel="noopener nofollow">анонсировала</a> портативную консоль RG DS Plus, предназначенную в&nbsp;первую очередь для&nbsp;эмуляции Nintendo DS. Устройство оснастили двумя экранами, шарниром для&nbsp;складывания, встроенным стилусом и эмулятором для&nbsp;двухэкранных игр.</p> <a href="https://habr.com/ru/articles/1078504/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:54:45 GMT</pubDate>
+    <dc:creator><![CDATA[daniilshat]]></dc:creator>
+		
+		<category><![CDATA[RG DS Plus]]></category><category><![CDATA[Anbernic]]></category><category><![CDATA[nintendo ds]]></category><category><![CDATA[игры]]></category><category><![CDATA[консоли]]></category><category><![CDATA[игровые консоли]]></category><category><![CDATA[эмуляция]]></category><category><![CDATA[NNDDSS]]></category><category><![CDATA[гаджеты]]></category><category><![CDATA[устройства]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Practical ML Conf 2026: главное из программы]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/yandex/news/1078106/</guid>
+		<link>https://habr.com/ru/companies/yandex/news/1078106/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078106</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/787/24d/355/78724d355306b4e45a8410ecd0109ae7.png" /><p>Привет! Меня зовут Пётр Ермаков, я ML-бренд-директор в Яндексе. В этом году мы в четвёртый раз проведём Practical ML Conf — главную конференцию о практическом применении ML.</p><p>Сентябрь уже начался — пора выбирать доклады и регистрироваться. </p> <a href="https://habr.com/ru/articles/1078106/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:50:54 GMT</pubDate>
+    <dc:creator><![CDATA[couatl (Яндекс)]]></dc:creator>
+		
+		<category><![CDATA[ml]]></category><category><![CDATA[конференция]]></category><category><![CDATA[ai]]></category><category><![CDATA[ии-агенты]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[СМИ: в РФ обсуждают создание межрегиональных хабов центров обработки данных]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078496/</guid>
+		<link>https://habr.com/ru/news/1078496/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078496</link>
+		<description><![CDATA[<p>По <a href="https://www.vedomosti.ru/technology/articles/2026/09/04/1226194-operatori-tsodov-predlozhili-delit-data-tsentri-mezhdu-regionami" rel="noopener nofollow">информации</a> СМИ, в России обсуждается создание межрегиональных хабов центров обработки данных в разных регионах страны. Предполагается, что строительство одного такого большого ЦОД сразу для нескольких регионов&nbsp;позволит IT-отрасли оптимизировать использование сетевых и компьютерных мощностей, а также сможет упростить доступ к узлам подключения по электропитанию. Проработка такого проекта намечена для Урала, Поволжья и Ленинградской области. В рамках строительства межрегиональных ЦОД планируется постройка 30–40 таких крупных центров.</p> <a href="https://habr.com/ru/articles/1078496/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:47:42 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		
+		<category><![CDATA[цод]]></category><category><![CDATA[межрегиональный хаб]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Маршрутизация в логистике без ручного перебора: вебинар 10 сентября о том, что можно отдать алгоритму]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/infostart/news/1078488/</guid>
+		<link>https://habr.com/ru/companies/infostart/news/1078488/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078488</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/354/9a4/1ea/3549a41ea4a9bde9e29447f570ab7239.jpg" /><p><strong>Заказы уже в информационной системе, параметры транспорта известны, адреса и временные окна оцифрованы. Но маршруты во многих компаниях по-прежнему собирает логист вручную.</strong></p><p>Пока доставок немного, такой подход работает. С ростом количества точек задача усложняется: нужно одновременно учитывать грузоподъемность и вместимость машин, временные окна, совместимость грузов, ограничения проезда, тарифы, пробки и другие условия.</p><p>В итоге возникает неочевидная проблема: <strong>маршрут может быть рабочим, но это еще не значит, что он оптимален по стоимости...</strong></p> <a href="https://habr.com/ru/articles/1078488/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:40:22 GMT</pubDate>
+    <dc:creator><![CDATA[infostart-press (INFOSTART.RU)]]></dc:creator>
+		
+		<category><![CDATA[маршрутизация]]></category><category><![CDATA[логистика]]></category><category><![CDATA[оптимизация доставки]]></category><category><![CDATA[автоматизация логистики]]></category><category><![CDATA[транспортная логистика]]></category><category><![CDATA[построение маршрутов]]></category><category><![CDATA[управление транспортом]]></category><category><![CDATA[снижение затрат]]></category><category><![CDATA[загрузка транспорта]]></category><category><![CDATA[алгоритмы оптимизации]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[E-CODE 2026: регистрация закрывается]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/ozontech/news/1078466/</guid>
+		<link>https://habr.com/ru/companies/ozontech/news/1078466/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078466</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/950/a54/dc1/950a54dc10456a846c5d47581aa4ef33.png" /><p><em>Осталось несколько дней, чтобы успеть зарегистрироваться на главное ИТ-событие Ozon Tech</em><strong><br><br></strong>Традиционно ко Дню программиста мы организуем масштабную ежегодную конференцию. В этом году E-CODE пройдёт в выходные 12 и 13 сентября. Осталось всего несколько мест, вы ещё можете <a href="https://s.ozon.ru/9oSE5Cb">успеть их занять</a>. <a href="https://s.ozon.ru/9oSE5Cb%EF%BF%BC%EF%BF%BC%D0%9F%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F"><br><br></a>Полная программа события уже представлена на сайте. Помимо классических выступлений в расписании много интерактивов: смелые истории в формате открытого микрофона, брейнринг разработчиков и ИИ, ламповый квартирник с СТО и топ-менеджерами. <br><br>Общения будет много: как в формате панельных дискуссий, QA-сессий, так и неформального — за тарелкой настоящего плова или за кофе, приготовленного роботом. И общение будет качественным — в кругу профессионального комьюнити, тех, кому близка наша концепция everything as code.<br><br>До встречи на E-CODE!</p> <a href="https://habr.com/ru/articles/1078466/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:30:57 GMT</pubDate>
+    <dc:creator><![CDATA[prishol (Ozon Tech)]]></dc:creator>
+		
+		<category><![CDATA[it-конференция]]></category><category><![CDATA[день программиста]]></category><category><![CDATA[разработка]]></category><category><![CDATA[программирование]]></category><category><![CDATA[it-сообщество]]></category><category><![CDATA[everything as code]]></category><category><![CDATA[брейнринг]]></category><category><![CDATA[ozon tech]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[СМИ: IТ‑ассоциации РФ заявили о негативных последствиях от реформы лицензий связи Минцифры]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078476/</guid>
+		<link>https://habr.com/ru/news/1078476/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078476</link>
+		<description><![CDATA[<p>По <a href="https://www.rbc.ru/technology_and_media/03/09/2026/6a99675f9a79474527666dd1" rel="noopener nofollow">информации</a> РБК, представители профильных IТ-ассоциации РФ заявили, что разрабатываемая Минцифры реформа отрасли связи приведёт к уходу с рынка большого количества небольших операторов и сетевых компаний. Этот процесс может негативно отразиться на телекоммуникационном и IT-рынках страны.</p> <a href="https://habr.com/ru/articles/1078476/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:20:55 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		
+		<category><![CDATA[минцифры]]></category><category><![CDATA[система связи]]></category><category><![CDATA[лицензия]]></category><category><![CDATA[оператор связи]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[ИИ в 1С без магии: что обсудили на сессии Инфостарта на Петербургском цифровом хабе]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/infostart/news/1078468/</guid>
+		<link>https://habr.com/ru/companies/infostart/news/1078468/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078468</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/de1/cfb/0b1/de1cfb0b1c4aba5470fcc45552b383b1.jpg" /><p>3 сентября Инфостарт принял участие в Петербургском цифровом хабе 2026. В программе форума прошла сессия <strong>«Искусственный интеллект в 1С: практические сценарии применения, кейсы и инструменты для бизнеса»</strong>.</p><p>Для Инфостарта эта сессия стала частью более широкой осенней повестки. Впереди — два крупных события для 1С- и ИТ-сообщества: <strong><a href="https://infostart.ru/event/tech2026/">INFOSTART TECH EVENT 2026</a></strong>, который пройдет 8–10 октября, и <strong><a href="https://infostart.ru/event/apm2026/">INFOSTART A&amp;PM EVENT 2026</a></strong>, запланированный на 12–14 ноября.</p><p>На Петербургском цифровом хабе тема ИИ в 1С обсуждалась в прикладном ключе: не как «новая магия», которая решит все проблемы автоматизации, а как набор инструментов с понятными сценариями, ограничениями и требованиями к данным, процессам и экспертизе...</p> <a href="https://habr.com/ru/articles/1078468/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:10:06 GMT</pubDate>
+    <dc:creator><![CDATA[infostart-press (INFOSTART.RU)]]></dc:creator>
+		
+		<category><![CDATA[1С]]></category><category><![CDATA[ИИ в 1С]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[автоматизация]]></category><category><![CDATA[СУБД]]></category><category><![CDATA[PostgreSQL]]></category><category><![CDATA[техподдержка]]></category><category><![CDATA[база знаний]]></category><category><![CDATA[Петербургский цифровой хаб]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[В сеть попала схема кристалла Apple A20 Pro: архитектурные изменения 2-нм чипа]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/selectel/news/1078432/</guid>
+		<link>https://habr.com/ru/companies/selectel/news/1078432/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078432</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/7cf/5e7/696/7cf5e7696207f73ba8b9816d549195f7.jpg" /><p>В преддверии официального анонса в сети появилось изображение с геометрией расположения блоков первого 2-нанометрового однокристального процессора Apple — A20 Pro<sup>®</sup>. Эта схема дает представление об архитектурных изменениях, структуре вычислительных блоков и межсоединениях свежего кремния от TSMC. <a href="https://wccftech.com/apple-a20-pro-die-shot-record-gpu-cores-wider-memory-bus/">Первоисточником утечки</a> стал пользователь китайской соцсети Weibo под ником White rice fried white rice, то есть опубликованное изображение не является официальным. Тем не менее, представленная топология заслуживает внимания, так как она отражает эволюцию упаковки и архитектуры мобильных SoC.&nbsp;</p> <a href="https://habr.com/ru/articles/1078432/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 09:00:02 GMT</pubDate>
+    <dc:creator><![CDATA[A_Rat (Selectel)]]></dc:creator>
+		
+		<category><![CDATA[selectel]]></category><category><![CDATA[apple]]></category><category><![CDATA[процессоры]]></category><category><![CDATA[soc]]></category><category><![CDATA[мобильные устройства]]></category><category><![CDATA[tsmc]]></category><category><![CDATA[lpddr5x]]></category><category><![CDATA[gpu]]></category><category><![CDATA[2-нм]]></category><category><![CDATA[iphone]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Современные LLM оказались плохими грибниками: модели принимают ядовитые грибы за съедобные в каждом девятом случае]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078434/</guid>
+		<link>https://habr.com/ru/news/1078434/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078434</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/572/554/3e5/5725543e5c4e80fdd4521685660667c3.jpg" /><p>Разработчик Пётр Мигдал <a href="https://quesma.com/blog/mushroom-llm-vision/" rel="noopener nofollow">представил</a> итоги эксперимента, в&nbsp;котором популярные LLM определяли виды грибов по&nbsp;фотографии и решали, можно&nbsp;ли их есть. Выяснилось, что&nbsp;даже лучшие модели примерно в 12% случаев принимали ядовитые грибы за&nbsp;съедобные.</p> <a href="https://habr.com/ru/articles/1078434/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 08:31:13 GMT</pubDate>
+    <dc:creator><![CDATA[daniilshat]]></dc:creator>
+		
+		<category><![CDATA[llm]]></category><category><![CDATA[языковые модели]]></category><category><![CDATA[исследование]]></category><category><![CDATA[грибы]]></category><category><![CDATA[грибники]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[эксперимент]]></category><category><![CDATA[модели]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Электромобили Tesla с включённой системой помощи водителю FSD останавливаются на шоссе, что приводит к фатальным авариям]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078426/</guid>
+		<link>https://habr.com/ru/news/1078426/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078426</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/22b/627/929/22b627929e71b1e5a07060450062d564.jpg" /><p>Информационный портал Electrek описывает минимум <a href="https://electrek.co/2026/08/31/tesla-driver-assist-model-3-stopped-i4-fatal/" rel="noopener nofollow">два</a> <a href="https://electrek.co/2026/08/31/tesla-driver-assist-stopped-freeway-mesa/" rel="noopener nofollow">эпизода</a>, когда электромобили Tesla с&nbsp;включённой системой помощи водителю Full Self‑Driving (FSD) останавливались на&nbsp;шоссе, что&nbsp;приводило к&nbsp;авариям со смертельным исходом.</p> <a href="https://habr.com/ru/articles/1078426/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 08:08:46 GMT</pubDate>
+    <dc:creator><![CDATA[Travis_Macrif]]></dc:creator>
+		
+		<category><![CDATA[tesla]]></category><category><![CDATA[fsd]]></category><category><![CDATA[full self-driving]]></category><category><![CDATA[model 3]]></category><category><![CDATA[аварии]]></category><category><![CDATA[дтп]]></category><category><![CDATA[помощь водителю]]></category><category><![CDATA[автопилот]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Применение ЗОСРВ «Нейтрино» и PVS-Studio для разработки ПО согласно требованиям МЭК 61508]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/pvs-studio/news/1078424/</guid>
+		<link>https://habr.com/ru/companies/pvs-studio/news/1078424/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078424</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f68/24d/dc8/f6824ddc8b73ad6b711d5deac342ef4a.png" /><p>Приглашаем на вебинар "Применение ЗОСРВ "Нейтрино" и PVS-Studio для разработки ПО согласно требованиям МЭК 61508"! Разберём подходы к разработке функционально безопасного ПО для ЗОСРВ «Нейтрино» в соответствии с требованиями МЭК 61508 и покажем, какую роль в этом процессе играют инструменты статического анализа.</p> <a href="https://habr.com/ru/articles/1078424/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 08:04:26 GMT</pubDate>
+    <dc:creator><![CDATA[PvsTeam (PVS-Studio)]]></dc:creator>
+		
+		<category><![CDATA[вебинар]]></category><category><![CDATA[misra]]></category><category><![CDATA[разработка по]]></category><category><![CDATA[безопасная разработка]]></category><category><![CDATA[статический анализ]]></category><category><![CDATA[нейтрино]]></category><category><![CDATA[pvs-studio]]></category><category><![CDATA[мэк 61508]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Сегодня 70 лет первому жесткому диску (HDD)]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/ssp-soft/news/1078418/</guid>
+		<link>https://habr.com/ru/companies/ssp-soft/news/1078418/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078418</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/1e2/1ed/990/1e21ed990db37906ae80690a955f67f1.jpeg" /><p>Если вы застали расцвет советских ЕС ЭВМ, то слово «жесткий диск» в 1980-е вызывало совсем другие ассоциации, чем сегодня. В крупных институтах и вузах дисковая память представляла собой массивную тумбу размером со стиральную машину. Такой HDD ставили в машинном зале, подключали к мейнфрейму (советской копии IBM 360/370) и трогать его руками разрешалось только опытным инженерам. </p> <a href="https://habr.com/ru/articles/1078418/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 07:58:16 GMT</pubDate>
+    <dc:creator><![CDATA[SSP_blog (SSP SOFT)]]></dc:creator>
+		
+		<category><![CDATA[первый HDD]]></category><category><![CDATA[жесткий диск]]></category><category><![CDATA[ibm]]></category><category><![CDATA[ramac]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[В браузере Brave объяснили преимущества перед конкурентами]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078412/</guid>
+		<link>https://habr.com/ru/news/1078412/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078412</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/e5e/937/77d/e5e93777d9a7f20f75b63e76dea2d6d2.JPG" /><p>В&nbsp;Brave <a href="https://brave.com/blog/brave-outperforms-other-browsers/" rel="noopener nofollow">опубликовали</a> результаты тестов, проведённых в&nbsp;различных условиях, в&nbsp;которых работа браузера сравнивается с&nbsp;Google Chrome, Mozilla Firefox и Microsoft Edge. Для&nbsp;своих тестов компания использовала Apple Mac Mini с&nbsp;процессором M2&nbsp;и 8&nbsp;ГБ унифицированной памяти под&nbsp;управлением macOS 26.5.1.&nbsp;</p> <a href="https://habr.com/ru/articles/1078412/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 07:47:19 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[brave]]></category><category><![CDATA[google chrome]]></category><category><![CDATA[mozilla firefox]]></category><category><![CDATA[microsoft edge]]></category><category><![CDATA[браузеры]]></category><category><![CDATA[тестирование]]></category><category><![CDATA[сравнение производительности]]></category><category><![CDATA[бенчмаркинг]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Норвегия может стать первой страной, запретившей умные очки с функциями съёмки]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078402/</guid>
+		<link>https://habr.com/ru/news/1078402/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078402</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/50a/36a/99f/50a36a99fad93dc6d495ba914b723095.jpg" /><p>Норвежские власти рассматривают возможность запрета смарт‑очков, оснащённых камерами для&nbsp;фото‑ и видеосъёмки. Министр цифровизации и государственного управления Норвегии Карианне Тунг <a href="https://www.thelocal.no/20260825/norway-to-crack-down-on-use-of-smart-glasses" rel="noopener nofollow">заявила</a>, что&nbsp;умные очки оказывают негативное влияние на&nbsp;личную жизнь и её неприкосновенность. Также она выразила обеспокоенность по&nbsp;поводу функции распознавания&nbsp;лиц, используемой в&nbsp;общественных местах.</p> <a href="https://habr.com/ru/articles/1078402/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 07:13:44 GMT</pubDate>
+    <dc:creator><![CDATA[Travis_Macrif]]></dc:creator>
+		
+		<category><![CDATA[смарт-очки]]></category><category><![CDATA[умные очки]]></category><category><![CDATA[распознавание лиц]]></category><category><![CDATA[конфиденциальность]]></category><category><![CDATA[норвегия]]></category><category><![CDATA[запрет]]></category><category><![CDATA[ограничение]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Microsoft прекращает поддержку Project Online Essentials]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078378/</guid>
+		<link>https://habr.com/ru/news/1078378/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078378</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8a1/566/836/8a1566836d623ca4a8f956a4f16e3fb6.JPG" /><p>В&nbsp;сентябре 2025&nbsp;года Microsoft объявила о&nbsp;прекращении поддержки Project Online, попросив клиентов перейти на&nbsp;Planner. Компания объяснила это тем, что&nbsp;текущая архитектура платформы не&nbsp;позволяет модернизировать её и должным образом внедрять функции на&nbsp;основе искусственного интеллекта. Теперь компания <a href="https://www.neowin.net/news/microsoft-is-killing-off-project-online-essentials/" rel="noopener nofollow">уведомила</a> IT‑администраторов о&nbsp;прекращении поддержки Project Online Essentials в&nbsp;сентябре.&nbsp;</p> <a href="https://habr.com/ru/articles/1078378/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 07:07:16 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[microsoft]]></category><category><![CDATA[project]]></category><category><![CDATA[planner]]></category><category><![CDATA[управление проектами]]></category><category><![CDATA[прекращение поддержки]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Google запустила глобальную ИИ‑модель прогнозирования погоды WeatherNext 3]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078374/</guid>
+		<link>https://habr.com/ru/news/1078374/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078374</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4c6/649/5b3/4c66495b3b4f52678811e270c5bb5729.JPG" /><p>Подразделения Google DeepMind и Google Research <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/" rel="noopener nofollow">представили</a> Weather Next 3, самую точную глобальную ИИ‑модель прогнозирования погоды на&nbsp;сегодняшний день по&nbsp;независимым оценкам Brightband. Она обучается на&nbsp;основе наблюдений в&nbsp;реальном времени, что&nbsp;позволяет делать своевременные и более локализованные прогнозы для&nbsp;погодных явлений.&nbsp;</p> <a href="https://habr.com/ru/articles/1078374/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 06:47:14 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[google]]></category><category><![CDATA[google research]]></category><category><![CDATA[deepmind]]></category><category><![CDATA[ии-модель]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[прогноз погоды]]></category><category><![CDATA[прогнозирование]]></category><category><![CDATA[метеорология]]></category><category><![CDATA[спутники]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Tesla опрашивает операторов США о намерении работать с Cybercab]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078364/</guid>
+		<link>https://habr.com/ru/news/1078364/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078364</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/80d/c39/6f8/80dc396f813f76ef5322f5b663e464f4.JPG" /><p>Tesla <a href="https://www.tesla.com/robotaxi/interest" rel="noopener nofollow">опубликовала</a> форму для&nbsp;компаний, заинтересованных в&nbsp;работе савтопарком роботакси Cybercab или&nbsp;предоставлении инфраструктуры для&nbsp;него. Однако пока неясно, будет&nbsp;ли компания продавать свои беспилотные автомобили сторонним операторам.&nbsp;</p> <a href="https://habr.com/ru/articles/1078364/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 06:27:12 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[tesla]]></category><category><![CDATA[cybercab]]></category><category><![CDATA[роботакси]]></category><category><![CDATA[автономное вождение]]></category><category><![CDATA[автопарки]]></category><category><![CDATA[операторы]]></category><category><![CDATA[сша]]></category><category><![CDATA[опрос]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Британская полиция пытается отследить кражу 33 тонн пива Guinness]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078358/</guid>
+		<link>https://habr.com/ru/news/1078358/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078358</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a70/8fb/c72/a708fbc7222f418eb780efa5df6b0397.JPG" /><p>Британская полиция <a href="https://apnews.com/article/guinness-heist-stout-stolen-truck-depot-pabst-pbr-88b7745450be79af57d35fd8dbd9c4c9" rel="noopener nofollow">столкнулась</a> с&nbsp;непростой задачей: вернуть 33&nbsp;тонны украденного пива Guinness стоимостью $155 000. Два грузовика со знаменитым напитком угнали со склада недалеко от&nbsp;Ливерпуля на&nbsp;северо‑западе Англии.</p> <a href="https://habr.com/ru/articles/1078358/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 06:07:10 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[великобритания]]></category><category><![CDATA[полиция]]></category><category><![CDATA[пиво]]></category><category><![CDATA[кража]]></category><category><![CDATA[guinness]]></category><category><![CDATA[расследование]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Выпуск Qmmp 2.4.2 — открытого мультимедийного проигрывателя на базе Qt для Windows и Linux]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078074/</guid>
+		<link>https://habr.com/ru/news/1078074/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078074</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/881/6a3/454/8816a345431c401c402b831eef55a386.jpeg" /><p>2 сентября 2026 года разработчики из команды Qmmp Development Team <a href="https://qmmp.ylsoftware.com/index.php" rel="noopener nofollow">представили</a> обновление открытого мультимедийного проигрывателя <a href="https://qmmp.ylsoftware.com/" rel="noopener nofollow">Qmmp 2.4.2</a> (проект на <a href="https://github.com/Greedysky/qmmp" rel="noopener nofollow">GitHub</a>). Это решение на базе Qt (с поддержкой Qt4, Qt5 и Qt6) для ОС <a href="https://qmmp.ylsoftware.com/files/" rel="noopener nofollow">Windows</a> и <a href="https://qmmp.ylsoftware.com/downloads.php" rel="noopener nofollow">Linux</a>. Исходный код проекта опубликован под лицензией GNU General Public License v3.0. Версию Qmmp 2.3.0 <a href="https://habr.com/ru/news/956252/" rel="noopener nofollow">выпустили</a> в октябре 2025 года. Сборка Qmmp 2.4.0 <a href="https://habr.com/ru/news/1070430/" rel="noopener nofollow">вышла</a> в августе 2026 года.</p> <a href="https://habr.com/ru/articles/1078074/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 06:03:36 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		
+		<category><![CDATA[Qmmp 2.4.2]]></category><category><![CDATA[Qmmp]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Обвинённый в инсайдерской торговле на Polymarket инженер Google назвал её азартной игрой]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078356/</guid>
+		<link>https://habr.com/ru/news/1078356/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078356</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/fec/491/a10/fec491a10d1c43642acddeb464e96e8d.JPG" /><p>Инженер Google Микеле Спаньоло, арестованный в&nbsp;мае американскими властями по&nbsp;обвинению в&nbsp;инсайдерской торговле на&nbsp;платформе Polymarket, <a href="https://www.wired.com/story/google-engineer-accused-of-polymarket-insider-trading-says-he-was-just-gambling/" rel="noopener nofollow">подал</a> ходатайство. Он не&nbsp;отрицает, что&nbsp;заработал деньги, используя внутреннюю информацию Google. Однако адвокаты Спаньоло утверждают, что&nbsp;ставки не&nbsp;являлись финансовыми инструментами, подлежащими регулированию в&nbsp;соответствии с&nbsp;Законом США о&nbsp;товарных биржах, а&nbsp;представляли собой обычные международные ставки, над которыми США не&nbsp;имеют контроля.</p> <a href="https://habr.com/ru/articles/1078356/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 05:47:09 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[google]]></category><category><![CDATA[инженер]]></category><category><![CDATA[инсайдер]]></category><category><![CDATA[инсайдерская торговля]]></category><category><![CDATA[биржи]]></category><category><![CDATA[ставки]]></category><category><![CDATA[polymarket]]></category><category><![CDATA[сша]]></category><category><![CDATA[обвинение]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Выпуск nginx 1.31.5]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1077974/</guid>
+		<link>https://habr.com/ru/news/1077974/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1077974</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/417/091/ce8/417091ce8107019dc022d1c47450311f.png" /><p>2 сентября 2026 года <a href="https://github.com/nginx/nginx/releases/tag/release-1.31.4" rel="noopener nofollow">состоялся</a> выпуск высокопроизводительного HTTP‑сервера и многопротокольного прокси‑сервера <a href="http://nginx.org/en/download.html" rel="noopener nofollow">nginx 1.31.5</a>. Исходный код проекта nginx написан на&nbsp;языке C и <a href="https://github.com/nginx/nginx" rel="noopener nofollow">распространяется</a> под&nbsp;лицензией BSD. Проект nginx 1.28.0 <a href="https://habr.com/ru/news/903816/" rel="noopener nofollow">вышел</a> в апреле 2025 года. Выпуск nginx 1.29 <a href="https://habr.com/ru/news/921560/" rel="noopener nofollow">случился</a> в июне 2025 года. Версия nginx 1.30 <a href="https://habr.com/ru/news/1023616/" rel="noopener nofollow">вышла</a> в апреле 2026 года. Выпуск nginx 1.31 <a href="https://habr.com/ru/news/1034974/" rel="noopener nofollow">произошёл</a> в мае 2026 года. В дальнейшем на базе основной ветки 1.31.x будет сформирована стабильная ветка 1.32. </p> <a href="https://habr.com/ru/articles/1077974/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 05:35:25 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		
+		<category><![CDATA[nginx 1.31.5]]></category><category><![CDATA[nginx]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Copilot Studio добавит возможность требовать одобрения человека для действий ИИ‑агента]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078354/</guid>
+		<link>https://habr.com/ru/news/1078354/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078354</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4e5/ac5/124/4e5ac5124f32784a286537bece217d67.JPG" /><p>Microsoft <a href="https://www.neowin.net/news/copilot-studio-to-add-the-ability-to-require-human-approval-for-ai-agent-actions/" rel="noopener nofollow">добавляет</a> в&nbsp;Copilot Studio новую функцию защиты, которая позволит организациям требовать одобрения перед запуском агентом определённых инструментов.&nbsp;</p> <a href="https://habr.com/ru/articles/1078354/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 05:27:07 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[microsoft]]></category><category><![CDATA[copilot studio]]></category><category><![CDATA[teams]]></category><category><![CDATA[microsoft 365]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[кибербезопасность]]></category><category><![CDATA[автоматизация]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Sheet-Native Computing Foundation выпустил официальный стикерпак (теперь мы совсем солидные)]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078370/</guid>
+		<link>https://habr.com/ru/news/1078370/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078370</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/3cc/d81/a09/3ccd81a093b935e32f2ec878266ba41e.png" /><p>У некоммерческого открытого <a href="https://sncfoundation.github.io/" rel="noopener nofollow">фонда SNCF</a>, который развивает оркестратор контейнеров в электронных таблицах, теперь есть и сосбтвенный стикерпак для телеграма: реакции, внутренние шутки и переиначенные строки известных песен для тех, кто зарабатывает на жизнь, сводя ячейки к желаемому состоянию или крутя продакшен в экселе и гугл-таблицах.</p><p>Каждый стикер оформлен как текст, набранный прямо в ячейке таблицы (со строкой формул <code>fx =</code> и выделением) — потому что в этой вселенной в ячейках живёт вообще всё.</p> <a href="https://habr.com/ru/articles/1078370/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 05:17:22 GMT</pubDate>
+    <dc:creator><![CDATA[TimurTukaev]]></dc:creator>
+		
+		<category><![CDATA[юмор]]></category><category><![CDATA[sheeternetes]]></category><category><![CDATA[sheet-native]]></category><category><![CDATA[sncf]]></category><category><![CDATA[sheetncf]]></category><category><![CDATA[telegram]]></category><category><![CDATA[стикерпак]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Google запускает функции голосового управления на основе ИИ в Gmail и Docs]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1078352/</guid>
+		<link>https://habr.com/ru/news/1078352/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1078352</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/23c/77b/c10/23c77bc10ac5bfc642972d08ed092ffe.JPG" /><p>Google <a href="https://techcrunch.com/2026/09/03/google-launches-ai-voice-features-in-gmail-docs-and-keep/" rel="noopener nofollow">запускает</a> функции разговорного ИИ в&nbsp;сервисах Docs, Gmail и Keep. Они позволят пользователям задавать вопросы о&nbsp;своих входящих сообщениях и документах, а&nbsp;также выполнять задачи с&nbsp;помощью запросов на&nbsp;естественном языке и диктовки.</p> <a href="https://habr.com/ru/articles/1078352/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 04 Sep 2026 05:07:05 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		
+		<category><![CDATA[google]]></category><category><![CDATA[облачные сервисы]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[голосовое управление]]></category><category><![CDATA[gemini]]></category><category><![CDATA[docs]]></category><category><![CDATA[google keep]]></category><category><![CDATA[gmail]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+      
+
+      
+
+      
+
+    
+  </channel>
+</rss>

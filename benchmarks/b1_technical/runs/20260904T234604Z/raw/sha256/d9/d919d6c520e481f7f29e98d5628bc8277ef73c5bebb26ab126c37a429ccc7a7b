@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>РФРИТ – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="РФРИТ">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/dXpIwapXUqFZWMgDizot6jz-ybma6IZsU0jeXpnx_V5fd0-ULzLZjiTqmznR2H_ST3LNdUbC4tX-Uz-080yo36XZT0BvNWBtO3lBnY-wEbXlCSP-FoGv6VWvPpSKmJE8DbbbJURI-HAi3tSuAOi5QzudBuCZ1avqB2TzNIISLZpD6lN7e0Msm6R_gP-gO0V9OxwsNVxUnmtzEG4IGMJXjVhG1mVMIx-NHkQxAhTA6nUIqW9PooDBsm2VuWFbh6IZgT55FnA8PyWy1GBwvANmC3KD-KG7pB5eMj2xCtc7eN_O-x_0_f5BXYROoaDYzHBIDFu6jIC9NMjIu_uPvouhBQ.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Российский фонд развития информационных технологий
+
+рфрит.рф
+vk.ru/rfrit">
+
+<meta property="twitter:title" content="РФРИТ">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/dXpIwapXUqFZWMgDizot6jz-ybma6IZsU0jeXpnx_V5fd0-ULzLZjiTqmznR2H_ST3LNdUbC4tX-Uz-080yo36XZT0BvNWBtO3lBnY-wEbXlCSP-FoGv6VWvPpSKmJE8DbbbJURI-HAi3tSuAOi5QzudBuCZ1avqB2TzNIISLZpD6lN7e0Msm6R_gP-gO0V9OxwsNVxUnmtzEG4IGMJXjVhG1mVMIx-NHkQxAhTA6nUIqW9PooDBsm2VuWFbh6IZgT55FnA8PyWy1GBwvANmC3KD-KG7pB5eMj2xCtc7eN_O-x_0_f5BXYROoaDYzHBIDFu6jIC9NMjIu_uPvouhBQ.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=rfrit">
+
+<meta property="al:android:url" content="tg://resolve?domain=rfrit">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Российский фонд развития информационных технологий
+
+рфрит.рф
+vk.ru/rfrit
+">
+
+    <link rel="prev" href="/s/rfrit?before=2650">
+<link rel="canonical" href="/s/rfrit?before=2671">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/rfrit">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/rfrit" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">РФРИТ</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/rfrit">@rfrit</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">6.66K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">1.78K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">123</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">8</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">1.58K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Российский фонд развития информационных технологий<br/><br/><a href="http://%D1%80%D1%84%D1%80%D0%B8%D1%82.%D1%80%D1%84/" target="_blank" rel="noopener">рфрит.рф</a><br/><a href="http://vk.ru/rfrit" target="_blank" rel="noopener">vk.ru/rfrit</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=34748f90ce1eec2c77_15143727411650129172">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=34748f90ce1eec2c77_15143727411650129172">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/rfrit">
+        <i class="tgme_page_photo_image bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">РФРИТ</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">6.66K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/rfrit">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/rfrit?before=2650" class="tme_messages_more js-messages_more" data-before="2650"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2650" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY1MCwidCI6MTc4ODU2NTU2OSwiaCI6IjYyZDZhOGZmZDgxYzBlYjIwMyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5420103304714327247 1261966141_460002511" href="https://t.me/rfrit/2650" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/JM7S38tAZ2OdtbL3VA6ZyhwenlAVgT2NspX0_LPi5wJ0brM9IZxJWl4TnzjhEY8-RnE2-uECPXHBxAGu1K725jmcK1fRMY1i95KlyoXSMjnqsFg_m95gpHALUwe05XCs8AW6AzFbFG523CP0_R60pfoEGFDq4vtidAct6vZTS7H60TIaf6XyqJjMx8xuhhKEJKEIQL_7Yf_XSlpqj5AYkA4sOnalBmNNIxo53HmNQhZ2huK3v_423lqEtqj707uYxNb1e_EITJlBHSlBODF77t06l2FABY9OBsv9xyjhXZ0IDuqvTKyFO6ikhvEIiZS1RRRZNhKiIwgvnGF6L0Aytg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5381961237296865107"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5379600912249540592"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5381827041043699704"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji> <b>20-21 августа — II Пермский Форум Развития &quot;Города будущего&quot;</b><br/><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/government_rus/31479" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Правительство РФ: главное за неделю</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://vk.ru/wall-171504727_7009" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости недели от экспертов АЦ</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/DataEconomyRU/13421" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест &quot;Цифровой экономики&quot; </b></a><br/><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/razvivaemrf/10225" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>В фокусе ВЭБ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/skolkovolive/10512" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Технодайджест &quot;Сколково</b></a><b>&quot;</b><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/platformMSPRF/2966" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Полезные статьи на МСП.PФ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/fasietalks/1192" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест ФСИ</b></a><br/><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/russoft_association/2096" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости участников РУССОФТ</b></a><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/cit_gov/1457" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости ИИ и высоких технологий</b></a><br/><br/><tg-emoji emoji-id="5253742260054409879"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C89.png')"><b>✉️</b></i></tg-emoji> <b>Прислать свой дайджест - </b><b>press@rfrit.ru</b></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2650" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.06K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2650"><time datetime="2026-07-27T10:14:53+00:00" class="time">10:14</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap user-color-0 js-widget_message" data-post="rfrit/2651" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6IjI2NTFnIiwidCI6MTc4ODU2NTU2OSwiaCI6ImI3MmRjMDIzNDQ5ZjMzYzMzZiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/razvivaemrf/10249"><span dir="auto">Источник в ВЭБе</span></a></div>
+
+<div class="media_supported_cont"><div class="tgme_widget_message_one_media js-message_media"><div class="media_supported_cont"><div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:83.002%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:376px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:149px;height:187px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/rxhv3FGgcq1wFdL6ycTH9pvTvVRjLDN2XvAP4Rw8LmE8-xvQfepqWo0HmEXpdqmw6pN1bzMHMYbMSjIQLC4fauivyy26-1CzvhudD2NBkuBg2GvkzHY3ftk0n_DiVnTuuH--lwDZywrSuQ8pM4q0b5ZQXUVv8uzLj1TMOo5Qc4JxtuoXWmxXDhumvkxwoJpgh8z_7TPIZXkESipZFL9_RO9y5gofKHm8WfQ9zFFzaXi92XZ2N_fxOUp4gJIxURM9x0BU4rP8_JWwR0wAw05ZK1UZlYLaTXTrP2l5zsNxY62_GXTRHUt_YsbIwh4_usiSPHJCKiMc8f7N5OlP7NV8SA.jpg')" data-ratio="0.8" href="https://t.me/rfrit/2651?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:151px;top:0px;width:149px;height:187px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/i1w7Itp2mjt6N_k0fMUwwUEZCTid5moSoTT_5b9z5aRV2UniHr0PwI0VdodzD8ZZPnRrNDiZscjZja6BbKQgCAXIkOHrul2SqncTwzgK_44a3olAsWW86veiXRhv2dIVSizIXriyoxKwQlPpflvLKt9euOm25d_75tL1tnvCoR8donvUA1bSmNL3GjdXZ29IHNxwjhY41Qod5CFCmUERT1xZM6JwXGzIsSlYH32OC3W4T3hY5kmT_c47oGh-7PGYXC7PyIztHeVi8flc5NmbCNGf3wR-_qb1ybQzNlZbjlbv4sgGsQBO41DiY_OktMEZx1N6LztM2UVAgecgm909zw.jpg')" data-ratio="0.8" href="https://t.me/rfrit/2652?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:302px;top:0px;width:151px;height:187px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/HrP0xSUV40IukLplumV58YxGdeZVGUlBSM8rOPW3ma27XEIqociGTag85XW2wpmneMpqnkjN1PjEZWQ2jZnI1qt-V4LKRnkTpNjoxn-X1_kXRGVD14x4g6GH58vq07Pk9IbIGc0-TERMVb4bEgxltOoZBeNNJskTofshgLHbY8BI5qEFcxRFoDPU_Jwue6PpXJnWAd0sXp8p5qdjeOKYoMmG8rFUmkH-euIR28y6Gzd9QaXx-epr-FjApFScPYCtsA6cjDBHJvJZhQptSaEQGXadw9uNRA8IyVaEDJYUWM__4Vkd-rC85sUmJME2cTjccJis9PWetWu14O5oSqLnjg.jpg')" data-ratio="0.8" href="https://t.me/rfrit/2653?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:189px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/FyHAF9pcsxLBtu74cw0egOtt0lJiH0DiG6971i-IS83-EHSlDAowFu1FJg8SViPuVLcEQQYLC9gCNrqiWfOQ8y64Pyk_oOB9imxDXh4L5PcUlcS878rb3u5WSE_r4PRdOMjkH9cACEF9fCBWaGOQGHzamCog9djA1GlL5XAiMP3HM7-v9qJOWnKxce4f4PoZoY10245nmEh2v8R7sgdkXeclB5L-gBFYDkJ5fbzXFD-syNEhlP8zcx5mMbfBftFmMpb_xxpq5KoiqId4YzBQpKu_XSSAbUWidq0XDtGpRZgbxQWoTmyTvuFe_C7e_r0hxeINlCXpr2aR4DTOTXiN8w.jpg')" data-ratio="0.8" href="https://t.me/rfrit/2654?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:151px;top:189px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/WiwFoavcVbSsgsJ0bT6nojDqr65AkrB8rNoQ9xV8Db9nWmippuPDO_Lj1iDHArLGcrAOe_rj96_YqnMxh8ZO94l65e9WPKo76s97HeGMH4v4f4bhnFRLIZ12HFlBug3zBCMeGZitDIagAKDC-p3u7Q3oxtueW31V_zTLKtdfhqhBE_dJO8MoA8JeSACmv-MDf3oyO9fHwhaj99_cA6hBQSNMs5Bk0xwN5_iwcQRJavnM9QgsfHUI3-8C04GPf3TUNLTVnmVBp6xJ2XHoDdYAY9ICM7iWqQdLDofstMvBoURl6NrOJCsd_fmf7XSl6WLCy2pmCiv40Ol9zpgbraHlAw.jpg')" data-ratio="0.8" href="https://t.me/rfrit/2655?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:302px;top:189px;width:151px;height:187px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/KvtgIXeHrGCA1hEzf9ffLiDDdtdr16Vbd_-v9GY5XQnfU5aMf-ceZq0g28RVY_CMCnv5pdiHqhQdb53x7eD_FK78HHjKniZHu4rUC21P-0_5IBfPAJ1KzTt7Q-19q9Z27GL9oqBu3rPLCxsKyD_NtsZXobO_Ho31JADigp7RxLgbjXgf0NAqnIP_Hdz_9eOml293KlnxGIdkwnb2yfPB4Uss7oGnF5cs2IfSOkSj1g1FHSc0O1F4uSjBHwWqC7oxqh2bePpOtrWhiLVthO148iTboNDfMyPmPD9Bv4ah3oeYL2LkSi3FAh2UpOTBErqTlRCXEp-ahVciJZ6HKjIJYA.jpg')" data-ratio="0.8" href="https://t.me/rfrit/2656?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:76px;right:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><b>За первые 5 месяцев 2026 года в России выпустили 300 тыс. легковых автомобилей — рост на 6,8%</b> <tg-emoji emoji-id="5438638686591804766"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9A99.png')"><b>🚙</b></i></tg-emoji><br/><br/><i>Особенно показательным стал май — производство взлетело на 47,4% год к году. </i><br/><br/><tg-emoji emoji-id="5440836601745792922"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29EA1.png')"><b>➡️</b></i></tg-emoji> Но чтобы удержать этот темп и конкурировать на глобальном уровне, одного роста объёмов недостаточно. Нужна цифровая трансформация.<br/><br/>И здесь пример другим автопроизводителям показывают УРАЛ, АВТОВАЗ и ГАЗ.<br/><br/><tg-emoji emoji-id="5438310856033067065"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93A9.png')"><b>📩</b></i></tg-emoji> В карточках разбираем, как при <a href="https://t.me/razvivaemrf/10181" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">грантовой поддержке РФРИТ</a> (Группа ВЭБ) они внедряют в производства отечественные ИТ-решения. <br/><br/><i>Кстати, на прошлой неделе покупатели получили первые электромобили Атом, произведённые при поддержке ВЭБа. Подробнее </i><a href="https://t.me/razvivaemrf/10196" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>рассказывали тут</i></a><i>. </i><br/><br/><a href="?q=%23%D0%A2%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82">#Транспорт</a> <a href="?q=%23%D0%98%D0%BC%D0%BF%D0%BE%D1%80%D1%82%D0%BE%D0%B7%D0%B0%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5">#Импортозамещение</a> <br/><br/><b><tg-emoji emoji-id="5440476352773905544"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji></b><b> </b><a href="https://max.ru/vebrf" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ВЭБ.РФ в MAX</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2651?single" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2651" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.05K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2651"><time datetime="2026-07-29T12:19:53+00:00" class="time">12:19</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2657" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY1NywidCI6MTc4ODU2NTU2OSwiaCI6IjRjMDU5M2IxNzQwNTdjNjI4ZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5431529597053900809 1264626532_460003337" href="https://t.me/rfrit/2657" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/aZ1rTQFOGsxULLBYO8k1N6ih-4pWNkzSXPMUvLWiALsH40zo0PdfxDZ2NDuuppPYbeiHlLIR1ja4VIztrU7qb9H_w6PRpo5ZLF3Xiu--kR331OOIDr9F575d9cKkvCxV1O0EZslysSzOEdfkO7r0dTIr-58RlsdxdINCI2hdBtt9Jr2PZiSmloqjpDYr0nDrFDYWL6HJM2v7r7hDoTYQBulcCF84z1Q9xDXjF7VqACL9jsRPEWOj3bNXjBh_XqtUlvQJc1PT4wJ_4vWs3eorm78ImYPm10MB5CHP_k1Hyg_5TIfcYEpaaOqleiAyfYjAzxmQh-9DpuC1xbJjtbmFoA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Новые материалы на сайте РФРИТ</b><br/><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji>Центр компетенций по индустриальному и общесистемному программному обеспечению РФРИТ проанализировал глобальные техприоритеты и тренды в области индустриального (промышленного) ПО. Целью исследования было выявить их влияние на приоритеты реализации дорожной карты &quot;Новое индустриальное программное обеспечение&quot;. <br/><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji>Также аналитики Центра проанализировали глобальные техприоритеты развития промышленного ПО в 39 отраслях, соответствующих направлениям деятельности ИЦК и перспективы развития индустриального ПО под влиянием технологий ИИ.<br/><br/><tg-emoji emoji-id="5951953408075239587"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93A5.png')"><b>📥</b></i></tg-emoji> <a href="https://rfrit.ru/niponopo" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Ищите в разделе &quot;Аналитические материалы&quot;</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2657" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.44K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2657"><time datetime="2026-07-31T10:22:54+00:00" class="time">10:22</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2658" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY1OCwidCI6MTc4ODU2NTU2OSwiaCI6ImU2NGU3NjRjZTljOWIwZGY4MiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">В ОДК <a href="https://rfrit.ru/news/odk-vnedriaet-otechestvennuiu-sistemu-upravleniia-proizvodstvom-i-tsepochkami-postavok/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рассказали</a> о завершении финального этапа реализации особо значимого проекта при поддержке РФРИТ.</div><a class="tgme_widget_message_link_preview" href="https://rfrit.ru/news/odk-vnedriaet-otechestvennuiu-sistemu-upravleniia-proizvodstvom-i-tsepochkami-postavok">
+  <i class="link_preview_right_image" style="background-image:url('https://cdn4.telesco.pe/file/vUo3evjmmDXeXKubHQjszDTX7y5w_m_f-XFYvTK19GCWqjNkqZyn6CL8zas3-Euq-n_X1QIp2tF7S5NCAUdc9E_00k5yyeu_jJRUopWWFkgwtWPe3IRl7a9dh_uHzrrO7TwjFCV-30wwOHQ5cthoMfzaZV6T5UAgKnpTI6vcKwkoAytUvyd3jzj6qI-YfcoIufa3I2ZYylj71BBqpkIzO9mRyK4zv9VJ521OeG3fYsCgtdis-F88LqM246p6-3dIFGJA7PrFhLNf7RIaxu4gSKb6tAdTuC22B5zr9_MDMbvoWNgBa6XV4_1yGfxrp5IkXOlIRH35J8VYcYUmAwz2Aw.jpg')"></i>
+  <div class="link_preview_site_name accent_color" dir="auto">rfrit.ru</div>
+  
+  <div class="link_preview_title" dir="auto">ОДК внедряет отечественную систему управления производством и цепочками поставок</div>
+  <div class="link_preview_description" dir="auto">Помогаем развивать и масштабировать перспективные ИТ-решения</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.28K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rfrit/2658"><time datetime="2026-08-03T14:22:08+00:00" class="time">14:22</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2659" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY1OSwidCI6MTc4ODU2NTU2OSwiaCI6Ijk1ZjIzZjg2ZGY5MTY3MDU2YiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5420103304714327247 1261966141_460002511" href="https://t.me/rfrit/2659" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/tPA99zAhupQEfygHSoi5cWZc1kUxWnQS1RhW9wfHqPDpTOQp4MKEoWzIlIpWUv0Hl_rjsY7_gRYH0-X2aaH8sGGEdz1LL3dmuoxjIDAAt2rUqJZGezE07Gkn4ibOaUU56qEn3a_AmcP_A1PvvOt-BOlJDGN2ugBUlps7jKROjyy407qH-_T_pAgVJ70AsSt6O4LOMbdCgDoAEcyMvtsZm08eqz5_DfKKQHWyNVJIg_q9RLFmYGwUIORzDgjZXyvh0IlWMKVDUTfWF6mxWPTYrTKynjzXemFUWfeufXRUfrxdtzJC5jytNvzkGB0-sFPoW9M5rgkNBHJbTVJ_cB62Hw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5381961237296865107"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5379600912249540592"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5381827041043699704"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji> <b>24-25 августа — VI форум &quot;Сильные идеи для нового времени&quot;</b><br/><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/government_rus/31744" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Правительство РФ: главное за неделю</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://vk.ru/wall-171504727_7077" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости недели от экспертов АЦ</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/DataEconomyRU/13453" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест &quot;Цифровой экономики&quot; </b></a><br/><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/razvivaemrf/10290" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>В фокусе ВЭБ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/skolkovolive/10550" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Технодайджест &quot;Сколково</b></a><b>&quot;</b><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/rusexportnews/15209" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости российского экспорта </b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/platformMSPRF/3002" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Полезные статьи на МСП.PФ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/fasietalks/1198" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест ФСИ</b></a><br/><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/russoft_association/2123" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости участников РУССОФТ</b></a><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/cit_gov/1471" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости ИИ и высоких технологий</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2659" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.06K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2659"><time datetime="2026-08-10T11:20:01+00:00" class="time">11:20</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2660" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2MCwidCI6MTc4ODU2NTU2OSwiaCI6IjQ3N2Q3ZGJhY2ZlM2I1MjNlYyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Правительство <a href="https://rfrit.ru/news/pravitelstvo-utverdilo-perechen-ozp-dlia-razvitiia-tsifrovoi-ekonomiki/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">утвердило</a> перечень особо значимых проектов для развития цифровой экономики. В него вошли 24 проекта на 14,4 млрд рублей, которые будут реализовываться за счёт собственных средств компаний. Все инициативы прошли экспертизу Российского фонда развития информационных технологий и согласованы профильными отраслевыми комитетами.</div><a class="tgme_widget_message_link_preview" href="https://rfrit.ru/news/pravitelstvo-utverdilo-perechen-ozp-dlia-razvitiia-tsifrovoi-ekonomiki">
+  <i class="link_preview_right_image" style="background-image:url('https://cdn4.telesco.pe/file/dpEjL5K1YDaRcxuLo0fDKl61QoZ3B4dCF8tFQwcsLiWzcJKHigKLVJ5y1ABvo23yXP1ymtARkHcgmcEHlMFgF17llGT4oOpGKd5aOob7E_Y-4k8Ycwf4BKNWsNOTYUBwKrdtKTbV9usYwAv06rFZROZdq6rC9x-jSa3Enp86I85TX2Nhvfc2wR1t_ITtWgtShPT4cBdgDdXVZeqDRKUQIHGp3L2RYRmcjXc1NeBvlm8CJ7ltZK0T2CUYNTLWh1o33NIsEjR1-6f-NWpDXdXslIQ_-d5NmRzmq8KQW6EPurCJfLXTQqBXOIcX1G6fsDC3MoCtQ3635hn38zq7Sbc1Ow.jpg')"></i>
+  <div class="link_preview_site_name accent_color" dir="auto">rfrit.ru</div>
+  
+  <div class="link_preview_title" dir="auto">Правительство утвердило перечень ОЗП для развития цифровой экономики</div>
+  <div class="link_preview_description" dir="auto">Помогаем развивать и масштабировать перспективные ИТ-решения</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.31K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rfrit/2660"><time datetime="2026-08-11T12:08:27+00:00" class="time">12:08</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2661" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2MSwidCI6MTc4ODU2NTU2OSwiaCI6IjI2MGRjZTZiOGYyNjYxOTFmOSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">О цифровой трансформации и реализации <a href="https://rfrit.ru/2v_ozp8" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">особо значимого проекта</a> в компании &quot;РНГ-Инжиниринг&quot; при поддержке РФРИТ  <a href="https://rutube.ru/video/a7e743973fb1407a1d303ade996a1e1a/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рассказали</a> в спецрепортаже &quot;России 24&quot;.</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.12K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rfrit/2661"><time datetime="2026-08-13T10:12:18+00:00" class="time">10:12</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2662" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2MiwidCI6MTc4ODU2NTU2OSwiaCI6ImM4ZGM0NmI1ZDU4ODQzZDkwOSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5420103304714327247 1261966141_460002511" href="https://t.me/rfrit/2662" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/B1ea-S2kBB8F0jDDzAvGgZcw3jSF9PDmu-4Ioz3QkxiaL-2QFrJlwrbwegpJALU0_tXwzqBwOI2JC0VTENPcmZARgzgiuc3WQXec9pyT1qIi00kyBm3qWFfJ7oowJl8OGreTdBs5EPMQ-MDuJllrKQSvm2jjKn3dipnAMOO90a6V1s2FA9aG5s5haTf4dVK297pqOnQ7fwLrQ07tWnP4EqNPdu5T6vSByQNlvGZYZ8HuUHayuBbBwtNm0sjKlriV5ixW7faZpCETWo18N2kWWKJHk-uzknbC3b_t8TSck35r8aeGjnQ2von6CuQttRJf7N-2P8m0p2gzz3cxgthaLg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5381961237296865107"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5379600912249540592"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5381827041043699704"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji> <b>26-28 августа — XIII Международный форум технологического развития</b> &quot;<b>Технопром-2026&quot;</b><br/><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/government_rus/31883" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Правительство РФ: главное за неделю</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://vk.ru/wall-171504727_7100" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости недели от экспертов АЦ</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/DataEconomyRU/13466" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест &quot;Цифровой экономики&quot; </b></a><br/><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/razvivaemrf/10308" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>В фокусе ВЭБ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/skolkovolive/10567" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Технодайджест &quot;Сколково</b></a><b>&quot;</b><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/rusexportnews/15245" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости российского экспорта </b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/platformMSPRF/3014" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Полезные статьи на МСП.PФ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/fasietalks/1201" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест ФСИ</b></a><br/><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/russoft_association/2127" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости участников РУССОФТ</b></a><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/cit_gov/1480" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости ИИ и высоких технологий</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2662" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">884</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2662"><time datetime="2026-08-17T11:30:01+00:00" class="time">11:30</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2663" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2MywidCI6MTc4ODU2NTU2OSwiaCI6Ijk0MTAwZDU0NTY3MjZkNjEyZiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/smartenginesai/494"><span dir="auto">ИИ нефильтрованный | Smart Engines</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5197540156724943544 1210146620_460004024" href="https://t.me/rfrit/2663" style="width:640px;background-image:url('https://cdn4.telesco.pe/file/VvzUtNnSEHuI1L6VmgaMqRV2fLfO5eezUxY-5fl56A0mkXXCdwbYLb0Ao8g4CeRgFQZTaIZyMv03k3fjfD1cj6p-lRGSUcnIQ3-5D9RXqRZdosflzq7hbVFsXnn_UZap2BhXMpG7bxIZqd3bpD6ENhtmOxzem-7AO6XCM9y3botPiqNcbiSi82cD5BB2gxLocOoQ5mNjwTBMEpt59qcNPeKRO022-QupMQ3JRXH5K2rF8Z0Nm49rqs5OZkzqw14Bi1wtrVvBD4y9e2UqSywD3CddE2cgd_52JlhC3OevMUBLwXR3qiLB5tsVr1MyHtz_aU01tK2PIUtf3M6mQfyuww.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:125%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Искусственный интеллект </b><b><tg-emoji emoji-id="5262905572780426441"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92BC.png')"><b>💼</b></i></tg-emoji></b><b> Smart Engines на страже границ <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C88.png')"><b>✈️</b></i></b><br/><br/>Паспортный контроль в международном аэропорту должен обеспечивать быстрое и комфортное прохождение границы, не снижая требований к безопасности. Система должна справляться с пассажиропотоком и одновременно выявлять попытки предъявления поддельных или недействительных документов. <br/><br/><b>В Шереметьево, Внуково и Кольцово за это отвечают наши модули в составе</b> <b>«Сапсан»</b>, <b>оснащенные нейросетевым ансамблем «Шерлок»</b>. Пока пассажир бесконтактно проходит контроль, система:<br/><br/><tg-emoji emoji-id="6023644804611577511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B5.png')"><b>🔵</b></i></tg-emoji>извлекает данные из заграничного паспорта РФ;<br/><tg-emoji emoji-id="6023644804611577511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B5.png')"><b>🔵</b></i></tg-emoji>проверяет документ в трех диапазонах, тщательно проверяя голограммы и другие защитные элементы документа;<br/><tg-emoji emoji-id="6023644804611577511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B5.png')"><b>🔵</b></i></tg-emoji>анализирует более 600 признаков и может детектировать подделки любой сложности и качества: от измененной фотографии до дипфейков. <br/><br/>В Шереметьево после установки десяти модулей время прохождения пограничного контроля <b>сократилось до 40 секунд</b>, а <b>пропускная способность на границе выросла в шесть раз</b> <tg-emoji emoji-id="5433878376769152129"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i></tg-emoji><br/><br/><blockquote>«Запуск модернизированных пропускных пунктов в Москве и Екатеринбурге — шаг в сторону масштабного серийного внедрения отечественных ИИ-решений для безопасности критической инфраструктуры. Наше решение способно детектировать более 600 признаков подделок документов, удостоверяющих личность, и стоит на страже государственной границы России», — отмечает Владимир Арлазаров, генеральный директор Smart Engines.</blockquote><br/><br/>Подробнее о внедрении в российских аэропортах — <a href="https://smartengines.ru/news/iskusstvennyj-intellekt-vstal-na-strazhu-graniczy/?utm_source=telegram&amp;amp;utm_medium=social&amp;amp;utm_campaign=18_august_post3" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>рассказали в нашей статье</b></a> <tg-emoji emoji-id="6021856204135864228"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9186.png')"><b>👆</b></i></tg-emoji><br/><br/><i>Реализовано при поддержке Российского фонда развития информационных технологий (РФРИТ</i>) <i>и фонда содействия инновациям (</i><a href="http://%D0%92%D0%AD%D0%91.%D0%A0%D0%A4/" target="_blank" rel="noopener"><i>ВЭБ.РФ</i></a><i>)</i></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2663" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">910</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2663"><time datetime="2026-08-18T15:31:10+00:00" class="time">15:31</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2664" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2NCwidCI6MTc4ODU2NTU2OSwiaCI6IjU5ZmE1ZDdkMzAyMmU3Zjg0NSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5420103304714327247 1261966141_460002511" href="https://t.me/rfrit/2664" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/d4iH3pGTQabOV_byrp4dNSVB0S1VUuGdT8SOC9KUcqadVz9gWr71dY7L-ivUw1gE_8nRl0URdV8G7ujK9aTub6Icr6Ez6wYhgh2zvm5li_iQp3DmzKClW2GeWqQsM47-nWRvaQ0ibdPGKxVAh4XnBdhd4UgN-a_-sZ3GY5G5_a8vVMZh4gnwhirlUwHgUU-CUdiAm63q6I9DJnM5EsG8sqjLxXzVmIfUYY76_7gAUfIR7UWXu3shvZC2t3pOWxUc5TBSwK1LB7MhKHFlY4PwU7yVcpUON91oax2YL2pAGrTaPfJemASso0fuQzebMHuLHBYafC6ZzJGEWxCL2mEQIQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5381961237296865107"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5379600912249540592"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5381827041043699704"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji> <b>С 6 по10 октября в Москве </b><a href="https://max.ru/digitalsolutions/AZ9-UxuRSws" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>пройдет</b></a><b> второй ежегодный ИТ-форум «</b><a href="https://xn--b1agaalewncctcd9amf6a8b1c5e.xn--p1ai/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Цифровые решения</b></a><b>»</b><br/><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/government_rus/32052" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Правительство РФ: главное за неделю</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://vk.ru/wall-171504727_7125" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости недели от экспертов АЦ</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/DataEconomyRU/13477" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест &quot;Цифровой экономики&quot; </b></a><br/><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/razvivaemrf/10325" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>В фокусе ВЭБ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/skolkovolive/10584" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Технодайджест &quot;Сколково</b></a><b>&quot;</b><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/rusexportnews/15348" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости российского экспорта </b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/platformMSPRF/3036" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Полезные статьи на МСП.PФ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/fasietalks/1204" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест ФСИ</b></a><br/><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/russoft_association/2143" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости участников РУССОФТ</b></a><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/cit_gov/1480" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости ИИ и высоких технологий</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2664" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">752</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rfrit/2664"><time datetime="2026-08-24T12:00:03+00:00" class="time">12:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2665" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2NSwidCI6MTc4ODU2NTU2OSwiaCI6IjhmNDdiNWUxMGRjZDc5MTA5MiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/arppsoft/1524"><span dir="auto">АРПП «Отечественный софт»</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5217948471220969376 1214898301_460005280" href="https://t.me/rfrit/2665" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/ghRTKPoGSdtyj5sG1LiF6NkhNb5k6Ps-SYgXEBIyuvmnvqM6WssDraenValV4OAsxo0BVVykUqITeGSRAg9rFOrIgmNNmmoiYh8ubyAhVbQrIszrfUYpOC1X5sNl8hy7XZzlhi_MjpcyLC7dejVzd1ohvqKl8swbifkT-hNVG1e2uAGuFg12wtdeFZwEnroPk5_rXEakaFQCisUCo-inaaXDwdcIWn-c_rT_0UNxcfEOqgt9_wc6V2mN8eGQWT0v3BB8Y04Pcf-iQGZMk9XLs3yTtECTHULsrxmUxbWJ2VIIx1eUZ3Mxpn_MAC9dwIV-XfOYVb_bQ0uoStl6gOxBYQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:70%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8E89.png')"><b>🎉</b></i> <b>АРПП «Отечественный софт» — 17 лет&#33;</b><br/><br/>26 августа 2009 года российские разработчики тиражируемого ПО создали Ассоциацию «Отечественный софт», чтобы вместе работать над тем, что важно для всей индустрии.<br/><br/>За 17 лет российское ПО прошло большой путь — от отдельных решений до технологической основы для целых отраслей. А задачи, ради которых создавалась Ассоциация, — развитие российского ПО, поддержка отечественных разработчиков и технологическая независимость — стали частью национальной повестки.<br/><br/>Все это время развивалась и сама Ассоциация. Сегодня АРПП объединяет более 300 российских ИТ-компаний и представляет 30% индустрии тиражируемого ПО.<br/><br/>За этими цифрами — люди и компании, которые не только создают и развивают собственные продукты, но и готовы вкладывать свою экспертизу в решение общих отраслевых задач.<br/><br/><b>Уже 17 лет АРПП последовательно отстаивает интересы российских разработчиков и помогает вместе находить решения там, где усилий одной компании недостаточно.</b><br/><br/>Благодарим участников, партнеров и экспертов Ассоциации за доверие, совместную работу и вклад в развитие российского ПО&#33; Продолжаем работать вместе&#33; <b><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i></b><br/><br/><tg-emoji emoji-id="5188517645451811127"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F96A5.png')"><b>🖥</b></i></tg-emoji> <a href="https://max.ru/id7705058764_biz" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>АРПП «Отечественный софт» в МАХ</b></a> <a href="https://vk.com/arppsoft" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>|</b></a> <a href="https://vk.com/arppsoft" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>VK</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2665" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">609</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2665"><time datetime="2026-08-26T09:09:57+00:00" class="time">09:09</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap user-color-5 js-widget_message" data-post="rfrit/2666" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2NiwidCI6MTc4ODU2NTU2OSwiaCI6ImE1NjM3ZDI1OWRmNTg4MzI5MCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/sprint_iidf/1480"><span dir="auto">Акселератор Спринт 2.0</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5199692124318800520 1210647664_460003976" href="https://t.me/rfrit/2666" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/v8tu60NdxRZ1XVz1YYmJrOkMEI0eUI387Be7z01oWt1hsVMxBqxvqsbWw8Z3LKjzoAKipBbxDChHT4adNVgUmIg0NSP_9_CogPsYg5yq_KlPRfiTF7C4jdT71u2Z6-XpRpZvCKtk0Zj3XwJBIRx1xD4pBqmP-Hee_cGT1AhG0ZE9YSTDlbpT9lJkMZ3bwQU_bFa30WQ54ZLdpQphL4b4TEKtWz1cNzM51964TaxWLGr-NJR1g0rezUGqgi8g1lpAeHzfZ9UGGZwtbPPcuBgz47CGPIyDFJnIKz3e0MEvDxDW6_GJvqgIK0djemD0huCuS7HuXIH2yWFPfYwVEeLExQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b><tg-emoji emoji-id="5305312215845327549"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA1.png')"><b>⚡️</b></i></tg-emoji></b><b> Стартовал конкурсный отбор в акселератор Спринт 2.0</b><br/><br/>Мы запускаем третий в 2026 году конкурсный отбор в акселератор Спринт 2.0&#33; Приглашаем российские технологические компании, которые создают решения на замену иностранному софту, принять участие. <br/><br/>Программа Спринт 2.0 <b>бесплатная</b>. Она рассчитана на три месяца, базируется на методологии ФРИИ и успешном опыте акселерации 2000+ компаний, и помогает ИТ-предпринимателям <b>масштабировать бизнес</b>: <br/><br/><tg-emoji emoji-id="5303023496492765079"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji>Выйти на системные продажи;<br/><tg-emoji emoji-id="5303023496492765079"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji>Сократить цикл сделки;<br/><tg-emoji emoji-id="5303023496492765079"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji>Найти эффективные каналы привлечения клиентов;<br/><tg-emoji emoji-id="5303023496492765079"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji>Повысить эффективность работы команды.<br/><br/><b>Кто может принять участие:</b><br/><tg-emoji emoji-id="5303256146281256488"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FA9.png')"><b>⏩</b></i></tg-emoji>Проект соответствует приоритетным направлениям;<br/><tg-emoji emoji-id="5303256146281256488"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FA9.png')"><b>⏩</b></i></tg-emoji>Есть российское юридическое лицо;<br/><tg-emoji emoji-id="5303256146281256488"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FA9.png')"><b>⏩</b></i></tg-emoji>Есть команда не менее двух человек; <br/><tg-emoji emoji-id="5303256146281256488"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FA9.png')"><b>⏩</b></i></tg-emoji>Есть финансовые и материальные ресурсы на время прохождения акселерации (3 месяца);  <br/><tg-emoji emoji-id="5303256146281256488"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E28FA9.png')"><b>⏩</b></i></tg-emoji>Есть минимально жизнеспособный продукт (Уровень готовности технологии проекта не ниже 6).<br/><br/>Мы принимаем заявки на участие в конкурсном отборе в Спринт 2.0 до<b> 24 сентября</b>. Старт программы запланирован на <b>январь 2027 года</b>.<br/><br/><a href="https://sprint.iidf.ru/?utm_source=tg_sprint&amp;amp;utm_medium=post&amp;amp;utm_campaign=start_otbora_20082026" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Подать заявку</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2666" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">798</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2666"><time datetime="2026-08-26T09:33:54+00:00" class="time">09:33</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2667" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2NywidCI6MTc4ODU2NTU2OSwiaCI6ImYzYTVlMDZkOWY1MjNhZjhhZiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5224716523635679706 1216474111_460005850" href="https://t.me/rfrit/2667" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/m9ftolJnL6VgUaHpnivuWICsusOWdm9pM7w7Dp6cbEJ8uCXGUQLyflsU1eMf9NcbLD5dEV0R_eZ6StbQIfwOcbia1Lg7jK1cdcKiElXIlpA0PvwoGKArMp43q4CKhb1asgi1ZdC_0imhs1kifZXFcOoM4Nl-mrUv20dXTGhP_TPOe4NsV81UH62QwU2ZXj65VwBa3KD3DkD4Jkd5qrU6lF-PWo9TbZmNvkMTNWXiS6zQZoV5qh0e8VLpqKaizRh_QdCNoPSMpCyg2MR9HDbMWgujmwtyiMzjbiVnlKEbHlU-6TYq3zXvZBmO7vmmMIjjR6cfmfAwaHAR3sXRRvINXQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Отраслевые СМИ рассказали об </b><a href="https://t.me/rfrit/2657" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>аналитических исследованиях</b></a><b> Центра компетенций по индустриальному и общесистемному ПО РФРИТ</b><br/><br/><tg-emoji emoji-id="5854868854919925803"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AD90.png')"><b>⭐</b></i></tg-emoji> <a href="https://ict.moscow/analytics/globalnye-tekhnologicheskie-prioritety-industrialnogo-po-v-razreze-osnovnykh-kategorii-klassov/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Глобальные технологические приоритеты индустриального ПО</a><br/><br/><tg-emoji emoji-id="5854868854919925803"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AD90.png')"><b>⭐</b></i></tg-emoji> <a href="https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D0%9F%D0%9E_(%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D0%B9_%D1%80%D1%8B%D0%BD%D0%BE%D0%BA)#.2A2026:_13_.D1.82.D1.80.D0.B5.D0.BD.D0.B4.D0.BE.D0.B2_.D0.BC.D0.B8.D1.80.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D1.80.D1.8B.D0.BD.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.BC.D1.8B.D1.88.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.9F.D0.9E" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">13 трендов мирового рынка промышленного ПО</a><br/><br/><tg-emoji emoji-id="5854868854919925803"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AD90.png')"><b>⭐</b></i></tg-emoji> <a href="https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%90%D0%A1%D0%A3_%D0%A2%D0%9F_(%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D0%B9_%D1%80%D1%8B%D0%BD%D0%BE%D0%BA)_2#.2A2026:_14_.D1.82.D1.80.D0.B5.D0.BD.D0.B4.D0.BE.D0.B2_.D0.BC.D0.B8.D1.80.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D1.80.D1.8B.D0.BD.D0.BA.D0.B0_.D0.90.D0.A1.D0.A3_.D0.A2.D0.9F" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">14 трендов мирового рынка АСУ ТП</a><br/><br/><tg-emoji emoji-id="5854868854919925803"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AD90.png')"><b>⭐</b></i></tg-emoji> <a href="https://t.me/mash_tech/6751" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">16 трендов мирового рынка САПР</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2667" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">970</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2667"><time datetime="2026-08-27T10:30:34+00:00" class="time">10:30</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2669" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY2OSwidCI6MTc4ODU2NTU2OSwiaCI6IjNlMzM2YWQ5ODZiYzYwMzA3YyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5420103304714327247 1261966141_460002511" href="https://t.me/rfrit/2669" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/fWkW9_FVk3F72PE-Vgu5Nmc8y0apTY2XTwQkD4kncftE5b0UMNpyrZ3Z4rOyRqjOLibYhEQ_fh-0gghYlmgjqBKUimFzK3_8FjmUPCwV2gpynEd5ieh69wD2hR5g3rbjEqw4oYeHyyp9d-qJpQntbBtsvYFWt4zxj_sF0GZg44AhvhLXW4j_70TfxIWUCXEx7Rg-9-4etvu1n_2jYlt4WaiF8wrgj-y6BTb5UFTty8K-9BK0so0DOPZM4Y0SpfPIOrYuVxYU0YAcOsIv_CY9_sWE1K0PUK9lK2iAMlM94ufl5OfcNbDNaY_HtRary5h1MfXUnTInMYPcpz4xE-Gl4Q.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5381961237296865107"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5379600912249540592"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji><tg-emoji emoji-id="5381827041043699704"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E280BC.png')"><b>‼️</b></i></tg-emoji> <b>1-4 сентября — Восточный экономический форум</b><br/><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/government_rus/32241" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Правительство РФ: главное за неделю</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://vk.ru/wall-171504727_7142" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости недели от экспертов АЦ</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://vk.ru/wall-210353863_49800" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Минцифры России: мероприятия сентября</b></a><br/><tg-emoji emoji-id="5215212344665187553"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B4.png')"><b>🔴</b></i></tg-emoji><a href="https://t.me/DataEconomyRU/13490" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест &quot;Цифровой экономики&quot; </b></a><br/><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/skolkovolive/10617" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Технодайджест &quot;Сколково</b></a><b>&quot;</b><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/rusexportnews/15381" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости российского экспорта </b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/platformMSPRF/3051" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Полезные статьи на МСП.PФ</b></a><br/><tg-emoji emoji-id="5215438204110382731"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i></tg-emoji><a href="https://t.me/fasietalks/1207" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Дайджест ФСИ</b></a><br/><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/russoft_association/2153" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости участников РУССОФТ</b></a><br/><tg-emoji emoji-id="5215730283361348240"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9498.png')"><b>🔘</b></i></tg-emoji><a href="https://t.me/cit_gov/1492" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Новости ИИ и высоких технологий</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/rfrit/2669" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">663</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/rfrit/2669"><time datetime="2026-08-31T12:50:05+00:00" class="time">12:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rfrit/2670" data-view="eyJjIjotMTI1NDU2NTk4MCwicCI6MjY3MCwidCI6MTc4ODU2NTU2OSwiaCI6ImZkYjU0MTI1MjZjZDUxNmFmMyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rfrit"><i class="tgme_widget_message_user_photo bgcolor3" data-content="Р"><img src="https://cdn4.telesco.pe/file/um1gXyvcQtIopKZU5UtZzgPyU9PWfEr-cHnOmNCbLorHbGkCwpuKm4s0Qn2s6qFo0zH_XyPWuZdXQBqNP-Dwn3_V0XNJiuQuFe5Nwa3vjK1IdY8HywI-fmIq1q8DZJ-WAbo-UbkRDY3kzQpQ0YH4ZsjD34v9hMoqNHvqdiu-Wr9aV9kreqB4AVAqBaHr2f8UJ8AYVFpABFVQjeazy5lHc7hpmDfxQJ61BtGMQCEWt_LFp7i90CH4Jwap6cB6KR5UL0bc0dwob1X75gAhmFV2PPCPCYL70uU7k5_8btJyXtuZeOlr85lrC5hfT5rL4Z_ZZtbSmxv886sBzkwZGzCDEg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rfrit"><span dir="auto">РФРИТ</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">ОАК <a href="https://rfrit.ru/news/oak-zavershila-sozdanie-otechestvennoi-plm-sistemy-dlia-aviastroeniia/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">сообщила</a> о внедрении отечественной информационной системы управления жизненным циклом авиационной техники. Особо значимый проект реализован при грантовой поддержке РФРИТ (группа ВЭБ).</div><a class="tgme_widget_message_link_preview" href="https://rfrit.ru/news/oak-zavershila-sozdanie-otechestvennoi-plm-sistemy-dlia-aviastroeniia">
+  <i class="link_preview_right_image" style="background-image:url('https://cdn4.telesco.pe/file/IuiIhRm3s3pOlR4MagWn4ksxtWTi3eof_1P37VQCdeSTgmQkWO9pVk7P4_Rb1XPSCqqPnUA5Vc6Y4dOhfbij6xfurIfc7XWF3u0vNjey-H955aI9u5ZsW3U4GOeUcy3yzxP9iuhRCcVgiKsPL2WlLsRYl0U76Voa1ORFj9Exl8vkXQiEYSkc-K4EPfwZzxnMkb9ryw4L8CI1U3Q8_alNr3N0qCbyqlbzcjpEFvEeAy5b-krm0X23ZOvM8BT_wP-MCEVuNitS6T7s5XaO0S_BjWBU1CNE1RJgcA7uNoXhKipx6QiuClpH091IH7oJ-kHQ47t8e_6WGq8rglfhIg5WOg.jpg')"></i>
+  <div class="link_preview_site_name accent_color" dir="auto">rfrit.ru</div>
+  
+  <div class="link_preview_title" dir="auto">ОАК завершила создание отечественной PLM-системы для авиастроения</div>
+  <div class="link_preview_description" dir="auto">Помогаем развивать и масштабировать перспективные ИТ-решения</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">595</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rfrit/2670"><time datetime="2026-09-01T15:10:53+00:00" class="time">15:10</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 117.27ms -->

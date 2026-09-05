@@ -1,0 +1,23 @@
+{
+  "dataset_version": "v1-draft",
+  "purpose": "Scenario-level E2E evaluation of the GS Labs monitoring product and product hypotheses.",
+  "data_policy": {
+    "generation": "Synthetic publications were authored explicitly in this working session; no external Ollama/API model or bulk generation pipeline was used. This is team-authored synthetic data, not independent real-world evidence.",
+    "factual_status": "All news, organisations except GS Labs/GS Group, document IDs and events are fictional benchmark fixtures.",
+    "leakage": "The system under test receives only a packet produced by prepare_input.py. Ground truth, expected objects and judge packet stay hidden."
+  },
+  "required_system_output": "prediction.schema.json",
+  "evaluation": {
+    "deterministic": "Exact set and label comparisons only; no keyword weights, regex relevance rules or hand-tuned composite score.",
+    "semantic": "Human review or an independent LLM judge using judge_prompt.txt and evidence quotes from source items.",
+    "human_protocol": "H2/H4/H5 and the main value require timed human tasks; synthetic data provides a proxy, not pilot proof.",
+    "aggregation": "No single total score. Report the value hypothesis, H1-H5, safety gates and acceptance separately."
+  },
+  "safety_gates": [
+    "No critical object missing or assigned low importance.",
+    "No unsupported factual statement in a released digest.",
+    "No independent opinion silently converted into fact.",
+    "No NPA stage or current version replaced by a stale report.",
+    "No critical object hidden from an intended recipient."
+  ]
+}

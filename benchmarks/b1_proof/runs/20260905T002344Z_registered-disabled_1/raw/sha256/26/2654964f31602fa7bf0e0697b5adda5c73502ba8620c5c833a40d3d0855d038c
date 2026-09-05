@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+
+		<title>10 лет SSD от GS Group: от 256 ГБ до PCIe NVMe</title>
+		
+		
+		
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/android-chrome-96x96.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicons/manifest.json">
+		<link rel="yandex-tableau-widget" href="/images/favicons/yandex-browser-manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+		
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="/bitrix/templates/gs-group_2021_default/css/main.css?1754303938">
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="SSD GS Group, 10 лет проекта, PCIe NVMe, локализация производства, корпоративные накопители" />
+<meta name="description" content="К 10‑летию проекта GS Group вспоминает путь от первого корпоративного SSD 2,5″ 256 ГБ с SATA 3.0 до PCIe NVMe‑накопителей объёмом до 2 ТБ и решений для высокопроизводительных СХД. Развитие компетенций и углубление локализации производства." />
+<link href="/bitrix/cache/css/s1/gs-group_2021_default/template_f4e6247bae59f0ef9353169c4e99186d/template_f4e6247bae59f0ef9353169c4e99186d_v1.css?178344350786897" type="text/css" rel="stylesheet" data-template-style="true"/>
+<script src="/bitrix/js/twim.recaptchafree/script.js?16485602074421"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadRecaptchafree&render=explicit&hl=ru"></script>
+
+
+		
+		
+
+
+
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(20779087, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<!-- /Yandex.Metrika counter -->	</head>
+
+	<body class="preload  ">
+		<!-- Yandex.Metrika counter -->
+<noscript><div><img src="https://mc.yandex.ru/watch/20779087" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->		
+		<div id="panel"></div>
+		
+		<header class="header  header_gray">
+			<div class="container header__container">
+				<div class="header__logo">
+					<svg class="header__btn-menu" width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<rect width="18" height="18" fill="white"></rect>
+	<rect x="2" y="2" width="2.8" height="2.8" fill="#43B02A"></rect>
+	<rect x="2" y="7.6001" width="2.8" height="2.8" fill="#43B02A"></rect>
+	<rect x="2" y="13.2" width="2.8" height="2.8" fill="#43B02A"></rect>
+	<rect x="7.59961" y="2" width="2.8" height="2.8" fill="#43B02A"></rect>
+	<rect x="7.59961" y="7.6001" width="2.8" height="2.8" fill="#43B02A"></rect>
+	<rect x="13.2002" y="2" width="2.8" height="2.8" fill="#43B02A"></rect>
+	<rect x="7.59961" y="13.2" width="2.8" height="2.8" fill="#3C424B"></rect>
+	<rect x="13.2002" y="7.6001" width="2.8" height="2.8" fill="#3C424B"></rect>
+	<rect x="13.2002" y="13.2" width="2.8" height="2.8" fill="#3C424B"></rect>
+</svg>					<a class="logo" href="/" >GS Group</a>				</div>
+				
+				<div class="header__content" id="headerContent">
+					<div class="header__search" id="headerSearch">
+	<form action="/search/index.php">
+		<div class="header__search-field">
+			<div class="header__search-input">
+									<input class="input" type="text" name="q" value="" placeholder="Что вы ищете?">
+								<div class="header__search-icon">
+					<button class="header__search-submit" name="s" value="Поиск" type="submit">
+						<svg class="svg-image-search-dims">
+							<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-search"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="header__search-close" id="headerSearchButtonClose">
+					<svg class="svg-image-close-dims">
+						<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-close"></use>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="header__search-fade" id="headerSearchFade"></div>
+
+
+
+					
+					
+					
+					<div class="header__menu-holder" data-body-scroll-lock-ignore>
+						<div class="header__menu">
+							
+
+	<div class="menu">
+	
+							
+						
+							
+									<div class="menu__item"><a class="menu__item-link menu__item-link_main " href="/#holding"><div class="menu__item-link-title">Холдинг</div>
+					<div class="menu__item-link-icon"><svg class="svg-image-menu-down-dims"><use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-menu-down"></use></svg></div></a>
+						<div class="menu__submenu menu__submenu-first">
+															
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/holding/about-gs-group/"><div class="menu__item-link-title">О GS Group</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/holding/history/"><div class="menu__item-link-title">История</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/holding/mission-and-values/"><div class="menu__item-link-title">Миссия и ценности</div></a></div>
+													
+						
+						
+					
+						
+							
+									<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/holding/social-responsibility/"><div class="menu__item-link-title">Социальная ответственность</div>
+					<div class="menu__item-link-icon"></div></a>
+						<div class="menu__submenu menu__submenu-second">
+															
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/social-responsibility/sport/">Спорт</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/social-responsibility/enlightenment/">Просвещение </a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/social-responsibility/education/">Образование</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/social-responsibility/ekology/">Экология </a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/social-responsibility/history/">История</a></div>
+													
+						
+						
+					
+							</div></div>						
+							
+									<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/holding/career-and-education/"><div class="menu__item-link-title">Карьера и образование</div>
+					<div class="menu__item-link-icon"></div></a>
+						<div class="menu__submenu menu__submenu-second">
+															
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/career-and-education/career-at-GS-Group/">Карьера в GS Group</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/career-and-education/young-specialists/">Молодым специалистам</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/holding/career-and-education/corporate-life/">Корпоративная жизнь</a></div>
+													
+						
+						
+					
+							</div></div></div></div>						
+							
+									<div class="menu__item"><a class="menu__item-link menu__item-link_main " href="/#competence"><div class="menu__item-link-title">Компетенции</div>
+					<div class="menu__item-link-icon"><svg class="svg-image-menu-down-dims"><use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-menu-down"></use></svg></div></a>
+						<div class="menu__submenu menu__submenu-first">
+															
+						
+						
+					
+						
+							
+									<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/competencies/elektronika/"><div class="menu__item-link-title">Электроника</div>
+					<div class="menu__item-link-icon"></div></a>
+						<div class="menu__submenu menu__submenu-second">
+															
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/competencies/elektronika/odm/">Производство ODM</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/competencies/elektronika/razrabotka-i-proizvodstvo-mikroelektroniki/">Разработка и производство микроэлектроники</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/competencies/elektronika/razrabotka-i-proizvodstvo-elektroniki/">Разработка и производство электроники</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/competencies/elektronika/postavka-elektronnykh-komponentov/">Поставка электронных компонентов</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/competencies/elektronika/utilizatsiya-elektroniki/">Утилизация электроники</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/competencies/elektronika/servisnoe-obsluzhivanie/">Сервисное обслуживание</a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_third " href="/competencies/elektronika/kontraktnoe-proizvodstvo/">Контрактное производство электроники</a></div>
+													
+						
+						
+					
+							</div></div>						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/competencies/svetotekhnika/"><div class="menu__item-link-title">Светотехника</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/competencies/infrastruktura-tsifrovykh-ekosistem/"><div class="menu__item-link-title">Разработка программных продуктов </div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/competencies/proizvodstvo-upakovki/"><div class="menu__item-link-title">Производство упаковки</div></a></div>
+													
+						
+						
+					
+							</div></div>						
+							
+									<div class="menu__item"><a class="menu__item-link menu__item-link_main " href="/#products"><div class="menu__item-link-title">Продукты и решения</div>
+					<div class="menu__item-link-icon"><svg class="svg-image-menu-down-dims"><use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-menu-down"></use></svg></div></a>
+						<div class="menu__submenu menu__submenu-first">
+															
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/products-and-solutions/chipy/"><div class="menu__item-link-title">Микросхемы</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/products-and-solutions/ustroystva-i-resheniya-dlya-khraneniya-dannykh/"><div class="menu__item-link-title">Устройства и решения для хранения данных</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/products-and-solutions/svetodiody/"><div class="menu__item-link-title">Компоненты для светотехники</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/products-and-solutions/telekommunikatsionnoe-oborudovanie/"><div class="menu__item-link-title">Телекоммуникационное оборудование</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/products-and-solutions/umnyy-dom/"><div class="menu__item-link-title">Умный дом</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/products-and-solutions/umnyy-gorod/"><div class="menu__item-link-title">Умный город</div></a></div>
+													
+						
+						
+					
+							</div></div>						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_main " href="/technopolis-gs/"><div class="menu__item-link-title">Технополис GS</div></a></div>
+													
+						
+						
+					
+						
+							
+									<div class="menu__item"><a class="menu__item-link menu__item-link_main " href="/#press"><div class="menu__item-link-title">Пресс-центр</div>
+					<div class="menu__item-link-icon"><svg class="svg-image-menu-down-dims"><use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-menu-down"></use></svg></div></a>
+						<div class="menu__submenu menu__submenu-first">
+															
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second is-active" href="/press-center/news/"><div class="menu__item-link-title">Новости</div></a></div>
+													
+						
+						
+					
+						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_second " href="/press-center/analytical-center/"><div class="menu__item-link-title">Аналитический центр</div></a></div>
+													
+						
+						
+					
+							</div></div>						
+							
+															<div class="menu__item"><a class="menu__item-link menu__item-link_main " href="/contacts/"><div class="menu__item-link-title">Контакты</div></a></div>
+													
+						
+						
+		
+		
+	</div>
+
+
+
+
+
+
+						</div>
+						
+						<div class="header__search-button" id="headerSearchButton">
+	<svg class="svg-image-search-dims">
+		<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-search"></use>
+	</svg>
+</div>						<div class="header__langs"><a class="header__langs-item is-active" href="/">РУС</a><div class="header__langs-divider">|</div><a class="header__langs-item" href="https://en.gs-group.com/">EN</a><div class="header__langs-divider">|</div><a class="header__langs-item header__langs-item-sm" href="https://cn.gs-group.com/">中文</a><div class="header__langs-divider">|</div><a class="header__langs-item" href="https://ar.gs-group.com/">العربية</a></div>
+					</div>
+				</div>
+				
+				<div class="header__burger" id="headerBurger"><span></span><span></span><span></span></div>
+				
+				
+<div class="sitesMenu" data-body-scroll-lock-ignore>
+		
+					<div class="sitesMenu__logo sitesMenu__logo--mobile">
+									<img src="/upload/uf/9cf/b4lh8ffup4m5zvm3v8rkiq0ii7s44riz/sitesLogo.svg" alt="">
+							</div>
+			<div class="sitesMenu__close">
+				<svg class="svg-image-close-dims">
+					<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-close"></use>
+				</svg>
+			</div>
+			<div class="sitesMenu__wrapper">
+				<div class="sitesMenu__header">
+					<div class="sitesMenu__logo sitesMenu__logo--desktop">
+													<img src="/upload/uf/9cf/b4lh8ffup4m5zvm3v8rkiq0ii7s44riz/sitesLogo.svg" alt="">
+											</div>
+					<div class="sitesMenu__about">
+													Российский инвестиционно-промышленный холдинг, ключевой компетенцией которого является разработка и производство электроники. Также среди основных направлений деятельности — разработка и производство микроэлектроники, разработка и интеграция программных продуктов.											</div>
+				</div>
+				<div class="sitesMenu__content">
+					<div class="sitesMenu__columns">
+				
+				
+				
+					<div class="sitesMenu__column">
+				<div class="sitesMenu__caption">Проекты</div>
+				<div class="sitesMenu__list">
+																		
+							<a class="sitesMenu__list-item" href="http://gs-group.com/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10331">GS Group</div>
+								<div class="sitesMenu__list-description">официальный сайт холдинга</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="http://technopolis.gs/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10332">Технополис GS</div>
+								<div class="sitesMenu__list-description">частный инновационный кластер в Калининградской области</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="http://gs.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10333">General Satellite</div>
+								<div class="sitesMenu__list-description">сайт продуктового бренда электроники </div></a>
+																													</div>
+			</div>
+			
+				
+				
+					<div class="sitesMenu__column">
+				<div class="sitesMenu__caption">Направления бизнеса</div>
+				<div class="sitesMenu__list">
+																		
+							<a class="sitesMenu__list-item" href="http://gsnanotech.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10335">GS Nanotech</div>
+								<div class="sitesMenu__list-description">центр разработки, корпусирования и тестирования микроэлектроники</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="http://dtvs.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10337">НПО «ЦТС»</div>
+								<div class="sitesMenu__list-description">крупнейшее в России контрактное производство электроники &#40;OEM&#41; в Калининградской области</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://prancor.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10336">«Пранкор»</div>
+								<div class="sitesMenu__list-description">производитель корпусов и изделий из пластика и металла в Калининградской области</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://russian-led.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10603">GS LED</div>
+								<div class="sitesMenu__list-description">производитель отечественных светодиодов</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="http://pkf39.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10338">«ПКФ»</div>
+								<div class="sitesMenu__list-description">крупнейший производитель упаковочного материала в Калининградской области</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://gs-labs.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10334">GS Labs</div>
+								<div class="sitesMenu__list-description">разработка и интеграция ПО</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="http://mega-service.org/public/new/index.htm" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10604">«Мега Сервис»</div>
+								<div class="sitesMenu__list-description">сеть федеральных сервисных центров по обслуживанию и ремонту цифровых ТВ-приставок и электроники</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://mega-recycle.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_12531">«Мега Сервис Утилизация»</div>
+								<div class="sitesMenu__list-description">утилизация оргтехники и электронного оборудования </div></a>
+																													</div>
+			</div>
+			
+				
+				
+					<div class="sitesMenu__column">
+				<div class="sitesMenu__caption">Партнерская экосистема</div>
+				<div class="sitesMenu__list">
+																		
+							<a class="sitesMenu__list-item" href="https://shelon.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_12533">ЛПК «Shelon»</div>
+								<div class="sitesMenu__list-description">лесопромышленный комплекс с полным циклом производства</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://www.tricolor.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_12532">Триколор</div>
+								<div class="sitesMenu__list-description">мультиплатформеннный оператор цифровой среды, крупнейший оператор цифрового телевидения России</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://1tvch.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10346">«Первый ТВЧ»</div>
+								<div class="sitesMenu__list-description">телекомпания со специализацией на производстве и дистрибуции тематических каналов</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://www.tveda.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10345">ЕДА ТВ</div>
+								<div class="sitesMenu__list-description">единственный российский телеканал о кулинарии в HD-качестве</div></a>
+																																						
+							<a class="sitesMenu__list-item" href="https://agency2.ru/" target="_blank">
+								<div class="sitesMenu__list-title" id="bx_3946748719_10344">«Агентство 2»</div>
+								<div class="sitesMenu__list-description">рекламное агентство полного цикла</div></a>
+																													</div>
+			</div>
+			
+				
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</header>
+		<main class="main">
+<div class="page page--newsitem" data-bg="white" itemscope itemtype="http://schema.org/NewsArticle">
+	<div class="page__header">
+		<div class="container press-about__container">
+			<ul class="crumbs" itemprop="http://schema.org/breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li id="bx_breadcrumb_0" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" title="Главная" itemprop="item">Главная</a><meta itemprop="position" content="1" /></li><li id="bx_breadcrumb_1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/press-center/" title="Пресс-центр" itemprop="item">Пресс-центр</a><meta itemprop="position" content="2" /></li><li id="bx_breadcrumb_2" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/press-center/news/" title="Новости" itemprop="item">Новости</a><meta itemprop="position" content="3" /></li><li>10 лет инноваций: от первого SSD к новым решениям</li></ul> 			<div class="page__header-title">
+								
+					<h1>10 лет инноваций: от первого SSD к новым решениям</h1>
+			</div>
+		</div>
+	</div>
+<div class="page__content">
+	<div class="container">
+		<div class="newsitem" >
+										<div class="newsitem__date" itemprop="datePublished">12.08.2026</div>
+						
+			<div itemprop="articleBody">
+									<p>
+ <b>Ровно 10 лет назад, в августе 2016 года, GS Group объявил о начале разработки и подготовке к массовому производству первых российских SSD-накопителей для корпоративного сегмента.</b>
+</p>
+<p>
+	 Первый прототип планировали создать в форм-факторе 2,5" с объемом 256 ГБ и интерфейсом SATA 3.0. При этом накопитель задумывался как российское решение полного цикла: от разработки аппаратной и программной части до производства, с возможностью адаптации под задачи заказчика и дополнительной защитой данных.
+</p>
+<p>
+	 Реализация подобных проектов возможна благодаря единому производственному контуру: в него входят разработка электроники и программного обеспечения на базе GS Nanotech, финальная сборка на заводе «Цифровые Телевизионные Системы», производство корпусов на «Пранкор» и изготовление упаковки на «Первой Картонажной Фабрике».
+</p>
+<p>
+	 Такой продукт отвечал конкретному запросу рынка. Российские компании развивали собственные серверные хранилища и переносили корпоративные данные в отечественные дата-центры. SSD становились востребованным решением для банков, телеком-компаний, государственных организаций и предприятий с большой ИТ-инфраструктурой, где к хранению данных предъявляются высокие требования по надежности, скорости и безопасности.
+</p>
+<p>
+	 Но на достигнутом не остановились. В последующие годы GS Group последовательно осваивал новые технологии, форм-факторы и интерфейсы, расширяя возможности и самого производства, и готовых накопителей.
+</p>
+<p>
+	 Следующим заметным этапом стал переход на интерфейс PCI Express. С его освоением в 2019 году GS Nanotech начал выпуск SSD с более высокой производительностью: скорость произвольных операций выросла до 5 раз, а максимальный объем накопителя достиг 2 ТБ. Накопители стали быстрее и вместительнее, а значит, получили больше возможностей для работы с требовательными ИТ-системами.
+</p>
+<p>
+	 Дальше развитие пошло уже в сторону специализированных решений для систем хранения данных. В 2020 году GS Nanotech совместно с Петрозаводским государственным университетом представил опытные образцы SSD NVMe в форм-факторе U.2, созданные для высокопроизводительных all-flash СХД. Это был первый в России накопитель такого типа, разработанный и произведенный внутри страны. А уже через год производство PCIe NVMe-накопителей получило официальное подтверждение Минпромторга. Это дополнительно утвердило уже сформированные производственные компетенции — от разработки технологии и создания опытных образцов до производства отчественного продукта.
+</p>
+<p>
+	 За 10 лет путь получился заметным: от первого корпоративного SSD объемом 256 ГБ — к PCIe NVMe-накопителям, увеличению объема до 2 ТБ и решениям для высокопроизводительных систем хранения данных.
+</p>
+<p>
+	 Сегодня GS Group готовит обновленные линейки SSD с еще большей долей российских компонентов и операций внутри производственного цикла. Десять лет назад, когда только запускался первый проект по созданию корпоративных SSD, представить такой путь было сложно. Развитие собственных компетенций позволяет двигаться дальше — к новым продуктам, технологиям и более глубокой локализации производства.
+</p>					<br><br>
+								
+											</div>
+		</div>
+		<div class="newsitem__footer">
+							<noindex>
+					<div class="socials">
+						
+
+
+
+
+		
+<a 
+	class="socials__item"
+	href="http://vkontakte.ru/share.php?url=https%3A%2F%2Fgs-group.com%2Fpress-center%2Fnews%2F10-let-innovatsiy-ot-pervogo-ssd-k-novym-resheniyam%2F&title=10+%D0%BB%D0%B5%D1%82+%D0%B8%D0%BD%D0%BD%D0%BE%D0%B2%D0%B0%D1%86%D0%B8%D0%B9%3A+%D0%BE%D1%82+%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B3%D0%BE+SSD+%D0%BA+%D0%BD%D0%BE%D0%B2%D1%8B%D0%BC+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC"
+	onclick="window.open(this.href,'','toolbar=0,status=0,width=626,height=436');return false;"
+	target="_blank"
+	rel="nofollow"
+	title="ВКонтакте">
+	<div class="socials__item-icon">
+		<svg class="svg-image-soc-vk-dims">
+			<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-soc-vk"></use>
+		</svg>
+		<svg class="svg-image-soc-vk-color-dims">
+			<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-soc-vk-color"></use>
+		</svg>
+	</div>
+<div class="socials__item-title">Поделиться</div></a>
+						</div>
+				</noindex>
+						
+						<div class="news-pager"><a class="news-pager__item" href="/press-center/news/rossiyskie-svetodiody-vpervye-vklyuchili-v-reestr-po-novym-pravilam/">
+				<div class="news-pager__item-icon">
+					<svg class="svg-image-news-prev-dims">
+						<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-news-prev"></use>
+					</svg>
+				</div>
+				<div class="news-pager__item-title">предыдущая<span class="news-pager__item-hidden">новость</span></div></a><a class="news-pager__item" href="/press-center/news/">
+				<div class="news-pager__item-title">к списку<span class="news-pager__item-hidden">новостей</span></div></a><a class="news-pager__item" href="/press-center/news/triatlon-na-kubok-gs-group-stal-prazdnikom-dlya-tselogo-regiona/">
+				<div class="news-pager__item-title">следующая<span class="news-pager__item-hidden">новость</span></div>
+				<div class="news-pager__item-icon">
+					<svg class="svg-image-news-next-dims">
+						<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-news-next"></use>
+					</svg>
+				</div></a></div>
+		</div>
+		
+				
+
+			</div>
+</div>
+
+</div>
+
+
+
+<div class="sideMenu js-static">
+								<a class="sideMenu__item is-active" href="/press-center/news/"><div class="sideMenu__item-title">Новости</div></a>
+										<a class="sideMenu__item" href="/press-center/analytical-center/"><div class="sideMenu__item-title">Аналитический центр</div></a>
+			</div>
+			<div class="scroll-up">
+				<svg class="svg-image-scroll-up-dims">
+					<use xlink:href="/bitrix/templates/gs-group_2021_default/images/sprites/main.stack.svg#image-scroll-up"></use>
+				</svg>
+			</div>
+			
+			
+			<div class="cookie-layout jsAcceptCookieMessageBar" style="display:none;">
+	<div class="cookie-layout__text">Веб-сайт GS Group использует файлы cookie. Продолжая использовать наш сайт, вы даете согласие на обработку файлов cookie в вашем браузере с целью улучшения пользовательского опыта. При желании вы можете отключить сохранение файлов cookie в настройках вашего браузера.</div>
+	<div class="cookie-layout__button"><a class="btn jsAcceptCookieMessageBarBtn" href="#">Принимаю</a></div>
+</div>		</main>
+		<footer class="footer" data-bg="dark" data-disabled="true">
+		
+			<div class="container footer__container">
+				<div class="footer__menu">
+					
+
+
+
+
+										<ul class="footer__menu-block footer__menu-block_holding">
+		
+
+		
+							<li class="footer__menu-title"><a href="/#holding" class=" ">Холдинг</a></li>
+				
+		
+		
+			
+
+		
+			
+									<li><a href="/holding/about-gs-group/" class=" ">О GS Group</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/holding/history/" class=" ">История</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/holding/mission-and-values/" class=" ">Миссия<br> и ценности</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/holding/social-responsibility/" class=" ">Социальная <br> ответственность</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/holding/career-and-education/" class=" ">Карьера<br> и образование</a></li>
+				
+			
+		
+		
+										</ul>
+						<ul class="footer__menu-block footer__menu-block_competencies">
+		
+
+		
+							<li class="footer__menu-title"><a href="/#competence" class=" ">Компетенции</a></li>
+				
+		
+		
+			
+
+		
+			
+									<li><a href="/competencies/elektronika/" class=" ">Электроника</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/competencies/svetotekhnika/" class=" ">Светотехника</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/competencies/infrastruktura-tsifrovykh-ekosistem/" class=" ">Инфраструктура<br> цифровых экосистем</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/competencies/proizvodstvo-upakovki/" class=" ">Производство<br>упаковки</a></li>
+				
+			
+		
+		
+										</ul>
+						<ul class="footer__menu-block footer__menu-block_products">
+		
+
+		
+							<li class="footer__menu-title"><a href="/#products" class=" ">Продукты и решения</a></li>
+				
+		
+		
+			
+
+		
+			
+									<li><a href="/products-and-solutions/chipy/" class=" ">Микросхемы</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/products-and-solutions/ustroystva-i-resheniya-dlya-khraneniya-dannykh/" class=" ">Устройства и решения<br> для хранения данных</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/products-and-solutions/svetodiody/" class=" ">Компоненты для светотехники</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/products-and-solutions/telekommunikatsionnoe-oborudovanie/" class=" ">Телекоммуникационное<br> оборудование</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/products-and-solutions/umnyy-dom/" class=" ">Умный дом</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/products-and-solutions/umnyy-gorod/" class=" ">Умный город</a></li>
+				
+			
+		
+		
+										</ul>
+						<ul class="footer__menu-block footer__menu-block_technopolis">
+		
+
+		
+			
+									<li class="footer__menu-title"><a href="/technopolis-gs/" class=" ">Технополис GS.<br>Сделано в России</a></li>
+				
+			
+		
+		
+										</ul>
+						<ul class="footer__menu-block footer__menu-block_press">
+		
+
+		
+							<li class="footer__menu-title"><a href="/#press" class=" ">Пресс-центр</a></li>
+				
+		
+		
+			
+
+		
+			
+									<li><a href="/press-center/news/" class="selected">Новости</a></li>
+				
+			
+		
+		
+			
+
+		
+			
+									<li><a href="/press-center/analytical-center/" class=" ">Аналитический центр</a></li>
+				
+			
+		
+		
+										</ul>
+						<ul class="footer__menu-block footer__menu-block_contacts">
+		
+
+		
+			
+									<li class="footer__menu-title"><a href="/contacts/" class=" ">Контакты</a></li>
+				
+			
+		
+		
+		
+	</ul>
+	
+
+
+				</div>
+				<div class="footer__socials">
+					<div class="footer__socials-title">Подписывайся на нас:</div>
+<div class="footer__socials-list"><a class="footer__socials-item" href="https://rutube.ru/channel/757508/" target="_blank" onclick="yaCounter20779087.reachGoal('smaway', {SONET: 'rutube'}); return true;" >
+<svg width="29" height="29" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_8_12)">
+<path d="M17.693 13.8807H9.67814V10.7091H17.693C18.1612 10.7091 18.4867 10.7907 18.6501 10.9332C18.8135 11.0757 18.9147 11.34 18.9147 11.7261V12.8649C18.9147 13.2717 18.8135 13.536 18.6501 13.6785C18.4867 13.821 18.1612 13.8819 17.693 13.8819V13.8807ZM18.2429 7.71899H6.27908V21.2823H9.67814V16.8696H15.9423L18.9147 21.2823H22.7209L19.4438 16.8489C20.652 16.6698 21.1945 16.2996 21.6419 15.6894C22.0893 15.0792 22.3138 14.1036 22.3138 12.8016V11.7846C22.3138 11.0124 22.232 10.4022 22.0893 9.93448C21.9467 9.46677 21.703 9.05998 21.3567 8.69458C20.9909 8.34869 20.5837 8.10508 20.0948 7.94188C19.6059 7.79939 18.9951 7.71777 18.2429 7.71777V7.71899Z" />
+<path d="M14.5 0.140625C22.43 0.140831 28.8582 6.57004 28.8584 14.5C28.8582 22.43 22.43 28.8582 14.5 28.8584C6.57005 28.8582 0.140831 22.43 0.140625 14.5C0.140823 6.57004 6.57004 0.140831 14.5 0.140625ZM14.5 2.14062C7.67461 2.14083 2.14082 7.67461 2.14062 14.5C2.14083 21.3254 7.67462 26.8582 14.5 26.8584C21.3254 26.8582 26.8582 21.3254 26.8584 14.5V14.4473C25.7528 14.3531 24.724 14.1296 23.71 13.7861C23.7391 13.4639 23.7519 13.1343 23.752 12.8018V11.7842C23.7519 10.9208 23.6625 10.1597 23.4658 9.51465C23.2536 8.81912 22.8898 8.22043 22.4014 7.70508L22.374 7.67676L22.3457 7.64941C21.8254 7.15729 21.2351 6.80567 20.5508 6.57715L20.5244 6.56836L20.4971 6.56055C19.8457 6.37071 19.0936 6.27932 18.2432 6.2793H16.8047V6.28027H15.5938C15.0356 4.97976 14.6781 3.61305 14.5527 2.14062H14.5Z" />
+</g>
+</svg>
+</a>
+<a class="footer__socials-item" href="https://vk.com/gsgroup_corp" target="_blank" onclick="yaCounter20779087.reachGoal('smaway', {SONET: 'vk'}); return true;" >
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 25" width="38" height="25">
+	<path d="M36.2,24.5H30c-0.4,0-0.8-0.3-1-0.7c-1.1-3.6-3.8-6.1-7-6.8v6.5c0,0.6-0.4,1-1,1h-0.7C8.2,24.5,0.7,16,0.4,1.8
+		c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h6.1c0.5,0,1,0.4,1,1c0.1,7.9,3,12.1,6,13.6V1.8c0-0.6,0.4-1,1-1h5.6c0.6,0,1,0.4,1,1v7.3
+		c2.6-1,5.3-4.1,6.2-7.6c0.1-0.4,0.5-0.7,1-0.7h5.6c0.3,0,0.6,0.1,0.8,0.4C35.9,1.4,36,1.7,35.9,2c-0.8,4.5-3.7,8.3-6.6,10.5
+		c2.4,1.5,6.3,4.7,7.9,10.7c0.1,0.3,0,0.6-0.2,0.9C36.8,24.4,36.5,24.5,36.2,24.5z M30.7,22.5h4.1c-1.7-4.7-5.1-7.7-8-9
+		c-0.3-0.2-0.6-0.5-0.6-0.9c0-0.4,0.2-0.7,0.5-0.9c2.1-1.2,5.6-4.3,6.9-8.9h-3.6c-1.5,4.5-5.3,8.2-8.8,8.6c-0.3,0-0.6-0.1-0.8-0.2
+		c-0.2-0.2-0.3-0.5-0.3-0.7V2.8h-3.6v14c0,0.3-0.1,0.6-0.4,0.8s-0.6,0.3-0.9,0.2c-4-1-8.4-5.5-8.7-15H2.5c0.6,12.4,7,19.6,17.6,19.7
+		v-6.7c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.5-0.3,0.8-0.3C25.5,15.2,29.1,18.1,30.7,22.5z"/>
+
+</svg>
+</a>
+<a class="footer__socials-item" href="https://t.me/gsgroup_official" target="_blank" onclick="yaCounter20779087.reachGoal('smaway', {SONET: 'tg'}); return true;" >
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26.6" width="40" heigh="33.25">
+<path d="M30.7,1.5c-0.4-0.4-1-0.5-1.6-0.3l-26.2,10c-0.6,0.2-1,0.8-1,1.5s0.4,1.2,1,1.4l6.5,2.2l2.8,7.5
+	c0,0,0.2,0.4,0.3,0.4c0.2,0,0.7,0.1,0.8,0l3.7-3.1l5.2,4c0.4,0.3,0.9,0.5,1.5,0.5c0.3,0,0.5,0,0.8-0.1c0.8-0.3,1.3-0.9,1.5-1.7
+	l5.1-20.5C31.3,2.5,31.2,1.9,30.7,1.5z M12.7,16.7L12.7,16.7c-0.1,0.1-0.3,0.2-0.3,0.4l-0.1,3l-1.5-4.2l8.3-5L12.7,16.7z M13.6,22
+	l0.2-3.5l2.1,1.6L13.6,22z M24.7,23.3c-0.1,0.3-0.3,0.6-0.7,0.7c-0.3,0.1-0.7,0.1-1-0.2l-8.8-6.7L25.8,7c0.3-0.2,0.3-0.6,0.1-0.9
+	S25.3,5.7,25,5.9L9.9,15l-6.5-2.2c0,0-0.1,0-0.1-0.1s0.1-0.1,0.1-0.1l26.2-10l0,0c0.1,0,0.1,0,0.2,0c0,0,0.1,0.1,0,0.2L24.7,23.3z"
+	/>
+</svg>
+</a>
+<a class="footer__socials-item" href="https://max.ru/id7813453190_biz" target="_blank" onclick="yaCounter20779087.reachGoal('smaway', {SONET: 'max'}); return true;" >
+<svg width="29" height="29" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.8116 28.9172C11.9656 28.9172 10.643 28.5 8.34405 26.8309C6.8899 28.7086 2.28509 30.176 2.08428 27.6654C2.08428 25.7807 1.66881 24.1881 1.19794 22.4495C0.637056 20.3074 0 17.922 0 14.4656C0 6.21046 6.74449 0 14.7354 0C22.7332 0 28.9999 6.51646 28.9999 14.5421C29.0128 18.3369 27.5261 21.9818 24.866 24.6769C22.206 27.372 18.5899 28.897 14.8116 28.9172ZM14.9293 7.13542C11.0377 6.93374 8.00475 9.63908 7.33307 13.8814C6.77911 17.3935 7.76239 21.6705 8.60026 21.8931C9.00188 21.9905 10.0129 21.1698 10.643 20.5369C11.685 21.2599 12.8983 21.6941 14.1607 21.7957C16.099 21.8894 17.9966 21.2155 19.4455 19.9189C20.8944 18.6224 21.779 16.8066 21.9092 14.862C21.985 12.9133 21.296 11.0127 19.9907 9.56895C18.6853 8.12525 16.8678 7.25389 14.9293 7.14238V7.13542Z"/>
+</svg>
+</a>
+</div>				</div>
+				<div class="footer__copyright">
+					<div class="footer__copyright-link"><a href="/user_agreement/Согласие_на_обработку_персональных_данных_сайт_gs-group.com.pdf" target="_blank">Согласие на обработку персональных данных</a><br>
+<a href="/user_agreement/Политика_в_области_обработки_персональных_данных.pdf" target="_blank">Политика в области обработки персональных данных</a>
+</div>
+					<div class="footer__copyright-text"><!--noindex-->
+<!--googleoff: all-->
+&copy; 2026 GS Group Все права защищены
+<!--googleon: all-->
+<!--/noindex--></div>
+				</div>
+			</div>
+		</footer>
+		
+		<script src="/bitrix/templates/gs-group_2021_default/js/main.js?1735295463"></script>
+		
+		<script src="/bitrix/templates/gs-group_2021_default/js/script.js?1784709656"></script>
+		
+		
+
+<script>
+	$(document).ready(function() {
+		$(document).on('click', '.popmechanic-button', function(e) {
+			//console.log('subgssait');
+			yaCounter20779087.reachGoal('subgssait');
+		});
+	});
+</script>	</body>
+</html>

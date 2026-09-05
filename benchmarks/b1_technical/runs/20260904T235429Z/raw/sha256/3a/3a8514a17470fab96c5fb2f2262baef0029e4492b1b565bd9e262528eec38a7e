@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>&#x41E;&#x444;&#x438;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43E;&#x43F;&#x443;&#x431;&#x43B;&#x438;&#x43A;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x43E;&#x432;&#x44B;&#x445; &#x430;&#x43A;&#x442;&#x43E;&#x432;</title>
+
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="196x196" href="/favicon/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="160x160" href="/favicon/favicon-160.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon/favicon-57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/favicon/favicon-60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/favicon/favicon-72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/favicon/favicon-76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/favicon/favicon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/favicon/favicon-120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon/favicon-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon/favicon-152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicon/favicon-180.png" />
+    <link rel="apple-touch-icon" href="/favicon/favicon-57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon-60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/favicon-72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/favicon-76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/favicon-114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/favicon-152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/favicon/favicon-144.png" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+
+    <meta name="robots">
+    <meta name="keywords">
+    <meta name="description">
+
+    <script src="/app/bundle.js?v=JyS5_g04Nx1ex98yNLfNLYOOq07hWM0v9Lq1oq-A7iA"></script>
+    <script src="/lib/es6-shim/es6-shim.min.js"></script>
+    <script src="/lib/es6-promise/es6-promise.min.js"></script>
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <link href="/lib/select2/css/select2.min.css" rel="stylesheet" />
+
+    <link href="/lib/select2-theme-bootstrap4/dist/select2-bootstrap.css" rel="stylesheet" />
+    <script src="/lib/select2/js/select2.min.js" defer></script>
+    <script src="/lib/select2/js/i18n/ru.js" defer></script>
+    <script src="/js/url-helper.js"></script>
+
+    <script type="text/javascript">EntryPoint.common()</script>
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/app/bundle.css?v=3JT2kB8CYknmAQZDHp_6Z9d2vIn_3kOsGh_x0SsMZSg" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <header>
+                <div class="header-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="logo">
+                                    <a href=http://pravo.gov.ru><img class="img-responsive" alt="Официальное опубликование правовых актов" src="/images/logo.png"></a>
+                                </div>
+                                <div class="site-title">Официальное опубликование правовых актов</div>
+                                <div class="site-titleES">ОФИЦИАЛЬНОЕ ОПУБЛИКОВАНИЕ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-button notforprint"></div>
+                <div class="mobile-menu notforprint">
+                    <i class="mobile-menu-close"></i>
+                    <div class="mobile-menu-container">
+                        <ul>
+
+<li>
+    <a title="На главную страницу портала" class="main-item with-icon" href="http://pravo.gov.ru">
+        <i class="icon icon-home"></i>
+    </a>
+</li>
+<li>
+    <a class="main-item " href=/documents/president/daily title="05 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Сегодня</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/president/weekly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x430;&#x44F; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44F;, &#x441; &#x43F;&#x43E;&#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x430; &#x43F;&#x43E; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; - c 31 &#x43F;&#x43E; 06 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Неделя</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/president/monthly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x441;&#x44F;&#x446; - &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44C;">Месяц</a>
+</li>
+<li>
+    <a class="main-item " href=/search/president>ПОИСК <i class="fa fa-search faright"></i></a>
+</li>
+<li>
+    <a class="main-item " href=/calendar/president>КАЛЕНДАРЬ ОПУБЛИКОВАНИЯ <i class="far fa-calendar-alt faright"></i></a>
+</li>                        </ul>
+                    </div>
+                </div>
+                <div class="top_menu notforprint" id="navbarSupportedContent">
+                    <div class="container">
+                        <div class="row">
+                            <ul class="float-left">
+
+<li>
+    <a title="На главную страницу портала" class="main-item with-icon" href="http://pravo.gov.ru">
+        <i class="icon icon-home"></i>
+    </a>
+</li>
+<li>
+    <a class="main-item " href=/documents/president/daily title="05 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Сегодня</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/president/weekly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x430;&#x44F; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44F;, &#x441; &#x43F;&#x43E;&#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x430; &#x43F;&#x43E; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; - c 31 &#x43F;&#x43E; 06 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Неделя</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/president/monthly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x441;&#x44F;&#x446; - &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44C;">Месяц</a>
+</li>
+<li>
+    <a class="main-item " href=/search/president>ПОИСК <i class="fa fa-search faright"></i></a>
+</li>
+<li>
+    <a class="main-item " href=/calendar/president>КАЛЕНДАРЬ ОПУБЛИКОВАНИЯ <i class="far fa-calendar-alt faright"></i></a>
+</li>                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="overlay"></div>
+                
+
+        <div class="container breadcrumbs-container notforprint">
+            <div class="breadcrumbs-line ">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumbs-period-info">
+                            <ol class="breadcrumb">
+                                        <li class="breadcrumb-item breadcrumb-item-home">
+                                            <a href="/">Официальное опубликование</a>
+                                        </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<form name="search" method="get" id="consultant-search">
+    <div class="container">
+        <input type="hidden" value="president" id="block" name="block" />
+        <input type="hidden" id="category" name="category" />
+        <input type="hidden" id="period" name="periodType" />
+
+
+        <input type="hidden" value="1" id="index" name="index" />
+<div class="row">
+    <div class="col-md-9 col-sm-12">
+            <div class="title-h1">
+                &#x41F;&#x440;&#x435;&#x437;&#x438;&#x434;&#x435;&#x43D;&#x442; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+            </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+
+<div class="notforprint float-right text-right">
+    <div class="documents-menu-item">
+        <span>Документов на странице:</span>
+        <select id="rangeSizeSelect" class="" data-minimum-results-for-search="Infinity" name="pageSize" data-val="true" data-val-required="The PageSize field is required."><option value="10">10</option>
+<option selected="selected" value="30">30</option>
+<option value="100">100</option>
+<option value="200">200</option>
+</select>
+    </div>
+    <div>
+        <a href="#print" onclick="window.print();" class="documents-menu-item">
+            <span>
+                Печать списка документов -
+            </span>
+            <img alt="Печать" border="0" src="/images/print.png" />
+        </a>
+    </div>
+</div>
+    </div>
+    <div class="col-12">
+        <div class="title-h6 text-center">
+            СПИСОК ОПУБЛИКОВАННЫХ ПРАВОВЫХ АКТОВ 
+        </div>
+    </div>
+</div>
+        <div id="documentListDiv">
+
+
+<div style="margin-top: 10px;" class="page-navigation-count notforprint">
+    Показаны на странице: с 1
+    по 30
+    из 19177
+</div>
+
+<div class="page-navigation notforprint"><span class='disableGo'><i class='fas fa-caret-left'></i></span >  <span class='page-current'>1</span>  <a href='/documents/block/president?index=2' class='' onClick='gotourl("/documents/block/president#index=2"); return false;'>2</a>  <a href='/documents/block/president?index=3' class='' onClick='gotourl("/documents/block/president#index=3"); return false;'>3</a>  <a href='/documents/block/president?index=4' class='' onClick='gotourl("/documents/block/president#index=4"); return false;'>4</a>  ...  <a href='/documents/block/president?index=640' class='' onClick='gotourl("/documents/block/president#index=640"); return false;'>640</a>  <a title='Следующая' href='/documents/block/president?index=2' class='' onClick='gotourl("/documents/block/president#index=2"); return false;'><i class='fas fa-caret-right'></i></a></div>
+<div class="documents-container">
+    <div class="documents-table">
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        1
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202609040002">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202609040002" class="documents-item-name">
+                                Указ Президента Российской Федерации от 04.09.2026 № 636<br /> "О Чрезвычайном и Полномочном После Российской Федерации в Союзе Коморских Островов"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202609040002</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">04.09.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202609040002" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">32 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        2
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202609040001">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202609040001" class="documents-item-name">
+                                Указ Президента Российской Федерации от 04.09.2026 № 635<br /> "Об Андрееве А.В."
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202609040001</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">04.09.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202609040001" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">27 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        3
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310008">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310008" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 629<br /> "О внесении изменения в Указ Президента Российской Федерации от 14 января 2011 г. № 38 "Вопросы деятельности Следственного комитета Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310008</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310008" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">80 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        4
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310005">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310005" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 628<br /> "О присвоении 33 инженерно-саперному полку почетного наименования"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310005</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310005" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">39 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        5
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310006">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310006" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 627<br /> "О присвоении 101 Хинганской бригаде управления почетного наименования"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310006</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310006" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">41 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        6
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310004">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310004" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 626<br /> "О внесении изменений в Положение о Министерстве внутренних дел Российской Федерации, утвержденное Указом Президента Российской Федерации от 21 декабря 2016 г. № 699"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310004</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310004" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">83 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        7
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310003">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310003" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 625<br /> "О внесении изменений в состав Межведомственной комиссии по реализации Государственной программы по оказанию содействия добровольному переселению в Российскую Федерацию соотечественников, проживающих за рубежом, утвержденный Указом Президента Российской Федерации от 24 января 2020 г. № 61"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310003</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310003" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">94 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        8
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310002">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310002" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 624<br /> "Об акционерном обществе "Комсомольский-на-Амуре аэропорт"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310002</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310002" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">87 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        9
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310001">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310001" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 619<br /> "О внесении изменения в перечень движимого и недвижимого имущества, ценных бумаг, долей в уставных (складочных) капиталах российских юридических лиц и имущественных прав, в отношении которых вводится временное управление, утвержденный Указом Президента Российской Федерации от 25 апреля 2023 г. № 302"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310001</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310001" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">88 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        10
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310009">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310009" class="documents-item-name">
+                                Указ Президента Российской Федерации от 31.08.2026 № 617<br /> "О внесении изменения в Указ Президента Российской Федерации от 7 августа 2004 г. № 1013 "Вопросы Федеральной службы охраны Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310009</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310009" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">59 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        11
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608310007">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608310007" class="documents-item-name">
+                                Распоряжение Президента Российской Федерации от 31.08.2026 № 328-рп<br /> "О подписании Протокола о внесении изменений и дополнений в Хартию Шанхайской организации сотрудничества от 7 июня 2002 г."
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608310007</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">31.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608310007" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">49 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        12
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608250021">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608250021" class="documents-item-name">
+                                Указ Президента Российской Федерации от 25.08.2026 № 610<br /> "О внесении изменений в состав Комиссии при Президенте Российской Федерации по делам ветеранов и состав Комиссии при Президенте Российской Федерации по делам инвалидов, утвержденные Указом Президента Российской Федерации от 16 января 2025 г. № 25"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608250021</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">25.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608250021" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">126 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        13
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608250002">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608250002" class="documents-item-name">
+                                Указ Президента Российской Федерации от 25.08.2026 № 609<br /> "О Чрезвычайном и Полномочном После Российской Федерации в Республике Ирак"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608250002</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">25.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608250002" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">28 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        14
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608250001">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608250001" class="documents-item-name">
+                                Указ Президента Российской Федерации от 25.08.2026 № 608<br /> "О Кутрашеве Э.К."
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608250001</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">25.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608250001" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">26 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        15
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240009">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240009" class="documents-item-name">
+                                Указ Президента Российской Федерации от 24.08.2026 № 604<br /> "О мерах по обеспечению безопасности объектов критической инфраструктуры Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240009</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240009" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">207 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(3 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        16
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240007">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240007" class="documents-item-name">
+                                Указ Президента Российской Федерации от 24.08.2026 № 603<br /> "О праздновании 150-летия основания Томского государственного университета"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240007</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240007" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">63 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        17
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240003">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240003" class="documents-item-name">
+                                Указ Президента Российской Федерации от 24.08.2026 № 602<br /> "О признании утратившими силу некоторых актов Президента Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240003</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240003" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">60 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        18
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240006">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240006" class="documents-item-name">
+                                Указ Президента Российской Федерации от 24.08.2026 № 601<br /> "Об имущественном взносе Российской Федерации в публично-правовую компанию "Военно-строительная компания"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240006</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240006" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">123 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(3 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        19
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240004">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240004" class="documents-item-name">
+                                Указ Президента Российской Федерации от 24.08.2026 № 599<br /> "О заместителе руководителя Федерального агентства по делам Содружества Независимых Государств, соотечественников, проживающих за рубежом, и по международному гуманитарному сотрудничеству"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240004</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240004" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">40 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        20
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240002">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240002" class="documents-item-name">
+                                Указ Президента Российской Федерации от 24.08.2026 № 598<br /> "О внесении изменений в состав Межведомственной комиссии по вопросам формирования, сохранения и использования коллекций генетических ресурсов микроорганизмов, утвержденный Указом Президента Российской Федерации от 21 октября 2024 г. № 902"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240002</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240002" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">146 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(3 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        21
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240008">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240008" class="documents-item-name">
+                                Указ Президента Российской Федерации от 24.08.2026 № 597<br /> "О награждении государственными наградами Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240008</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240008" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">2424 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(34 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        22
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240012">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240012" class="documents-item-name">
+                                Распоряжение Президента Российской Федерации от 24.08.2026 № 320-рп<br /> "О продлении срока федеральной государственной гражданской службы"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240012</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240012" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">37 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        23
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240011">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240011" class="documents-item-name">
+                                Распоряжение Президента Российской Федерации от 24.08.2026 № 319-рп<br /> "О продлении срока федеральной государственной службы"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240011</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240011" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">35 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        24
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240010">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240010" class="documents-item-name">
+                                Распоряжение Президента Российской Федерации от 24.08.2026 № 317-рп<br /> "О подписании Соглашения между Российской Федерацией и Республикой Южная Осетия о порядке пенсионного обеспечения сотрудников федеральной противопожарной службы Государственной противопожарной службы Министерства Российской Федерации по делам гражданской обороны, чрезвычайным ситуациям и ликвидации последствий стихийных бедствий и сотрудников государственной противопожарной службы Министерства Республики Южная Осетия по делам гражданской обороны, чрезвычайным ситуациям и ликвидации последствий стихийных бедствий и членов их семей"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240010</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240010" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">87 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(2 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        25
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240015">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240015" class="documents-item-name">
+                                Распоряжение Президента Российской Федерации от 24.08.2026 № 316-рп<br /> "О поощрении"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240015</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240015" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">1609 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(22 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        26
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608240001">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608240001" class="documents-item-name">
+                                Распоряжение Президента Российской Федерации от 24.08.2026 № 315-рп<br />(О назначении Бабича М.В. официальным представителем Президента Российской Федерации при рассмотрении палатами Федерального Собрания Российской Федерации вопроса о ратификации Протокола о внесении изменений в Договор между Российской Федерацией и Киргизской Республикой о развитии военно-технического сотрудничества)
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608240001</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">24.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608240001" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">42 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        27
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608210019">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608210019" class="documents-item-name">
+                                Указ Президента Российской Федерации от 21.08.2026 № 593<br /> "О награждении государственными наградами Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608210019</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">21.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608210019" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">44 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        28
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608150002">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608150002" class="documents-item-name">
+                                Указ Президента Российской Федерации от 15.08.2026 № 585<br /> "О Полномочном представителе Российской Федерации при Лиге арабских государств в Каире, Арабская Республика Египет, по совместительству"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608150002</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">15.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608150002" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">34 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        29
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608150001">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608150001" class="documents-item-name">
+                                Указ Президента Российской Федерации от 15.08.2026 № 584<br /> "О Чрезвычайном и Полномочном После Российской Федерации в Арабской Республике Египет"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608150001</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">15.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608150001" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">29 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(1 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="documents-table-row">
+                <div class="documents-table-cell">
+                    <div class="documents-item-number">
+                        30
+                    </div>
+                </div>
+                <div class="documents-table-cell documents-fill">
+                    <div class="row documents-items">
+                        <div class="col-xl-9 col-md-12">
+                            <a href="/document/0001202608120020">
+                                <img class="documents-document-image" alt="Документ" src="/images/document.svg" />
+                            </a>
+                            <a href="/document/0001202608120020" class="documents-item-name">
+                                Указ Президента Российской Федерации от 12.08.2026 № 580<br /> "О награждении государственными наградами Российской Федерации"
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-12">
+                            <div class="infoindocumentlist">
+                                <div>
+                                    <span class="info-name">Номер опубликования: </span><span class="info-data">0001202608120020</span>
+                                </div>
+                                <div>
+                                    <span class="info-name">Дата опубликования: </span>
+                                    <span class="info-data">12.08.2026</span>
+                                </div>
+                                <div>
+                                    <div class="notforprint pt-2">
+                                        <span>
+                                                <a href="/file/pdf?eoNumber=0001202608120020" class="documents-item-file" title="Скачать PDF файл">
+                                                    <img class="download-file-icon" alt="Скачать" src="/images/download.svg">
+                                                    <span class="documents-pdf-downloadname">PDF:&nbsp;</span><span class="documents-pdf-downloadlink">1372 &#x41A;&#x431;</span>
+                                                </a>
+                                        </span>
+                                        <span>&nbsp;(19 стр.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>
+
+<div style="margin-top: 10px;" class="page-navigation-count notforprint">
+    Показаны на странице: с 1
+    по 30
+    из 19177
+</div>
+
+<div class="page-navigation notforprint"><span class='disableGo'><i class='fas fa-caret-left'></i></span >  <span class='page-current'>1</span>  <a href='/documents/block/president?index=2' class='' onClick='gotourl("/documents/block/president#index=2"); return false;'>2</a>  <a href='/documents/block/president?index=3' class='' onClick='gotourl("/documents/block/president#index=3"); return false;'>3</a>  <a href='/documents/block/president?index=4' class='' onClick='gotourl("/documents/block/president#index=4"); return false;'>4</a>  ...  <a href='/documents/block/president?index=640' class='' onClick='gotourl("/documents/block/president#index=640"); return false;'>640</a>  <a title='Следующая' href='/documents/block/president?index=2' class='' onClick='gotourl("/documents/block/president#index=2"); return false;'><i class='fas fa-caret-right'></i></a></div>        </div>
+    </div>
+</form>
+
+
+
+            </main>
+        </div>
+        <footer class="notforprint">
+            <div class="footer">
+                <div class="footer-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-7 footer-certificates">
+
+                                <span class="footer-text">
+                                    <a href="http://pravo.gov.ru/upload/medialibrary/aea/aea92c7a1a0cb2c5e8c2104cf6aceaff.jpg" target="_blank">Свидетельство о&nbsp;регистрации СМИ №&nbsp;ФС77-47467</a>
+                                </span>
+                                <span class="footer-text" style="padding-left: 10px;">
+                                    <a href="http://pravo.gov.ru/upload/medialibrary/eaf/eafafedba15eba345ea36007b7bbd994.jpg" target="_blank">Электронный паспорт ФГИС №&nbsp;ФС77110096</a>
+                                </span>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+
+                                <div class="footer-buttons">
+                                    <div class="soc-block soc-top">
+                                        <a class="footer-item" href="/rss" title="RSS каналы"><img class="footer-item-icon" alt="RSS каналы" src="/images/rss-logo.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="HTML конструктор" href="/HtmlConstructor"><img class="footer-item-icon" alt="HTML конструктор" src="/images/html-code.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="Открытые данные" href="/OpenData"><img class="footer-item-icon" alt="Открытые данные" src="/images/registry-editor.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="API интерфейс" href="/help"><img class="footer-item-icon" alt="API интерфейс" src="/images/api.svg"></a>
+                                                <div>
+                                                    <script type="text/javascript" src="/js/counter-yandex.js"></script>
+                                                    <noscript><div><img src="https://mc.yandex.ru/watch/25702331" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+                                                    <!-- /Yandex.Metrika counter -->
+                                                </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/site.js?v=R8u1rEpscBH6axYHCUUniS65iRQ4UBaenIV39gnO9wo"></script>
+    <script src="/js/menu.js?v=AbPet1jOZejrSykwqkhCRnsfF56meR48uMZ8ByrgbXE"></script>
+
+    <link href="/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <script src="/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/lib/bootstrap-datepicker/locales/bootstrap-datepicker.ru.min.js"></script>
+
+    
+    <script type="text/javascript" src="/js/documents.js?t=1"></script>
+
+</body>
+</html>

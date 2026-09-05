@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Торгпред – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="Торгпред">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/J4KM8zi_Al3912V09hIdPQn3_wIsnBLmNuMuUSXrXCc1TQpQt8U65mjs_LQLiCFSVbWRRDcfLZk55isDpQEzd8PS1CdMf0rL5-Bt6zXIn9jmMAxs0WGBg7MHdo7aWhDMJSS3q-NDs8-sRJ5R3fOQgp0YRMlxFiuy3iFGb16CczLNbQB9OiIKQp7E4buvSQ0cLIN82S2gaZOrVOxV9_IpAlY97ctt63JNrYHdLFqxakCrnn6CQBTu7O4Q7G2lfDzoKSSxUwNxl3lmLKARStmNE27OoYGRxNHJ8WQ5DkHbhZyNW2OYRw3N9sl8_knTIeGWsIHlQTGE2mkflbsP6UTocw.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Экономические события и факты со всего мира. Вэдфреймы торговых представительств России за рубежом
+
+Мы также есть на Дзене: https://dzen.ru/rustorgpred 
+и в MAX:
+https://max.ru/rustorgpred
+
+Заметки экспортёра:
+https://rustorgpred.ru">
+
+<meta property="twitter:title" content="Торгпред">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/J4KM8zi_Al3912V09hIdPQn3_wIsnBLmNuMuUSXrXCc1TQpQt8U65mjs_LQLiCFSVbWRRDcfLZk55isDpQEzd8PS1CdMf0rL5-Bt6zXIn9jmMAxs0WGBg7MHdo7aWhDMJSS3q-NDs8-sRJ5R3fOQgp0YRMlxFiuy3iFGb16CczLNbQB9OiIKQp7E4buvSQ0cLIN82S2gaZOrVOxV9_IpAlY97ctt63JNrYHdLFqxakCrnn6CQBTu7O4Q7G2lfDzoKSSxUwNxl3lmLKARStmNE27OoYGRxNHJ8WQ5DkHbhZyNW2OYRw3N9sl8_knTIeGWsIHlQTGE2mkflbsP6UTocw.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=rustorgpred">
+
+<meta property="al:android:url" content="tg://resolve?domain=rustorgpred">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Экономические события и факты со всего мира. Вэдфреймы торговых представительств России за рубежом
+
+Мы также есть на Дзене: https://dzen.ru/rustorgpred 
+и в MAX:
+https://max.ru/rustorgpred
+
+Заметки экспортёра:
+https://rustorgpred.ru
+">
+
+    <link rel="prev" href="/s/rustorgpred?before=15096">
+<link rel="canonical" href="/s/rustorgpred?before=15116">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/rustorgpred">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/rustorgpred" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">Торгпред</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/rustorgpred">@rustorgpred</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">5.28K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">12.3K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">42</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">234</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">13.1K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Экономические события и факты со всего мира. Вэдфреймы торговых представительств России за рубежом<br/><br/>Мы также есть на Дзене: <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener">https://dzen.ru/rustorgpred</a> <br/>и в MAX:<br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener">https://max.ru/rustorgpred</a><br/><br/>Заметки экспортёра:<br/><a href="https://rustorgpred.ru/" target="_blank" rel="noopener">https://rustorgpred.ru</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=917bff6df01201aa95_14253517030254125266">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=917bff6df01201aa95_14253517030254125266">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/rustorgpred">
+        <i class="tgme_page_photo_image bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">Торгпред</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">5.28K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/rustorgpred">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/rustorgpred?before=15096" class="tme_messages_more js-messages_more" data-before="15096"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15096" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUwOTYsInQiOjE3ODg1NjYxMjQsImgiOiIxMDRhYmUwYWZmMjExOGJhMDkifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244714651575066459 1221130288_460005211" href="https://t.me/rustorgpred/15096" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/pxbteLkeKon7NSmxXKglu9SMAqcADhxl3Z6SYLyZQUReiAqNYR4LEio2pdN8CmcK5nU0q-nwrzUmqCWxqnCRzK3iViCYc-icnQTOZZyMBzik8Qey1f2W5Du1VJQ3wre0JA2QHrWwkO3JsnnQgd6sMTkUiD0bX6LPycutcYHU61YRf-TjqgR7TqOqU1CglQQF07Q6ZoyQYibigxezvnSPg3WDdoeMBF1YbUlMOrxw-btUyd0jb6MvRaiGMd07gDtWpo6sxAAZmq29AqroZzO2lBeZqyZLGiAdlD66oGdtdapdivHNDqUzbvFvlJdUzVr3BMVDjFZ_Si6VDuJl2shnrw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Транспортная группа FESCO, входящая в контур управления Росатома, открыла новое коммерческое представительство в Джакарте, Индонезия. Это позволит компании увеличить продажи логистических услуг, разработать новые контейнерные сервисы и укрепить позиции в регионе. Координировать работу представительства будет дочерняя компания FESCO во Вьетнаме.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VbxL6" target="_blank" rel="noopener">https://clck.ru/3VbxL6</a><br/><br/><a href="?q=%23%D0%98%D0%BD%D0%B4%D0%BE%D0%BD%D0%B5%D0%B7%D0%B8%D1%8F">#Индонезия</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">283</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15096"><time datetime="2026-09-03T06:37:03+00:00" class="time">06:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15097" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUwOTcsInQiOjE3ODg1NjYxMjQsImgiOiJiZjc1NDVlZGQ2MDg5ZDFhMTYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244714651575066460 1221130288_460005212" href="https://t.me/rustorgpred/15097" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/l83d7jGQEl27oS8y2KlODqDGWoIQMoY15RBdTkphIcchFRU97n9W11ldg3ixZDrvxHaKfT_V2gDhzypB7UqltWX-HAntQah-OmpJUrxmHt5PrImRfh6oUGTVgFoHxmm9zbFCiNIsGsNPJZDwgFf0BqVTfxWOxZqDUSeKj339AhvOT4MOdgkjnfSZDuBz0hVNOuOnWbHY2nKy01YI-9RsUvpXOLLXErDZ6c-TCtycyCCf_-HYiNHuzYbYC-VDMcU_uOsFhQNXEawQxru5E5-F_ko9cou1rPluiDKR5JCXEij8r9nvWnRhW-JP_k3C_Xh0xVlPrMX2AweEoZqW-mEm8Q.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:59.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">С 9 по 11 сентября 2026 года в Улан-Баторе пройдёт масштабная деловая миссия российских агрокомпаний. В делегации — Минсельхоз России, «Агроэкспорт», АПХ «Мираторг», Группа «Черкизово» и другие лидеры АПК. Цель — укрепить сотрудничество с Монголией, обсудить новые торговые возможности и встречные поставки.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VbxPb" target="_blank" rel="noopener">https://clck.ru/3VbxPb</a><br/><br/><a href="?q=%23%D0%9C%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB%D0%B8%D1%8F">#Монголия</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">276</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15097"><time datetime="2026-09-03T06:37:52+00:00" class="time">06:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15098" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUwOTgsInQiOjE3ODg1NjYxMjQsImgiOiJkMTRhYWE2MTdmYjI3ZTFlNzgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244714651575066461 1221130288_460005213" href="https://t.me/rustorgpred/15098" style="width:600px;background-image:url('https://cdn4.telesco.pe/file/CXK627muwYA0lsY9xWvPzoIlb71EmEN4GfWU4ttm9kPZ1yN1lNewxkXNoCeH_YOUkpLk9El5w4Kp7EMNnfiq_jk9v3BgxKASrEKYGXdpWbJwAJtz-jirzt8H4LDkIk3AVzGi9sW3mW3ey2UIJJsF356vUBGGx1jGmJqvn3RsRk1tch9WT4cdQ2moNM0WjLl0J0zTOVCs8apP6ilizGjl5q4SoP_DgyNlGRZbetbvs2AiXXYRM-s_qyJ8iMqKZvIB-m0p7EI5DzZ1eATWQKUYEYUSXj1nJBlsThfFywA27vsAuwTfjmuZRloFM50nu8n7UIB6sokWFA8vIj10O6DejA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.666666666667%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Власти Перу разрешили возобновить промысел гигантского кальмара. Общий допустимый улов на 2026 год увеличен до 709,7 тыс. тонн. Это поможет поддержать тысячи семей, занятых в рыболовстве, и рыбоперерабатывающую отрасль, пострадавшую после падения рыбного сектора на 51,9% в июне 2026 года.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VbxSt" target="_blank" rel="noopener">https://clck.ru/3VbxSt</a><br/><br/><a href="?q=%23%D0%9F%D0%B5%D1%80%D1%83">#Перу</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">299</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15098"><time datetime="2026-09-03T06:38:23+00:00" class="time">06:38</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15099" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUwOTksInQiOjE3ODg1NjYxMjQsImgiOiI0ODNjZmU0ZTdhOTRhZDJiZDUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244714651575067052 1221130288_460005804" href="https://t.me/rustorgpred/15099" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/FWKwFyU6XJagD8VLf7ecEkYzgrAyDjYisEVrfJ9zG10HN8J3R8zkw_RdqPeP6GPH7bTOA1-UqubSD-iasBXPrUoqMpwXtEcRbne1IF6eT8RjwkZ0EdfZGAkPEJfZpGAS6l-Ah918c_OjgpO5ydAh_WvqJwbUMIIhgioz_rFDtnQK8lrX8zNy9ScSW7r6inDKh0wG8g4kCmphFfnkAAyexwYJjqKtZtYG5-BQtS2u0_6EXgYnmwUCVyTi1kllz9_72BL58NMCuZLjnVAYscmSbhZftm-n1w27GfhOhfbtDloPX9e7qm714DuRJf6Qr1HTNEcYy-IZmy1U-BV5I64Mgg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:50%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Бельгийская фармкомпания UCB договорилась с правительством США о снижении цен на лекарства в программе Medicaid и инвестициях в размере 2 млрд долларов в производство в Джорджии. <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F928A.png')"><b>💊</b></i> Это создаст около 330 рабочих мест и принесет экономике США 5 млрд долларов. UCB также передаст партию своего препарата Keppra в национальный резерв США.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VcfWp" target="_blank" rel="noopener">https://clck.ru/3VcfWp</a><br/><br/><a href="?q=%23%D0%91%D0%B5%D0%BB%D1%8C%D0%B3%D0%B8%D1%8F">#Бельгия</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">247</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15099"><time datetime="2026-09-03T14:26:47+00:00" class="time">14:26</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15100" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDAsInQiOjE3ODg1NjYxMjQsImgiOiI1NzJmMzg4Njk4Y2VkOTk2ZDUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244714651575067053 1221130288_460005805" href="https://t.me/rustorgpred/15100" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/peDIlLDxUfTZE06utYqLFL7Fn3XSrjU3aBH3sevkLRbaj2ipOxJTgH2PBLSPLIBEfvWD9iDlu8j-5sBjDVZ8wBwxMOJT_SUHJ2T59_zCqWEc5STtlFNO63pUkr7xGBwW-OLn215WFQ4DyzzKxtmQfltAi2A8Zjcw11WRHVjWtjy9KUR8EADeiZRvgiyiF1tiOrfrugblEnjAg7JBQyn13ly4XwLSzJu3P4CVJOWHJ0ic_yeIDVQSSMhsB2c7nC9AyUHjEtkWB9JXArtDvav-in-vAVtgz6d9I6Z28JfEH2tzGQlmpu5U-wQ34rekMIfYKBRQQwfHJzwq0LlNQwhzfA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Товарооборот между Россией и Узбекистаном за январь–июль 2026 года достиг &#036;8,1 млрд, увеличившись на 11,8%. Россия остаётся крупнейшим направлением для узбекского экспорта и занимает второе место среди торговых партнёров Узбекистана после Китая. Основные направления для расширения российского присутствия — машиностроение, химическая и пищевая промышленность, энергетика.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VcfaB" target="_blank" rel="noopener">https://clck.ru/3VcfaB</a><br/><br/><a href="?q=%23%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD">#Узбекистан</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">269</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15100"><time datetime="2026-09-03T14:27:36+00:00" class="time">14:27</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15101" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDEsInQiOjE3ODg1NjYxMjQsImgiOiI4NDk0MzQ5ZTU0MjUxMTRjNTMifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244714651575067054 1221130288_460005806" href="https://t.me/rustorgpred/15101" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Sr2chSGDV4gGCCUcytMI1kwrDk_5hOC9rH1FQqEvBlYUY4fU4lxHgh9Yqah3NUzdGxjUA_CwZHLChN7sJbOjuZWy5kpJCW_AllTVLvT3PD2xsNZCXdfUJOb-mrcheXTmR44kdq_zpjgEZa9eXhNnK5zyyoBUGpr51I0Hdvuz6DNcCoXs9Wi8tKLZZqMFvvgVPpFjn1TOQxGNIBzrli_CFlTWqdCrggC8Etyp8SN1yUSXDmvkiqrI8rPdeYylwmjhKnAojiGCgegf8bO26zd7KlRraDtWAAy6gQBB1wR_JlAzh2-eHJ4YKYL8VT1qCOXgzfza6FDyVgSUcGplV21wNQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Российская компания «РМ Инвестментс» подала заявку на регистрацию бренда «INVITRO Клиника» в Беларуси. В этом году планируется открытие многопрофильной клиники нового формата, где лабораторные исследования, приём врачей и диагностика будут объединены в едином контуре.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3Vcfd5" target="_blank" rel="noopener">https://clck.ru/3Vcfd5</a><br/><br/><a href="?q=%23%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C">#Беларусь</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">246</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15101"><time datetime="2026-09-03T14:28:22+00:00" class="time">14:28</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15102" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDIsInQiOjE3ODg1NjYxMjQsImgiOiI3MDhjNDg5NTFlY2ZhZTc3YWMifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244714651575067055 1221130288_460005807" href="https://t.me/rustorgpred/15102" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/MBEIVLLzMy5ImAvBhjM6nU9GRyZXQTz9hH2jz7mYIQeBZYMaDklBEilxt6dwDImfeKKwyjjRbUWqwstBzX1yNsRaHROwY_GIrkGIaS-ETxpcq3HsrFiuNzsi_L0ZRW6J1HZKcarJA4pS3f9giUdc5F-SODrhxobSRxxLhEK__uXH44CK6A1n4Z3KpbtwGsPCIgSTcK-qw05T3PkjgHBNIW3OfaMej4o7Orhg_Vhn6fA9KHiseVY0KBtBgzzNiTJhOwSfq3h51232AvuuR6Xkcfb9-V88Tbz4FHurreMZujWR66FiFobRXtjGKVvSomF3yW4IhNBS2_FEThzaFunKjw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:55.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">С 1 сентября 2026 года российский маркетплейс Ozon начал работу в Монголии. Это уже девятая зарубежная страна для компании. Монгольские покупатели могут заказать более 90 млн товаров с доставкой до 10 дней. Логистикой занимается национальный почтовый оператор «Монгол Шуудан». Ozon расширяет возможности для российских компаний по выходу на рынок Монголии.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3Vcffw" target="_blank" rel="noopener">https://clck.ru/3Vcffw</a><br/><br/><a href="?q=%23%D0%9C%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB%D0%B8%D1%8F">#Монголия</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">281</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15102"><time datetime="2026-09-03T14:29:14+00:00" class="time">14:29</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15103" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDMsInQiOjE3ODg1NjYxMjQsImgiOiI2NDdiYzY3MWYzMGNiOGEzOGIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730839793 1222239303_460005105" href="https://t.me/rustorgpred/15103" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Gqxl50XHz_ih6ric0ClqQK_m4QYB_Iwe8G6lEOzudZN1dqmXHfN-nXxf3K9Wp5kXMbcGG0LiBwItYu5s8BtfctC5N_dx-3FWnwd0O3zHRSZTF5stTakOyz1REnPwQpFzPwkOIPo9pmGNFw_J5B6GmwOKF-ewmTZA7GJqvTgcpIl44ojV-K_WCzpTtOGUCW1CRKClQ5EDssSQMp8jYkP4o1YMrlLuDevsCxd85NXdWxMpejKbTGUmz_SngJ-tDO2S516WaVUY1WDrjPr5s2IzFU27-cMgzGEx6eTdczlNjeu7wSn4tqvzXpGYOM4ZXqvuT_NTtPxtTctYb2mTEvIJSg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:62.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">ЦБ Никарагуа оставил базовую ставку TRM на уровне 5,75% — она не меняется с мая. Без изменений и ставки по однодневным операциям: РЕПО — 7,0%, депозитная — 4,5%. Регулятор указывает на мировую неопределённость, но отмечает рост экономики Никарагуа, низкую безработицу и стабильную инфляцию <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F938A.png')"><b>📊</b></i><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3Vd6Lp" target="_blank" rel="noopener">https://clck.ru/3Vd6Lp</a><br/><br/><a href="?q=%23%D0%9D%D0%B8%D0%BA%D0%B0%D1%80%D0%B0%D0%B3%D1%83%D0%B0">#Никарагуа</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">208</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15103"><time datetime="2026-09-04T06:04:09+00:00" class="time">06:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15104" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDQsInQiOjE3ODg1NjYxMjQsImgiOiJmMjdlYWIwNjg1YTllZjNhMWYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730839795 1222239303_460005107" href="https://t.me/rustorgpred/15104" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/h5FO2hdgCHBOpEjXvdHqDLHohWeverIxFj4Gk5I14dVlw-r5MZF4fc5aKSR6ti4ZSGQ0QgGNHrnPe8cu3FOkWi6DfVfcbI9nhOwherES_-dya-NKDdBC6Fb7g26JBbyR2TkHUOZr51YKtfPlTQgjBuaH8aRYDEBBPKSU5o8oyi4Wn2Lki8LFeTss2VlQa2z1YUIh3_jYY4SgMHVbYoJOdUkRL7sT7hRPsjw1SnRVtvpSVM5VNBI-MZpYrgRj8izrk-HzBBmGv1-O57GhYVkDJYA4Byfg-ZCc4i1ad1kJzgvEqGsasxMJ9k-KbZX2Fpu6EtSK2UC1k_RL2RV4BiuHNw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">На ВЭФ-2026 во Владивостоке министр финансов Вьетнама Нго Ван Туан заявил: Вьетнам готов стать для России торгово-инвестиционным мостом в АСЕАН. Товарооборот РФ и АСЕАН за 10 лет вырос на 58% — до &#036;21 млрд, из них &#036;4,77 млрд приходится на Вьетнам. В фокусе — логистика через Дальний Восток, энергетика, ИИ и финансы <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9AA2.png')"><b>🚢</b></i><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3Vd6Yq" target="_blank" rel="noopener">https://clck.ru/3Vd6Yq</a><br/><br/><a href="?q=%23%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC">#Вьетнам</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">206</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15104"><time datetime="2026-09-04T06:06:18+00:00" class="time">06:06</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15105" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDUsInQiOjE3ODg1NjYxMjQsImgiOiIyNTM2NzFlOGMzZjAzNzhlYmIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730839796 1222239303_460005108" href="https://t.me/rustorgpred/15105" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Sl7LR2F-ehtjiZBfZbBXBtk_OaQ970CAqTOdI8nOVDAQhntsAifR06jMWq-QJNL2lbpsdqE_UJ8J4XRlLMZ9CG6z-JTLbmi9csnD8zlWa3DGvGg09TDdvHZzLbsH4ffeloVI1yfRu7xAiHFSPmdNqt_JcFEmQBBfiFB3Yc7Kn3495Q3x-8n08lB6LXoBCePO9zpfhDVrBAhS2gzgAFwBvlqS-v6dSsTgRD3RJZzxJBHllI6i89d8IC7IAGslDNFcvXf10NIhOAsyNjgJeAR3tZJttno2KvqFewiJ9feeLh3-mi4H1NKkyEBvmiplKVTtBvoH9ex-lN1aI3LT8-gkLg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">В Джизакской области Узбекистана полным ходом идёт строительство интегрированной АЭС с участием национальной промышленности. Уже завершена разработка котлована под здание реактора, извлечено более 1 млн кубометров грунта. Первый реактор планируют запустить в 2029 году, а полностью завершить строительство — в 2034–2035 годах.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3Vd6dS" target="_blank" rel="noopener">https://clck.ru/3Vd6dS</a><br/><br/><a href="?q=%23%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD">#Узбекистан</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">183</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15105"><time datetime="2026-09-04T06:07:17+00:00" class="time">06:07</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15106" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDYsInQiOjE3ODg1NjYxMjQsImgiOiI1ZWFjZjExN2E0YTgyYzljMWIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/TradeReprOfRussiaInJapan/2006"><span dir="auto">Торгпредство России в Японии</span></a></div>
+
+<a class="tgme_widget_message_photo_wrap 5247225107204218999 1221714799_460005495" href="https://t.me/rustorgpred/15106" style="width:750px;background-image:url('https://cdn4.telesco.pe/file/G2cm0B2bUhPjMaqV1nT98IJKaCFYMOXsNaZZdniiZqZRC3yjoLGZhV_BmBBO6V-M1-y8NNJXjT4zpKbW-xlBlYDexo7FHM47BJL34RP46IGZt1Cj0wvGnk6FkdohZb2XzIXaGknNtJvSs0K6z1bn6Acn-6TwXBW67ZXNMylSeIj6EEK-V4mdkLXcY-wbOQ_5WKt-90isTSsuwGyQ_ySa1kMsAKMYub2RbeN3FMr0oG3TpNlMMWt4cpQMu9hea0S5e36BEddvdpguMtWE4JHg_jB218GWQ3YYwZBtYKeOfhga7hkagLTv_htndYxhHGHQJcOxAZE9rOr_XhmlRR_nXg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Сасими &quot;по подписке&quot;: в Японии запущен новый сервис доставки свежей рыбы</b><br/><br/>В Нагасаки, одном из крупнейших рыбохозяйственных регионов Японии, запущен новый сервис &quot;подписки&quot; на свежую рыбу. Префектура занимает второе место в стране по объему производства продукции морского рыболовства и аквакультуры — 117,4 млрд иен (745 млн долл.) в 2024 г. — и отличается богатым разнообразием морепродуктов: здесь добывается более 250 видов рыбы. Проект реализуется при участии Рыбохозяйственного кооператива Нагасаки, торгового дома «Итотю» и местных компаний.<br/><br/>В рамках сервиса после оформления &quot;подписки&quot; клиент ежемесячно получает набор замороженных сасими из сезонных местных деликатесов — морского леща, исаки, барабульки, скумбрии и других видов. Базовый комплект из четырех упаковок обойдется в 5378 иен (около 35 долл.). Рыба подвергается шоковой заморозке при температуре около −30°C, что позволяет сохранить ее свежесть, текстуру и вкусовые качества.<br/><br/>Инициатива была запущена в пилотном формате с целью повысить узнаваемость продукции рыбной отрасли Нагасаки и стимулировать потребление местной рыбы на фоне общенациональной тенденции снижения спроса на рыбопродукты. Согласно данным «Белой книги по рыболовству», их потребление на душу населения в Японии сократилось почти вдвое — с пиковых 40,2 кг в 2001 г. до 21,3 кг в 2024 г.<br/><br/>Несмотря на пока относительно небольшое число пользователей, сервис демонстрирует высокий уровень удовлетворенности: доля клиентов, продлевающих подписку ежемесячно, превышает 80%. В дальнейшем участники проекта планируют активизировать продвижение сервиса и расширить аудиторию, в том числе за пределами региона. Инициаторы рассчитывают таким образом укрепить прямой контакт производителей с потребителями, повысить популярность рыбы из Нагасаки и в перспективе привлечь больше потребителей к местной рыбной продукции как в Японии, так и на зарубежных рынках.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">186</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15106"><time datetime="2026-09-04T06:13:03+00:00" class="time">06:13</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15107" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDcsInQiOjE3ODg1NjYxMjQsImgiOiJkM2EzZTg1MDg2MDc4ZjNlNzAifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/tradeazerus/1718"><span dir="auto">Торгпредство России в Азербайджане</span></a></div>
+
+<a class="tgme_widget_message_photo_wrap 5245004480263168312 1221197769_460005688" href="https://t.me/rustorgpred/15107" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/O44LPg1g-DpUSh9ZHP-e7W2jDoa7G0H9r1ofV1OY9jxr2fI8X55rIpppIr4hsLd1H7-_9LvgZP9Tk01AExVx7mgHAVCtGMjEICFKMiCF0EZHJFlNRgIWJ_FERo8XWk1AckxBrszIh-S1Buj9UswslyTJEZALiULUt20A87tk-50wwTt7j6bIYzmTFQrs6T1OsMQmTR3jipxNWWi41G3MpMLuYfyqFz_z-EJV-qsI4RP4IeVCsXgVuAf90PExwYbPZcXK9YloAnm_yI-b-LR8W6h5Y_SWZBCIjRSbw-bkfYYP0UzUgllW7MTdLMtkk8vhPg4azBNSx7GbOor2736Gnw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.125%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i> Азербайджан принят<br/>в Организацию<br/>цифрового сотрудничества (DCO), </b>что откроет стране доступ к передовым цифровым практикам и международным стандартам.<br/><br/>Благодаря платформе DCO Азербайджан получит доступ к передовой цифровой политике, международным стандартам и обмену опытом. Местные стартапы смогут выходить на рынки государств - членов организации, участвовать в совместных акселерационных программах и взаимодействовать с венчурными фондами.<br/><br/>Членство в DCO позволит Азербайджану усилить роль цифрового моста между Южным Кавказом и Центральной Азией. При цифровизации государственных услуг страна сможет использовать опыт государств - членов организации в области электронного правительства, искусственного интеллекта и интеллектуальных решений.<br/><br/>Азербайджан также сможет представить DCO и входящим в нее странам собственный потенциал в сфере ИКТ, работу, проводимую в рамках Совета цифрового развития, созданные для цифровизации возможности и реализованные в последние годы ключевые проекты.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">223</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15107"><time datetime="2026-09-04T06:13:52+00:00" class="time">06:13</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15108" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDgsInQiOjE3ODg1NjYxMjQsImgiOiI0NGRmYzliNTQzYjY1YmFkNjUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730839971 1222239303_460005283" href="https://t.me/rustorgpred/15108" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/IAVGzNgKqoyAgKFswsmHqO_GI0S_j0x0asU1IFRx1xYOTBwmlwOlR5gvGyQNtZh8ozHIu4scid47IumXkS8QcNPepdHdqXKhDSwc3_w8Q9jiYjNOWAV6VYkcS1KSoNLB_xj4if0l0e1oqY3zxx1WbBnw-d8ex8q9MTfDdJg_wSgNjxGFOj1Ma5yXssmefxv7v-4gT2nSPzrqUCegio-NP7K19nZbKRz-UewpUtszT0THlJoxXmR8PuT83KFCZIle0aZTpJ7Bm8E9vwbFNSQnmeuwQsg7aLI0WzLifOGTezoEUPlwMW6EbRZ7LOEiXqQKIKRYAhUVHSJF31RpNEBj_w.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Марокко и ЭСКЗА подписали меморандум о сотрудничестве в сфере цифровой трансформации госуправления. Документ предусматривает развитие цифровых госуслуг, повышение квалификации госслужащих и укрепление потенциала государственных институтов. Королевство уже поднялось на 11 позиций в Индексе развития электронного правительства ООН.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VdLUG" target="_blank" rel="noopener">https://clck.ru/3VdLUG</a><br/><br/><a href="?q=%23%D0%9C%D0%B0%D1%80%D0%BE%D0%BA%D0%BA%D0%BE">#Марокко</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">181</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15108"><time datetime="2026-09-04T08:23:42+00:00" class="time">08:23</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15109" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMDksInQiOjE3ODg1NjYxMjQsImgiOiI0NmM4ZTVhNzcyODJiOTkwM2MifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730839972 1222239303_460005284" href="https://t.me/rustorgpred/15109" style="width:550px;background-image:url('https://cdn4.telesco.pe/file/LqpiI5gXSBUkAYdLjG-d5axGIgPTbXiUyQP-Pj52sIIsxwXTtD7-2-GC06jxYhlu-Mi_P2cJhfSjgxezEb46Y1bArjN0hRfbQBTqCceIs3ZzHZkUgi4ALkopDknRU_0ijR73IwnJ2qBdLmevf3dwMI3L9UGO0pHFJmGGsmd3QxgKK76QO3RCADZH4rxKOlhvnJxQ3B4Qgz_xDG1m1aujeM_SvPrNEFBe7SLjGCVMNX_-F7xUvdxCq6EFuQ2NpF-wTo2SeRXvOtZKy5JNJwUrBDoLqEQukIu5w_8afEpv5SuTpP3AyQVS9xsEr_9j4_wU7MT_d1h9g35Z_tRlEf3gaQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.909090909091%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">В Сингапуре импортные цены в июле выросли на 13,5% год к году, а за месяц — на 0,8%, развернув спад мая и июня. Главный драйвер — нефть: +45,5% г/г и +1,6% к июню. Не-нефтяной импорт прибавил 4,8%, особенно подорожали машины и электроника. Экспортные цены за месяц не изменились.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VdLkA" target="_blank" rel="noopener">https://clck.ru/3VdLkA</a><br/><br/><a href="?q=%23%D0%A1%D0%B8%D0%BD%D0%B3%D0%B0%D0%BF%D1%83%D1%80">#Сингапур</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">182</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15109"><time datetime="2026-09-04T08:26:02+00:00" class="time">08:26</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15110" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMTAsInQiOjE3ODg1NjYxMjQsImgiOiIwMTRkY2I3OTA1OWUyNmI4YzUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730839974 1222239303_460005286" href="https://t.me/rustorgpred/15110" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/I2OFS1FmxH__kSbCa0RCbQSKmznDsYyQN4Orw-t9QRnE2FeUbOh7r8IQ1JeZPcb506EFXuiIMkuhWDmX51FHzVreZuhZ3NMe2UiKYfQ_v2xPPhdfiRdTUi1Yt7ee7slD2tJsKjPg-yI_mMuaDLttBXq0755HGvgOeuzVilv6tiTXlOfiHnXpWCiy1kBU6EwO3gIG769RFIJcIUXdtlZjP9Fh2sYJrQcJ4u792sGgoLmwqAJrWDwyNCso0uZbnxwH7Q0oTdALwJFE41APVBxNlkdrONf6kyn_uFUKCkKwomw23dwjh7U4Vq5JxJXzKR3--z2xJYYws-Xs5mkIFE0lDA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">В Беларуси электромобилей и гибридов уже 70,3 тыс. — за август парк вырос на 7,2%, а число зарядных станций прибавило 4,4% и достигло 2,4 тыс.  С начала 2026 года рост составил 41,8%: 72% парка — электромобили, 28% — гибриды. По прогнозу, к концу года в стране будет около 75 тыс. электрокаров.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VdLos" target="_blank" rel="noopener">https://clck.ru/3VdLos</a><br/><br/><a href="?q=%23%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C">#Беларусь</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">202</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15110"><time datetime="2026-09-04T08:26:33+00:00" class="time">08:26</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15111" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMTEsInQiOjE3ODg1NjYxMjQsImgiOiI0MGIwMDk1MGYyMGZlOWQyMzYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730839976 1222239303_460005288" href="https://t.me/rustorgpred/15111" style="width:600px;background-image:url('https://cdn4.telesco.pe/file/Ayq3jIduMZ71KCSDqwCKqehWknePuEBJaPBXUSqHxjws_0oW5rAKHZKUy6HHnme-JTb9NVa9tUR36llrMFUPxamv5hANjaaMACyDq6O5HzOu-b-fbdzi195CiruRip49WLXP3IUlZY6rRhwZowjnxv2bvZ3rM34AF3j65TgHVWvIqfZADnCnd56aI5oU_BbB5SWSvS_l54jg7TH0JbWqZZkRyXoyWXKuXItlHe2HIj8gVfdq6tEthFLUtkfwMc7-5ijb088FnudEJ_6AG-q2NtX6PMkmwcJL0qIpVyhou71iETCJEfXKxB9D7gQv1KtNqpvWSEbmBRbs389oOUyyKQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.666666666667%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Перу усиливает позиции в горнодобыче: в январе–июне добыча железной руды выросла на 41,1%, олова — на 6,5%, молибдена — на 5,4%, меди — на 1,9%. Почти 80% молибдена дают Арекипа, Мокегуа и Такна. Экспорт отрасли достиг &#036;42,2 млрд — это на 56% больше, чем год назад.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VdLqA" target="_blank" rel="noopener">https://clck.ru/3VdLqA</a><br/><br/><a href="?q=%23%D0%9F%D0%B5%D1%80%D1%83">#Перу</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">219</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15111"><time datetime="2026-09-04T08:26:49+00:00" class="time">08:26</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15112" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMTIsInQiOjE3ODg1NjYxMjQsImgiOiJlZjVhMzhjNTFlM2IwYjBhZDcifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_document_wrap" href="https://t.me/rustorgpred/15112">
+  <div class="tgme_widget_message_document_icon accent_bg"></div>
+  <div class="tgme_widget_message_document">
+    <div class="tgme_widget_message_document_title accent_color" dir="auto">запросы_иностранных_компаний_сентябрь_2026.pdf</div>
+    <div class="tgme_widget_message_document_extra" dir="auto">1.4 MB</div>
+  </div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Делимся сентябрьским Реестром запросов иностранных компаний на импорт российской продукции.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29D97.png')"><b>❗</b></i>За дополнительной информацией необходимо обращаться <b><u>напрямую в торговые представительства</u></b> по контактным данным, указанным в Реестре.<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93A9.png')"><b>📩</b></i> В теме сообщения необходимо указать <b>&quot;запрос на импорт из России&quot; и</b> уточнить следующую информацию:<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> наименование компании;<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i> наименование производимой продукции (с указанием классификации в соответствии с ТН ВЭД ЕАЭС/HS Code);<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>ожидаемые меры поддержки (предоставление контактов по запросу, уточнение спецификации по запросу и т.д.);<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>осуществлялся ли ранее экспорт продукции;<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B9.png')"><b>🔹</b></i>контактное лицо от компании.<br/><br/><a href="tg://search_hashtag?hashtag=%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>#экспорт #</u></a><a href="tg://search_hashtag?hashtag=%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B%D0%BD%D0%B0%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>запросынаимпорт #</u></a><a href="tg://search_hashtag?hashtag=%D0%BC%D0%B8%D0%BD%D0%BF%D1%80%D0%BE%D0%BC%D1%82%D0%BE%D1%80%D0%B3" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>м</u></a><a href="tg://search_hashtag?hashtag=%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B%D0%BD%D0%B0%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>ин</u></a><a href="tg://search_hashtag?hashtag=%D0%BC%D0%B8%D0%BD%D0%BF%D1%80%D0%BE%D0%BC%D1%82%D0%BE%D1%80%D0%B3" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>промторг</u></a><br/><br/><a href="tg://search_hashtag?hashtag=%D0%BC%D0%B8%D0%BD%D0%BF%D1%80%D0%BE%D0%BC%D1%82%D0%BE%D1%80%D0%B3" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>M</u></a><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>AX</u></a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>Telegram</u></a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Д</a><a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><u>зен</u></a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">376</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15112"><time datetime="2026-09-04T08:47:47+00:00" class="time">08:47</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap service_message js-widget_message" data-post="rustorgpred/15113" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMTMsInQiOjE3ODg1NjYxMjQsImgiOiI1OWM2NmE5MjQ2YTFhMjZkN2IifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><a class="tgme_widget_message_author_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a> pinned a file</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15113"><time datetime="2026-09-04T08:47:52+00:00" class="time">08:47</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15114" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMTQsInQiOjE3ODg1NjYxMjQsImgiOiJjNTkzYjMwZmM0YWY5OGFlZmMifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730840324 1222239303_460005636" href="https://t.me/rustorgpred/15114" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/BIzoMqB8VYWSJzFLTvQQwkw5QVzBJNyJ7rR1gORBJ6cJgef8zODcifVrXPqaqWBPukntwFOfmh0gJHBJ6UN7sJKXHhmP3aTOL0bfJxwVJfKIvMzDBrctD7kYVFsVUUKDHjtsYKIpR0C_YJDrA5_Mxh9KJJNJ7I5yXaXIaHjYwp9rNiCW6tDc4IujM8R5E9oKDcmzw4DNmaQfDjWOHfdjocK03BnZmyzoJTm_WjKKvMgAEjPGIcOyVor46eRakLgO29IEH_zFaaFv3FekTlO9dJsPdAONRNuigTy4eP5UTxRw34zZH6XbT3hcHKPTdHdm2NKHjfJc0RVA_9PPMU0qHw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:75%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Китай набирает темп: за январь–июль внешняя торговля выросла на 21,8% до &#036;4,36 трлн, а с Россией — на 26,3% до &#036;159,2 млрд. Промышленный PMI в августе поднялся до 49,8 и почти вошёл в зону роста, особенно в электронике. Пекин делает ставку на чипы, роботов, ИИ и 6G, а инвестиции в китайский high-tech выросли на 33,2%<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VdwTQ" target="_blank" rel="noopener">https://clck.ru/3VdwTQ</a><br/><br/><a href="?q=%23%D0%9A%D0%B8%D1%82%D0%B0%D0%B9">#Китай</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">152</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15114"><time datetime="2026-09-04T13:08:28+00:00" class="time">13:08</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="rustorgpred/15115" data-view="eyJjIjotMTExNzk3MTg1MywicCI6MTUxMTUsInQiOjE3ODg1NjYxMjQsImgiOiI1OWI2OGM0YjdmYjRiNmQxZGEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/rustorgpred"><i class="tgme_widget_message_user_photo bgcolor5" data-content="Т"><img src="https://cdn4.telesco.pe/file/WmiNlle2Gq7CqjcCdfGqoDPQ48lVlEbqERlOV9N5OysGfd-hM57Em0XE8SR2F28Xs28xFCORIfQHv2_UxmY28C2-MkPen9d4P-_suKYc45ISXIEfeNKuxP9lMXZDdLldIVsafwAV6DOfAzTfvgaC93FfXgjgYR3tyVGyVvuF16PDt7RnQAdgP3w_AfLujFCLaPI0X5VWii2TH-6wq7aTiUWco7eu9gUskHpm2qhxljXLLRiZK_8hJBGwxyIE7M3Nqhp62aHBNjKYkE5k3xgFI4-9IlvsX6IJGZ0M8FAxnV-Itr8DWdzjCnUPckhpki92pKAAxcSc3ZNfv7D1hljc0A.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/rustorgpred"><span dir="auto">Торгпред</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249477834730840325 1222239303_460005637" href="https://t.me/rustorgpred/15115" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/ZFW2gFkLjctfB7wnr0xpCurDgpzNxUTELbqXPU9FTLe9LHSclExNQQmZBD2rj_T81luvvwGejeY2zP_o1q9TERU9sTuRav_ACgpVujaeC7B2zktc_sjwJN-sfXSvRMsof-ZY9u0UmkgCwbo3Czi7vS15dpe9-DjQ0nleV7PXYB--XYD8ciNBZ-DmE7ioCmOwQG2DCRNhLB2gPM1zIn399h7icTliPwWzH1mqetXeirv7LnBF-_RaDNlu3q9YCeNaIFuam8wE5gvZ3QJ-aZPj7CDtdP_sTEYszrY96Qw7t8AnqUXIa1VJ1mYSl16WFhMdxQhHBG6GZWoHpOn-tdceeQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">В Турции завершается подготовка Среднесрочного экономического плана (OVP) на 2027–2029 годы. Документ представят 6 сентября. План станет ориентиром для экономической и бюджетной политики страны на ближайшие три года. В нём определят приоритеты в борьбе с инфляцией, обеспечении стабильности и экономического роста. <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9388.png')"><b>📈</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92B9.png')"><b>💹</b></i><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪</b></i> <a href="https://clck.ru/3VdwX8" target="_blank" rel="noopener">https://clck.ru/3VdwX8</a><br/><br/><a href="?q=%23%D0%A2%D1%83%D1%80%D1%86%D0%B8%D1%8F">#Турция</a> <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B1.png')"><b>📱</b></i> <a href="?q=%23gpt">#gpt</a><br/><br/><a href="https://max.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> | <a href="https://t.me/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Telegram</a> | <a href="https://dzen.ru/rustorgpred" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Дзен</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA1.png')"><b>⚡</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">160</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/rustorgpred/15115"><time datetime="2026-09-04T13:09:17+00:00" class="time">13:09</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 118.29ms -->

@@ -1,0 +1,36 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v1-draft-audited",
+  "created_at": "2026-09-05T00:00:00+03:00",
+  "scope": "Frozen input basket and separate ground truth only; no prompts, model outputs, scorer, or benchmark run.",
+  "input_file": "materials.jsonl",
+  "metadata_file": "catalog.jsonl",
+  "ground_truth_file": "ground_truth.jsonl",
+  "event_cases_file": "event_cases.jsonl",
+  "npa_trajectories_file": "npa_trajectories.jsonl",
+  "rat_packages_file": "rat_packages.json",
+  "split_policy": "Split by complete event case and complete NPA trajectory; RAT is isolated.",
+  "model_input_allowlist": [
+    "id",
+    "title",
+    "text",
+    "source_name",
+    "source_type",
+    "source_url",
+    "published_at",
+    "language"
+  ],
+  "model_input_denylist": [
+    "split",
+    "synthetic",
+    "provenance_kind",
+    "anchor",
+    "diagnostic_risks",
+    "ground_truth",
+    "expected_clusters",
+    "expected_stages"
+  ],
+  "freeze_state": "structurally_audited_pending_domain_review_and_rat_source_snapshots",
+  "npa_link_cases_file": "npa_link_cases.jsonl",
+  "hypothesis_coverage_file": "hypothesis_coverage.json"
+}

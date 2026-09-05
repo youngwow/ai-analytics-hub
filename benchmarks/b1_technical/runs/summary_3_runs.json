@@ -1,0 +1,200 @@
+{
+  "benchmark": "B1-technical-three-run-summary",
+  "run_ids": [
+    "20260904T234926Z",
+    "20260904T235429Z",
+    "20260904T235519Z"
+  ],
+  "runs": [
+    {
+      "run_id": "20260904T234926Z",
+      "wall_ms": 45045.133,
+      "sources": 53,
+      "sources_ok": 53,
+      "sources_failed": 0,
+      "documents_stored": 131,
+      "documents_with_content": 130,
+      "documents_with_date": 128,
+      "http_exchanges": 142,
+      "raw_blobs": 135,
+      "response_bytes": 27981741,
+      "user_cpu_seconds": 4.816,
+      "system_cpu_seconds": 0.554,
+      "peak_rss_mb": 219.97,
+      "captures": "benchmarks/b1_technical/runs/20260904T234926Z/captures.jsonl"
+    },
+    {
+      "run_id": "20260904T235429Z",
+      "wall_ms": 41973.88,
+      "sources": 53,
+      "sources_ok": 53,
+      "sources_failed": 0,
+      "documents_stored": 131,
+      "documents_with_content": 130,
+      "documents_with_date": 128,
+      "http_exchanges": 143,
+      "raw_blobs": 136,
+      "response_bytes": 25879508,
+      "user_cpu_seconds": 4.523,
+      "system_cpu_seconds": 0.53,
+      "peak_rss_mb": 177.97,
+      "captures": "benchmarks/b1_technical/runs/20260904T235429Z/captures.jsonl"
+    },
+    {
+      "run_id": "20260904T235519Z",
+      "wall_ms": 38056.421,
+      "sources": 53,
+      "sources_ok": 53,
+      "sources_failed": 0,
+      "documents_stored": 131,
+      "documents_with_content": 130,
+      "documents_with_date": 128,
+      "http_exchanges": 143,
+      "raw_blobs": 136,
+      "response_bytes": 28401558,
+      "user_cpu_seconds": 4.732,
+      "system_cpu_seconds": 0.594,
+      "peak_rss_mb": 216.44,
+      "captures": "benchmarks/b1_technical/runs/20260904T235519Z/captures.jsonl"
+    }
+  ],
+  "totals": {
+    "live_runs": 3,
+    "source_attempts": 159,
+    "source_failures": 0,
+    "documents_stored": 393,
+    "http_exchanges": 428,
+    "raw_response_bytes": 82262807,
+    "wall_seconds": 125.075
+  },
+  "methods": [
+    {
+      "method": "rss",
+      "configured_sources": 24,
+      "source_attempts": 72,
+      "adapter_success_percent": 100.0,
+      "sources_successful_in_all_runs_percent": 100.0,
+      "attempts_with_documents_percent": 95.83,
+      "stored_documents": 195,
+      "complete_document_percent": 98.46,
+      "live_latency_p50_ms": 844,
+      "live_latency_p95_ms": 1165,
+      "replay_success_percent": 100.0,
+      "replay_stability_percent": 100.0,
+      "replay_24_workers_p95_ms_median": 687.554,
+      "replay_24_workers_throughput_rps_median": 100.86,
+      "live_speed_rank": 2,
+      "technical_coverage_rank": 1
+    },
+    {
+      "method": "telegram",
+      "configured_sources": 22,
+      "source_attempts": 66,
+      "adapter_success_percent": 100.0,
+      "sources_successful_in_all_runs_percent": 100.0,
+      "attempts_with_documents_percent": 86.36,
+      "stored_documents": 156,
+      "complete_document_percent": 100.0,
+      "live_latency_p50_ms": 709,
+      "live_latency_p95_ms": 912,
+      "replay_success_percent": 100.0,
+      "replay_stability_percent": 100.0,
+      "replay_24_workers_p95_ms_median": 59.553,
+      "replay_24_workers_throughput_rps_median": 580.94,
+      "live_speed_rank": 1,
+      "technical_coverage_rank": 2
+    },
+    {
+      "method": "search",
+      "configured_sources": 2,
+      "source_attempts": 6,
+      "adapter_success_percent": 100.0,
+      "sources_successful_in_all_runs_percent": 100.0,
+      "attempts_with_documents_percent": 100.0,
+      "stored_documents": 24,
+      "complete_document_percent": 62.5,
+      "live_latency_p50_ms": 4124,
+      "live_latency_p95_ms": 4437,
+      "replay_success_percent": 100.0,
+      "replay_stability_percent": 100.0,
+      "replay_24_workers_p95_ms_median": 15.776,
+      "replay_24_workers_throughput_rps_median": 477.67,
+      "live_speed_rank": 4,
+      "technical_coverage_rank": 3
+    },
+    {
+      "method": "html",
+      "configured_sources": 3,
+      "source_attempts": 9,
+      "adapter_success_percent": 100.0,
+      "sources_successful_in_all_runs_percent": 100.0,
+      "attempts_with_documents_percent": 100.0,
+      "stored_documents": 9,
+      "complete_document_percent": 100.0,
+      "live_latency_p50_ms": 720,
+      "live_latency_p95_ms": 1386,
+      "replay_success_percent": 100.0,
+      "replay_stability_percent": 100.0,
+      "replay_24_workers_p95_ms_median": 19.343,
+      "replay_24_workers_throughput_rps_median": 629.6,
+      "live_speed_rank": 3,
+      "technical_coverage_rank": 4
+    },
+    {
+      "method": "sitemap",
+      "configured_sources": 2,
+      "source_attempts": 6,
+      "adapter_success_percent": 100.0,
+      "sources_successful_in_all_runs_percent": 100.0,
+      "attempts_with_documents_percent": 50.0,
+      "stored_documents": 9,
+      "complete_document_percent": 100.0,
+      "live_latency_p50_ms": 3076,
+      "live_latency_p95_ms": 6172,
+      "replay_success_percent": 100.0,
+      "replay_stability_percent": 100.0,
+      "replay_24_workers_p95_ms_median": 1272.3,
+      "replay_24_workers_throughput_rps_median": 7.85,
+      "live_speed_rank": 5,
+      "technical_coverage_rank": 5
+    }
+  ],
+  "rankings": {
+    "stability": "all methods tied at 100% adapter/replay success across this three-run window",
+    "live_speed": [
+      "telegram",
+      "rss",
+      "html",
+      "search",
+      "sitemap"
+    ],
+    "technical_coverage": [
+      "rss",
+      "telegram",
+      "search",
+      "html",
+      "sitemap"
+    ]
+  },
+  "non_success_http": [
+    {
+      "run_id": "20260904T234926Z",
+      "method": "GET",
+      "url": "https://rfrit.ru/sitemap-static.xml",
+      "status": 500
+    },
+    {
+      "run_id": "20260904T235429Z",
+      "method": "GET",
+      "url": "https://rfrit.ru/sitemap-static.xml",
+      "status": 500
+    },
+    {
+      "run_id": "20260904T235519Z",
+      "method": "GET",
+      "url": "https://rfrit.ru/sitemap-static.xml",
+      "status": 500
+    }
+  ],
+  "ranking_note": "No semantic relevance is scored. Coverage means technically delivered documents; methods are complementary."
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>&#x41E;&#x444;&#x438;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43E;&#x43F;&#x443;&#x431;&#x43B;&#x438;&#x43A;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x43E;&#x432;&#x44B;&#x445; &#x430;&#x43A;&#x442;&#x43E;&#x432;</title>
+
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="196x196" href="/favicon/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="160x160" href="/favicon/favicon-160.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon/favicon-57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/favicon/favicon-60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/favicon/favicon-72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/favicon/favicon-76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/favicon/favicon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/favicon/favicon-120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon/favicon-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon/favicon-152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicon/favicon-180.png" />
+    <link rel="apple-touch-icon" href="/favicon/favicon-57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon-60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/favicon-72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/favicon-76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/favicon-114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/favicon-152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/favicon/favicon-144.png" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+
+    <meta name="robots">
+    <meta name="keywords">
+    <meta name="description">
+
+    <script src="/app/bundle.js?v=JyS5_g04Nx1ex98yNLfNLYOOq07hWM0v9Lq1oq-A7iA"></script>
+    <script src="/lib/es6-shim/es6-shim.min.js"></script>
+    <script src="/lib/es6-promise/es6-promise.min.js"></script>
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <link href="/lib/select2/css/select2.min.css" rel="stylesheet" />
+
+    <link href="/lib/select2-theme-bootstrap4/dist/select2-bootstrap.css" rel="stylesheet" />
+    <script src="/lib/select2/js/select2.min.js" defer></script>
+    <script src="/lib/select2/js/i18n/ru.js" defer></script>
+    <script src="/js/url-helper.js"></script>
+
+    <script type="text/javascript">EntryPoint.common()</script>
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/app/bundle.css?v=3JT2kB8CYknmAQZDHp_6Z9d2vIn_3kOsGh_x0SsMZSg" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <header>
+                <div class="header-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="logo">
+                                    <a href=http://pravo.gov.ru><img class="img-responsive" alt="Официальное опубликование правовых актов" src="/images/logo.png"></a>
+                                </div>
+                                <div class="site-title">Официальное опубликование правовых актов</div>
+                                <div class="site-titleES">ОФИЦИАЛЬНОЕ ОПУБЛИКОВАНИЕ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-button notforprint"></div>
+                <div class="mobile-menu notforprint">
+                    <i class="mobile-menu-close"></i>
+                    <div class="mobile-menu-container">
+                        <ul>
+
+<li>
+    <a title="На главную страницу портала" class="main-item with-icon" href="http://pravo.gov.ru">
+        <i class="icon icon-home"></i>
+    </a>
+</li>
+<li>
+    <a class="main-item " href=/documents/daily title="05 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Сегодня</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/weekly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x430;&#x44F; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44F;, &#x441; &#x43F;&#x43E;&#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x430; &#x43F;&#x43E; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; - c 31 &#x43F;&#x43E; 06 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Неделя</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/monthly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x441;&#x44F;&#x446; - &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44C;">Месяц</a>
+</li>
+<li>
+    <a class="main-item " href=/search>ПОИСК <i class="fa fa-search faright"></i></a>
+</li>
+<li>
+    <a class="main-item " href=/calendar>КАЛЕНДАРЬ ОПУБЛИКОВАНИЯ <i class="far fa-calendar-alt faright"></i></a>
+</li>                        </ul>
+                    </div>
+                </div>
+                <div class="top_menu notforprint" id="navbarSupportedContent">
+                    <div class="container">
+                        <div class="row">
+                            <ul class="float-left">
+
+<li>
+    <a title="На главную страницу портала" class="main-item with-icon" href="http://pravo.gov.ru">
+        <i class="icon icon-home"></i>
+    </a>
+</li>
+<li>
+    <a class="main-item " href=/documents/daily title="05 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Сегодня</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/weekly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x430;&#x44F; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44F;, &#x441; &#x43F;&#x43E;&#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x430; &#x43F;&#x43E; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; - c 31 &#x43F;&#x43E; 06 &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44F;">Неделя</a>
+</li>
+<li>
+    <a class="main-item " href=/documents/monthly title="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x441;&#x44F;&#x446; - &#x441;&#x435;&#x43D;&#x442;&#x44F;&#x431;&#x440;&#x44C;">Месяц</a>
+</li>
+<li>
+    <a class="main-item " href=/search>ПОИСК <i class="fa fa-search faright"></i></a>
+</li>
+<li>
+    <a class="main-item " href=/calendar>КАЛЕНДАРЬ ОПУБЛИКОВАНИЯ <i class="far fa-calendar-alt faright"></i></a>
+</li>                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="overlay"></div>
+                
+
+
+
+<div class="home container">
+    <table>
+        <tbody>
+        <div class="row" style="justify-content:center;">
+                <div class="col-block">
+            <a href="/documents/block/president">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x417;&#x430;&#x43A;&#x43E;&#x43D;&#x44B; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438; &#x43E; &#x43F;&#x43E;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x435; &#x43A;  &#x41A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x438; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;,&#xA;&#x444;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x435; &#x437;&#x430;&#x43A;&#x43E;&#x43D;&#x44B;,&#xA;&#x444;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x437;&#x430;&#x43A;&#x43E;&#x43D;&#x44B;,&#xA;&#x443;&#x43A;&#x430;&#x437;&#x44B; &#x41F;&#x440;&#x435;&#x437;&#x438;&#x434;&#x435;&#x43D;&#x442;&#x430; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;,&#xA;&#x440;&#x430;&#x441;&#x43F;&#x43E;&#x440;&#x44F;&#x436;&#x435;&#x43D;&#x438;&#x44F; &#x41F;&#x440;&#x435;&#x437;&#x438;&#x434;&#x435;&#x43D;&#x442;&#x430; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/e94b6872-dcac-414f-b2f1-a538d13a12a0" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x41F;&#x440;&#x435;&#x437;&#x438;&#x434;&#x435;&#x43D;&#x442; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/documents/block/council_1">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x41F;&#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x421;&#x43E;&#x432;&#x435;&#x442;&#x430; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;, &#x43F;&#x440;&#x438;&#x43D;&#x44F;&#x442;&#x44B;&#x435; &#x43F;&#x43E; &#x432;&#x43E;&#x43F;&#x440;&#x43E;&#x441;&#x430;&#x43C;, &#xD;&#xA;&#x43E;&#x442;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x43D;&#x44B;&#x43C; &#x43A; &#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44E; &#x43F;&#x430;&#x43B;&#x430;&#x442;&#x44B; &#x447;&#x430;&#x441;&#x442;&#x44C;&#x44E; 1 &#x441;&#x442;&#x430;&#x442;&#x44C;&#x438; 102 &#xD;&#xA;&#x41A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x438; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/950cdcb1-f55d-4e22-9f05-87074fe08efd" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x421;&#x43E;&#x432;&#x435;&#x442; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E;  &#x421;&#x43E;&#x431;&#x440;&#x430;&#x43D;&#x438;&#x44F; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/documents/block/council_2">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x41F;&#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x413;&#x43E;&#x441;&#x443;&#x434;&#x430;&#x440;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x414;&#x443;&#x43C;&#x44B;, &#x43F;&#x440;&#x438;&#x43D;&#x44F;&#x442;&#x44B;&#x435; &#x43F;&#x43E; &#x432;&#x43E;&#x43F;&#x440;&#x43E;&#x441;&#x430;&#x43C;, &#xD;&#xA;&#x43E;&#x442;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x43D;&#x44B;&#x43C; &#x43A; &#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44E; &#x43F;&#x430;&#x43B;&#x430;&#x442;&#x44B; &#x447;&#x430;&#x441;&#x442;&#x44C;&#x44E; 1 &#x441;&#x442;&#x430;&#x442;&#x44C;&#x438; 103 &#xD;&#xA;&#x41A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x438; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/0dbe1bc1-0e40-446a-a3ba-1ccabe18ca5e" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x413;&#x43E;&#x441;&#x443;&#x434;&#x430;&#x440;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x430;&#x44F; &#x414;&#x443;&#x43C;&#x430; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x421;&#x43E;&#x431;&#x440;&#x430;&#x43D;&#x438;&#x44F; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/documents/block/government">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x41F;&#x440;&#x430;&#x432;&#x43E;&#x432;&#x44B;&#x435; &#x430;&#x43A;&#x442;&#x44B; &#x41F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x441;&#x442;&#x432;&#x430; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/19bb10cd-32f3-4632-8303-c94dd5f45359" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x41F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x441;&#x442;&#x432;&#x43E; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/block/federal_authorities">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x41F;&#x440;&#x430;&#x432;&#x43E;&#x432;&#x44B;&#x435; &#x430;&#x43A;&#x442;&#x44B; &#x444;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x43E;&#x432; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x432;&#x43B;&#x430;&#x441;&#x442;&#x438; &#xD;&#xA;&#x438; &#x444;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x433;&#x43E;&#x441;&#x443;&#x434;&#x430;&#x440;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x43E;&#x432; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/28bdeebd-e2cf-45ce-8d2a-2bc1aaadd7fc" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x44B; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x432;&#x43B;&#x430;&#x441;&#x442;&#x438; &#x438; &#x444;&#x435;&#x434;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x433;&#x43E;&#x441;&#x443;&#x434;&#x430;&#x440;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x44B; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/documents/block/court">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x41F;&#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x421;&#x443;&#x434;&#x430; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;, &#xA;&#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x421;&#x443;&#x434;&#x430; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438; &#xA;&#x438; &#x438;&#x43D;&#x44B;&#x435; &#x440;&#x435;&#x448;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x421;&#x443;&#x434;&#x430; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/b85249b6-f6e6-4562-a783-90ea989af2db" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x41A;&#x43E;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x439; &#x421;&#x443;&#x434; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/block/subjects">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x417;&#x430;&#x43A;&#x43E;&#x43D;&#x44B; &#x438; &#x438;&#x43D;&#x44B;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x43E;&#x432;&#x44B;&#x435; &#x430;&#x43A;&#x442;&#x44B; &#x441;&#x443;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x43E;&#x432; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/022fd55f-9f60-481e-a636-56d74b9ca759" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x41E;&#x440;&#x433;&#x430;&#x43D;&#x44B; &#x433;&#x43E;&#x441;&#x443;&#x434;&#x430;&#x440;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x432;&#x43B;&#x430;&#x441;&#x442;&#x438; &#x441;&#x443;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x43E;&#x432; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/documents/block/international">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x41C;&#x435;&#x436;&#x434;&#x443;&#x43D;&#x430;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x435; &#x434;&#x43E;&#x433;&#x43E;&#x432;&#x43E;&#x440;&#x44B;, &#x432;&#x441;&#x442;&#x443;&#x43F;&#x438;&#x432;&#x448;&#x438;&#x435; &#x432; &#x441;&#x438;&#x43B;&#x443; &#x434;&#x43B;&#x44F; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;, &#xA;&#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x43C;&#x44B;&#x435; &#x43C;&#x435;&#x436;&#x434;&#x443;&#x43D;&#x430;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x435; &#x434;&#x43E;&#x433;&#x43E;&#x432;&#x43E;&#x440;&#x44B; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/c79f71a1-c367-4e9d-a8b2-046cc8a1673f" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x41C;&#x435;&#x436;&#x434;&#x443;&#x43D;&#x430;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x435; &#x434;&#x43E;&#x433;&#x43E;&#x432;&#x43E;&#x440;&#x44B; &#x420;&#x43E;&#x441;&#x441;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x439; &#x424;&#x435;&#x434;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438;
+                    </div>
+                </div>
+            </a>
+                </div>
+                <div class="col-block">
+            <a href="/documents/block/un_securitycouncil">
+                <div class="border text-center public-block">
+
+                    <div class="block-cover">
+                        <div class="block-desc">&#x420;&#x435;&#x437;&#x43E;&#x43B;&#x44E;&#x446;&#x438;&#x438; &#x421;&#x43E;&#x432;&#x435;&#x442;&#x430; &#x411;&#x435;&#x437;&#x43E;&#x43F;&#x430;&#x441;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x41E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x41E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x451;&#x43D;&#x43D;&#x44B;&#x445; &#x41D;&#x430;&#x446;&#x438;&#x439;</div>
+                    </div>
+                    <div>
+                        <img src="/File/Index/f3ddeeb2-0bb5-4f28-989b-e0e8dead6e63" alt="" width="120" height="120" />
+                    </div>
+                    <div style="min-height: 50px;">
+                        &#x421;&#x43E;&#x432;&#x435;&#x442; &#x411;&#x435;&#x437;&#x43E;&#x43F;&#x430;&#x441;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x41E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x41E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x451;&#x43D;&#x43D;&#x44B;&#x445; &#x41D;&#x430;&#x446;&#x438;&#x439;
+                    </div>
+                </div>
+            </a>
+                </div>
+        </div>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">EntryPoint.home();</script>
+
+
+
+            </main>
+        </div>
+        <footer class="notforprint">
+            <div class="footer">
+                <div class="footer-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-7 footer-certificates">
+
+                                <span class="footer-text">
+                                    <a href="http://pravo.gov.ru/upload/medialibrary/aea/aea92c7a1a0cb2c5e8c2104cf6aceaff.jpg" target="_blank">Свидетельство о&nbsp;регистрации СМИ №&nbsp;ФС77-47467</a>
+                                </span>
+                                <span class="footer-text" style="padding-left: 10px;">
+                                    <a href="http://pravo.gov.ru/upload/medialibrary/eaf/eafafedba15eba345ea36007b7bbd994.jpg" target="_blank">Электронный паспорт ФГИС №&nbsp;ФС77110096</a>
+                                </span>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+
+                                <div class="footer-buttons">
+                                    <div class="soc-block soc-top">
+                                        <a class="footer-item" href="/rss" title="RSS каналы"><img class="footer-item-icon" alt="RSS каналы" src="/images/rss-logo.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="HTML конструктор" href="/HtmlConstructor"><img class="footer-item-icon" alt="HTML конструктор" src="/images/html-code.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="Открытые данные" href="/OpenData"><img class="footer-item-icon" alt="Открытые данные" src="/images/registry-editor.svg"></a>
+                                        <div class="line"></div>
+                                        <a class="footer-item" title="API интерфейс" href="/help"><img class="footer-item-icon" alt="API интерфейс" src="/images/api.svg"></a>
+                                                <div>
+                                                    <script type="text/javascript" src="/js/counter-yandex.js"></script>
+                                                    <noscript><div><img src="https://mc.yandex.ru/watch/25702331" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+                                                    <!-- /Yandex.Metrika counter -->
+                                                </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/site.js?v=R8u1rEpscBH6axYHCUUniS65iRQ4UBaenIV39gnO9wo"></script>
+    <script src="/js/menu.js?v=AbPet1jOZejrSykwqkhCRnsfF56meR48uMZ8ByrgbXE"></script>
+
+    <link href="/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <script src="/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/lib/bootstrap-datepicker/locales/bootstrap-datepicker.ru.min.js"></script>
+
+    
+
+    <link rel="stylesheet" href="/lib/jqueryui/jquery-ui.min.css">
+    <script src="/lib/jqueryui/jquery-ui.min.js"></script>
+
+</body>
+</html>

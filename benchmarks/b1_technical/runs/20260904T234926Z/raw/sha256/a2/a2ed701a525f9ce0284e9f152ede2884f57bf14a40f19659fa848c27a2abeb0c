@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TAdviser – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="TAdviser">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/jt3P84VfSmjoGXi3-u4WujgdE4871zjb4RTAIEGbc33OsstyoNtcT-AIC41p9PBQ6yxiqdFRVtdmMd-YyqjvMp7YlVDi4yg7V9xcRCFG1rZOnzCt6K_Jq-uXpNAhRERCDSFWfgWKUjUi38EDgXL1Gja-HoJmPqDdQY1CKLQHauKBjaEqVL6zVIhTQ-gZES-F4OIaSbmq8TZB8nFGCZ-GqRNnikgAqFcFT1L2zGC5RTae96CbOkP7bX3n4afo9Vs1Dfutb4ngPys9hQyAmovCaoF0XBTDsWr1l3BpKCaoYQ1CQL0gugtLhvmEK5fg2E7inoly1QI-eoyw5aYVJQX5vQ.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Канал портала TAdviser.ru 
+e-mail editor@tadviser.ru
+видео https://rutube.ru/channel/23569386/
+РКН https://knd.gov.ru/license?id=6734832f8a5fe04efd3e5442&amp;registryType=bloggers">
+
+<meta property="twitter:title" content="TAdviser">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/jt3P84VfSmjoGXi3-u4WujgdE4871zjb4RTAIEGbc33OsstyoNtcT-AIC41p9PBQ6yxiqdFRVtdmMd-YyqjvMp7YlVDi4yg7V9xcRCFG1rZOnzCt6K_Jq-uXpNAhRERCDSFWfgWKUjUi38EDgXL1Gja-HoJmPqDdQY1CKLQHauKBjaEqVL6zVIhTQ-gZES-F4OIaSbmq8TZB8nFGCZ-GqRNnikgAqFcFT1L2zGC5RTae96CbOkP7bX3n4afo9Vs1Dfutb4ngPys9hQyAmovCaoF0XBTDsWr1l3BpKCaoYQ1CQL0gugtLhvmEK5fg2E7inoly1QI-eoyw5aYVJQX5vQ.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=tadviser">
+
+<meta property="al:android:url" content="tg://resolve?domain=tadviser">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Канал портала TAdviser.ru 
+e-mail editor@tadviser.ru
+видео https://rutube.ru/channel/23569386/
+РКН https://knd.gov.ru/license?id=6734832f8a5fe04efd3e5442&amp;registryType=bloggers
+">
+
+    <link rel="prev" href="/s/tadviser?before=6183">
+<link rel="canonical" href="/s/tadviser?before=6203">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/tadviser">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/tadviser" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">TAdviser</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/tadviser">@tadviser</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">13.4K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">5.01K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">45</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">5</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">5.49K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Канал портала <a href="http://TAdviser.ru/" target="_blank" rel="noopener">TAdviser.ru</a> <br/>e-mail editor@tadviser.ru<br/>видео <a href="https://rutube.ru/channel/23569386/" target="_blank" rel="noopener">https://rutube.ru/channel/23569386/</a><br/>РКН <a href="https://knd.gov.ru/license?id=6734832f8a5fe04efd3e5442&amp;registryType=bloggers" target="_blank" rel="noopener">https://knd.gov.ru/license?id=6734832f8a5fe04efd3e5442&amp;registryType=bloggers</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=5b129fc8918aa8c289_18414277303715130551">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=5b129fc8918aa8c289_18414277303715130551">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/tadviser">
+        <i class="tgme_page_photo_image bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">TAdviser</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">13.4K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/tadviser">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/tadviser?before=6183" class="tme_messages_more js-messages_more" data-before="6183"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6183" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE4MywidCI6MTc4ODU2NTc3MCwiaCI6IjIzNWRlZTQwMDk5NGE5NjY2MiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/sec_post/1403"><span dir="auto">SecPost</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5240134399666367108 1220063865_460008068" href="https://t.me/tadviser/6183" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/fnjem1v3nZIvUsVnie2LwXNx9_iwIVSbLsZUpYHgdFe72og12BOE7PeX06UfzPka_-r9msURZ7r339PCxh9ZSLuhw_WjATYciCQtODzhsWo5AJpv_MCy9O-EghUKvePoFhJoC6jdYXRUt59UO7Dmo7I2-n0v8nwAM08hkAxE793-75ZE4s06u-DnOKlHK7oxEPiQMeZUtojc_FZ7v9zsJsKPhllmVk1NCONj935LQ6vGnAPEE57sXFQMv0Ys4ZSkb5lXhlkus8iYM2acZJvuRqCdy_2wSZ2Alzjn-ln6oOAL8ZMl6L9gKAV_5w2PdFD0dwd6dofuUhSwcWnwoCiJmw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5231012545799666522"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F948D.png')"><b>🔍</b></i></tg-emoji> ИБ-исследователь: как меняется профессия и куда она ведет<br/><br/><tg-emoji emoji-id="5251203410396458957"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9BA1.png')"><b>🛡</b></i></tg-emoji> Еще десять лет назад ИБ-исследователь вполне мог быть человеком-оркестром: сам разбирал вредоносный файл, искал информацию, проверял гипотезы и готовил аналитику. Сегодня исследователь работает в гораздо более сложной технологической среде — облака, Kubernetes, CI/CD, корпоративные репозитории кода и собственная разработка компаний — а сама профессия распалась на множество направлений: реверс-инженерия, киберразведка, поиск угроз.<br/><br/><tg-emoji emoji-id="5251295206732482146"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji>В рамках подготовки <a href="https://secpost.ru/rating-eleet" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рейтинга «Новая элита кибербеза»</a> SecPost поговорил с Евгением Балком, руководителем департамента развития и архитектуры «Кросстех», Игорем Кузнецовым, директором Глобального центра исследования и анализа угроз «Лаборатории Касперского» (Kaspersky GReAT), и Евгением Чунихиным, бизнес-руководителем направления киберразведки TI&amp;ASM F6, о том, как изменилась профессия ИБ-исследователя за последние десять-пятнадцать лет, что приводит в нее молодых специалистов и куда можно двигаться дальше.<br/><br/>Подробнее — в <a href="https://secpost.ru/ib-issledovatel-kak-menyaetsya-professiya-i-kuda-ona-vedet" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">материале</a> <tg-emoji emoji-id="5388941512635612235"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988D.png')"><b>😍</b></i></tg-emoji><br/><br/>— <br/><a href="https://secpost.ru/rating-eleet" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подать заявку в рейтинг</a> <a href="https://secpost.ru/rating-eleet" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>«Новая элита кибербеза»</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tadviser/6183" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C8D.png')"><b>✍</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA1.png')"><b>⚡</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.12K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6183"><time datetime="2026-09-01T17:24:26+00:00" class="time">17:24</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6184" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE4NCwidCI6MTc4ODU2NTc3MCwiaCI6IjhjNTU4NDI1ZGQ4YjIyMjBlZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5242224128889134190 1220550418_460004462" href="https://t.me/tadviser/6184" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/vrGqseIVSgNXsGN7c0A36Oi_keyyuDQJpkUwBZz3tAhVY7N6j-N7Z4WV4Gr7Dvlu1jZy2gOE_yme0bS3nObNapaJZVhFYUYhROIga9GIWML1bNSI3vX216wMt3XdSaMLEvs_e0up0gIUtPrvZ_UukQtOnUwwIdul8t0esOKMax3seajn4pZKSu23YMJwSxKpwUd0mAvqQfpzzNXfMrmL9rt4ysaFK6vpXYgvuFnJQSa4yoITbD_5wNof4b5FCbXERLZ7mNJI3z1zjcObfZwjems84Jm9do6HhiZNiaLpZHdPVS8AOGMMByLaPQhD6nZzjNJGTtNbTYh2HL_1cDUQlQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:61.875%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Евгений Косиненко, ИТ-холдинг Т1: Спрос на зрелый отечественный софт со стороны крупного бизнеса остается высоким</b><br/><br/>О том, как изменились требования бизнеса к корпоративному ПО, какие сферы остаются самыми сложными для автоматизации и за счет чего российские продукты могут расти на высококонкурентном рынке, TAdviser рассказал Евгений Косиненко, и.о. заместителя генерального директора по технологическому развитию и продуктовой разработке, ИТ-холдинг Т1.<br/><br/><a href="https://www.tadviser.ru/a/963647" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Читать</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA1.png')"><b>⚡</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C8D.png')"><b>✍</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.16K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6184"><time datetime="2026-09-02T07:20:26+00:00" class="time">07:20</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6185" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE4NSwidCI6MTc4ODU2NTc3MCwiaCI6ImE3YTAyY2Y5Y2IwNzA1YmYwYSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5242224128889134200 1220550418_460004472" href="https://t.me/tadviser/6185" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/YYN7G-sQ0-lbvLG6QNDUnq5Jyue6z1rmuLK-cM6h32DsrvAe1-40C6WOlJZdwyhOyspn_COlAtxid93RZCHGQtJyNI3D_1AxY208zsmRHxHU-H5Gk4j3gillAsXvzFpWfv5SOSA7vB6e3yJCl9_XkDBvPPDAi5QhiiCdx7uPY14RazdbkDFQCWa04eUL8GuUGxuAc2lcjIuwRZhYMTR_ewQAYnKp-J_58Qjy1o_KUebD4FF4QXEUIz1gCqERcXFlTXWpI1KY2YbkQH6ht4lIm0uB3trjGsY3bC90S_ff_N2HrSsZjKcrj4ZYBAyOfUFV_L59oSGYWktL8P0i7OtB4g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.75%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Легализация Национального удостоверяющего центра. Подготовлен приказ Минцифры о форматах сертификатов безопасности<br/><a href="https://www.tadviser.ru/a/494214" target="_blank" rel="noopener">https://www.tadviser.ru/a/494214</a><br/><br/>—————————— <br/>TAdviser в <a href="https://max.ru/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> и <a href="https://vk.com/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.22K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6185"><time datetime="2026-09-02T07:54:01+00:00" class="time">07:54</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6186" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE4NiwidCI6MTc4ODU2NTc3MCwiaCI6IjRjMGEzNmRlMjllYWQyMGRlZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5242224128889134268 1220550418_460004540" href="https://t.me/tadviser/6186" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/ky3JV-Oeo-hNaTUgqmV8yWYkceUTGI8FxcpcC0nE_cwNWpZCArzxT8QV1WEmr56njGGrZKaI3VqhH-nubpiAMa_hAtih9TQr0_FS3DW8oSOsuAeTURY5wh1Hd2ZZVhSyOyC8mOFvHegx7Mg9GqyRk2zbRZutB2tMVOxwzYi4e7aIgE4Bv3f7n0UxntlHeZRsNbvP4B6zcwBZRSrrwMTonm9jerho-kLYpsCSWawGsKQP1bdhnYfkp6UgJImgfwPTICECp2-tJ1gYkkz10qTr8M5mZZUvwNwAERbx8TjYyKqIaSl34pOMEhRQJaTZ7IV880iRcC2wD6Th5s7IfJfpDw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:70.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Умер глава Минцифры Самарской области Юрий Симонов <a href="https://www.tadviser.ru/a/958926" target="_blank" rel="noopener">https://www.tadviser.ru/a/958926</a><br/><br/>—————————— <br/>TAdviser в <a href="https://max.ru/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> и <a href="https://vk.com/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F958A.png')"><b>🕊</b></i>14</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/tadviser/6186"><time datetime="2026-09-02T08:34:05+00:00" class="time">08:34</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6187" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE4NywidCI6MTc4ODU2NTc3MCwiaCI6ImY5OGVjNmNkMjViYTE4MTc1ZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5242538421710955148 1220623595_460006028" href="https://t.me/tadviser/6187" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/FBXAGtdD57sEgwwaFfTrRCkx3SGtk8CdsundI9DfQHu6XVkB2P_eQsfcOsf3G0YeUw0h5fONiyhYucc6MB3gNiQsVB7TiQCMVEJugypqnH2yVoLCBo-m2uoOWZRh4D_Ib3qM0Zq1U-6mqIOpdnSyRc4GTR6NM66bfzT00j0n2d9PS0fWbYi4yyd-2EcPb-mXaNEVkbjxpQwNoK6WichUISwuKUK2ya3ODEVhBgP4w64uv0EvaD2z0JzQjcq14xKVLEvi92-xgVBv9SG3gz6XKRfXpw0_lQ2qTAAxw0AYK_wvdv56KLhT531QaXZhe3KQc4IafhAoifoWl0n2Y-ZaDw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Иногда одно требование регулятора меняет больше, чем планировалось<br/>&nbsp;<br/>Для Бургер Кинга таким триггером стали требования Честного ЗНАКа к работе с разливным пивом. Но вместо того чтобы просто добавить ещё одну обязательную операцию, в компании решили пересмотреть связанные с ней процессы.<br/>&nbsp;<br/>Так проект по маркировке вырос в автоматизацию приёмки, инвентаризации и перемещений товаров в сети из 800+ ресторанов.<br/>&nbsp;<br/>Результат:<br/>• Приёмка на 60% быстрее<br/>• На 33% времени меньше на инвентаризацию<br/>&nbsp;<br/>Как требования регулятора стали отправной точкой для более масштабной цифровизации — <a href="https://clv.moscow/j24yg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рассказываем в кейсе</a>.<br/>&nbsp;<br/><a href="https://clv.moscow/1wnpw" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Видео-версия кейса</a>.<br/><br/>erid: 2W5zFJ34zHf, ООО «Клеверенс Софт», ИНН 7720514281</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8DBE.png')"><b>🍾</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.13K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6187"><time datetime="2026-09-02T09:28:54+00:00" class="time">09:28</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap service_message js-widget_message" data-post="tadviser/6188" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE4OCwidCI6MTc4ODU2NTc3MCwiaCI6IjRkYmY0Njg3YzhlNDhmNzBiMCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><a class="tgme_widget_message_author_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a> pinned a photo</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6188"><time datetime="2026-09-02T09:29:08+00:00" class="time">09:29</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6189" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE4OSwidCI6MTc4ODU2NTc3MCwiaCI6IjBhNTBhNjYzZTU1ZGJlZDY3NSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/tadviser/6189" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.03K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/tadviser/6189"><time datetime="2026-09-02T10:05:40+00:00" class="time">10:05</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6190" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE5MCwidCI6MTc4ODU2NTc3MCwiaCI6IjA2ZTlkZTVjNjc4Y2Y5NGQzNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244475928702820374 1221074706_460005398" href="https://t.me/tadviser/6190" style="width:761px;background-image:url('https://cdn4.telesco.pe/file/HlsTuSmh7l015NQAMneG9mjQVCrlkbwUb5F4BNOA0_h4P5Z9D8H-O9RBkSGxrEAaYeENgx-hESUN953EDB9jqGRTzNdm8HYhS-2vjWOStw-Ywzi-e89nv-w_n3-jruz2KkQgnRjHbdt3sFB7PrVYBkfhuA1Bq21lJWV6BsYZaekVoysH_btEolZaH5urFoQm7MF2_gnaE87BEsYY8rPucC8a_Mo-P0Ndn7qmR6N5DHByU8gHNPH_psPZZFbfgdozuk1NeN4ON9sPSFTQHd7vUGFR5hLYzvC7nJxvZ-Ammp3ExvJzz_RKWmjyn4yhJeYl_vED26tpHBE9cCG0EeGsZQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:58.607095926413%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">«ИКС Холдинг» инвестирует 35 млрд рублей в производство сложных полупроводников на Дальнем Востоке <a href="https://www.tadviser.ru/a/439971" target="_blank" rel="noopener">https://www.tadviser.ru/a/439971</a><br/><br/>—————————— <br/>TAdviser в <a href="https://max.ru/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> и <a href="https://vk.com/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>12</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.91K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/tadviser/6190"><time datetime="2026-09-03T06:39:56+00:00" class="time">06:39</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6191" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6IjYxOTFnIiwidCI6MTc4ODU2NTc3MCwiaCI6ImRkYjNlMWY2ZTdjOGViOTAyNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:133.333%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:604px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:225px;height:225px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/ayd17y1dLS64quvszsJLTCPGRyHYMJ306XpeFxE8tO9XMPQZPRsFcmykaWBQROew7B1gT5h3cV7D1lVT7JvaVsJ5zmmJsi55IxTjDq-PZ37dO0RtuCf_Pmdpvzn99z6hwIlQnSVNXzhkF1aN2YBI-p_rmsuaqjv2gV10K_FnZ2VmqmgEjV_jpRy3ypS016l-fmvV5bMwKMp8d02E-gQsQZGVwdHqcYdewguGHD8SDKGo7GX1p6NtEnpTSbxThaPYl4X6lC95UH1I4kuYYOyylse_MMkik5_y16NYZsIVvkCIC9lsFFldi72k2nniTGx-_5hqC63Rnxn-n37N1kUeog.jpg')" data-ratio="1" href="https://t.me/tadviser/6191?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:227px;top:0px;width:226px;height:225px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/mG5wfOSnbp5fgGtYVvE2gdJ7MBeuOiLcq5NpzWdKsC6co9-h3b-XiEBPZWXPGVx54fFJreNOlZ31ri9nWvaSmkgvBcuHyWa8tc6e-zMf-DtJLiTsfjyuSO-RPbowNQPW7Wjk6sUKMPLGkSY-xJGsIFXBb9Da7EP8R-J2SOS22SsGpop_JhnbYn4GmL4ricmrasf14rpygYgRqOE98KGJz2K0Ynvwkb6kmMbAqjlvc0rj2luCJ-T0B-Yzj1NOjcAO_9cnz7JsCH2Q5pbNxr7AUa_yKK9obMxrbXRA6HijWarq1LSnfrr8biA_mNW8AA3T01hLicUaG2zrdysyvtfo2g.jpg')" data-ratio="1" href="https://t.me/tadviser/6192?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:227px;width:225px;height:225px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/DXhcyImWhTsE2zHUF6ymI4ZFiGwuSouSv_RdMsvXTlIJRqgNA1URh7oOcYhOoKWaY9rw5mjal3x4lgAWJYelWFoXJ9fXHzl-upF3TXj1M0p9MVrD236pUxm65pfYZxxBxAppbNS23cG9GH2gNtY-XSkNkFrrgY9ASeUqoDOCon0xV1ym7rWk8pcgGh8bYC7fXXB5ehoHu55Kn7vXDRcPD0yuDKAX1-KcT1nvWIivSMT_CWjqR2NZM5Le7x9Ahqd24rVZbe2Rh3o7TTlOSswa5QC3dgoiNCV-_d11HgZawuIcUGMF-RxXyi_F1dokKrYppSwYAygl9grHHlftORX6bw.jpg')" data-ratio="1" href="https://t.me/tadviser/6193?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:227px;top:227px;width:226px;height:225px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telesco.pe/file/R2H_Tq8stgnCUQsOHIw1d-AqKU5TT9AFLPUiWw1K9WXFDmSOkDazmi1TLGTuBsqgm7kaRQCABw4F-kVWc2mQhmkrg5sPU8mYPX5qQZRdZ-pVcd90HzVkx9aWLRwu8EseMyT_MrXczMu3f8Az-Y1OPdlqu-zbcuQY_wiEIDzhBTvU-HyDLFwXNFKS4qwLXbYCrFvwhbYGEjPH0UpWXzz7YKl1VAd0WHbOtxUtFNwnQ5rJHBV-1tgEp1nwkIFipyZh3xrsMcv0Dhnz5MkmbPlkdzXsYkz-f4qlrvIG5t82C6Q0hnp0ufW6sxMTH7PVDlzmUlkIjIxysBuAtFF0PCdMnw.jpg')" data-ratio="1" href="https://t.me/tadviser/6194?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:454px;width:150px;height:150px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/SSbi8o52mbCSKfsqsVyC2rKMIHspHpP-BNxxXEniiIzDIcP-TAlx2cQFqJMh9LDqzIh1O4dgTe-FjodeekrQe3PB3x88YWG1YIHugbEd7BnEnYdrEwAF5fn-Xr2rjc7PnYzlf4mjiBptzUTiypTaZSKwkZryrkZqQfm8DEak6uKmd5YMmQq8A35hkFpUN4Nn4x263RjDhsiHN7VQiAWHM5vySsTCZx6YsZNjix7AzluIzEienNKDgqoWSbtK1kHhm5ztZE_y169PmjR4v7mwI0mHupfbnqoVi5CUlbpYB1s7EpDkTwelw-adOn_Cb9ImgF3ZLJN9t5jAua7GAP05bg.jpg')" data-ratio="1" href="https://t.me/tadviser/6195?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:152px;top:454px;width:150px;height:150px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/aBf86Jn6kWxFu647m9YFyI1HSYDURFV5UYtWG_qLsCHE1Of4jYu3NPeaPjMcecYjejQipMBQN7wKI7krDAUtmKtEGvw_6Z14sK_edeRA3zNmvK3LGsFUVKDgEJPGX4SuI75esiyBqr7ydTPXir5cl8x6HsbN72F2AkjJkOZ5QMwNNlhwSGWZoz3n1py0Y4QdpsT0AXy73S8389nwf7f7NfZCmJvSMVOc6Y7YkTrnP_0L_7XsFiUOr2RTn9SM9TcLB4c2LZ2XjNW7fTpAde7P-Bag-fbVlpJJXZBXFcpzMLFVsiM-enYZ9m5XlRZJhmd0BYR-dnSVdSw-nfE_NrEIjA.jpg')" data-ratio="1" href="https://t.me/tadviser/6196?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:304px;top:454px;width:149px;height:150px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/nP3vjg7M19Ux9N1WrmLLicOc58y94VbTm3MlbP2_uRNKU77YValDipqFwtmu7zV_ePG7S5QrzomttTLmtB15ZJp3M4jyWAe5Qr1iqora8UEHJUikRqZhUt04I5KsMkYfJn0eAAjksaXhwCaIUoEtQR2uYAJaO5R5Vrk56xBWjETI01OAaQRUsQzJNG-oy5o4XUH5XL53os6FEG8z1Df9n4BXQCgEHXnzbJjVrKYea_IX8vdbhs2ZuocdagepQyjqHDLaxULHPrZdxSIwEPGZhqwbm5Q-SIp8Ldn4VRHNHv-XVTgl1qAwBl01HHHi8FwRrJZ24PDz3VhEwrFjVXIISA.jpg')" data-ratio="1" href="https://t.me/tadviser/6197?single">
+  <div class="grouped_media_helper" style="left:0;right:0;top:75px;bottom:76px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><div class="tgme_widget_message_text js-message_text" dir="auto"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i> <b>Что станет приоритетом для рынка ITSM и ESM в ближайшие годы?</b><br/><br/>Когда сервисная команда только выходит за пределы ИТ, главная боль — навести порядок: свести процессы в одну систему, избавиться от разрозненных таблиц и почты. Но что беспокоит команды, которые этот этап уже прошли? <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F97AF.png')"><b>🗯</b></i>Мы решили сравнить ответы зрелых сервисных команд с ответами широкого рынка, и разрыв оказался больше, чем ожидали.<br/><br/>На конференции ITSMF 2026 мы собрали 56 анкет участников — среди посетителей были представители ВТБ, Яндекса, Альфа-Банка, Райффайзен Банка и РТК ЦОД — и сопоставили ответы со срезом всего рынка. Получилось <a href="https://www.tadviser.ru/a/963080" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">исследование</a> о том, какие задачи для большинства компаний станут актуальны через год-два, если судить по опыту тех, кто уже прошёл этот путь.<br/><br/>Главные цифры — на карточках выше, а подробный отчёт можно скачать на сайте.<br/><br/><b><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9497.png')"><b>🔗</b></i> </b><a href="https://www.tadviser.ru/a/963080" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Узнать состояние рынка управления услугами</b></a></div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.74K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6191"><time datetime="2026-09-03T09:01:28+00:00" class="time">09:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6198" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE5OCwidCI6MTc4ODU2NTc3MCwiaCI6IjRiMWY3OGYzY2E4ZTJkZjRjMiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5246727728516506729 1221598994_460006505" href="https://t.me/tadviser/6198" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/oNDo4_op4DejxQYEyu3ihizBHz1NgRyxB4rXmOnh0zb0zy_Ug_aZlVQ63U6hcoSQQst7GvsbO8FeUhF0jWOpoRcJqiuyzbFuwwvmwDn5HMywRoPn64fuElPMM-M1EKojj85XDmoUay9ynikb30Lh66xqniOkq-BXG02C0C5HlZETOzPthjOxCtyepikSX4KwaR2y39HFHlYmi3JoHo0xpK-Xj93f4eu4FERpmsuCpKcNTwALbgnq2Bd-cDNJ9MINja6UY1SwVjfL-g9K8aPPkMOBtss4KGF_exEPgIgQzMr550kjRc47hGjrBcwkHaTh2Pp2MTuHhpxLoiAeS5ARNw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:67.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Виктор Коноплев, Astra Cloud: Значительную часть новых требований ФСТЭК мы предусмотрели до их появления<br/></b><br/>Облачная инфраструктура Astra Cloud прошла аттестацию по требованиям приказов №21 и №117 ФСТЭК России. <br/><br/>Что оказалось самым сложным в этом процессе, почему на рынке пока немного аттестованных решений и какие технологии будут определять дальнейшее развитие облаков в интервью TAdviser рассказал Виктор Коноплев, директор по продукту Astra Cloud.<br/><br/><a href="https://www.tadviser.ru/a/962127" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Читать &gt;&gt;&gt;</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>7</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.76K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6198"><time datetime="2026-09-03T15:49:38+00:00" class="time">15:49</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6199" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjE5OSwidCI6MTc4ODU2NTc3MCwiaCI6IjhkM2JlY2Y4MThiMDMwZDZmOSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5246795859582722010 1221614857_460005338" href="https://t.me/tadviser/6199" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/V7gXRr6d0np_tYQnUAtE3HanYQd4fS4hAHFGO_1Gg6Za_o6a2iVztvQzP-pqigrsJthS2_IeJg81s6cKmZSvAOxmAqF49gDxktDJvfkHUwOlkvQOUozUG-vZHPjLttRqT2FdUGuNGw1EobvuPsrEdMrrFtyXTidMYIKCmX-x9eUZy8eKcpoZCl_Onb4p9peVo41t-pbUEbONfyiUQGW0AZTvhq-JeIXH7z12pv3GujW50IJLG3Uy9j0ep1_KiM0cRIa_LUCbQkOwGU9dVIvD4tifUhIoynUJrPGT0eDSY_PN201wHHYe4lBTSzrtKpLJCvOR45qM_FEBFXYfL7w74g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:97.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Илья Виссарионов, «Диасофт» — От прикладных решений до инфраструктуры: как мониторинг помогает локализовать источник проблемы</b><br/><br/>Современный мониторинг ИТ-инфраструктуры должен не только сообщать о произошедшем сбое, но и помогать заранее увидеть его предпосылки, а по возможности и предотвращать инциденты. <br/><br/>О том, как решать эти задачи в сложной микросервисной среде, почему система мониторинга должна контролировать не только доступность инфраструктуры, но и состояние прикладных решений, которые на ней работают, и какой подход реализован в платформе Digital Q.MessageBroker, TAdviser рассказал Илья Виссарионов, директор департамента «Аппаратно-системная платформа» компании «Диасофт».<br/><br/><a href="https://www.tadviser.ru/a/963840" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Читать &gt;&gt;&gt;</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.63K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6199"><time datetime="2026-09-04T07:14:38+00:00" class="time">07:14</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6200" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjIwMCwidCI6MTc4ODU2NTc3MCwiaCI6IjY1NzU5YWQ0ZGI2M2ExYzVlNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249344716514466524 1222208309_460004060" href="https://t.me/tadviser/6200" style="width:785px;background-image:url('https://cdn4.telesco.pe/file/ScvxaCvLt05eE6rWnpIMVRRiAXmbaKMLpiG8zH_9GsakeiaxUVtGEruiEOblKLY33O6LTapD74Ntwm48UsVVtWBsENADavH2vSh25CyJbz4wIWndm0cocaxuUgX_6KduyjzPgsP39iNZaiRkquYX5VReJga4QTiAFwPrRgOtmsqwJR5wSOUCBmbPcH87IMIJ6JBIlaAJr6ChXadf9XBh2S8wPGx6H3zqiKeguPgdsRAl-T_hqZcKEimuuYd8_PS0AMViCbvuNKbeNtNWSxfjIiDovHS8GVBfsf4cZh_W8pvbttOk4018jWeqpMQW_QXtQUfAo7pECGKk5TukpgaS4g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:59.872611464968%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">ИБ-компания Web Control DC вошла в состав InfoWatch <a href="https://www.tadviser.ru/a/74451" target="_blank" rel="noopener">https://www.tadviser.ru/a/74451</a><br/><br/>—————————— <br/>TAdviser в <a href="https://max.ru/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">MAX</a> и <a href="https://vk.com/tadviser" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ВК</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.43K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/tadviser/6200"><time datetime="2026-09-04T11:50:12+00:00" class="time">11:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6201" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjIwMSwidCI6MTc4ODU2NTc3MCwiaCI6IjgzNGE0ZWE2OTllN2RkMjcwMiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249344716514466755 1222208309_460004291" href="https://t.me/tadviser/6201" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/P_F3UsaQ8i3XpUSMhSvxXHjeRcRz_qrevL7CzICzfKk8mBqgQgWGlrfCYezbuJ3YI1PbaGzcio5-vNTadOJbl0uDyAXa2PKPE6finGkx4alnOLiwDNVnNV7rYOyBEmmoYzTpyN1aRl0VXVkQxHJ24vavjf0wsNrQl4IGm8kS1v1DZrNOBMBL_SyalUkgh0M-_jruqW36KDlqP3tH3217Nwwo_MzIQvGrMxKfzqFvJB-qXmxgXDKr2C8QrZCwAWR6mlLpKRCBFZnB3XMoXpgsHpBzznbr73YsjXiVq8yQ8FKRVgJY7S-HbnzHtmyknNYXdTkFLjWNM4EhS88aCL3sMg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Эксперты «Кода Безопасности» — о микросегментации, защите контейнеров и будущем сетевой защиты<br/></b><br/>Как сегодня строить защиту виртуальной инфраструктуры, где проходит граница между сегментацией и микросегментацией и почему контейнерные платформы требуют отдельного внимания со стороны ИБ — об этом TAdviser рассказали эксперты компании «Код Безопасности»: Павел Коростелев, руководитель направления стратегического маркетинга, и Евгений Тарелкин, руководитель направления защиты виртуализации vGate.<br/><br/><a href="https://www.tadviser.ru/a/964118" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Читать &gt;&gt;&gt;</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918C.png')"><b>👌</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.21K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6201"><time datetime="2026-09-04T15:06:06+00:00" class="time">15:06</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="tadviser/6202" data-view="eyJjIjotMTAwMTc5MzQ2MSwicCI6NjIwMiwidCI6MTc4ODU2NTc3MCwiaCI6Ijk0OTNmZjcyY2YwNjM1ODZhNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/tadviser"><i class="tgme_widget_message_user_photo bgcolor4" data-content="T"><img src="https://cdn4.telesco.pe/file/lANHWzcJJtOJB-G43te_Z2kaTOkoIUz30xd4B-_TgWvcdr7gF8aKe3ZXn2uw6ipgO6TrkGtgmlWOwMGj5qZRAngECG1PYOBD32c_mq8A-CwZoTd8LoQcCq9W9zU-jlfaBmpeBRchN4fpK5e5i-gpTA_Y0KzMXqPEL3uBCcpPGFs4mgAmipBtfTfclSNjGQsMaSMOum7NJ2ps2GtZBlTxBKG853L3ePuAbSXsv90qz-9Vv0OorB8MQJi3iSbXOrzsiAanZYqwCtrNFzPl75wDlQ39iV1RA7YzNKHMVMYEO1SUXe7jWnnFcpG8Tl4H7cjSruoVQSeuuaHGjQog3-DAWg.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/tadviser"><span dir="auto">TAdviser</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249344716514466957 1222208309_460004493" href="https://t.me/tadviser/6202" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/lBeX6QR9gIi2wjBL97rD7P2Hrt2TjLD_5XSVNlnAuJa-Rf4XKupMNbvED5n3ddEXa7Q5JdLQrAxDDki3e1z4oXbq0VoDtf3rgRPxrLEfV4hAqVY8-nRP5dRTLoNYDvvSNXLXQeXx3NQrctSZ12ByF0Rj_tCV-SLxvVipwNOI6jy0o7twQpBXLC7hlqyerXaZtpLV7qvFSvmXDCJzRM702D4ACAxfzVK1raQXuxG49q_mv6hQ04pPG1KB3Gm2mkE0cxKL-Pi0dp6mmCWrAA05Yy3D_0QjoaKWgHuuzbtp2G0FwhdoaA1pjK3Jj_tx2HdfRl9F4Qid5nz31nHsM9bijQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:87.125%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Экс-министр связи Николай Никифоров стал фигурантом уголовного дела <a href="https://www.tadviser.ru/a/50300" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">https://www.tadviser.ru/a/50300</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>4</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.13K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/tadviser/6202"><time datetime="2026-09-04T16:27:34+00:00" class="time">16:27</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 95.98ms -->

@@ -1,0 +1,94 @@
+{"kind":"deck","id":"pr/xzzdil","name":"Deck"}
+{"kind":"layout","layoutId":"eb390102-b72d-4945-91ef-8779904bf147","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"e20d7447-ed27-4221-9434-880244b9a6c9","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/hych2h","slide":1,"title":"AI PRODUCT HACK · ПРОМЕЖУТОЧНЫЙ ЧЕКПОИНТ","textShapes":3}
+{"kind":"textbox","id":"sh/4fa94jyp","slide":1,"text":"AI PRODUCT HACK · ПРОМЕЖУТОЧНЫЙ ЧЕКПОИНТ","textPreview":"AI PRODUCT HACK · ПРОМЕЖУТОЧНЫЙ ЧЕКПОИНТ","textChars":40,"textLines":1,"bbox":[42,42,760,42]}
+{"kind":"textbox","id":"sh/3e18veh4","slide":1,"text":"Интеллектуальный\nаналитический центр","textPreview":"Интеллектуальный | аналитический центр","textChars":36,"textLines":2,"bbox":[42,174,1010,250]}
+{"kind":"shape","id":"sh/2dsr29gj","slide":1,"bbox":[42,462,170,8]}
+{"kind":"textbox","id":"sh/hsjqt4zy","slide":1,"text":"«Цифра» / GS Labs\nСостояние на 4 сентября 2026","textPreview":"«Цифра» / GS Labs | Состояние на 4 сентября 2026","textChars":46,"textLines":2,"bbox":[42,500,620,105]}
+{"kind":"notes","id":"nt/hych2h","slide":1,"text":""}
+{"kind":"slide","id":"sl/s5ljie","slide":2,"title":"Сейчас повестка собирается вручную","textShapes":11}
+{"kind":"textbox","id":"sh/y5kn6tc7","slide":2,"text":"Сейчас повестка собирается вручную","textPreview":"Сейчас повестка собирается вручную","textChars":34,"textLines":1,"bbox":[42,34,1130,92]}
+{"kind":"textbox","id":"sh/lsb6h8vi","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1180,660,55,24]}
+{"kind":"textbox","id":"sh/k72583ud","slide":2,"text":"PR- и GR-специалист проходит весь путь от источника до готовой выдачи. На мониторинг заявлено 3–4 часа в день.","textPreview":"PR- и GR-специалист проходит весь путь от источника до готовой выдачи. На мониторинг заявлено 3–4 часа в день.","textChars":110,"textLines":1,"bbox":[42,155,675,125]}
+{"kind":"shape","id":"sh/7utojydo","slide":2,"bbox":[42,316,675,235]}
+{"kind":"textbox","id":"sh/mtknadc3","slide":2,"text":"источники  →  сбор  →  чтение и отбор\n→  значение для GS Labs  →  саммари и важность\n→  Excel  →  выдача получателю","textPreview":"источники  →  сбор  →  чтение и отбор | →  значение для GS Labs  →  саммари и важность | →  Excel  →  выдача получателю","textChars":115,"textLines":3,"bbox":[72,360,620,150]}
+{"kind":"textbox","id":"sh/9wv6l8vu","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[800,205,80,50]}
+{"kind":"textbox","id":"sh/8vm5c3u9","slide":2,"text":"Разрозненный ручной сбор","textPreview":"Разрозненный ручной сбор","textChars":24,"textLines":1,"bbox":[885,205,330,60]}
+{"kind":"textbox","id":"sh/ny947edk","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[800,325,80,50]}
+{"kind":"textbox","id":"sh/2x0ny9cz","slide":2,"text":"Ручное осмысление материалов","textPreview":"Ручное осмысление материалов","textChars":28,"textLines":1,"bbox":[885,325,330,70]}
+{"kind":"textbox","id":"sh/gba94zax","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[800,455,80,50]}
+{"kind":"textbox","id":"sh/hcjqx4ri","slide":2,"text":"Ручная упаковка и тяжёлый разбор Excel","textPreview":"Ручная упаковка и тяжёлый разбор Excel","textChars":38,"textLines":1,"bbox":[885,455,330,85]}
+{"kind":"textbox","id":"sh/up8r29sr","slide":2,"text":"Источник: описание кейса, Q&A и рабочий Excel","textPreview":"Источник: описание кейса, Q&A и рабочий Excel","textChars":45,"textLines":1,"bbox":[42,642,700,26]}
+{"kind":"notes","id":"nt/s5ljie","slide":2,"text":""}
+{"kind":"slide","id":"sl/8v608g","slide":3,"title":"Рабочий контур продукта","textShapes":18}
+{"kind":"textbox","id":"sh/9wzi9onu","slide":3,"text":"Рабочий контур продукта","textPreview":"Рабочий контур продукта","textChars":23,"textLines":1,"bbox":[42,34,1130,92]}
+{"kind":"textbox","id":"sh/mt8zy943","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1180,660,55,24]}
+{"kind":"shape","id":"sh/nuh07e5o","slide":3,"bbox":[42,245,190,250]}
+{"kind":"textbox","id":"sh/07qhwzmx","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[62,267,50,32]}
+{"kind":"textbox","id":"sh/lszy54ni","slide":3,"text":"Источники","textPreview":"Источники","textChars":9,"textLines":1,"bbox":[62,315,165,58]}
+{"kind":"textbox","id":"sh/y5ozup47","slide":3,"text":"СМИ · RSS · сайты регуляторов · Telegram","textPreview":"СМИ · RSS · сайты регуляторов · Telegram","textChars":40,"textLines":1,"bbox":[62,392,150,85]}
+{"kind":"shape","id":"sh/z6hg3u5s","slide":3,"bbox":[295,245,190,250]}
+{"kind":"textbox","id":"sh/c36hszm1","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[315,267,50,32]}
+{"kind":"textbox","id":"sh/d4fy14nm","slide":3,"text":"Сбор и текст","textPreview":"Сбор и текст","textChars":12,"textLines":1,"bbox":[315,315,165,58]}
+{"kind":"textbox","id":"sh/1gn6lcz2","slide":3,"text":"Получение публикации и сохранение оригинала","textPreview":"Получение публикации и сохранение оригинала","textChars":43,"textLines":1,"bbox":[315,392,150,85]}
+{"kind":"shape","id":"sh/0feps7ih","slide":3,"bbox":[548,245,190,250]}
+{"kind":"textbox","id":"sh/fu5oj2hw","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[568,267,50,32]}
+{"kind":"textbox","id":"sh/etw7qx0r","slide":3,"text":"AI-анализ","textPreview":"AI-анализ","textChars":9,"textLines":1,"bbox":[568,315,165,58]}
+{"kind":"textbox","id":"sh/dsn6hsz6","slide":3,"text":"Саммари · категория · важность · значение для GS Labs","textPreview":"Саммари · категория · важность · значение для GS Labs","textChars":53,"textLines":1,"bbox":[568,392,150,85]}
+{"kind":"shape","id":"sh/srepo7il","slide":3,"bbox":[801,245,190,250]}
+{"kind":"textbox","id":"sh/rq5of2h0","slide":3,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[821,267,50,32]}
+{"kind":"textbox","id":"sh/qpc7mx0f","slide":3,"text":"События","textPreview":"События","textChars":7,"textLines":1,"bbox":[821,315,165,58]}
+{"kind":"textbox","id":"sh/5o36dszu","slide":3,"text":"Связанные публикации и версии НПА","textPreview":"Связанные публикации и версии НПА","textChars":33,"textLines":1,"bbox":[821,392,150,85]}
+{"kind":"shape","id":"sh/4nupkni9","slide":3,"bbox":[1054,245,190,250]}
+{"kind":"textbox","id":"sh/w7yp0nq5","slide":3,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1074,267,50,32]}
+{"kind":"textbox","id":"sh/h876ts7q","slide":3,"text":"Выдача","textPreview":"Выдача","textChars":6,"textLines":1,"bbox":[1074,315,165,58]}
+{"kind":"textbox","id":"sh/u5g7yd8f","slide":3,"text":"PR · GR · руководитель · срочно / дайджест","textPreview":"PR · GR · руководитель · срочно / дайджест","textChars":42,"textLines":1,"bbox":[1074,392,150,85]}
+{"kind":"textbox","id":"sh/v6poripk","slide":3,"text":"Это рабочая схема на чекпоинт, не финальная архитектура.","textPreview":"Это рабочая схема на чекпоинт, не финальная архитектура.","textChars":56,"textLines":1,"bbox":[42,575,840,40]}
+{"kind":"notes","id":"nt/8v608g","slide":3,"text":""}
+{"kind":"slide","id":"sl/tfbzoo","slide":4,"title":"Четыре продуктовые гипотезы","textShapes":10}
+{"kind":"textbox","id":"sh/25k7ato7","slide":4,"text":"Четыре продуктовые гипотезы","textPreview":"Четыре продуктовые гипотезы","textChars":27,"textLines":1,"bbox":[42,34,1130,92]}
+{"kind":"textbox","id":"sh/psvql87y","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1180,660,55,24]}
+{"kind":"textbox","id":"sh/4729c36d","slide":4,"text":"01 · Расширенный поиск","textPreview":"01 · Расширенный поиск","textChars":22,"textLines":1,"bbox":[42,190,520,48]}
+{"kind":"textbox","id":"sh/rud8nypo","slide":4,"text":"Найдёт значимые материалы вне заданного списка без неприемлемого шума.","textPreview":"Найдёт значимые материалы вне заданного списка без неприемлемого шума.","textChars":70,"textLines":1,"bbox":[42,258,520,105]}
+{"kind":"textbox","id":"sh/qt4redoj","slide":4,"text":"02 · Ролевая выдача","textPreview":"02 · Ролевая выдача","textChars":19,"textLines":1,"bbox":[658,190,520,48]}
+{"kind":"textbox","id":"sh/dwvqp87u","slide":4,"text":"Повестка для PR, GR и руководителя станет релевантнее без потери общего критичного.","textPreview":"Повестка для PR, GR и руководителя станет релевантнее без потери общего критичного.","textChars":83,"textLines":1,"bbox":[658,258,520,105]}
+{"kind":"textbox","id":"sh/cvm9g369","slide":4,"text":"03 · События","textPreview":"03 · События","textChars":12,"textLines":1,"bbox":[42,420,520,48]}
+{"kind":"textbox","id":"sh/7y98bepk","slide":4,"text":"Связанные публикации сократят объём просмотра без потери уникальных фактов и позиций.","textPreview":"Связанные публикации сократят объём просмотра без потери уникальных фактов и позиций.","textChars":85,"textLines":1,"bbox":[42,488,520,105]}
+{"kind":"textbox","id":"sh/6x07298z","slide":4,"text":"04 · Два режима","textPreview":"04 · Два режима","textChars":15,"textLines":1,"bbox":[658,420,520,48]}
+{"kind":"textbox","id":"sh/snelgrix","slide":4,"text":"Срочные сигналы вместе с дайджестом ускорят доставку критичного без перегруза.","textPreview":"Срочные сигналы вместе с дайджестом ускорят доставку критичного без перегруза.","textChars":78,"textLines":1,"bbox":[658,488,520,105]}
+{"kind":"notes","id":"nt/tfbzoo","slide":4,"text":""}
+{"kind":"slide","id":"sl/1br900","slide":5,"title":"Технический прогресс пока частичный","textShapes":7}
+{"kind":"textbox","id":"sh/crypsjmt","slide":5,"text":"Технический прогресс пока частичный","textPreview":"Технический прогресс пока частичный","textChars":35,"textLines":1,"bbox":[42,34,1130,92]}
+{"kind":"textbox","id":"sh/rqpoze58","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,660,55,24]}
+{"kind":"textbox","id":"sh/qpgnq94n","slide":5,"text":"Проверено","textPreview":"Проверено","textChars":9,"textLines":1,"bbox":[42,170,520,44]}
+{"kind":"shape","id":"sh/1gr65ona","slide":5,"bbox":[42,230,550,305]}
+{"kind":"textbox","id":"sh/0fipw3mp","slide":5,"text":"• RSS выбранных PR/GR-источников отдаёт title и link\n\n• Для части сайтов работает извлечение полного текста\n\n• Telegram-каналы проверяются через сервисный аккаунт\n\n• Проблемные источники можно отключать от сбора","textPreview":"• RSS выбранных PR/GR-источников отдаёт title и link |  | • Для части сайтов работает извлечение полного текста |  | • Telegram-каналы пр...","textChars":211,"textLines":7,"bbox":[72,265,485,240]}
+{"kind":"textbox","id":"sh/ze9o3y54","slide":5,"text":"Ещё не закрыто","textPreview":"Ещё не закрыто","textChars":14,"textLines":1,"bbox":[660,170,520,44]}
+{"kind":"shape","id":"sh/ed07ut4j","slide":5,"bbox":[660,230,550,305]}
+{"kind":"textbox","id":"sh/9kb698n6","slide":5,"text":"• Универсальный способ извлечения текста\n\n• Открытые API и прямой парсинг части GR-источников\n\n• LLM-поиск и источники для руководителей\n\n• Единый end-to-end сценарий и измеренные результаты","textPreview":"• Универсальный способ извлечения текста |  | • Открытые API и прямой парсинг части GR-источников |  | • LLM-поиск и источники для руково...","textChars":190,"textLines":7,"bbox":[690,265,485,240]}
+{"kind":"textbox","id":"sh/ojip03ml","slide":5,"text":"Вывод: способы сбора финализируются; готовый продукт пока не заявляем.","textPreview":"Вывод: способы сбора финализируются; готовый продукт пока не заявляем.","textChars":70,"textLines":1,"bbox":[42,590,1120,42]}
+{"kind":"notes","id":"nt/1br900","slide":5,"text":""}
+{"kind":"slide","id":"sl/t0kawa","slide":6,"title":"Проверять будем на одинаковом потоке","textShapes":7}
+{"kind":"textbox","id":"sh/m94ja5wv","slide":6,"text":"Проверять будем на одинаковом потоке","textPreview":"Проверять будем на одинаковом потоке","textChars":36,"textLines":1,"bbox":[42,34,1130,92]}
+{"kind":"textbox","id":"sh/9wfil0v6","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1180,660,55,24]}
+{"kind":"textbox","id":"sh/8v61cfe1","slide":6,"text":"Benchmark GS Labs","textPreview":"Benchmark GS Labs","textChars":17,"textLines":1,"bbox":[42,170,460,50]}
+{"kind":"textbox","id":"sh/vyx0nadc","slide":6,"text":"Реалистичные новости, НПА, шум, дубли, связанные события и разные адресаты — с заранее заданной правильной разметкой.","textPreview":"Реалистичные новости, НПА, шум, дубли, связанные события и разные адресаты — с заранее заданной правильной разметкой.","textChars":117,"textLines":1,"bbox":[42,240,500,180]}
+{"kind":"shape","id":"sh/uxoje5wr","slide":6,"bbox":[610,170,600,325]}
+{"kind":"textbox","id":"sh/h0fipkvi","slide":6,"text":"Excel  ↔  MVP","textPreview":"Excel  ↔  MVP","textChars":13,"textLines":1,"bbox":[650,208,520,55]}
+{"kind":"textbox","id":"sh/wz61gfex","slide":6,"text":"Сравниваем на одном входе:\n\n• время подготовки и разбора\n• критические пропуски\n• фактическую точность\n• релевантность и приоритет\n• дедупликацию и ручные исправления","textPreview":"Сравниваем на одном входе: |  | • время подготовки и разбора | • критические пропуски | • фактическую точность | • релевантность и приори...","textChars":166,"textLines":7,"bbox":[650,290,510,180]}
+{"kind":"textbox","id":"sh/j2xkrudo","slide":6,"text":"Фактические результаты проверки ещё не получены.","textPreview":"Фактические результаты проверки ещё не получены.","textChars":48,"textLines":1,"bbox":[42,570,900,40]}
+{"kind":"notes","id":"nt/t0kawa","slide":6,"text":""}
+{"kind":"slide","id":"sl/wumjz6","slide":7,"title":"Команда и следующий шаг","textShapes":10}
+{"kind":"textbox","id":"sh/f25ory9k","slide":7,"text":"Команда и следующий шаг","textPreview":"Команда и следующий шаг","textChars":23,"textLines":1,"bbox":[42,34,1130,92]}
+{"kind":"textbox","id":"sh/03epk3a5","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1180,660,55,24]}
+{"kind":"textbox","id":"sh/14n6t8ra","slide":7,"text":"Денис","textPreview":"Денис","textChars":5,"textLines":1,"bbox":[42,190,330,50]}
+{"kind":"textbox","id":"sh/qdcnetsn","slide":7,"text":"AI Product\nКонтекст, проблемы, гипотезы, критерии проверки","textPreview":"AI Product | Контекст, проблемы, гипотезы, критерии проверки","textChars":58,"textLines":2,"bbox":[42,260,330,120]}
+{"kind":"textbox","id":"sh/rylone98","slide":7,"text":"Никита","textPreview":"Никита","textChars":6,"textLines":1,"bbox":[447,190,330,50]}
+{"kind":"textbox","id":"sh/szupgjat","slide":7,"text":"AI Engineer\nBackend, сбор и парсинг источников","textPreview":"AI Engineer | Backend, сбор и парсинг источников","textChars":46,"textLines":2,"bbox":[447,260,330,120]}
+{"kind":"textbox","id":"sh/d036pore","slide":7,"text":"Рома","textPreview":"Рома","textChars":4,"textLines":1,"bbox":[852,190,330,50]}
+{"kind":"textbox","id":"sh/i9sna9sr","slide":7,"text":"AI Engineer\nBackend, сбор и парсинг источников","textPreview":"AI Engineer | Backend, сбор и парсинг источников","textChars":46,"textLines":2,"bbox":[852,260,330,120]}
+{"kind":"shape","id":"sh/3a1oje9c","slide":7,"bbox":[42,450,1168,120]}
+{"kind":"textbox","id":"sh/bihgrud0","slide":7,"text":"Дальше: финализировать сбор → собрать benchmark → реализовать обязательную обработку → проверить E2E против Excel","textPreview":"Дальше: финализировать сбор → собрать benchmark → реализовать обязательную обработку → проверить E2E против Excel","textChars":113,"textLines":1,"bbox":[72,484,1100,60]}
+{"kind":"textbox","id":"sh/ah8fipwv","slide":7,"text":"github.com/youngwow/ai-analytics-hub","textPreview":"github.com/youngwow/ai-analytics-hub","textChars":36,"textLines":1,"bbox":[42,625,650,28]}
+{"kind":"notes","id":"nt/wumjz6","slide":7,"text":""}

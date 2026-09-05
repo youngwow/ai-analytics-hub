@@ -128,6 +128,7 @@ class SitemapAdapter:
         if error:
             return FetchResult(error=error)
         urls: list[SitemapEntry] = []
+        warnings: list[str] = []
         if kind == "index":
             children = [e for e in entries if _same_host(e.loc, source.fetch_url)]
             children.sort(key=lambda e: _child_priority(e, now.year), reverse=True)
@@ -136,10 +137,14 @@ class SitemapAdapter:
                     continue  # whole child sitemap is older than what we need
                 ckind, centries, cerror = self._load(client, child.loc)
                 if cerror:
-                    log.warning("%s: child sitemap %s: %s", source.name, child.loc, cerror)
+                    warning = f"child sitemap {child.loc}: {cerror}"
+                    warnings.append(warning)
+                    log.warning("%s: %s", source.name, warning)
                     continue
                 if ckind == "index":
-                    log.info("%s: skipping nested sitemap index %s", source.name, child.loc)
+                    warning = f"nested sitemap index unsupported: {child.loc}"
+                    warnings.append(warning)
+                    log.warning("%s: %s", source.name, warning)
                     continue
                 urls.extend(centries)
         else:
@@ -175,4 +180,8 @@ class SitemapAdapter:
         if newest and (cursor is None or newest > cursor):
             cursor_update["lastmod"] = to_utc_iso(newest)
         log.debug("%s: %d sitemap urls, %d selected", source.name, len(urls), len(docs))
-        return FetchResult(documents=docs, state_update={"cursor": cursor_update})
+        return FetchResult(
+            documents=docs,
+            state_update={"cursor": cursor_update},
+            warnings=warnings,
+        )

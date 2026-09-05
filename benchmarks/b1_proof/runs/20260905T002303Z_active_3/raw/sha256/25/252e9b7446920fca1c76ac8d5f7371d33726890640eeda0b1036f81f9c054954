@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Кабельщик – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="Кабельщик">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/b3H1ksnRCu7SEM_6AtT_Z2vvNr72JbjKP-SCXp5jIC3o1TFfGSRKyfJV6yZqukSKDU9FFXXVpQvF3UdjX5DlPMa60hBs6AI0SX8W4cvYJYK3eiGmZaVrWMEieHecGLf1XUot7d0ii8ORSfGUpGq2O9e0GeoY0KlwJMuduaRaBLuAZngNgp6S-GZXq-NxB-Dy7idcODsS38F8hyTk6w-_C7bCrDrQ-xrD__ynE0MRu6Y38LGjDcu7pN0lXnS5agR6lNmMxuIdjihyR2VD0JYGhxH9CdvLx6e_V9ztfMOGQ2Okuv9OIDgFFlthMbXaiqgT13uZF7vgcTOn15czYjUMjQ.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="www.cableman.ru
+Отраслевой ресурс о рынке платного ТВ, телекоммуникаций, ОТТ-платформ и всего, что с этим связано — регуляторика,аналитика, техника и технологии, мероприятия, новости, экспертные мнения. Мы пишем о профессионалах для профессионалов.">
+
+<meta property="twitter:title" content="Кабельщик">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/b3H1ksnRCu7SEM_6AtT_Z2vvNr72JbjKP-SCXp5jIC3o1TFfGSRKyfJV6yZqukSKDU9FFXXVpQvF3UdjX5DlPMa60hBs6AI0SX8W4cvYJYK3eiGmZaVrWMEieHecGLf1XUot7d0ii8ORSfGUpGq2O9e0GeoY0KlwJMuduaRaBLuAZngNgp6S-GZXq-NxB-Dy7idcODsS38F8hyTk6w-_C7bCrDrQ-xrD__ynE0MRu6Y38LGjDcu7pN0lXnS5agR6lNmMxuIdjihyR2VD0JYGhxH9CdvLx6e_V9ztfMOGQ2Okuv9OIDgFFlthMbXaiqgT13uZF7vgcTOn15czYjUMjQ.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=cablemanru">
+
+<meta property="al:android:url" content="tg://resolve?domain=cablemanru">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="www.cableman.ru
+Отраслевой ресурс о рынке платного ТВ, телекоммуникаций, ОТТ-платформ и всего, что с этим связано — регуляторика,аналитика, техника и технологии, мероприятия, новости, экспертные мнения. Мы пишем о профессионалах для профессионалов.
+">
+
+    <link rel="prev" href="/s/cablemanru?before=21177">
+<link rel="canonical" href="/s/cablemanru?before=21198">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/cablemanru">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/cablemanru" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">Кабельщик</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/cablemanru">@cablemanru</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">5.65K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">11.6K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">74</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">30</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">17.8K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description"><a href="http://www.cableman.ru/" target="_blank" rel="noopener">www.cableman.ru</a><br/>Отраслевой ресурс о&nbsp;рынке платного ТВ, телекоммуникаций, ОТТ-платформ и&nbsp;всего, что с&nbsp;этим связано&nbsp;— регуляторика,аналитика, техника и&nbsp;технологии, мероприятия, новости, экспертные мнения. Мы&nbsp;пишем о&nbsp;профессионалах для профессионалов.</div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=bd57347a5796323f4e_13255519051269089322">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=bd57347a5796323f4e_13255519051269089322">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/cablemanru">
+        <i class="tgme_page_photo_image bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">Кабельщик</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">5.65K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/cablemanru">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/cablemanru?before=21177" class="tme_messages_more js-messages_more" data-before="21177"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21177" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExNzcsInQiOjE3ODg1Njc3ODcsImgiOiJiODdjMjI4YjUzOWE5NTMzNzAifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5242605852697501774 1220639295_460005454" href="https://t.me/cablemanru/21177" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/oY_6pf4B4qtgMBEDFpxpoH-CblMsX8oNU4UJNPriJB4xfS_lMe1Xss8_J_GH2EvqbfSDGlVqWk_P8QMdn2SFtZhKQQ0mAdbA1oHR0MU7VzVYEpcEDg_zcMjocwaObMxay3vmKw3ZjQAARprHGhInVoq_3zToNhzeLP1hvFBTh6x7NMCvmt8YwHet2B4LoFw4ff49sVRE28tfOz_NxQCldywqkGjLB9qLtyZwJFjHN77lf6vewynXIv79m5kES4PcbqKph0CDdwQmcSTk3asl8FemRurIy_ofyts2X1_uoovvsfLqHuDNRHUtn1BdWyJKogsRGfmbFwXU_7LKDxGTpg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Разработчики российских ИИ-моделей могут получить масштабные налоговые льготы</b><br/><br/>Российские власти приступили к&nbsp;<a href="https://www.cableman.ru/content/razrabotchiki-rossiiskikh-ii-modelei-mogut-poluchit-masshtabnye-nalogovye-lgoty" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">разработке</a> пакета налоговых преференций для создателей отечественных фундаментальных моделей искусственного интеллекта. В&nbsp;рамках реализации нового закона об&nbsp;ИИ обсуждается внедрение инвестиционных налоговых вычетов, существенное снижение страховых взносов и&nbsp;применение повышающих коэффициентов к&nbsp;расходам на&nbsp;разработку, что должно помочь компаниям компенсировать до&nbsp;половины затрат на&nbsp;создание высокотехнологичных ИИ-решений.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918C.png')"><b>👌</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">612</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21177"><time datetime="2026-09-02T14:23:01+00:00" class="time">14:23</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21178" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExNzgsInQiOjE3ODg1Njc3ODcsImgiOiIwMTI3M2QxN2M3ZjA2NTJhOTQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5242605852697501776 1220639295_460005456" href="https://t.me/cablemanru/21178" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/DA0ib2SxyTasfscfft65a9N5oTJIKV7n0FSN_9hWNnKrQ_yVQMjTogv4xnBxx1iLNXRDyYTD62KKTlwnWrJwOwATLwntDs-fwL2LnnnyWn3OFpfU2TmXC-jxZrGobUoxxaB5QUG7Iunbrna24lmD94bLtpbVwaokq0RpgUpZ2KeXtF4yDlTfj2ZYC1DKIm0lkwxf5R_4FxblFTsUjCXvVyNj0kWsVz5DC5mvmSG3XiVcoPJVNBKphRCbagEhUzqzD4eQ6nZRY4jQyaTLjIp_GFAxaifv3pacoppvA5_nR9HEfidzlvpLUIzRT_6GA6YZCbJScFdXu9t8kiJUEjjTcA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:75%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Спутниковый интернет поможет устранить цифровое неравенство в&nbsp;малых селах Амурской области</b><br/><br/>Власти Амурской области <a href="https://www.cableman.ru/content/sputnikovyi-internet-pomozhet-ustranit-tsifrovoe-neravenstvo-v-malykh-selakh-amurskoi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">планируют</a> закрыть проблему цифрового неравенства в&nbsp;малонаселенных пунктах региона с&nbsp;помощью российской низкоорбитальной спутниковой группировки. Как сообщил губернатор Василий Орлов, регион рассчитывает стать пилотной площадкой для внедрения отечественного аналога системы Starlink, который позволит обеспечить удаленные села широкополосным доступом в&nbsp;интернет уже в&nbsp;ближайшие годы.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A1.png')"><b>🤡</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9988.png')"><b>🙈</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">607</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21178"><time datetime="2026-09-02T14:50:28+00:00" class="time">14:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21179" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExNzksInQiOjE3ODg1Njc3ODcsImgiOiI2MTM4OWZkNjRkMGM1OTNiZjgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Издание &quot;Кабельщик&quot;, выступая отраслевым информационным партнером IV фестиваля документального контента стриминговых платформ ОРИДЖИНАЛ+ ДОК, благодарит всех партнеров мероприятия за поддержку и вклад в его проведение <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA7A1.png')"><b>🧡</b></i><br/><br/>Для отраслевого события такого масштаба особенно важно объединение профессионального сообщества, экспертизы и ресурсов. Благодаря участию партнеров фестиваль стал не только площадкой для презентации лучших документальных проектов, но и важным пространством для профессионального диалога, обмена опытом и новых знакомств <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA49D.png')"><b>🤝</b></i></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FABA1.png')"><b>🫡</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">584</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21179"><time datetime="2026-09-02T14:59:51+00:00" class="time">14:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21180" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODAsInQiOjE3ODg1Njc3ODcsImgiOiIwNzAzOGY4N2QwYTU4ZDc5ZGYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/originalfestival/1942"><span dir="auto">ORIGINAL+</span></a></div>
+
+<a class="tgme_widget_message_photo_wrap 5235909216998992188 1219080113_460007740" href="https://t.me/cablemanru/21180" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/gK8yCs4MvOZLeWuiqhkCDKecJL6sDmo0dSpPahYDYg12nstW2UCRgCuWMA2jL9jyMGUrvM90uGjKHOEbAO5iCHR9uJzfTi66hDpo4O_06nsn6z2OZ-1W1NjUvTcWoEnUVRM9FiMWKLWxBsGJE0n3a5A6WOSVl89z2YA0RXMOZfVEXrb0c9gan-7xuG4Bgaygs8xtp1cZ3Op1-8QCRt7ukFF0kM5DGTbK_vuXWKz3dY7McovrLaa67LuOuSSBPf_8D2R0UhWa05QVwbUQ3nVDttjNEYn6IvdaUqsO67xPe7R9na2hXqaZbWcvvfMxKbBZDwXntrpAQRiYNDLcD-9tSA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Благодарим наших партнеров IV фестиваля документального контента стриминговых платформ ОРИДЖИНАЛ+ ДОК&#33;</b> <br/><br/>Фестиваль проходил при поддержке медиагруппы «Красный  квадрат»,&nbsp;АНО «Национальные приоритеты» и «Медиа-Коммуникационного Союза». <br/>&nbsp;<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Организатор — Ориджинал плюс. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Соорганизатор&nbsp;— Киностудия Горького. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Соорганизатор — компания SANA. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Партнер — телекомпания НТВ. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Титульный партнер — VK Видео. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Официальный партнер — Start.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Инновационный партнер — SberStudios. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Партнер по организации — XOVP. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Индустриальный партнер&nbsp;— АПКиТ. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Генеральный&nbsp;информационный партнер — «РГ-Медиа». <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Отраслевой информационный партнер — «Кабельщик». <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Литературный партнёр — издательство АСТ. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Партнер — Casa Ricca EXPO.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Партнер — АртФуд. <br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Партнер — Кондитерская Анушик.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B6.png')"><b>🔶</b></i> Партнер — Château le Grand Vostock.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA49D.png')"><b>🤝</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">629</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21180"><time datetime="2026-09-02T15:00:06+00:00" class="time">15:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21181" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODEsInQiOjE3ODg1Njc3ODcsImgiOiI3MzhmODgwZDVlYTA0MjA4M2MifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244857652511185354 1221163583_460003786" href="https://t.me/cablemanru/21181" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/DWFA4gn2UFf_Mms263TWb2Idzwnp28Fpb1paZvX5qTNX8THYa5q6TU1AlpBg8KP6QnodQc4a3ajwEwdftabwg7SZaqrPzrMwYS1hZ0Vs2CivxV40JsZawQo0KoOgYow0GpwPOYNMU2YyPU_LVlX3A2WaXJPNXxjdbkyXbNMEB-90Q3i4YC8xzhZYdNeBQYwPAL15Hs0qS4OLqnaH9CMGpOxhPekvxPxenB8RVlftMzjmqUCIAUrwcXYshC_EFcfL6zbzJ0Y5TkKAqTcKs9qjxDBhbGw1yzk29R9z0askYiWf-k7zUiVcnZjIWBjMy8RCsxZqPwTRXcQWd4NXh46atQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:53.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Суд в&nbsp;Москве оштрафовал Telegram, Google, Pinterest и&nbsp;Apple на&nbsp;общую сумму более 30&nbsp;млн рублей</b><br/><br/>Таганский районный суд Москвы 2&nbsp;сентября 2026 года <a href="https://www.cableman.ru/content/sud-v-moskve-oshtrafoval-telegram-google-pinterest-i-apple-na-obshchuyu-summu-bolee-30-mln" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">вынес</a> серию постановлений о&nbsp;привлечении крупнейших ИТ-компаний к&nbsp;административной ответственности за&nbsp;отказ удалить запрещенный контент: Telegram оштрафован на&nbsp;11,4 млн рублей за&nbsp;три правонарушения, Pinterest получил взыскания на&nbsp;10,8 млн рублей по&nbsp;двум эпизодам, Google обязан выплатить 7,6 млн рублей за&nbsp;два нарушения, а&nbsp;Apple оштрафована на&nbsp;3,5 млн рублей.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A1.png')"><b>🤡</b></i>10</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AC.png')"><b>🤬</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA5B4.png')"><b>🥴</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">679</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21181"><time datetime="2026-09-03T07:03:51+00:00" class="time">07:03</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21182" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODIsInQiOjE3ODg1Njc3ODcsImgiOiIxOTIwZWJiNGY0MDllM2QxM2MifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244857652511185387 1221163583_460003819" href="https://t.me/cablemanru/21182" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Zo0UTDLbvBAjp0WKE2S7caNqluWhy5ss7zok0imkz5VxV4Yj5CZTQ5L8K6TG87HnUXbE7u0YkwkYx8YvBhxqdlDqD_hID5zu6SXoMJ16OveBVMhSLHa8prhfDYn04FYo1ht8zsgzXXi2ZXaa1htp75kJ8AH-15eflIpGrVhUucWkHzog_9Giou2aVgWKOQf4w6Ofy4yanyXFZAwn7gTW0_Yy7-Sywkhcy2xAh9geP10UOqmKDd0073rI0jpqcdKe0hUn7Sw4SNckKOyVE4TNs92v2difUFLJ5EBBPukIRjvdP6r5tTaFIG9mRDMGIVZAP7pkSVrsUABtF-_foQVUSQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.75%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>На&nbsp;Дальнем Востоке построят крупнейший в&nbsp;России комплекс по&nbsp;производству полупроводников</b><br/><br/>&quot;ИКС Холдинг&quot; <a href="https://www.cableman.ru/content/na-dalnem-vostoke-postroyat-krupneishii-v-rossii-kompleks-po-proizvodstvu-poluprovodnikov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">планирует</a> создать крупный производственный кластер по&nbsp;выпуску компонентов для микроэлектроники и&nbsp;космической отрасли. Реализация проекта в&nbsp;Приморском крае потребует свыше 35&nbsp;млрд рублей инвестиций и&nbsp;позволит наладить выпуск сверхвысокочастотных микросхем и&nbsp;фотоэлектрических преобразователей, необходимых для развития российских телекоммуникационных систем и&nbsp;спутниковых группировок.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">665</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/cablemanru/21182"><time datetime="2026-09-03T08:41:01+00:00" class="time">08:41</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21183" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODMsInQiOjE3ODg1Njc3ODcsImgiOiI1YTI5MGM0ZjViZjViNzllMTEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244529413930557442 1221087159_460005378" href="https://t.me/cablemanru/21183" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/BwcHFTFQZBsTHx55H2pAIk8y-6V2Tp8wbA5CjX6qiJocGb8gGJRSPGGedIXWt0n4bckm41c9e2TOMn67CNtCt7HyLf-cK324NyM4-Pn-L1JZK-NUoP3clEH-meCCR6dGh1LwuGBX1s_l8LlzBIZ5pzk11B_zEpk83YwQmk1o3qKLr_UgytD_YJTffo9kh1FDpYnomRMwtbKt3QrxaOa4sYIVgEbZB3YgfHL9IL-yJNQSVTp805VXNQ4_WulQy0DcNVO7j49cjg2AAGz4457jNjjgefX_89DtN8y3UvQcSQrBy4tRXbv4Vtmb6f17uFqSC0Uq7r5tpNym0CGT_F0KBQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:75%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Александр Панев возглавил контентное направление &quot;Кион&quot;</b><br/><br/>Он <a href="https://www.cableman.ru/content/aleksandr-panev-vozglavil-kontentnoe-napravlenie-kion" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">будет отвечать</a> за контентную стратегию, формирование портфеля оригинальных и лицензионных проектов и эффективность инвестиций. Ранее Панев руководил направлением по работе с данными в ON Медиа, а до этого занимал должность директора по данным в Okko и директора по аналитике в Rambler&amp;Co.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA493.png')"><b>🤓</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">674</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21183"><time datetime="2026-09-03T09:59:21+00:00" class="time">09:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21184" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODQsInQiOjE3ODg1Njc3ODcsImgiOiIyNGNmY2Y5MGUxNTM0NDQ1Y2EifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244857652511185791 1221163583_460004223" href="https://t.me/cablemanru/21184" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Oe9hu02VAFqQ6ZMlT9j7B3cxvDzEc9Y4rbCOFxSDBlw8ROOFhfZCJeEwWPmR6L_qh3B7k7IhlGoc0_9hKWii-AgJ32bgldHKc4nXuAWRXn2S8xUFaPknFDbbAW_rkTbynAHlT5kV0negYfHFEasSpwGLS6XXcntj0bFTybqii3d4OEtGBIGLZQxXNN9yTgIydHJwnaVx_uBevOk0WloMxqoFtEwl7p-odTIYBo3N0HsHSJYZQtLgA64LFspaWp0-xyKVtpJdbUBYxwrNrRDLnyh_UyC6lU1pZVToxijCqKKG4Jr1Rx1cOPmZ-iT8clqxWzWRMo7sQy0NXmF7kboUNg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Телеканал &quot;СуперГерои&quot; провел визуальный ребрендинг</b><br/><br/>Телеканал &quot;СуперГерои&quot; <a href="https://www.cableman.ru/content/telekanal-supergeroi-provel-vizualnyi-rebrending" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">сообщил</a> о смене логотипа и графического эфирного оформления, в основе которого лежит футуристический&nbsp; стиль,&nbsp; основанный&nbsp; на&nbsp; новых 3D-технологиях с использованием искусственного интеллекта.&nbsp;Изменение графики затронет и главный символ канала: маскота по имени Пиксель.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">636</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21184"><time datetime="2026-09-03T11:10:30+00:00" class="time">11:10</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21185" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODUsInQiOjE3ODg1Njc3ODcsImgiOiI0M2JkNDY3ZWI1Y2QxMTNlZDQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5246781213744243382 1221611447_460006070" href="https://t.me/cablemanru/21185" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/NlgdLbf3zCVstepBzYjKiq-x-ARhg4fginNYS3XLGKeL6Ubrymjn8Ixmet3659eK2FdslAW0Yod7Fwu3-ok4xE9G7ONW6ZkkrtC01YOsjGpOiTFO3iIxyiXXakrORj6Dm5kgHdzRM-R9DftFQCL0zbA5B3BVBfVIwgKVLjP7_OudATBCnUbDRChtzUaQeXKBOibkBuFgXx1k-ID5Na2XQLhCnQgSuD3rt6Kf0Sacwr6oedMH7wACBUqylhYQQL1MjKj6yiKlh0dwwLHLuWV9PnSVFx7qLzBLbBr5bwR4EgZsOcC-yivhCkfHp-I23uldxEmyS1wUdbuIpHBlTHhZ3g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Положительный баланс, а&nbsp;услуга не&nbsp;работает: как DWH помогает искать ошибки между биллингом и&nbsp;партнерскими платформами</b><br/><br/>Как быстро находить системные ошибки в&nbsp;сложном контуре автоматизации? Почему корпоративное хранилище данных&nbsp;— эффективный инструмент расследования? На&nbsp;какие индикаторы нужно обращать внимание в&nbsp;первую очередь? Об&nbsp;этом и&nbsp;многом другом <a href="https://www.cableman.ru/blog/polozhitelnyi-balans-usluga-ne-rabotaet-kak-dwh-pomogaet-iskat-oshibki-mezhdu-billingom-i" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рассказывает</a> директор по&nbsp;продуктам компании &quot;Сибсети&quot; Мария Фомина.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">612</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21185"><time datetime="2026-09-03T12:55:45+00:00" class="time">12:55</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21186" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODYsInQiOjE3ODg1Njc3ODcsImgiOiIwNjc1OGVmMjExYmZjMGJkNzgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5246781213744243384 1221611447_460006072" href="https://t.me/cablemanru/21186" style="width:740px;background-image:url('https://cdn4.telesco.pe/file/cVUFluStu7t6TOLefallRG4cdzsZAvQHAo7s8huaa2T5uFNSCfUVtFG4bC4-qrBFIQvalEdGaoY8wDRIYZwZMHS41ZVwbkuCbQfJ8oEaYnFf_hCEHNzuxpr8PCTatciEjc15XrC0eP8O8dUy2akXBb9Ur-7ByHBbkrhxA_JxANqC5gxXM0HtalJ6wL9R7srLJcAYf1-93zWGRHc-knFMF0wKQ1dG2Z3IQQ9vSKA4Gc8f9DYjDPmgUKamI62X9GFTWMlq3rpgzIN7swfeznuuwoxXX3Fh7xwQSaXi7qe3E0aaZOf0giByrMkgHBXP0a4wkf1DrR3vpboD_bR1oYIjOw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.621621621622%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В России начал действовать новый ГОСТ по безопасности ВОЛС</b><br/><br/>Документ <a href="https://www.cableman.ru/content/v-rossii-nachal-deistvovat-novyi-gost-po-bezopasnosti-vols" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">устанавливает</a> требования к безопасной эксплуатации и техническому обслуживанию волоконно-оптических линий связи. Стандарт предусматривает оценку уровня опасности в каждой доступной зоне ВОЛС и распространяется на системы с лазерами, светодиодами и оптическими усилителями, а также предназначенные для них компоненты и узлы.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')"><b>🤩</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">630</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21186"><time datetime="2026-09-03T13:50:28+00:00" class="time">13:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21187" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODcsInQiOjE3ODg1Njc3ODcsImgiOiJlYTZhYjM4OWNmMWFhMGFiMmYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244857652511186059 1221163583_460004491" href="https://t.me/cablemanru/21187" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/fSDqB311aGXpQUvvOyugcj3DbchJ8gkWfcN7xkiH7YxCffP-hfe1-mTLrFIg9v26z4tx-b0p-rIq1_yFVvqKxu8XPEGnO0ufmzuHylB4oZ4gOk2LVOV7lN2sIaEbR9afKQrvcfSULM1NpygJfDmWW7ysTj2zCSVbawJVa0zeJAuEJMc67r5w5wMsP9YRl2IEhb3aUZbteL4SK9kaXYYCZcKkN31OO0Z77s1wJQLKRaZzKEynrT8kMKguf51VkSzNa-tdbjexY7j8Vll3TfNNkLS87ck4hoLcxsjRd2OF9nw5cFgcmqDKk8ATlGWI9_7nNPztnZzDVh19cBbHPJBCkA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:51.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>&quot;Ростелесеть&quot;: реформа лицензирования связи может особенно сильно ударить по новым регионам</b><br/><br/>Предлагаемая реформа лицензирования связи может <a href="https://www.cableman.ru/content/rosteleset-reforma-litsenzirovaniya-svyazi-mozhet-osobenno-silno-udarit-po-novym-regionam" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">привести</a> к уходу с рынка части операторов в новых регионах, где небольшие компании зачастую остаются единственными поставщиками услуг связи в отдельных населенных пунктах. Новые требования к капиталу и охвату сети могут оказаться для них неподъемными, предупредил глава ассоциации &quot;Ростелесеть&quot; Олег Грищенко.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">649</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21187"><time datetime="2026-09-03T14:15:04+00:00" class="time">14:15</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21188" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODgsInQiOjE3ODg1Njc3ODcsImgiOiI0NGRmOGY4MmVhYmQ4MmJlMWEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5244857652511185950 1221163583_460004382" href="https://t.me/cablemanru/21188" style="width:600px;background-image:url('https://cdn4.telesco.pe/file/rgy76SjcEBaM_uYh4nEJzh0UUNP9zK6EmAAvn0dsfIAecjldtX_yNIcFggyVB-dGYuTj5woFejoDbZru8wgs_hxELoTte26ubD7cBi6i9FpO-oXtxq4capJZr3sr4SZGkqBdwpOXX4y0UMpNY2K87uvArl62pL_4-abll6DfKFxHi7dO7Yiqo89xUNnyozl1gZuieubiMsZtx5SetXlnHAzMUFKyoEiVWPTGmGKBKoCtB0XBUxkQfYJ9r9Z5r3e-Lcc9xn_-edSlvaoI0NPj2OjusRzzl8f4zFs1hom6mPCvh6D37CMLFUgFCs2jeYRhEFmSghW98csh41v1QtGkiw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.666666666667%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Правительство установило новые требования к регистрации доменов</b><br/><br/>Для доменов в зонах .ru, .рф и .su <a href="https://www.cableman.ru/content/pravitelstvo-ustanovilo-novye-trebovaniya-k-registratsii-domenov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">установлена</a> длина от 2 до 63 символов, а администраторы должны проходить ежегодную идентификацию. Стоимость чистых активов юридического лица, которое может выступать регистратором, должна составлять не менее 1 млн рублей. Кроме того, компания-регистратор не должна быть аффилирована с иностранными гражданами и организациями.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A1.png')"><b>🤡</b></i>4</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">651</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21188"><time datetime="2026-09-03T15:01:41+00:00" class="time">15:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21189" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExODksInQiOjE3ODg1Njc3ODcsImgiOiJlNDZhYjZhZmQ3M2YwYjk2ZjIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249079231700999000 1222146496_460004184" href="https://t.me/cablemanru/21189" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/kbfTh53sytWOLxvX7knz3-zvaHAuQDPJCPTMCjXY1Rw6oR1qbO_rxlq-MXGr355rpTKaFMfA4ZYNgzW7Flz4wJPIfCWabNF6lyBNiyaolukZINVQT9OjLAa8zoLgGpC_bgvwKsRs-GSvE0uUf016G1QXIGMYEmFLIZuJoy72m6fjodAdDoPBKXV4mHUPuA15pYdx3olc1FBkvKrs6X8KNNvDSr01DuJ04B3FvKSvygxAEzNTIHY0raF5iEoTdPrL7Xy3N4Y4XPND5BTrA2iAEYA-wBpOl8ES4tr948d3IFwhrvN-FY3XrmmzQggphIwRrtDCnFI1vZoiLiu3gl0aVA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В&nbsp;России обсуждается создание межрегиональных хабов центров обработки данных</b><br/><br/>Для <a href="https://www.cableman.ru/content/v-rossii-obsuzhdaetsya-sozdanie-mezhregionalnykh-khabov-tsentrov-obrabotki-dannykh" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">оптимизации</a> распределения вычислительных ресурсов и&nbsp;снижения нагрузки на&nbsp;энергетическую инфраструктуру Москвы участники ИТ-рынка предложили перенести акцент на&nbsp;создание сети межрегиональных хабов ЦОД. Новая концепция предполагает строительство крупных дата-центров, каждый из&nbsp;которых будет обеспечивать потребности сразу нескольких субъектов Российской Федерации, что позволит более эффективно развивать инфраструктуру для высоконагруженных задач и&nbsp;ИИ.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A3.png')"><b>🤣</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9988.png')"><b>🙈</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A1.png')"><b>🤡</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">633</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21189"><time datetime="2026-09-04T07:12:40+00:00" class="time">07:12</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21190" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExOTAsInQiOjE3ODg1Njc3ODcsImgiOiI2Nzk2NDVjZTA4N2MxMzMyNmUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249079231700999103 1222146496_460004287" href="https://t.me/cablemanru/21190" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/egwqi51S9Oix-Tjq-IFSwpeXoSUeiAcE4KXtglb5r2ToJF80514siy8KoJlBj5asRnBwE14AiciUgcZ7sZLm0O-9TIWVIu_btVewdEupwTj4FY1csUbmjVJr1-tILsHgiZiQdIVao1ZkxupmoB-baPONPIRH5MZOlKjW3yh_7-g5GLacjEd7BFy7HDBvtgqzB0Kx4yOrO_61rBRQDSeyQN4AqiwlckYke8Cl1SSoTYq7KiHnSSlrcGbAuQ1_j4OA9UQJOU5LkB4vOXV1PELB0XLF53B_OWcEOXq4Zul92V_MuhSvrpUW7UEr6OS0RnxRFdTINNItOH9plfdn47BW2g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:63.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>&quot;Газпром-Медиа&quot; прогнозирует переход 75% ТВ-контента в&nbsp;интернет к&nbsp;2029 году</b><br/><br/>В ближайшие несколько лет телевизионная индустрия России <a href="https://www.cableman.ru/content/gazprom-media-prognoziruet-perekhod-75-tv-kontenta-v-internet-k-2029-godu" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">завершит</a> переход к онлайн-потреблению контента, в рамках которого интернет-платформы станут основным каналом доставки программ до зрителя. По&nbsp;прогнозам генерального директора &quot;Газпром-Медиа Холдинга&quot; Александра Жарова, уже к&nbsp;2029 году до&nbsp;75% контента будет транслироваться в&nbsp;онлайн-среде, что вынуждает крупнейших игроков рынка кардинально менять стратегию производства и&nbsp;методы борьбы за&nbsp;внимание аудитории.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A1.png')"><b>🤡</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">650</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21190"><time datetime="2026-09-04T08:47:31+00:00" class="time">08:47</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21191" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExOTEsInQiOjE3ODg1Njc3ODcsImgiOiJkY2NlMjk0NmVmMmNhZWFmNmQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249190651742592921 1222172438_460005273" href="https://t.me/cablemanru/21191" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/TZckSv9rk_1iHYE8U-s-kbY_QLkHbBwqkr4X0suEBxc67i_HXK0FKDvsJ_d_6goSV5RPGxXYq-MsHnfPEDghAlorwQi-gYXwWteIgFE1PEndN4Bon6EvJGWKGHEEGnimr-RBsQTMvCgh9fekpIza4xk5Z98N_HlJbqbaXqavfUWr4x5DgJb-IwBEACWrquS74bPpEprvsAVg9mwND9A2Hvci0utXMHH9BGz5s5EtyYvQMBql2AvWd9SKnXiwoFPxlrmbkyzldY1Uxr3AyNX0a4MeiwfEiw6kw3-oLNr-WvjUMEZjZHRtj9XfspwuyWS3NDWdcFR0N4KiUrsYWrqr-g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Минцифры рассмотрит модель &quot;аварийного оператора&quot; для реформы рынка связи</b><br/><br/>В ходе подготовки реформы отрасли связи Минцифры <a href="https://www.cableman.ru/content/mintsifry-rassmotrit-model-avariinogo-operatora-dlya-reformy-rynka-svyazi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">приступило</a> к изучению альтернативных механизмов контроля, призванных сохранить присутствие региональных провайдеров на рынке. Ведомство рассматривает внедрение модели &quot;аварийного оператора&quot;, которая позволит временно передавать управление сетью партнеру в случае нарушения условий лицензии, вместо немедленного аннулирования разрешений.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A1.png')"><b>🤡</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">800</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21191"><time datetime="2026-09-04T12:01:58+00:00" class="time">12:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21192" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExOTIsInQiOjE3ODg1Njc3ODcsImgiOiIxZTUxNGEwYzgzMjZjNjEyZTkifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249079231700999697 1222146496_460004881" href="https://t.me/cablemanru/21192" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/G3_G6P9zea1nhnw1RQhr_oJ_n2Inhwd_VrSbuDZYiKhyjmzqserM-fSf86P80CS-7S-7I0o2i2i-nViTb1DoFEwyuG9rVUsOKpkF5Oa2UQ2dMbteGWerK0cGj_H-7M2dZoCY_nUTvNAdnh8NXYbrf2s3eT60YNSZNHFfCFufj4wsaNWFS4YSZcsOTRmk0A_8zqFxdjlc5szD_V498l05PoqQTSFVcsf3hYb8DgNuVhPeCyl8fE-9HAHL8vHyR_waQoZtRr2L8ouMjTQZsS6LBFvRv82V65wKlRnlMh8dF4fgs4XWaYGebPn9o3FfFKC1KsSiEFVn5WbwDFcsvVDm0w.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>&quot;Бюро 1440″ приступило к практическому тестированию российского спутникового интернета</b><br/><br/>В&nbsp;рамках реализации проекта &quot;Рассвет&quot; специалисты российской космической компании &quot;Бюро 1440″ <a href="https://www.cableman.ru/content/byuro-1440-pristupilo-k-prakticheskomu-testirovaniyu-rossiiskogo-sputnikovogo-interneta" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">приступили</a> к&nbsp;апробации технологии на&nbsp;железнодорожном транспорте. Они установили оборудование для приема спутникового интернета на поездах дальнего следования, что стало этапом в создании российской низкоорбитальной группировки для доступа в сеть.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988D.png')"><b>😍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">429</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21192"><time datetime="2026-09-04T13:40:23+00:00" class="time">13:40</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21193" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExOTMsInQiOjE3ODg1Njc3ODcsImgiOiJmYjBlODIyMjM0YmZmODhjNjEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249012337585365582 1222130921_460005966" href="https://t.me/cablemanru/21193" style="width:661px;background-image:url('https://cdn4.telesco.pe/file/EDyzoeXMLuuTRxnA-gI8wiRTN4r8nsdLeB0zuPg3sA9BOApBwyiabkG9w63OQcdbeIVXRpJ6oHxrp2Xvbdyq88ktWjzPOmF4AN1d6Lspm7l87JRpAigsBXkQFmPbGemwiQUNfDrrXTNfYAm1rXRbnpCxCFMI-IQKG7fJ9mK9xhiximsW3aql8837lPL4oBxUnV-GEtiTwq-BpUq2v43BEICH6lQCfI2WwTcoHn64HAS_3hG-csD7sJ-NkST18kpvshBP8zi5OK1l8c9FxouC-DqRWTNLV6BS_tlvMt1GB2WOT0LB1JzgKXN_nmxXD9arMTgGoJY6fWdBqCyERYwoEg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.263237518911%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>В Суде ЕС нашли нарушения при введении санкций против &quot;Мегафона&quot;</b><br/><br/>Генеральный адвокат Суда ЕС <a href="https://www.cableman.ru/content/v-sude-es-nashli-narusheniya-pri-vvedenii-sanktsii-protiv-megafona" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">указал </a>на отсутствие у Совета ЕС достаточных доказательств на момент введения санкций. Он также отметил нарушения права компании на защиту и ошибки Общего суда ЕС при оценке доказательств. &quot;Мегафон&quot; был включен в санкционный список в феврале 2023 года, а после отклонения иска Общим судом в январе 2025 года обжаловал решение в Суде ЕС, который теперь должен вынести окончательное решение.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">383</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21193"><time datetime="2026-09-04T14:09:00+00:00" class="time">14:09</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21194" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExOTQsInQiOjE3ODg1Njc3ODcsImgiOiIwNTljZGRjYzBhMzVlNzE3ZWQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5246881552770210924 1221634809_460004460" href="https://t.me/cablemanru/21194" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/MZAP_vDomjTkTe85N_jfuzMNedDmG5YMl7wS2qxuhzcUmVOn_LwWe8Cxq1VYVSTqq3wf52t9XbHL6QKUgC2z0bJXKZwEI4DPA_aMSKYx254GbeJz7F5htnlgk4M-4zzAz6PpOrwb6KqfB88sBG-6OK-5jvxm03QU_Qs50GFYWxTmph4bJJNdUmhoEqhnswAi7Wfpiu2_Yy4YkawSHrVxX2VF0Nd_hv-imtk8FWXffIY29s6hrg3mHAM46glkvOKmyNlkFsKE_A_XlI3DAZ0WRuc2eZtVkW7JfzLzMruRvjWfEhH0hMA7Y_nb7eGzVxqK2v-2nc_6XcmLmAODG8wjyQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Архитектор смыслов: почему ИИ не заменит человека в коммуникациях </b><br/><br/>Когда говорят, что искусственный интеллект меняет рынок, чаще всего имеют в виду ритейл, e‑commerce, клики и воронки продаж. Но есть общий для всех вопрос, который сегодня волнует каждого, кто занимается коммуникациями, — как ИИ перекраивает саму профессию. И главное: что теперь требуется от людей, чтобы не просто остаться в игре, а вести ее. PR-директор &quot;Газпром-Медиа Холдинга&quot; Александр Кормухин <a href="https://www.cableman.ru/blog/arkhitektor-smyslov-pochemu-ii-ne-zamenit-cheloveka-v-kommunikatsiyakh" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рассказывает</a> о новой философии коммуникаций в эпоху нейросетей.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">361</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21194"><time datetime="2026-09-04T14:33:29+00:00" class="time">14:33</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21196" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExOTYsInQiOjE3ODg1Njc3ODcsImgiOiIwNjY2ZWZjNjMzOTRiYmY0NmQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249079231701000214 1222146496_460005398" href="https://t.me/cablemanru/21196" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/pdcu1GM6Y4duFyJJWzGvrRBS45IZE5M6-OEoDxsa9u9MObahrDxuAzPtJkC3xhdOnZrkHnfIbAOc1TU5-68dz2psTrH7JCEqMIYX3vhkZ8jv-RLOETDQu2vKxFbSFk4c83Fu678-ZDTMS1MHAUYTeUIWQdeYcxlJ1JBO_44aVilMXCuiNNvVdWQ3a8ypfBroGY06U6hCf3rWD_Uv6cEGOXG9Dvxmj77UrHYi0LR0-CUXRjSKFminedEAVVKH8qceCjFzgU09C6NMLFroT47tMJZREZGnss9oQaTIb5yA8GREl8C9cRy8rPzoKr10byYrPWZ_oNcZEY4l0N-L72DeOQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Госсектор переходит на фиксированную связь из-за перебоев в работе мобильных сетей</b><br/><br/>Государственные заказчики в России начали <a href="https://www.cableman.ru/content/gossektor-perekhodit-na-fiksirovannuyu-svyaz-iz-za-pereboev-v-rabote-mobilnykh-setei" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">корректировать</a> структуру потребления телеком-услуг, увеличивая долю фиксированной связи на фоне нестабильности сотовых сетей и ужесточения регулирования звонков через интернет. Согласно данным анализа госзакупок, за первое полугодие 2026 года расходы госсектора на фиксированную телефонию и IP-телефонию выросли на 42% и 77% соответственно, что свидетельствует о стремлении ведомств вернуться к более надежным и защищенным каналам коммуникации.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">434</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21196"><time datetime="2026-09-04T14:47:11+00:00" class="time">14:47</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cablemanru/21197" data-view="eyJjIjotMTM1NDM2NjM4NiwicCI6MjExOTcsInQiOjE3ODg1Njc3ODcsImgiOiI5MzBmM2FhMmE2ODhmNDNmOGMifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cablemanru"><i class="tgme_widget_message_user_photo bgcolor2" data-content="К"><img src="https://cdn4.telesco.pe/file/qW3zjbV_rsFJ7nnWuRYUIcIEYzD3Ku4PAMOuQklNWY0i8GxjOjXJ8qPNpxEdfBMw296W0FyBX8KoRvY3vi6k9LIIiG12XFGqhDMvrRXrGS84qpEmOEj7tSwO38EmP3TuO9h3-Pw3nfTUfewkVmUwbLOME4y1ZDC_6fUgwaLH_zL978SwHEDzvJczqlpKUKROP9omgf4W7ONoEM2f_iDIR4jO4KaLFu8lGCyZctBWhixuqFoDsHrQ-wkc7fCKHU5davwJvIapjrlNf5NfXRgSPuiwUktv6UiN4w-BVpTekCUBkT6GF7q7Af_wm2wvZJS8Ez58cuAq3YcFJop5U3RnAw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cablemanru"><span dir="auto">Кабельщик</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249079231701000219 1222146496_460005403" href="https://t.me/cablemanru/21197" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/ckD1AjzAkBXD6m4ULRa0SMtznU8t8W8HguHRmsmr1egg1Of9D2U0Mr49MmfdAMCF06igZ67SvCrAJR8lDd8EQsQKHiboub2aUYPYY90bp6K6L47g5J4MJNmlAASCYvYr_F_QOwBfZK6bit8twQt2q0y4S10G51JYkYalMbDvDTdixOqGlDcs_cHYF9cVk_CNcrtjedwF5wRJkfx9C6n53urfdGUvG8NCdcz_WvRKQehQiwaWqi9DygCZ-8W_GC8aUAJ280Q875hOY6kurWQ4WU-PW32XpNHAN6RjLmBAi1xvKMMJMuPMtOWEgyrJA1fRvPFlO_edPGv5tfY9OCnbYw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Спортивные турниры, исторические драмы и криминальные комедии: что смотреть в сентябре на онлайн-платформах</b><br/><br/>Сергей Безруков и Федор Бондарчук погрузят зрителей в мир Стругацких, Михаил Пореченков будет бороться с преступностью нестандартными методами, Максим Лагашкин и Кристина Асмус окажутся в центре курьезного детективного расследования, а Мария Аронова вновь будет воспитывать подрастающее поколение. Зрителей также ждут проекты о Сергии Радонежском, русском роке и выдающихся женщинах-ученых. &quot;Кабельщик&quot; <a href="https://www.cableman.ru/article/sportivnye-turniry-istoricheskie-dramy-i-kriminalnye-komedii-chto-smotret-v-sentyabre-na" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рассказывает</a> о премьерах сентября и проектах, которые сейчас находятся в производстве.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">290</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cablemanru/21197"><time datetime="2026-09-04T15:12:00+00:00" class="time">15:12</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 81.61ms -->

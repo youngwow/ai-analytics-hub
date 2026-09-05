@@ -172,6 +172,10 @@ def test_index_skips_nested_index_and_broken_children(config, mock_client, fixtu
     )
     assert result.error is None
     assert result.documents == []
+    assert result.warnings == [
+        f"nested sitemap index unsupported: {NEWS_GZ}",
+        f"child sitemap {OLD_CHILD}: HTTP 500",
+    ]
     assert routes.urls() == [SITEMAP_URL, NEWS_GZ, OLD_CHILD]
 
 

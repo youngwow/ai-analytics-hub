@@ -2,6 +2,7 @@ data/Для_ИТМО_мониторинг_НПА_и_отрасли.xlsx
 .claude
 CLAUDE.md
 # Byte-compiled / optimized / DLL files
+.DS_Store
 __pycache__/
 *.py[codz]
 *$py.class

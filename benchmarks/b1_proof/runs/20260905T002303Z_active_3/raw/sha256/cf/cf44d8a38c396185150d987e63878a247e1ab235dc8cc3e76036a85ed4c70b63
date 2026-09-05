@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Цифровые индустриальные технологии – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="Цифровые индустриальные технологии">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/Xr3DtN9bLCHM45Q94pKOHOxSg65CTVYefYOHSPaF1IZ3i6wOynI5DPA4z_teMrONu0F-QBKaJ_8-vXIMIfFKOFLCHD1M3LKFOhwzfNwYIdr1oh8YIBgD3XVtm5HFnIpJap45wMzSE_KjtoGmLXC69qa2F7orZ64HrXAhjWUb6XF8A5819gKuStmc7per7t08NzLfNJOpzIpHyTJ_BfnuXA25S-idsK7T2fh569ySmfkpmWE3NLY1RYbK4DumUQ2MlcyjMDxqF-fLkuYB5l0OTXsunrDjXh77CPod0-ayJcmipUnKwVmlgxSKdVVil226PNjl_ewltj7sRdprsV0zUA.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Официальный канал ФГАУ «Цифровые индустриальные технологии» (ФГАУ «ЦИТ»), учрежденного Минпромторгом России.
+ 
+Сайт: https://cit.gov.ru
+Почта: info@cit.gov.ru
+Макс: https://max.ru/id7727009915_gos
+ВК: https://vk.com/cit_gov
+Дзен: https://dzen.ru/cit_gov">
+
+<meta property="twitter:title" content="Цифровые индустриальные технологии">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/Xr3DtN9bLCHM45Q94pKOHOxSg65CTVYefYOHSPaF1IZ3i6wOynI5DPA4z_teMrONu0F-QBKaJ_8-vXIMIfFKOFLCHD1M3LKFOhwzfNwYIdr1oh8YIBgD3XVtm5HFnIpJap45wMzSE_KjtoGmLXC69qa2F7orZ64HrXAhjWUb6XF8A5819gKuStmc7per7t08NzLfNJOpzIpHyTJ_BfnuXA25S-idsK7T2fh569ySmfkpmWE3NLY1RYbK4DumUQ2MlcyjMDxqF-fLkuYB5l0OTXsunrDjXh77CPod0-ayJcmipUnKwVmlgxSKdVVil226PNjl_ewltj7sRdprsV0zUA.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=cit_gov">
+
+<meta property="al:android:url" content="tg://resolve?domain=cit_gov">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Официальный канал ФГАУ «Цифровые индустриальные технологии» (ФГАУ «ЦИТ»), учрежденного Минпромторгом России.
+ 
+Сайт: https://cit.gov.ru
+Почта: info@cit.gov.ru
+Макс: https://max.ru/id7727009915_gos
+ВК: https://vk.com/cit_gov
+Дзен: https://dzen.ru/cit_gov
+">
+
+    <link rel="prev" href="/s/cit_gov?before=1484">
+<link rel="canonical" href="/s/cit_gov?before=1504">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/cit_gov">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/cit_gov" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor0" data-content="Цт"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">Цифровые индустриальные технологии</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/cit_gov">@cit_gov</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">1.49K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">835</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">39</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">12</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">778</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Официальный канал ФГАУ «Цифровые индустриальные технологии» (ФГАУ «ЦИТ»), учрежденного Минпромторгом России.<br/> <br/>Сайт: <a href="https://cit.gov.ru/" target="_blank" rel="noopener">https://cit.gov.ru</a><br/>Почта: info@cit.gov.ru<br/>Макс: <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener">https://max.ru/id7727009915_gos</a><br/>ВК: <a href="https://vk.com/cit_gov" target="_blank" rel="noopener">https://vk.com/cit_gov</a><br/>Дзен: <a href="https://dzen.ru/cit_gov" target="_blank" rel="noopener">https://dzen.ru/cit_gov</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=bd57347a5796323f4e_13255519051269089322">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=bd57347a5796323f4e_13255519051269089322">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/cit_gov">
+        <i class="tgme_page_photo_image bgcolor0" data-content="Цт"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">Цифровые индустриальные технологии</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">1.49K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/cit_gov">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/cit_gov?before=1484" class="tme_messages_more js-messages_more" data-before="1484"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1484" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ4NCwidCI6MTc4ODU2Nzc4OCwiaCI6ImE5NWRjZmE2YzhhNDY1Nzk3ZSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5201839977333988811 1211147750_460004811" href="https://t.me/cit_gov/1484" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Rl6TOXeLZmBm9hkYI9ATJ3t6G3L7IMcvxJ914GwA4gy8t_9MdhnvdBGJd056tL37rsg0dTzuefPO4t-qkUmv_GjeDOf8z2Ekfj-m2hGtDtQnjrT3VqMpt8uUzcoTOUYqjTtAH43Gq7Nw_T1bM_n0pjmZ4sqlwXY3fmnXf92WRo4dVTejta1PJtVTZ5wFmxK9WOo4Zt3jlMF7dvwmsMbby9tbuO9arL_jEFS5CInXwwswSgKtkxj86UtYWzENJgvkBqQdF4fKWbhTZUc5GO2zVXYkaWShTUXcJ4yXLd4mn3IeRZA5Ampr-wr7r1-lPQMZOxxU87QrBVD809nKHnXO0g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5312359982300168064"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i></tg-emoji> <b>ИТ в Туркменистане: возможности и вызовы для российских компаний</b> <tg-emoji emoji-id="5422512652058379683"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B9F09F87B2.png')"><b>🇹🇲</b></i></tg-emoji><br/><br/>19 августа состоялся вебинар с участием Торгового представителя России в Туркменистане <b>Андрея Хрипунова </b>и <b>«</b><a href="https://digitalattache.ru/turkmenistan" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>цифрового атташе» Торгпредства России в Туркменистане</b></a><b> Дамира Галеева</b>.<br/><br/><tg-emoji emoji-id="5377344396561775891"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F938A.png')"><b>📊</b></i></tg-emoji><b> На что обратить внимание экспортеру в Туркменистан?</b><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Рост ВВП в 2025 году — <tg-emoji emoji-id="5273931449613978057"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/36E283A3.png')"><b>6️⃣</b></i></tg-emoji>,<tg-emoji emoji-id="5273911954757420676"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/33E283A3.png')"><b>3️⃣</b></i></tg-emoji>%. <br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Внешнеторговый оборот за I полугодие 2025 года превысил &#036;<tg-emoji emoji-id="5271541411982903791"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/31E283A3.png')"><b>1️⃣</b></i></tg-emoji><tg-emoji emoji-id="5273769447742538511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji> млрд. <br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Ключевой спрос на ИТ формируют промышленность, ТЭК, телеком, банки и госсектор. <br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Перспективные ниши: ERP, цифровые двойники, ЦОД, ИБ, робототехника, финтех, ЭДО. <br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Выход на рынок чаще всего предполагает работу через локального партнера и очные переговоры с заказчиками.<br/><br/><tg-emoji emoji-id="5312479322261454009"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F948D.png')"><b>🔍</b></i></tg-emoji> Узнайте больше — в записи вебинара <a href="https://rutube.ru/video/8349cb03dfa33f652fa1443e474d4261/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>по ссылке</b></a><b>.</b><br/><br/><tg-emoji emoji-id="5330330241430747040"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91A8E2808DF09F94AC.png')"><b>👨‍🔬</b></i></tg-emoji>  Для связи с «цифровым атташе» по вопросам продвижения российских ИТ-компаний на рынке направьте обращение в <a href="https://tkm.minpromtorg.gov.ru/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Торгпредство России в Туркменистане</b></a><b>.</b><br/><br/><tg-emoji emoji-id="5258477770735885832"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9384.png')"><b>📄</b></i></tg-emoji> Для получения аналитической поддержки по вопросам выхода на рынок страны — в <a href="https://digitalattache.ru/form" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Проектный офис Службы «цифровой атташе</b></a><b>»</b>. <br/><br/><a href="?q=%23%D0%AD%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D0%98%D0%A2">#Экспорт_ИТ</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1484" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">148</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1484"><time datetime="2026-08-20T08:04:14+00:00" class="time">08:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1485" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ4NSwidCI6MTc4ODU2Nzc4OCwiaCI6IjY4M2JlOTJiMDRiMDE1NWEzMiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5206482772556457380 1212228735_460006820" href="https://t.me/cit_gov/1485" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/P76NeX5Dq4l1lBKUwbdtH_nDOwPJg5fA0G5u_Y4JdaZ4mQVPrQfKxgQbXxAfxA91g7WJm6Ys0V1c8nNvsOy9qsyA9EpFpSknm4bcF5jbt0KYt3CS3c_qbefEPuZ6iYIu-k6pcjrz1VhNaZ5VrWiZb-ra1QJW68kb8YpFTpgNM9uNI43LSnjvoRiq_DU1V7cBYrUvzEczELFe2N-tw2z06e54eh1PQixcDABsnWcDoQ7n4t4ORdHK-KFrjEYoQnEcdNvTvJV9Zay_3Uv6ZKMi9Q5xEzqlITg_3IAGUaPLBssIVE1ga2wGdin-Wv7jeJF9GtjS5RL9HMFYKtV4um9Ppw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5312359982300168064"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i></tg-emoji> <b>Новости искусственного интеллекта и высоких технологий</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B7F09F87BA.png')"><b>🇷🇺</b></i> <b>Россия</b><br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> В России <a href="https://www.cnews.ru/news/top/2026-08-17_v_rossii_zapuskayut_novoe" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">запускается</a> новое серийное производство силовой электроники и вычислительной техники<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Россия и Китай <a href="https://www.interfax.ru/russia/1109907?ysclid=mt2q2afq5o499558670" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">работают</a> над созданием дронопорта в Приамурье<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Реестр отечественного ПО <a href="https://d-russia.ru/reestr-otechestvennogo-po-10-let-spustja-kolichestvennyj-rost-ne-prekrashhaetsja.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">10 лет спустя</a>: количественный рост не прекращается<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> <a href="https://www.cnews.ru/news/top/2026-08-20_v_rossii_gotovitsya_k_zapusku" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Готовится</a> серийный выпуск квантовых чипов из тантала. Аналогичная технология есть только в двух странах мира<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Мэр Москвы Сергей Собянин <a href="https://www.ntv.ru/novosti/3006402/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">рассказал</a> об открытых в этом году производствах в «Технополисе Москва»<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i> <b>Мир</b><br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> В Китае <a href="https://tass.ru/nauka/28018149" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">показали</a> робота-андроида, который прыгнул на 2 м в высоту<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Белый дом <a href="https://market.cnews.ru/news/top/2026-08-19_belyj_dom_isklyuchil_tsody_iz" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">вычеркнул</a> ЦОДы из списка критически важных технологий США<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Китай <a href="https://rg.ru/2026/08/17/nikkei-asia-kitaj-stanet-potriaseniem-v-oblasti-robototehniki-s-ii.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">станет</a> потрясением в области робототехники с ИИ<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> OpenAI <a href="https://www.rbc.ru/technology_and_media/19/08/2026/6a84db999a794728e340a419" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">замедлила</a> обучение новых ИИ-моделей из-за рисков кибератак<br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="?q=%23%D0%B4%D0%B0%D0%B9%D0%B4%D0%B6%D0%B5%D1%81%D1%82_%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B5%D0%B9">#дайджест_новостей</a> <tg-emoji emoji-id="5258236805890710909"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AC85.png')"><b>⬅️</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1485" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91BE.png')"><b>👾</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">154</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1485"><time datetime="2026-08-21T15:05:21+00:00" class="time">15:05</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1486" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ4NiwidCI6MTc4ODU2Nzc4OCwiaCI6ImJlZjE2OGFjNTljMmVlM2ExYiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5211080659600876063 1213299264_460005919" href="https://t.me/cit_gov/1486" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/sOFpmYj_20LBRebwtDzW2jIWn_0zyuuP4xoeKCdV4ua3M4QXIy92O9BHy4CO2gFTY1QEuAgcsGI3Q9NSEt8_s6LBRFNZ7rk7_CBm2hX1E3eqkkby8qucUFcywSs7_SQlHzFZra5HOhGbHYw4FRiTythg_funjW7dKEndOQJty6StqqSscbNGWTvE9GFecP7fCzsaZVXC1uK4eawB601vXQtwXzKEEZPaaj6zOHnJ-Zeb_AYMhYylBDxTsfxrlPpEBUNaMksD53DsPFt0POYK0ZX5fmrqYQ0Y0LyYyeB8La0gpFPzYIhqJE_nzcTtJLDyZRJ4LjvQnkjH6QlouJXmIg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>С Днём флага России&#33; </b><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B7F09F87BA.png')"><b>🇷🇺</b></i><br/><br/>Пусть триколор всегда символизирует единство, силу и процветание нашей Родины. Мира, благополучия и новых достижений во славу Отечества&#33;</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">149</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1486"><time datetime="2026-08-22T16:32:24+00:00" class="time">16:32</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1487" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ4NywidCI6MTc4ODU2Nzc4OCwiaCI6IjcyN2JjZjY4OTQ0OTkxM2M0YiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5215534549276762094 1214336266_460005358" href="https://t.me/cit_gov/1487" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/QppVEE34e2eakqeW1JdVYldgnhyREsdJh4vuyIGEsYhUdgksP1prxhl5eHZmuku5u7tOtHDr_YFv5puYUCAwiNUwOYfVmGbSCUwz3AoJQzLy1fv9FBV7UJqhbpcFEt2V7cPHMJ73jwaBOh01TfcVmXZpxijPEVPInotO9-t_eQzCuPzG5I5x9EpVDx4-B6tcnKoWq8Lgp6rvBmLBv4crPnS8qDd5ZUeauAUiNP4a4Z0DPKcmezXJRj-_atxzPfWdj1RZtn51ErgR3VmUtiyQmM0uDN9seUvgPH2_qriaNxA5nCYS2Wl0amvAMcAx66uiDZ3l0zrpBD5jVbML850Wtw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5438101579456602876"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9A81.png')"><b>🚁</b></i></tg-emoji> <b>Дроны научили автономно проходить через узкие проемы для инспекции сложных промышленных объектов</b><br/><br/>Исследователи&nbsp;Чжэцзянского университета разработали сенсомоторные политики, которые преобразуют данные бортовой камеры, ориентацию и ускорение дрона непосредственно в команды двигателям.<br/> <br/><tg-emoji emoji-id="5330323790389869097"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9BA1.png')"><b>🛡</b></i></tg-emoji> В экспериментах аппарат проходил прямоугольный проем с зазором около <tg-emoji emoji-id="5271731417041111023"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/35E283A3.png')"><b>5️⃣</b></i></tg-emoji> см и наклоном до <tg-emoji emoji-id="5271619893920303347"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/39E283A3.png')"><b>9️⃣</b></i></tg-emoji><tg-emoji emoji-id="5273769447742538511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji> градусов, а также преодолевал последовательность близко расположенных препятствий.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29A99.png')"><b>⚙️</b></i> <b>Значение для промышленности:</b> <br/><blockquote>Технология может быть полезна при обследовании трубопроводов, вентиляционных шахт, тоннелей, частично разрушенных сооружений и труднодоступных зон предприятий, куда обычный дрон не может безопасно проникнуть.</blockquote><br/><br/><tg-emoji emoji-id="5312479322261454009"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F948D.png')"><b>🔍</b></i></tg-emoji> <b>Читать подробнее в Международном технологическом дайджесте — по </b><a href="https://cit.gov.ru/documents/file?id=43" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ссылке</b></a><b>. </b><br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в MAКС</b></a><b> l </b><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в Telegram</b></a><br/><br/><a href="?q=%23%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8_tech">#новости_tech</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1487" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">146</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1487"><time datetime="2026-08-24T14:01:40+00:00" class="time">14:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1488" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ4OCwidCI6MTc4ODU2Nzc4OCwiaCI6ImU1ZGU2ZjhiMzUyNWQyZmNkYyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5217786349090446959 1214860554_460004975" href="https://t.me/cit_gov/1488" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/NOIFf0aKXOAwhVi0koMMwutGtQPDGZbfuF1JLNkccHPuaWE-uZpxKNb__N6BmcGva_viO5G0_KxxCv_ZjsVGPD8DxVtxLlWkW9qzbxLjZ8chD-rAM71YD2r-KJlN3YoyGn0lSm56Ituqcza1MtwgMNftmjhj7qrOlOW1p3vUjMiOd7jKkPusmcuTIiBeL2TnnqiZIBpSGpjiZV6Wlq26c1RpMeU_SRcYsEfenwiJE5ZVg6rLwzphCcgeJJ8bRa0k1X_H6eMqElu1pbj4Xyv6P4ayyKlr6lrrfHz0SAfJDFGYZZKM7LvhXSXl78fAbtpsbcO4mDTJgYvHJ5tzOgSw1Q.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b><tg-emoji emoji-id="5325695838574374810"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E95.png')"><b>➕</b></i></tg-emoji></b><b> Кейс: Распознавание документов и автоматическая обработка извлеченных данных</b> <br/><br/>В<b> </b><a href="https://cit.gov.ru/catalog" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Реестре цифровых решений</b></a> ФГАУ «ЦИТ» представлено ПО для распознавания документов и автоматической обработки извлеченных данных с использованием технологий искусственного интеллекта. <br/><br/><tg-emoji emoji-id="5312373262339047311"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9388.png')"><b>📈</b></i></tg-emoji> <b>Функционал:</b> <br/><tg-emoji emoji-id="5273769447742538511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji><tg-emoji emoji-id="5271541411982903791"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/31E283A3.png')"><b>1️⃣</b></i></tg-emoji> <b>Распознавание данных из документов.</b><br/>Получайте нужную информацию даже из сложных и неструктурированных документов. <br/><tg-emoji emoji-id="5273769447742538511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji><tg-emoji emoji-id="5271571317840186293"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/32E283A3.png')"><b>2️⃣</b></i></tg-emoji> <b>Чат со множеством документов.</b> <br/>Задавайте вопросы вашим документам, как если бы общались с коллегой. Нужные данные доступны в режиме реального времени. <br/><tg-emoji emoji-id="5273769447742538511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji><tg-emoji emoji-id="5273911954757420676"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/33E283A3.png')"><b>3️⃣</b></i></tg-emoji> <b>Сравнение документов.</b> <br/>OCR c распознаванием рукописного текста и сложных таблиц. <br/><tg-emoji emoji-id="5273769447742538511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji><tg-emoji emoji-id="5273722125792872606"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/34E283A3.png')"><b>4️⃣</b></i></tg-emoji> <b>Междокументарные сверки. </b><br/>Сквозная проверка данных во всем комплекте документов. <br/><br/><tg-emoji emoji-id="5312119910808189473"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F938A.png')"><b>📊</b></i></tg-emoji> <b>Эффекты внедрения:</b><br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> Снижение затрат на документооборот в <tg-emoji emoji-id="5271731417041111023"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/35E283A3.png')"><b>5️⃣</b></i></tg-emoji> раз.<br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> Ускорение обработки документов.<br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> Надежность и безопасность. <br/><br/><tg-emoji emoji-id="5326000411885205355"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9BA1.png')"><b>🛡</b></i></tg-emoji><a href="https://cit.gov.ru/catalog/solution?id=39" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> </a><a href="https://cit.gov.ru/catalog/solution?id=2" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>На страницу решения</b></a><br/><br/><tg-emoji emoji-id="5327804890855011613"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F968A.png')"><b>🖊</b></i></tg-emoji><b> Для консультации по внедрению свяжитесь с нами: </b><b>expert@cit.gov.ru</b><br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в MAКС</b></a><b> l </b><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в Telegram</b></a><br/><br/><a href="?q=%23%D0%BA%D0%B5%D0%B9%D1%81%D1%8B">#кейсы</a> <a href="?q=%23%D0%BA%D0%B5%D0%B9%D1%81%D1%8B">#кейсы@cit_gov</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1488" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">141</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1488"><time datetime="2026-08-25T14:32:15+00:00" class="time">14:32</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1489" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ4OSwidCI6MTc4ODU2Nzc4OCwiaCI6IjkyMzdmZjljZjE5MDZlMWU3ZSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5222155172644069843 1215877750_460005843" href="https://t.me/cit_gov/1489" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/aXkxIIC1HUZOnAMNNcdm9n2AKveBppRxNnnFDZMYbFIl2NqVreubg_EWyh9eNjFUZbtEmJGAYNeSjYeikII1mYRaEpPTtMJC6dtGbcY8YEJpxpdu9usC1sEM498K4PHsTqmASg8-LLuP0Kjh6JTjUsZ2avZgKczKpQEGinMLrbqLdl1IkkEfVZ_xCKroEuZ8UTaaTCY3buoTwcgou_m0HYhDIAR2qp5IQodnZT7H-fZoScOoA9a9-Xi3Ybhts3We8oic8d1DyFBn0CASdqt2su3AEMKahsUUshhpF9Lq4-cLOOVTWN4-E2xAh8XGl38g_ITphqvZkXM2cwfJ6teOeg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5355055994491664579"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i></tg-emoji> <b>Genesis AI представила робота Eno для выполнения многоэтапных задач в реальной среде </b><br/><br/>Международная робототехническая компания Genesis AI анонсировала Eno — универсального робота для производств, лабораторий, медицины и сервиса.<br/><br/><tg-emoji emoji-id="5355046107476949121"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji> <b>Главное о разработке:</b><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> <b>Конструкция </b>—<b> </b>минималистичный дизайн с колесной базой, подвижной башней и роборуками <i>(вместо человеческой формы, как у гуманоидных платформ<i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29D97.png')"><b>❗️</b></i>)</i>.<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> <b>Интеллект </b>—<b> </b>работает на базе модели GENE, понимает цели, учитывает контекст, хранит память и планирует действия в меняющихся условиях. <br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> <b>Прозрачность </b>—<b> </b>версия с экраном показывает намерения, ход рассуждений и статус робота для безопасного соседства с людьми.<br/><br/><tg-emoji emoji-id="5312384656887281110"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9793.png')"><b>🗓</b></i></tg-emoji> Запуск производства и внедрения в промышленность, логистику и лаборатории запланирован до конца 2026 года.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B7F09F87BA.png')"><b>🇷🇺</b></i> <b>Опыт России:</b><br/><blockquote>В России развивают сервисные и промышленные решения (например, «Промобот» и НПО «Андроидная техника»). Важный тренд — переход на отечественные ИИ-ускорители: в июле 2026 года «ХайТэк» и «Корпорация робототехники» анонсировали совместную разработку робототехнических решений с отечественными ИИ-ускорителями и управляющей электроникой.</blockquote><br/><br/><tg-emoji emoji-id="5312479322261454009"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F948D.png')"><b>🔍</b></i></tg-emoji> <b>Читать подробнее в Международном технологическом дайджесте — по </b><a href="https://vk.cc/d0AT2M" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ссылке. </b></a><br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в MAКС</b></a><b> l </b><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в Telegram</b></a><br/><br/><a href="?q=%23%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8_tech">#новости_tech</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1489" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">147</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1489"><time datetime="2026-08-26T15:04:00+00:00" class="time">15:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1490" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5MCwidCI6MTc4ODU2Nzc4OCwiaCI6IjYzNGRiYmI2MzE0YWQzMDFlMSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5222155172644069950 1215877750_460005950" href="https://t.me/cit_gov/1490" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/HqUDTnT6CQtGLRyhkEH4M-vU4KqJ3Ws9yilXtnA-SX1XdpmvoYLI7vZwkJgwDuemeCU4DuTVxLak0GwwonGrQ1H519SSHKjGczrdkyjET8LTBW6-4JQJJ9UGxmnNfUTM_CXaQ-oXXuhDlE9xeuQ0Wgiq8aiWLyEnmmSbcYvW7SrKbZytmXXm2QNqwSzJLS5ML8hHrJ_sSHU9z-9TF7CqPNDYAqI31JSLekEHAakDkQVW0RFNTiKEgoLjSj6Bc1QtwwXSSBSVYmQWOQ6BNPiwZ3Zm9qEDBnP5R6FCnvgJDCcpumZGtmbuUkw4o5XzkHkcf0hMpA1n0m_MDENNtQc--g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:65.875%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5312359982300168064"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i></tg-emoji> <b>Международный вебинар «Презентация российских ИТ-решений для промышленности в Китае»</b> <br/><br/><b>26 августа</b> <b>2026 года </b>состоялся вебинар, организованный <b>«</b><a href="https://digitalattache.ru/attache_china" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>цифровым атташе» Торгпредства России в Китае</b></a> и <a href="https://ru-cn.org/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Российско-Китайской Палатой</b></a> при содействии <a href="https://t.me/minpromtorg_ru" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Минпромторга России</b></a> и <a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ФГАУ </b></a><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>«</b></a><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ</b></a><b>». </b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87A8F09F87B3.png')"><b>🇨🇳</b></i> Мероприятие прошло на китайском языке под модераторством «цифрового атташе». <br/><br/><tg-emoji emoji-id="5353021412648973294"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9388.png')"><b>📈</b></i></tg-emoji> Спикеры — представители технологических компаний России: <br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> АО&nbsp;«Лаборатория Касперского»<br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> ООО «Облачные Технологии» (<a href="http://Cloud.ru/" target="_blank" rel="noopener">Cloud.ru</a>)<br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> ООО «С3Д Лабс»<br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> АО «ИЦЦ»<br/><br/><tg-emoji emoji-id="5330330241430747040"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91A8E2808DF09F94AC.png')"><b>👨‍🔬</b></i></tg-emoji> Слушателями вебинара стали более <tg-emoji emoji-id="5273722125792872606"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/34E283A3.png')"><b>4️⃣</b></i></tg-emoji><tg-emoji emoji-id="5273769447742538511"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/30E283A3.png')"><b>0️⃣</b></i></tg-emoji> представителей машинно-технических и электронных предприятий КНР. По итогам стороны обменялись контактами и материалами.<br/><br/><blockquote><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29D97.png')"><b>❗️</b></i> В 2026 году<b> </b>отмечается увеличение числа дочерних предприятий отечественных ИТ-компаний, зарегистрированных в Китае. Спросом пользуется российское промышленное ПО, биотехнологии на базе ИИ, а также комплексные решения в сфере ИБ<i>.</i></blockquote><br/><br/><a href="?q=%23%D0%AD%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D0%98%D0%A2">#Экспорт_ИТ</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1490" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">159</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/cit_gov/1490"><time datetime="2026-08-27T09:02:42+00:00" class="time">09:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1491" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5MSwidCI6MTc4ODU2Nzc4OCwiaCI6IjhmMWI0MDgzOGQ4Y2E5MTlmZiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5258077307985207053"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B9.png')"><b>📹</b></i></tg-emoji> <a href="https://vkvideo.ru/video-38320907_456260880" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Интервью</b></a><b> главного научного сотрудника ФГАУ «ЦИТ» на форуме «Технопром-2026» в Новосибирске</b><br/><br/>На форуме «Технопром-2026» главный научный сотрудник ФГАУ «ЦИТ» <b>Александр Храмов</b> <a href="https://www.nsktv.ru/news/technology/intervyu_glavnogo_nauchnogo_sotrudnika_fgau_tsit_na_forume_tekhnoprom_2026_rv_novosibirske/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">дал интервью</a> корреспонденту канала «Сибирь 24» и рассказал о разработках в сферах нейротехнологии, ИИ в медицине, нейрореабилитации, системы поддержки врачебных решений.<br/><br/><blockquote>«В России есть очень мощная научная школа по математике, IT-технологиям, а это тот самый научный базис, который вытягивает нас в передовую область», </blockquote><br/>— подчеркнул Александр Храмов.<br/><br/><tg-emoji emoji-id="5474436783737435119"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AC87.png')"><b>⬇️</b></i></tg-emoji> <b>Подробнее — в интервью. </b><br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в MAКС</b></a><b> l </b><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в Telegram</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1491" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div><a class="tgme_widget_message_link_preview" href="https://vkvideo.ru/video-38320907_456260880">
+  <i class="link_preview_right_image" style="background-image:url('https://cdn4.telesco.pe/file/b1pMROXqa9kJWqPcT6gt59M3qZkD7J2oMnlcoOqZln2vX8gB-g1DAhCEyqcYs87WMrJAFEZBPAtsNWsfGaPlE36buL2VoZxuAwgO_x4vLPOawD44MkX6xzPl2i3gOFuVS3PRq3Ey6HuIGmcyl6bWeVM7Bay8YXaDlLq8Sjigknc-xa47BraCbKqQADa0hitwP73qr23fNuDEcQj7keqvVycuYiKe8LyeuqLBVjidLQmNryfREAUpNSxO2n3yhCUOh0aduNWnrVFifKr2PaN20YpvloWg6bLTg9CK3sPBvxaYghZTCLB4c-ACOZiHZ2PtV_WsLUhNZ3a2GcwpuGHs_w.jpg')"></i>
+  <div class="link_preview_site_name accent_color" dir="auto">VK Видео</div>
+  
+  <div class="link_preview_title" dir="auto">Интервью главного научного сотрудника ФГАУ ЦИТ на форуме «Технопром-2026» рв Новосибирске</div>
+  <div class="link_preview_description" dir="auto">Александр Храмов рассказал о разработках в сферах нейротехнологии, ИИ в медицине, нейрореабилитации, системы поддержки врачебных решений</div>
+</a>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">182</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1491"><time datetime="2026-08-28T13:25:19+00:00" class="time">13:25</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1492" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5MiwidCI6MTc4ODU2Nzc4OCwiaCI6ImY3YmM4MjFmYTU2YjdhN2JhYiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5228708150276465373 1217403484_460006109" href="https://t.me/cit_gov/1492" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/ok5UBD1ZwmrBXqc8b2w9obcNaEOr8gfhe2_7_DrOZkDXtDCuh5Xz6juBGa0LKt-zHW264Tr9-ixaFAY8xQuwtxQrP0qX34lvFA3tjZan_ylzfKW8a-5qmvkZI60f5aw4t_dxtG6ZlLvNLBMqUcC2XijAvNiNWQ7DN9a6CPo-kilc1UleTyL3iFKiYwKcySrlemaW025DZepbCO5u953YWwLKne_X6E2Z3uC5oaADvY8eVlSgvAxPl34AMkMK0c7B_3Dt2Vee9lYBGlPNODEmgQIX8LXYgJ9MR2P7oLlvP5JBfL-PjrQn4B6TlYcr8OvxvKF5lhhhhmFTnnxu-WVWJg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5312359982300168064"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i></tg-emoji> <b>Новости искусственного интеллекта и высоких технологий</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B7F09F87BA.png')"><b>🇷🇺</b></i> <b>Россия</b><br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> <a href="https://tass.ru/nauka/28039961" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Найден</a> способ повысить эффективность передачи данных в фотонных чипах<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Предприятиям с установленным ИИ-мониторингом <a href="https://www.kommersant.ru/doc/8906564" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">могут отменить</a> выездные проверки<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Дата-центры в России <a href="https://www.cnews.ru/news/top/2026-08-25_data-tsentry_v_rossii_klassifitsiruyut" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">классифицируют</a> по надежности – с акцентом на физическую защиту<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Закупки оборудования для ИИ <a href="https://www.forbes.ru/tekhnologii/567088-privilegii-dla-uma-zakupki-oborudovania-dla-ii-mogut-podderzat-nalogovymi-l-gotami" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">могут поддержать</a> налоговыми льготами<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> В Петербурге <a href="https://tass.ru/nauka/28046869" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">испытали</a> первого российского подводного робота<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Россияне <a href="https://www.cnews.ru/news/top/2026-08-26_rossiyane_zapatentovali_bpla" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">разработали</a> БПЛА нового поколения. Он может летать и как самолет, и как вертолет<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Альфа-Банк <a href="https://www.1tv.ru/news/2026-08-27/551462" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">заявил</a> о запуске нового проекта, который поможет компаниям внедрять роботизацию<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i> <b>Мир</b><br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Отрыв США от Китая в гонке ИИ стремительно <a href="https://www.rbc.ru/technology_and_media/21/08/2026/6a8806e69a79477a5b8c0b5e" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">сокращается</a><br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Nvidia <a href="https://ria.ru/20260823/ii-2112590445.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">хочет создать</a> конкурента китайским моделям ИИ<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Всемирные игры роботов в Пекине <a href="https://www.1tv.ru/news/2026-08-23/551092" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">отметились</a> сенсациями<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> В Британии впервые в мире <a href="https://www.kommersant.ru/doc/8909486" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">сделали</a> операцию на мозге с использованием ИИ<br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="?q=%23%D0%B4%D0%B0%D0%B9%D0%B4%D0%B6%D0%B5%D1%81%D1%82_%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B5%D0%B9">#дайджест_новостей</a> <tg-emoji emoji-id="5258236805890710909"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AC85.png')"><b>⬅️</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1492" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">148</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1492"><time datetime="2026-08-28T15:34:08+00:00" class="time">15:34</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1493" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5MywidCI6MTc4ODU2Nzc4OCwiaCI6ImY4ZDE1NWJhOGNlMDY3YzhmZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5235648121642099517 1219019322_460006205" href="https://t.me/cit_gov/1493" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/DeFnd3cLjT-govWXt0rPZ9NcMDEAuRTxRXSohjJRm_S8fY9NmavAmMB4tIGGi3k_fyG9VmDN_rnsAWjdUwz_s-o5UkMRIN2zjdZiTRtf5WmD0IYnELBLlloWnhIeojnhQJiWQHhJGdD8mkA9mQD-MIyGqJCv878gJK3fttQASIv_R5Sz1VneFpq9hNpUTkQ7CoNPKISwGzssPDYOUKyWeQuM3EC441DZFwjRFoGaRmV3hVVMi0LBTKKlNY4DZ3Jn8vKJ6-yUJEY44tSDyYVE7RjjUoEekzCBQT5GNEJ_QtUMz_ktixxTOavclyoYjKpQ75sZXvOqrVSobDIlUbh_Fg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5352812780317600064"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/2AE283A3.png')"><b>*️⃣</b></i></tg-emoji> <b>В Москве состоится Международный форум по ИИ и сложным системам</b><br/><br/>С 10 по 12 сентября 2026 года в <b>РЭУ им. Г.В. Плеханова</b> пройдёт <a href="https://aics.rea.ru/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Международный форум по искусственному интеллекту</a> <a href="https://aics.rea.ru/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">и сложным системам: «Наука, промышленность, медицина</a>» (ФИИСС-2026). Форум проводится при поддержке <b>Минпромторга России</b> и <b>ФГАУ «ЦИТ»</b>. <br/><br/><tg-emoji emoji-id="5312006467837001627"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> <b>Цель</b> — открытый диалог о настоящем и будущем технологий. <br/><br/><tg-emoji emoji-id="5330330241430747040"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91A8E2808DF09F94AC.png')"><b>👨‍🔬</b></i></tg-emoji> <b>Участники: </b><br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> ведущие ученые и представители научно-образовательного сообщества,<br/><tg-emoji emoji-id="5355139600325046927"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i></tg-emoji> представители отраслевых предприятий, здравоохранения, государственных органов. <br/><br/><tg-emoji emoji-id="5328050782027673661"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> <b>В программе — серия круглых столов по направлениям:</b> <br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> «Трансфер технологий ИИ:<br/>от формирования идей до внедрения через фундаментальные исследования»<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> «ИИ в экономике»<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> «ИИ в образовании»<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> «Внедрение ИИ в медицине: технологические, социальные и экономические последствия»<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> «От реактивной медицины к предиктивной: ИИ в управлении хроническими заболеваниями и профилактике»<br/><br/><tg-emoji emoji-id="5353003803283062100"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8E93.png')"><b>🎓</b></i></tg-emoji> Также в рамках форума проводится <b>X</b> <b>Юбилейная научная школа для молодых ученых</b> <b>«Динамика сложных сетей и их приложения»</b> (DCNA 2026). <br/><br/><tg-emoji emoji-id="5312479322261454009"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F948D.png')"><b>🔍</b></i></tg-emoji> <a href="https://aics.rea.ru/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Подробности и регистрация</b></a><b>.</b> <br/><br/><b>Узнайте больше о развитии технологий&#33; Присоединяйтесь&#33;</b> <br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в MAКС</b></a><b> l </b><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в Telegram</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1493" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">120</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1493"><time datetime="2026-08-31T15:15:18+00:00" class="time">15:15</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1494" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5NCwidCI6MTc4ODU2Nzc4OCwiaCI6IjFjYmNlNzgzMjQwYzQ2Njc3ZiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5235648121642100453 1219019322_460007141" href="https://t.me/cit_gov/1494" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/WKnigtRkfiyLlh9F9RqGH0FGjvumrhylh3_cguO8HtCUqzYOXxP1amCKv-MC8XS3q7TuQPdXuvY4byeJZyMZKKFQLrzVuKH4kvc2A2oS9If8lA-QiI_19veipnrlmAB5pAFFxqttPtDJTbc-W3LWDsthTSMrWCa8_47ZWAG9BCr8abQMSDvVjtXjn5GHQOBmf4916cNbtdMc6WOfqASRzogZ4gwz5xOVcnHHT5A9KnuCJJIO5gMGvmLsQW67qQSzNblWsxrf7Z4jn4LsYzyv6dMlObuSg_iZ4aSGvVCt_D9bpdpyT0kQQ1FWaBgE5rQ5pn4L8HUVeyDVqdRtmrrWEQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5353003803283062100"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8E93.png')"><b>🎓</b></i></tg-emoji> <b>С Днём знаний&#33; </b><br/><br/>Именно они двигают вперед науку, развивают технологии, делают нас и нашу жизнь лучше. <br/><br/>Пусть стремление учиться и создавать помогает уверенно идти к самым амбициозным целям&#33; Успехов, свершений, побед на пути к новым открытиям&#33;<br/><br/>С праздником&#33;</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1494" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">96</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1494"><time datetime="2026-09-01T09:00:31+00:00" class="time">09:00</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1495" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5NSwidCI6MTc4ODU2Nzc4OCwiaCI6IjlmMGU5NjkxZWM2MTU3NWY5ZSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5353003803283062100"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8E93.png')"><b>🎓</b></i></tg-emoji> <b>Вычитать и умножать учат в школе, а в ЦИТ мы помогаем профессионалам осваивать технологии и ИИ</b><br/><br/>В День знаний предлагаем вспомнить о том, как важно проводить фактчекинг, и пройти викторину нашей постоянной рубрики «Правда или фейк». <br/><br/>Нейросеть сгенерировала <tg-emoji emoji-id="5372826249880171256"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/35E283A3.png')"><b>5️⃣</b></i></tg-emoji> утверждений об образовании в сфере ИИ в России. Задача: определить, где правда, а где — вымысел. <tg-emoji emoji-id="5474436783737435119"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AC87.png')"><b>⬇️</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1495" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">90</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1495"><time datetime="2026-09-01T13:02:35+00:00" class="time">13:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1496" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5NiwidCI6MTc4ODU2Nzc4OCwiaCI6IjNmZGMxMDRhZjA3MTA3MDQ5NCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="tgme_widget_message_poll js-poll">
+  <div class="tgme_widget_message_poll_question"><tg-emoji emoji-id="5375065572813862149"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/31E283A3.png')"><b>1️⃣</b></i></tg-emoji> Первый российский университетский факультет искусственного интеллекта был открыт в МГУ в 1990-х годах. </div>
+  <div class="tgme_widget_message_poll_type">Anonymous Quiz</div>
+  <a class="tgme_widget_message_poll_options" href="https://t.me/cit_gov/1496">  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">52%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Правда</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:100%"></div>
+    </div>
+  </div>  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">48%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Фейк</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:90.9091%"></div>
+    </div>
+  </div></a>
+</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_voters">21</span><span class="copyonly"> voters</span><span class="tgme_widget_message_views">94</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1496"><time datetime="2026-09-01T13:02:37+00:00" class="time">13:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1497" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5NywidCI6MTc4ODU2Nzc4OCwiaCI6IjcxN2YzMTk5NDllMDM0YjE5NiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="tgme_widget_message_poll js-poll">
+  <div class="tgme_widget_message_poll_question"><tg-emoji emoji-id="5375372023025399298"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/32E283A3.png')"><b>2️⃣</b></i></tg-emoji> Михаил Ломоносов в своих научных трактатах упоминал зачатки искусственных вычислительных механизмов, способных имитировать человеческую логику.</div>
+  <div class="tgme_widget_message_poll_type">Anonymous Quiz</div>
+  <a class="tgme_widget_message_poll_options" href="https://t.me/cit_gov/1497">  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">55%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Правда</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:100%"></div>
+    </div>
+  </div>  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">45%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Фейк</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:81.8182%"></div>
+    </div>
+  </div></a>
+</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_voters">20</span><span class="copyonly"> voters</span><span class="tgme_widget_message_views">93</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1497"><time datetime="2026-09-01T13:02:39+00:00" class="time">13:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1498" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5OCwidCI6MTc4ODU2Nzc4OCwiaCI6IjNmNjA0YjdjNjQxODM4YTdiMyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="tgme_widget_message_poll js-poll">
+  <div class="tgme_widget_message_poll_question"><tg-emoji emoji-id="5375227097943928924"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/33E283A3.png')"><b>3️⃣</b></i></tg-emoji> Школьники в России могут изучать основы искусственного интеллекта и программирования нейросетей уже на уроках информатики.</div>
+  <div class="tgme_widget_message_poll_type">Anonymous Quiz</div>
+  <a class="tgme_widget_message_poll_options" href="https://t.me/cit_gov/1498">  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">79%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Правда</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:100%"></div>
+    </div>
+  </div>  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">21%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Фейк</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:26.6667%"></div>
+    </div>
+  </div></a>
+</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_voters">19</span><span class="copyonly"> voters</span><span class="tgme_widget_message_views">92</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1498"><time datetime="2026-09-01T13:02:40+00:00" class="time">13:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1499" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTQ5OSwidCI6MTc4ODU2Nzc4OCwiaCI6IjliNzk3OWQxZDc0NjE3ZTEwYyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="tgme_widget_message_poll js-poll">
+  <div class="tgme_widget_message_poll_question"><tg-emoji emoji-id="5373272711730591468"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/34E283A3.png')"><b>4️⃣</b></i></tg-emoji> Лев Толстой в своем дневнике 1897 года писал: «Настанет время, когда мужик забросит соху свою, за него изобретения будут хлеб пахать; и погрузится человек в пагубную праздность».</div>
+  <div class="tgme_widget_message_poll_type">Anonymous Quiz</div>
+  <a class="tgme_widget_message_poll_options" href="https://t.me/cit_gov/1499">  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">58%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Правда</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:100%"></div>
+    </div>
+  </div>  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">42%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Фейк</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:72.7273%"></div>
+    </div>
+  </div></a>
+</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_voters">19</span><span class="copyonly"> voters</span><span class="tgme_widget_message_views">96</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1499"><time datetime="2026-09-01T13:02:43+00:00" class="time">13:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1500" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTUwMCwidCI6MTc4ODU2Nzc4OCwiaCI6ImQ0MjEyNGY1YTE4NDEzOTg3OSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="tgme_widget_message_poll js-poll">
+  <div class="tgme_widget_message_poll_question"><tg-emoji emoji-id="5372826249880171256"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/35E283A3.png')"><b>5️⃣</b></i></tg-emoji> Искусственный интеллект способен автономно обучать себя на производстве без участия человека и контроля со стороны инженеров. </div>
+  <div class="tgme_widget_message_poll_type">Anonymous Quiz</div>
+  <a class="tgme_widget_message_poll_options" href="https://t.me/cit_gov/1500">  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">62%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Правда</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:100%"></div>
+    </div>
+  </div>  <div class="tgme_widget_message_poll_option">
+    <div class="tgme_widget_message_poll_option_percent">38%</div>
+    <div class="tgme_widget_message_poll_option_value">
+      <div class="tgme_widget_message_poll_option_text">Фейк</div>
+      <div class="tgme_widget_message_poll_option_bar accent_bg" style="width:61.5385%"></div>
+    </div>
+  </div></a>
+</div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_voters">21</span><span class="copyonly"> voters</span><span class="tgme_widget_message_views">104</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1500"><time datetime="2026-09-01T13:02:45+00:00" class="time">13:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1501" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTUwMSwidCI6MTc4ODU2Nzc4OCwiaCI6ImNhMTA4YzRhMDdiODBkZDViMCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5242435243711602344 1220599572_460005032" href="https://t.me/cit_gov/1501" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/WWKRrex8ChGzwzX6fgkQS3TlXRwusiEWHZhtAqGMD_vV0XpOOEizJEEET1g7YCDIapKG3ZQG2S1e5D92K7-VuzbXITdfvh8dtJI5IocRNiMelJXXYnMGRBuVtiovJyo6iRcMo7-6hg8i_PrYCeqtkF7YGZjW8AnJjYzqGDjra0o-Kd0kcderMIVIEXxOJZsJ2x8S6_zFqebJJWivblt1zgOiKWIPe4EevK0dZgm-TlxJULsrLXmfFeV-kWv1XRW8e9Slvwq9l_3BcuYNigGn2x-oPPqVMmwYbS8MpfSNtceKLweVWwhbmoruUB0JD01iKY7_jkH4NrE3NP_PHuC44g.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5352812780317600064"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/2AE283A3.png')"><b>*️⃣</b></i></tg-emoji> <b>Kazan Digital Week — 2026: уже скоро&#33;</b><br/><br/>С 29 по 31 октября 2026 года столице Республики Татарстан г. Казани пройдет Международный форум <a href="https://kazandigitalweek.com/ru" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Kazan Digital Week — 2026</a>. <br/><br/><blockquote>Миссия форума — развивать устойчивую экосистему доверенных цифровых технологий, соединяющую российских и зарубежных партнеров для совместного создания и масштабирования инноваций в ключевых отраслях экономики и госуправления. </blockquote><br/><br/><tg-emoji emoji-id="5328050782027673661"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C85.png')"><b>✅</b></i></tg-emoji> <b>Тематические направления в этом году: </b><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Интеллектуальные транспортные системы<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Цифровая индустрия 4.0<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Цифровые технологии в госуправлении, образовании, культуре, здравоохранении и медицине, сельском хозяйстве<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Кибербезопасность нового времени<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Экосистема финтех<br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Инновации, интегрированные в бизнес<br/><br/><tg-emoji emoji-id="5330330241430747040"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91A8E2808DF09F94AC.png')"><b>👨‍🔬</b></i></tg-emoji> <b>К участию приглашаются: </b><br/>Представители органов власти, бизнеса, научных и образовательных учреждений, разработчики и пользователи цифровых технологий, ПО, высокотехнологичной продукции. <br/><br/><tg-emoji emoji-id="5312479322261454009"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F948D.png')"><b>🔍</b></i></tg-emoji><b> </b><a href="https://kazandigitalweek.com/ru" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Подробности и регистрация. </b></a><br/><br/><b>Не пропустите одно из ключевых событий в области цифровизации&#33;</b> <br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в MAКС</b></a><b> l </b><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в Telegram</b></a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1501" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">99</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/cit_gov/1501"><time datetime="2026-09-02T14:50:01+00:00" class="time">14:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1502" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTUwMiwidCI6MTc4ODU2Nzc4OCwiaCI6ImE4ODJiYjVhNjBhZjY2OWIyYSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5235648121642099388 1219019322_460006076" href="https://t.me/cit_gov/1502" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/q9VBrq5-tv0WHxt05PgsrLOhfpuB2ds4NxUZwhd-BnZSUH1_knrVdtjabZyngxxWt7NP0-d6HqstUZl-GG0jHKvx43wUkAmu0NiJs5ATBeJEYCuzFpFyH_MaQh02ecRFq84WuKWl9DbOh_F3J2az4xuZfwYzCyqQPWi6OZ1UaO_InAgIV6FPI6fdypBu-t-SF8dA8-qnb_bnJcnkh1XNOoEr2NxMDQlH9jBVmcMEF5prZIGOj7SgWMZgL1J5msIBmwFqZCazZpayfnAA-qF7OdBYbAhTXGj6ytbfuG5cslX4xA5dwxptOREj3u-PDV14ltBW55s3NRB_E2rOnSXszg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5431884253518375171"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA7AC.png')"><b>🧬</b></i></tg-emoji> <b>Кремниевый чип превратили в устройство для синтеза ДНК</b><br/><br/>Исследователи Гарвардской школы инженерных и прикладных наук разработали кремниевый чип, способный одновременно синтезировать <tg-emoji emoji-id="5273931449613978057"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/36E283A3.png')"><b>6️⃣</b></i></tg-emoji><tg-emoji emoji-id="5273722125792872606"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/34E283A3.png')"><b>4️⃣</b></i></tg-emoji> различные последовательности ДНК с использованием электрических импульсов и ферментативной реакции в водной среде.<br/> <br/><tg-emoji emoji-id="5312385245297804841"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9388.png')"><b>📈</b></i></tg-emoji> Технология открывает возможности для создания компактных устройств синтеза ДНК, которые смогут использоваться в лабораториях, медицинских учреждениях и биотехнологических компаниях.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29A99.png')"><b>⚙️</b></i> <b>Значение для науки и промышленности:</b> <br/><blockquote>Использование полупроводниковых технологий для биоинженерии становится одним из наиболее быстрорастущих направлений современной науки. Такие решения могут удешевить и ускорить синтез ДНК для медицины, фармацевтики, агробиотехнологий и лабораторной автоматизации.</blockquote><br/><br/><tg-emoji emoji-id="5312479322261454009"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F948D.png')"><b>🔍</b></i></tg-emoji> <b>Читать подробнее в Международном технологическом дайджесте — по </b><a href="https://vk.cc/d0AT2M" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ссылке. </b></a><br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="https://max.ru/id7727009915_gos" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в MAКС</b></a><b> l </b><a href="https://t.me/cit_gov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>ЦИТ в Telegram</b></a><br/><br/><a href="?q=%23%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8_tech">#новости_tech</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1502" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">83</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1502"><time datetime="2026-09-03T09:02:08+00:00" class="time">09:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="cit_gov/1503" data-view="eyJjIjotMjAwMTMwNTc5NiwicCI6MTUwMywidCI6MTc4ODU2Nzc4OCwiaCI6Ijc4MGJiMGQ5M2VjOTQ4NTNkZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/cit_gov"><i class="tgme_widget_message_user_photo bgcolor0" data-content="Ц"><img src="https://cdn4.telesco.pe/file/pAhBhe8d1BLkSBfAJ8WtaO_wktpi-BJz5ala4IDobjywI9ppXYEjBen2hJ50x265wqYIIiEUiiU6QDyPsRlGVI0JxNficwxMMDjSFR78myrgCQVNsHm8cgnVxVGUWQ_jujtk-wZ3M4sm-KeIm2sIBh7eB6j5_BSkZRZTZaWeh_XumYURLzy7C7cW-aS1-Xra1vyq2gFiZwy0E_AEOH-bKW0gH0Ti99DzldpNMtudbfI9_4--Kd6DO4ccLYKgP5Px78pEBcfWw5aeCdYSdDGFrDf70WTxyzH1RNC69naz06a7PZOInePMBZf1nNn_yfG-09dxXHA2NOPdNo3H2SvxGQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/cit_gov"><span dir="auto">Цифровые индустриальные технологии</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249084493035936885 1222147721_460004469" href="https://t.me/cit_gov/1503" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/nwk-6uWNcmiIN9dh9_uETLncwpmpeCgqeuI-Jlx3Zqp31Kre_79lMaYZQHYUcaElgJW2GjZ4rnTIazCEWRDpzm_3O_wGLKoARPo5gbQYPXZIRS1Sc9qTQ1B8oHDCcGUu0GFr9fU-_rQBmsv_THAAITm-GQPITWhy3O6Ir-Xd4I7VZaZLcJohObk3Jas3Af3pqWz2-ePKNcp5pHcNHopG8dbaseYo9pVZTXo36VkM-glpmWUhDRw8tlhnoq63IfPUEXP9gSyW63qz74Sqy_Ha5GRdzdWpo4rP63sJVyRLJepS6Cc_JCU2PJu7z6dgvjsZ54tB6iYX6QtDSseDaV47Xg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:100%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5312359982300168064"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i></tg-emoji> <b>Новости искусственного интеллекта и высоких технологий</b><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B7F09F87BA.png')"><b>🇷🇺</b></i> <b>Россия</b><br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> В России <a href="https://www.rbc.ru/rbcfreenews/6a94f5e99a794701b8bbd133" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">вступил</a> в силу закон о развитии и поддержке ИИ<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Президент России Владимир Путин <a href="https://d-russia.ru/vladimir-putin-vystupil-na-dalnem-vostoke-chto-skazano-ob-it.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">выступил</a> на Дальнем Востоке: что сказано об IT<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> На МЦК <a href="https://tass.ru/ekonomika/28052687" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">запустят</a> еще 10 беспилотных «Ласточек»<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> В российском автопроме <a href="https://ria.ru/20260901/fabriki-2114742667.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">будут внедрять</a> «умные фабрики»<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Робот-археолог <a href="https://iz.ru/2158610/2026-09-01/robot-arkheolog-proskaniruet-drevnie-goroda-na-glubinu-do-10-m" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">просканирует</a> древние города на глубину до 10 м<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Власти <a href="https://www.cnews.ru/news/top/2026-09-02_gosudarstvo_podderzhit_rublem" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">собираются</a> ввести льготы для разработчиков ИИ<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Между Россией и Китаем <a href="https://www.cnews.ru/news/top/2026-09-03_na_dalnem_vostoke_sozdadut" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">построят</a> систему беспилотных железнодорожных перевозок<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C8F.png')"><b>🌏</b></i> <b>Мир</b><br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Более 100 компаний <a href="https://www.rbc.ru/rbcfreenews/6a90b27c9a794720da75ddd3" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">призвали</a> усилить киберзащиту из-за развития ИИ<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> Anthropic <a href="https://www.kommersant.ru/doc/8923069" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">заключил</a> соглашение на &#036;35 млрд в ИИ-проекте с участием Nvidia<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> В Лондоне впервые <a href="https://rg.ru/2026/09/03/v-londone-vpervye-zapustili-robotaksi.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">запустили</a> роботакси<br/><br/><tg-emoji emoji-id="5328119020468071995"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AAA.png')"><b>⚪️</b></i></tg-emoji> OpenAI <a href="https://www.kommersant.ru/doc/8925480" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">представила</a> новую ИИ-модель GPT-6 Astra<br/><br/><tg-emoji emoji-id="5325605609901422917"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i></tg-emoji> <a href="?q=%23%D0%B4%D0%B0%D0%B9%D0%B4%D0%B6%D0%B5%D1%81%D1%82_%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B5%D0%B9">#дайджест_новостей</a> <tg-emoji emoji-id="5258236805890710909"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AC85.png')"><b>⬅️</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/cit_gov/1503" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">44</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/cit_gov/1503"><time datetime="2026-09-04T16:02:57+00:00" class="time">16:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 104.13ms -->

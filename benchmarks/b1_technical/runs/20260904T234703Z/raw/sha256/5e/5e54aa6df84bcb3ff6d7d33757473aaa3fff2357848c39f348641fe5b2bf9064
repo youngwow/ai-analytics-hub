@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Коммерсантъ – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="Коммерсантъ">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/MkB52SJQj-PGI2LsPpQT_Y3-XeuY4_uL4mTIkhNBUNSZZHin5LAUu3w1uAEkCV9qTWwp3LqMxaYP5ZGLaVG_funYaf7Chj_jVZB7xS3H4MRIIj6s4Zpq1G6Zxrb3qMT3wYj0RXvlybij6VMjuT-7RVG1M1eavV3c8JXMDUZe2h_aUkuIPLgkdscgqqr-m2mSaO_HBWwuAQ-nvUB08ZQPlOhn256pnatVQ1QvkOW9_7FXsyu-Iyq4nEKbjVLQcQ3nsN9ZtB6abQQuBHEArZlLp750JYsKulMhBxtPPQb7iW6gvzKapjn38FpMwoFlX8k0LU2MDSQH9mKJd5ar-QXz2A.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Официальный канал ИД «Коммерсантъ».
+
+Новости бизнеса, финансов, политики, общества, культуры и спорта.
+
+Обратная связь: kommersant.ru/lk/feedback
+По вопросам рекламы: rr@kommersant.ru
+
+Перечень РКН: https://clck.ru/3FFxpT">
+
+<meta property="twitter:title" content="Коммерсантъ">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/MkB52SJQj-PGI2LsPpQT_Y3-XeuY4_uL4mTIkhNBUNSZZHin5LAUu3w1uAEkCV9qTWwp3LqMxaYP5ZGLaVG_funYaf7Chj_jVZB7xS3H4MRIIj6s4Zpq1G6Zxrb3qMT3wYj0RXvlybij6VMjuT-7RVG1M1eavV3c8JXMDUZe2h_aUkuIPLgkdscgqqr-m2mSaO_HBWwuAQ-nvUB08ZQPlOhn256pnatVQ1QvkOW9_7FXsyu-Iyq4nEKbjVLQcQ3nsN9ZtB6abQQuBHEArZlLp750JYsKulMhBxtPPQb7iW6gvzKapjn38FpMwoFlX8k0LU2MDSQH9mKJd5ar-QXz2A.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=kommersant">
+
+<meta property="al:android:url" content="tg://resolve?domain=kommersant">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Официальный канал ИД «Коммерсантъ».
+
+Новости бизнеса, финансов, политики, общества, культуры и спорта.
+
+Обратная связь: kommersant.ru/lk/feedback
+По вопросам рекламы: rr@kommersant.ru
+
+Перечень РКН: https://clck.ru/3FFxpT
+">
+
+    <link rel="prev" href="/s/kommersant?before=114551">
+<link rel="canonical" href="/s/kommersant?before=114571">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/kommersant">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/kommersant" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">Коммерсантъ</span></div>
+              <div class="tgme_channel_info_header_labels"><i class="verified-icon"> ✔</i></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/kommersant">@kommersant</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">291K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">55.6K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">6.89K</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">24</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">91K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Официальный канал ИД «Коммерсантъ».<br/><br/>Новости бизнеса, финансов, политики, общества, культуры и спорта.<br/><br/>Обратная связь: <a href="http://kommersant.ru/lk/feedback" target="_blank" rel="noopener">kommersant.ru/lk/feedback</a><br/>По вопросам рекламы: rr@kommersant.ru<br/><br/>Перечень РКН: <a href="https://clck.ru/3FFxpT" target="_blank" rel="noopener">https://clck.ru/3FFxpT</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=f9ef3a4ef128ea79ac_12183906170790160738">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=f9ef3a4ef128ea79ac_12183906170790160738">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/kommersant">
+        <i class="tgme_page_photo_image bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">Коммерсантъ</span></div>
+          <div class="tgme_header_labels"><i class="verified-icon"> ✔</i></div>
+        </div>
+        <div class="tgme_header_counter">291K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/kommersant">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/kommersant?before=114551" class="tme_messages_more js-messages_more" data-before="114551"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114551" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTUxLCJ0IjoxNzg4NTY1NjI4LCJoIjoiMGY5Nzk1NTA1N2ZlZGNlOWJiIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/kommersant/114506" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Коммерсантъ</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">В Сочи и Сириусе «отражают массированную атаку БПЛА на гражданскую инфраструктуру», сообщил оперштаб региона.  «Обломки беспилотников находят по разным адресам. По предварительной информации, пострадавших нет. Повреждено остекление в нескольких жилых домах…</div>
+</a>
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Пожар на нефтебазе в Сочи может привести к осложнению ситуации с топливом на автозаправочных станциях города</b>, заявил губернатор Краснодарского края Вениамин Кондратьев. <br/><br/>Он призвал этого не допустить. <br/><br/><blockquote>«Бензин и дизель поступают в край в достаточном объеме, и вся логистическая цепочка должна работать безотказно, как часовой механизм»,— написал господин Кондратьев в&nbsp;Telegram-канале. </blockquote><br/><br/>По его словам, на некоторых заправках региона возникает искусственный дефицит, из-за чего продажу топлива могут приостанавливать. Губернатор пообещал передать информацию обо всех таких случаях правоохранительным органам.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114551" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>32</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>27</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>9</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98A2.png')"><b>😢</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">14.4K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114551"><time datetime="2026-09-04T14:16:45+00:00" class="time">14:16</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114552" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTUyLCJ0IjoxNzg4NTY1NjI4LCJoIjoiN2E1MWI0N2VlNjEyYmMzNzA1In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Средства ПВО сбили 19 беспилотников ВСУ, летевших на Москву, сообщил Сергей Собянин.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114552" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>16</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>15</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98A2.png')"><b>😢</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">13K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114552"><time datetime="2026-09-04T14:25:02+00:00" class="time">14:25</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114553" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTUzLCJ0IjoxNzg4NTY1NjI4LCJoIjoiOGYwZTE2YWFiYjIxYTYzY2M4In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249197364776476640 1222174001_460005344" href="https://t.me/kommersant/114553" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/QSo9T4d7a8jtAq6wRlB1jaSu2uR0hJ8zl2xkvyeRhichfT6oSFtgGFd18PyqpiNDgoDDDKX_4hDzsgT3lw0WCAeHfvP5VZyLQuFeXhHUupzh9fc9BMpa0Ks08614WgRxkqNBkhQFZgEtIPo6KAxRRgzGaj14pJrkkjB0iUDm6PCJC09E5QAxWxba3bQHiWNXmDId7HDAhgfMrlWE2R92A-hmHayE_XrH6avg_tfh_TLM1XlME2hKZOjIvAg--VL-cjhpkluJtu1HsCzjZaTTWjYOl5zPflS4yPZK-8a7VoZmlkNgtzOvvlXd_KeEcmiH0IPES2no3rMwYSa4JtNqnA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5328107578675190518"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji><tg-emoji emoji-id="5327994930272952118"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji><tg-emoji emoji-id="5328112367563726194"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji><tg-emoji emoji-id="5328132450830800600"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji> <b>В Москве </b><a href="https://www.kommersant.ru/doc/8936774?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>прошли</b></a><b> прения сторон по скандальному уголовному делу о поставках в войска 30 тыс. бронежилетов</b>, не соответствующих нормам индивидуальной защиты военнослужащих. <br/><br/>Топ-менеджерам группы строительных компаний (ГК) «Пикет», выпускавших «плитники» в арендованных гаражах, обвинение запросило 11 и 8 лет заключения. Защитники надеются, что фигуранты избегут колонии.<br/><br/><a href="?q=%23%D0%AA%D1%83%D0%B7%D0%BD%D0%B0%D0%BB">#Ъузнал</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114553" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>27</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>16</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>11</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98A2.png')"><b>😢</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">56.4K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114553"><time datetime="2026-09-04T14:53:58+00:00" class="time">14:53</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114554" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTU0LCJ0IjoxNzg4NTY1NjI4LCJoIjoiZmFiMWE3YTUyMjFhZGQxN2MwIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/pro_potreb/471"><span dir="auto">Уровень потребления</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249379634598584000 1222216439_460005056" href="https://t.me/kommersant/114554" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/XbkaXJvV3NbjuZ2fTM_ZZ2NGZ0PgKsjYQ_X_TQLC1t0WUK2KfaUlYy25chYIVaxLFY_z6IN3iVJKQ9te820gUkfSFYQEooYct7tH2qHou3W0Liy_gElAma4tXWaFNr0pHs8GLIEsxLsvcZpW9jS_ogjj6j8teXObNysy7g6Amt7cJb73BJojQDxiyMOp8FI0pJMbjNEqmQQXbLZ3f2_YoxgT0FvtT3Pw5rXS4VUyU9evkkM4hjSfh2pAB9o46jKVazmmnNFfjfj4XOFOVB6AMF2Y98wX0zf6IbtDctMaS4apSczA6UGndmyPgNnA3Nw-HUQcTbNkRQLwNgR4FGZazg.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:67.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5467406098367521267"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9191.png')"><b>👑</b></i></tg-emoji> <b>Филипп Киркоров вошел в «Королевство сладостей».</b><br/><br/>Певец получил 25% в ООО «Королевство сладостей», за которым закреплен товарный знак для продажи кондитерских изделий, оказания услуг кафе, баров и кафетериев,<a href="https://www.kommersant.ru/doc/8936765?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> обнаружил «Ъ»</a> в базе СПАРК.<br/><br/>Организация была зарегистрирована в июне 2026 года совладельцем сети Black Star Burger Юрием Левитасом и его партнером Андреем Пупковым. <br/><br/>Позже доля господина Левитаса снизилась с 50% до 25%. Он также подтвердил, что компания была создана для открытия одного из крупнейших магазинов сладостей в мире площадью 700 кв. м в ТЦ «Авиапарк». В нем будут представлены  российские и международные бренды, необычные продукты со всего мира и большое направление для детской аудитории. <br/><br/>Открытие запланировано на ноябрь-декабрь этого года.</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114554" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>60</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>30</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>18</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>8</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>7</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">11.9K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114554"><time datetime="2026-09-04T15:17:24+00:00" class="time">15:17</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114555" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTU1LCJ0IjoxNzg4NTY1NjI4LCJoIjoiZjg3MjYwOWE2ZTkxZDhiMTFmIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249058340980074449 1222141632_460007377" href="https://t.me/kommersant/114555" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/T5-rqUk7uvNUEcueDj_XYMGJbj7qrjeMRj6s1EZQrPOnWOxwDXMxRuUBFvFRZPLgCWNQHlLqAHVnapSnWZxdPriK17yxuZbGSZ_ump-veSvrTJ2dVmMANJiIDldOitptCumhc70VzE1xzKlVTh_2YPnBqbhNBfEtyRnLnnn5HzBrWErlL9ui5a9bDMgsiX9QxQAtrwIJa6xB1yHrcvf6huFgsE2FdqrfhxmUdM1AfHBl_1FU1TVNzHIjYNIZq1Ry-waQzSLtPBBPfDYaKm315oKtPV2OQYwDcYpG_2Dg-bU5FoNfY5v4v7ATWlAiyUl2JncH4zbzpmLMGr-WuMrVDw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.75%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><blockquote>«Этот спор подчеркивает растущую напряженность между крупнейшими экономиками мира». </blockquote><br/><br/>На проходящем сейчас саммите стран «большой двадцатки» представители США и Китая обменялись резкими заявлениями. Министр финансов США Скотт Бессент заявил, что странам G20 не удалось согласовать совместное коммюнике якобы из-за позиции Китая. В ответ на это представители правительства КНР в резкой форме обвинили США в попытке политического и экономического давления. Впрочем, этот спор не стал единственным заметным событием саммита, где также шло активное обсуждение острой конкуренции между США, Европой и Азией в технологической отрасли.<br/><br/><tg-emoji emoji-id="5323612225385028478"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B5.png')"><b>🔵</b></i></tg-emoji><b> «Синьхуа»&nbsp;(Пекин, КНР): </b><br/><blockquote expandable><i>«Министерство торговли Китая выразило решительное несогласие с использованием многосторонних платформ, таких как G20, для раздувания так называемых экономических дисбалансов и избыточных производственных мощностей.<br/><br/>Пресс-секретарь министерства Хуан Лин сделала это заявление в ответ на недавние высказывания министра финансов США Скотта Бессента в отношении Китая.<br/><br/>Подобная риторика, по сути, является прикрытием для протекционизма и предлогом для давления и сдерживания Китая, заявила Хуан. «Это лишь подорвет глобальный торговый и экономический порядок и ослабит устойчивое развитие мировой экономики»,— добавила она.<br/><br/>Хуан призвала все страны поддерживать многосторонние отношения, усиливать диалог и координацию в политике, расширять открытость и сотрудничество, а также совместно обеспечивать стабильность и бесперебойность глобальных промышленных и производственных цепочек для достижения взаимовыгодных результатов».</i></blockquote><br/><br/><tg-emoji emoji-id="5323612225385028478"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B5.png')"><b>🔵</b></i></tg-emoji><b>Financial Times&nbsp;(Лондон, Великобритания):</b><br/><blockquote expandable><i>«Китай предупредил, что заявления США о том, что Пекин сорвал совместное коммюнике министров финансов стран G20 на этой неделе, грозят ухудшить отношения в преддверии серии важных саммитов.<br/><br/>Конфликт разгорелся всего за несколько недель до того, как Дональд Трамп, как ожидается, примет своего китайского коллегу Си Цзиньпина в Вашингтоне с государственным визитом в конце сентября, после майской поездки президента США в Пекин».</i></blockquote><br/><br/><tg-emoji emoji-id="5323612225385028478"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B5.png')"><b>🔵</b></i></tg-emoji><b>Bloomberg&nbsp;(Нью-Йорк, США):</b><br/><blockquote expandable><i>«Основным камнем преткновения, по словам источников, стало включение выражения «нерыночный» в предложение, описывающее торговый дисбаланс. Китайские чиновники увидели в этом завуалированную атаку на государственные предприятия, которые являются основой национальной экономики.<br/><br/>Этот спор подчеркивает растущую напряженность между крупнейшими экономиками мира за несколько недель до того, как Си Цзиньпин направится в Вашингтон на встречу со своим американским коллегой Дональдом Трампом.<br/><br/>Это слово (нерыночный.—&nbsp;<b>“Ъ”</b>) давно используется в критике китайских торговых практик со стороны США. Включение этой фразы в коммюнике G-20 может быть истолковано как завуалированное указание на Китай без прямого упоминания этой страны».</i></blockquote><br/><br/><tg-emoji emoji-id="5323612225385028478"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94B5.png')"><b>🔵</b></i></tg-emoji> <b>Die Tageszeitung&nbsp;(Берлин, Германия):</b><br/><blockquote expandable><i>«На этой неделе на G20 также встречаются министры науки и инноваций. Пока Еврокомиссия еще пытается регулировать искусственный интеллект (ИИ), Кремниевая долина просто ставит всех перед фактом. Тем, кто хотел бы знать, кто диктует глобальные правила XXI&nbsp;века, нужно на этой неделе смотреть не на Брюссель, а на идиллический Чапел-Хилл в Северной Каролине, где встречались министры науки и инноваций стран G20.<br/><br/>Правительство США представило очень мягкий проект, предусматривающий сведение государственного вмешательства в эту сферу к минимуму. В этом цели США в значительной мере совпадают с позицией крупнейших ИИ-компаний мира, почти все из которых находятся в США. Они хотят меньше регулирования по всему миру для своего быстрорастущего бизнеса.<br/><br/>На улице (перед отелем, где проходила встреча.—&nbsp;<b>“Ъ”</b>) студенты протестовали против роста выбросов CO2 и потребления воды из-за новых дата-центров для ИИ. Внутри же пришли к выводу, что будущее принадлежит машинам — и миллиардерам, которые ими владеют».</i></blockquote><br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114555" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>21</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>14</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>7</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">11.3K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114555"><time datetime="2026-09-04T15:37:14+00:00" class="time">15:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114556" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTU2LCJ0IjoxNzg4NTY1NjI4LCJoIjoiMjAzZDk3MzVjMDdmNWU1MjEwIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<a class="tgme_widget_message_photo_wrap 5249197364776476694 1222174001_460005398" href="https://t.me/kommersant/114556" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/Wx00UXT-4LDrmRPVjoQAuZxWmuse157wPMZY9C6nY-QHjxjWfGgf6R_rnLLnFbqZq_2yBJvaJv3TrN4dA08lgv1EeFLF2hvPCH36DbP0PIffWp77Sz7MBmTMufLa17F4yVFkGWRE3NKKFbOQLyh9-5a6tGFViJamgQsru8ZOHle5JTnB1PONMEAYqO92PMwUeNJ9-IyDEln-0QHy-ISeMRjSkkkdDlwht7X8zI6UJEmjwEwGTDoRtdZZZLcN9HMrSnEX_aQKTzxANe6Ze4qzOAVf_5j129nyuY6pUd3ti61HSNwPf9zD4LMz4ufnKRS5yxZx121nIN3jN3tsiL9ZtA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Бизнес-центр «Петровская сопка» будет нацелен на резидентов САР<br/><br/>Центр «Петровская сопка», строящийся на острове Русском во Владивостоке, <a href="https://www.kommersant.ru/doc/8925682" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">будет ориентирован</a> прежде всего на компании—резиденты специального административного района (САР), рассказал в интервью «Ъ» директор департамента проектов в сфере туризма в «Интерросе» Александр Сафонов. «Интеррос» уже начал работу по привлечению арендодателей при поддержке Корпорации развития Дальнего Востока.<br/><br/>Господин Сафонов ожидает, что и органы государственной власти, занимающиеся развитием острова, тоже разместят там свое представительство. По его словам, часть площадей также забронирована для ряда компаний «Интерроса».<br/><br/>Сдача «Петровской сопки» намечена на четвертый квартал 2027 года. Площадь бизнес-центра составит около 15 тыс. кв. м. Он создаст около 1 тыс. рабочих мест в регионе. Бюджет проекта составляет 5,3 млрд руб.<br/><br/><a href="?q=%23Review"><i>#Review</i></a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>13</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>6</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">11.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114556"><time datetime="2026-09-04T15:44:51+00:00" class="time">15:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114557" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTU3LCJ0IjoxNzg4NTY1NjI4LCJoIjoiZTliNmM4N2YyMGE3MTA2NjZiIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap blured 5249197364776476739 1222174001_460005443" href="https://t.me/kommersant/114557" style="width:549px;background-image:url('https://cdn4.telesco.pe/file/B0nd302MQWby7rO94-iQZ2Y76jYI9Xrji1NQbq9yRFxVcvLaQsmUtZCdNRrLQerZBUl3qIZOBkFTYNta2FPTtZed7pZ8e7WzrADw0r8TYyeuD1F4lOEOAM4fCFYWP97Z8ZO11sewMIROZwt5VoHp7IZcdNtxVDRrNvRVHTI47RASTB5eP34Vl_idpQjPdgov00eVKWCl7mDjxMD9i3zWmoXsDo6eFbwC0Kt3bxa2NMQEfUM0NJkdqtlxq6_VFxve_x7KX38dYStuRwsrglZITySKcUbmLwGYnytPu3JG7wWL13F_wNMOhMqlMxZXySZem9tIjW39y_yczrg72nm6Iw.jpg')">
+  <div class="tgme_widget_message_photo" style="width:91.5%;padding-top:133.33333333333%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5328107578675190518"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji><tg-emoji emoji-id="5327994930272952118"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji><tg-emoji emoji-id="5328112367563726194"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji><tg-emoji emoji-id="5328132450830800600"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F979E.png')"><b>🗞</b></i></tg-emoji>  Бывший министр связи и массовых коммуникаций России Николай Никифоров<b> </b><a href="https://www.kommersant.ru/doc/8936824?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>стал</b></a><b> фигурантом уголовного дела финансовой пирамиды Finiko.</b> В деле речь идет <b>о хищении 5 млрд руб. у 8 тыс. вкладчиков. </b><br/><br/>Следователи МВД уже предъявили ему обвинение в организации ОПС и особо крупном мошенничестве. Правда, сделано это было заочно, поскольку экс-чиновник, который когда-то был самым молодым министром в истории России, находится за границей.<br/><br/><a href="?q=%23%D0%AA%D1%83%D0%B7%D0%BD%D0%B0%D0%BB">#Ъузнал</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114557" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>89</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>14</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>13</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>9</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>6</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98A2.png')"><b>😢</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">34.1K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/kommersant/114557"><time datetime="2026-09-04T16:06:50+00:00" class="time">16:06</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114558" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTU4LCJ0IjoxNzg4NTY1NjI4LCJoIjoiNDQ1ZjhiYmQwYWE0Zjk3OTVlIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249197364776476873 1222174001_460005577" href="https://t.me/kommersant/114558" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/C19ftq4h6F0XyBrnKrVTSFZxp-3yEBs5hu2FLndV4HniUzCMmdc_oxLrHNnByJtsu6SDv5qiuMtjMZ7DmCEC2v98yJGQyv1ZTE_7_i7HZndpV4RBjF6zf14fsiIprdjgmB70QiJLWJS39FgS0A25XiUvwPFZ0qfnRglY0ERkEVQuou54Pbe_yvM8G2VWBshjOQ2Mk05NaPayBzdTMeSkYh76SAXWP3NNR0D9hlltLial15bfIJ4uzQ3-iJI-2thgQw7HHlO70ibYmLCbvvDekThwg__UuOZfQJX0virmzI7Pdu38_uhHOtHIb7MnfesoPZiXs3cIt8SovaDQYMkrqA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:69.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Экспорт российской нефти из портов в августе<b> </b><a href="https://www.kommersant.ru/doc/8936828?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>снизился</b></a><b> на 12% относительно июля в связи с сокращением поставок через Черное море.</b> Рост отгрузок в портах Балтики не позволяет полностью компенсировать выпавшие объемы. <br/><br/>В правительстве указывают, что экспортная инфраструктура задействована максимально, но добыча нефти в России в этом году может снизиться из-за недозагрузки НПЗ.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114558" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>19</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>12</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>10</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">11.8K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/kommersant/114558"><time datetime="2026-09-04T16:30:56+00:00" class="time">16:30</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114559" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTU5LCJ0IjoxNzg4NTY1NjI4LCJoIjoiMTYzNjA4YmQ2Yzg0MDM0MDIzIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/kommersant64/8854"><span dir="auto">Коммерсантъ-Средняя Волга</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249142552403844372 1222161239_460004628" href="https://t.me/kommersant/114559" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/hLGh52pzHKkCfGwmt_QBoXFrOBH41AYpDbuL2iywtT6zPlEZVoD7A7QZCVFqWbkVogfc4euhOs4AViYzj7dF4Fy_X_ZjeMCKZcHt2NXwP14ThgSwF4nudex2PnwcIH9PXL2KyEfsTAJraQXXYf0kB5DSkgiisoyeHm6Acunvm6-VJd92WqBaSG5loq19Nf5MhkDlI825-dklqWUz9i4MMS0R8j1b2zMDnQDhJJzBEjCMgJYURy-1sHVWB0pdS_eVzT97L9kSrVeqm1lHS0YYELI3w8oh9x3K_bFcxp1l77Oj1PAKpEUbLNaDWws6V9VmAEVCqq_B8oOlwaggdOJ9gw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Блогеру-коммунисту Бондаренко подтвердили административный штраф в&nbsp;Саратове</b><br/><br/>Саратовский облсуд рассмотрел жалобу на&nbsp;решение по&nbsp;административному делу члена саратовского КПРФ Николая Бондаренко. <br/><br/>Политик и&nbsp;известный блогер возглавляет идущую в&nbsp;Госдуму объединенную территориальную группу Удмуртии и&nbsp;Пермского края. <br/><br/>Коммунисту вменяют демонстрацию экстремистской символики&nbsp;— портрета Алексея Навального (признан экстремистом и&nbsp;террористом). <br/><br/>При этом спорный пост, уверяет кандидат, выложил фейковый канал, к&nbsp;которому господин Бондаренко отношения не&nbsp;имеет. Более того, публикацию удалили задолго до&nbsp;задержания политика.<br/><br/>Теперь коммуниста могут снять с выборов. Господин Бондаренко сообщил «Ъ — Средняя Волга» о планах оспорить решение в кассации.<br/><b><br/>Подробнее в материале «Ъ — Средняя Волга»:</b> <a href="https://www.kommersant.ru/doc/8936791" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>Фейк подставил депутата</b></a><br/><br/><tg-emoji emoji-id="5321554575272993742"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B7.png')"><b>📷</b></i></tg-emoji> <i>Telegram-канал Дениса Буланова</i><br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji> <a href="https://t.me/kommersant64" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Средняя Волга в Tg</a> | <a href="https://max.ru/kommersant_saratov" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">в МАХ</a> | <a href="https://dzen.ru/kommersant64" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">в Дзене</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114559" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>118</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98AD.png')"><b>😭</b></i>32</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>19</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>13</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>9</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>6</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">12.1K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114559"><time datetime="2026-09-04T17:09:05+00:00" class="time">17:09</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114560" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTYwLCJ0IjoxNzg4NTY1NjI4LCJoIjoiNjk3YWFmNDFlM2ViN2E5NmViIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Средства ПВО отразили атаку девяти летевших на Москву беспилотников, сообщил мэр столицы Сергей Собянин.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114560" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>23</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>11</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98A2.png')"><b>😢</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">12K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114560"><time datetime="2026-09-04T17:21:33+00:00" class="time">17:21</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114561" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTYxLCJ0IjoxNzg4NTY1NjI4LCJoIjoiZDA4MDFkMDg4YjAwZmRhOWI3In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Средства ПВО за день сбили 480 беспилотников ВСУ над регионами РФ, а также над акваторией Черного моря, сообщило Минобороны.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114561" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>16</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>11</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98A2.png')"><b>😢</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">11.1K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114561"><time datetime="2026-09-04T17:39:59+00:00" class="time">17:39</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114562" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTYyLCJ0IjoxNzg4NTY1NjI4LCJoIjoiYzkyMDFjYTA1NWYxMjcyZjQyIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">МВД Германии рассматривает инциденты на электроподстанциях на востоке и западе страны <b>как климатический экстремизм. </b>Об этом сообщил глава ведомства Александр Добриндт. <br/><br/>За последнюю неделю в ФРГ произошло несколько случаев атак на объекты электроснабжения — злоумышленники пытались вызвать короткое замыкание и отключить электроэнергию.<br/><br/>По словам главы МВД федеральной земли Северный Рейн-Вестфалия Герберта Ройля, злоумышленник, скорее всего, действовал в одиночку. <br/><br/><blockquote>«На данный момент доказательств, указывающих на причастность иностранных сил, все меньше».</blockquote><br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114562" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>38</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>10</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>6</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">16.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114562"><time datetime="2026-09-04T18:04:40+00:00" class="time">18:04</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114563" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTYzLCJ0IjoxNzg4NTY1NjI4LCJoIjoiNjBjMDI5ODE2ZTY1M2UwY2RjIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Дания, Германия, Нидерланды, Австрия и Греция договорились о создании <b>единой модели центров содержания мигрантов за пределами ЕС. </b><br/><br/>Как сообщает&nbsp;AP, уже в 2027 году эти центры могут принять первых мигрантов, чьи прошения об убежище в указанных странах не были удовлетворены.<br/><br/>Как отметил датский министр по вопросам миграции и интеграции Мортен Бедсков, центры содержания — это не эвфемизм для центров задержания и депортации, но шанс для тех «нелегальных мигрантов, которые не имеют законных оснований оставаться в ЕС, однако по каким-либо причинам не могут вернуться в свои родные страны.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114563" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>13</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>9</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">10.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114563"><time datetime="2026-09-04T18:40:09+00:00" class="time">18:40</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114564" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTY0LCJ0IjoxNzg4NTY1NjI4LCJoIjoiYzNkNjEyM2FiYTE1YThlYjk0In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Стив Уиткофф и Джаред Кушнер <b>привезут в Москву предложение по прекращению конфликта на Украине</b>, заявил президент США Дональд Трамп.<br/><br/><blockquote expandable>«Они повезут с собой предложение о прекращении войны. Ведь я уже положил конец восьми войнам. Надеюсь, вы мной гордитесь. Я положил конец восьми войнам, но мне за это никто не отдаёт должное. Я положил конец восьми войнам. Получил ли я Нобелевскую премию? Нет». </blockquote><br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114564" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>67</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>67</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>20</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>14</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98AD.png')"><b>😭</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">10.3K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/kommersant/114564"><time datetime="2026-09-04T18:56:43+00:00" class="time">18:56</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114565" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTY1LCJ0IjoxNzg4NTY1NjI4LCJoIjoiOTUwZTdjYmZlMDNjNzg3Mjg0In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5249197364776477293 1222174001_460005997" href="https://t.me/kommersant/114565" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/B7Q5k_KiBYXLGyWdYjqed4yYOreEGl4o4K0VRFvBGFJSm0tK6Wd04h_tAEv-K9Gc9GtAMJNts_nskE-_stTIogbTvmB4Z8_MX8xsBIcxrife4qgLtnMHqcxkK4gz3l3eUPG3kk_f3BrItTxjxYi7nRGXQjRXm1oyopGhpeQdNF3VQ-RHVjZKSdp1CcOLAl3-Vmu9tOUcWsd4oh_JD921YUBcOtMkF7nMr5QxwlLZby1uKbfZQx-BxdkNU6DjxgQNUaS5oQE0CTibv_dARwiU_3G4eRFsTF5LxP3I7oDxCNX-ydkF2hFMg1zpCBlSf0aVgOyJQkj0ypbkF8KiMPD20A.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5321553166523720438"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C92.png')"><b>🌒</b></i></tg-emoji> <b>Главные новости к вечеру </b><br/><br/><tg-emoji emoji-id="5323610855290460904"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i></tg-emoji> Беспилотник <a href="https://www.kommersant.ru/doc/8936728?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ударил</a> по зданию СБУ в Киеве. <br/><br/><tg-emoji emoji-id="5323610855290460904"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i></tg-emoji> Пять стран ЕС <a href="https://www.kommersant.ru/doc/8936869?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">создадут</a> центры для содержания мигрантов за пределами Европы.<br/><br/><tg-emoji emoji-id="5323610855290460904"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i></tg-emoji> Болгария <a href="https://www.kommersant.ru/doc/8936825?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">предупредила</a> ЕС о последствиях отправки дальнобойного оружия Украине. <br/><br/><tg-emoji emoji-id="5323610855290460904"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i></tg-emoji> Стив Уиткофф и Джаред Кушнер <a href="https://www.kommersant.ru/doc/8936734?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">встретятся</a> с Путиным в Кремле 5 сентября. <br/><br/><tg-emoji emoji-id="5323610855290460904"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i></tg-emoji> Ozon <a href="https://www.kommersant.ru/doc/8936873?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">начал искать </a>операторов сторонних сортировочных центров для сотрудничества.<br/><br/><tg-emoji emoji-id="5323610855290460904"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i></tg-emoji> «Газпром Арена» <a href="https://www.kommersant.ru/doc/8936878?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">исключила</a> проведение концертов зарубежных исполнителей в октябре.<br/><br/><tg-emoji emoji-id="5323610855290460904"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i></tg-emoji> «Новую газету» <a href="https://www.kommersant.ru/doc/8936794?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">объявили</a> иноагентом.<br/><br/><a href="?q=%23%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5%D0%BA%D0%B2%D0%B5%D1%87%D0%B5%D1%80%D1%83">#главноеквечеру</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114565" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>12</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98AD.png')"><b>😭</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">10.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114565"><time datetime="2026-09-04T19:02:42+00:00" class="time">19:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114566" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTY2LCJ0IjoxNzg4NTY1NjI4LCJoIjoiMjc1YWM1MDE2NTI1MWEzYjlhIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">Президент США Дональд Трамп уверен, что <b>Россия не стремится атаковать страны НАТО.</b><br/><br/><blockquote expandable>«Я разговариваю с ним. Я очень хорошо его знаю. (Владимир) Путин не стремится атаковать территорию НАТО», — сказал он, отвечая на просьбу прокомментировать утверждения о намерении РФ напасть на страны НАТО.</blockquote><br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114566" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>60</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>54</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>7</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">9.33K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114566"><time datetime="2026-09-04T19:35:25+00:00" class="time">19:35</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114567" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTY3LCJ0IjoxNzg4NTY1NjI4LCJoIjoiMzIzOGM2N2M2YmExMzE3NjRmIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5251449164590160319 1222698289_460003775" href="https://t.me/kommersant/114567" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/tAB_knNaNDp58WHg1u1ZiO-Hk1CWEszhtbirtzGQkok17LPAKwYgd1c0ai-F_7qWHTXZ-9vTyXbwrCbDjXncxm5plsLejmkJTmV19DQX4v7mU8yjkcEDnoz8SfpXAULOYOAEO7BJ-K2lBGn8cYganY3sApIVnzkMSxI0yoZZ8RdcdklbSKabBnbpkYSH0Jk2d23rcf9PDut0Y0jqYMJzNQYk95ZWEN7BHU0cEgXH9H77QZ6z4zn0PXLa_raewI-vvUZYgwadeTUZpxw4ms3MFuM0dWLnmWamdg_dBt5UfviI8w2lmh9940zPO8iLIkf8nC38GyamZ9FEubMiN7XocA.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:56.25%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><blockquote>«На экране порой творится откровенная дичь»<br/><br/></blockquote>Стартовал сериал по повести братьев Стругацких «Трудно быть богом». <b>Юлия Шагельман</b> посмотрела первые четыре серии и не нашла в них ни Стругацких, ни внятного сценария. <br/><br/><blockquote>«По первым сериям очевидно, что вдохновением для авторов послужила не столько повесть Стругацких, сколько обе части «Дюны» Дени Вильнева (2021, 2024) и «Игра престолов» (2011–2019)».</blockquote><br/><br/>Создатели сериала — генеральные продюсеры Федор Бондарчук и Теймур Джафаров, сценарист Андрей Золотарев и режиссер Дмитрий Тюрин. Сериал снят при участии Института развития интернета (ИРИ) и телеканала НТВ. <br/><br/><blockquote>«Однако главная проблема сериала — сценарий. Авторы максимально отдалились от Стругацких, превратив социально-политическую повесть с фантастическим колоритом в роман плаща и шпаги, но заблудились в трех соснах собственного сюжета».</blockquote><br/><br/><tg-emoji emoji-id="5325583220236902755"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9189.png')"><b>👉</b></i></tg-emoji> Подробнее о сериале — <a href="https://www.kommersant.ru/doc/8936768?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">в материале «Ъ» «Трудно быть доном»</a>.<br/><br/><tg-emoji emoji-id="5321554575272993742"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B7.png')"><b>📷</b></i></tg-emoji> <i>телекомпания НТВ </i><br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114567" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>74</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>16</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA494.png')"><b>🤔</b></i>8</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>6</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">6.3K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114567"><time datetime="2026-09-04T20:37:37+00:00" class="time">20:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114568" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTY4LCJ0IjoxNzg4NTY1NjI4LCJoIjoiNzM1MWI4ZjgxNWZjMDljMDc2In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5251449164590160378 1222698289_460003834" href="https://t.me/kommersant/114568" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/KSeGo33oNgC2n5wXdgEGYj3dAi4dbwolli85RlftuskHrK01sCVpU6SJwpc-DfsamCpuZ6_-LqSfxzG8MDqvZrn36kBZQOvtIOgvbRCI-4K8CDhwiYXPVnaHPpu4BRVMBDThfYfLolsN3KrQzQdzbsrVPNQu9fFaBn4KgDcHI276uJ30Ian4g8HrQ27xCrrLYDSre_M0WjVKKoFLrE4CdIeoMxFpUcRPJwxDc1MFCXR3C6Ka4NKYDhjhQNjHCvBU6UjmJkMjGi4doW0p-IMVjENPohLZhmMUf_BpQ7h7trBLxB6OicSNtvobJDZ-imfOqZHEBIySdt5rqa2AfupwVQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Предвыборная кампания в FIDE получается очень скандальной.</b> Жалобы, ставящие под сомнение легитимность участия в них соперников, <a href="https://www.kommersant.ru/doc/8936732?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">подали</a> все три кандидата — и немецкие предприниматели Вадим Розенштейн с Яном Хенриком Бюттнером, и казахстанский бизнесмен Тимур Турлов.<br/><br/>Именно господин Турлов, фактически вышедший на замену попавшему под санкции Евросоюза главе FIDE Аркадию Дворковичу, оказался основной мишенью атак. Претензии у конкурентов, готовых обратиться в Спортивный арбитражный суд (CAS), вызвали в том числе <b>слишком прочные, по их версии, связи бизнесмена с Россией</b>.<br/><br/>Команда господина Турлова довольно подробно ответила на каждый пункт обвинений, назвав их «совершенно необоснованными». Насчет российского гражданства она пояснила, что Тимур Турлов отказался от него в сентябре 2022 года. При этом сам господин Турлов отправил жалобу на Вадима Розенштейна, обвинив его в клевете и нарушении электорального регламента.<br/><br/>Выборы главы FIDE состоятся 26 сентября. После них федерацию возглавит новый президент.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114568" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>12</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>3</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">3.85K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114568"><time datetime="2026-09-04T21:29:52+00:00" class="time">21:29</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114569" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTY5LCJ0IjoxNzg4NTY1NjI4LCJoIjoiMDdiYTk1ODIxOWRlZmE0OTlhIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/mediatelekomm/2428"><span dir="auto">Сети и сигналы</span></a></div>
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b><tg-emoji emoji-id="5321242326855604183"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93B0.png')"><b>📰</b></i></tg-emoji></b><b> Российская полиграфия переживает худший год за последние десять лет.</b> Издатели<a href="https://www.kommersant.ru/doc/8936805?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> </a>начинают все активнее печататься в Китае из-за дефицита необходимых материалов в России, а отраслевые компании вынуждены сокращать штат примерно на 30%.<br/><br/>Крупнейший игрок на рынке — «Просвещение» — урезал объем заказов у типографий в 2026 году на 25–30%. В самом издательстве <a href="https://www.kommersant.ru/doc/8936805?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">«Ъ» сообщили</a>, что распределение объемов между полиграфическими площадками меняется в зависимости от параметров производственной политики компании, таких как экономика, тиражность, сезонность производства и др.<br/><br/>Улучшению ситуации на рынке может способствовать возвращение объемов выпуска учебной литературы к прежним значениям «и ситуация, при которой размещение заказов в Китае станет более затратным», считают участники отрасли.<br/>  <br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93A1.png')"><b>📡</b></i> <a href="https://t.me/+SkQgmXpzMqFjZjli" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Сети меняются. Мы следим. Подписывайтесь</a>.</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114569" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98AD.png')"><b>😭</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F98B1.png')"><b>😱</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">2.35K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114569"><time datetime="2026-09-04T22:26:22+00:00" class="time">22:26</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="kommersant/114570" data-view="eyJjIjotMTAzODQwMjUwMSwicCI6MTE0NTcwLCJ0IjoxNzg4NTY1NjI4LCJoIjoiYmNiZjljYjRjYWY4ZDE3NDcxIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/kommersant"><i class="tgme_widget_message_user_photo bgcolor3" data-content="К"><img src="https://cdn4.telesco.pe/file/uqTksuRP4tAkeygFbz-8aA8TFW-Ze09VC8YlaEYfcgkSHvdvgnOoU_OrOE5TKmxRZSmLVWz6fYCEn_tNBHFkbrPQmolhZvKNlRgEfE_ZFMGCmCdcBGm2FYfZ2OkrItFe-3qYMCOLVPG0O87uJ_MgoW5OwERveQmoE4xrlHf9eXLwoqSRsGTc018sZEPH_wrr9yZQuzwpiPxLjzNGOjyTyJPoEJ4HPVApuzwdx9kNvEGMiHpaRKgEZrPcJyPG_KXVD762J85sncxqM47VbLLvkP5lTQoXBIuQmEzOgiLDASzYNnhZXvOdPeEYgvoRur10Jm5zXnyaoA6xGZZESzkK1w.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/kommersant"><span dir="auto">Коммерсантъ</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5251449164590160436 1222698289_460003892" href="https://t.me/kommersant/114570" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/dxPuHwnHtsbaH-Ortf40G8l6ZL9i3Opfz3ppOc9WycsrH34uC5_VURvayw5QPqNRfmlGN-7r9At4zboRNgU7tCk9z6_KG4BcoVYcEKMJIBa1AAKovgwaIgBZ5AeVpHEUxParhOFm0srxFzVcYnlZk-8JDFAofrUP9p0ihk2cekg_Kb3ptHW55ljnCjaUyNyM5Vz8Xp7QmPRQW9775_S2Bjb89p2wZ_fNgyNqb6aOawwZ0C8lL1bVybPjQ3gOE9YUgkkO0nGYsETRN46Y14rCvRp-8Cs5b0G3ZqPHzlwJkxXNnrG4cl46N4tGyux1PyikVvbsfnIgmvTKY6LS67WZRw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:66.625%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><b>Глава РСПП Александр Шохин предложил включить террористическую угрозу в число страховых рисков.<br/></b><br/><blockquote>«Но мы понимаем, что не всякая страховая компания будет страховать склады Ozon или Wildberries… Поэтому нужна перестраховочная технология. А перестраховочная компания у нас одна — Российская национальная перестраховочная компания, которая под Центральным банком. И ее надо докапитализировать, потому что она на рыночных условиях тоже не потянет»,— <a href="https://www.kommersant.ru/doc/8936902?tg" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">сказал</a> господин Шохин в интервью ИС «Вести».</blockquote><br/><br/>Глава РСПП также предложил изменить нормативную базу в сфере защиты предприятий от беспилотников. По его словам, частные охранные предприятия должны иметь разрешение на применение дронов-перехватчиков с боевым зарядом.<br/><br/><tg-emoji emoji-id="5321226602980333021"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji> <a href="https://max.ru/kommersant" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Подписывайтесь на «Ъ» в MAX</a> |<a href="https://t.me/+bPtk49gFbCBkYzdi" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> в Telegram</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/kommersant/114570" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918E.png')"><b>👎</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4AF.png')"><b>🤯</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.43K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/kommersant/114570"><time datetime="2026-09-04T23:02:41+00:00" class="time">23:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 111.93ms -->

@@ -1,0 +1,92 @@
+{
+  "counts": {
+    "timeline_items": 53,
+    "flow_A": 22,
+    "flow_B": 22,
+    "diagnostic_items": 9,
+    "expected_objects": 20,
+    "critical_items": 2,
+    "irrelevant_items": 16,
+    "search_only_items": 6
+  },
+  "hypotheses": {
+    "value": {
+      "scenarios": [
+        "A",
+        "B",
+        "D1_critical",
+        "D3_npa_history"
+      ],
+      "evidence": "Timed baseline vs product plus safety gates; cannot be fully automated."
+    },
+    "H1": {
+      "scenarios": [
+        "A",
+        "B"
+      ],
+      "variants": [
+        "fixed",
+        "search",
+        "hybrid"
+      ],
+      "decision": "Unique relevant objects versus added irrelevant work."
+    },
+    "H2": {
+      "scenarios": [
+        "A",
+        "B",
+        "D1_critical",
+        "D3_npa_history"
+      ],
+      "variants": [
+        "review_all",
+        "review_risk_only",
+        "no_mandatory_review"
+      ],
+      "decision": "Human time versus residual safety failures."
+    },
+    "H3": {
+      "scenarios": [
+        "A",
+        "B",
+        "D2_event_boundary"
+      ],
+      "variants": [
+        "flat",
+        "exact_duplicates",
+        "events"
+      ],
+      "decision": "Object reduction without member, fact or opinion loss."
+    },
+    "H4": {
+      "scenarios": [
+        "A",
+        "B",
+        "D1_critical",
+        "D3_npa_history"
+      ],
+      "variants": [
+        "one_common",
+        "critical_core_plus_role"
+      ],
+      "decision": "Role precision and preparation effort with zero hidden critical."
+    },
+    "H5": {
+      "scenarios": [
+        "A",
+        "B"
+      ],
+      "variants": [
+        "full_queue",
+        "top_layer_with_drilldown"
+      ],
+      "decision": "Timed comprehension with equivalent critical and key-fact recall."
+    }
+  },
+  "non_claims": [
+    "Synthetic flows do not prove real-world search prevalence.",
+    "Proxy participants do not prove adoption or trust by GS Labs staff.",
+    "The dataset does not re-test connector compatibility already covered by B1.",
+    "The dataset does not establish industrial frequency estimates."
+  ]
+}

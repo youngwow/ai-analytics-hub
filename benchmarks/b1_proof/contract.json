@@ -1,0 +1,57 @@
+{
+  "benchmark": "B1 Collection Proof",
+  "version": "2.0.0",
+  "frozen_at": "2026-09-05T00:10:00Z",
+  "scope": {
+    "mvp_transports": ["rss", "atom", "telegram-web", "html", "sitemap"],
+    "candidate_transports": ["tavily-search"],
+    "excluded_until_required": ["generic-json-api", "headless-browser", "ocr", "email", "paywall-session"],
+    "semantic_relevance": false,
+    "external_load_test": false,
+    "mtproto_gate": false
+  },
+  "layers": {
+    "C1_exact_contract": {
+      "exact_recall_percent": 100.0,
+      "false_positives": 0,
+      "required_field_accuracy_percent": 100.0,
+      "every_scenario_must_pass": true
+    },
+    "C2_state_fault": {
+      "critical_scenarios": [
+        "conditional_get",
+        "repeat_without_duplicates",
+        "telegram_cursor_before_after",
+        "timeout_recovery",
+        "http_403",
+        "http_429",
+        "http_500",
+        "malformed_body",
+        "source_isolation",
+        "child_sitemap_partial_visible"
+      ],
+      "every_scenario_must_pass": true
+    },
+    "C3_full_collector_replay": {
+      "concurrency": [1, 8, 24],
+      "document_fingerprint_must_match": true,
+      "replay_misses": 0,
+      "hidden_partial_failures": 0,
+      "tie_percent": 10.0
+    },
+    "C4_live_compatibility": {
+      "live_runs": 3,
+      "active_sources_define_mvp_verdict": true,
+      "registered_disabled_sources_are_diagnostic": true,
+      "absolute_live_recall_claimed": false,
+      "preserve_http_bodies": true,
+      "preserve_search_request_response": true,
+      "secret_hits": 0
+    }
+  },
+  "decision": {
+    "pass_requires": ["C1", "C2", "C3", "C4_active"],
+    "no_single_cross_method_score": true,
+    "criteria_change_requires_new_contract_version": true
+  }
+}

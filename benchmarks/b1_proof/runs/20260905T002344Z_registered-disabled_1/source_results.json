@@ -1,0 +1,193 @@
+[
+  {
+    "id": 1,
+    "name": "РБК",
+    "kind": "rss",
+    "latency_ms": 846,
+    "new": 3,
+    "seen": 30,
+    "warnings": [],
+    "fulltext_attempted": 1,
+    "fulltext_extracted": 1,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [
+      "rssexport.rbc.ru:politics:6a9b5517821e486649658475",
+      "rssexport.rbc.ru:business:6a9b5883a253bdbe3d350602",
+      "rssexport.rbc.ru:politics:6a9b51880c73c78f2ee838f8"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 2,
+    "name": "ТАСС",
+    "kind": "rss",
+    "latency_ms": 858,
+    "new": 3,
+    "seen": 100,
+    "warnings": [],
+    "fulltext_attempted": 3,
+    "fulltext_extracted": 0,
+    "fulltext_fallback": 3,
+    "status": "ok",
+    "new_external_ids": [
+      "https://tass.ru/obschestvo/28081871",
+      "https://tass.ru/mezhdunarodnaya-panorama/28081873",
+      "https://tass.ru/proisshestviya/28081869"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 3,
+    "name": "RusCable",
+    "kind": "rss",
+    "latency_ms": 824,
+    "new": 3,
+    "seen": 20,
+    "warnings": [],
+    "fulltext_attempted": 3,
+    "fulltext_extracted": 3,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [
+      "http://www.ruscable.ru/news/2026/09/04/Na_VEF_dali_start_masshtabnomu_proektu_robotizatsi/",
+      "http://www.ruscable.ru/news/2026/09/04/_TSVETLIT_sertifitsiroval_novye_marki_bezgalogenny/",
+      "http://www.ruscable.ru/news/2026/09/04/Sergej_TSivilev_prinyal_uchastie_v_zasedanii_Rossi/"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 4,
+    "name": "Forbes.ru",
+    "kind": "rss",
+    "latency_ms": 1250,
+    "new": 3,
+    "seen": 19,
+    "warnings": [],
+    "fulltext_attempted": 0,
+    "fulltext_extracted": 0,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [
+      "forbes-567970",
+      "forbes-567967",
+      "forbes-567969"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 5,
+    "name": "Официальное опубликование НПА",
+    "kind": "html",
+    "latency_ms": 543,
+    "new": 1,
+    "seen": 9,
+    "warnings": [],
+    "fulltext_attempted": 3,
+    "fulltext_extracted": 3,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [
+      "http://publication.pravo.gov.ru/documents/block/president"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 6,
+    "name": "Банк России — пресс-релизы",
+    "kind": "rss",
+    "latency_ms": 705,
+    "new": 1,
+    "seen": 9,
+    "warnings": [],
+    "fulltext_attempted": 1,
+    "fulltext_extracted": 1,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [
+      "docid_41604"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 7,
+    "name": "Торгпред (Минпромторг) — Telegram",
+    "kind": "telegram",
+    "latency_ms": 470,
+    "new": 3,
+    "seen": 20,
+    "warnings": [],
+    "fulltext_attempted": 0,
+    "fulltext_extracted": 0,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [
+      "rustorgpred/15096",
+      "rustorgpred/15097",
+      "rustorgpred/15098"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 8,
+    "name": "Поиск: упоминания GS Labs / Триколор",
+    "kind": "search",
+    "latency_ms": 6531,
+    "new": 4,
+    "seen": 11,
+    "warnings": [],
+    "fulltext_attempted": 3,
+    "fulltext_extracted": 3,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [
+      "https://telesputnik.ru/materials/tech/article/texnologiyu-vnedryayut-a-process-ostavlyayut-preznim",
+      "https://gs-group.com/press-center/news/10-let-innovatsiy-ot-pervogo-ssd-k-novym-resheniyam/",
+      "https://gs-group.com/press-center/news/rossiyskie-svetodiody-vpervye-vklyuchili-v-reestr-po-novym-pravilam/",
+      "summary:2026-09-05"
+    ],
+    "stored": 4,
+    "with_title": 4,
+    "with_content": 4,
+    "with_date": 4
+  },
+  {
+    "id": 9,
+    "name": "Поиск: проекты НПА — ПО, ПД, КИИ",
+    "kind": "search",
+    "latency_ms": 2859,
+    "new": 0,
+    "seen": 0,
+    "warnings": [],
+    "fulltext_attempted": 0,
+    "fulltext_extracted": 0,
+    "fulltext_fallback": 0,
+    "status": "ok",
+    "new_external_ids": [],
+    "stored": 0,
+    "with_title": 0,
+    "with_content": 0,
+    "with_date": 0
+  }
+]
