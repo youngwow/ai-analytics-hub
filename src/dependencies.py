@@ -17,7 +17,8 @@ from fastapi import Depends
 
 from .config import Config, Settings, get_config, get_paths, get_settings
 from .paths import ProjectPaths
-from .processing.llm import OllamaProvider, build_provider
+from .processing.embeddings import build_embedder
+from .processing.llm import EmbeddingProvider, OllamaProvider, build_provider
 from .repositories import Database
 from .services.collection_service import (
     CollectionService,
@@ -63,6 +64,20 @@ def get_llm_provider() -> OllamaProvider | None:
     return build_provider(config.llm, key) if key else None
 
 
+@lru_cache
+def get_embedder() -> EmbeddingProvider | None:
+    """Провайдер эмбеддингов на весь процесс: локальная модель грузится один раз.
+
+    `embeddings.provider: ollama` делит клиент с языковой моделью; `local` не
+    требует ключа; `off` — `None`, и S1 работает по URL и SimHash. Закрывает
+    lifespan вместе с провайдером модели.
+    """
+    config, paths = get_config(), get_paths()
+    key = load_env_secret(config.llm.api_key_env, paths.env_path)
+    shared = get_llm_provider() if config.embeddings.provider == "ollama" else None
+    return build_embedder(config.embeddings, config.llm, key, shared=shared)
+
+
 def get_tavily_key(config: ConfigDep, paths: PathsDep) -> str:
     return load_env_secret(config.tavily.api_key_env, paths.env_path)
 
@@ -80,6 +95,7 @@ def get_collection_watcher() -> CollectionWatcher:
 
 
 LLMProviderDep = Annotated[OllamaProvider | None, Depends(get_llm_provider)]
+EmbedderDep = Annotated[EmbeddingProvider | None, Depends(get_embedder)]
 TavilyKeyDep = Annotated[str, Depends(get_tavily_key)]
 CollectionWatcherDep = Annotated[CollectionWatcher, Depends(get_collection_watcher)]
 
@@ -98,9 +114,9 @@ def get_item_service(config: ConfigDep, db: DatabaseDep) -> ItemService:
 
 
 def get_processing_service(
-    config: ConfigDep, db: DatabaseDep, provider: LLMProviderDep
+    config: ConfigDep, db: DatabaseDep, provider: LLMProviderDep, embedder: EmbedderDep
 ) -> ProcessingService:
-    return ProcessingService(config, db, provider=provider, embedder=provider)
+    return ProcessingService(config, db, provider=provider, embedder=embedder)
 
 
 def get_feed_service(config: ConfigDep, db: DatabaseDep) -> FeedService:

@@ -116,6 +116,17 @@ describe('material CRUD, notes, history and originals', () => {
     await h.launch(); await openCard(); expect(dialog().textContent).toContain('Событие сервера'); expect(h.button('Добавить событие / срок').disabled).toBe(false)
     await h.click('Вернуть версию модели: summary'); expect(mutation('/items/101/revert')!.body).toEqual({ field: 'summary' })
   })
+  it('offers to merge a probable duplicate and to dismiss it', async () => {
+    h.handle(call => call.url.pathname === '/api/v1/items/101' ? json({ ...card, duplicate_proposal: { items: [{ id: 102, title: 'Пересказ того же события', published_at: null }], similarity: 0.91, run_id: 3, created_at: '2026-01-01' } }) : undefined)
+    await h.launch(); await openCard()
+    expect(dialog().textContent).toContain('Вероятный дубль — объединить?'); expect(dialog().textContent).toContain('#102 «Пересказ того же события»'); expect(dialog().textContent).toContain('сходство 91%')
+    await h.click('Объединить'); expect(mutation('/items/101/merge')!.body).toEqual({ item_ids: [102], reason: '' })
+    await h.click('Не дубль'); expect(mutation('/items/101/not-duplicate')).toBeTruthy()
+  })
+  it('marks a card with an open duplicate proposal in the feed', async () => {
+    h.handle(call => call.url.pathname === '/api/v1/items' ? json({ items: [{ ...item, flags: { ...item.flags, duplicate: true } }], total: 1, next_cursor: null, took_ms: 1 }) : undefined)
+    await h.launch(); expect(h.app().text()).toContain('Вероятный дубль')
+  })
   it('hides, unhides, deletes and restores through distinct backend actions', async () => {
     await h.launch(); await openCard(); await h.click('Скрыть из ленты'); expect(mutation('/items/101/hide')!.body).toMatchObject({ scope: 'feed' })
     await h.click('Вернуть в ленту'); expect(mutation('/items/101/unhide')).toBeDefined()

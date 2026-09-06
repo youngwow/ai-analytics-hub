@@ -647,3 +647,56 @@ def test_settings_ignore_the_secrets_that_live_in_the_same_env_file(tmp_path):
 
     assert settings.port == 8123
     assert not hasattr(settings, "ollama_api_key")
+
+
+# ── embeddings / clustering ────────────────────────────────────────────────
+
+
+def test_embeddings_and_clustering_sections_have_defaults(raw_config):
+    raw_config.pop("embeddings", None)
+    cfg = Config.from_dict(raw_config)
+    assert cfg.embeddings.provider == "local"
+    assert cfg.embeddings.model == "ai-sage/Giga-Embeddings-instruct"
+    assert (cfg.embeddings.device, cfg.embeddings.dtype, cfg.embeddings.dimensions) == ("auto", "auto", 2048)
+    assert cfg.embeddings.enabled is True
+    assert cfg.clustering.enabled is True
+    assert (cfg.clustering.min_cluster_size, cfg.clustering.min_samples) == (2, 1)
+    assert cfg.clustering.reduction == "pca"
+    assert cfg.clustering.cluster_selection_method == "eom"
+    assert cfg.clustering.min_similarity < cfg.processing.cosine_threshold
+
+
+def test_embeddings_off_is_not_enabled(raw_config):
+    raw_config["embeddings"] = {"provider": "off"}
+    assert Config.from_dict(raw_config).embeddings.enabled is False
+
+
+@pytest.mark.parametrize(
+    ("section", "key", "value", "message"),
+    [
+        ("embeddings", "provider", "cloud", "embeddings.provider must be one of"),
+        ("embeddings", "device", "tpu", "embeddings.device must be one of"),
+        ("embeddings", "dtype", "int8", "embeddings.dtype must be one of"),
+        ("embeddings", "batch_size", 0, "embeddings.batch_size"),
+        ("embeddings", "dimensions", -1, "dimensions >= 0"),
+        ("embeddings", "model", " ", "embeddings.model must be non-empty"),
+        ("clustering", "min_cluster_size", 1, "min_cluster_size must be >= 2"),
+        ("clustering", "min_samples", 0, "min_samples >= 1"),
+        ("clustering", "cluster_selection_method", "best", "cluster_selection_method must be"),
+        ("clustering", "cluster_selection_epsilon", -0.1, "cluster_selection_epsilon must be >= 0"),
+        ("clustering", "min_similarity", -0.2, "min_similarity must be within"),
+        ("clustering", "reduction", "tsne", "clustering.reduction must be one of"),
+        ("clustering", "max_pool", 1, "max_pool >= 2"),
+        ("clustering", "window_days", 0, "window_days >= 1"),
+    ],
+)
+def test_embeddings_and_clustering_values_are_validated(raw_config, section, key, value, message):
+    raw_config[section] = {key: value}
+    with pytest.raises(ConfigError, match=message):
+        Config.from_dict(raw_config)
+
+
+def test_the_shipped_config_yaml_declares_the_local_embedder():
+    cfg = Config.load(DEFAULT_PATHS.config_path)
+    assert cfg.embeddings.provider == "local" and cfg.embeddings.dimensions == 2048
+    assert cfg.clustering.enabled and cfg.clustering.reduction in ("pca", "umap", "none")

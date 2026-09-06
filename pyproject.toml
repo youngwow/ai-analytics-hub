@@ -17,7 +17,17 @@ dependencies = [
     "pydantic>=2,<3",
     "pydantic-settings>=2,<3",
     "numpy>=2,<3",       # косинусы дедупликации: 2000 кандидатов × 200 документов за один matvec
+    # Локальные эмбеддинги (S1) и кластеризация карточек после прогона.
+    "torch>=2.4",
+    "sentence-transformers>=3.0",
+    "transformers>=4.51,<5",  # remote code Giga-Embeddings собран под 4.x: в 5.x сменился реестр RoPE
+    "einops>=0.8",       # remote code модели ai-sage/Giga-Embeddings-instruct импортирует его
+    "hdbscan>=0.8.40",   # CPU-кластеризация дублей карточек, без инфраструктуры
 ]
+
+[project.optional-dependencies]
+# `clustering.reduction: umap` — необязательная альтернатива PCA; ставится `uv sync --extra umap`.
+umap = ["umap-learn>=0.5.7"]
 
 [dependency-groups]
 dev = [
@@ -29,6 +39,17 @@ dev = [
 # from the repo root as `python -m src <command>`.
 [tool.uv]
 package = false
+
+# На Linux колесо torch с PyPI тянет за собой CUDA-библиотеки (~3 ГБ), которые в
+# контейнере без GPU не нужны; там torch берётся из CPU-индекса PyTorch. На macOS
+# остаётся колесо с PyPI — оно и есть CPU/MPS.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

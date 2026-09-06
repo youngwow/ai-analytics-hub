@@ -20,7 +20,7 @@ from . import __version__
 from .api import api_router
 from .api.problem import problem
 from .config import get_config, get_paths, get_settings
-from .dependencies import get_collection_watcher, get_llm_provider
+from .dependencies import get_collection_watcher, get_embedder, get_llm_provider
 from .exceptions import AppError
 from .repositories import Database
 from .utils import configure_logging, get_logger
@@ -51,6 +51,9 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     provider = get_llm_provider()
     if provider is not None:
         provider.close()
+    embedder = get_embedder()
+    if embedder is not None and embedder is not provider:
+        embedder.close()
     log.info("остановка завершена")
 
 

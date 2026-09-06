@@ -10,6 +10,13 @@ FROM python:${PYTHON_VERSION}-slim AS builder
 
 COPY --from=uv /uv /usr/local/bin/uv
 
+# `hdbscan` публикует manylinux-колёса только для x86_64: на linux/arm64
+# (Docker Desktop на Apple Silicon) он собирается из исходников, и для этого
+# нужен компилятор. Только в builder: в runtime-образ уходит готовый /opt/venv.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     UV_PYTHON_DOWNLOADS=never \

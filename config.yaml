@@ -42,8 +42,8 @@ llm:
   host: "https://ollama.com"      # Ollama Cloud; для локального сервера — http://localhost:11434
   model: glm-5.3-flash            # тег модели должен совпадать с облачным буквально
   api_key_env: OLLAMA_API_KEY     # имя переменной окружения / ключа в .env
-  embed_model: embeddinggemma     # модель эмбеддингов для кластеризации (S1)
-  embed_dimensions: 768           # длина вектора; несовпадение считается порчей данных
+  embed_model: embeddinggemma     # облачные эмбеддинги — только при embeddings.provider: ollama
+  embed_dimensions: 768           # длина вектора облачной модели
   request_timeout: 300            # секунд на один вызов: GLM-5.3 «размышляет» минутами
   max_retries: 2                  # повторов при 429 / 5xx, дальше — экстрактивная деградация
   retry_backoff: 2.0              # секунд до первого повтора, дальше удваивается
@@ -64,6 +64,33 @@ processing:
   cosine_threshold: 0.86          # порог схлопывания по эмбеддингам (консервативный)
   borderline_low: 0.35            # нижняя граница пограничной зоны relevance_score
   borderline_high: 0.5            # верхняя граница; в ней приоритет повышается на ступень
+
+embeddings:
+  provider: local                 # local | ollama | off. local — модель на этой машине, ключ не нужен;
+                                  # ollama — облако (llm.host, llm.embed_model, ключ); off — S1 без эмбеддингов
+  model: ai-sage/Giga-Embeddings-instruct   # sentence-transformers, ~3B параметров, 2048 измерений
+  device: auto                    # auto | mps | cuda | cpu; auto: cuda → mps (Apple Silicon) → cpu
+  dtype: auto                     # auto | bfloat16 | float16 | float32; auto: bfloat16 на ускорителе
+  batch_size: 16
+  max_seq_length: 1024            # токенов на текст (модель умеет 4096; S1 режет текст до 2000 символов)
+  dimensions: 2048                # ожидаемая длина вектора; другая длина в базе — прежняя модель
+  prompt: "Instruct: Retrieve news that report the same event\nQuery: "
+                                  # инструкция instruct-модели, одна для обеих сторон: на парах «дубль / не дубль»
+                                  # дубли ≥ 0.91, не-дубли ≤ 0.80 (без неё 0.795 / 0.669). Пусто — режим документа
+
+clustering:                       # вторая дедупликация: карточки-дубли после прогона (HDBSCAN по саммари)
+  enabled: true
+  min_cluster_size: 2             # дубль — это уже пара; см. `quality --pairs --grid`
+  min_samples: 1                  # больше — консервативнее: больше карточек уходит в шум
+  cluster_selection_method: eom   # eom — устойчивые группы (и пара в пуле из одиночек), leaf — самые мелкие
+  cluster_selection_epsilon: 0.0  # 0 — соседние кластеры не склеиваются
+  min_similarity: 0.7             # нижний край зоны «вероятный дубль»: внутри кластера HDBSCAN остаются связные
+                                  # компоненты по косинусу ≥ этого; верхний край — processing.cosine_threshold (S1 склеивает сам)
+  reduction: pca                  # none | pca | umap (umap: `uv sync --extra umap`)
+  n_components: 32                # размерность после снижения; 0 — без снижения
+  window_days: 7                  # свежие карточки сравниваются с карточками этого окна
+  max_pool: 500                   # не больше стольких карточек окна за один прогон
+  seed: 0
 
 api:
   # Адрес, порт, /docs и CORS — параметры окружения: HOST, PORT, DOCS, CORS_ORIGINS в .env

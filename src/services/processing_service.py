@@ -33,9 +33,16 @@ from ..models import (
     RawDocument,
 )
 from ..paths import ProjectPaths
-from ..processing import dedup, normalize, prompts
+from ..processing import clustering, dedup, normalize, prompts
 from ..processing import profile as profile_mod
-from ..processing.llm import EmbeddingProvider, LlmError, LLMProvider
+from ..processing.embeddings import as_tensor
+from ..processing.llm import (
+    EmbeddingProvider,
+    LlmConfigError,
+    LlmError,
+    LLMProvider,
+    LlmTemporaryError,
+)
 from ..processing.pipeline import Draft, Pipeline
 from ..repositories import Database
 from ..utils import get_logger, sha256_text, to_utc_iso, utc_now
@@ -58,6 +65,10 @@ class ProcessingReport:
     failed: int = 0
     elapsed_s: float = 0.0
     latencies_ms: list[int] = field(default_factory=list)
+    # Вторая дедупликация после прогона: сколько предложений «вероятный дубль»
+    # записано и какие карточки этот прогон создал (они и кластеризуются).
+    duplicates_proposed: int = 0
+    new_item_ids: list[int] = field(default_factory=list)
 
     @property
     def avg_latency_ms(self) -> int:
@@ -317,6 +328,8 @@ class ProcessingService:
             report.processed += 1
             publish()
         check_stop()
+        # Карточки записаны — теперь среди них ищутся дубли, которые S1 пропустил.
+        report.duplicates_proposed = self._propose_duplicates(report.new_item_ids, progress_run_id)
         report.elapsed_s = time.monotonic() - started
         return report
 
@@ -330,7 +343,10 @@ class ProcessingService:
         window = self._window_start()
         # Пул кандидатов готовится один раз на прогон, а не на каждый документ:
         # векторы раскодированы, матрица нормирована, косинусы считаются пачкой.
-        candidates = dedup.pool(self.db.documents.clustered_candidates(since=window))
+        candidates = dedup.pool(
+            self.db.documents.clustered_candidates(since=window),
+            width=self.config.embeddings.dimensions or None,
+        )
         texts: list[str] = []
         pending: list[_Unit] = []
 
@@ -371,7 +387,10 @@ class ProcessingService:
                 )
                 if len(unit.norm_text) > len(sibling.norm_text):
                     # The fullest version is the canonical one (spec: «за канонический
-                    # текст берётся самый полный / первоисточник»).
+                    # текст берётся самый полный / первоисточник»). Прежний канонический
+                    # документ сохраняет свои simhash и вектор до подмены: иначе они
+                    # терялись, и он не мог служить кандидатом для следующих перепечаток.
+                    self._persist_derived(sibling)
                     sibling.document_id, sibling.document = unit.document_id, unit.document
                     sibling.norm_text, sibling.simhash = unit.norm_text, unit.simhash
                     sibling.embedding = unit.embedding
@@ -395,14 +414,95 @@ class ProcessingService:
         return None
 
     def _embed(self, texts: list[str]) -> list[list[float]]:
-        """One batched call; failure degrades S1 to URL + SimHash, never stops the run."""
-        if not self.embedder or not texts:
+        """Один батчевый вызов. Без эмбеддингов S1 идёт по URL и SimHash — и говорит об этом.
+
+        Неверная конфигурация модели (`LlmConfigError`: нет файлов, не та
+        размерность, неизвестное устройство) останавливает прогон, как и у
+        языковой модели. Временный сбой (память ускорителя) — ошибка в логе, а не
+        предупреждение: перепечатки другими словами в этом прогоне дадут лишние
+        карточки, и об этом надо знать.
+        """
+        if not texts:
+            return []
+        if self.embedder is None:
+            if self.config.embeddings.enabled:
+                log.error(
+                    "провайдер эмбеддингов (%s) не собран: S1 идёт только по URL и SimHash",
+                    self.config.embeddings.provider,
+                )
             return []
         try:
             return self.embedder.embed(texts)
-        except LlmError as e:
-            log.warning("эмбеддинги недоступны (%s): кластеризация только по SimHash", e)
+        except LlmConfigError:
+            raise
+        except LlmTemporaryError as e:
+            log.error(
+                "эмбеддинги не посчитались (%s): S1 в этом прогоне только по URL и SimHash", e
+            )
             return []
+
+    def recluster(self) -> int:
+        """Пересчитать «вероятные дубли» по всем карточкам окна, не только свежим.
+
+        Нужно после смены настроек `clustering`: прогон кластеризует лишь то, что
+        сам создал, а уже существующие карточки без свежего соседа не трогает.
+        Уже висящие и отклонённые предложения не дублируются.
+        """
+        cfg = self.config.clustering
+        since = to_utc_iso(utc_now() - timedelta(days=cfg.window_days))
+        rows = self.db.items.clustering_pool(since=since, limit=cfg.max_pool)
+        return self._propose_duplicates([int(row["id"]) for row in rows], run_id=None)
+
+    def _propose_duplicates(self, fresh_ids: list[int], run_id: int | None) -> int:
+        """Вторая дедупликация: HDBSCAN по саммари свежих карточек и карточек окна.
+
+        S1 до модели экономит вызовы на перепечатках; здесь — после модели —
+        находятся уже созданные дубли (пересказ другими словами). Результат —
+        предложение «вероятный дубль» на каждой карточке группы, объединяет
+        аналитик. НПА в пул не попадают. Сбой здесь не роняет прогон (карточки
+        уже записаны), но и не молчит — это ошибка в логе.
+        """
+        cfg = self.config.clustering
+        if not cfg.enabled or not fresh_ids:
+            return 0
+        if self.embedder is None:
+            if self.config.embeddings.enabled:
+                log.error("кластеризация карточек пропущена: провайдер эмбеддингов не собран")
+            return 0
+        since = to_utc_iso(utc_now() - timedelta(days=cfg.window_days))
+        rows = self.db.items.clustering_pool(since=since, limit=cfg.max_pool, include_ids=fresh_ids)
+        if len(rows) < 2:
+            return 0
+        ids = [int(row["id"]) for row in rows]
+        texts = [f"{row['title']}\n{row['summary']}".strip() for row in rows]
+        try:
+            # Векторы считаются один раз и живут тензором до конца шага.
+            matrix = as_tensor(self.embedder, texts)
+            groups = clustering.find_groups(ids, matrix, cfg)
+        except (LlmError, RuntimeError, ValueError) as e:
+            log.error("кластеризация карточек не удалась: %s", e)
+            return 0
+        fresh = set(fresh_ids)
+        written = 0
+        with self.db.transaction():
+            for group in groups:
+                if not fresh & set(group.item_ids):
+                    continue  # старые карточки без новых соседей уже показывались
+                for item_id in group.item_ids:
+                    if self.items.propose_duplicate(
+                        item_id,
+                        group.partners(item_id),
+                        similarity=group.similarity,
+                        run_id=run_id,
+                    ):
+                        written += 1
+        log.info(
+            "кластеризация карточек: %d карточек, %d групп, %d предложений «вероятный дубль»",
+            len(ids),
+            len(groups),
+            written,
+        )
+        return written
 
     def _draft_all(self, units: list[_Unit], company: CompanyProfile, on_ready=None) -> None:
         """The slow part: one model call per cluster, bounded by processing.concurrency."""
@@ -510,6 +610,7 @@ class ProcessingService:
                     published_at=unit.document.published_at,
                 )
                 item_id = self.db.items.add(item)
+                report.new_item_ids.append(item_id)
                 self.db.tags.set_tags(item_id, draft.tags, is_manual=False)
                 self.items.record_model_revisions(item_id, item)
                 self.db.items.add_entities(item_id, self._entities(draft, unit.norm_text))
@@ -849,9 +950,19 @@ class ProcessingService:
         }
 
     def close(self) -> None:
-        closer = getattr(self.provider, "close", None)
-        if callable(closer):
-            closer()
+        """Закрыть провайдер модели и эмбеддер; общий объект закрывается один раз.
+
+        Сравнение по `is`, а не через множество: провайдеры — dataclass'ы, и
+        хэшировать их нельзя.
+        """
+        closed: list = []
+        for owned in (self.provider, self.embedder):
+            if owned is None or any(owned is done for done in closed):
+                continue
+            closed.append(owned)
+            closer = getattr(owned, "close", None)
+            if callable(closer):
+                closer()
 
 
 def run_in_background(
@@ -860,6 +971,7 @@ def run_in_background(
     run_id: int,
     params: dict,
     provider: LLMProvider | None = None,
+    embedder: EmbeddingProvider | None = None,
 ) -> None:
     """Прогон после ответа `POST /processing/runs`: своё соединение, общий провайдер.
 
@@ -868,7 +980,7 @@ def run_in_background(
     """
     db = Database(paths.db_path)
     try:
-        service = ProcessingService(config, db, provider=provider, embedder=provider)
+        service = ProcessingService(config, db, provider=provider, embedder=embedder)
         service.run(run_id=run_id, trigger="api", **params)
     except Exception as e:  # фоновая задача не должна ронять процесс
         log.error("прогон обработки #%s завершился ошибкой: %s", run_id, e)

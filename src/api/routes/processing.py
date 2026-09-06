@@ -6,7 +6,13 @@ from typing import Annotated
 
 from fastapi import APIRouter, BackgroundTasks, Path, Query, status
 
-from ...dependencies import ConfigDep, LLMProviderDep, PathsDep, ProcessingServiceDep
+from ...dependencies import (
+    ConfigDep,
+    EmbedderDep,
+    LLMProviderDep,
+    PathsDep,
+    ProcessingServiceDep,
+)
 from ...models.requests import ProcessingRunRequest
 from ...models.responses import (
     ProcessingRunListResponse,
@@ -49,6 +55,7 @@ def start_run(
     config: ConfigDep,
     paths: PathsDep,
     provider: LLMProviderDep,
+    embedder: EmbedderDep,
 ) -> ProcessingRunResponse:
     run = service.enqueue(
         limit=payload.limit,
@@ -60,7 +67,9 @@ def start_run(
         trigger="api",
     )
     # Прогон идёт после ответа на своём соединении; провайдер модели — общий на процесс.
-    background.add_task(run_in_background, config, paths, run.id, run.params, provider)
+    background.add_task(
+        run_in_background, config, paths, run.id, run.params, provider, embedder
+    )
     return ProcessingRunResponse.from_domain(run)
 
 

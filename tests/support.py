@@ -90,6 +90,9 @@ def default_raw_config() -> dict:
         # the one key they are about.
         "llm": {},
         "processing": {"concurrency": 1},
+        # Тесты подменяют эмбеддер явно (`embedder=...`); локальная модель весит
+        # гигабайты и в тестах не грузится, поэтому провайдер здесь выключен.
+        "embeddings": {"provider": "off"},
     }
 
 

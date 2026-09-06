@@ -229,6 +229,7 @@ class FeedService:
                 "needs_review": bool(row["needs_review"]),
                 "date_estimated": bool(row["date_estimated"]),
                 "edited": bool(_json_list(row["manual_overrides"])),
+                "duplicate": bool(row.get("duplicate_flag")),
             },
         }
 

@@ -136,6 +136,68 @@ class ProcessingConfig:
     )
 
 
+EMBEDDING_PROVIDERS = ("local", "ollama", "off")
+EMBEDDING_DEVICES = ("auto", "mps", "cuda", "cpu")
+EMBEDDING_DTYPES = ("auto", "bfloat16", "float16", "float32")
+REDUCTIONS = ("none", "pca", "umap")
+CLUSTER_SELECTION = ("eom", "leaf")
+
+
+@dataclass(frozen=True)
+class EmbeddingsConfig:
+    """Откуда берутся эмбеддинги для S1 и для кластеризации карточек.
+
+    `local` — модель sentence-transformers на этой машине (по умолчанию
+    `ai-sage/Giga-Embeddings-instruct`, 2048 измерений); `ollama` — прежний
+    облачный путь через `llm.host` и `llm.embed_model` (нужен ключ); `off` —
+    эмбеддингов нет, S1 работает только по URL и SimHash и говорит об этом в логе.
+    """
+
+    provider: str = "local"
+    model: str = "ai-sage/Giga-Embeddings-instruct"
+    device: str = "auto"  # auto: cuda → mps → cpu
+    dtype: str = "auto"  # auto: bfloat16 на cuda/mps, float32 на cpu
+    batch_size: int = 16
+    max_seq_length: int = 1024  # токенов на текст; S1 и так режет текст до 2000 символов
+    dimensions: int = 2048  # ожидаемая длина вектора; 0 — не проверять
+    # Инструкция instruct-модели, одна для обеих сторон сравнения. На парах
+    # «дубль / не дубль» она раздвигает косинусы: дубли ≥ 0.91, не-дубли ≤ 0.80,
+    # и порог S1 0.86 попадает в середину зазора; без неё дубли начинаются с 0.795
+    # и половина парафразов до 0.86 не дотягивает. Пусто — режим документа.
+    prompt: str = "Instruct: Retrieve news that report the same event\nQuery: "
+
+    @property
+    def enabled(self) -> bool:
+        return self.provider != "off"
+
+
+@dataclass(frozen=True)
+class ClusteringConfig:
+    """Вторая дедупликация: HDBSCAN по эмбеддингам саммари после прогона.
+
+    Находит группы уже созданных карточек-дублей без фиксированного порога
+    косинуса. Кластер — это предложение «вероятный дубль», а не автосклейка:
+    объединение подтверждает аналитик. НПА не кластеризуются никогда.
+    """
+
+    enabled: bool = True
+    min_cluster_size: int = 2  # группа дублей — это уже пара; калибровка на золотом наборе
+    min_samples: int = 1  # плотность: чем больше, тем консервативнее (больше шума)
+    cluster_selection_method: str = "eom"  # eom: устойчивые группы, leaf: самые мелкие
+    cluster_selection_epsilon: float = 0.0  # 0 — без склейки соседних кластеров
+    # Нижний край зоны «вероятный дубль»: внутри кластера HDBSCAN остаются только
+    # связные компоненты по косинусу ≥ этого. Сам HDBSCAN считает кластером любую
+    # пару взаимных ближайших соседей (плотность у него относительная) и тянет в
+    # плотную группу всё, что «уронил» по дороге к её ядру. Верхний край зоны —
+    # `processing.cosine_threshold`: там S1 склеивает сам, без вопроса.
+    min_similarity: float = 0.7
+    reduction: str = "pca"  # none | pca | umap (umap — необязательная зависимость)
+    n_components: int = 32  # размерность после снижения; 0 — без снижения
+    window_days: int = 7  # свежие карточки сравниваются с карточками этого окна
+    max_pool: int = 500  # не больше стольких карточек окна за один прогон
+    seed: int = 0  # детерминизм UMAP/PCA
+
+
 @dataclass(frozen=True)
 class ApiConfig:
     """Доменные настройки HTTP-слоя. Адрес, порт и /docs — в `Settings` (окружение)."""
@@ -150,6 +212,8 @@ _SECTIONS = {
     "tavily": TavilyConfig,
     "llm": LLMConfig,
     "processing": ProcessingConfig,
+    "embeddings": EmbeddingsConfig,
+    "clustering": ClusteringConfig,
     "api": ApiConfig,
 }
 
@@ -185,6 +249,8 @@ class Config:
     tavily: TavilyConfig
     llm: LLMConfig = field(default_factory=LLMConfig)
     processing: ProcessingConfig = field(default_factory=ProcessingConfig)
+    embeddings: EmbeddingsConfig = field(default_factory=EmbeddingsConfig)
+    clustering: ClusteringConfig = field(default_factory=ClusteringConfig)
     api: ApiConfig = field(default_factory=ApiConfig)
     raw: dict = field(default_factory=dict, repr=False)
 
@@ -279,6 +345,52 @@ class Config:
         if pr.borderline_low > pr.borderline_high:
             raise ConfigError(
                 "config.yaml: processing.borderline_low must be <= borderline_high"
+            )
+        em = self.embeddings
+        if em.provider not in EMBEDDING_PROVIDERS:
+            raise ConfigError(
+                f"config.yaml: embeddings.provider must be one of {list(EMBEDDING_PROVIDERS)}, "
+                f"got '{em.provider}'"
+            )
+        if em.provider == "local" and not str(em.model).strip():
+            raise ConfigError("config.yaml: embeddings.model must be non-empty for provider 'local'")
+        if em.device not in EMBEDDING_DEVICES:
+            raise ConfigError(
+                f"config.yaml: embeddings.device must be one of {list(EMBEDDING_DEVICES)}, "
+                f"got '{em.device}'"
+            )
+        if em.dtype not in EMBEDDING_DTYPES:
+            raise ConfigError(
+                f"config.yaml: embeddings.dtype must be one of {list(EMBEDDING_DTYPES)}, "
+                f"got '{em.dtype}'"
+            )
+        if em.batch_size < 1 or em.max_seq_length < 1 or em.dimensions < 0:
+            raise ConfigError(
+                "config.yaml: embeddings.batch_size and max_seq_length must be >= 1, "
+                "dimensions >= 0"
+            )
+        cl = self.clustering
+        if cl.min_cluster_size < 2 or cl.min_samples < 1:
+            raise ConfigError(
+                "config.yaml: clustering.min_cluster_size must be >= 2 and min_samples >= 1"
+            )
+        if cl.cluster_selection_method not in CLUSTER_SELECTION:
+            raise ConfigError(
+                "config.yaml: clustering.cluster_selection_method must be one of "
+                f"{list(CLUSTER_SELECTION)}, got '{cl.cluster_selection_method}'"
+            )
+        if cl.cluster_selection_epsilon < 0:
+            raise ConfigError("config.yaml: clustering.cluster_selection_epsilon must be >= 0")
+        if not 0 <= cl.min_similarity <= 1:
+            raise ConfigError("config.yaml: clustering.min_similarity must be within [0, 1]")
+        if cl.reduction not in REDUCTIONS:
+            raise ConfigError(
+                f"config.yaml: clustering.reduction must be one of {list(REDUCTIONS)}, "
+                f"got '{cl.reduction}'"
+            )
+        if cl.n_components < 0 or cl.window_days < 1 or cl.max_pool < 2:
+            raise ConfigError(
+                "config.yaml: clustering.n_components >= 0, window_days >= 1 and max_pool >= 2"
             )
         try:
             ZoneInfo(self.api.timezone)

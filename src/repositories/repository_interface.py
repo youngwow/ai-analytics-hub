@@ -249,6 +249,24 @@ class ItemRepository(ABC):
         """The newest value the model proposed for a field — what `revert` restores."""
 
     @abstractmethod
+    def last_revision(self, item_id: int, field: str) -> ItemRevision | None:
+        """Последняя ревизия поля любого происхождения."""
+
+    @abstractmethod
+    def clustering_pool(
+        self, since: str | None, limit: int, include_ids: Iterable[int] = ()
+    ) -> list[sqlite3.Row]:
+        """Новости окна плюс указанные карточки — пул второй дедупликации."""
+
+    @abstractmethod
+    def move_sources(self, from_item: int, to_item: int) -> int:
+        """Перевесить публикации на другую карточку; вернуть число новых связей."""
+
+    @abstractmethod
+    def mark_merged(self, item_id: int, target_id: int) -> None:
+        """Поглощённая карточка: `deleted` с причиной «объединена с #N»."""
+
+    @abstractmethod
     def edited_share(self, since: str | None = None) -> float:
         """Share of cards an analyst touched — the honest proxy for model quality."""
 
