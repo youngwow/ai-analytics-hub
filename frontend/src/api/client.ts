@@ -1,4 +1,5 @@
 import type { CollectionStatus, CollectionRunRequest, ProcessingStatus, ProcessingRun, ProcessingRunRequest, NpaEventCreate, Digest, Documents, Facets, Feed, FeedQuery, Filters, Health, Item, ItemCard, ItemCreate, ItemUpdate, ManualResult, Note, Probe, Revision, Source, SourceCreate, SourceHealth, SourceRun, SourceUpdate, Status, Visibility } from './types'
+import type { BulkItemsResult, CompanyProfile, DocumentQuery, Quality } from './types'
 
 export class ApiError extends Error {
   constructor(message: string, public status = 0, public code = '', public details?: Record<string, unknown>) { super(message); this.name = 'ApiError' }
@@ -12,7 +13,7 @@ export function queryString(query: object = {}) {
   return params.size ? `?${params}` : ''
 }
 export const apiBase = (import.meta.env.VITE_API_BASE_URL || '/api/v1').replace(/\/$/, '')
-export async function request<T>(path: string, options: { method?: string; body?: unknown; query?: object; signal?: AbortSignal; timeout?: number; acceptDegradedHealth?: boolean } = {}): Promise<T> {
+export async function request<T>(path: string, options: { method?: string; body?: unknown; query?: object; signal?: AbortSignal; timeout?: number; acceptDegradedHealth?: boolean; text?: boolean; accept?: string } = {}): Promise<T> {
   const controller = new AbortController()
   const abort = () => controller.abort()
   if (options.signal?.aborted) abort()
@@ -21,10 +22,14 @@ export async function request<T>(path: string, options: { method?: string; body?
   try {
     const response = await fetch(`${apiBase}${path}${queryString(options.query)}`, {
       method: options.method ?? 'GET', signal: controller.signal,
-      headers: { Accept: 'application/json', ...(options.body === undefined ? {} : { 'Content-Type': 'application/json' }) },
+      headers: { Accept: options.accept ?? 'application/json', ...(options.body === undefined ? {} : { 'Content-Type': 'application/json' }) },
       ...(options.body === undefined ? {} : { body: JSON.stringify(options.body) }),
     })
     if (response.status === 204) return undefined as T
+    if (response.ok && options.text) {
+      if (options.accept && response.headers.get('Content-Type')?.split(';')[0]?.trim() !== options.accept) throw new ApiError('Сервер вернул неверный формат экспорта. Проверьте подключение API.', response.status)
+      return await response.text() as T
+    }
     let body: unknown
     try { body = await response.json() } catch {
       throw new ApiError(response.ok ? 'Сервер вернул неверный формат данных. Проверьте подключение API.' : `Ошибка сервера (${response.status}).`, response.status)
@@ -51,12 +56,19 @@ function isHealth(value: unknown): value is Health {
 }
 const post = <T>(path: string, body?: unknown, timeout?: number) => request<T>(path, { method: 'POST', body, timeout })
 export const api = {
+  profiles: () => request<{ profiles: CompanyProfile[] }>('/profiles'),
+  activeProfile: () => request<CompanyProfile>('/profiles/active'),
+  profile: (id: number) => request<CompanyProfile>(`/profiles/${id}`),
+  saveProfile: (name: string, payload: Record<string, unknown>) => post<CompanyProfile>('/profiles', { name, payload }),
+  activateProfile: (id: number) => post<CompanyProfile>(`/profiles/${id}/default`),
+  quality: (query: { since?: string; until?: string } = {}, signal?: AbortSignal) => request<Quality>('/processing/quality', { query, signal }),
   processing: () => request<ProcessingStatus>('/processing'),
   processingRuns: () => request<{ runs: ProcessingRun[] }>('/processing/runs', { query: { limit: 20 } }),
   processingRun: (id: number) => request<ProcessingRun>(`/processing/runs/${id}`),
   startProcessing: (body: ProcessingRunRequest) => post<ProcessingRun>('/processing/runs', body),
+  stopProcessing: (id: number) => post<ProcessingRun>(`/processing/runs/${id}/stop`),
   collection: () => request<CollectionStatus>('/collection'),
-  startCollection: (interval_seconds: number) => post<CollectionStatus>('/collection/start', { interval_seconds }),
+  startCollection: (interval_seconds: number, date_window_hours?: number) => post<CollectionStatus>('/collection/start', { interval_seconds, ...(date_window_hours === undefined ? {} : { date_window_hours }) }),
   stopCollection: () => post<CollectionStatus>('/collection/stop'),
   collect: (body: CollectionRunRequest) => post<CollectionStatus>('/collection/runs', body),
   addEvent: (id: number, body: NpaEventCreate) => post<ItemCard['events'][number]>(`/items/${id}/events`, body),
@@ -66,7 +78,7 @@ export const api = {
   filters: () => request<Filters>('/filters'), status: () => request<Status>('/status'),
   feed: (query: FeedQuery, signal?: AbortSignal) => request<Feed>('/items', { query, signal }),
   facets: (query: FeedQuery, signal?: AbortSignal) => request<Facets>('/items/facets', { query, signal }),
-  documents: (query: FeedQuery, signal?: AbortSignal) => request<Documents>('/documents', { query, signal }),
+  documents: (query: DocumentQuery, signal?: AbortSignal) => request<Documents>('/documents', { query, signal }),
   card: (id: number) => request<ItemCard>(`/items/${id}`),
   createItem: (body: ItemCreate) => post<ManualResult>('/items', body, 120000),
   editItem: (id: number, body: ItemUpdate) => request<{ item: Item; manual_overrides: string[] }>(`/items/${id}`, { method: 'PATCH', body }),
@@ -75,6 +87,12 @@ export const api = {
   deleteItem: (id: number) => request<{ id: number; visibility: Visibility }>(`/items/${id}`, { method: 'DELETE' }),
   restoreItem: (id: number) => post<{ id: number; visibility: Visibility }>(`/items/${id}/restore`),
   bulk: (item_ids: number[], scope: 'feed' | 'digest' | 'visible', reason: string) => post<{ changed: number; scope: string }>('/items/bulk', { item_ids, scope, reason }),
+  bulkTags: (item_ids: number[], add: string[], remove: string[]) => post<BulkItemsResult>('/items/tags/bulk', { item_ids, add, remove }),
+  bulkArchive: (item_ids: number[], archived: boolean) => post<BulkItemsResult>('/items/archive/bulk', { item_ids, archived }),
+  exportFeed: (format: 'csv' | 'rss', query: FeedQuery) => request<string>(format === 'csv' ? '/export/items.csv' : '/export/feed.xml', {
+    query: { ...query, limit: 200, cursor: undefined, include_hidden: false, archived: 'exclude' }, text: true,
+    accept: format === 'csv' ? 'text/csv' : 'application/rss+xml',
+  }),
   revisions: (id: number) => request<{ revisions: Revision[] }>(`/items/${id}/revisions`),
   revert: (id: number, field: string) => post<{ item: Item; manual_overrides: string[] }>(`/items/${id}/revert`, { field }),
   merge: (id: number, item_ids: number[], reason = '') => post<{ item: Item; absorbed: number[]; sources_count: number }>(`/items/${id}/merge`, { item_ids, reason }),

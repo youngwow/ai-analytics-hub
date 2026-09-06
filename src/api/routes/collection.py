@@ -21,7 +21,7 @@ def collection_status(service: CollectionServiceDep) -> CollectionStatusResponse
 def start_collection(
     payload: CollectionStartRequest, service: CollectionServiceDep
 ) -> CollectionStatusResponse:
-    return CollectionStatusResponse.model_validate(service.start(payload.interval_seconds))
+    return CollectionStatusResponse.model_validate(service.start(payload.interval_seconds, payload.date_window_hours))
 
 
 @router.post("/stop", response_model=CollectionStatusResponse, summary="Остановить автоматический мониторинг")
@@ -53,5 +53,6 @@ def run_collection(
         source_ids=payload.source_ids,
         backfill=payload.backfill,
         force=payload.force,
+        **({"date_window_hours": payload.date_window_hours} if payload.date_window_hours is not None else {}),
     )
     return CollectionStatusResponse.model_validate(service.status())

@@ -545,11 +545,15 @@ class ProcessingRunResponse(BaseModel):
     error: str
     heartbeat_at: str | None
     progress: float | None
+    stop_requested: bool = False
+    stopped: bool = False
 
     @classmethod
     def from_domain(cls, run: ProcessingRun) -> ProcessingRunResponse:
         share = round(run.processed / run.documents, 3) if run.documents else None
-        return cls(**asdict(run), progress=min(share, 1.0) if share is not None else None)
+        return cls(**asdict(run), progress=min(share, 1.0) if share is not None else None,
+                   stop_requested=bool(run.params.get("stop_requested")),
+                   stopped=bool(run.params.get("stopped")))
 
 
 class ProcessingRunListResponse(BaseModel):
@@ -635,6 +639,7 @@ class CollectionStatusResponse(BaseModel):
     running: bool
     busy: bool
     interval_seconds: int
+    date_window_hours: int = 72
     started_at: str | None
     next_tick_at: str | None
     cycles: int

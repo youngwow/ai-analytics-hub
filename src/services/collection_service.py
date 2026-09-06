@@ -10,6 +10,7 @@
 from __future__ import annotations
 
 import threading
+from dataclasses import replace
 from datetime import timedelta
 from typing import Callable
 
@@ -46,8 +47,13 @@ def run_collection_cycle(
     source_ids: list[int] | None = None,
     backfill: bool = False,
     force: bool = False,
+    date_window_hours: int | None = None,
 ) -> CollectReport:
     """Один проход коллектора на своём соединении (поток — не тот, что у запроса)."""
+    if date_window_hours is not None:
+        if date_window_hours < 1:
+            raise CollectionValidationError("date_window_hours должен быть не меньше 1")
+        config = replace(config, scraper=replace(config.scraper, date_window_hours=date_window_hours))
     if not _CYCLE_LOCK.acquire(blocking=False):
         raise CollectionBusyError()
     try:
@@ -84,6 +90,7 @@ class CollectionWatcher:
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
         self._guard = threading.Lock()
+        self.date_window_hours: int | None = None
         self.interval_seconds = DEFAULT_INTERVAL_SECONDS
         self.started_at: str | None = None
         self.next_tick_at: str | None = None
@@ -95,7 +102,7 @@ class CollectionWatcher:
     def running(self) -> bool:
         return self._thread is not None and self._thread.is_alive()
 
-    def start(self, interval_seconds: int = DEFAULT_INTERVAL_SECONDS) -> None:
+    def start(self, interval_seconds: int = DEFAULT_INTERVAL_SECONDS, *, date_window_hours: int | None = None) -> None:
         if interval_seconds < MIN_INTERVAL_SECONDS:
             raise CollectionValidationError(
                 f"interval_seconds должен быть не меньше {MIN_INTERVAL_SECONDS}"
@@ -103,6 +110,7 @@ class CollectionWatcher:
         with self._guard:
             if self.running:
                 raise CollectionRunningError()
+            self.date_window_hours = date_window_hours
             self.interval_seconds = int(interval_seconds)
             self._stop.clear()
             self.started_at = to_utc_iso(utc_now())
@@ -171,12 +179,15 @@ class CollectionService:
         latest = self.db.runs.latest()
         return {
             **self.watcher.status(),
+            "date_window_hours": self.watcher.date_window_hours or self.config.scraper.date_window_hours,
             "due_sources": len(scheduler.due(self.db)),
             "last_collect": dict(latest) if latest else None,
         }
 
-    def start(self, interval_seconds: int = DEFAULT_INTERVAL_SECONDS) -> dict:
-        self.watcher.start(interval_seconds)
+    def start(self, interval_seconds: int = DEFAULT_INTERVAL_SECONDS, date_window_hours: int | None = None) -> dict:
+        if date_window_hours is not None and date_window_hours < 1:
+            raise CollectionValidationError("date_window_hours должен быть не меньше 1")
+        self.watcher.start(interval_seconds, date_window_hours=date_window_hours or self.config.scraper.date_window_hours)
         log.info("автоматический мониторинг запущен: каждые %d с", interval_seconds)
         return self.status()
 

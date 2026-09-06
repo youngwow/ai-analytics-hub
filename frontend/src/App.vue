@@ -6,9 +6,10 @@ import NpaTracker from './components/NpaTracker.vue'
 import DigestView from './components/DigestView.vue'
 import SourcesPanel from './components/SourcesPanel.vue'
 import StatusView from './components/StatusView.vue'
+import ProfilesView from './components/ProfilesView.vue'
 import { createDashboard, dashboardKey } from './composables/dashboard'
 import { formatDate } from './utils/dashboard'
-type Section = 'feed' | 'npa' | 'digest' | 'sources' | 'status'
+type Section = 'feed' | 'npa' | 'digest' | 'sources' | 'status' | 'profiles'
 const store = createDashboard(); provide(dashboardKey, store)
 const { dark, search, health, status, error, loading, activeSources } = store
 const nav: { id: Section; label: string; title: string; icon: string }[] = [
@@ -17,8 +18,9 @@ const nav: { id: Section; label: string; title: string; icon: string }[] = [
   { id: 'digest', label: 'Дайджест', title: 'Дайджест', icon: 'digest' },
   { id: 'sources', label: 'Источники', title: 'Источники данных', icon: 'sources' },
   { id: 'status', label: 'Сбор и обработка', title: 'Сбор и обработка', icon: 'refresh' },
+  { id: 'profiles', label: 'Профиль компании', title: 'Профили компании', icon: 'sources' },
 ]
-const views = { feed: NewsFeed, npa: NpaTracker, digest: DigestView, sources: SourcesPanel, status: StatusView }
+const views = { feed: NewsFeed, npa: NpaTracker, digest: DigestView, sources: SourcesPanel, status: StatusView, profiles: ProfilesView }
 const currentHash = (): Section => nav.some(item => item.id === location.hash.slice(1)) ? location.hash.slice(1) as Section : 'feed'
 const section = ref(currentHash()); const mobileNav = ref(false); const notifications = ref(false)
 const title = computed(() => nav.find(item => item.id === section.value)!.title)
@@ -42,7 +44,7 @@ onUnmounted(() => { window.removeEventListener('hashchange', syncHash); window.r
       <div class="px-4 py-3 border-t text-[11px] text-muted">Рабочее пространство аналитика<br /><span class="text-[10px]">Вход в аккаунт — скоро</span></div>
     </aside>
     <div class="flex flex-col flex-1 min-w-0 min-h-0">
-      <header class="topbar"><button class="icon-button menu-toggle" aria-label="Открыть навигацию" aria-controls="sidebar" :aria-expanded="mobileNav" @click="mobileNav = !mobileNav"><AppIcon name="feed" /></button><h1 class="header-title flex-1 font-semibold text-[14px]">{{ title }}</h1><label class="search-box"><AppIcon name="search" :size="12" /><input v-model="search" type="search" aria-label="Поиск в текущем разделе" placeholder="Поиск, теги, сущности…" /></label><button class="icon-button" aria-label="Обновить данные" :disabled="loading" @click="store.changed()"><AppIcon name="refresh" :size="14" /></button><button class="icon-button" :aria-label="dark ? 'Светлая тема' : 'Тёмная тема'" :aria-pressed="dark" @click="dark = !dark"><AppIcon :name="dark ? 'sun' : 'moon'" :size="14" /></button><div class="relative"><button class="icon-button relative" aria-label="Уведомления" :aria-expanded="notifications" @click="notifications = !notifications"><AppIcon name="bell" :size="14" /><span v-if="status?.stale_sources.length" class="notification-dot" /></button><div v-if="notifications" id="notifications" class="notification-panel"><strong>Состояние источников</strong><p v-if="!status" class="text-muted mt-2">Данные недоступны</p><p v-else-if="!status.stale_sources.length" class="text-muted mt-2">Просроченных источников нет</p><button v-for="source in status?.stale_sources ?? []" :key="source.id" class="notification-item" @click="navigate('sources'); search = source.name">{{ source.name }} · задержка {{ source.overdue_minutes }} мин.<br />{{ source.last_error }}</button></div></div></header>
+      <header class="topbar"><button class="icon-button menu-toggle" aria-label="Открыть навигацию" aria-controls="sidebar" :aria-expanded="mobileNav" @click="mobileNav = !mobileNav"><AppIcon name="feed" /></button><h1 class="header-title flex-1 font-semibold text-[14px]">{{ title }}</h1><label class="search-box"><AppIcon name="search" :size="12" /><input v-model="search" type="search" aria-label="Поиск в текущем разделе" placeholder="Поиск, # карточки, теги…" /></label><button class="icon-button" aria-label="Обновить данные" :disabled="loading" @click="store.changed()"><AppIcon name="refresh" :size="14" /></button><button class="icon-button" :aria-label="dark ? 'Светлая тема' : 'Тёмная тема'" :aria-pressed="dark" @click="dark = !dark"><AppIcon :name="dark ? 'sun' : 'moon'" :size="14" /></button><div class="relative"><button class="icon-button relative" aria-label="Уведомления" :aria-expanded="notifications" @click="notifications = !notifications"><AppIcon name="bell" :size="14" /><span v-if="status?.stale_sources.length" class="notification-dot" /></button><div v-if="notifications" id="notifications" class="notification-panel"><strong>Состояние источников</strong><p v-if="!status" class="text-muted mt-2">Данные недоступны</p><p v-else-if="!status.stale_sources.length" class="text-muted mt-2">Просроченных источников нет</p><button v-for="source in status?.stale_sources ?? []" :key="source.id" class="notification-item" @click="navigate('sources'); search = source.name">{{ source.name }} · задержка {{ source.overdue_minutes }} мин.<br />{{ source.last_error }}</button></div></div></header>
       <div v-if="error" class="storage-alert" role="alert"><span>{{ error }}</span><button class="text-link ml-auto" :disabled="loading" @click="store.refresh()">Повторить подключение</button></div>
       <main id="main-content" tabindex="-1" class="flex-1 min-h-0 overflow-hidden"><component :is="views[section]" /></main>
     </div>

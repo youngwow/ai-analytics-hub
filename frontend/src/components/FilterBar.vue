@@ -20,7 +20,7 @@ const value = (event: Event) => (event.target as HTMLInputElement).value
     <label v-if="archive" class="field-label">Архив<select class="form-control" :value="modelValue.archived ?? 'exclude'" @change="set('archived', value($event))"><option value="exclude">Без архивных</option><option value="only">Только архивные</option><option value="include">Включая архивные</option></select></label>
     <label class="field-label">С даты<input type="date" class="form-control" :value="modelValue.from ?? ''" @change="set('from', value($event) || undefined)" /></label>
     <label class="field-label">По дату<input type="date" class="form-control" :value="modelValue.to ?? ''" @change="set('to', value($event) || undefined)" /></label>
-    <label v-if="!documents" class="field-label">Порядок<select class="form-control" :value="modelValue.order ?? 'published'" @change="set('order', value($event))"><option value="published">По публикации</option><option value="priority">По приоритету</option><option value="processed">По обработке</option></select></label>
+    <label class="field-label">Порядок<select class="form-control" :value="modelValue.order ?? 'published'" @change="set('order', value($event))"><option value="published">По публикации</option><template v-if="!documents"><option value="priority">По приоритету</option><option value="processed">По обработке</option></template><option v-else value="fetched">По времени сбора</option></select></label>
     <button class="text-link self-end mb-2" @click="emit('update:modelValue', {})">Сбросить фильтры</button>
   </div>
 </template>

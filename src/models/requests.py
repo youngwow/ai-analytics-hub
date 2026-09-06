@@ -140,6 +140,7 @@ class ProcessingRunRequest(_Request):
 
 class CollectionStartRequest(_Request):
     interval_seconds: int = 900
+    date_window_hours: int | None = Field(default=None, ge=1)
 
 
 class CollectionRunRequest(_Request):
@@ -147,6 +148,7 @@ class CollectionRunRequest(_Request):
 
     source_ids: list[int] | None = None
     due_only: bool = False
+    date_window_hours: int | None = Field(default=None, ge=1)
     backfill: bool = False
     force: bool = False
 

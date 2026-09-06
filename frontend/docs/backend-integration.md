@@ -1,6 +1,6 @@
 # Frontend requirements and backend integration
 
-The frontend implements the HTTP surface currently defined in `src/api/routes/` at repository level. Backend files are read for contracts and are not changed by this integration. All paths below are relative to `/api/v1`.
+The frontend implements the HTTP surface currently defined in `src/api/routes/` at repository level. The frontend integration follows the existing backend contracts. The separately authorized LLM speed improvement changes the prompt and sets processing concurrency to three for Ollama Pro. All paths below are relative to `/api/v1`.
 
 ## Mapping to context/task.md
 
@@ -27,8 +27,12 @@ The frontend implements the HTTP surface currently defined in `src/api/routes/` 
 | --- | --- |
 | App metadata and connection | `GET /filters`, `GET /status`, `GET /health/ready`, `GET /health` |
 | Feed / NPA | `GET /items`, `GET /items/facets` |
-| Processing queue | `GET /documents` with source/text/date/limit filters and cursor pagination |
-| AI processing | `GET /processing`, `GET /processing/runs`, `POST /processing/runs`, `GET /processing/runs/{id}` |
+| Processing queue | `GET /documents` with source/text/date/limit filters, publication/collection-time sorting and cursor pagination; collection timestamps and document errors |
+| AI processing | `GET /processing`, `GET /processing/runs`, `POST /processing/runs` with selected profile and `only_failed`, `GET /processing/runs/{id}`; processed-document counters, progress and heartbeat |
+| Model quality | `GET /processing/quality` with optional reporting window; card flags, queue, edit share, latency, token usage and day/stage breakdowns |
+| Company profiles | `GET /profiles`, `GET /profiles/active`, `GET /profiles/{id}`, `POST /profiles`, `POST /profiles/{id}/default` |
+| Bulk tags and archive | `POST /items/tags/bulk`, `POST /items/archive/bulk` |
+| Feed exports | `GET /export/items.csv`, `GET /export/feed.xml`; current filters, at most 200 visible nonarchived records, no analyst notes |
 | Automatic / one-off collection | `GET /collection`, `POST /collection/start`, `POST /collection/stop`, `POST /collection/runs` |
 | Events and archive | `POST /items/{id}/events`, `POST /items/{id}/archive`, `POST /items/{id}/unarchive`; feed `archived=exclude/include/only` |
 | Manual addition / card / edit | `POST /items`, `GET /items/{id}`, `PATCH /items/{id}` |
@@ -45,17 +49,17 @@ The UI labels these capabilities as unavailable instead of simulating success:
 
 - Persisting/scheduling/emailing digests or producing server PDF reports.
 - Authentication and user profile details.
-- Listing/managing company profiles: a processing run can accept a known profile ID, or use the active profile when omitted.
+- Reprocessing an individual card, filtering the feed by incomplete processing, and merging duplicate cards: the backend does not expose these HTTP actions yet.
 
 The processing queue loads 20 documents at a time using the server cursor, resetting pagination when source/date/search filters change. A digest similarly contains at most 200 materials; a limit notice appears when reached. Source health displays the latest 20 runs.
 
 ## Validation boundaries
 
-Automated component tests use isolated HTTP fixtures to cover UI successes and failures. The separate live integration suite uses the actual TypeScript API client, Vite proxy and unchanged FastAPI server with an isolated SQLite database. It checks persisted material/source operations, filtering, revision history, notes, digests, visibility/restoration and local RSS collection. All temporary records are confined to the test database, which is deleted afterward.
+Automated component tests use isolated HTTP fixtures to cover UI successes and failures. The separate live integration suite uses the actual TypeScript API client, Vite proxy and FastAPI server with an isolated SQLite database. It checks persisted material/source operations, filtering, revision history, notes, digests, visibility/restoration and local RSS collection. All temporary records are confined to the test database, which is deleted afterward.
 
 External media/Telegram availability, paid search, LLM output quality, Docker networking and real-browser rendering require their corresponding services/runtime. They are not simulated as successful checks.
 
-Latest local validation: **122 frontend tests passed**, **59 live integration checks passed**, and **production build with Vue/TypeScript checking passed**.
+Latest local validation: **160 frontend tests passed**, **83 live integration checks passed**, and **production build with Vue/TypeScript checking passed**.
 
 ## Compatibility with the updated backend
 
@@ -67,7 +71,7 @@ The frontend supports the new processing, collection, event, archive and source-
 - Material PATCH requests omit unchanged fields and unchanged tag sets. A title edit therefore does not unnecessarily rewrite tag provenance or overwrite other fields. Saving an unchanged form makes no request.
 - Manual duplicate override appears only for the `possible_duplicate` machine code, rather than every HTTP 409 response.
 
-Live validation additionally covers malformed query HTTP 400, unknown request-field HTTP 422, name-only schedule preservation, content-hint clearing and failed RSS poll history. No file outside `frontend/` was changed for this update.
+Live validation additionally covers malformed query HTTP 400, unknown request-field HTTP 422, name-only schedule preservation, content-hint clearing and failed RSS poll history. All new backend-feature integration code is inside `frontend/`. The LLM speed work is separate: precomputed evidence coordinates in the prompt, a three-request concurrency setting, and backend regression tests.
 
 ## Background work and limits
 
@@ -80,3 +84,24 @@ Source edits send only changed fields. When changing a URL or type, an unchanged
 Archiving is independent of hide/delete and NPA lifecycle status. Archived items can be retrieved with the feed archive filter and restored in their card. Digest generation always excludes archived records, even if a caller asks to include them.
 
 The live suite additionally verifies event persistence/status advancement, archive filtering and digest exclusion, document cursor pages, source relocation with document retention, one-off collection, AI run completion without credentials, processing history, and monitor start/stop. All test records remain in temporary databases under `frontend/.cache/`.
+
+## September backend update
+
+Profile editing preserves unknown payload fields and saves through the backend versioning endpoint. Creating a profile with an existing name is blocked in the UI; users open that profile to edit it. Activating a profile affects future runs. Optional profile/quality failures do not disable processing.
+
+Quality date bounds apply to model-call telemetry. Card/queue counters describe current state, and edit share uses the start bound, matching the backend. These metrics are not accuracy scores. Quality refresh is manual; routine worker polling stays visually quiet.
+
+Bulk failures preserve the selection and tag draft. Successful edits refresh the feed and facets. Exports use the server's CSV/RSS response, validate its media type, and enforce visible/nonarchived scope even when the screen includes hidden or archived cards.
+
+Live integration now also verifies profile creation/versioning/activation, bulk tags/archive persistence, CSV/RSS content and note exclusion, collection-time cursors, processing progress/heartbeat, failed-only retries and quality windows. No external LLM requests are made by the test suite.
+
+## Digest, search and worker controls — 2026-09-07
+
+- Markdown digests render headings, lists, links, tables and code in a preview. Editing and download retain the Markdown source; JSON stays literal. Raw HTML is disabled and unsafe link protocols are rejected by the renderer.
+- Enter `#48` to find card 48 by its exact ID. Other feed filters, visibility rules, archive selection and facets still apply. Bare numbers retain normal text-search behavior.
+- Processing defaults to no limit (`limit: null`, or omitted): all matching documents present when the run starts. Enable the limit checkbox to send a positive integer instead. Newly collected documents wait for a subsequent run.
+- `POST /processing/runs/{id}/stop` persists a stop request. Already submitted documents finish and save their results; no additional documents are scheduled. The UI shows stopping until those requests finish, then permits a new run. Unprocessed documents remain in the queue. Repeated stop requests are safe, and completed runs are unchanged. The API adds `stop_requested` and `stopped`; stopped runs retain the existing database terminal status constraint and are identified by the explicit stopped flag.
+- Monitoring intervals are entered in whole minutes (minimum one); the frontend converts them to the existing seconds API contract.
+- Automatic and one-off collection each accept a lookback window in hours (`date_window_hours`, minimum one). The setting is scoped to the selected operation and does not rewrite global configuration. Backfill explicitly bypasses the age window. Source retention/pagination may limit how far back collection can reach; undated publications can still be included.
+
+Regression coverage includes cancellation before start and with concurrent work in flight, preservation/resumption of queued documents, a default run larger than 200 documents, ID searches and filters, collection-window propagation and rendered Markdown safety. Live integration collects a 96-hour-old local article with a 168-hour window and excludes it with a 24-hour window. Backend unit suite: 2,473 passed and 3 expected failures.

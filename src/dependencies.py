@@ -87,9 +87,11 @@ def get_collection_watcher() -> CollectionWatcher:
     """Наблюдатель сбора на весь процесс: один поток, состояние «запущен» — свойство процесса."""
     config, paths = get_config(), get_paths()
     key = load_env_secret(config.tavily.api_key_env, paths.env_path)
-    return CollectionWatcher(
-        lambda: run_collection_cycle(config, paths, tavily_key=key, due_only=True)
+    watcher = CollectionWatcher(
+        lambda: run_collection_cycle(config, paths, tavily_key=key, due_only=True,
+                                     date_window_hours=watcher.date_window_hours)
     )
+    return watcher
 
 
 LLMProviderDep = Annotated[OllamaProvider | None, Depends(get_llm_provider)]

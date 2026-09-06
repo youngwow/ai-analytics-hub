@@ -64,7 +64,7 @@ describe('processing and collection', () => {
     await h.launch('#status')
     expect(h.button('Обработать очередь ИИ').matches(':disabled')).toBe(false)
     await h.click('Обработать очередь ИИ')
-    expect(last('/processing/runs').body).toEqual({ limit: 10, force: false })
+    expect(last('/processing/runs').body).toEqual({ limit: null, force: false })
   })
   it('shows processing progress and terminal errors outside collapsed history', async () => {
     h.handle(call => call.url.pathname === '/api/v1/processing' ? json({ ...processing, running: null, last: { ...processingRun, status: 'failed', documents: 10, items_new: 2, error: 'chat: HTTP 401', finished_at: '2026-01-01T00:02:00Z' } }) : undefined)
@@ -75,7 +75,7 @@ describe('processing and collection', () => {
     expect(h.button('Обработать очередь ИИ').matches(':disabled')).toBe(false)
   })
   it('submits processing options and reports acceptance rather than completion', async () => {
-    await h.launch('#status'); await h.field('Лимит обработки', '12'); await h.field('Источник обработки', '1')
+    await h.launch('#status'); await h.app().findAll('label').find(label => label.text() === 'Ограничить количество документов')!.get('input').setValue(true); await h.field('Лимит обработки', '12'); await h.field('Источник обработки', '1')
     await h.click('Обработать очередь ИИ')
     expect(last('/processing/runs').body).toEqual({ limit: 12, source_id: 1, force: false })
     expect(h.app().text()).toContain('Запрос на обработку принят'); expect(h.app().text()).toContain('Модель недоступна')
@@ -98,13 +98,13 @@ describe('processing and collection', () => {
       if (call.url.pathname.endsWith('/stop')) running = false
       return json({ ...collection, running })
     })
-    await h.launch('#status'); await h.field('Интервал мониторинга, секунд', '60'); await h.click('Запустить автоматический мониторинг')
-    expect(last('/collection/start').body).toEqual({ interval_seconds: 60 }); expect(h.app().text()).toContain('Мониторинг включён')
+    await h.launch('#status'); await h.field('Интервал мониторинга, минут', '1'); await h.click('Запустить автоматический мониторинг')
+    expect(last('/collection/start').body).toEqual({ interval_seconds: 60, date_window_hours: 72 }); expect(h.app().text()).toContain('Мониторинг включён')
     await h.click('Остановить мониторинг'); expect(calls('/collection/stop')).toHaveLength(1); expect(h.app().text()).toContain('Мониторинг остановлен')
   })
   it('submits one-off collection options and does not invent collected counts', async () => {
     await h.launch('#status'); await h.field('Источник разового сбора', '1'); await h.click('Собрать сейчас')
-    expect(last('/collection/runs').body).toEqual({ source_ids: [1], due_only: false, backfill: false, force: false })
+    expect(last('/collection/runs').body).toEqual({ source_ids: [1], due_only: false, backfill: false, force: false, date_window_hours: 72 })
     expect(h.app().text()).toContain('Разовый сбор запрошен'); expect(h.app().text()).not.toContain('Последний цикл:')
   })
   it('displays background failures and disables collection while busy', async () => {

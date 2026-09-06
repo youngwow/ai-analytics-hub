@@ -452,7 +452,7 @@ def service(config, db, watcher) -> CollectionService:
 
 
 def test_status_of_an_idle_service_adds_zero_due_sources_and_no_last_collect(service):
-    assert service.status() == {**IDLE_STATUS, "due_sources": 0, "last_collect": None}
+    assert service.status() == {**IDLE_STATUS, "date_window_hours": 72, "due_sources": 0, "last_collect": None}
 
 
 def test_status_counts_the_due_sources_and_shows_the_last_collect(service, db):
@@ -558,7 +558,7 @@ def test_collection_status_of_an_idle_hub(client, fake_watcher):
     response = client.get("/api/v1/collection")
 
     assert response.status_code == 200
-    assert response.json() == {**IDLE_STATUS, "due_sources": 0, "last_collect": None}
+    assert response.json() == {**IDLE_STATUS, "date_window_hours": 72, "due_sources": 0, "last_collect": None}
 
 
 def test_start_answers_with_the_running_status(client, fake_watcher):
