@@ -14,10 +14,13 @@ import sqlite3
 
 import pytest
 
-from src.storage import Database
-from src.storage.db import _SCHEMA_V1, _SCHEMA_V2, _SCHEMA_V3
+from src.repositories import Database
+from src.repositories.database import _MIGRATIONS, _SCHEMA_V1, _SCHEMA_V2, _SCHEMA_V3
 
 NOW = "2026-09-02T12:00:00+00:00"
+# Этот файл — про наполнение индекса v4; следующие шаги едут следом, поэтому версия
+# сверяется с концом цепочки, а литерал новейшего шага живёт в `test_migration_v5.py`.
+CURRENT_VERSION = max(_MIGRATIONS)
 
 
 def _v3_connection(path: str) -> sqlite3.Connection:
@@ -149,7 +152,8 @@ def test_opening_a_v3_database_migrates_it_to_v4(v3_database):
     path, _ = v3_database
     db = Database(path)
     try:
-        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
+        assert CURRENT_VERSION >= 4
     finally:
         db.close()
 
@@ -252,7 +256,7 @@ def test_an_empty_v3_database_migrates_without_anything_to_backfill(tmp_path, ca
     with caplog.at_level(logging.INFO, logger="db"):
         db = Database(path)
     try:
-        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+        assert db.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
         assert _index_rowids(db) == []
     finally:
         db.close()
@@ -270,7 +274,7 @@ def test_reopening_a_migrated_database_does_not_double_the_index(v3_database):
 
     second = Database(path)
     try:
-        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
         assert _index_rowids(second) == before
         assert _indexed(second, '"Роскомнадзор"*') == [ids["rich"]]
     finally:

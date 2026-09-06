@@ -11,7 +11,8 @@ import sqlite3
 
 import pytest
 
-from src.feed.query import FeedQuery, QueryError
+from src.exceptions import QueryError
+from src.models.queries import FeedQuery
 
 
 def _ids(result: dict) -> list[int]:

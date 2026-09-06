@@ -10,21 +10,19 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 
 import pytest
-from fastapi.testclient import TestClient
 from support import JSON, MockRoutes
 
 from src import cli
-from src.api.app import create_app
 from src.config import Config
 from src.models import CollectReport, ItemNote, RawDocument, Resolution, Source
 from src.paths import DEFAULT_PATHS as REAL_PATHS
 from src.paths import ProjectPaths
+from src.repositories import Database
 from src.sources import telegram_mtproto
 from src.sources.collector import Collector
 from src.sources.scraper_llm import TAVILY_SEARCH_URL
 from src.sources.scraper_search import SearchQuery
 from src.sources.telegram_mtproto import MtprotoError
-from src.storage import Database
 
 SEARCH_QUERY = "GS Labs Триколор"
 
@@ -156,6 +154,17 @@ def _db(paths: ProjectPaths):
          {"func": cli._cmd_telegram_logout, "action": "logout", "yes": False}),
         (["telegram", "logout", "--yes"], {"func": cli._cmd_telegram_logout, "yes": True}),
         (["import-url", "https://a.ru/x"], {"func": cli._cmd_import_url, "url": "https://a.ru/x"}),
+        (
+            ["process"],
+            {"func": cli._cmd_process, "limit": None, "source": None, "since": None,
+             "profile": None, "force": False, "dry_run": False, "only_failed": False},
+        ),
+        (
+            ["process", "--limit", "5", "--source", "3", "--since", "2026-09-01",
+             "--profile", "2", "--force", "--only-failed"],
+            {"func": cli._cmd_process, "limit": 5, "source": 3, "since": "2026-09-01",
+             "profile": 2, "force": True, "dry_run": False, "only_failed": True},
+        ),
         (["docs"], {"func": cli._cmd_docs, "source": None, "limit": 20, "unprocessed": False}),
         (["docs", "--source", "1", "--limit", "5"], {"source": 1, "limit": 5}),
         (["docs", "--unprocessed"], {"func": cli._cmd_docs, "unprocessed": True}),
@@ -1102,7 +1111,7 @@ def _parse(*argv: str) -> argparse.Namespace:
 @pytest.fixture
 def frozen_feed_clock(monkeypatch) -> str:
     """`digest` и `status` смотрят на `utc_now()` внутри feed.service — пиним её."""
-    import src.feed.service as feed_service
+    import src.services.feed_service as feed_service
 
     monkeypatch.setattr(
         feed_service, "utc_now", lambda: datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
@@ -1175,15 +1184,13 @@ def test_items_with_a_broken_cursor_returns_1(config, hub_paths, corpus, caplog)
     ids=["priorities", "tag", "type", "dates", "order", "include-hidden", "query"],
 )
 def test_the_cli_and_the_api_return_the_same_ids_for_the_same_filters(
-    config, hub_paths, file_db, corpus, capsys, argv, params
+    config, hub_paths, client, corpus, capsys, argv, params
 ):
     """Один и тот же `FeedQuery` на обеих поверхностях — принцип III конституции."""
     assert cli._cmd_items(_parse("items", "--limit", "50", *argv), config, hub_paths) == 0
     from_cli = _table_ids(capsys.readouterr().out)
 
-    body = TestClient(create_app(config, hub_paths)).get(
-        "/api/v1/items", params=[*params, ("limit", 50)]
-    ).json()
+    body = client.get("/api/v1/items", params=[*params, ("limit", 50)]).json()
 
     assert from_cli == [row["id"] for row in body["items"]]
     assert len(from_cli) == body["total"]

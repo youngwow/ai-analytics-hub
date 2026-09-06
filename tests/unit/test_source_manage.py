@@ -1,4 +1,4 @@
-"""src/sources/manage.py — probe, create, pause, soft delete, restore, health.
+"""src/services/source_service.py — probe, create, pause, soft delete, restore, health.
 
 Every HTTP call goes through `MockRoutes`: `SourceService` builds its client with
 `make_client`, so that one name is what the tests replace. Nothing here reaches
@@ -11,10 +11,14 @@ import httpx
 import pytest
 from support import HTML_UTF8, RSS, MockRoutes, raising, rss_bytes
 
-from src.models import POLL_INTERVALS, RawDocument, Resolution, Source
-from src.sources import manage
+from src.exceptions import SourceError, SourceExistsError
+from src.models import KINDS, POLL_INTERVALS, FetchState, RawDocument, Resolution, Source
+from src.services import source_service as manage
+from src.services.source_service import SourceService
 from src.sources.base import make_client
-from src.sources.manage import SourceError, SourceService
+
+NOW = "2026-09-02T12:00:00+00:00"
+PROBLEM = "application/problem+json"
 
 FEED_URL = "https://feed.example.ru/rss.xml"
 SITE_URL = "https://www.cableman.ru/"
@@ -458,6 +462,453 @@ def test_update_of_a_missing_source_is_a_named_error(service):
     assert info.value.code == "source_not_found"
 
 
+# ── update: переезд на другой адрес ────────────────────────────────────────
+
+
+def _relocatable(service) -> Source:
+    return service.create("https://a.ru/", title="Лента А", kind="rss", fetch_url="https://a.ru/rss")
+
+
+def _address(db, source_id: int) -> tuple[str, str, str, str]:
+    stored = db.sources.get(source_id)
+    return stored.url, stored.kind, stored.fetch_url, stored.normalized_url
+
+
+def test_update_with_a_pinned_kind_and_fetch_url_moves_the_source_without_a_network_call(
+    service, db, routes
+):
+    source = _relocatable(service)
+    db.sources.schedule(source.id, "2026-09-03T12:00:00+00:00")
+
+    updated = service.update(source.id, url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+
+    assert routes.requests == []
+    assert updated.id == source.id
+    assert _address(db, source.id) == ("https://b.ru/", "rss", "https://b.ru/feed", "b.ru/feed")
+    # Новый адрес опрашивается сразу, а не в конце текущего периода.
+    assert db.sources.get(source.id).next_run_at == NOW
+
+
+def test_update_of_the_url_alone_probes_the_new_address(service, db, routes):
+    source = _relocatable(service)
+    routes[SITE_URL] = (200, HOME_WITH_FEED, HTML_UTF8)
+    _feed_route(routes, url=SITE_FEED_URL)
+
+    updated = service.update(source.id, url=SITE_URL)
+
+    assert SITE_URL in routes.urls()
+    assert (updated.kind, updated.fetch_url, updated.normalized_url) == (
+        "rss", SITE_FEED_URL, "cableman.ru/rss"
+    )
+    assert _address(db, source.id) == (SITE_URL, "rss", SITE_FEED_URL, "cableman.ru/rss")
+
+
+def test_update_to_an_address_nothing_can_poll_is_refused_and_changes_nothing(
+    service, db, monkeypatch
+):
+    source = _relocatable(service)
+    _stub_resolver(monkeypatch, Resolution(kind="unsupported", fetch_url="", note="ничего не нашли"))
+
+    with pytest.raises(SourceError, match="не удалось определить, как опрашивать") as info:
+        service.update(source.id, url="https://intranet.example.ru/")
+
+    assert info.value.code == "unsupported_source"
+    assert info.value.details == {"note": "ничего не нашли"}
+    assert _address(db, source.id) == ("https://a.ru/", "rss", "https://a.ru/rss", "a.ru/rss")
+
+
+def test_update_to_the_address_of_another_live_source_is_a_conflict(service, db):
+    first = _relocatable(service)
+    other = service.create("https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+
+    with pytest.raises(SourceError, match="уже добавлен как источник") as info:
+        service.update(first.id, url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+
+    assert info.value.code == "source_exists"
+    assert info.value.details == {"source_id": other.id}
+    assert _address(db, first.id) == ("https://a.ru/", "rss", "https://a.ru/rss", "a.ru/rss")
+
+
+def test_update_to_the_address_of_a_deleted_source_is_a_conflict_not_a_crash(service, db):
+    """Как и при создании (`_revive`): удалённый адрес возвращают через restore, а не занимают.
+
+    `sources.fetch_url` уникален и для удалённых строк, поэтому без этой проверки
+    переезд падал бы в репозитории с IntegrityError.
+    """
+    first = _relocatable(service)
+    gone = service.create("https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+    service.soft_delete(gone.id)
+
+    with pytest.raises(SourceError, match="restore") as info:
+        service.update(first.id, url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+
+    assert (info.value.code, info.value.status_code) == ("source_exists", 409)
+    assert info.value.details == {"source_id": gone.id, "status": "deleted"}
+    assert f"#{gone.id}" in info.value.message
+    assert _address(db, first.id) == ("https://a.ru/", "rss", "https://a.ru/rss", "a.ru/rss")
+    assert db.sources.get(gone.id).status == "deleted"
+
+
+def test_update_to_a_deleted_address_spelled_differently_is_the_same_conflict(service, db):
+    """Удалённый источник узнаётся и по нормализованному адресу, не только по точному `fetch_url`."""
+    first = _relocatable(service)
+    gone = service.create("https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+    service.soft_delete(gone.id)
+
+    with pytest.raises(SourceError) as info:
+        service.update(first.id, url="http://www.b.ru/", kind="rss", fetch_url="http://www.b.ru/feed/")
+
+    assert info.value.details == {"source_id": gone.id, "status": "deleted"}
+
+
+@pytest.mark.parametrize(
+    "fields",
+    [
+        {"url": "https://a.ru/"},
+        {"kind": "rss"},
+        {"url": "https://a.ru/", "kind": "rss"},
+    ],
+    ids=["same-url", "same-kind", "same-url-and-kind"],
+)
+def test_update_with_the_unchanged_address_makes_no_probe_and_keeps_the_cursor(
+    service, db, routes, fields
+):
+    """Переезд «туда же» — не переезд: ни запроса в сеть, ни сброса состояния опроса."""
+    source = _relocatable(service)
+    db.sources.schedule(source.id, "2026-09-03T12:00:00+00:00")
+    with db.transaction():
+        db.fetch_state.save(FetchState(source_id=source.id, etag='"abc"', cursor={"after": 42}))
+
+    service.update(source.id, **fields)
+
+    assert routes.requests == []
+    assert _address(db, source.id) == ("https://a.ru/", "rss", "https://a.ru/rss", "a.ru/rss")
+    assert db.sources.get(source.id).next_run_at == "2026-09-03T12:00:00+00:00"
+    state = db.fetch_state.get(source.id)
+    assert (state.etag, state.cursor) == ('"abc"', {"after": 42})
+
+
+def test_update_with_the_unchanged_url_but_another_kind_still_probes(service, db, routes):
+    """Смена типа при старом адресе — это переезд: резолвер должен подтвердить, чем опрашивать."""
+    source = _relocatable(service)
+    routes["https://a.ru/"] = (200, HOME_WITH_FEED, HTML_UTF8)
+    _feed_route(routes, url="https://a.ru/rss/")
+
+    service.update(source.id, kind="html")
+
+    assert "https://a.ru/" in routes.urls()
+    assert db.sources.get(source.id).kind == "html"
+
+
+def test_update_with_the_sources_own_address_is_not_a_conflict_and_changes_nothing(service, db):
+    source = _relocatable(service)
+    db.sources.schedule(source.id, "2026-09-03T12:00:00+00:00")
+
+    service.update(source.id, url="https://a.ru/", kind="rss", fetch_url="https://a.ru/rss")
+
+    assert _address(db, source.id) == ("https://a.ru/", "rss", "https://a.ru/rss", "a.ru/rss")
+    assert db.sources.get(source.id).next_run_at == "2026-09-03T12:00:00+00:00"
+
+
+@pytest.mark.parametrize("url", ["", "   ", "\n"], ids=["empty", "spaces", "newline"])
+def test_update_to_an_empty_url_is_a_validation_error(service, db, url):
+    source = _relocatable(service)
+
+    with pytest.raises(SourceError, match="пустая ссылка") as info:
+        service.update(source.id, url=url)
+
+    assert info.value.code == "validation_error"
+    assert _address(db, source.id) == ("https://a.ru/", "rss", "https://a.ru/rss", "a.ru/rss")
+
+
+@pytest.mark.parametrize("kind", ["atom", "RSS", "feed", ""], ids=["atom", "wrong-case", "word", "empty"])
+def test_update_rejects_a_kind_outside_the_vocabulary(service, db, routes, kind):
+    source = _relocatable(service)
+
+    with pytest.raises(SourceError, match="type must be one of") as info:
+        service.update(source.id, url="https://b.ru/", kind=kind, fetch_url="https://b.ru/feed")
+
+    assert info.value.code == "validation_error"
+    assert routes.requests == []
+    assert _address(db, source.id) == ("https://a.ru/", "rss", "https://a.ru/rss", "a.ru/rss")
+
+
+@pytest.mark.parametrize("kind", KINDS)
+def test_update_accepts_every_kind_of_the_vocabulary_when_the_fetch_url_is_pinned(service, db, kind):
+    source = _relocatable(service)
+
+    updated = service.update(source.id, url="https://b.ru/", kind=kind, fetch_url="https://b.ru/x")
+
+    assert updated.kind == kind
+    assert db.sources.get(source.id).kind == kind
+
+
+def test_a_real_move_resets_the_cursor_and_validators_but_keeps_the_failure_history(service, db):
+    source = _relocatable(service)
+    with db.transaction():
+        db.fetch_state.save(
+            FetchState(
+                source_id=source.id, etag='"abc"', last_modified="Tue, 02 Sep 2026 09:00:00 GMT",
+                last_success_at=NOW, last_error="HTTP 503", consecutive_failures=2,
+                cursor={"after": 42},
+            )
+        )
+
+    service.update(source.id, url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+
+    state = db.fetch_state.get(source.id)
+    assert (state.etag, state.last_modified, state.cursor) == (None, None, {})
+    assert (state.consecutive_failures, state.last_error, state.last_success_at) == (
+        2, "HTTP 503", NOW
+    )
+
+
+def test_an_unchanged_address_leaves_the_cursor_alone(service, db):
+    source = _relocatable(service)
+    with db.transaction():
+        db.fetch_state.save(FetchState(source_id=source.id, etag='"abc"', cursor={"after": 42}))
+
+    service.update(source.id, url="https://a.ru/", kind="rss", fetch_url="https://a.ru/rss")
+
+    state = db.fetch_state.get(source.id)
+    assert (state.etag, state.cursor) == ('"abc"', {"after": 42})
+
+
+@pytest.mark.parametrize(
+    ("url", "kind", "fetch_url", "category"),
+    [
+        ("https://t.me/cit_gov", "telegram", "https://t.me/s/cit_gov", "telegram"),
+        ("https://sozd.duma.gov.ru/", "html", "https://sozd.duma.gov.ru/", "regulator"),
+        ("ftp://archive.example.ru/", "manual", "ftp://archive.example.ru/", "manual"),
+    ],
+    ids=["telegram", "regulator-html", "manual"],
+)
+def test_the_category_follows_a_changed_kind(service, db, url, kind, fetch_url, category):
+    source = _relocatable(service)
+    assert source.category == "media"
+
+    updated = service.update(source.id, url=url, kind=kind, fetch_url=fetch_url)
+
+    assert updated.category == category
+    assert db.sources.get(source.id).category == category
+
+
+def test_the_category_is_kept_when_only_the_address_changes(service, db):
+    """Категория пересчитывается только вместе с типом: переезд ленты её не трогает."""
+    source = _relocatable(service)
+
+    updated = service.update(
+        source.id, url="https://cbr.ru/", kind="rss", fetch_url="https://cbr.ru/rss"
+    )
+
+    assert updated.category == "media"
+
+
+def test_documents_keep_their_source_id_after_the_move(service, db):
+    source = _relocatable(service)
+    ids = [_document(db, source.id, f"d{i}") for i in range(2)]
+
+    service.update(source.id, url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+
+    assert db.documents.count(source.id) == 2
+    assert [db.documents.get(i).source_id for i in ids] == [source.id, source.id]
+    assert [s.id for s in db.sources.list()] == [source.id]
+
+
+def test_update_can_move_and_rename_in_one_call(service, db):
+    source = _relocatable(service)
+
+    updated = service.update(
+        source.id, name="Канал ЦИТ", url=TG_URL, kind="telegram", fetch_url=TG_PREVIEW_URL,
+        poll_interval="15m",
+    )
+
+    stored = db.sources.get(source.id)
+    assert (stored.name, stored.kind, stored.fetch_url, stored.poll_interval) == (
+        "Канал ЦИТ", "telegram", TG_PREVIEW_URL, "15m"
+    )
+    assert updated.name == "Канал ЦИТ"
+
+
+def test_relocating_a_missing_source_is_a_named_error(service):
+    with pytest.raises(SourceError) as info:
+        service.update(42, url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed")
+
+    assert info.value.code == "source_not_found"
+
+
+# ── PATCH /sources/{id}: переезд по HTTP ───────────────────────────────────
+
+
+@pytest.fixture
+def stored(file_db) -> Source:
+    return file_db.sources.add(
+        Source(
+            name="Лента", url="https://a.ru/", kind="rss", category="media",
+            fetch_url="https://a.ru/rss", normalized_url="a.ru/rss",
+        )
+    )
+
+
+@pytest.fixture
+def no_network(monkeypatch) -> None:
+    """Резолвер сервиса не должен собирать клиент: пиннутый тип и адрес его не зовут."""
+
+    def never(*args, **kwargs):
+        raise AssertionError("резолвер не должен ходить в сеть")
+
+    monkeypatch.setattr(manage, "make_client", never)
+
+
+def test_patch_moves_the_source_to_a_pinned_address_without_a_network_call(
+    client, file_db, stored, frozen_clock, no_network
+):
+    response = client.patch(
+        f"/api/v1/sources/{stored.id}",
+        json={"url": "https://b.ru/", "type": "rss", "fetch_url": "https://b.ru/feed"},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert (body["url"], body["kind"], body["fetch_url"], body["normalized_url"]) == (
+        "https://b.ru/", "rss", "https://b.ru/feed", "b.ru/feed"
+    )
+    assert body["next_run_at"] == NOW
+    assert file_db.sources.get(stored.id).fetch_url == "https://b.ru/feed"
+
+
+def test_patch_changes_the_kind_and_the_category_together(client, stored, no_network):
+    body = client.patch(
+        f"/api/v1/sources/{stored.id}",
+        json={"url": TG_URL, "type": "telegram", "fetch_url": TG_PREVIEW_URL},
+    ).json()
+
+    assert (body["kind"], body["category"], body["fetch_url"]) == (
+        "telegram", "telegram", TG_PREVIEW_URL
+    )
+
+
+def test_patch_of_the_url_alone_resolves_it_through_the_network(client, stored, routes, monkeypatch):
+    monkeypatch.setattr(
+        manage, "make_client", lambda cfg, transport=None: make_client(cfg, routes.transport())
+    )
+    routes[SITE_URL] = (200, HOME_WITH_FEED, HTML_UTF8)
+    _feed_route(routes, url=SITE_FEED_URL)
+
+    body = client.patch(f"/api/v1/sources/{stored.id}", json={"url": SITE_URL}).json()
+
+    assert (body["url"], body["kind"], body["fetch_url"]) == (SITE_URL, "rss", SITE_FEED_URL)
+
+
+def test_patch_to_an_address_nothing_can_poll_is_a_422_problem(client, stored, monkeypatch):
+    _stub_resolver(monkeypatch, Resolution(kind="unsupported", fetch_url="", note="ничего не нашли"))
+    monkeypatch.setattr(manage, "make_client", lambda cfg, transport=None: MockRoutes().client())
+
+    response = client.patch(f"/api/v1/sources/{stored.id}", json={"url": "https://intranet.example.ru/"})
+
+    assert response.status_code == 422
+    assert response.headers["content-type"] == PROBLEM
+    assert response.json()["code"] == "unsupported_source"
+
+
+def test_patch_to_the_address_of_another_source_is_a_409_problem(client, file_db, stored, no_network):
+    other = file_db.sources.add(
+        Source(name="Другая", url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed",
+               normalized_url="b.ru/feed")
+    )
+
+    response = client.patch(
+        f"/api/v1/sources/{stored.id}",
+        json={"url": "https://b.ru/", "type": "rss", "fetch_url": "https://b.ru/feed"},
+    )
+
+    assert response.status_code == 409
+    assert response.headers["content-type"] == PROBLEM
+    body = response.json()
+    assert (body["code"], body["details"]) == ("source_exists", {"source_id": other.id})
+    assert file_db.sources.get(stored.id).fetch_url == "https://a.ru/rss"
+
+
+@pytest.mark.parametrize(
+    "payload",
+    [
+        {"url": ""},
+        {"url": "   "},
+        {"type": "atom"},
+        {"url": "https://b.ru/", "type": "atom", "fetch_url": "https://b.ru/feed"},
+    ],
+    ids=["empty-url", "blank-url", "unknown-type", "unknown-type-with-address"],
+)
+def test_a_bad_relocation_is_a_400_problem_and_changes_nothing(
+    client, file_db, stored, no_network, payload
+):
+    response = client.patch(f"/api/v1/sources/{stored.id}", json=payload)
+
+    assert response.status_code == 400
+    assert response.headers["content-type"] == PROBLEM
+    assert response.json()["code"] == "validation_error"
+    unchanged = file_db.sources.get(stored.id)
+    assert (unchanged.url, unchanged.kind, unchanged.fetch_url) == (
+        "https://a.ru/", "rss", "https://a.ru/rss"
+    )
+
+
+def test_patch_with_the_unchanged_url_makes_no_network_call_and_changes_nothing(
+    client, file_db, stored, no_network
+):
+    before = file_db.sources.get(stored.id).next_run_at
+
+    response = client.patch(f"/api/v1/sources/{stored.id}", json={"url": "https://a.ru/"})
+
+    assert response.status_code == 200
+    body = response.json()
+    assert (body["url"], body["kind"], body["fetch_url"], body["next_run_at"]) == (
+        "https://a.ru/", "rss", "https://a.ru/rss", before
+    )
+
+
+def test_patch_to_the_address_of_a_deleted_source_is_a_409_pointing_at_it(
+    client, file_db, stored, no_network
+):
+    gone = file_db.sources.add(
+        Source(name="Удалённая", url="https://b.ru/", kind="rss", fetch_url="https://b.ru/feed",
+               normalized_url="b.ru/feed")
+    )
+    file_db.sources.remove(gone.id)
+
+    response = client.patch(
+        f"/api/v1/sources/{stored.id}",
+        json={"url": "https://b.ru/", "type": "rss", "fetch_url": "https://b.ru/feed"},
+    )
+
+    assert response.status_code == 409
+    assert response.headers["content-type"] == PROBLEM
+    body = response.json()
+    assert (body["code"], body["details"]) == (
+        "source_exists", {"source_id": gone.id, "status": "deleted"}
+    )
+    assert "restore" in body["detail"]
+    assert file_db.sources.get(stored.id).fetch_url == "https://a.ru/rss"
+
+
+def test_the_wire_name_of_the_kind_is_type_not_kind(client, stored, no_network):
+    response = client.patch(f"/api/v1/sources/{stored.id}", json={"kind": "telegram"})
+
+    assert response.status_code == 422
+    assert response.json()["code"] == "validation_error"
+
+
+def test_patch_can_move_and_rename_in_one_request(client, file_db, stored, no_network):
+    body = client.patch(
+        f"/api/v1/sources/{stored.id}",
+        json={"title": "Лента Б", "url": "https://b.ru/", "type": "rss",
+              "fetch_url": "https://b.ru/feed"},
+    ).json()
+
+    assert (body["name"], body["url"]) == ("Лента Б", "https://b.ru/")
+    assert file_db.sources.get(stored.id).name == "Лента Б"
+
+
 # ── soft delete / restore ──────────────────────────────────────────────────
 
 
@@ -550,8 +1001,6 @@ def test_restore_does_not_unhide_the_cards_purged_with_the_source(service, db, i
 
 
 def test_health_reports_the_source_its_documents_and_its_polls(service, db):
-    from src.models import FetchState
-
     source = _add(db)
     _document(db, source.id, "d0")
     with db.transaction():
@@ -601,9 +1050,14 @@ def test_health_of_a_missing_source_is_a_named_error(service):
 
 
 def test_source_error_carries_a_machine_code_and_details():
-    error = SourceError("source_exists", "уже добавлен", {"source_id": 7})
+    """Код и статус живут на классе; текст и подробности — на экземпляре."""
+    error = SourceExistsError("уже добавлен", {"source_id": 7})
+
     assert (error.code, error.message, error.details) == (
         "source_exists", "уже добавлен", {"source_id": 7}
     )
+    assert error.detail == error.message
+    assert error.status_code == 409
     assert str(error) == "уже добавлен"
-    assert SourceError("x", "y").details == {}
+    assert isinstance(error, SourceError)
+    assert SourceExistsError("y").details == {}

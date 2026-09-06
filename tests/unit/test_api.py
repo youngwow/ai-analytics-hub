@@ -1,39 +1,19 @@
 """src/api — HTTP-слой поверх тех же сервисов, что и CLI.
 
 Сервер не поднимается: всё идёт через `TestClient`, то есть по ASGI напрямую.
-Отдельно проверяется формат ошибок — принцип III конституции требует RFC 7807.
+Приложение собирает `create_app()` на временном HUB_ROOT (фикстура `client` из
+tests/conftest.py); модель подменена через `dependency_overrides`. Отдельно
+проверяется формат ошибок — принцип III конституции требует RFC 7807.
 """
 
 from __future__ import annotations
 
 import pytest
-from fastapi.testclient import TestClient
-from support import FakeLLM, news_answer
 
-from src.api.app import create_app
 from src.models import RawDocument, Source
-from src.processing import service as service_mod
 
 NOW = "2026-09-02T12:00:00+00:00"
 PROBLEM = "application/problem+json"
-
-
-@pytest.fixture
-def client(config, hub_paths, file_db, monkeypatch) -> TestClient:
-    """Приложение на временном HUB_ROOT; модель всегда фейковая."""
-    monkeypatch.setattr(
-        service_mod.ProcessingService,
-        "__init__",
-        _fake_provider_init(service_mod.ProcessingService.__init__),
-    )
-    return TestClient(create_app(config, hub_paths))
-
-
-def _fake_provider_init(original):
-    def patched(self, config, db, *, provider=None, embedder=None):
-        original(self, config, db, provider=provider or FakeLLM(news_answer()), embedder=embedder)
-
-    return patched
 
 
 @pytest.fixture

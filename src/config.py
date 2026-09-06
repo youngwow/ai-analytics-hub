@@ -1,18 +1,28 @@
-"""Typed configuration loaded from config.yaml.
+"""Configuration: the YAML `Config` for the domain and the env-backed `Settings` for the process.
 
-`Config.load()` parses and validates; services receive the slice they need
-(e.g. `Collector(config, ...)` reads `config.scraper`) instead of importing a
+`Config.load()` parses and validates config.yaml; services receive the slice they
+need (e.g. `Collector(config, ...)` reads `config.scraper`) instead of importing a
 global, which keeps them trivially testable via `Config.from_dict(...)`.
+
+`Settings` (pydantic-settings) holds only deployment knobs — host, port, CORS,
+log level, the data root — read from the environment and `<HUB_ROOT>/.env`.
+Secrets keep their YAML-configurable variable names and are read through
+`utils.load_env_secret` from the same `.env`.
 """
 
 from __future__ import annotations
 
+import os
 from dataclasses import MISSING, dataclass, field
+from functools import lru_cache
+from typing import Literal
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import yaml
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from .paths import DEFAULT_PATHS
+from .paths import DEFAULT_PATHS, DEFAULT_ROOT, ProjectPaths
 
 
 class ConfigError(Exception):
@@ -119,15 +129,17 @@ class ProcessingConfig:
     cosine_threshold: float = 0.86
     borderline_low: float = 0.35
     borderline_high: float = 0.5
+    # Очередь обработки: НПА от регулятора не должен ждать за лентой СМИ, когда
+    # очередь длиннее одного прогона. Ключ — `sources.category`.
+    category_weights: dict = field(
+        default_factory=lambda: {"regulator": 3, "telegram": 2, "media": 1, "manual": 1}
+    )
 
 
 @dataclass(frozen=True)
 class ApiConfig:
-    """HTTP-слой этапа 1.4: `python -m src serve`."""
+    """Доменные настройки HTTP-слоя. Адрес, порт и /docs — в `Settings` (окружение)."""
 
-    host: str = "127.0.0.1"
-    port: int = 8000
-    docs: bool = True  # /docs и /openapi.json
     timezone: str = "Europe/Moscow"  # чьи это сутки, когда фильтр получил голую дату
 
 
@@ -142,16 +154,21 @@ _SECTIONS = {
 }
 
 
+def _has_default(field_info) -> bool:
+    """У поля есть значение по умолчанию — прямое или через фабрику."""
+    return field_info.default is not MISSING or field_info.default_factory is not MISSING
+
+
 def _build_section(name: str, cls: type, raw: dict):
     fields = cls.__dataclass_fields__
     section = raw.get(name)
-    if section is None and all(f.default is not MISSING for f in fields.values()):
+    if section is None and all(_has_default(f) for f in fields.values()):
         # Секция, у которой все поля со значениями по умолчанию, необязательна:
         # старый config.yaml должен грузиться после добавления новой секции.
         section = {}
     if not isinstance(section, dict):
         raise ConfigError(f"config.yaml: missing or non-mapping section '{name}'")
-    missing = [k for k, f in fields.items() if k not in section and f.default is MISSING]
+    missing = [k for k, f in fields.items() if k not in section and not _has_default(f)]
     if missing:
         raise ConfigError(f"config.yaml: section '{name}' missing keys: {missing}")
     try:
@@ -251,15 +268,67 @@ class Config:
             value = getattr(pr, name)
             if not 0 <= value <= 1:
                 raise ConfigError(f"config.yaml: processing.{name} must be within [0, 1]")
+        if not isinstance(pr.category_weights, dict):
+            raise ConfigError("config.yaml: processing.category_weights must be a mapping")
+        for category, weight in pr.category_weights.items():
+            if not isinstance(weight, int) or weight < 0:
+                raise ConfigError(
+                    f"config.yaml: processing.category_weights['{category}'] must be an "
+                    "integer >= 0"
+                )
         if pr.borderline_low > pr.borderline_high:
             raise ConfigError(
                 "config.yaml: processing.borderline_low must be <= borderline_high"
             )
-        if not 1 <= self.api.port <= 65535:
-            raise ConfigError("config.yaml: api.port must be within [1, 65535]")
-        if not self.api.host.strip():
-            raise ConfigError("config.yaml: api.host must be non-empty")
         try:
             ZoneInfo(self.api.timezone)
         except (ZoneInfoNotFoundError, ValueError) as e:
             raise ConfigError(f"config.yaml: unknown api.timezone '{self.api.timezone}'") from e
+
+
+# ── process settings (environment / .env) ──────────────────────────────────
+
+
+class Settings(BaseSettings):
+    """Параметры процесса. Только это читает окружение; остальное — `Config`."""
+
+    model_config = SettingsConfigDict(
+        env_file_encoding="utf-8",  # сам файл выбирает get_settings(): он зависит от HUB_ROOT
+        case_sensitive=False,
+        extra="ignore",  # в реальном .env лежат ключи, которые здесь не моделируются
+    )
+
+    app_name: str = "ai-analytics-hub"
+    environment: Literal["local", "dev", "prod"] = "local"
+    debug: bool = False
+
+    api_prefix: str = "/api/v1"
+    host: str = Field(default="127.0.0.1", min_length=1)
+    port: int = Field(default=8000, ge=1, le=65535)
+    docs: bool = True  # /docs и /openapi.json
+    cors_origins: list[str] = ["*"]  # в окружении — JSON: CORS_ORIGINS='["http://localhost:5173"]'
+    log_level: str = "INFO"
+
+    hub_root: str = DEFAULT_ROOT  # всегда задаётся в get_settings(); строка HUB_ROOT= в .env не читается
+
+
+@lru_cache
+def get_settings() -> Settings:
+    """Единственное место, где процесс решает, откуда брать `.env`.
+
+    Корень берётся из окружения до создания `Settings`, чтобы тесты на временном
+    `HUB_ROOT` никогда не прочитали `.env` разработчика в корне репозитория.
+    """
+    root = os.environ.get("HUB_ROOT") or DEFAULT_ROOT
+    return Settings(_env_file=os.path.join(root, ".env"), hub_root=root)
+
+
+@lru_cache
+def get_paths() -> ProjectPaths:
+    return ProjectPaths.from_root(get_settings().hub_root)
+
+
+@lru_cache
+def get_config() -> Config:
+    # Путь явно: `Config.load(None)` упал бы на DEFAULT_PATHS, вычисленные при импорте.
+    return Config.load(get_paths().config_path)

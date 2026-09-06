@@ -1,4 +1,4 @@
-.PHONY: install test lint format seed collect watch tg-login tg-status process quality serve happy-pr happy-gr
+.PHONY: install test lint format seed collect watch tg-login tg-status process quality serve docker-up happy-pr happy-gr
 
 install:
 	uv sync
@@ -41,3 +41,6 @@ quality:
 
 serve:
 	uv run python -m src serve
+
+docker-up:
+	docker compose up --build

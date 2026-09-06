@@ -1,19 +1,20 @@
-"""src/processing/service.py — видимость карточек: ничего не удаляется физически."""
+"""src/services/item_service.py — видимость карточек: ничего не удаляется физически."""
 
 from __future__ import annotations
 
 import pytest
-from support import FakeLLM
 
+from src.exceptions import ItemError
 from src.models import RawDocument, Source
-from src.processing.service import ItemError, ProcessingService
+from src.services.item_service import ItemService
 
 NOW = "2026-09-02T12:00:00+00:00"
 
 
 @pytest.fixture
-def service(config, db) -> ProcessingService:
-    return ProcessingService(config, db, provider=FakeLLM(), embedder=None)
+def service(config, db) -> ItemService:
+    """Видимость не зовёт модель, поэтому сервис карточек строится без провайдера."""
+    return ItemService(config, db)
 
 
 def _source(db, name: str = "Лента") -> Source:

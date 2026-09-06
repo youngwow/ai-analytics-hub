@@ -1,4 +1,4 @@
-"""src/common.py — clock conversions, hashing, .env secrets."""
+"""src/utils.py — clock conversions, hashing, .env secrets."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from datetime import date, datetime, timedelta, timezone
 
 import pytest
 
-from src.common import (
+from src.utils import (
     MOSCOW,
     load_env_secret,
     normalize_ws,

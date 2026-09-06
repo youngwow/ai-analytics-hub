@@ -17,11 +17,11 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from ..common import get_logger, load_env_secret, parse_datetime, to_utc_iso, utc_now
 from ..config import Config
 from ..models import CollectReport, FetchResult, FetchState, RawDocument, Source
 from ..paths import ProjectPaths
-from ..storage import Database
+from ..repositories import Database
+from ..utils import get_logger, load_env_secret, parse_datetime, to_utc_iso, utc_now
 from . import scheduler
 from .base import HostLimiter, build_adapters, make_client
 from .fulltext import FullTextFetcher
@@ -125,7 +125,16 @@ class Collector:
                             latency_ms,
                         )
                         self._tally(report, entry)
-                        scheduler.reschedule(self.db, source, now=self.now())
+                        state = states[source.id]
+                        if scheduler.should_pause(source, state, now=self.now()):
+                            self._pause_exhausted(source, state)
+                        else:
+                            scheduler.reschedule(
+                                self.db,
+                                source,
+                                now=self.now(),
+                                failures=state.consecutive_failures,
+                            )
         finally:
             self.close()
         report.finished_at = to_utc_iso(self.now()) or ""
@@ -165,6 +174,20 @@ class Collector:
         report.finished_at = to_utc_iso(self.now()) or ""
         self.db.runs.add(report)
         return result, entry
+
+    def _pause_exhausted(self, source: Source, state: FetchState) -> None:
+        """Снять с опроса источник, который не отвечает неделю.
+
+        Не удаление и не потеря: статус `paused`, причина — в `notes`, возврат —
+        обычным `resume`. Иначе вечный `error` можно остановить только руками.
+        """
+        stamp = (to_utc_iso(self.now()) or "")[:10]
+        reason = f"автопауза {stamp}: {state.consecutive_failures} неудач подряд"
+        source.status = "paused"
+        source.notes = f"{source.notes} | {reason}" if source.notes else reason
+        with self.db.transaction():
+            self.db.sources.update(source)
+        log.warning("источник #%s «%s»: %s", source.id, source.name, reason)
 
     def close(self) -> None:
         """Release what adapters hold open between runs (the MTProto client)."""

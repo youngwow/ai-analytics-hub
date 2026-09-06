@@ -12,10 +12,8 @@ from urllib.parse import urlsplit
 
 from courlan import get_base_url
 
-from .common import get_logger, load_env_secret
 from .config import Config, ConfigError
-from .feed.query import DocumentQuery, FeedQuery, QueryError
-from .feed.service import FeedService
+from .exceptions import ItemError, QueryError, SourceError
 from .models import (
     CATEGORIES,
     EDIT_REASONS,
@@ -26,14 +24,18 @@ from .models import (
     Resolution,
     Source,
 )
+from .models.queries import DocumentQuery, FeedQuery
 from .paths import DEFAULT_PATHS, ProjectPaths
 from .processing import profile as company_profile
 from .processing.llm import LlmConfigError, build_provider
 from .processing.quality import GOLD_PATH, evaluate, load_gold
-from .processing.service import EDITABLE_FIELDS, REVERTIBLE_FIELDS, ItemError, ProcessingService
+from .repositories import Database, DuplicateSourceError
+from .services.feed_service import FeedService
+from .services.item_service import EDITABLE_FIELDS, REVERTIBLE_FIELDS, ItemService
+from .services.processing_service import ProcessingService
+from .services.source_service import SourceService
 from .sources.base import HostLimiter, make_client
 from .sources.collector import Collector
-from .sources.manage import SourceError, SourceService
 from .sources.resolver import Resolver
 from .sources.scraper_search import SEARCH_MAX_RESULTS, SUMMARY_PREFIX, SearchQuery
 from .sources.telegram_mtproto import (
@@ -43,7 +45,7 @@ from .sources.telegram_mtproto import (
     login,
     session_status,
 )
-from .storage import Database, DuplicateSourceError
+from .utils import get_logger, load_env_secret
 
 log = get_logger("cli")
 
@@ -639,6 +641,7 @@ def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
             profile_id=args.profile,
             force=args.force,
             dry_run=args.dry_run,
+            only_failed=args.only_failed,
         )
     except LlmConfigError as e:
         log.error("%s", e)
@@ -732,11 +735,11 @@ def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
 
 def _cmd_item(args, config: Config, paths: ProjectPaths) -> int:
     db = Database(paths.db_path)
-    payload = ProcessingService(config, db).get_item(args.id)
-    if payload is None:
+    try:
+        payload = ItemService(config, db).get_item(args.id)
+    except ItemError as e:
         db.close()
-        log.error("карточка #%s не найдена", args.id)
-        return 1
+        return _report_service_error(e)
     item = payload["item"]
     print(f"#{item.id} [{item.type}/{item.priority}] {item.title}")
     print(f"дата: {item.published_at or '-'} | уверенность: {item.confidence:.2f}", end="")
@@ -777,8 +780,11 @@ def _cmd_item(args, config: Config, paths: ProjectPaths) -> int:
         print("\nправки:")
         for rev in payload["revisions"]:
             print(f"  {rev.created_at[:16]} {rev.actor}: {rev.field}: {rev.old_value} → {rev.new_value}")
-    if item.analyst_note:
-        print(f"\nзаметка аналитика: {item.analyst_note}")
+    if payload["notes"]:
+        print("\nзаметки аналитика:")
+        for note in payload["notes"]:
+            stamp = (note.created_at or "")[:16]
+            print(f"  {stamp} {note.author or 'аналитик'}: {note.body}")
     db.close()
     return 0
 
@@ -790,16 +796,18 @@ def _cmd_item_edit(args, config: Config, paths: ProjectPaths) -> int:
         "priority": args.priority,
         "type": args.type,
         "npa_status": args.npa_status,
-        "analyst_note": args.note,
         "tags": [t.strip() for t in args.tags.split(",") if t.strip()] if args.tags else None,
     }
     db = Database(paths.db_path)
-    service = ProcessingService(config, db)
+    service = ItemService(config, db)
     try:
         item = service.edit_item(args.id, fields, reason=args.reason or "")
-    except ValueError as e:
-        log.error("%s", e)
-        return 1
+        if args.note:
+            # Устаревший флаг: заметка живёт в `item_notes` с v8, а не в колонке.
+            service.add_note(args.id, args.note)
+            log.warning("`edit --note` устарел, используйте `note %s --text ...`", args.id)
+    except ItemError as e:
+        return _report_service_error(e)
     finally:
         db.close()
     print(f"#{item.id}: правки сохранены, поля защищены от перезаписи: {item.manual_overrides or '—'}")
@@ -816,7 +824,7 @@ def _cmd_reprocess(args, config: Config, paths: ProjectPaths) -> int:
     except LlmConfigError as e:
         log.error("%s", e)
         return 2
-    except ValueError as e:
+    except (ItemError, ValueError) as e:
         log.error("%s", e)
         return 1
     finally:
@@ -828,7 +836,7 @@ def _cmd_reprocess(args, config: Config, paths: ProjectPaths) -> int:
 
 def _cmd_npa_event(args, config: Config, paths: ProjectPaths) -> int:
     db = Database(paths.db_path)
-    service = ProcessingService(config, db)
+    service = ItemService(config, db)
     try:
         service.add_npa_event(
             args.id,
@@ -837,9 +845,8 @@ def _cmd_npa_event(args, config: Config, paths: ProjectPaths) -> int:
             source_url=args.source_url or "",
             note=args.note or "",
         )
-    except ValueError as e:
-        log.error("%s", e)
-        return 1
+    except ItemError as e:
+        return _report_service_error(e)
     finally:
         db.close()
     print(f"#{args.id}: событие «{args.status}» добавлено")
@@ -1020,23 +1027,26 @@ def _cmd_sources_refresh(args, config: Config, paths: ProjectPaths) -> int:
     except SourceError as e:
         db.close()
         return _report_service_error(e)
-    collector = Collector(config, db, paths=paths)
+    tavily_key = load_env_secret(config.tavily.api_key_env, paths.env_path)
     try:
-        result, entry = collector.collect_one(source, force=args.force)
+        run = svc.refresh(
+            args.id, Collector(config, paths, db, tavily_key=tavily_key or None), force=args.force
+        )
+    except SourceError as e:
+        return _report_service_error(e)
     finally:
         db.close()
-    if entry.get("error"):
-        print(f"#{source.id} «{source.name}»: {entry['error']}")
+    if run.error_code:
+        print(f"#{source.id} «{source.name}»: {run.error_message or run.error_code}")
         return 2
-    print(f"#{source.id} «{source.name}»: найдено {entry.get('seen', 0)}, новых {entry.get('new', 0)}")
+    print(f"#{source.id} «{source.name}»: найдено {run.items_found}, новых {run.items_new}")
     return 0
 
 
 def _item_service(config: Config, paths: ProjectPaths):
+    """Карточные операции без модели: провайдер здесь не нужен."""
     db = Database(paths.db_path)
-    key = load_env_secret(config.llm.api_key_env, paths.env_path)
-    provider = build_provider(config.llm, key) if key else None
-    return db, ProcessingService(config, db, provider=provider, embedder=provider)
+    return db, ItemService(config, db)
 
 
 def _cmd_items_hide(args, config: Config, paths: ProjectPaths) -> int:
@@ -1051,7 +1061,6 @@ def _cmd_items_hide(args, config: Config, paths: ProjectPaths) -> int:
     except ItemError as e:
         return _report_service_error(e)
     finally:
-        svc.close()
         db.close()
     return 0
 
@@ -1067,7 +1076,6 @@ def _cmd_items_unhide(args, config: Config, paths: ProjectPaths) -> int:
     except ItemError as e:
         return _report_service_error(e)
     finally:
-        svc.close()
         db.close()
     return 0
 
@@ -1079,7 +1087,6 @@ def _cmd_item_note(args, config: Config, paths: ProjectPaths) -> int:
     except ItemError as e:
         return _report_service_error(e)
     finally:
-        svc.close()
         db.close()
     print(f"#{note.item_id}: заметка сохранена ({len(note.body)} символов)")
     return 0
@@ -1092,7 +1099,6 @@ def _cmd_item_revert(args, config: Config, paths: ProjectPaths) -> int:
     except ItemError as e:
         return _report_service_error(e)
     finally:
-        svc.close()
         db.close()
     print(f"#{item.id}: поле «{args.field}» возвращено к версии модели")
     print(f"под защитой человека осталось: {item.manual_overrides or '—'}")
@@ -1101,8 +1107,12 @@ def _cmd_item_revert(args, config: Config, paths: ProjectPaths) -> int:
 
 def _cmd_item_revisions(args, config: Config, paths: ProjectPaths) -> int:
     db = Database(paths.db_path)
-    revisions = db.items.revisions(args.id)
-    db.close()
+    try:
+        revisions = ItemService(config, db).revisions(args.id)
+    except ItemError as e:
+        return _report_service_error(e)
+    finally:
+        db.close()
     rows = [
         [
             r.created_at[:16],
@@ -1123,7 +1133,7 @@ def _cmd_item_revisions(args, config: Config, paths: ProjectPaths) -> int:
 
 
 def _cmd_items_add(args, config: Config, paths: ProjectPaths) -> int:
-    db, svc = _item_service(config, paths)
+    db, svc = _processing(config, paths)
     try:
         result = svc.add_manual(
             title=args.title or "",
@@ -1150,14 +1160,23 @@ def _cmd_items_add(args, config: Config, paths: ProjectPaths) -> int:
 
 
 def _cmd_serve(args, config: Config, paths: ProjectPaths) -> int:
+    """HTTP-API через фабрику `src.main:create_app`; адрес и порт — из `Settings`."""
     import uvicorn
 
-    from .api.app import create_app
+    from .config import get_settings
 
-    host = args.host or config.api.host
-    port = args.port or config.api.port
-    print(f"API на http://{host}:{port}" + (" (документация /docs)" if config.api.docs else ""))
-    uvicorn.run(create_app(config, paths), host=host, port=port, log_level="info")
+    settings = get_settings()
+    host = args.host or settings.host
+    port = args.port or settings.port
+    print(f"API на http://{host}:{port}" + (" (документация /docs)" if settings.docs else ""))
+    uvicorn.run(
+        "src.main:create_app",
+        factory=True,
+        host=host,
+        port=port,
+        log_level="info",
+        reload=bool(args.reload),
+    )
     return 0
 
 
@@ -1344,6 +1363,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--profile", type=int, help="company profile id (default: the default one)")
     p.add_argument("--force", action="store_true", help="re-read documents that already have cards")
     p.add_argument("--dry-run", action="store_true", help="plan only: no model calls, no writes")
+    p.add_argument(
+        "--only-failed", action="store_true", help="retry only documents that failed last run"
+    )
     p.set_defaults(func=_cmd_process)
 
     p = sub.add_parser("items", help="the feed: cards with filters")
@@ -1462,6 +1484,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("serve", help="run the HTTP API")
     p.add_argument("--host")
     p.add_argument("--port", type=int)
+    p.add_argument("--reload", action="store_true", help="restart on source changes (dev)")
     p.set_defaults(func=_cmd_serve)
 
     p = sub.add_parser("import-url", help="one-off: fetch a page into the manual source")

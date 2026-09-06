@@ -16,9 +16,9 @@ from __future__ import annotations
 import time
 from dataclasses import dataclass, field
 
-from ..common import get_logger
 from ..config import LLMConfig, ProcessingConfig
 from ..models import CompanyProfile, LlmCall
+from ..utils import get_logger
 from . import normalize, prompts
 from .llm import Completion, LlmConfigError, LlmError, LLMProvider
 from .schema import RESULT_SCHEMA, InvalidResponse, ParsedResult, parse_result
@@ -162,7 +162,7 @@ class Pipeline:
     ) -> Draft:
         summary, offsets = result.summary, result.evidence_offsets
         confidence = result.confidence * (0.7 if truncated else 1.0)
-        priority, reasoning = self._failsafe(result, confidence)
+        priority, reasoning, needs_review = self._failsafe(result, confidence)
         if truncated:
             reasoning = f"{reasoning} {TRUNCATED_NOTE}".strip()
         return Draft(
@@ -176,6 +176,7 @@ class Pipeline:
             confidence=confidence,
             tags=result.tags,
             matched_profile_facets=result.matched_profile_facets,
+            needs_review=needs_review,
             offsets=offsets,
             npa_status=result.npa_status,
             npa_key=result.npa_key,
@@ -184,21 +185,24 @@ class Pipeline:
             calls=calls,
         )
 
-    def _failsafe(self, result: ParsedResult, confidence: float) -> tuple[str, str]:
+    def _failsafe(self, result: ParsedResult, confidence: float) -> tuple[str, str, bool]:
         """Borderline relevance or low confidence raises the priority — never lowers it.
 
         Dropping a critical act into `low` costs more than one extra card in the
-        morning review (spec, US-2).
+        morning review (spec, US-2). Тот же признак поднимает `needs_review`:
+        именно эти карточки человек должен посмотреть глазами — раньше флаг
+        считался, но никуда не записывался и всегда оставался нулём.
         """
         borderline = self.config.borderline_low <= result.relevance_score <= self.config.borderline_high
         unsure = confidence < 0.5
-        if not (borderline or unsure) or result.priority == "high":
-            return result.priority, result.reasoning
+        needs_review = borderline or unsure
+        if not needs_review or result.priority == "high":
+            return result.priority, result.reasoning, needs_review
         raised = bump(result.priority)
         if raised == result.priority:
-            return result.priority, result.reasoning
+            return result.priority, result.reasoning, needs_review
         why = "пограничная релевантность" if borderline else "низкая уверенность модели"
-        return raised, f"{result.reasoning} Приоритет повышен: {why}.".strip()
+        return raised, f"{result.reasoning} Приоритет повышен: {why}.".strip(), needs_review
 
     def _baseline(
         self,

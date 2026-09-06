@@ -1,6 +1,6 @@
 [project]
 name = "ai-analytics-hub"
-version = "0.1.0"
+version = "0.2.0"
 description = "Интеллектуальный аналитический центр: сбор отраслевых новостей, НПА и Telegram-дайджестов."
 requires-python = ">=3.11"
 dependencies = [
@@ -14,6 +14,9 @@ dependencies = [
     "ollama>=0.6,<1",
     "fastapi>=0.115,<1",
     "uvicorn>=0.30,<1",
+    "pydantic>=2,<3",
+    "pydantic-settings>=2,<3",
+    "numpy>=2,<3",       # косинусы дедупликации: 2000 кандидатов × 200 документов за один matvec
 ]
 
 [dependency-groups]

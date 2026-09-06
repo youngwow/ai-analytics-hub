@@ -1,4 +1,4 @@
-"""src/processing/service.py — ручное добавление материала (US-12, US-13).
+"""src/services/processing_service.py — ручное добавление материала (US-12, US-13).
 
 PDF-дайджест с почты, документ из закрытого чата, устная информация с
 мероприятия: материал без ссылки — валидный случай, обязателен только заголовок.
@@ -9,7 +9,8 @@ from __future__ import annotations
 import pytest
 from support import FakeLLM, npa_answer
 
-from src.processing.service import ItemError, ProcessingService
+from src.exceptions import ItemError
+from src.services.processing_service import ProcessingService
 
 NOW = "2026-09-02T12:00:00+00:00"
 BILL_URL = "https://sozd.duma.gov.ru/bill/123456-8"

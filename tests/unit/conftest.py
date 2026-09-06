@@ -11,8 +11,8 @@ import itertools
 
 import pytest
 
-from src.feed.service import FeedService
 from src.models import EntitySpan, RawDocument, Source
+from src.services.feed_service import FeedService
 
 NOW = "2026-09-05T09:00:00+00:00"
 # Расписание по умолчанию — заведомо в будущем: иначе `status()` объявил бы
@@ -62,7 +62,16 @@ def document_factory(file_db):
     """Собранный документ без карточки — то, что показывает `/documents`."""
     counter = itertools.count(1)
 
-    def make(source: Source, *, title="Документ", text="", published_at=NOW, hidden=0) -> int:
+    def make(
+        source: Source,
+        *,
+        title="Документ",
+        text="",
+        published_at=NOW,
+        fetched_at=NOW,
+        hidden=0,
+        last_error="",
+    ) -> int:
         external_id = f"free-{next(counter)}"
         with file_db.transaction():
             document_id = file_db.documents.insert(
@@ -73,13 +82,15 @@ def document_factory(file_db):
                     title=title,
                     text=text,
                     published_at=published_at,
-                    fetched_at=NOW,
+                    fetched_at=fetched_at,
                 )
             )
             if hidden:
                 file_db.conn.execute(
                     "UPDATE documents SET hidden=1 WHERE id=?", (document_id,)
                 )
+            if last_error:
+                file_db.documents.mark_failed(document_id, last_error, at=fetched_at)
         return document_id
 
     return make

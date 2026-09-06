@@ -16,9 +16,9 @@ import httpx
 from courlan import is_navigation_page, is_not_crawlable
 from selectolax.parser import HTMLParser
 
-from ..common import get_logger, to_utc_iso
 from ..config import ScraperConfig
 from ..models import FetchResult, FetchState, RawDocument, Source
+from ..utils import get_logger, to_utc_iso
 from .base import HostLimiter, fetch
 from .textutil import clean_url, looks_like_html
 

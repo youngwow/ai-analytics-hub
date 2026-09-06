@@ -1,10 +1,22 @@
-"""HTTP-слой этапа 1.4 — единственное место в репозитории с FastAPI.
+"""HTTP-слой: маршруты — тонкие обёртки над методами сервисов.
 
-Обработчики только разбирают запрос и зовут метод сервиса: бизнес-логика живёт
-в `src/sources/manage.py` и `src/processing/service.py`, поэтому дашборд 1.3
-сядет на те же методы, ничего не переписывая (принцип III конституции).
+Обработчики только разбирают запрос и зовут метод сервиса; бизнес-логика живёт в
+`src/services/` (принцип III конституции). Префикс `/api/v1` навешивается один
+раз в `create_app()`, роутеры несут только свой ресурсный префикс.
 """
 
-from .app import create_app
+from fastapi import APIRouter
 
-__all__ = ["create_app"]
+from .routes import collection, export, feed, health, items, processing, profiles, sources
+
+api_router = APIRouter()
+api_router.include_router(health.router)
+api_router.include_router(sources.router)
+api_router.include_router(items.router)
+api_router.include_router(feed.router)
+api_router.include_router(processing.router)
+api_router.include_router(collection.router)
+api_router.include_router(profiles.router)
+api_router.include_router(export.router)
+
+__all__ = ["api_router"]

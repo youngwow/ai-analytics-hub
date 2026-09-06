@@ -20,8 +20,8 @@ from selectolax.parser import HTMLParser
 from trafilatura.feeds import FeedParameters, determine_feed
 from trafilatura.sitemaps import is_plausible_sitemap
 
-from ..common import get_logger
 from ..models import Resolution
+from ..utils import get_logger
 from .base import HostLimiter, Page, fetch
 from .scraper_rss import is_feed
 from .scraper_search import SCHEME as SEARCH_SCHEME

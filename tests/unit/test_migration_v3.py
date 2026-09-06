@@ -15,8 +15,8 @@ import sqlite3
 
 import pytest
 
-from src.storage import Database
-from src.storage.db import _MIGRATIONS, _SCHEMA_V1, _SCHEMA_V2
+from src.repositories import Database
+from src.repositories.database import _MIGRATIONS, _SCHEMA_V1, _SCHEMA_V2
 
 NOW = "2026-09-02T12:00:00+00:00"
 # This file is about the v3 *data* moves; later steps ride along, so the version
