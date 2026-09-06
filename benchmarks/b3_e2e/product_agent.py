@@ -21,6 +21,7 @@ from trafilatura import extract  # noqa: E402
 
 from src.common import load_env_secret  # noqa: E402
 from src.config import Config  # noqa: E402
+from src.models import FetchState, RawDocument, Source  # noqa: E402
 from src.paths import DEFAULT_PATHS  # noqa: E402
 from src.processing.llm import build_llm_provider  # noqa: E402
 from src.product.analysis import PrimaryAnalyzer  # noqa: E402
@@ -102,6 +103,82 @@ def prepared_documents(packet: dict) -> list[PreparedDocument]:
             )
         )
     return result
+
+
+def persist_raw_documents(db: Database, documents: list[PreparedDocument]) -> dict[str, int]:
+    """Keep the visible B3 source behind every prepared document.
+
+    The benchmark packet is already the normalized result of collection.  This
+    adapter persists that visible input without consulting gold labels, so the
+    review UI can show the exact original text used by the analyzer.
+    """
+    ids: dict[str, int] = {}
+    source_dates: dict[int, list[str]] = {}
+    surface_kinds = {
+        "rss_item": "rss",
+        "telegram_message": "telegram",
+        "search_result": "search",
+        "html": "html",
+    }
+    for document in documents:
+        source_key = f"{document.source_type}:{document.source_name}"
+        fetch_url = "benchmark://" + uuid.uuid5(uuid.NAMESPACE_URL, source_key).hex
+        source = db.sources.get_by_fetch_url(fetch_url)
+        if source is None:
+            kind = surface_kinds.get(document.source_type, "manual")
+            source = db.sources.add(
+                Source(
+                    name=document.source_name or "B3 fixture",
+                    url=document.source_url,
+                    kind=kind,
+                    category=(
+                        "regulator"
+                        if document.source_class == "regulator"
+                        else "telegram"
+                        if kind == "telegram"
+                        else "media"
+                    ),
+                    fetch_url=fetch_url,
+                    notes="Изолированный источник пользовательского пилота B3",
+                    direction="both",
+                    source_class=document.source_class,
+                )
+            )
+
+        existing = db.documents.row_by_external_id(int(source.id), document.id)
+        if existing is not None:
+            document_id = int(existing["id"])
+        else:
+            raw = RawDocument(
+                source_id=int(source.id),
+                external_id=document.id,
+                url=document.source_url,
+                title=document.title,
+                text=document.text,
+                author=document.source_name,
+                published_at=document.published_at or None,
+                fetched_at=document.published_at,
+            )
+            raw.compute_hash()
+            document_id = db.documents.insert(raw)
+            db.document_revisions.append(document_id, raw)
+        ids[document.id] = document_id
+        if document.published_at:
+            source_dates.setdefault(int(source.id), []).append(document.published_at)
+
+    for source_id, dates in source_dates.items():
+        state = FetchState(
+            source_id=source_id,
+            last_fetch_at=max(dates),
+            last_success_at=max(dates),
+            last_doc_count=len(dates),
+            coverage_from=min(dates),
+            coverage_to=max(dates),
+            coverage_status="complete",
+        )
+        db.fetch_state.save(state)
+    db.conn.commit()
+    return ids
 
 
 def _initial_events(initial_state: dict) -> list[EventRecord]:
@@ -188,6 +265,7 @@ def main(argv=None) -> int:
     context = GsLabsContext.from_dict(packet["company_context"])
     store.ensure_context(context.version, context, actor="benchmark")
     documents = prepared_documents(packet)
+    raw_document_ids = persist_raw_documents(db, documents)
     analyzer = PrimaryAnalyzer(
         provider, model=config.llm.model, max_chars=config.processing.max_chars
     )
@@ -208,15 +286,17 @@ def main(argv=None) -> int:
         signal_map = {}
         document_map = {document.id: document for document in documents}
         for document, draft in analyzed:
-            prepared_version = store.save_prepared(document.id, document)
+            prepared_version = store.save_prepared(
+                document.id,
+                document,
+                raw_document_id=raw_document_ids[document.id],
+            )
             store.save_analysis(draft, prepared_version=prepared_version)
             decisions.append(item_decision(document.id, draft))
             signal_map.update({signal.signal_id: signal for signal in draft.signals})
 
         npa_candidates = [
-            signal
-            for signal in signal_map.values()
-            if signal.kind in {"npa", "npa_candidate"}
+            signal for signal in signal_map.values() if signal.kind in {"npa", "npa_candidate"}
         ]
         all_resolutions = resolver.resolve(
             npa_candidates,
@@ -234,15 +314,12 @@ def main(argv=None) -> int:
             if resolution.external_id or resolution.object_id in tracked_ids
         )
         resolved_npa_signal_ids = {
-            signal_id
-            for resolution in resolutions
-            for signal_id in resolution.member_signal_ids
+            signal_id for resolution in resolutions for signal_id in resolution.member_signal_ids
         }
         event_signals = [
             signal
             for signal in signal_map.values()
-            if signal.signal_id not in resolved_npa_signal_ids
-            and signal.relevance != "irrelevant"
+            if signal.signal_id not in resolved_npa_signal_ids and signal.relevance != "irrelevant"
         ]
         events = _link_events(linker, event_signals, packet.get("initial_state") or {})
         for event in events:

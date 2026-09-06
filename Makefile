@@ -1,4 +1,4 @@
-.PHONY: install test lint verify format seed collect watch tg-login tg-status process quality happy-pr happy-gr web demo
+.PHONY: install test lint verify format seed collect watch tg-login tg-status process quality happy-pr happy-gr web demo prepare-pilot pilot-a pilot-b pilot-report
 
 install:
 	uv sync
@@ -46,3 +46,16 @@ web:
 
 demo:
 	uv run python -m src.product.web --host 127.0.0.1 --port 3002 --db artifacts/demo/gs_labs_demo.db
+
+prepare-pilot:
+	uv run python benchmarks/b3_e2e/prepare_pilot.py
+
+pilot-a:
+	uv run python -m src.product.web --host 127.0.0.1 --port 3002 --db artifacts/b3/pilot/product_A.db
+
+pilot-b:
+	uv run python -m src.product.web --host 127.0.0.1 --port 3002 --db artifacts/b3/pilot/product_B.db
+
+pilot-report:
+	uv run python benchmarks/b3_e2e/import_pilot_workbook.py artifacts/b3/PILOT_EXCEL_BASELINE_V1.xlsx --output artifacts/b3/human_observations.jsonl
+	uv run python benchmarks/b3_e2e/evaluate_human.py artifacts/b3/human_observations.jsonl --value-scope post_collection --report artifacts/b3/HUMAN_PILOT_RESULT.json
