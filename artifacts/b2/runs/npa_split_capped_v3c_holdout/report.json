@@ -1,0 +1,20 @@
+{
+  "benchmark": "B2-N isolated contract",
+  "dataset_version": "v1.0.0",
+  "split": "holdout",
+  "contract_errors": [],
+  "usage": {
+    "model_calls": 14,
+    "input_tokens": 6143,
+    "output_tokens": 5833,
+    "wall_seconds": 56.961887499986915,
+    "provider_latency_ms": 49545,
+    "attempted_calls": 15,
+    "failed_calls": 1
+  },
+  "npa": {
+    "link_identity_accuracy": 0.9166666666666666,
+    "relation_accuracy": 0.9166666666666666,
+    "stage_accuracy": 1.0
+  }
+}

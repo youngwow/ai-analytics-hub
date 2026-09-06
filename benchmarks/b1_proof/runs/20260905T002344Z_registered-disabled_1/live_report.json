@@ -1,0 +1,251 @@
+{
+  "mode": "registered-disabled",
+  "index": 1,
+  "run_dir": "benchmarks/b1_proof/runs/20260905T002344Z_registered-disabled_1",
+  "live": {
+    "wall_ms": 15820.48,
+    "sources": 9,
+    "sources_ok": 9,
+    "sources_failed": 0,
+    "documents_stored": 21,
+    "documents_with_content": 21,
+    "documents_with_date": 21,
+    "http_exchanges": 26,
+    "raw_blobs": 26,
+    "response_bytes": 1699948,
+    "user_cpu_seconds": 0.672,
+    "system_cpu_seconds": 0.063,
+    "peak_rss_mb": 243.95,
+    "captures": "benchmarks/b1_proof/runs/20260905T002344Z_registered-disabled_1/captures.jsonl"
+  },
+  "source_rows": [
+    {
+      "id": 1,
+      "name": "РБК",
+      "kind": "rss",
+      "latency_ms": 846,
+      "new": 3,
+      "seen": 30,
+      "warnings": [],
+      "fulltext_attempted": 1,
+      "fulltext_extracted": 1,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [
+        "rssexport.rbc.ru:politics:6a9b5517821e486649658475",
+        "rssexport.rbc.ru:business:6a9b5883a253bdbe3d350602",
+        "rssexport.rbc.ru:politics:6a9b51880c73c78f2ee838f8"
+      ],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 2,
+      "name": "ТАСС",
+      "kind": "rss",
+      "latency_ms": 858,
+      "new": 3,
+      "seen": 100,
+      "warnings": [],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 3,
+      "status": "ok",
+      "new_external_ids": [
+        "https://tass.ru/obschestvo/28081871",
+        "https://tass.ru/mezhdunarodnaya-panorama/28081873",
+        "https://tass.ru/proisshestviya/28081869"
+      ],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 3,
+      "name": "RusCable",
+      "kind": "rss",
+      "latency_ms": 824,
+      "new": 3,
+      "seen": 20,
+      "warnings": [],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 3,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [
+        "http://www.ruscable.ru/news/2026/09/04/Na_VEF_dali_start_masshtabnomu_proektu_robotizatsi/",
+        "http://www.ruscable.ru/news/2026/09/04/_TSVETLIT_sertifitsiroval_novye_marki_bezgalogenny/",
+        "http://www.ruscable.ru/news/2026/09/04/Sergej_TSivilev_prinyal_uchastie_v_zasedanii_Rossi/"
+      ],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 4,
+      "name": "Forbes.ru",
+      "kind": "rss",
+      "latency_ms": 1250,
+      "new": 3,
+      "seen": 19,
+      "warnings": [],
+      "fulltext_attempted": 0,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [
+        "forbes-567970",
+        "forbes-567967",
+        "forbes-567969"
+      ],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 5,
+      "name": "Официальное опубликование НПА",
+      "kind": "html",
+      "latency_ms": 543,
+      "new": 1,
+      "seen": 9,
+      "warnings": [],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 3,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [
+        "http://publication.pravo.gov.ru/documents/block/president"
+      ],
+      "stored": 1,
+      "with_title": 1,
+      "with_content": 1,
+      "with_date": 1
+    },
+    {
+      "id": 6,
+      "name": "Банк России — пресс-релизы",
+      "kind": "rss",
+      "latency_ms": 705,
+      "new": 1,
+      "seen": 9,
+      "warnings": [],
+      "fulltext_attempted": 1,
+      "fulltext_extracted": 1,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [
+        "docid_41604"
+      ],
+      "stored": 1,
+      "with_title": 1,
+      "with_content": 1,
+      "with_date": 1
+    },
+    {
+      "id": 7,
+      "name": "Торгпред (Минпромторг) — Telegram",
+      "kind": "telegram",
+      "latency_ms": 470,
+      "new": 3,
+      "seen": 20,
+      "warnings": [],
+      "fulltext_attempted": 0,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [
+        "rustorgpred/15096",
+        "rustorgpred/15097",
+        "rustorgpred/15098"
+      ],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 8,
+      "name": "Поиск: упоминания GS Labs / Триколор",
+      "kind": "search",
+      "latency_ms": 6531,
+      "new": 4,
+      "seen": 11,
+      "warnings": [],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 3,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [
+        "https://telesputnik.ru/materials/tech/article/texnologiyu-vnedryayut-a-process-ostavlyayut-preznim",
+        "https://gs-group.com/press-center/news/10-let-innovatsiy-ot-pervogo-ssd-k-novym-resheniyam/",
+        "https://gs-group.com/press-center/news/rossiyskie-svetodiody-vpervye-vklyuchili-v-reestr-po-novym-pravilam/",
+        "summary:2026-09-05"
+      ],
+      "stored": 4,
+      "with_title": 4,
+      "with_content": 4,
+      "with_date": 4
+    },
+    {
+      "id": 9,
+      "name": "Поиск: проекты НПА — ПО, ПД, КИИ",
+      "kind": "search",
+      "latency_ms": 2859,
+      "new": 0,
+      "seen": 0,
+      "warnings": [],
+      "fulltext_attempted": 0,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "new_external_ids": [],
+      "stored": 0,
+      "with_title": 0,
+      "with_content": 0,
+      "with_date": 0
+    }
+  ],
+  "search_artifacts": [
+    {
+      "number": 1,
+      "method": "POST",
+      "url": "https://api.tavily.com/search",
+      "started_at": "2026-09-05T00:23:44.882603+00:00",
+      "elapsed_ms": 2857.819,
+      "status": 200,
+      "request_body_sha256": "0d9e5668b538636648f7e2c52df8e349c4fac0d984566376c09dd0634799fbae",
+      "response_body_sha256": "1f99696618e237708ea08f4789501a42444d423ccf427062743546288072d5f2",
+      "request_file": "search_artifacts/01_request.json",
+      "response_file": "search_artifacts/01_response.json"
+    },
+    {
+      "number": 2,
+      "method": "POST",
+      "url": "https://api.tavily.com/search",
+      "started_at": "2026-09-05T00:23:44.412930+00:00",
+      "elapsed_ms": 6528.668,
+      "status": 200,
+      "request_body_sha256": "b41272a987bc8e171379b07345e898539d0f76525ff4095db44ed83ac1f3f3a1",
+      "response_body_sha256": "8423ed5a34b29f587a94549e3582b2e8d9e96a6d948a97d09ee7d1f90f826ce8",
+      "request_file": "search_artifacts/02_request.json",
+      "response_file": "search_artifacts/02_response.json"
+    }
+  ],
+  "document_quality": {
+    "documents": 21,
+    "missing_source": 0,
+    "missing_external_id": 0,
+    "missing_url_not_digest": 0,
+    "missing_title": 0,
+    "missing_readable_content": 0,
+    "passed": true
+  },
+  "secret_hits": 0,
+  "secret_files": {}
+}

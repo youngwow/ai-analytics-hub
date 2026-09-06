@@ -1,0 +1,136 @@
+{
+  "dataset_version": "v2.0.0",
+  "time_zone": "Europe/Moscow",
+  "scenarios": {
+    "A": {
+      "kind": "typical_shift",
+      "item_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A17",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22"
+      ],
+      "initial_state_id": "A",
+      "primary_hypotheses": [
+        "VALUE",
+        "H1",
+        "H4",
+        "H5"
+      ],
+      "release_at": "2026-08-24T18:00:00+03:00"
+    },
+    "B": {
+      "kind": "typical_shift",
+      "item_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21",
+        "B22"
+      ],
+      "initial_state_id": "B",
+      "primary_hypotheses": [
+        "VALUE",
+        "H1",
+        "H4",
+        "H5"
+      ],
+      "release_at": "2026-08-25T18:00:00+03:00"
+    },
+    "D1_critical": {
+      "kind": "diagnostic_episode",
+      "item_ids": [
+        "D101",
+        "D102",
+        "D103"
+      ],
+      "initial_state_id": "D1_critical",
+      "primary_hypotheses": [
+        "H2",
+        "H4"
+      ],
+      "release_at": null
+    },
+    "D2_event_boundary": {
+      "kind": "diagnostic_episode",
+      "item_ids": [
+        "D201",
+        "D202",
+        "D203",
+        "D204",
+        "D205"
+      ],
+      "initial_state_id": "D2_event_boundary",
+      "primary_hypotheses": [
+        "H3"
+      ],
+      "release_at": null
+    },
+    "D3_new_npa": {
+      "kind": "diagnostic_episode",
+      "item_ids": [
+        "D301",
+        "D302"
+      ],
+      "initial_state_id": "D3_new_npa",
+      "primary_hypotheses": [
+        "NPA_STATE"
+      ],
+      "release_at": null
+    },
+    "D4_known_npa": {
+      "kind": "diagnostic_episode",
+      "item_ids": [
+        "D401",
+        "D402",
+        "D403",
+        "D404"
+      ],
+      "initial_state_id": "D4_known_npa",
+      "primary_hypotheses": [
+        "NPA_STATE"
+      ],
+      "release_at": null
+    }
+  },
+  "modes": {
+    "fixed": "Only fixed-source observations.",
+    "search": "Only search observations, including rediscovery.",
+    "hybrid": "All observations available in the scenario."
+  }
+}

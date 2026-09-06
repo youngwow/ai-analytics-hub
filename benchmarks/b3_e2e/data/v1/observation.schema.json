@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "run_id",
+    "participant_id",
+    "scenario_id",
+    "workflow",
+    "task",
+    "active_seconds",
+    "corrections",
+    "completed"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "participant_id": {
+      "type": "string"
+    },
+    "scenario_id": {
+      "enum": [
+        "A",
+        "B",
+        "D1_critical",
+        "D2_event_boundary",
+        "D3_npa_history",
+        "UI_ACCEPTANCE"
+      ]
+    },
+    "workflow": {
+      "enum": [
+        "manual_baseline",
+        "product"
+      ]
+    },
+    "task": {
+      "enum": [
+        "collection",
+        "analysis",
+        "packaging",
+        "review_all",
+        "review_risk_only",
+        "flat_events",
+        "grouped_events",
+        "common_release",
+        "role_release",
+        "full_queue",
+        "top_layer",
+        "acceptance"
+      ]
+    },
+    "active_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "waiting_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "corrections": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "original_opens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

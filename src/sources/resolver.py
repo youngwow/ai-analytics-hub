@@ -88,11 +88,20 @@ class Resolver:
     # ── helpers ────────────────────────────────────────────────────────────
 
     def _get(self, url: str) -> Page:
-        return fetch(self.client, url, limiter=self.limiter)
+        # Source discovery is an interactive probe, not a scheduled poll. One
+        # attempt keeps adding an unavailable URL responsive; regular
+        # collection applies the bounded retry policy.
+        return fetch(self.client, url, limiter=self.limiter, attempts=1)
 
     def _probe(self, url: str) -> Page:
         """Fetch a guessed URL (feed probe, robots, sitemap) with a short timeout."""
-        return fetch(self.client, url, limiter=self.limiter, timeout=self.probe_timeout)
+        return fetch(
+            self.client,
+            url,
+            limiter=self.limiter,
+            timeout=self.probe_timeout,
+            attempts=1,
+        )
 
     @staticmethod
     def _normalise_input(url: str) -> str:

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/bin/zsh",
+    "-lc",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python /Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py --a1 one_pass --configuration-id rat-a1-one-pass-role-contract-v2"
+  ],
+  "returncode": 0,
+  "wall_seconds": 234.15797866698995,
+  "stdout": "",
+  "stderr": ""
+}

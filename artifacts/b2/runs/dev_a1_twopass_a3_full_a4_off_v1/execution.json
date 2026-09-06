@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "two_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--configuration-id",
+    "dev-a1-twopass-a3-full-a4-off"
+  ],
+  "returncode": 0,
+  "wall_seconds": 796.8234084589931,
+  "stdout": "",
+  "stderr": ""
+}

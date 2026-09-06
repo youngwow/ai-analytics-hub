@@ -1,0 +1,133 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v1.0.0",
+  "run_id": "fe603b72-74f6-4139-b873-b7d2c4e0d82c",
+  "configuration_id": "dev-a1-onepass-a3-full-a4-off",
+  "usage": {
+    "model_calls": 26,
+    "input_tokens": 32273,
+    "output_tokens": 85533,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 359.8734175419959,
+    "provider_latency_ms": 359798
+  },
+  "split": "development",
+  "contract_errors": [],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 14,
+        "total": 17,
+        "accuracy": 0.8235294117647058
+      },
+      "importance": {
+        "correct": 11,
+        "total": 17,
+        "accuracy": 0.6470588235294118
+      },
+      "critical_or_escalate": {
+        "correct": 17,
+        "total": 17,
+        "accuracy": 1.0
+      },
+      "roles": {
+        "correct": 5,
+        "total": 17,
+        "exact_set_accuracy": 0.29411764705882354
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 13,
+          "predicted": 11,
+          "precision": 1.0,
+          "recall": 0.8461538461538461,
+          "f1": 0.9166666666666666
+        },
+        "borderline": {
+          "support": 1,
+          "predicted": 4,
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4
+        },
+        "irrelevant": {
+          "support": 2,
+          "predicted": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "unknown": {
+          "support": 1,
+          "predicted": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.7722222222222221
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 4,
+          "predicted": 7,
+          "precision": 0.5714285714285714,
+          "recall": 1.0,
+          "f1": 0.7272727272727273
+        },
+        "medium": {
+          "support": 12,
+          "predicted": 8,
+          "precision": 0.875,
+          "recall": 0.5833333333333334,
+          "f1": 0.7000000000000001
+        },
+        "high": {
+          "support": 1,
+          "predicted": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.7136363636363636
+    }
+  },
+  "safety": {
+    "critical_total": 0,
+    "critical_in_low": [],
+    "submitted_claims": 58,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "event_grouping": {
+    "pair_precision": 1.0,
+    "pair_recall": 0.4444444444444444,
+    "pair_f1": 0.6153846153846153,
+    "b_cubed": {
+      "precision": 1.0,
+      "recall": 0.6296296296296295,
+      "f1": 0.7727272727272727
+    },
+    "false_merge_pairs": 0,
+    "false_split_pairs": 5
+  },
+  "npa": {
+    "link_identity_accuracy": 1.0,
+    "relation_accuracy": 0.5,
+    "stage_accuracy": 0.0
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

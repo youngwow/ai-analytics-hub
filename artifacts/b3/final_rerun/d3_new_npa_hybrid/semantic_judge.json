@@ -1,0 +1,65 @@
+{
+  "object_results": [
+    {
+      "expected_object_id": "NPA-D3",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    }
+  ],
+  "safety_gates": [
+    {
+      "gate": "critical_recall",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_critical_low",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_unsupported_released_fact",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "opinion_attribution",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "npa_state",
+      "verdict": "fail",
+      "item_ids": [
+        "D301"
+      ]
+    },
+    {
+      "gate": "critical_role_delivery",
+      "verdict": "pass",
+      "item_ids": []
+    }
+  ],
+  "hypothesis_results": {
+    "value_proxy": "not_tested",
+    "H1": "supported",
+    "H2_prerequisites": "mixed",
+    "H3": "mixed",
+    "H4_proxy": "not_tested",
+    "H5_content_proxy": "mixed"
+  },
+  "limitations": [
+    "No timed human observations exist for this run; value_proxy, H2_prerequisites, H4_proxy and H5_content_proxy cannot be fully supported, and human task time/cognitive load were explicitly not scored (deterministic_report.not_scored_by_rules).",
+    "npa_state gate fails on structured fields: current_version released as 'unknown' versus truth 'v1_12_months', and change_summary as 'unknown', even though D301 ('Предлагаемый срок хранения составляет 12 месяцев') supports a v1/12-month characterization; current_stage 'public_discussion', history_ids ['D301'] and effective_from null are correct, and the required change (new object 02/15/08-26/00190001, no link to NPA-LOG-OLD) was performed.",
+    "Scenario D3_new_npa contains no critical items (critical=false for D301 and D302), so critical_recall, no_critical_low and critical_role_delivery pass only vacuously.",
+    "The released digest_text does not state that applicability to GS Labs requires internal verification; that caveat (per ideal_summary and D301 Раздел 3/14) appears only in the object's impact_on_gs_labs field, not in the text delivered to GR/HEAD. All four must_preserve meanings (new identity 02/15/08-26/00190001, 12 months, deadline 18.09.2026, not enacted) are preserved in the digest text, and both forbidden claims are avoided.",
+    "Predicted object id 'NEW:02/15/08-26/00190001' differs from expected id 'NPA-D3'; the match is accepted via the exact member set {D301, D302} with matching type, importance, critical flag and roles.",
+    "H1 supported on observable coverage evidence: both relevant items D301 and D302 are included in one npa object with npa_update deliveries to both expected roles GR and HEAD (reachable_digest_coverage 1.0). H3 mixed: grouping/exact-object match is perfect, but the NPA state tracking lost current_version and change_summary (item D301). H2_prerequisites mixed: all deterministic prerequisites met (relevance/importance/roles/review_policy 1.0, needs_human_review=true), but the value chain itself is unvalidated. H5_content_proxy mixed: all 10 submitted claims are verbatim-quoted and semantically supported, but sufficiency for human use is untested. H4_proxy and value_proxy not_tested: no human timing or value observations."
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "run_id",
+    "scenario_id",
+    "mode",
+    "item_decisions",
+    "objects",
+    "deliveries"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "scenario_id": {
+      "enum": [
+        "A",
+        "B",
+        "D1_critical",
+        "D2_event_boundary",
+        "D3_npa_history"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "fixed",
+        "search",
+        "hybrid"
+      ]
+    },
+    "item_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "relevance",
+          "importance",
+          "critical",
+          "roles",
+          "risk_flag"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "relevance": {
+            "enum": [
+              "relevant",
+              "borderline",
+              "irrelevant",
+              "unknown"
+            ]
+          },
+          "importance": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
+          "critical": {
+            "type": "boolean"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "PR",
+                "GR",
+                "HEAD"
+              ]
+            }
+          },
+          "risk_flag": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "object_id",
+          "type",
+          "member_ids",
+          "summary",
+          "importance",
+          "critical",
+          "roles",
+          "claims"
+        ],
+        "properties": {
+          "object_id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "publication",
+              "event",
+              "npa"
+            ]
+          },
+          "member_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "impact_on_gs_labs": {
+            "type": "string"
+          },
+          "importance": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
+          "critical": {
+            "type": "boolean"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "PR",
+                "GR",
+                "HEAD"
+              ]
+            }
+          },
+          "claims": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "claim_id",
+                "text",
+                "evidence"
+              ],
+              "properties": {
+                "claim_id": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "source_item_id",
+                      "quote"
+                    ],
+                    "properties": {
+                      "source_item_id": {
+                        "type": "string"
+                      },
+                      "quote": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "npa_state": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "current_stage": {
+                "type": "string"
+              },
+              "current_version": {
+                "type": "string"
+              },
+              "history_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "change_summary": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "deliveries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "delivery_type",
+          "recipient",
+          "object_ids",
+          "digest_text"
+        ],
+        "properties": {
+          "delivery_type": {
+            "enum": [
+              "planned_digest",
+              "urgent_alert",
+              "npa_update"
+            ]
+          },
+          "recipient": {
+            "enum": [
+              "PR",
+              "GR",
+              "HEAD"
+            ]
+          },
+          "object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "digest_text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

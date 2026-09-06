@@ -13,7 +13,7 @@ import os
 import sqlite3
 from typing import Iterable
 
-from ..common import get_logger, to_utc_iso, utc_now
+from ..common import get_logger, sha256_text, to_utc_iso, utc_now
 from ..models import (
     Cluster,
     CollectReport,
@@ -240,8 +240,192 @@ CREATE TRIGGER IF NOT EXISTS items_fts_au AFTER UPDATE ON items BEGIN
 END;
 """
 
+_SCHEMA_V3 = """
+CREATE TABLE IF NOT EXISTS context_versions (
+    id          INTEGER PRIMARY KEY,
+    version     TEXT NOT NULL UNIQUE,
+    payload     TEXT NOT NULL,
+    created_at  TEXT NOT NULL,
+    actor       TEXT NOT NULL DEFAULT 'system'
+);
 
-_MIGRATIONS: dict[int, str] = {1: _SCHEMA_V1, 2: _SCHEMA_V2}
+CREATE TABLE IF NOT EXISTS prepared_documents (
+    id              INTEGER PRIMARY KEY,
+    material_id     TEXT NOT NULL,
+    version         INTEGER NOT NULL,
+    raw_document_id INTEGER REFERENCES documents(id) ON DELETE SET NULL,
+    payload         TEXT NOT NULL,
+    created_at      TEXT NOT NULL,
+    UNIQUE(material_id, version)
+);
+
+CREATE TABLE IF NOT EXISTS analysis_runs (
+    id                INTEGER PRIMARY KEY,
+    material_id       TEXT NOT NULL,
+    prepared_version  INTEGER NOT NULL,
+    context_version   TEXT NOT NULL,
+    configuration_id  TEXT NOT NULL,
+    model             TEXT NOT NULL,
+    payload           TEXT NOT NULL,
+    status            TEXT NOT NULL,
+    created_at        TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_analysis_material ON analysis_runs(material_id, id DESC);
+
+CREATE TABLE IF NOT EXISTS signal_revisions (
+    id               INTEGER PRIMARY KEY,
+    signal_id        TEXT NOT NULL,
+    revision         INTEGER NOT NULL,
+    analysis_run_id  INTEGER REFERENCES analysis_runs(id) ON DELETE SET NULL,
+    payload          TEXT NOT NULL,
+    created_at       TEXT NOT NULL,
+    actor            TEXT NOT NULL DEFAULT 'ai',
+    reason           TEXT NOT NULL DEFAULT '',
+    UNIQUE(signal_id, revision)
+);
+
+CREATE TABLE IF NOT EXISTS research_reports (
+    id          INTEGER PRIMARY KEY,
+    signal_id   TEXT NOT NULL,
+    payload     TEXT NOT NULL,
+    created_at  TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS product_events (
+    id          TEXT PRIMARY KEY,
+    version     INTEGER NOT NULL,
+    payload     TEXT NOT NULL,
+    created_at  TEXT NOT NULL,
+    updated_at  TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS event_links (
+    id          INTEGER PRIMARY KEY,
+    signal_id   TEXT NOT NULL,
+    event_id    TEXT REFERENCES product_events(id) ON DELETE SET NULL,
+    relation    TEXT NOT NULL,
+    confidence  REAL NOT NULL,
+    payload     TEXT NOT NULL,
+    created_at  TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS npa_records (
+    id                    TEXT PRIMARY KEY,
+    jurisdiction          TEXT NOT NULL,
+    official_identifier   TEXT NOT NULL,
+    official_url          TEXT,
+    tracked               INTEGER NOT NULL DEFAULT 1,
+    created_at            TEXT NOT NULL,
+    UNIQUE(jurisdiction, official_identifier)
+);
+
+CREATE TABLE IF NOT EXISTS npa_candidates (
+    id          INTEGER PRIMARY KEY,
+    signal_id   TEXT NOT NULL,
+    payload     TEXT NOT NULL,
+    status      TEXT NOT NULL DEFAULT 'unresolved',
+    created_at  TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS npa_versions (
+    id             INTEGER PRIMARY KEY,
+    npa_id         TEXT NOT NULL REFERENCES npa_records(id) ON DELETE CASCADE,
+    version        INTEGER NOT NULL,
+    stage          TEXT,
+    payload        TEXT NOT NULL,
+    source_url     TEXT NOT NULL,
+    effective_at   TEXT,
+    created_at     TEXT NOT NULL,
+    UNIQUE(npa_id, version)
+);
+
+CREATE TABLE IF NOT EXISTS review_decisions (
+    id               INTEGER PRIMARY KEY,
+    signal_id        TEXT NOT NULL,
+    signal_revision  INTEGER NOT NULL,
+    decision         TEXT NOT NULL,
+    payload          TEXT NOT NULL,
+    actor             TEXT NOT NULL,
+    created_at        TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS digests (
+    id          TEXT NOT NULL,
+    version     INTEGER NOT NULL,
+    period_from TEXT NOT NULL,
+    period_to   TEXT NOT NULL,
+    status      TEXT NOT NULL,
+    payload     TEXT NOT NULL,
+    created_at  TEXT NOT NULL,
+    actor       TEXT NOT NULL,
+    PRIMARY KEY(id, version)
+);
+
+CREATE TABLE IF NOT EXISTS delivery_attempts (
+    id               INTEGER PRIMARY KEY,
+    idempotency_key  TEXT NOT NULL UNIQUE,
+    digest_id        TEXT,
+    digest_version   INTEGER,
+    channel          TEXT NOT NULL,
+    recipient        TEXT NOT NULL,
+    status           TEXT NOT NULL,
+    error            TEXT NOT NULL DEFAULT '',
+    created_at       TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS audit_events (
+    id          INTEGER PRIMARY KEY,
+    event_type  TEXT NOT NULL,
+    object_type TEXT NOT NULL,
+    object_id   TEXT NOT NULL,
+    actor       TEXT NOT NULL,
+    payload     TEXT NOT NULL DEFAULT '{}',
+    created_at  TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_audit_object ON audit_events(object_type, object_id, id);
+"""
+
+_SCHEMA_V4 = """
+ALTER TABLE sources ADD COLUMN direction TEXT NOT NULL DEFAULT 'both';
+ALTER TABLE sources ADD COLUMN source_class TEXT NOT NULL DEFAULT 'ordinary';
+ALTER TABLE sources ADD COLUMN status TEXT NOT NULL DEFAULT 'active';
+
+ALTER TABLE fetch_state ADD COLUMN native_cursor TEXT;
+ALTER TABLE fetch_state ADD COLUMN high_watermark TEXT;
+ALTER TABLE fetch_state ADD COLUMN continuation_cursor TEXT NOT NULL DEFAULT '{}';
+ALTER TABLE fetch_state ADD COLUMN backlog_status TEXT NOT NULL DEFAULT 'clear';
+ALTER TABLE fetch_state ADD COLUMN coverage_from TEXT;
+ALTER TABLE fetch_state ADD COLUMN coverage_to TEXT;
+ALTER TABLE fetch_state ADD COLUMN coverage_status TEXT NOT NULL DEFAULT 'unknown';
+
+CREATE TABLE IF NOT EXISTS fetch_artifacts (
+    id                INTEGER PRIMARY KEY,
+    source_id         INTEGER NOT NULL REFERENCES sources(id) ON DELETE CASCADE,
+    request_id        TEXT NOT NULL,
+    requested_at      TEXT NOT NULL,
+    completed_at      TEXT NOT NULL,
+    status            TEXT NOT NULL,
+    content_type      TEXT,
+    sanitized_headers TEXT NOT NULL DEFAULT '{}',
+    bounded_body      BLOB,
+    body_hash         TEXT,
+    warnings          TEXT NOT NULL DEFAULT '[]'
+);
+
+CREATE TABLE IF NOT EXISTS document_revisions (
+    id                   INTEGER PRIMARY KEY,
+    document_id          INTEGER NOT NULL REFERENCES documents(id) ON DELETE CASCADE,
+    revision             INTEGER NOT NULL,
+    content_hash         TEXT NOT NULL,
+    payload              TEXT NOT NULL,
+    previous_revision_id INTEGER REFERENCES document_revisions(id),
+    created_at           TEXT NOT NULL,
+    UNIQUE(document_id, revision)
+);
+"""
+
+
+_MIGRATIONS: dict[int, str] = {1: _SCHEMA_V1, 2: _SCHEMA_V2, 3: _SCHEMA_V3, 4: _SCHEMA_V4}
 
 
 class DuplicateSourceError(Exception):
@@ -274,6 +458,8 @@ class Database:
         self._migrate()
         self.sources = SourceRepo(self.conn)
         self.documents = DocumentRepo(self.conn)
+        self.fetch_artifacts = FetchArtifactRepo(self.conn)
+        self.document_revisions = DocumentRevisionRepo(self.conn)
         self.fetch_state = FetchStateRepo(self.conn)
         self.seen_urls = SeenUrlRepo(self.conn)
         self.runs = RunRepo(self.conn)
@@ -311,8 +497,8 @@ class SourceRepo:
             raise DuplicateSourceError(existing)
         source.created_at = source.created_at or _now_iso()
         cur = self.conn.execute(
-            "INSERT INTO sources (name, url, kind, category, fetch_url, enabled, created_at, notes) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO sources (name, url, kind, category, fetch_url, enabled, created_at, notes, direction, source_class, status) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 source.name,
                 source.url,
@@ -322,6 +508,9 @@ class SourceRepo:
                 int(source.enabled),
                 source.created_at,
                 source.notes,
+                source.direction,
+                source.source_class,
+                source.status,
             ),
         )
         self.conn.commit()
@@ -330,7 +519,7 @@ class SourceRepo:
 
     def update(self, source: Source) -> None:
         self.conn.execute(
-            "UPDATE sources SET name=?, url=?, kind=?, category=?, fetch_url=?, enabled=?, notes=? "
+            "UPDATE sources SET name=?, url=?, kind=?, category=?, fetch_url=?, enabled=?, notes=?, direction=?, source_class=?, status=? "
             "WHERE id=?",
             (
                 source.name,
@@ -340,6 +529,9 @@ class SourceRepo:
                 source.fetch_url,
                 int(source.enabled),
                 source.notes,
+                source.direction,
+                source.source_class,
+                source.status,
                 source.id,
             ),
         )
@@ -399,6 +591,23 @@ class DocumentRepo:
             (source_id, external_id),
         ).fetchone()
         return row is not None
+
+    def row_by_external_id(self, source_id: int, external_id: str) -> sqlite3.Row | None:
+        return self.conn.execute(
+            "SELECT * FROM documents WHERE source_id=? AND external_id=? LIMIT 1",
+            (source_id, external_id),
+        ).fetchone()
+
+    def update(self, document_id: int, doc: RawDocument) -> None:
+        """Replace the current projection; immutable snapshots live in document_revisions."""
+        r = doc.to_row()
+        self.conn.execute(
+            "UPDATE documents SET url=:url,title=:title,summary=:summary,text=:text,"
+            "raw_html=:raw_html,author=:author,attachments=:attachments,"
+            "published_at=:published_at,fetched_at=:fetched_at,content_hash=:content_hash "
+            "WHERE id=:document_id",
+            {**r, "document_id": document_id},
+        )
 
     def find_by_url(self, url: str) -> int | None:
         row = self.conn.execute("SELECT id FROM documents WHERE url=? LIMIT 1", (url,)).fetchone()
@@ -510,6 +719,85 @@ class DocumentRepo:
         )
 
 
+class DocumentRevisionRepo:
+    """Immutable snapshots behind the mutable `documents` current projection."""
+
+    def __init__(self, conn: sqlite3.Connection):
+        self.conn = conn
+
+    @staticmethod
+    def _payload(doc: RawDocument) -> str:
+        return json.dumps(doc.to_row(), ensure_ascii=False, sort_keys=True)
+
+    def append(self, document_id: int, doc: RawDocument) -> int:
+        previous = self.conn.execute(
+            "SELECT id,revision FROM document_revisions WHERE document_id=? "
+            "ORDER BY revision DESC LIMIT 1",
+            (document_id,),
+        ).fetchone()
+        revision = int(previous["revision"]) + 1 if previous else 1
+        cur = self.conn.execute(
+            "INSERT INTO document_revisions "
+            "(document_id,revision,content_hash,payload,previous_revision_id,created_at) "
+            "VALUES (?,?,?,?,?,?)",
+            (
+                document_id,
+                revision,
+                doc.content_hash,
+                self._payload(doc),
+                int(previous["id"]) if previous else None,
+                _now_iso(),
+            ),
+        )
+        return int(cur.lastrowid)
+
+    def list(self, document_id: int) -> list[sqlite3.Row]:
+        return list(
+            self.conn.execute(
+                "SELECT * FROM document_revisions WHERE document_id=? ORDER BY revision",
+                (document_id,),
+            )
+        )
+
+
+class FetchArtifactRepo:
+    """Bounded, sanitized manifest of one source poll; secrets and raw headers never enter it."""
+
+    def __init__(self, conn: sqlite3.Connection):
+        self.conn = conn
+
+    def add(
+        self,
+        *,
+        source_id: int,
+        request_id: str,
+        requested_at: str,
+        completed_at: str,
+        status: str,
+        manifest: dict | None = None,
+        warnings: list[str] | None = None,
+    ) -> int:
+        body = json.dumps(manifest or {}, ensure_ascii=False, sort_keys=True).encode()[:65536]
+        cur = self.conn.execute(
+            "INSERT INTO fetch_artifacts "
+            "(source_id,request_id,requested_at,completed_at,status,content_type,"
+            "sanitized_headers,bounded_body,body_hash,warnings) VALUES (?,?,?,?,?,?,?,?,?,?)",
+            (
+                source_id,
+                request_id,
+                requested_at,
+                completed_at,
+                status,
+                "application/json",
+                "{}",
+                body,
+                sha256_text(body.decode(errors="replace")),
+                json.dumps(warnings or [], ensure_ascii=False),
+            ),
+        )
+        return int(cur.lastrowid)
+
+
 class FetchStateRepo:
     def __init__(self, conn: sqlite3.Connection):
         self.conn = conn
@@ -524,13 +812,17 @@ class FetchStateRepo:
         """Upsert; the caller owns the transaction."""
         self.conn.execute(
             "INSERT INTO fetch_state (source_id, etag, last_modified, last_fetch_at, "
-            "last_success_at, last_error, consecutive_failures, last_doc_count, cursor) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) "
+            "last_success_at, last_error, consecutive_failures, last_doc_count, cursor, "
+            "native_cursor,high_watermark,continuation_cursor,backlog_status,coverage_from,coverage_to,coverage_status) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
             "ON CONFLICT(source_id) DO UPDATE SET etag=excluded.etag, "
             "last_modified=excluded.last_modified, last_fetch_at=excluded.last_fetch_at, "
             "last_success_at=excluded.last_success_at, last_error=excluded.last_error, "
             "consecutive_failures=excluded.consecutive_failures, "
-            "last_doc_count=excluded.last_doc_count, cursor=excluded.cursor",
+            "last_doc_count=excluded.last_doc_count, cursor=excluded.cursor, "
+            "native_cursor=excluded.native_cursor,high_watermark=excluded.high_watermark, "
+            "continuation_cursor=excluded.continuation_cursor,backlog_status=excluded.backlog_status, "
+            "coverage_from=excluded.coverage_from,coverage_to=excluded.coverage_to,coverage_status=excluded.coverage_status",
             (
                 state.source_id,
                 state.etag,
@@ -541,6 +833,13 @@ class FetchStateRepo:
                 state.consecutive_failures,
                 state.last_doc_count,
                 json.dumps(state.cursor, ensure_ascii=False),
+                state.native_cursor,
+                state.high_watermark,
+                json.dumps(state.continuation_cursor, ensure_ascii=False),
+                state.backlog_status,
+                state.coverage_from,
+                state.coverage_to,
+                state.coverage_status,
             ),
         )
 

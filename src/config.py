@@ -87,13 +87,11 @@ class TavilyConfig:
 
 @dataclass(frozen=True)
 class LLMConfig:
-    """Провайдер модели. По умолчанию GLM-5.3 в Ollama Cloud (см. research.md, R-01)."""
+    """Единственная генеративная модель проекта: GLM в Ollama Cloud."""
 
     host: str = "https://ollama.com"
-    model: str = "glm-5.3-flash"
+    model: str = "glm-5.3-flash:cloud"
     api_key_env: str = "OLLAMA_API_KEY"
-    embed_model: str = "embeddinggemma"
-    embed_dimensions: int = 768
     request_timeout: float = 90.0
     max_retries: int = 2
     retry_backoff: float = 2.0
@@ -103,6 +101,19 @@ class LLMConfig:
     # `content` clean; think=False makes it reason inside `content` instead.
     think: bool | None = None
     max_output_tokens: int = -1  # -1: no cap — a truncated answer is a wasted call
+
+
+@dataclass(frozen=True)
+class EmbeddingConfig:
+    """Единственная embedding-модель проекта: Gemini через OpenRouter."""
+
+    base_url: str = "https://openrouter.ai/api/v1"
+    model: str = "google/gemini-embedding-001"
+    api_key_env: str = "OPENROUTER_API_KEY"
+    dimensions: int = 3072
+    request_timeout: float = 60.0
+    max_retries: int = 2
+    retry_backoff: float = 1.0
 
 
 @dataclass(frozen=True)
@@ -116,6 +127,8 @@ class ProcessingConfig:
     candidate_window_days: int = 7
     simhash_distance: int = 8  # правки-перепечатки дают 2-4; разные документы — от 18
     cosine_threshold: float = 0.86
+    grounding: bool = True
+    needs_review_ratio: float = 0.5
     borderline_low: float = 0.35
     borderline_high: float = 0.5
 
@@ -126,6 +139,7 @@ _SECTIONS = {
     "sitemap": SitemapConfig,
     "tavily": TavilyConfig,
     "llm": LLMConfig,
+    "embeddings": EmbeddingConfig,
     "processing": ProcessingConfig,
 }
 
@@ -151,6 +165,7 @@ class Config:
     sitemap: SitemapConfig
     tavily: TavilyConfig
     llm: LLMConfig = field(default_factory=LLMConfig)
+    embeddings: EmbeddingConfig = field(default_factory=EmbeddingConfig)
     processing: ProcessingConfig = field(default_factory=ProcessingConfig)
     raw: dict = field(default_factory=dict, repr=False)
 
@@ -210,12 +225,31 @@ class Config:
                 "config.yaml: llm.request_timeout must be > 0, max_retries and "
                 "retry_backoff >= 0"
             )
-        if llm.embed_dimensions < 1:
-            raise ConfigError("config.yaml: llm.embed_dimensions must be >= 1")
+        if llm.host.rstrip("/") != "https://ollama.com" or llm.model != "glm-5.3-flash:cloud":
+            raise ConfigError(
+                "config.yaml: generation is locked to Ollama Cloud model "
+                "'glm-5.3-flash:cloud'"
+            )
         if llm.max_output_tokens == 0 or llm.max_output_tokens < -1:
             raise ConfigError("config.yaml: llm.max_output_tokens must be -1 or a positive number")
         if not 0 <= llm.temperature <= 2:
             raise ConfigError("config.yaml: llm.temperature must be within [0, 2]")
+        emb = self.embeddings
+        if (
+            emb.base_url.rstrip("/") != "https://openrouter.ai/api/v1"
+            or emb.model != "google/gemini-embedding-001"
+        ):
+            raise ConfigError(
+                "config.yaml: embeddings are locked to OpenRouter model "
+                "'google/gemini-embedding-001'"
+            )
+        if emb.dimensions != 3072:
+            raise ConfigError("config.yaml: embeddings.dimensions must be 3072")
+        if emb.request_timeout <= 0 or emb.max_retries < 0 or emb.retry_backoff < 0:
+            raise ConfigError(
+                "config.yaml: embeddings.request_timeout must be > 0, max_retries and "
+                "retry_backoff >= 0"
+            )
         pr = self.processing
         if pr.concurrency < 1 or pr.max_new_per_run < 1:
             raise ConfigError(
@@ -230,7 +264,12 @@ class Config:
                 "config.yaml: processing.candidate_window_days >= 1 and "
                 "simhash_distance within [0, 64]"
             )
-        for name in ("cosine_threshold", "borderline_low", "borderline_high"):
+        for name in (
+            "cosine_threshold",
+            "needs_review_ratio",
+            "borderline_low",
+            "borderline_high",
+        ):
             value = getattr(pr, name)
             if not 0 <= value <= 1:
                 raise ConfigError(f"config.yaml: processing.{name} must be within [0, 1]")

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "dimensions": {
+    "mean_must_fact_coverage": 0.9523809523809523,
+    "materials_with_unsupported_claims": 0,
+    "faithful_summaries": 21,
+    "events_preserving_unique_facts": 3,
+    "events_losing_independent_positions": 0
+  },
+  "rule": "Semantic dimensions remain separate and are not converted into one weighted score."
+}

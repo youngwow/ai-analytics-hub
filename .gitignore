@@ -1,4 +1,5 @@
 data/Для_ИТМО_мониторинг_НПА_и_отрасли.xlsx
+.DS_Store
 .claude
 CLAUDE.md
 # Byte-compiled / optimized / DLL files
@@ -222,6 +223,11 @@ __marimo__/
 
 # local database
 data/hub.db*
+
+# Benchmark runners keep compact reports in git; raw HTTP payloads and SQLite journals are local evidence.
+benchmarks/**/runs/**/raw/
+artifacts/**/product.db-shm
+artifacts/**/product.db-wal
 
 # Telegram MTProto session — equals full access to the account, never commit
 data/*.session

@@ -1,0 +1,617 @@
+{
+  "metadata": {
+    "run_id": "20260906T015442Z",
+    "generated_at": "2026-09-06T01:55:43.686890+00:00",
+    "python": "3.12.14",
+    "platform": "macOS-26.6.1-arm64-arm-64bit",
+    "contract_version": "2.0.0",
+    "contract_sha256": "9401ee96b343369a6d48f307c3f9ac8d34eb09c79de6a7f80f578b91ed4d9715"
+  },
+  "verdict": "PASS",
+  "C1_exact_contract": {
+    "passed": true,
+    "exact_scenarios": {
+      "benchmark": "B1-D",
+      "manifest_version": "2.0",
+      "captured_at": "2026-09-02T12:00:00+00:00",
+      "generated_at": "2026-09-06T01:54:42.770163+00:00",
+      "scenario_count": 8,
+      "passed": 8,
+      "recall_percent": 100.0,
+      "required_field_accuracy_percent": 100.0,
+      "guardrails": {
+        "conditional_get": true,
+        "timeout_is_typed_failure": true,
+        "recovery_returns_all_documents": true
+      },
+      "operational": {
+        "failed_source_did_not_stop_other": true,
+        "recovery_backfilled_available_documents": true,
+        "repeat_created_no_duplicates": true,
+        "documents_after_first": 4,
+        "documents_after_recovery": 6,
+        "documents_after_repeat": 6
+      },
+      "rows": [
+        {
+          "id": "rss-yandex-fulltext",
+          "kind": "rss",
+          "passed": true,
+          "expected": 4,
+          "observed": 4,
+          "missing_ids": [],
+          "ids_sha256": "203e22fb4b10a54ce9dc4b86fd058527257369f1eb05fa2cc326cfa725fd16f9",
+          "expected_ids_sha256": "203e22fb4b10a54ce9dc4b86fd058527257369f1eb05fa2cc326cfa725fd16f9",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 1.607
+        },
+        {
+          "id": "rss-cbr-fulltext",
+          "kind": "rss",
+          "passed": true,
+          "expected": 2,
+          "observed": 2,
+          "missing_ids": [],
+          "ids_sha256": "38f09e3d2817e361044734f529f5fb364ad250e2f02f05059b7afdc50b4dcfe0",
+          "expected_ids_sha256": "38f09e3d2817e361044734f529f5fb364ad250e2f02f05059b7afdc50b4dcfe0",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 2.077
+        },
+        {
+          "id": "atom",
+          "kind": "rss",
+          "passed": true,
+          "expected": 2,
+          "observed": 2,
+          "missing_ids": [],
+          "ids_sha256": "1d78208fb471bf9346753a3316fbcf5a86d710134aae79c3f83a0017a8601ff8",
+          "expected_ids_sha256": "1d78208fb471bf9346753a3316fbcf5a86d710134aae79c3f83a0017a8601ff8",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 0.39
+        },
+        {
+          "id": "telegram-preview",
+          "kind": "telegram",
+          "passed": true,
+          "expected": 4,
+          "observed": 4,
+          "missing_ids": [],
+          "ids_sha256": "2e1839d0105ebfa41dc5f18b08c197216918a98970338e65599bd6a3cf875b00",
+          "expected_ids_sha256": "2e1839d0105ebfa41dc5f18b08c197216918a98970338e65599bd6a3cf875b00",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 0.95
+        },
+        {
+          "id": "telegram-media-only",
+          "kind": "telegram",
+          "passed": true,
+          "expected": 1,
+          "observed": 1,
+          "missing_ids": [],
+          "ids_sha256": "fd6b6995830639267e00b941b6e54ae6ecdb8c975cf2c3c181cd661d4b3199cc",
+          "expected_ids_sha256": "fd6b6995830639267e00b941b6e54ae6ecdb8c975cf2c3c181cd661d4b3199cc",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 0.527
+        },
+        {
+          "id": "sitemap-urlset",
+          "kind": "sitemap",
+          "passed": true,
+          "expected": 3,
+          "observed": 3,
+          "missing_ids": [],
+          "ids_sha256": "06abf767bbaf02a11b3afabf758ddd0d1e6bb53b2e06fd91493faba9dbd885b6",
+          "expected_ids_sha256": "06abf767bbaf02a11b3afabf758ddd0d1e6bb53b2e06fd91493faba9dbd885b6",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 0.177
+        },
+        {
+          "id": "html-list",
+          "kind": "html",
+          "passed": true,
+          "expected": 38,
+          "observed": 38,
+          "missing_ids": [],
+          "ids_sha256": "1b6e2054766b0c45802a064d4fb59b1a9fa967cf82ab85fa40f81fe22509f998",
+          "expected_ids_sha256": "1b6e2054766b0c45802a064d4fb59b1a9fa967cf82ab85fa40f81fe22509f998",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 2.683
+        },
+        {
+          "id": "search-tavily",
+          "kind": "search",
+          "passed": true,
+          "expected": 3,
+          "observed": 3,
+          "missing_ids": [],
+          "ids_sha256": "559ce7c7419a3e1b3a28d7e67d80185e867e039bdb37945ce67ca73605946ef5",
+          "expected_ids_sha256": "559ce7c7419a3e1b3a28d7e67d80185e867e039bdb37945ce67ca73605946ef5",
+          "field_failures": [],
+          "error": null,
+          "latency_ms": 0.436
+        }
+      ]
+    },
+    "fulltext_extraction": {
+      "passed": true,
+      "title": "Минцифры предложило правила управления M2M SIM-картами",
+      "author": "Иван Петров",
+      "date": "2026-09-02T09:30:00+00:00",
+      "text_sha256": "114ffdb4ac159d70d5408ee90c3c0a36838310b2ac68ed49465cfb77055a95a2"
+    }
+  },
+  "C2_state_fault": {
+    "passed": true,
+    "http_and_format_faults": [
+      {
+        "scenario": "http_403",
+        "passed": true,
+        "error": "HTTP 403"
+      },
+      {
+        "scenario": "http_429",
+        "passed": true,
+        "error": "HTTP 429"
+      },
+      {
+        "scenario": "http_500",
+        "passed": true,
+        "error": "HTTP 500"
+      },
+      {
+        "scenario": "malformed_body",
+        "passed": true,
+        "error": "not a feed (<unknown>:2:0: syntax error)"
+      }
+    ],
+    "telegram_cursor": {
+      "passed": true,
+      "calls": [
+        "https://t.me/s/cit_gov",
+        "https://t.me/s/cit_gov?after=1485",
+        "https://t.me/s/cit_gov?after=1501"
+      ],
+      "first_cursor": {
+        "transport": "web",
+        "last_post_id": 1485
+      },
+      "second_cursor": {
+        "transport": "web",
+        "last_post_id": 1501
+      }
+    },
+    "child_sitemap_partial_visible": {
+      "passed": true,
+      "entry": {
+        "id": 1,
+        "name": "sitemap",
+        "kind": "sitemap",
+        "latency_ms": 0,
+        "new": 0,
+        "seen": 0,
+        "warnings": [
+          "child sitemap https://site.test/news.xml: HTTP 500"
+        ],
+        "fulltext_attempted": 0,
+        "fulltext_extracted": 0,
+        "fulltext_fallback": 0,
+        "status": "partial",
+        "updated": 0,
+        "new_external_ids": [],
+        "updated_external_ids": []
+      }
+    },
+    "conditional_recovery_isolation_repeat": {
+      "conditional_get": true,
+      "timeout_is_typed_failure": true,
+      "recovery_returns_all_documents": true,
+      "failed_source_did_not_stop_other": true,
+      "recovery_backfilled_available_documents": true,
+      "repeat_created_no_duplicates": true
+    }
+  },
+  "C3_full_collector_replay": {
+    "passed": true,
+    "capture": "benchmarks/b1_proof/runs/20260906T015219Z_active_3",
+    "active_sources": 44,
+    "rows": [
+      {
+        "concurrency": 1,
+        "wall_ms": 1608.984,
+        "cpu_seconds": 2.0715,
+        "peak_rss_mb_process": 146.94,
+        "sources": 44,
+        "statuses": {
+          "ok": 43,
+          "partial": 1
+        },
+        "documents": 33,
+        "fingerprint": "b15c271d05d599653ad5fe4c46c2213987a9bf1cf8ee53ab5246b8b3d2e49e8d",
+        "replay_calls": 82,
+        "replay_misses": 0,
+        "warnings": 2,
+        "fulltext_attempted": 30,
+        "fulltext_extracted": 30,
+        "fulltext_fallback": 0
+      },
+      {
+        "concurrency": 8,
+        "wall_ms": 815.7,
+        "cpu_seconds": 1.1399,
+        "peak_rss_mb_process": 153.22,
+        "sources": 44,
+        "statuses": {
+          "ok": 43,
+          "partial": 1
+        },
+        "documents": 33,
+        "fingerprint": "b15c271d05d599653ad5fe4c46c2213987a9bf1cf8ee53ab5246b8b3d2e49e8d",
+        "replay_calls": 82,
+        "replay_misses": 0,
+        "warnings": 2,
+        "fulltext_attempted": 30,
+        "fulltext_extracted": 30,
+        "fulltext_fallback": 0
+      },
+      {
+        "concurrency": 24,
+        "wall_ms": 780.223,
+        "cpu_seconds": 1.1002,
+        "peak_rss_mb_process": 154.88,
+        "sources": 44,
+        "statuses": {
+          "ok": 43,
+          "partial": 1
+        },
+        "documents": 33,
+        "fingerprint": "b15c271d05d599653ad5fe4c46c2213987a9bf1cf8ee53ab5246b8b3d2e49e8d",
+        "replay_calls": 82,
+        "replay_misses": 0,
+        "warnings": 2,
+        "fulltext_attempted": 30,
+        "fulltext_extracted": 30,
+        "fulltext_fallback": 0
+      }
+    ],
+    "selected_concurrency": 8,
+    "selection_rule": "fastest correct; within 10% choose lower concurrency"
+  },
+  "C4_live_compatibility": {
+    "passed": true,
+    "active_runs": [
+      {
+        "index": 1,
+        "run_dir": "benchmarks/b1_proof/runs/20260906T015446Z_active_1"
+      },
+      {
+        "index": 2,
+        "run_dir": "benchmarks/b1_proof/runs/20260906T015502Z_active_2"
+      },
+      {
+        "index": 3,
+        "run_dir": "benchmarks/b1_proof/runs/20260906T015519Z_active_3"
+      }
+    ],
+    "active_failures": [],
+    "active_document_quality_failures": [],
+    "secret_hits": 0,
+    "by_method": {
+      "rss": {
+        "attempts": 57,
+        "ok": 57,
+        "partial": 0,
+        "failed": 0,
+        "stored": 63,
+        "warnings": 0,
+        "fulltext_attempted": 63,
+        "fulltext_extracted": 63,
+        "fulltext_fallback": 0,
+        "latency_p50_ms": 440,
+        "latency_p95_ms": 913
+      },
+      "sitemap": {
+        "attempts": 6,
+        "ok": 3,
+        "partial": 3,
+        "failed": 0,
+        "stored": 0,
+        "warnings": 6,
+        "fulltext_attempted": 9,
+        "fulltext_extracted": 9,
+        "fulltext_fallback": 0,
+        "latency_p50_ms": 495,
+        "latency_p95_ms": 6911
+      },
+      "html": {
+        "attempts": 6,
+        "ok": 6,
+        "partial": 0,
+        "failed": 0,
+        "stored": 0,
+        "warnings": 0,
+        "fulltext_attempted": 18,
+        "fulltext_extracted": 18,
+        "fulltext_fallback": 0,
+        "latency_p50_ms": 342,
+        "latency_p95_ms": 416
+      },
+      "telegram": {
+        "attempts": 63,
+        "ok": 63,
+        "partial": 0,
+        "failed": 0,
+        "stored": 36,
+        "warnings": 0,
+        "fulltext_attempted": 0,
+        "fulltext_extracted": 0,
+        "fulltext_fallback": 0,
+        "latency_p50_ms": 700,
+        "latency_p95_ms": 937
+      }
+    },
+    "registered_disabled_diagnostic": {
+      "mode": "registered-disabled",
+      "index": 1,
+      "run_dir": "benchmarks/b1_proof/runs/20260906T015536Z_registered-disabled_1",
+      "live": {
+        "wall_ms": 7114.693,
+        "sources": 9,
+        "sources_ok": 9,
+        "sources_failed": 0,
+        "documents_stored": 12,
+        "documents_with_content": 11,
+        "documents_with_date": 12,
+        "http_exchanges": 21,
+        "raw_blobs": 23,
+        "response_bytes": 1925551,
+        "user_cpu_seconds": 0.855,
+        "system_cpu_seconds": 0.122,
+        "peak_rss_mb": 179.22,
+        "captures": "benchmarks/b1_proof/runs/20260906T015536Z_registered-disabled_1/captures.jsonl"
+      },
+      "source_rows": [
+        {
+          "id": 1,
+          "name": "РБК",
+          "kind": "rss",
+          "latency_ms": 395,
+          "new": 3,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 2,
+          "fulltext_extracted": 2,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [
+            "rssexport.rbc.ru:technology_and_media:6a9cb45f7523baece49a6548",
+            "rssexport.rbc.ru:politics:6a9cb8cb20c3a9df69c71f8f",
+            "rssexport.rbc.ru:politics:6a9ca8b80317f64c3a19eabb"
+          ],
+          "updated_external_ids": [],
+          "stored": 3,
+          "with_title": 3,
+          "with_content": 3,
+          "with_date": 3
+        },
+        {
+          "id": 2,
+          "name": "ТАСС",
+          "kind": "rss",
+          "latency_ms": 606,
+          "new": 3,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 3,
+          "fulltext_extracted": 0,
+          "fulltext_fallback": 2,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [
+            "https://tass.ru/mezhdunarodnaya-panorama/28084051",
+            "https://tass.ru/proisshestviya/28084047",
+            "https://tass.ru/ekonomika/28084049"
+          ],
+          "updated_external_ids": [],
+          "stored": 3,
+          "with_title": 3,
+          "with_content": 2,
+          "with_date": 3
+        },
+        {
+          "id": 3,
+          "name": "RusCable",
+          "kind": "rss",
+          "latency_ms": 404,
+          "new": 0,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 0,
+          "fulltext_extracted": 0,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [],
+          "updated_external_ids": [],
+          "stored": 0,
+          "with_title": 0,
+          "with_content": 0,
+          "with_date": 0
+        },
+        {
+          "id": 4,
+          "name": "Forbes.ru",
+          "kind": "rss",
+          "latency_ms": 770,
+          "new": 3,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 0,
+          "fulltext_extracted": 0,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [
+            "forbes-567982",
+            "forbes-567990",
+            "forbes-567992"
+          ],
+          "updated_external_ids": [],
+          "stored": 3,
+          "with_title": 3,
+          "with_content": 3,
+          "with_date": 3
+        },
+        {
+          "id": 5,
+          "name": "Официальное опубликование НПА",
+          "kind": "html",
+          "latency_ms": 292,
+          "new": 0,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 3,
+          "fulltext_extracted": 3,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [],
+          "updated_external_ids": [],
+          "stored": 0,
+          "with_title": 0,
+          "with_content": 0,
+          "with_date": 0
+        },
+        {
+          "id": 6,
+          "name": "Банк России — пресс-релизы",
+          "kind": "rss",
+          "latency_ms": 365,
+          "new": 0,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 0,
+          "fulltext_extracted": 0,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [],
+          "updated_external_ids": [],
+          "stored": 0,
+          "with_title": 0,
+          "with_content": 0,
+          "with_date": 0
+        },
+        {
+          "id": 7,
+          "name": "Торгпред (Минпромторг) — Telegram",
+          "kind": "telegram",
+          "latency_ms": 451,
+          "new": 0,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 0,
+          "fulltext_extracted": 0,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [],
+          "updated_external_ids": [],
+          "stored": 0,
+          "with_title": 0,
+          "with_content": 0,
+          "with_date": 0
+        },
+        {
+          "id": 8,
+          "name": "Поиск: упоминания GS Labs / Триколор",
+          "kind": "search",
+          "latency_ms": 2076,
+          "new": 3,
+          "seen": 3,
+          "warnings": [],
+          "fulltext_attempted": 3,
+          "fulltext_extracted": 3,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [
+            "https://telesputnik.ru/materials/trends/news/v-rossii-prorabatyvayut-sozdanie-30-40-mezregionalnyx-xabov-cod",
+            "https://telesputnik.ru/materials/hipe/news/reforma-svyazi-sposobna-unictozit-telekom-rynok-v-27-regionax-rossii",
+            "https://habr.com/ru/articles/1077612"
+          ],
+          "updated_external_ids": [],
+          "stored": 3,
+          "with_title": 3,
+          "with_content": 3,
+          "with_date": 3
+        },
+        {
+          "id": 9,
+          "name": "Поиск: проекты НПА — ПО, ПД, КИИ",
+          "kind": "search",
+          "latency_ms": 2806,
+          "new": 0,
+          "seen": 0,
+          "warnings": [],
+          "fulltext_attempted": 0,
+          "fulltext_extracted": 0,
+          "fulltext_fallback": 0,
+          "status": "ok",
+          "updated": 0,
+          "new_external_ids": [],
+          "updated_external_ids": [],
+          "stored": 0,
+          "with_title": 0,
+          "with_content": 0,
+          "with_date": 0
+        }
+      ],
+      "search_artifacts": [
+        {
+          "number": 1,
+          "method": "POST",
+          "url": "https://api.tavily.com/search",
+          "started_at": "2026-09-06T01:55:36.569100+00:00",
+          "elapsed_ms": 2073.368,
+          "status": 200,
+          "request_body_sha256": "294b3e53f759d53429c6333deaacd8ea747a1a60ccf4371b2501f7255ec67eb6",
+          "response_body_sha256": "01afd1c79326977ed3168c7b6036868fc49fa8905aaa55072fefcf8d79ee6c7c",
+          "request_file": "search_artifacts/01_request.json",
+          "response_file": "search_artifacts/01_response.json"
+        },
+        {
+          "number": 2,
+          "method": "POST",
+          "url": "https://api.tavily.com/search",
+          "started_at": "2026-09-06T01:55:36.860694+00:00",
+          "elapsed_ms": 2804.378,
+          "status": 200,
+          "request_body_sha256": "cf92902035ac8939847b02fc8d6fe10ccaee35eec80a9c03f4bf9982f56c41bd",
+          "response_body_sha256": "ed819494a4655a7df72817e77029d6fbcba2f0ca6a1044c0d3f0bf5ce5359343",
+          "request_file": "search_artifacts/02_request.json",
+          "response_file": "search_artifacts/02_response.json"
+        }
+      ],
+      "document_quality": {
+        "documents": 12,
+        "missing_source": 0,
+        "missing_external_id": 0,
+        "missing_url_not_digest": 0,
+        "missing_title": 0,
+        "missing_readable_content": 1,
+        "passed": false
+      },
+      "secret_hits": 0,
+      "secret_files": {}
+    },
+    "absolute_recall_claimed": false
+  }
+}

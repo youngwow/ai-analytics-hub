@@ -1,0 +1,39 @@
+{
+  "dataset_version": "v2.0.0",
+  "architecture_neutral": true,
+  "system_sees": [
+    "company_context",
+    "initial_state",
+    "scenario metadata without hypotheses",
+    "visible observations",
+    "response schema"
+  ],
+  "system_never_sees": [
+    "ground_truth",
+    "object_truth",
+    "npa_truth",
+    "expected_transitions",
+    "judge prompt",
+    "other discovery modes"
+  ],
+  "required_output": "prediction.schema.json",
+  "evaluation_layers": [
+    "dataset integrity",
+    "deterministic structured metrics",
+    "semantic groundedness judge",
+    "timed human protocol"
+  ],
+  "safety_gates": [
+    "critical recall = 1",
+    "no critical item is low",
+    "no unsupported released fact",
+    "opinions remain attributed",
+    "NPA stage/version follows official history",
+    "role delivery hides no critical object"
+  ],
+  "non_claims": [
+    "Synthetic frequency is not production prevalence.",
+    "A benchmark result is not user adoption evidence.",
+    "B3 does not prescribe prompts, models, agents, RAG or orchestration."
+  ]
+}

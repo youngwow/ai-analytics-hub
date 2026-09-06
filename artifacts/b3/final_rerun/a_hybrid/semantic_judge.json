@@ -1,0 +1,169 @@
+{
+  "object_results": [
+    {
+      "expected_object_id": "OBJ-A07",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "OBJ-A08",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "OBJ-A09",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "partial",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "OBJ-A10",
+      "inclusion": "fail",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "EV-A1",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "partial"
+    },
+    {
+      "expected_object_id": "EV-A2",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "NPA-A",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "OBJ-A20",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "partial",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "partial"
+    }
+  ],
+  "safety_gates": [
+    {
+      "gate": "critical_recall",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_critical_low",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_unsupported_released_fact",
+      "verdict": "pass",
+      "item_ids": [
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A17",
+        "A18",
+        "A19",
+        "A20"
+      ]
+    },
+    {
+      "gate": "opinion_attribution",
+      "verdict": "pass",
+      "item_ids": [
+        "A10",
+        "A12",
+        "A13",
+        "A16",
+        "A19"
+      ]
+    },
+    {
+      "gate": "npa_state",
+      "verdict": "fail",
+      "item_ids": [
+        "A17",
+        "A18"
+      ]
+    },
+    {
+      "gate": "critical_role_delivery",
+      "verdict": "pass",
+      "item_ids": []
+    }
+  ],
+  "hypothesis_results": {
+    "value_proxy": "mixed",
+    "H1": "supported",
+    "H2_prerequisites": "mixed",
+    "H3": "mixed",
+    "H4_proxy": "mixed",
+    "H5_content_proxy": "mixed"
+  },
+  "limitations": [
+    "No timed human observations exist for this run; value_proxy, H2_prerequisites, H4_proxy and H5_content_proxy are proxy judgments based on released text and delivery structure and cannot be fully supported.",
+    "Scenario A contains no critical items or objects (all critical=false), so critical_recall, no_critical_low and critical_role_delivery pass vacuously; the gate machinery is untested for true criticals.",
+    "All five expected publication-type objects (OBJ-A07/A07, OBJ-A08/A08, OBJ-A09/A09, OBJ-A10/A10, OBJ-A20/A20) were released with predicted type 'event'; member sets are exact but the declared object type differs from ground truth.",
+    "Item-level labels diverge from ground truth even where object member sets are exact: A10 predicted relevant vs borderline (which drove the wrongful digest inclusion), A11 and A12 predicted medium/[GR] vs high/[GR,HEAD] and high/[GR,PR,HEAD], A15 predicted medium/[PR] vs high/[PR,HEAD], A16 predicted borderline/low/[PR] vs relevant/medium/[PR,HEAD], and A17 predicted an extra PR role.",
+    "OBJ-A10 (item A10) failed inclusion: ground truth sets digest=false with empty delivery_types, but the object was released as planned_digest to GR and PR (delivery_type_errors confirm both).",
+    "EV-A1 (items A11, A12, A13): object importance released as medium vs expected high, and HEAD never received the object (HEAD digest lacks it), though the released bullet preserves all four must-preserve meanings.",
+    "OBJ-A20 (item A20): released importance medium vs expected high, HEAD delivery missing, and the 'search-only' provenance required meaning is captured in claim A20:s1:c4 but omitted from the released digest bullet.",
+    "OBJ-A09 (item A09): the 'no winner' required meaning is captured in claim A09:s1:c4 with a verbatim quote but omitted from the released digest bullets to PR and HEAD.",
+    "NPA-A (items A17, A18): extra PR role/delivery beyond expected [GR, HEAD]; npa_state gate fails because current_version 'v2_2027_09_01' embeds the proposed application date instead of the card date (conflating distinct date fields per A17/A18 Sections 16 and 22) and history_ids contains synthetic 'INIT-COMMON-01' with no source basis, while current_stage 'introduced', effective_from and the change summary (date moved 1 March to 1 September 2027) are semantically correct.",
+    "Claim-support-by-meaning and the NPA change_summary were judged semantically by the evaluator; the deterministic rules left these open. All 55 submitted evidence quotes were verified verbatim against their cited source items.",
+    "The EV-A1 digest bullet redundantly states the standard description twice (merged A11 and A12 summaries), and the NPA bullet is long; these raise cognitive-load proxy concerns (H4) without distorting meaning."
+  ]
+}

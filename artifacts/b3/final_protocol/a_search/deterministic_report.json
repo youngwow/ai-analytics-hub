@@ -1,0 +1,296 @@
+{
+  "run_id": "1977e63e-51a0-48ce-a658-3425820e2f2a",
+  "scenario_id": "A",
+  "mode": "search",
+  "contract_errors": [],
+  "coverage": {
+    "visible_items": 4,
+    "decisions": 4
+  },
+  "discovery": {
+    "all_digest_objects_in_scenario": [
+      "EV-A1",
+      "EV-A2",
+      "NPA-A",
+      "OBJ-A07",
+      "OBJ-A08",
+      "OBJ-A09",
+      "OBJ-A20"
+    ],
+    "digest_objects_reachable_in_mode": [
+      "EV-A1",
+      "EV-A2",
+      "OBJ-A20"
+    ],
+    "reachable_digest_coverage": 0.42857142857142855,
+    "irrelevant_items_exposed_by_mode": 1
+  },
+  "item_labels": {
+    "relevance": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "importance": {
+      "correct": 1,
+      "total": 4,
+      "accuracy": 0.25
+    },
+    "critical": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "roles": {
+      "correct": 1,
+      "total": 4,
+      "exact_set_accuracy": 0.25
+    },
+    "review_policy": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    }
+  },
+  "classification_by_class": {
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 3,
+          "predicted": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "borderline": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 1.0
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medium": {
+          "support": 0,
+          "predicted": 3,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "high": {
+          "support": 3,
+          "predicted": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 1.0
+    }
+  },
+  "safety": {
+    "critical_recall": null,
+    "critical_item_recall": null,
+    "critical_object_recall": null,
+    "critical_delivery_recall": null,
+    "critical_recipient_recall": null,
+    "missing_critical_recipients": [],
+    "critical_items_in_low": [],
+    "all_submitted_evidence_quotes_verbatim": true,
+    "submitted_claims": 13,
+    "claim_support_by_meaning": "requires_semantic_judge",
+    "evidence_quote_checks": [
+      {
+        "object_id": "evt-ff32d942654c",
+        "claim_id": "A20:s1:c1",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-ff32d942654c",
+        "claim_id": "A20:s1:c2",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-ff32d942654c",
+        "claim_id": "A20:s1:c3",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-ff32d942654c",
+        "claim_id": "A20:s1:c4",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a66eb202c17a",
+        "claim_id": "A12:s1:c1",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a66eb202c17a",
+        "claim_id": "A12:s1:c2",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a66eb202c17a",
+        "claim_id": "A12:s1:c3",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a66eb202c17a",
+        "claim_id": "A12:s1:c4",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-86c7eebd91bb",
+        "claim_id": "A15:s1:c1",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-86c7eebd91bb",
+        "claim_id": "A15:s1:c2",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-86c7eebd91bb",
+        "claim_id": "A15:s1:c3",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-86c7eebd91bb",
+        "claim_id": "A15:s1:c4",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-86c7eebd91bb",
+        "claim_id": "A15:s1:c5",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      }
+    ]
+  },
+  "grouping": {
+    "pair_true_positive": 0,
+    "pair_false_positive": 0,
+    "pair_false_negative": 0,
+    "pair_precision": null,
+    "pair_recall": null,
+    "exact_expected_objects": 3,
+    "expected_objects": 3,
+    "predicted_objects": 3,
+    "exact_object_precision": 1.0,
+    "exact_object_recall": 1.0,
+    "unexpected_member_sets": [],
+    "missing_member_sets": [],
+    "object_attributes": {
+      "EV-A1": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": false,
+        "critical": true,
+        "roles": false
+      },
+      "EV-A2": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": false,
+        "critical": true,
+        "roles": false
+      },
+      "OBJ-A20": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": false,
+        "critical": true,
+        "roles": false
+      }
+    }
+  },
+  "role_deliveries": {
+    "PR": {
+      "expected": [
+        "EV-A1",
+        "EV-A2",
+        "OBJ-A20"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A2",
+        "OBJ-A20"
+      ],
+      "precision": 1.0,
+      "recall": 0.6666666666666666
+    },
+    "GR": {
+      "expected": [
+        "EV-A1"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A1"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "HEAD": {
+      "expected": [
+        "EV-A1",
+        "EV-A2",
+        "OBJ-A20"
+      ],
+      "predicted_exactly_mapped": [],
+      "precision": null,
+      "recall": 0.0
+    }
+  },
+  "delivery_type_errors": [],
+  "duplicate_deliveries": [],
+  "npa_state": {},
+  "not_scored_by_rules": [
+    "semantic groundedness beyond submitted evidence quotes",
+    "summary sufficiency and preservation of meaning",
+    "human task time and cognitive load",
+    "product-value verdicts H2/H4/H5"
+  ]
+}

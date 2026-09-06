@@ -1,0 +1,10 @@
+{
+  "provider": "ollama",
+  "model": "glm-5.3-flash:cloud",
+  "independent": false,
+  "limitation": "same generation model as the system under test",
+  "tokens_in": 10191,
+  "tokens_out": 8769,
+  "latency_ms": 32805,
+  "wall_seconds": 32.88530100000207
+}

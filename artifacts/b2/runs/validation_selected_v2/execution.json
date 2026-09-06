@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "one_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--configuration-id",
+    "selected-v2b-onepass-fullscan-no-critic",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/validation_selected_v2/benchmark_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/validation_selected_v2/prediction.json"
+  ],
+  "returncode": 0,
+  "wall_seconds": 380.05234420800116,
+  "stdout": "",
+  "stderr": ""
+}

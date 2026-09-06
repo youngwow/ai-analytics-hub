@@ -1,0 +1,397 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v1.0.0",
+  "split": "rat",
+  "context": {
+    "version": "gs-labs-v1",
+    "known": {
+      "company": "ООО «Цифра» (GS Labs), центр исследований и разработок GS Group.",
+      "activities": [
+        "программные и программно-аппаратные решения для защищённых цифровых сервисов",
+        "CAS и DRM для защиты цифрового контента",
+        "OTT-платформы и интерактивное телевидение",
+        "телегид и рекламные сервисы",
+        "B2B-комплекс умного дома",
+        "программные продукты из Единого реестра российского ПО"
+      ],
+      "monitoring_goals": [
+        "риск-менеджмент по требованиям к ПО, персональным данным, КИИ и цифровому контенту",
+        "поиск мер поддержки, льгот и федеральных проектов",
+        "репутационные сигналы, упоминания группы и отраслевые кризисы",
+        "изменения рынков платного ТВ, OTT, видеосервисов, связи и инфраструктуры"
+      ],
+      "roles": {
+        "PR": "репутация, компания и группа, конкуренты, рынки, кризисы и инфоповоды",
+        "GR": "НПА, проекты, стадии, регуляторы, риски и окна влияния",
+        "HEAD": "критичное и значимое для решений подразделения; не отдельный источник истины"
+      }
+    },
+    "negative_boundaries": [
+      "совпадение слов «ИИ», «цифровой» или «ИТ» само по себе не делает материал релевантным",
+      "агротех, медтех и иные отрасли без связи с продуктами, рынками или обязанностями GS Labs считаются шумом",
+      "мера для МСП не считается применимой без подтверждения статуса компании",
+      "чужой инцидент нельзя приписывать GS Labs без прямого доказательства",
+      "мнение источника нельзя выдавать за принятый НПА или отраслевой консенсус"
+    ],
+    "unknowns": [
+      "полный перечень внутренних проектов и клиентов",
+      "статус GS Labs как МСП и участие в конкретных программах поддержки",
+      "перечень объектов КИИ и используемых M2M SIM-карт",
+      "персональные интересы отдельных PR/GR и руководителей"
+    ],
+    "source_basis": [
+      "context/task.md",
+      "context/company_info.md",
+      "ЦИФРА/ЧАТ.md",
+      "Для_ИТМО_мониторинг_НПА_и_отрасли.xlsx"
+    ]
+  },
+  "materials": [
+    {
+      "id": "rat-npa-22",
+      "title": "Постановление Правительства № 402 — категорирование КИИ в сфере связи",
+      "text": "Первый отраслевой акт по 58-ФЗ: определяет отраслевые признаки значимости и порядок расчёта показателей критериев значимости для объектов КИИ в сфере связи. Системы условного доступа к телерадиовещанию включены в перечень типовых отраслевых объектов КИИ.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "regulator_site",
+      "source_url": "https://publication.pravo.gov.ru/document/0001202604130022",
+      "published_at": "2026-04-13T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-npa-23",
+      "title": "Новые правила реестра российского ПО",
+      "text": "Обязательная совместимость включённого в реестр ПО минимум с двумя доверенными российскими ОС вводится поэтапно. Для серверного ПО, СУБД, средств разработки, виртуализации и мониторинга срок — 1 января 2027 года; сведения обновляются ежегодно до 1 июня.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "regulator_site",
+      "source_url": "https://www.pgplaw.ru/analytics-and-brochures/alerts/pravila-vedeniya-reestra-rossiyskogo-po/",
+      "published_at": "2025-11-28T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-project-12",
+      "title": "Проект приказа ФСТЭК о защите персональных данных",
+      "text": "Проект приказа ФСТЭК вводит риск-ориентированную модель мер защиты, требования при использовании ИИ, оценку уровня зрелости до начала обработки, не реже раза в три года и после инцидентов, а также требования к подрядчикам.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "regulator_site",
+      "source_url": "https://regulation.gov.ru/projects/169583/",
+      "published_at": "2026-08-08T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-project-1",
+      "title": "Законопроект CAS DRM № 1215252-8",
+      "text": "Предлагается обязательный переход операторов платного ТВ, вещателей и аудиовизуальных сервисов на CAS и DRM из реестра российского ПО с 1 января 2027 года; при исключении системы из реестра — шесть месяцев на замену.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "regulator_site",
+      "source_url": "https://sozd.duma.gov.ru/bill/1215252-8",
+      "published_at": "2026-07-14T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-project-21",
+      "title": "Законопроект о видеоиграх № 795581-8",
+      "text": "Законопроект дорабатывается: меры поддержки без запрета зарубежных платформ, идентификация пользователей, маркировка контента и удаление запрещённых материалов. Возврат к рассмотрению ожидается осенью 2026 года.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "regulator_site",
+      "source_url": "https://techora.ru/news/gosduma-vernetsya-k-zakonu-o-videoigrakh-2026-08-05",
+      "published_at": "2026-08-05T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-project-26",
+      "title": "Дипфейки как отягчающее обстоятельство",
+      "text": "Предлагается считать отягчающим обстоятельством совершение преступления с использованием созданных ИИ видео-, аудиозаписей и изображений, имитирующих реального человека. Первое чтение не назначено.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "regulator_site",
+      "source_url": "https://www.kommersant.ru/doc/8815085",
+      "published_at": "2026-07-14T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-news-3",
+      "title": "Кризис рынка ЦОД",
+      "text": "В Москве и Санкт-Петербурге возник дефицит мощностей ЦОД: сроки подключения оцениваются в два–пять лет. Стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге; стойки 15–20 кВт под ИИ сокращают ёмкость машзалов.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "html",
+      "source_url": "https://telesputnik.ru/materials/trends/news/rossiiskii-rynok-cod-stol",
+      "published_at": "2026-08-06T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-news-7",
+      "title": "Развёртывание низкоорбитального интернета",
+      "text": "Выведена вторая партия из 16 спутников группировки «Рассвет-3», идут регламентные работы и подготовка клиентских тестов. До конца 2026 года запланировано ещё семь пусков, целевой размер группировки — 156 аппаратов.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "html",
+      "source_url": "https://digital.gov.ru/news/vtoraya-partiya-sputnikov-rossijskoj-nizko",
+      "published_at": "2026-08-04T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-news-28",
+      "title": "Аудитория онлайн-кинотеатров превысила 72 млн подписок",
+      "text": "По итогам второго квартала 2026 года более 72 млн пользователей являлись подписчиками девяти ведущих онлайн-кинотеатров. Рынок легальных видеосервисов в 2025 году вырос на 29,2%, до 220,1 млрд рублей.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "html",
+      "source_url": "https://telecomdaily.ru/news/2026/08/05/iaa-telecomdaily-chislo-podpischikov-ok-v-rossii-prevysilo-72-mln",
+      "published_at": "2026-08-05T12:00:00+03:00",
+      "language": "ru"
+    },
+    {
+      "id": "rat-news-36",
+      "title": "ЦТС выпустила 30-миллионную телевизионную приставку",
+      "text": "На площадке «Цифровые Телевизионные Системы» в Гусеве произведена 30-миллионная телевизионная приставка. Предприятие входит в GS Group.",
+      "source_name": "Excel кейсодателя",
+      "source_type": "corporate_site",
+      "source_url": "https://gs-group.com/press-center/news/",
+      "published_at": "2026-08-12T12:00:00+03:00",
+      "language": "ru"
+    }
+  ],
+  "tasks": {
+    "material_ids": {
+      "B2-F": [
+        "rat-news-28",
+        "rat-news-3",
+        "rat-news-36",
+        "rat-news-7",
+        "rat-npa-22",
+        "rat-npa-23",
+        "rat-project-1",
+        "rat-project-12",
+        "rat-project-21",
+        "rat-project-26"
+      ],
+      "B2-R": [
+        "rat-news-28",
+        "rat-news-3",
+        "rat-news-36",
+        "rat-news-7",
+        "rat-npa-22",
+        "rat-npa-23",
+        "rat-project-1",
+        "rat-project-12",
+        "rat-project-21",
+        "rat-project-26"
+      ],
+      "B2-E": [],
+      "B2-N": [],
+      "B2-H": [
+        "rat-news-28",
+        "rat-news-3",
+        "rat-news-36",
+        "rat-news-7",
+        "rat-npa-22",
+        "rat-npa-23",
+        "rat-project-1",
+        "rat-project-12",
+        "rat-project-21",
+        "rat-project-26"
+      ]
+    },
+    "npa_pairs": [],
+    "instructions": {
+      "B2-F": "Return a summary and atomic claims with verbatim evidence quotes.",
+      "B2-R": "Return relevance, importance, critical/escalation flag and recipient roles.",
+      "B2-E": "Partition the listed publications into event clusters; singleton clusters are allowed.",
+      "B2-N": "Classify the listed NPA pairs and return a stage for every listed NPA material.",
+      "B2-H": "Reserved for the separate human RAT protocol; do not infer a human result."
+    }
+  },
+  "prediction_contract": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "B2 AI prediction",
+    "type": "object",
+    "required": [
+      "run_id",
+      "configuration_id",
+      "dataset_version",
+      "split",
+      "material_predictions",
+      "event_clusters",
+      "npa_link_predictions",
+      "npa_state_predictions"
+    ],
+    "properties": {
+      "run_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "configuration_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "dataset_version": {
+        "type": "string",
+        "minLength": 1
+      },
+      "split": {
+        "enum": [
+          "all",
+          "development",
+          "validation",
+          "holdout",
+          "rat"
+        ]
+      },
+      "usage": {
+        "type": "object",
+        "properties": {
+          "model_calls": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "input_tokens": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "estimated_cost": {
+            "type": "number",
+            "minimum": 0
+          },
+          "currency": {
+            "type": "string"
+          }
+        }
+      },
+      "material_predictions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "relevance",
+            "importance",
+            "critical_or_escalate",
+            "roles",
+            "summary",
+            "claims"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "relevance": {
+              "enum": [
+                "relevant",
+                "borderline",
+                "irrelevant",
+                "unknown"
+              ]
+            },
+            "importance": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "critical"
+              ]
+            },
+            "critical_or_escalate": {
+              "type": "boolean"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "PR",
+                  "GR",
+                  "HEAD"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "summary": {
+              "type": "string"
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "text",
+                  "evidence_quote"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "evidence_quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "event_clusters": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "cluster_id",
+            "member_ids"
+          ],
+          "properties": {
+            "cluster_id": {
+              "type": "string"
+            },
+            "member_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          }
+        }
+      },
+      "npa_link_predictions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "case_id",
+            "same_npa",
+            "relation"
+          ],
+          "properties": {
+            "case_id": {
+              "type": "string"
+            },
+            "same_npa": {
+              "type": "boolean"
+            },
+            "relation": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "npa_state_predictions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "stage"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "stage": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

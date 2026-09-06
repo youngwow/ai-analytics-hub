@@ -101,7 +101,7 @@ def test_fetch_result_ok_means_no_error():
 
 def test_collect_report_summary_line():
     report = CollectReport(sources_ok=3, sources_fail=1, sources_not_modified=2, docs_new=7)
-    assert report.summary_line() == "7 new documents; sources ok=3 not_modified=2 failed=1"
+    assert report.summary_line() == "7 new documents; sources ok=3 partial=0 not_modified=2 failed=1"
 
 
 def test_source_from_row_normalises_enabled_and_notes():

@@ -1,0 +1,90 @@
+{
+  "counts": {
+    "timeline_items": 58,
+    "flow_A": 22,
+    "flow_B": 22,
+    "diagnostic_items": 14,
+    "expected_objects": 21,
+    "critical_items": 3,
+    "irrelevant_items": 16,
+    "search_only_items": 4
+  },
+  "surfaces": {
+    "rss": 18,
+    "telegram": 18,
+    "media_html": 1,
+    "regulator_html": 13,
+    "corporate_html": 4,
+    "search_api": 4
+  },
+  "hypotheses": {
+    "VALUE": {
+      "scenarios": [
+        "A",
+        "B"
+      ],
+      "needs": [
+        "machine output",
+        "manual baseline",
+        "timed human observations"
+      ]
+    },
+    "H1": {
+      "scenarios": [
+        "A",
+        "B"
+      ],
+      "variants": [
+        "fixed",
+        "search",
+        "hybrid"
+      ]
+    },
+    "H2": {
+      "scenarios": [
+        "A",
+        "B",
+        "D1_critical",
+        "D4_known_npa"
+      ],
+      "variants": [
+        "review_all",
+        "review_risk_only",
+        "no_mandatory_review"
+      ]
+    },
+    "H3": {
+      "scenarios": [
+        "A",
+        "B",
+        "D2_event_boundary"
+      ],
+      "variants": [
+        "flat",
+        "exact_duplicates",
+        "events"
+      ]
+    },
+    "H4": {
+      "scenarios": [
+        "A",
+        "B",
+        "D1_critical"
+      ],
+      "variants": [
+        "one_common",
+        "critical_core_plus_role"
+      ]
+    },
+    "H5": {
+      "scenarios": [
+        "A",
+        "B"
+      ],
+      "variants": [
+        "full_queue",
+        "top_layer_with_drilldown"
+      ]
+    }
+  }
+}

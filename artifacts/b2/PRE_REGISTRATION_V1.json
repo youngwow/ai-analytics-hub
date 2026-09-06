@@ -1,0 +1,38 @@
+{
+  "registered_at": "2026-09-06T05:05:00+03:00",
+  "dataset_version": "v1.0.0",
+  "split_order": ["development", "validation", "holdout"],
+  "holdout_policy": "open once after selection on development and confirmation on validation",
+  "providers": {
+    "generation": "ollama/glm-5.3-flash:cloud",
+    "embeddings": "openrouter/google/gemini-embedding-001",
+    "search": "tavily"
+  },
+  "development_comparisons": [
+    {
+      "decision": "A1",
+      "control": "a1=one_pass,a3=full_scan,a4=without_critic",
+      "candidate": "a1=two_pass,a3=full_scan,a4=without_critic"
+    },
+    {
+      "decision": "A3",
+      "control": "A1 winner + a3=full_scan,a4=without_critic",
+      "candidate": "A1 winner + a3=embedding_top20,a4=without_critic"
+    },
+    {
+      "decision": "A4",
+      "control": "A1/A3 winners + a4=without_critic",
+      "candidate": "A1/A3 winners + a4=with_critic"
+    }
+  ],
+  "interpretation": "dimensions remain separate; safety failures cannot be averaged away; latency and calls break a quality tie",
+  "frozen_sha256": {
+    "config.yaml": "0e1e2df69f1753801342d7fa974913bc12ef254da9761d744a1fe2c41f64516c",
+    "src/product/analysis.py": "465578c15bad0f0e047cd3aa2a233ed0db32a340157b94802aec2d7f76a4a832",
+    "src/product/events.py": "11db7c3a482852b34a33d569544310c32852f9ee08d9aa4521e7cac775728a9b",
+    "src/product/critic.py": "8621cfc7584d46bf15bccdf6dece761e5246fe48a8cd280e5e2d940050f51560",
+    "benchmarks/b2_ai/product_system.py": "e2edfbd55bd8928607a749b1fd96ee6ffbdc82ca3f68b7ddc9935444221ef54f",
+    "benchmarks/b2_ai/data/v1/checksums.sha256": "fcce12a5b868a0a053d1a0871e9120e47d04d21b624fcf35d84b26b066fd1078",
+    "benchmarks/b2_ai/data/v1/contract.json": "15979779b2354755719efb10c49a5ddca675dbcbc43555a3c1c26254f9b49e82"
+  }
+}

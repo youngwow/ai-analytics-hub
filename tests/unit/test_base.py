@@ -125,6 +125,23 @@ def test_fetch_connect_error_is_reported_as_request_error(mock_client):
     assert page.error.startswith("request error")
 
 
+def test_fetch_retries_a_transient_transport_failure(mock_client):
+    calls = 0
+
+    def flaky(_request):
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            raise httpx.ReadError("transient TLS failure")
+        return 200, b"recovered", {}
+
+    routes = MockRoutes({"https://flaky.ru/": flaky})
+    page = fetch(mock_client(routes), "https://flaky.ru/")
+    assert page.ok is True
+    assert page.body == b"recovered"
+    assert calls == 2
+
+
 def test_fetch_too_many_redirects(mock_client):
     routes = MockRoutes({"https://a.ru/loop": (302, b"", {"location": "https://a.ru/loop"})})
     page = fetch(mock_client(routes, max_redirects=2), "https://a.ru/loop")

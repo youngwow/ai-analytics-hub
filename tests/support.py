@@ -70,6 +70,7 @@ def default_raw_config() -> dict:
         # Every key of `llm` / `processing` has a default; tests that care set
         # the one key they are about.
         "llm": {},
+        "embeddings": {},
         "processing": {"concurrency": 1},
     }
 

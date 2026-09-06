@@ -210,7 +210,7 @@ def test_collect_watch_stops_cleanly_on_keyboard_interrupt(config, paths, capsys
     assert calls == [42]
     out = capsys.readouterr().out
     assert out.count("new documents;") == 1
-    assert out.strip() == "0 new documents; sources ok=0 not_modified=0 failed=0"
+    assert out.strip() == "0 new documents; sources ok=0 partial=0 not_modified=0 failed=0"
 
 
 def test_collect_without_watch_runs_once_and_returns_zero(config, paths, capsys):
@@ -592,8 +592,9 @@ def test_discover_rejects_an_unknown_domain_preset_before_calling_tavily(
 # ── search ─────────────────────────────────────────────────────────────────
 
 
-def test_search_stores_hits_and_digest_and_leaves_the_source_off(config, paths, capsys,
-                                                                 offline_collector, tavily_key):
+def test_search_stores_source_backed_hits_and_leaves_the_source_off(
+    config, paths, capsys, offline_collector, tavily_key
+):
     assert cli._cmd_search(_search_args(), config, paths) == 0
     out = capsys.readouterr().out
 
@@ -603,8 +604,8 @@ def test_search_stores_hits_and_digest_and_leaves_the_source_off(config, paths, 
     assert "2026-09-01" in rows[0] and "DDR пятого поколения" in rows[0]
     assert "2026-08-31" in rows[1] and "Телеспутник" in rows[1]
     assert rows[2].startswith("+  -") and "Спутниковое ТВ" in rows[2]
-    assert "\nСводка: GS Labs Триколор\n«Триколор» совместно с технологическим партнёром" in out
-    assert "3 hits, 4 new document(s) → source #1 «GS Labs Триколор» [off]" in out
+    assert "\nСводка:" not in out
+    assert "3 hits, 3 new document(s) → source #1 «GS Labs Триколор» [off]" in out
     assert "hint: `sources enable 1` keeps polling this query with `collect`" in out
 
     request = offline_collector.requests_to(TAVILY_SEARCH_URL)[0]
@@ -614,7 +615,7 @@ def test_search_stores_hits_and_digest_and_leaves_the_source_off(config, paths, 
     assert payload["days"] == config.tavily.days == 7
     assert payload["query"] == SEARCH_QUERY
     assert (payload["topic"], payload["include_answer"], payload["include_raw_content"]) == (
-        "news", "advanced", "text"
+        "news", False, False
     )
     assert (payload["max_results"], payload["include_domains"]) == (20, [])
 
@@ -625,9 +626,9 @@ def test_search_stores_hits_and_digest_and_leaves_the_source_off(config, paths, 
         )
         assert source.fetch_url == source.url == SearchQuery(SEARCH_QUERY).to_url()
         assert source.notes == "Tavily: news, 7 дн."
-        assert db.documents.count(1) == 4
-        assert db.documents.exists(1, "summary:2026-09-02")
-        assert db.runs.latest()["docs_new"] == 4
+        assert db.documents.count(1) == 3
+        assert not db.documents.exists(1, "summary:2026-09-02")
+        assert db.runs.latest()["docs_new"] == 3
 
 
 def test_search_options_shape_the_query_and_the_source(config, paths, capsys, offline_collector,
@@ -673,7 +674,7 @@ def test_search_rerun_marks_known_hits_and_save_enables_the_existing_source(
     with _db(paths) as db:
         assert db.sources.get(1).enabled is True
         assert len(db.sources.list()) == 1
-        assert db.documents.count(1) == 4
+        assert db.documents.count(1) == 3
         assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 2
 
 
@@ -692,9 +693,9 @@ def test_search_max_limits_printed_rows_not_the_counts(config, paths, capsys, of
     assert cli._cmd_search(_search_args(max=2), config, paths) == 0
     out = capsys.readouterr().out
     assert len(_rows(out)) == 2
-    assert "3 hits, 4 new document(s)" in out
+    assert "3 hits, 3 new document(s)" in out
     with _db(paths) as db:
-        assert db.documents.count(1) == 4
+        assert db.documents.count(1) == 3
 
 
 def test_search_without_api_key_returns_2_without_calling_tavily(monkeypatch, config, paths,

@@ -73,7 +73,7 @@ def _seeded_documents(db: Database, count: int = 1, **overrides) -> list[int]:
 
 
 def test_schema_version_and_pragmas(db):
-    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 2
+    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 4
     assert db.conn.execute("PRAGMA foreign_keys").fetchone()[0] == 1
     tables = {
         r[0] for r in db.conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
@@ -87,7 +87,7 @@ def test_file_database_creates_parent_dir_and_uses_wal(tmp_path):
     try:
         assert path.exists()
         assert database.conn.execute("PRAGMA journal_mode").fetchone()[0] == "wal"
-        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == 2
+        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == 4
     finally:
         database.close()
 
@@ -421,7 +421,7 @@ def test_migration_to_v2_adds_the_derived_columns_to_documents(db):
     assert {"simhash", "embedding", "norm_text"} <= columns
 
 
-def test_reopening_a_database_keeps_v2_data_and_does_not_remigrate(tmp_path):
+def test_reopening_a_database_keeps_data_and_does_not_remigrate(tmp_path):
     path = str(tmp_path / "hub.db")
     first = Database(path)
     doc_id = _seeded_documents(first)[0]
@@ -430,7 +430,7 @@ def test_reopening_a_database_keeps_v2_data_and_does_not_remigrate(tmp_path):
 
     second = Database(path)
     try:
-        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 2
+        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 4
         assert second.items.count() == 1
         assert second.items.get(item_id).title == "Минцифры расширило реестр"
         assert [r["id"] for r in second.items.list(query="реестр")] == [item_id]

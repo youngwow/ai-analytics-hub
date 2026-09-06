@@ -1,0 +1,40 @@
+{
+  "frozen_at": "2026-09-06T06:45:00+03:00",
+  "dataset_version": "v1.0.0",
+  "configuration_id": "b2-final-v1-onepass-fullscan-no-critic",
+  "decisions": {
+    "A1": "one_pass",
+    "A2": "not_exercised_in_B2; component and B3 only",
+    "A3": "full_scan",
+    "A4": "without_critic",
+    "review_policy": "observable-risk-v1; critical_or_urgent, uncertain_relevance, open_questions, unconfirmed_npa, missing_grounded_claims"
+  },
+  "providers": {
+    "generation": "ollama/glm-5.3-flash:cloud",
+    "embeddings": "openrouter/google/gemini-embedding-001",
+    "search": "tavily"
+  },
+  "holdout_protocol": {
+    "repeats": 3,
+    "no_prompt_or_policy_changes_between_repeats": true,
+    "report_dimensions_separately": true,
+    "safety_cannot_be_averaged_away": true
+  },
+  "sha256": {
+    "config.yaml": "0e1e2df69f1753801342d7fa974913bc12ef254da9761d744a1fe2c41f64516c",
+    "src/product/analysis.py": "c69f535dde82746972fe00a7577c1bc38f82fe08ac856242e18fa409020406bf",
+    "src/product/events.py": "7b6d95080f4f325260bf28c6a76440d6ceebf856807bee6afd2cc1f9c0c47af0",
+    "src/product/review_policy.py": "909768f90b7e6111fc67af86291dd3ba2241d4f773a7fdcca2b3330200b7cb8b",
+    "src/product/critic.py": "906179d8a3c528d5bef01f35f3cf63e5db7aa696f08120da9b736cb34d0190e5",
+    "benchmarks/b2_ai/product_system.py": "cd044dd22a52485a0f884d87ec18b390ae43511c7e9a3d373fb24c66bb419094",
+    "benchmarks/b2_ai/evaluate.py": "7ddeaba146606dd89b7efa2d76eb91cc204673b528c05a29b6da2c1caa502360",
+    "benchmarks/b2_ai/data/v1/checksums.sha256": "fcce12a5b868a0a053d1a0871e9120e47d04d21b624fcf35d84b26b066fd1078",
+    "benchmarks/b2_ai/data/v1/contract.json": "15979779b2354755719efb10c49a5ddca675dbcbc43555a3c1c26254f9b49e82"
+  },
+  "known_validation_limits": [
+    "semantic judge uses the same GLM-5.3 model and is diagnostic, not independent human evidence",
+    "importance is stochastic across repeated validation runs while the critical safety gate remained intact",
+    "borderline technology signals and secondary facts can be missed",
+    "the diagnostic basket is not a statistical model of the production stream"
+  ]
+}

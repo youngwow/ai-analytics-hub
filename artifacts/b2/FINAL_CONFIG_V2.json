@@ -1,0 +1,50 @@
+{
+  "frozen_at": "2026-09-06T07:20:00+03:00",
+  "supersedes": "FINAL_CONFIG_V1.json before any valid holdout run",
+  "dataset_version": "v1.0.0",
+  "configuration_id": "b2-final-v2-onepass-fullscan-no-critic",
+  "decisions": {
+    "A1": "one_pass",
+    "A2": "not_exercised_in_B2; component and B3 only",
+    "A3": "full_scan",
+    "A4": "without_critic",
+    "review_policy": "observable-risk-v1; critical_or_urgent, uncertain_relevance, open_questions, unconfirmed_npa, missing_grounded_claims",
+    "material_concurrency": 2,
+    "llm_request_timeout_seconds": 90,
+    "llm_network_retries": 1,
+    "temporary_failure": "explicit failed/review; no fallback model"
+  },
+  "providers": {
+    "generation": "ollama/glm-5.3-flash:cloud",
+    "embeddings": "openrouter/google/gemini-embedding-001",
+    "search": "tavily"
+  },
+  "holdout_protocol": {
+    "repeats": 3,
+    "no_prompt_or_policy_changes_between_repeats": true,
+    "report_dimensions_separately": true,
+    "safety_cannot_be_averaged_away": true,
+    "invalid_attempts": [
+      "holdout_final_v1_r1: input contract mixed NPA states and mentions",
+      "holdout_final_v1_r2: interrupted before prediction"
+    ]
+  },
+  "sha256": {
+    "config.yaml": "40bcfc31cdd129ebb39ad92c1e555b261ddb66c376bf231e561b5877781a7087",
+    "src/product/analysis.py": "aea4cf00f443d317baac7829e706fdad2e1ebd0ad1fa3f9085847e99cfb8dd53",
+    "src/product/events.py": "dbd9459e7a5fe6abbe2bb5d784736160f513f65c4073d2b63b01a4fbde61fd7f",
+    "src/product/review_policy.py": "909768f90b7e6111fc67af86291dd3ba2241d4f773a7fdcca2b3330200b7cb8b",
+    "src/product/critic.py": "906179d8a3c528d5bef01f35f3cf63e5db7aa696f08120da9b736cb34d0190e5",
+    "benchmarks/b2_ai/prepare_input.py": "bf5f1852f14d9f9d74e1c8f0dcfa4ba6e14e53afd5d533467ae1423a5290d239",
+    "benchmarks/b2_ai/product_system.py": "f8684443271a6c4b32e3355d43ee1e89384f9b5470c03bf35c16cb721aba472d",
+    "benchmarks/b2_ai/evaluate.py": "7ddeaba146606dd89b7efa2d76eb91cc204673b528c05a29b6da2c1caa502360",
+    "benchmarks/b2_ai/data/v1/checksums.sha256": "fcce12a5b868a0a053d1a0871e9120e47d04d21b624fcf35d84b26b066fd1078",
+    "benchmarks/b2_ai/data/v1/contract.json": "15979779b2354755719efb10c49a5ddca675dbcbc43555a3c1c26254f9b49e82"
+  },
+  "known_validation_limits": [
+    "semantic judge uses the same GLM-5.3 model and is diagnostic, not independent human evidence",
+    "importance is stochastic across repeated validation runs while the critical safety gate remained intact",
+    "borderline technology signals and secondary facts can be missed",
+    "the diagnostic basket is not a statistical model of the production stream"
+  ]
+}

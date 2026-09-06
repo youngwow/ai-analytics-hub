@@ -3,9 +3,8 @@
 A query lives in `Source.fetch_url` as
 `tavily://search?q=…&domains=a,b&days=7&topic=news&summary=1`, so `collect`
 polls it like a feed: every run asks Tavily for the last `days` (or for what
-appeared since the previous run), each hit becomes a document, and — when the
-query asks for one — Tavily's answer becomes a digest document «Сводка: …»,
-one per query per day.
+appeared since the previous run), and each hit becomes a source-backed document.
+Tavily's generated answer is intentionally not treated as a publication.
 """
 
 from __future__ import annotations
@@ -211,8 +210,8 @@ class SearchAdapter:
                     max_results=SEARCH_MAX_RESULTS,
                     include_domains=query.domains or None,
                     topic=query.topic,
-                    include_answer="advanced" if query.summary else False,
-                    include_raw_content="text",
+                    include_answer=False,
+                    include_raw_content=False,
                     country=self.tavily.country or None,
                     language=self.tavily.language or None,
                     **bound,
@@ -226,16 +225,28 @@ class SearchAdapter:
             for c in response.results
             if c.url
         ]
-        if query.summary and response.answer:
-            docs.append(summary_document(query, response.answer, source_id, now))
         log.info(
             "%s: %d hits%s (%s)",
             source.name,
             len(response.results),
-            " + сводка" if response.answer else "",
+            "",
             ", ".join(f"{k}={v}" for k, v in bound.items()),
         )
+        saturated = len(response.results) >= SEARCH_MAX_RESULTS
         return FetchResult(
             documents=docs,
-            state_update={"cursor": {"since": (to_utc_iso(now) or "")[:10], "days": query.days}},
+            state_update={
+                "cursor": {"since": (to_utc_iso(now) or "")[:10], "days": query.days},
+                "backlog_status": "unknown" if saturated else "clear",
+                "coverage_from": bound.get("start_date") or (
+                    to_utc_iso(now - timedelta(days=query.days)) or ""
+                ),
+                "coverage_to": to_utc_iso(now),
+                "coverage_status": "unknown" if saturated else "observed",
+            },
+            warnings=[
+                "Tavily returned its result cap; search coverage cannot be proven complete"
+            ]
+            if saturated
+            else [],
         )

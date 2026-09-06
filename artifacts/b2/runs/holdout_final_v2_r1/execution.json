@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "one_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--configuration-id",
+    "b2-final-v2-r1",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/holdout_final_v2_r1/benchmark_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/holdout_final_v2_r1/prediction.json"
+  ],
+  "returncode": 0,
+  "wall_seconds": 640.4528372079949,
+  "stdout": "",
+  "stderr": "2026-09-06 07:22:06 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n2026-09-06 07:25:28 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n"
+}

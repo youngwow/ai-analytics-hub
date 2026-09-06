@@ -279,6 +279,14 @@ def test_parse_message_without_time_has_no_date(now):
 # ── TelegramAdapter.fetch ──────────────────────────────────────────────────
 
 
+def _assert_checkpoint(result, cursor, *, coverage="complete"):
+    assert result.state_update["cursor"] == cursor
+    assert result.state_update["coverage_status"] == coverage
+    assert result.state_update["backlog_status"] == (
+        "pending" if coverage == "partial" else "clear"
+    )
+
+
 def test_first_run_reads_base_page_once_and_sets_cursor(config, mock_client, fixture_bytes, now):
     routes = MockRoutes({BASE: (200, fixture_bytes("tg_channel.html"), HTML_UTF8)})
     result = _adapter(config).fetch(_source(), FetchState(source_id=3), mock_client(routes), now=now)
@@ -290,7 +298,7 @@ def test_first_run_reads_base_page_once_and_sets_cursor(config, mock_client, fix
         "cit_gov/1484",
         "cit_gov/1485",
     ]
-    assert result.state_update == {"cursor": {"last_post_id": 1485, "transport": "web"}}
+    _assert_checkpoint(result, {"last_post_id": 1485, "transport": "web"})
     assert result.source_title == CHANNEL_TITLE
 
 
@@ -310,9 +318,7 @@ def test_incremental_run_pages_after_cursor_until_nothing_newer(config, mock_cli
     assert result.error is None
     assert routes.urls() == [f"{BASE}?after=1498", f"{BASE}?after=1501"]
     assert [d.external_id for d in result.documents] == ["cit_gov/1501"]
-    assert result.state_update == {
-        "cursor": {"last_post_id": 1501, "extra": "kept", "transport": "web"}
-    }
+    _assert_checkpoint(result, {"last_post_id": 1501, "extra": "kept", "transport": "web"})
     assert result.source_title == CHANNEL_TITLE
 
 
@@ -337,7 +343,7 @@ def test_incremental_run_with_nothing_new_keeps_cursor(config, mock_client, now)
     assert result.error is None
     assert result.documents == []
     assert routes.urls() == [f"{BASE}?after=1498"]
-    assert result.state_update == {"cursor": {"last_post_id": 1498, "transport": "web"}}
+    _assert_checkpoint(result, {"last_post_id": 1498, "transport": "web"})
 
 
 def _synthetic_page(ids: list[int]) -> bytes:
@@ -366,12 +372,15 @@ def test_incremental_run_stops_after_max_pages(config, mock_client, now):
     assert [d.external_id for d in result.documents] == [
         f"cit_gov/{i}" for i in range(1001, 1001 + 3 * scraper_tg.MAX_INCREMENTAL_PAGES)
     ]
-    assert result.state_update == {
-        "cursor": {
+    _assert_checkpoint(
+        result,
+        {
             "last_post_id": 1000 + 3 * scraper_tg.MAX_INCREMENTAL_PAGES,
             "transport": "web",
-        }
-    }
+        },
+        coverage="partial",
+    )
+    assert result.warnings
 
 
 def test_backfill_walks_before_pages(config, mock_client, fixture_bytes, now):
@@ -396,7 +405,7 @@ def test_backfill_walks_before_pages(config, mock_client, fixture_bytes, now):
         "cit_gov/1460",
         "cit_gov/1461",
     ]
-    assert result.state_update == {"cursor": {"last_post_id": 1485, "transport": "web"}}
+    _assert_checkpoint(result, {"last_post_id": 1485, "transport": "web"})
 
 
 def test_backfill_respects_backfill_pages(raw_config, mock_client, fixture_bytes, now):
@@ -507,7 +516,7 @@ class TestMtprotoTransport:
         assert result.error is None
         assert routes.requests == []
         assert [d.external_id for d in result.documents] == ["cit_gov/1490", "cit_gov/1491"]
-        assert result.state_update == {"cursor": {"last_post_id": 1491, "transport": "mtproto"}}
+        _assert_checkpoint(result, {"last_post_id": 1491, "transport": "mtproto"})
         assert result.source_title == CHANNEL_TITLE
         first, second = result.documents
         assert first.url == "https://t.me/cit_gov/1490"
@@ -541,7 +550,7 @@ class TestMtprotoTransport:
         )
         assert result.error is None
         assert result.documents == []
-        assert result.state_update == {"cursor": {"last_post_id": 1485, "transport": "mtproto"}}
+        _assert_checkpoint(result, {"last_post_id": 1485, "transport": "mtproto"})
 
     def test_first_run_bounds_the_history_by_date(self, raw_config, mock_client, now):
         config = _mt_config(raw_config, "auto")
@@ -574,16 +583,16 @@ class TestMtprotoTransport:
         )
         assert reader.calls[0]["min_id"] == 1485
         assert reader.calls[0]["offset_date"] is None
-        assert result.state_update == {
-            "cursor": {"last_post_id": 1486, "transport": "mtproto", "extra": "kept"}
-        }
+        _assert_checkpoint(
+            result, {"last_post_id": 1486, "transport": "mtproto", "extra": "kept"}
+        )
 
     @pytest.mark.parametrize(
         ("max_posts", "max_new_per_source", "expected"),
-        [(40, 25, 25), (10, 50, 10)],
-        ids=["collector-cap-is-smaller", "telegram-cap-is-smaller"],
+        [(40, 25, 40), (10, 50, 10)],
+        ids=["legacy-collector-cap-is-ignored", "telegram-batch-budget"],
     )
-    def test_limit_is_the_smaller_of_the_two_caps(
+    def test_limit_is_the_telegram_batch_budget(
         self, raw_config, mock_client, now, max_posts, max_new_per_source, expected
     ):
         raw_config["scraper"]["max_new_per_source"] = max_new_per_source
@@ -655,7 +664,7 @@ class TestMtprotoTransport:
         assert [d.external_id for d in result.documents] == [
             "cit_gov/1482", "cit_gov/1483", "cit_gov/1484", "cit_gov/1485",
         ]
-        assert result.state_update == {"cursor": {"last_post_id": 1485, "transport": "web"}}
+        _assert_checkpoint(result, {"last_post_id": 1485, "transport": "web"})
         assert "falling back to the preview" in caplog.text
 
     def test_a_per_channel_error_in_only_mode_is_reported_with_a_prefix(

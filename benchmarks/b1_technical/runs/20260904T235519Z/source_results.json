@@ -1,0 +1,923 @@
+[
+  {
+    "id": 1,
+    "name": "CNews",
+    "kind": "rss",
+    "latency_ms": 926,
+    "new": 3,
+    "seen": 100,
+    "status": "ok",
+    "new_external_ids": [
+      "https://biz.cnews.ru/news/top/2026-09-04_byvshij_ministr_svyazi_rossii",
+      "https://biz.cnews.ru/news/top/2026-09-04_zelenogradskij_proizvoditel",
+      "https://biz.cnews.ru/news/top/2026-09-04_rossijskaya_elektronnaya_ploshchadka"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 2,
+    "name": "CNews Телеком",
+    "kind": "rss",
+    "latency_ms": 897,
+    "new": 3,
+    "seen": 100,
+    "status": "ok",
+    "new_external_ids": [
+      "https://telecom.cnews.ru/news/top/2026-09-04_byvshij_ministr_svyazi_rossii",
+      "https://telecom.cnews.ru/news/line/2026-09-04_bilajn_i_pravitelstvo_habarovskogo",
+      "https://telecom.cnews.ru/news/line/2026-09-04_analitiki_megafona_nazvali"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 3,
+    "name": "TAdviser",
+    "kind": "rss",
+    "latency_ms": 912,
+    "new": 3,
+    "seen": 50,
+    "status": "ok",
+    "new_external_ids": [
+      "https://www.tadviser.ru/a/50300",
+      "https://www.tadviser.ru/a/591431",
+      "https://www.tadviser.ru/a/964118"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 4,
+    "name": "Коммерсантъ",
+    "kind": "rss",
+    "latency_ms": 1052,
+    "new": 3,
+    "seen": 413,
+    "status": "ok",
+    "new_external_ids": [
+      "https://www.kommersant.ru/doc/8937143",
+      "https://www.kommersant.ru/doc/8936903",
+      "https://www.kommersant.ru/doc/8936902"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 5,
+    "name": "РБК",
+    "kind": "rss",
+    "latency_ms": 784,
+    "new": 3,
+    "seen": 30,
+    "status": "ok",
+    "new_external_ids": [
+      "rssexport.rbc.ru:business:6a9b5883a253bdbe3d350602",
+      "rssexport.rbc.ru:politics:6a9b51880c73c78f2ee838f8",
+      "rssexport.rbc.ru:economics:6a9b4f8da253bdbe3d3505fe"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 6,
+    "name": "ТАСС",
+    "kind": "rss",
+    "latency_ms": 844,
+    "new": 3,
+    "seen": 100,
+    "status": "ok",
+    "new_external_ids": [
+      "https://tass.ru/obschestvo/28081853",
+      "https://tass.ru/ekonomika/28081861",
+      "https://tass.ru/obschestvo/28081859"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 2,
+    "with_date": 3
+  },
+  {
+    "id": 7,
+    "name": "Lenta.ru",
+    "kind": "rss",
+    "latency_ms": 1073,
+    "new": 3,
+    "seen": 200,
+    "status": "ok",
+    "new_external_ids": [
+      "https://lenta.ru/news/2026/09/05/v-ssha-raskryli-posledstviya-vmeshatelstva-nato-v-ukrainskiy-konflikt/",
+      "https://lenta.ru/news/2026/09/05/v-op-otsenili-uvolnenie-uchiteley-za-foto-v-kupalnikah/",
+      "https://lenta.ru/news/2026/09/05/raskryto-znachenie-osvobozhdeniya-vs-rossii-sela-gruzskoe-v-dnr/"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 8,
+    "name": "Интерфакс",
+    "kind": "rss",
+    "latency_ms": 901,
+    "new": 3,
+    "seen": 25,
+    "status": "ok",
+    "new_external_ids": [
+      "https://www.interfax.ru/russia/1113301",
+      "https://www.interfax.ru/russia/1113299",
+      "https://www.interfax.ru/russia/1113302"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 9,
+    "name": "Телеспутник",
+    "kind": "rss",
+    "latency_ms": 982,
+    "new": 3,
+    "seen": 50,
+    "status": "ok",
+    "new_external_ids": [
+      "https://telesputnik.ru/materials/telekom/video/telesputnik-ekspress-cto-iz-sebya-predstavlyaet-mobilnaya-svyaz-5g",
+      "https://telesputnik.ru/materials/money/news/german-gref-ocenil-vklad-iskusstvennogo-intellekta-v-ekonomiku-rf",
+      "https://telesputnik.ru/materials/companies/news/v-komfortele-rasskazali-cego-zakazciki-zdut-ot-otecestvennyx-it-razrabotcikov"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 10,
+    "name": "Кабельщик",
+    "kind": "sitemap",
+    "latency_ms": 3076,
+    "new": 3,
+    "seen": 29,
+    "status": "ok",
+    "new_external_ids": [
+      "https://www.cableman.ru/content/telekanal-mosfilm-zolotaya-kollektsiya-obyavil-o-rebrendinge-efirnogo-oformleniya",
+      "https://www.cableman.ru/content/mintsifry-rassmotrit-model-avariinogo-operatora-dlya-reformy-rynka-svyazi",
+      "https://www.cableman.ru/article/sportivnye-turniry-istoricheskie-dramy-i-kriminalnye-komedii-chto-smotret-v-sentyabre-na"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 11,
+    "name": "D-Russia (Цифровая Россия)",
+    "kind": "rss",
+    "latency_ms": 674,
+    "new": 3,
+    "seen": 10,
+    "status": "ok",
+    "new_external_ids": [
+      "https://d-russia.ru/?p=333706",
+      "https://d-russia.ru/?p=333703",
+      "https://d-russia.ru/?p=333699"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 12,
+    "name": "Habr — новости",
+    "kind": "rss",
+    "latency_ms": 758,
+    "new": 3,
+    "seen": 40,
+    "status": "ok",
+    "new_external_ids": [
+      "https://habr.com/ru/news/1078660/",
+      "https://habr.com/ru/companies/bothub/news/1078652/",
+      "https://habr.com/ru/news/1078552/"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 13,
+    "name": "RusCable",
+    "kind": "rss",
+    "latency_ms": 796,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "http://www.ruscable.ru/news/2026/09/04/Na_VEF_dali_start_masshtabnomu_proektu_robotizatsi/",
+      "http://www.ruscable.ru/news/2026/09/04/_TSVETLIT_sertifitsiroval_novye_marki_bezgalogenny/",
+      "http://www.ruscable.ru/news/2026/09/04/Sergej_TSivilev_prinyal_uchastie_v_zasedanii_Rossi/"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 14,
+    "name": "КонсультантПлюс — горячие документы",
+    "kind": "rss",
+    "latency_ms": 678,
+    "new": 3,
+    "seen": 50,
+    "status": "ok",
+    "new_external_ids": [
+      "https://www.consultant.ru/law/hotdocs/95571.html#utm_campaign=rss_hotdocs&utm_source=rss_reader&utm_medium=rss",
+      "https://www.consultant.ru/law/hotdocs/95572.html#utm_campaign=rss_hotdocs&utm_source=rss_reader&utm_medium=rss",
+      "https://www.consultant.ru/law/hotdocs/95573.html#utm_campaign=rss_hotdocs&utm_source=rss_reader&utm_medium=rss"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 15,
+    "name": "Ведомости — Технологии",
+    "kind": "rss",
+    "latency_ms": 860,
+    "new": 3,
+    "seen": 200,
+    "status": "ok",
+    "new_external_ids": [
+      "https://www.vedomosti.ru/technology/news/2026/09/04/1226389-auditoriya-translyatsii-vk",
+      "https://www.vedomosti.ru/technology/news/2026/09/04/1226334-moshenniki-ispolzuyut-uyazvimosti",
+      "https://www.vedomosti.ru/technology/articles/2026/09/04/1226194-operatori-tsodov-predlozhili-delit-data-tsentri-mezhdu-regionami"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 16,
+    "name": "Forbes.ru",
+    "kind": "rss",
+    "latency_ms": 1165,
+    "new": 3,
+    "seen": 19,
+    "status": "ok",
+    "new_external_ids": [
+      "forbes-567970",
+      "forbes-567967",
+      "forbes-567969"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 17,
+    "name": "НПА: акты Правительства (pravo.gov.ru)",
+    "kind": "rss",
+    "latency_ms": 496,
+    "new": 3,
+    "seen": 30,
+    "status": "ok",
+    "new_external_ids": [
+      "http://publication.pravo.gov.ru/document/0001202609040021",
+      "http://publication.pravo.gov.ru/document/0001202609040019",
+      "http://publication.pravo.gov.ru/document/0001202609040022"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 18,
+    "name": "НПА: акты ФОИВ (pravo.gov.ru)",
+    "kind": "rss",
+    "latency_ms": 551,
+    "new": 3,
+    "seen": 30,
+    "status": "ok",
+    "new_external_ids": [
+      "http://publication.pravo.gov.ru/document/0001202609040010",
+      "http://publication.pravo.gov.ru/document/0001202609040011",
+      "http://publication.pravo.gov.ru/document/0001202609040015"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 19,
+    "name": "НПА: Президент — указы и федеральные законы (pravo.gov.ru)",
+    "kind": "rss",
+    "latency_ms": 585,
+    "new": 2,
+    "seen": 30,
+    "status": "ok",
+    "new_external_ids": [
+      "http://publication.pravo.gov.ru/document/0001202609040002",
+      "http://publication.pravo.gov.ru/document/0001202609040001"
+    ],
+    "stored": 2,
+    "with_title": 2,
+    "with_content": 2,
+    "with_date": 2
+  },
+  {
+    "id": 20,
+    "name": "Правительство РФ",
+    "kind": "rss",
+    "latency_ms": 501,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "http://government.ru/news/59792/",
+      "http://government.ru/news/59790/",
+      "http://government.ru/news/59787/"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 21,
+    "name": "Роскомнадзор",
+    "kind": "rss",
+    "latency_ms": 590,
+    "new": 0,
+    "seen": 50,
+    "status": "ok",
+    "new_external_ids": [],
+    "stored": 0,
+    "with_title": 0,
+    "with_content": 0,
+    "with_date": 0
+  },
+  {
+    "id": 22,
+    "name": "Официальное опубликование НПА",
+    "kind": "html",
+    "latency_ms": 456,
+    "new": 1,
+    "seen": 9,
+    "status": "ok",
+    "new_external_ids": [
+      "http://publication.pravo.gov.ru/documents/block/president"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 23,
+    "name": "Государственная Дума",
+    "kind": "html",
+    "latency_ms": 570,
+    "new": 1,
+    "seen": 22,
+    "status": "ok",
+    "new_external_ids": [
+      "http://duma.gov.ru/news/64066/"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 24,
+    "name": "ФНС России",
+    "kind": "rss",
+    "latency_ms": 543,
+    "new": 2,
+    "seen": 2,
+    "status": "ok",
+    "new_external_ids": [
+      "http://www.nalog.gov.ru/rn77/news/activities_fts/16647734/",
+      "http://www.nalog.gov.ru/rn77/news/activities_fts/16646621/"
+    ],
+    "stored": 2,
+    "with_title": 2,
+    "with_content": 2,
+    "with_date": 2
+  },
+  {
+    "id": 25,
+    "name": "ФСБ России",
+    "kind": "html",
+    "latency_ms": 552,
+    "new": 1,
+    "seen": 93,
+    "status": "ok",
+    "new_external_ids": [
+      "http://www.fsb.ru/fsb.htm"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 26,
+    "name": "РФРИТ",
+    "kind": "sitemap",
+    "latency_ms": 5332,
+    "new": 0,
+    "seen": 200,
+    "status": "ok",
+    "new_external_ids": [],
+    "stored": 0,
+    "with_title": 0,
+    "with_content": 0,
+    "with_date": 0
+  },
+  {
+    "id": 27,
+    "name": "Банк России — пресс-релизы",
+    "kind": "rss",
+    "latency_ms": 730,
+    "new": 1,
+    "seen": 9,
+    "status": "ok",
+    "new_external_ids": [
+      "docid_41604"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 28,
+    "name": "Гарант",
+    "kind": "rss",
+    "latency_ms": 621,
+    "new": 3,
+    "seen": 10,
+    "status": "ok",
+    "new_external_ids": [
+      "https://www.garant.ru/news/2229416/",
+      "https://www.garant.ru/news/2228426/",
+      "https://www.garant.ru/news/2228224/"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 29,
+    "name": "Банк России — новости",
+    "kind": "rss",
+    "latency_ms": 597,
+    "new": 3,
+    "seen": 100,
+    "status": "ok",
+    "new_external_ids": [
+      "ID_9286",
+      "ID_35763",
+      "ID_9289"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 30,
+    "name": "Минцифры России — Telegram",
+    "kind": "telegram",
+    "latency_ms": 527,
+    "new": 0,
+    "seen": 11,
+    "status": "ok",
+    "new_external_ids": [],
+    "stored": 0,
+    "with_title": 0,
+    "with_content": 0,
+    "with_date": 0
+  },
+  {
+    "id": 31,
+    "name": "Правительство России — Telegram",
+    "kind": "telegram",
+    "latency_ms": 494,
+    "new": 3,
+    "seen": 5,
+    "status": "ok",
+    "new_external_ids": [
+      "government_rus/32394",
+      "government_rus/32399",
+      "government_rus/32400"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 32,
+    "name": "Госдума — Telegram",
+    "kind": "telegram",
+    "latency_ms": 629,
+    "new": 3,
+    "seen": 13,
+    "status": "ok",
+    "new_external_ids": [
+      "duma_gov_ru/8213",
+      "duma_gov_ru/8221",
+      "duma_gov_ru/8222"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 33,
+    "name": "РФРИТ — Telegram",
+    "kind": "telegram",
+    "latency_ms": 485,
+    "new": 0,
+    "seen": 15,
+    "status": "ok",
+    "new_external_ids": [],
+    "stored": 0,
+    "with_title": 0,
+    "with_content": 0,
+    "with_date": 0
+  },
+  {
+    "id": 34,
+    "name": "АРПП «Отечественный софт» — Telegram",
+    "kind": "telegram",
+    "latency_ms": 679,
+    "new": 1,
+    "seen": 17,
+    "status": "ok",
+    "new_external_ids": [
+      "arppsoft/1527"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 35,
+    "name": "АРПЭ — Telegram",
+    "kind": "telegram",
+    "latency_ms": 687,
+    "new": 3,
+    "seen": 17,
+    "status": "ok",
+    "new_external_ids": [
+      "arperf/7224",
+      "arperf/7225",
+      "arperf/7226"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 36,
+    "name": "RSpectr — Telegram",
+    "kind": "telegram",
+    "latency_ms": 760,
+    "new": 0,
+    "seen": 19,
+    "status": "ok",
+    "new_external_ids": [],
+    "stored": 0,
+    "with_title": 0,
+    "with_content": 0,
+    "with_date": 0
+  },
+  {
+    "id": 37,
+    "name": "ЦИПР — Telegram",
+    "kind": "telegram",
+    "latency_ms": 733,
+    "new": 3,
+    "seen": 11,
+    "status": "ok",
+    "new_external_ids": [
+      "icipr/9926",
+      "icipr/9927",
+      "icipr/9928"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 38,
+    "name": "CIO: канал IT-руководителей — Telegram",
+    "kind": "telegram",
+    "latency_ms": 738,
+    "new": 3,
+    "seen": 14,
+    "status": "ok",
+    "new_external_ids": [
+      "cio_channel/8378",
+      "cio_channel/8379",
+      "cio_channel/8380"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 39,
+    "name": "ComNews — Telegram",
+    "kind": "telegram",
+    "latency_ms": 605,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "comnewsgroup/9952",
+      "comnewsgroup/9953",
+      "comnewsgroup/9954"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 40,
+    "name": "TAdviser — Telegram",
+    "kind": "telegram",
+    "latency_ms": 591,
+    "new": 3,
+    "seen": 13,
+    "status": "ok",
+    "new_external_ids": [
+      "tadviser/6184",
+      "tadviser/6185",
+      "tadviser/6186"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 41,
+    "name": "CNews — Telegram",
+    "kind": "telegram",
+    "latency_ms": 604,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "CNewsDaily/25614",
+      "CNewsDaily/25615",
+      "CNewsDaily/25616"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 42,
+    "name": "Кабельщик — Telegram",
+    "kind": "telegram",
+    "latency_ms": 523,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "cablemanru/21177",
+      "cablemanru/21178",
+      "cablemanru/21179"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 43,
+    "name": "Коммерсантъ — Telegram",
+    "kind": "telegram",
+    "latency_ms": 521,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "kommersant/114551",
+      "kommersant/114552",
+      "kommersant/114553"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 44,
+    "name": "Ведомости — Telegram",
+    "kind": "telegram",
+    "latency_ms": 736,
+    "new": 3,
+    "seen": 16,
+    "status": "ok",
+    "new_external_ids": [
+      "vedomosti/84087",
+      "vedomosti/84088",
+      "vedomosti/84089"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 45,
+    "name": "Телеспутник — Telegram",
+    "kind": "telegram",
+    "latency_ms": 556,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "telesputnik/14451",
+      "telesputnik/14452",
+      "telesputnik/14453"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 46,
+    "name": "АНО «Цифровая экономика» — Telegram",
+    "kind": "telegram",
+    "latency_ms": 805,
+    "new": 3,
+    "seen": 16,
+    "status": "ok",
+    "new_external_ids": [
+      "DataEconomyRU/13496",
+      "DataEconomyRU/13497",
+      "DataEconomyRU/13498"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 47,
+    "name": "ТАСС — Telegram",
+    "kind": "telegram",
+    "latency_ms": 602,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "tass_agency/393811",
+      "tass_agency/393812",
+      "tass_agency/393813"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 48,
+    "name": "Цифровые индустриальные технологии — Telegram",
+    "kind": "telegram",
+    "latency_ms": 854,
+    "new": 3,
+    "seen": 15,
+    "status": "ok",
+    "new_external_ids": [
+      "cit_gov/1501",
+      "cit_gov/1502",
+      "cit_gov/1503"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 49,
+    "name": "Торгпред (Минпромторг) — Telegram",
+    "kind": "telegram",
+    "latency_ms": 709,
+    "new": 3,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "rustorgpred/15096",
+      "rustorgpred/15097",
+      "rustorgpred/15098"
+    ],
+    "stored": 3,
+    "with_title": 3,
+    "with_content": 3,
+    "with_date": 3
+  },
+  {
+    "id": 50,
+    "name": "Фонд содействия инновациям — Telegram",
+    "kind": "telegram",
+    "latency_ms": 1043,
+    "new": 1,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "fasietalks/1209"
+    ],
+    "stored": 1,
+    "with_title": 1,
+    "with_content": 1,
+    "with_date": 1
+  },
+  {
+    "id": 51,
+    "name": "Гранты для ИТ — Telegram",
+    "kind": "telegram",
+    "latency_ms": 796,
+    "new": 2,
+    "seen": 20,
+    "status": "ok",
+    "new_external_ids": [
+      "grantsforbussines/434",
+      "grantsforbussines/435"
+    ],
+    "stored": 2,
+    "with_title": 2,
+    "with_content": 2,
+    "with_date": 2
+  },
+  {
+    "id": 52,
+    "name": "Поиск: упоминания GS Labs / Триколор",
+    "kind": "search",
+    "latency_ms": 4328,
+    "new": 4,
+    "seen": 7,
+    "status": "ok",
+    "new_external_ids": [
+      "https://gs-group.com/press-center/news/ddr-pyatogo-pokoleniya-lokalizovany-v-rossii-po-novym-trebovaniyam",
+      "https://telesputnik.ru/materials/companies/news/na-konferencii-kontex-2026-obsudyat-trendy-otrasli-cifrovogo-televideniya",
+      "https://telesputnik.ru/materials/trends/news/v-rossii-prorabatyvayut-sozdanie-30-40-mezregionalnyx-xabov-cod",
+      "summary:2026-09-04"
+    ],
+    "stored": 4,
+    "with_title": 4,
+    "with_content": 4,
+    "with_date": 3
+  },
+  {
+    "id": 53,
+    "name": "Поиск: проекты НПА — ПО, ПД, КИИ",
+    "kind": "search",
+    "latency_ms": 1229,
+    "new": 4,
+    "seen": 21,
+    "status": "ok",
+    "new_external_ids": [
+      "https://sozd.duma.gov.ru/bill/581689-8",
+      "https://digital.gov.ru/news/pravitelstvo-vneslo-v-gosdumu-popravki-v-zakon-o-kii",
+      "https://www.consultant.ru/law/hotdocs/88854.html",
+      "summary:2026-09-04"
+    ],
+    "stored": 4,
+    "with_title": 4,
+    "with_content": 4,
+    "with_date": 2
+  }
+]

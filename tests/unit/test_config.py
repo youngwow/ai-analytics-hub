@@ -38,7 +38,7 @@ def test_scraper_config_is_frozen(config):
 
 
 @pytest.mark.parametrize(
-    "section", ["scraper", "telegram", "sitemap", "tavily", "llm", "processing"]
+    "section", ["scraper", "telegram", "sitemap", "tavily", "llm", "embeddings", "processing"]
 )
 def test_missing_section_raises(raw_config, section):
     del raw_config[section]
@@ -303,10 +303,8 @@ def test_llm_section_may_be_empty_and_falls_back_to_defaults(raw_config):
     raw_config["llm"] = {}
     assert Config.from_dict(raw_config).llm == LLMConfig(
         host="https://ollama.com",
-        model="glm-5.3-flash",
+        model="glm-5.3-flash:cloud",
         api_key_env="OLLAMA_API_KEY",
-        embed_model="embeddinggemma",
-        embed_dimensions=768,
         request_timeout=90.0,
         max_retries=2,
         retry_backoff=2.0,
@@ -314,21 +312,20 @@ def test_llm_section_may_be_empty_and_falls_back_to_defaults(raw_config):
     )
 
 
-def test_llm_keys_are_read_when_present(raw_config):
+def test_llm_runtime_keys_are_read_when_present(raw_config):
     raw_config["llm"] = {
-        "host": "http://localhost:11434",
-        "model": "qwen3:8b",
-        "api_key_env": "LOCAL_KEY",
-        "embed_model": "bge-m3",
-        "embed_dimensions": 1024,
+        "host": "https://ollama.com",
+        "model": "glm-5.3-flash:cloud",
+        "api_key_env": "OLLAMA_API_KEY",
         "request_timeout": 30,
         "max_retries": 0,
         "retry_backoff": 0,
         "temperature": 0,
     }
     llm = Config.from_dict(raw_config).llm
-    assert (llm.host, llm.model, llm.api_key_env) == ("http://localhost:11434", "qwen3:8b", "LOCAL_KEY")
-    assert (llm.embed_model, llm.embed_dimensions) == ("bge-m3", 1024)
+    assert (llm.host, llm.model, llm.api_key_env) == (
+        "https://ollama.com", "glm-5.3-flash:cloud", "OLLAMA_API_KEY"
+    )
     assert (llm.request_timeout, llm.max_retries, llm.retry_backoff) == (30, 0, 0)
     assert llm.temperature == 0
 
@@ -361,10 +358,32 @@ def test_zero_retries_and_zero_backoff_are_accepted(raw_config):
     assert (llm.max_retries, llm.retry_backoff) == (0, 0)
 
 
-@pytest.mark.parametrize("value", [0, -1, -768], ids=["zero", "negative", "negative-default"])
-def test_embed_dimensions_below_one_raises(raw_config, value):
-    raw_config["llm"]["embed_dimensions"] = value
-    with pytest.raises(ConfigError, match=r"llm.embed_dimensions must be >= 1"):
+@pytest.mark.parametrize("model", ["qwen3:8b", "glm-5.3-flash", ""])
+def test_other_generation_models_are_rejected(raw_config, model):
+    raw_config["llm"]["model"] = model
+    with pytest.raises(ConfigError):
+        Config.from_dict(raw_config)
+
+
+def test_embedding_defaults_are_locked_to_openrouter(raw_config):
+    emb = Config.from_dict(raw_config).embeddings
+    assert emb.base_url == "https://openrouter.ai/api/v1"
+    assert emb.model == "google/gemini-embedding-001"
+    assert emb.api_key_env == "OPENROUTER_API_KEY"
+    assert emb.dimensions == 3072
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("base_url", "http://localhost:11434"),
+        ("model", "embeddinggemma"),
+        ("dimensions", 768),
+    ],
+)
+def test_other_embedding_configuration_is_rejected(raw_config, field, value):
+    raw_config["embeddings"][field] = value
+    with pytest.raises(ConfigError):
         Config.from_dict(raw_config)
 
 
@@ -492,10 +511,12 @@ def test_equal_borderline_bounds_are_accepted(raw_config):
 
 def test_repo_config_yaml_loads_the_llm_and_processing_sections():
     cfg = Config.load(DEFAULT_PATHS.config_path)
-    assert (cfg.llm.host, cfg.llm.model) == ("https://ollama.com", "glm-5.3-flash")
+    assert (cfg.llm.host, cfg.llm.model) == ("https://ollama.com", "glm-5.3-flash:cloud")
     assert cfg.llm.api_key_env == "OLLAMA_API_KEY"
-    assert (cfg.llm.embed_model, cfg.llm.embed_dimensions) == ("embeddinggemma", 768)
-    assert (cfg.llm.request_timeout, cfg.llm.max_retries, cfg.llm.temperature) == (300, 2, 0.2)
+    assert (cfg.embeddings.model, cfg.embeddings.dimensions) == (
+        "google/gemini-embedding-001", 3072
+    )
+    assert (cfg.llm.request_timeout, cfg.llm.max_retries, cfg.llm.temperature) == (90, 1, 0.2)
     assert (cfg.processing.max_chars, cfg.processing.chunk_chars) == (12000, 6000)
     assert cfg.processing.candidate_window_days == 7
     assert cfg.processing.simhash_distance == 8

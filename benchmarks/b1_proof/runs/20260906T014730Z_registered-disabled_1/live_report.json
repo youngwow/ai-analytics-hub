@@ -1,0 +1,276 @@
+{
+  "mode": "registered-disabled",
+  "index": 1,
+  "run_dir": "benchmarks/b1_proof/runs/20260906T014730Z_registered-disabled_1",
+  "live": {
+    "wall_ms": 15236.959,
+    "sources": 9,
+    "sources_ok": 1,
+    "sources_failed": 0,
+    "documents_stored": 15,
+    "documents_with_content": 12,
+    "documents_with_date": 15,
+    "http_exchanges": 24,
+    "raw_blobs": 26,
+    "response_bytes": 7135014,
+    "user_cpu_seconds": 1.251,
+    "system_cpu_seconds": 0.141,
+    "peak_rss_mb": 239.98,
+    "captures": "benchmarks/b1_proof/runs/20260906T014730Z_registered-disabled_1/captures.jsonl"
+  },
+  "source_rows": [
+    {
+      "id": 1,
+      "name": "РБК",
+      "kind": "rss",
+      "latency_ms": 471,
+      "new": 3,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 30 documents"
+      ],
+      "fulltext_attempted": 2,
+      "fulltext_extracted": 2,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [
+        "rssexport.rbc.ru:technology_and_media:6a9cb45f7523baece49a6548",
+        "rssexport.rbc.ru:politics:6a9cb8cb20c3a9df69c71f8f",
+        "rssexport.rbc.ru:politics:6a9ca8b80317f64c3a19eabb"
+      ],
+      "updated_external_ids": [],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 2,
+      "name": "ТАСС",
+      "kind": "rss",
+      "latency_ms": 497,
+      "new": 3,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 100 documents"
+      ],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [
+        "https://tass.ru/mezhdunarodnaya-panorama/28084051",
+        "https://tass.ru/proisshestviya/28084047",
+        "https://tass.ru/ekonomika/28084049"
+      ],
+      "updated_external_ids": [],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 0,
+      "with_date": 3
+    },
+    {
+      "id": 3,
+      "name": "RusCable",
+      "kind": "rss",
+      "latency_ms": 822,
+      "new": 0,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 20 documents"
+      ],
+      "fulltext_attempted": 0,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [],
+      "updated_external_ids": [],
+      "stored": 0,
+      "with_title": 0,
+      "with_content": 0,
+      "with_date": 0
+    },
+    {
+      "id": 4,
+      "name": "Forbes.ru",
+      "kind": "rss",
+      "latency_ms": 1052,
+      "new": 3,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 20 documents"
+      ],
+      "fulltext_attempted": 0,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [
+        "forbes-567982",
+        "forbes-567990",
+        "forbes-567992"
+      ],
+      "updated_external_ids": [],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 5,
+      "name": "Официальное опубликование НПА",
+      "kind": "html",
+      "latency_ms": 327,
+      "new": 0,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 9 documents"
+      ],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 3,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [],
+      "updated_external_ids": [],
+      "stored": 0,
+      "with_title": 0,
+      "with_content": 0,
+      "with_date": 0
+    },
+    {
+      "id": 6,
+      "name": "Банк России — пресс-релизы",
+      "kind": "rss",
+      "latency_ms": 441,
+      "new": 0,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 9 documents"
+      ],
+      "fulltext_attempted": 0,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [],
+      "updated_external_ids": [],
+      "stored": 0,
+      "with_title": 0,
+      "with_content": 0,
+      "with_date": 0
+    },
+    {
+      "id": 7,
+      "name": "Торгпред (Минпромторг) — Telegram",
+      "kind": "telegram",
+      "latency_ms": 499,
+      "new": 0,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 20 documents"
+      ],
+      "fulltext_attempted": 0,
+      "fulltext_extracted": 0,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [],
+      "updated_external_ids": [],
+      "stored": 0,
+      "with_title": 0,
+      "with_content": 0,
+      "with_date": 0
+    },
+    {
+      "id": 8,
+      "name": "Поиск: упоминания GS Labs / Триколор",
+      "kind": "search",
+      "latency_ms": 2067,
+      "new": 3,
+      "seen": 3,
+      "warnings": [],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 3,
+      "fulltext_fallback": 0,
+      "status": "ok",
+      "updated": 0,
+      "new_external_ids": [
+        "https://telesputnik.ru/materials/trends/news/v-rossii-prorabatyvayut-sozdanie-30-40-mezregionalnyx-xabov-cod",
+        "https://telesputnik.ru/materials/hipe/news/reforma-svyazi-sposobna-unictozit-telekom-rynok-v-27-regionax-rossii",
+        "https://habr.com/ru/articles/1077612"
+      ],
+      "updated_external_ids": [],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    },
+    {
+      "id": 9,
+      "name": "Поиск: проекты НПА — ПО, ПД, КИИ",
+      "kind": "search",
+      "latency_ms": 2781,
+      "new": 3,
+      "seen": 3,
+      "warnings": [
+        "B1 live sample: 3 of 19 documents"
+      ],
+      "fulltext_attempted": 3,
+      "fulltext_extracted": 3,
+      "fulltext_fallback": 0,
+      "status": "partial",
+      "updated": 0,
+      "new_external_ids": [
+        "https://sozd.duma.gov.ru/bill/581689-8",
+        "http://api.duma.gov.ru/api/transcript/581689-8",
+        "https://sozd.duma.gov.ru/bill/581689-8?sortEventsByDate=datend_down&sortEventsByNum=num_down"
+      ],
+      "updated_external_ids": [],
+      "stored": 3,
+      "with_title": 3,
+      "with_content": 3,
+      "with_date": 3
+    }
+  ],
+  "search_artifacts": [
+    {
+      "number": 1,
+      "method": "POST",
+      "url": "https://api.tavily.com/search",
+      "started_at": "2026-09-06T01:47:30.826242+00:00",
+      "elapsed_ms": 2065.394,
+      "status": 200,
+      "request_body_sha256": "294b3e53f759d53429c6333deaacd8ea747a1a60ccf4371b2501f7255ec67eb6",
+      "response_body_sha256": "d5c4299b8c8db4a5365986c4105a7ee58cf1d89b9ba956a5a020b44a1f2d02bd",
+      "request_file": "search_artifacts/01_request.json",
+      "response_file": "search_artifacts/01_response.json"
+    },
+    {
+      "number": 2,
+      "method": "POST",
+      "url": "https://api.tavily.com/search",
+      "started_at": "2026-09-06T01:47:31.152691+00:00",
+      "elapsed_ms": 2776.768,
+      "status": 200,
+      "request_body_sha256": "cf92902035ac8939847b02fc8d6fe10ccaee35eec80a9c03f4bf9982f56c41bd",
+      "response_body_sha256": "97ead461619d7e887cb47de5c65cccac7bfdf177e3943958c475eb2b51eb41ee",
+      "request_file": "search_artifacts/02_request.json",
+      "response_file": "search_artifacts/02_response.json"
+    }
+  ],
+  "document_quality": {
+    "documents": 15,
+    "missing_source": 0,
+    "missing_external_id": 0,
+    "missing_url_not_digest": 0,
+    "missing_title": 0,
+    "missing_readable_content": 3,
+    "passed": false
+  },
+  "secret_hits": 0,
+  "secret_files": {}
+}

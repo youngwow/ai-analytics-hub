@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GS Labs · Повестка</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">GS</span><span>Повестка</span></div>
+    <nav id="nav">
+      <button class="nav-item active" data-view="queue"><span>01</span>Рабочая очередь</button>
+      <button class="nav-item" data-view="npa"><span>02</span>НПА</button>
+      <button class="nav-item" data-view="digest"><span>03</span>Выпуск</button>
+      <button class="nav-item" data-view="events"><span>04</span>События</button>
+      <button class="nav-item" data-view="sources"><span>05</span>Источники</button>
+      <button class="nav-item" data-view="context"><span>06</span>Контекст</button>
+      <button class="nav-item" data-view="history"><span>07</span>История</button>
+    </nav>
+    <div class="sidebar-foot">
+      <span class="status-dot"></span>
+      <div><strong>GS Labs</strong><small>единое рабочее пространство</small></div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div><div class="eyebrow" id="eyebrow">ОБРАБОТАННЫЙ ПОТОК</div><h1 id="page-title">Рабочая очередь</h1></div>
+      <div class="top-actions">
+        <label class="profile-select">Режим
+          <select id="profile"><option value="">Все</option><option>PR</option><option>GR</option></select>
+        </label>
+        <button class="button ghost" id="refresh">Обновить</button>
+      </div>
+    </header>
+
+    <section class="health-strip" id="health"></section>
+    <section class="view" id="view"></section>
+  </main>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <button class="drawer-close" id="drawer-close">×</button>
+    <div id="drawer-content"></div>
+  </aside>
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

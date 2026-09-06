@@ -14,16 +14,16 @@ from courlan import get_base_url
 
 from .common import get_logger, load_env_secret
 from .config import Config, ConfigError
-from .models import CATEGORIES, ITEM_TYPES, KINDS, PRIORITIES, Resolution, Source
+from .models import CATEGORIES, DIRECTIONS, ITEM_TYPES, KINDS, PRIORITIES, Resolution, Source
 from .paths import DEFAULT_PATHS, ProjectPaths
 from .processing import profile as company_profile
-from .processing.llm import LlmConfigError, build_provider
+from .processing.llm import LlmConfigError, build_embedding_provider, build_llm_provider
 from .processing.quality import GOLD_PATH, evaluate, load_gold
 from .processing.service import EDITABLE_FIELDS, ProcessingService
 from .sources.base import HostLimiter, make_client
 from .sources.collector import Collector
 from .sources.resolver import Resolver
-from .sources.scraper_search import SEARCH_MAX_RESULTS, SUMMARY_PREFIX, SearchQuery
+from .sources.scraper_search import SEARCH_MAX_RESULTS, SearchQuery
 from .sources.telegram_mtproto import (
     MtprotoError,
     credentials_from_env,
@@ -117,6 +117,8 @@ def _add_source(
     kind: str | None = None,
     fetch_url: str | None = None,
     notes: str = "",
+    direction: str = "both",
+    source_class: str = "ordinary",
 ) -> tuple[Source | None, str]:
     """Resolve (unless pinned) and store. Returns (source, status) with status ok|exists|failed."""
     note = ""
@@ -137,6 +139,8 @@ def _add_source(
         category=category or guess_category(url, res.kind),
         fetch_url=res.fetch_url,
         notes=notes or note,
+        direction=direction,
+        source_class=source_class,
     )
     try:
         db.sources.add(source)
@@ -180,14 +184,20 @@ def _cmd_sources_list(args, config: Config, paths: ProjectPaths) -> int:
                 "on" if s.enabled else "off",
                 s.kind,
                 s.category,
+                s.direction,
                 s.name[:40],
                 str(db.documents.count(s.id)),
+                st.coverage_status,
+                st.backlog_status,
                 (st.last_success_at or "-")[:16],
                 (st.last_error or "")[:50],
             ]
         )
     print(
-        _table(["id", "", "kind", "category", "name", "docs", "last ok", "last error"], rows)
+        _table(
+            ["id", "", "kind", "category", "dir", "name", "docs", "coverage", "backlog", "last ok", "last error"],
+            rows,
+        )
         if rows
         else "no sources yet — try `sources seed` or `sources add <url>`"
     )
@@ -206,6 +216,8 @@ def _cmd_sources_add(args, config: Config, paths: ProjectPaths) -> int:
             category=args.category,
             kind=args.kind,
             fetch_url=args.fetch_url,
+            direction=getattr(args, "direction", "both"),
+            source_class=getattr(args, "source_class", "ordinary"),
         )
     finally:
         db.close()
@@ -292,6 +304,8 @@ def _cmd_sources_seed(args, config: Config, paths: ProjectPaths) -> int:
                 kind=item.get("kind"),
                 fetch_url=item.get("fetch_url"),
                 notes=item.get("notes", ""),
+                direction=item.get("direction", "both"),
+                source_class=item.get("source_class", "ordinary"),
             )
         except Exception as e:  # noqa: BLE001 — keep seeding the rest
             log.error("seed %s failed: %s", url, e)
@@ -374,7 +388,7 @@ def _cmd_discover(args, config: Config, paths: ProjectPaths) -> int:
 
 
 def _cmd_search(args, config: Config, paths: ProjectPaths) -> int:
-    """Run a Tavily query as a `search` source: the hits and the digest go into `documents`.
+    """Run a Tavily query as a `search` source: source-backed hits go into `documents`.
 
     Without `--save` the source stays disabled (an ad-hoc query you can re-run or
     enable later); with it, `collect` keeps polling the query incrementally.
@@ -411,6 +425,7 @@ def _cmd_search(args, config: Config, paths: ProjectPaths) -> int:
             kind="search",
             fetch_url=url,
             notes=f"Tavily: {query.describe()}",
+            direction=getattr(args, "direction", "both"),
         )
         if status == "ok" and not args.save:
             db.sources.set_enabled(source.id, False)
@@ -425,10 +440,7 @@ def _cmd_search(args, config: Config, paths: ProjectPaths) -> int:
             print(f"search failed: {entry.get('error') or result.error}", file=sys.stderr)
             return 2
         new_ids = set(entry.get("new_external_ids", []))
-        hits = [d for d in result.documents if not d.external_id.startswith(SUMMARY_PREFIX)]
-        digest = next(
-            (d for d in result.documents if d.external_id.startswith(SUMMARY_PREFIX)), None
-        )
+        hits = result.documents
         limit = max(1, min(args.max or SEARCH_MAX_RESULTS, SEARCH_MAX_RESULTS))
         rows = [
             [
@@ -440,8 +452,6 @@ def _cmd_search(args, config: Config, paths: ProjectPaths) -> int:
             for d in hits[:limit]
         ]
         print(_table(["", "published", "title", "url"], rows) if rows else "no results")
-        if digest is not None:
-            print(f"\n{digest.title}\n{digest.text}\n")
         print(
             f"{len(hits)} hits, {entry['new']} new document(s) → source #{source.id} "
             f"«{source.name}» [{'on' if source.enabled else 'off'}]"
@@ -573,10 +583,16 @@ def _processing(config: Config, paths: ProjectPaths) -> tuple[Database, Processi
     """Database plus service; without a key the provider is None and cards degrade."""
     db = Database(paths.db_path)
     key = load_env_secret(config.llm.api_key_env, paths.env_path)
-    provider = build_provider(config.llm, key) if key else None
+    provider = build_llm_provider(config.llm, key) if key else None
+    embedding_key = load_env_secret(config.embeddings.api_key_env, paths.env_path)
+    embedder = (
+        build_embedding_provider(config.embeddings, embedding_key) if embedding_key else None
+    )
     if provider is None:
         log.warning("нет %s — обработка пойдёт без модели", config.llm.api_key_env)
-    return db, ProcessingService(config, db, provider=provider, embedder=provider)
+    if embedder is None:
+        log.warning("нет %s — embedding-кандидаты недоступны", config.embeddings.api_key_env)
+    return db, ProcessingService(config, db, provider=provider, embedder=embedder)
 
 
 def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
@@ -876,6 +892,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--category", choices=CATEGORIES)
     p.add_argument("--kind", choices=KINDS, help="skip resolution and force this adapter")
     p.add_argument("--fetch-url", help="exact feed/sitemap/page URL to poll (with --kind)")
+    p.add_argument("--direction", choices=DIRECTIONS, default="both")
+    p.add_argument("--source-class", choices=("ordinary", "regulator", "npa"), default="ordinary")
     p.set_defaults(func=_cmd_sources_add)
     for action, enable in (("enable", True), ("disable", False)):
         p = ps.add_parser(action, help=f"{action} a source")
@@ -907,7 +925,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.set_defaults(func=_cmd_discover)
 
     p = sub.add_parser(
-        "search", help="run a Tavily news query as a source: hits + digest go into documents"
+        "search", help="run a Tavily query as a source: source-backed hits become documents"
     )
     p.add_argument("query")
     p.add_argument(
@@ -917,6 +935,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--days", type=int, default=None, help="recency window in days (config: 7)")
     p.add_argument("--max", type=int, default=None, help="rows to print (≤ 20)")
     p.add_argument("--category", choices=_SEARCH_CATEGORIES, default=None)
+    p.add_argument("--direction", choices=DIRECTIONS, default="both")
     p.add_argument("--general", action="store_true", help="Tavily 'general' topic instead of news")
     p.add_argument(
         "--no-summary", action="store_true", help="skip Tavily's answer (the «Сводка» document)"

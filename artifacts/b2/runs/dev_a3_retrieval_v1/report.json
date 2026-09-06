@@ -1,0 +1,225 @@
+{
+  "benchmark": "B2-A3 retrieval",
+  "source_dataset": "v1.0.0",
+  "bank_size": 30,
+  "cases": 11,
+  "positive_cases": 7,
+  "negative_cases": 4,
+  "retrieval_recall_at_20": 1.0,
+  "full_scan_accuracy": 0.36363636363636365,
+  "embedding_top20_accuracy": 0.36363636363636365,
+  "full_scan_latency_ms": 92601,
+  "embedding_top20_latency_ms": 143979,
+  "wall_seconds": 252.56703812500928,
+  "rows": [
+    {
+      "case_id": "E01-positive-0",
+      "query_id": "e01-b",
+      "target_event_id": "event:e01-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 6257
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 8709
+      }
+    },
+    {
+      "case_id": "E02-positive-0",
+      "query_id": "e02-b",
+      "target_event_id": "event:e02-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 2626
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 3071
+      }
+    },
+    {
+      "case_id": "E03-positive-0",
+      "query_id": "e03-b",
+      "target_event_id": "event:e03-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 6047
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 8294
+      }
+    },
+    {
+      "case_id": "E05-positive-0",
+      "query_id": "e05-b",
+      "target_event_id": "event:e05-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 8833
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 6249
+      }
+    },
+    {
+      "case_id": "E06-positive-0",
+      "query_id": "e06-b",
+      "target_event_id": "event:e06-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 4755
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 6118
+      }
+    },
+    {
+      "case_id": "E07-positive-0",
+      "query_id": "e07-b",
+      "target_event_id": "event:e07-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 8023
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 11994
+      }
+    },
+    {
+      "case_id": "E08-positive-0",
+      "query_id": "e08-b",
+      "target_event_id": "event:e08-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 16471
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": false,
+        "latency_ms": 60053
+      }
+    },
+    {
+      "case_id": "E04-negative-0",
+      "query_id": "e04-a",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 7012
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 7679
+      }
+    },
+    {
+      "case_id": "E04-negative-1",
+      "query_id": "e04-b",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 16795
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 10311
+      }
+    },
+    {
+      "case_id": "E04-negative-2",
+      "query_id": "e04-c",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 6183
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 13310
+      }
+    },
+    {
+      "case_id": "E04-negative-3",
+      "query_id": "e04-d",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 9599
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "correct": true,
+        "latency_ms": 8191
+      }
+    }
+  ]
+}

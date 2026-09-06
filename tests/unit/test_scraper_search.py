@@ -432,8 +432,8 @@ class TestSearchAdapter:
             "max_results": 20,
             "topic": "news",
             "include_domains": ["gs-group.com", "telesputnik.ru"],
-            "include_answer": "advanced",
-            "include_raw_content": "text",
+            "include_answer": False,
+            "include_raw_content": False,
             "days": 7,
         }
 
@@ -510,7 +510,9 @@ class TestSearchAdapter:
         body = _payload(tavily_routes)
         assert {k: body[k] for k in ("country", "language") if k in body} == expected
 
-    def test_hits_and_digest_become_documents(self, adapter, mock_client, tavily_routes, now):
+    def test_hits_become_source_backed_documents_without_generated_digest(
+        self, adapter, mock_client, tavily_routes, now
+    ):
         result = _fetch(adapter, mock_client(tavily_routes), now)
         assert result.error is None
         assert result.not_modified is False
@@ -519,15 +521,11 @@ class TestSearchAdapter:
             GS_GROUP_URL,
             TELESPUTNIK_URL,
             FORUM_URL,
-            "summary:2026-09-02",
         ]
         assert all(d.source_id == 3 for d in result.documents)
-        assert [d.needs_fulltext for d in result.documents] == [False, True, True, False]
-        digest = result.documents[-1]
-        assert digest.title == "Сводка: GS Labs Триколор"
-        assert digest.text == NEWS_ANSWER
-        assert digest.url == ""
-        assert result.state_update == {"cursor": {"since": "2026-09-02", "days": 7}}
+        assert [d.needs_fulltext for d in result.documents] == [False, True, True]
+        assert result.state_update["cursor"] == {"since": "2026-09-02", "days": 7}
+        assert result.state_update["coverage_status"] == "observed"
 
     def test_text_is_capped_by_fulltext_max_chars(
         self, raw_config, mock_client, tavily_routes, now
@@ -549,14 +547,14 @@ class TestSearchAdapter:
         routes = MockRoutes({TAVILY_SEARCH_URL: _reply({"results": [hit], "answer": ""})})
         result = _fetch(adapter, mock_client(routes), now)
         assert [d.external_id for d in result.documents] == ["https://a.ru/x"]
-        assert result.state_update == {"cursor": {"since": "2026-09-02", "days": 7}}
+        assert result.state_update["cursor"] == {"since": "2026-09-02", "days": 7}
 
     def test_no_hits_is_still_a_success(self, adapter, mock_client, now):
         routes = MockRoutes({TAVILY_SEARCH_URL: _reply({"results": []})})
         result = _fetch(adapter, mock_client(routes), now)
         assert result.error is None
         assert result.documents == []
-        assert result.state_update == {"cursor": {"since": "2026-09-02", "days": 7}}
+        assert result.state_update["cursor"] == {"since": "2026-09-02", "days": 7}
 
     @pytest.mark.parametrize(
         ("reply", "message"),

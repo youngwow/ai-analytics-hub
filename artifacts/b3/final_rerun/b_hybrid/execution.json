@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b3_e2e/product_agent.py",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b3/final_rerun/b_hybrid/agent_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b3/final_rerun/b_hybrid/prediction.json"
+  ],
+  "cwd": "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b3/final_rerun/b_hybrid",
+  "returncode": 0,
+  "wall_seconds": 217.23349387498456,
+  "stdout": "",
+  "stderr": "2026-09-06 10:42:41 [INFO] db: schema migrated to v1\n2026-09-06 10:42:41 [INFO] db: schema migrated to v2\n2026-09-06 10:42:41 [INFO] db: schema migrated to v3\n2026-09-06 10:42:41 [INFO] db: schema migrated to v4\n"
+}

@@ -7,6 +7,7 @@ parsing only — persistence is the collector's job on the main thread.
 from __future__ import annotations
 
 import threading
+import time
 from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -78,6 +79,7 @@ def fetch(
     limiter: HostLimiter | None = None,
     headers: dict[str, str] | None = None,
     timeout: float | None = None,
+    attempts: int = 3,
 ) -> Page:
     """GET `url` following redirects; never raises, errors land in `Page.error`."""
     kwargs: dict = {"follow_redirects": True}
@@ -85,15 +87,23 @@ def fetch(
         kwargs["headers"] = headers
     if timeout is not None:
         kwargs["timeout"] = timeout
-    try:
-        with limiter.slot(url) if limiter else nullcontext():
-            resp = client.get(url, **kwargs)
-    except httpx.TimeoutException:
-        return Page(url=url, error="timeout")
-    except httpx.TooManyRedirects:
-        return Page(url=url, error="too many redirects")
-    except httpx.RequestError as e:
-        return Page(url=url, error=f"request error: {e.__class__.__name__}: {e}")
+    # GET is idempotent. A short bounded retry absorbs transient TLS/socket
+    # failures without hiding a persistently unavailable source.
+    attempts = max(1, attempts)
+    for attempt in range(attempts):
+        try:
+            with limiter.slot(url) if limiter else nullcontext():
+                resp = client.get(url, **kwargs)
+            break
+        except httpx.TooManyRedirects:
+            return Page(url=url, error="too many redirects")
+        except httpx.TimeoutException:
+            if attempt == attempts - 1:
+                return Page(url=url, error="timeout")
+        except httpx.RequestError as e:
+            if attempt == attempts - 1:
+                return Page(url=url, error=f"request error: {e.__class__.__name__}: {e}")
+        time.sleep(0.1 * (attempt + 1))
     return Page(
         url=str(resp.url),
         status=resp.status_code,

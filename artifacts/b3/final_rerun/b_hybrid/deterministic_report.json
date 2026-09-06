@@ -1,0 +1,586 @@
+{
+  "run_id": "12a88312-ea2a-43c6-95f0-f91d445a08af",
+  "scenario_id": "B",
+  "mode": "hybrid",
+  "contract_errors": [],
+  "coverage": {
+    "visible_items": 22,
+    "decisions": 22
+  },
+  "discovery": {
+    "all_digest_objects_in_scenario": [
+      "EV-B1",
+      "EV-B2",
+      "NPA-B",
+      "OBJ-B08",
+      "OBJ-B09",
+      "OBJ-B10"
+    ],
+    "digest_objects_reachable_in_mode": [
+      "EV-B1",
+      "EV-B2",
+      "NPA-B",
+      "OBJ-B08",
+      "OBJ-B09",
+      "OBJ-B10"
+    ],
+    "reachable_digest_coverage": 1.0,
+    "irrelevant_items_exposed_by_mode": 8
+  },
+  "item_labels": {
+    "relevance": {
+      "correct": 21,
+      "total": 22,
+      "accuracy": 0.9545454545454546
+    },
+    "importance": {
+      "correct": 17,
+      "total": 22,
+      "accuracy": 0.7727272727272727
+    },
+    "critical": {
+      "correct": 22,
+      "total": 22,
+      "accuracy": 1.0
+    },
+    "roles": {
+      "correct": 16,
+      "total": 22,
+      "exact_set_accuracy": 0.7272727272727273
+    },
+    "review_policy": {
+      "correct": 18,
+      "total": 22,
+      "accuracy": 0.8181818181818182
+    }
+  },
+  "classification_by_class": {
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 11,
+          "predicted": 12,
+          "precision": 0.9166666666666666,
+          "recall": 1.0,
+          "f1": 0.9565217391304348
+        },
+        "borderline": {
+          "support": 2,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        "irrelevant": {
+          "support": 8,
+          "predicted": 8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "unknown": {
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1_over_present_classes": 0.9057971014492754
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 8,
+          "predicted": 9,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1": 0.9411764705882353
+        },
+        "medium": {
+          "support": 6,
+          "predicted": 7,
+          "precision": 0.5714285714285714,
+          "recall": 0.6666666666666666,
+          "f1": 0.6153846153846153
+        },
+        "high": {
+          "support": 8,
+          "predicted": 6,
+          "precision": 0.8333333333333334,
+          "recall": 0.625,
+          "f1": 0.7142857142857143
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 0.7569489334195216
+    }
+  },
+  "safety": {
+    "critical_recall": null,
+    "critical_item_recall": null,
+    "critical_object_recall": null,
+    "critical_delivery_recall": null,
+    "critical_recipient_recall": null,
+    "missing_critical_recipients": [],
+    "critical_items_in_low": [],
+    "all_submitted_evidence_quotes_verbatim": true,
+    "submitted_claims": 50,
+    "claim_support_by_meaning": "requires_semantic_judge",
+    "evidence_quote_checks": [
+      {
+        "object_id": "evt-52c91e7e3fba",
+        "claim_id": "B07:s1:c1",
+        "source_item_id": "B07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-52c91e7e3fba",
+        "claim_id": "B07:s1:c2",
+        "source_item_id": "B07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-52c91e7e3fba",
+        "claim_id": "B07:s1:c3",
+        "source_item_id": "B07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-52c91e7e3fba",
+        "claim_id": "B07:s1:c4",
+        "source_item_id": "B07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-398697ba9b61",
+        "claim_id": "B08:s1:c1",
+        "source_item_id": "B08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-398697ba9b61",
+        "claim_id": "B08:s1:c2",
+        "source_item_id": "B08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-66fa30fefd3d",
+        "claim_id": "B09:s1:c1",
+        "source_item_id": "B09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-66fa30fefd3d",
+        "claim_id": "B09:s1:c2",
+        "source_item_id": "B09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-66fa30fefd3d",
+        "claim_id": "B09:s1:c3",
+        "source_item_id": "B09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-78dc35590e42",
+        "claim_id": "B20:s1:c1",
+        "source_item_id": "B20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-78dc35590e42",
+        "claim_id": "B20:s1:c2",
+        "source_item_id": "B20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-78dc35590e42",
+        "claim_id": "B20:s1:c3",
+        "source_item_id": "B20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-5a9f0896f081",
+        "claim_id": "B10:s1:c1",
+        "source_item_id": "B10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-5a9f0896f081",
+        "claim_id": "B10:s1:c2",
+        "source_item_id": "B10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-5a9f0896f081",
+        "claim_id": "B10:s1:c3",
+        "source_item_id": "B10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B11:s1:c1",
+        "source_item_id": "B11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B11:s1:c2",
+        "source_item_id": "B11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B11:s1:c3",
+        "source_item_id": "B11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B11:s1:c4",
+        "source_item_id": "B11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B11:s1:c5",
+        "source_item_id": "B11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B12:s1:c1",
+        "source_item_id": "B12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B12:s1:c2",
+        "source_item_id": "B12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B12:s1:c3",
+        "source_item_id": "B12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B12:s1:c4",
+        "source_item_id": "B12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B12:s1:c5",
+        "source_item_id": "B12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B13:s1:c1",
+        "source_item_id": "B13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B13:s1:c2",
+        "source_item_id": "B13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B13:s1:c3",
+        "source_item_id": "B13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-760577f0cb09",
+        "claim_id": "B13:s1:c4",
+        "source_item_id": "B13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B14:s1:c1",
+        "source_item_id": "B14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B14:s1:c2",
+        "source_item_id": "B14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B14:s1:c3",
+        "source_item_id": "B14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B15:s1:c1",
+        "source_item_id": "B15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B15:s1:c2",
+        "source_item_id": "B15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B15:s1:c3",
+        "source_item_id": "B15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B16:s1:c1",
+        "source_item_id": "B16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B16:s1:c2",
+        "source_item_id": "B16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-dcbf5c2f3d5b",
+        "claim_id": "B16:s1:c3",
+        "source_item_id": "B16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B17:s1:c1",
+        "source_item_id": "B17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B17:s1:c2",
+        "source_item_id": "B17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B17:s1:c3",
+        "source_item_id": "B17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B17:s1:c4",
+        "source_item_id": "B17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B17:s1:c5",
+        "source_item_id": "B17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B18:s1:c1",
+        "source_item_id": "B18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B18:s1:c2",
+        "source_item_id": "B18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B18:s1:c3",
+        "source_item_id": "B18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B18:s1:c4",
+        "source_item_id": "B18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B18:s1:c5",
+        "source_item_id": "B18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B19:s1:c1",
+        "source_item_id": "B19",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NEW:RU-IOT-77",
+        "claim_id": "B19:s1:c2",
+        "source_item_id": "B19",
+        "verbatim_quote": true
+      }
+    ]
+  },
+  "grouping": {
+    "pair_true_positive": 9,
+    "pair_false_positive": 0,
+    "pair_false_negative": 0,
+    "pair_precision": 1.0,
+    "pair_recall": 1.0,
+    "exact_expected_objects": 8,
+    "expected_objects": 8,
+    "predicted_objects": 8,
+    "exact_object_precision": 1.0,
+    "exact_object_recall": 1.0,
+    "unexpected_member_sets": [],
+    "missing_member_sets": [],
+    "object_attributes": {
+      "OBJ-B07": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": false,
+        "critical": true,
+        "roles": false
+      },
+      "OBJ-B08": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "OBJ-B09": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": false
+      },
+      "OBJ-B10": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "EV-B1": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": false,
+        "critical": true,
+        "roles": false
+      },
+      "EV-B2": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "NPA-B": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": false
+      },
+      "OBJ-B20": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": false
+      }
+    }
+  },
+  "role_deliveries": {
+    "PR": {
+      "expected": [
+        "EV-B1",
+        "EV-B2",
+        "OBJ-B08"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-B1",
+        "EV-B2",
+        "NPA-B",
+        "OBJ-B08",
+        "OBJ-B09",
+        "OBJ-B20"
+      ],
+      "precision": 0.5,
+      "recall": 1.0
+    },
+    "GR": {
+      "expected": [
+        "EV-B1",
+        "NPA-B",
+        "OBJ-B09"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-B1",
+        "NPA-B",
+        "OBJ-B09"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "HEAD": {
+      "expected": [
+        "EV-B1",
+        "EV-B2",
+        "NPA-B",
+        "OBJ-B08",
+        "OBJ-B09",
+        "OBJ-B10"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-B2",
+        "NPA-B",
+        "OBJ-B08"
+      ],
+      "precision": 1.0,
+      "recall": 0.5
+    }
+  },
+  "delivery_type_errors": [
+    {
+      "recipient": "PR",
+      "object_id": "OBJ-B20",
+      "actual": "planned_digest",
+      "expected": []
+    }
+  ],
+  "duplicate_deliveries": [],
+  "npa_state": {
+    "NPA-B": {
+      "present": true,
+      "current_stage": true,
+      "current_version": false,
+      "effective_from": true,
+      "history_ids": true,
+      "change_summary": "semantic_judge"
+    }
+  },
+  "not_scored_by_rules": [
+    "semantic groundedness beyond submitted evidence quotes",
+    "summary sufficiency and preservation of meaning",
+    "human task time and cognitive load",
+    "product-value verdicts H2/H4/H5"
+  ]
+}

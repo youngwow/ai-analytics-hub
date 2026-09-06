@@ -1,0 +1,47 @@
+{
+  "frozen_at": "2026-09-06T08:15:00+03:00",
+  "supersedes": "FINAL_CONFIG_V2.json after its three-repeat holdout verdict FAIL",
+  "status": "npa_component_verified; overall B2 remains FAIL",
+  "configuration_id": "b2-final-v3-split-capped-npa",
+  "unchanged_decisions": {
+    "A1": "one_pass",
+    "A2": "not_exercised_in_B2; component and B3 only",
+    "A3": "full_scan",
+    "A4": "without_critic",
+    "review_policy": "observable-risk-v1"
+  },
+  "v3_change": {
+    "reason": "Every V2 holdout repeat timed out the combined NPA pairs+states request and emitted safe defaults.",
+    "pair_contract": "one pair per independent request",
+    "state_contract": "up to three state documents per independent request",
+    "npa_temperature": 0.0,
+    "npa_think": null,
+    "npa_max_output_tokens": 1024,
+    "partial_failure": "Only the failed chunk becomes different/unknown; successful chunks are preserved.",
+    "killed_analysis_iteration": "An explicit importance/HEAD rubric was tested on validation and removed after importance and role metrics worsened.",
+    "no_case_ids_or_holdout_answers_added_to_prompts": true
+  },
+  "providers": {
+    "generation": "ollama/glm-5.3-flash:cloud",
+    "embeddings": "openrouter/google/gemini-embedding-001",
+    "search": "tavily"
+  },
+  "observed_external_blocker": {
+    "state": "degraded_but_contained",
+    "detail": "The accepted isolated NPA run completed in 56.96 seconds with one failed call out of 15; independent chunks contained the failure and kept identity/relation/stage at 91.7%/91.7%/100%."
+  },
+  "sha256": {
+    "config.yaml": "40bcfc31cdd129ebb39ad92c1e555b261ddb66c376bf231e561b5877781a7087",
+    "src/product/analysis.py": "aea4cf00f443d317baac7829e706fdad2e1ebd0ad1fa3f9085847e99cfb8dd53",
+    "src/product/events.py": "dbd9459e7a5fe6abbe2bb5d784736160f513f65c4073d2b63b01a4fbde61fd7f",
+    "src/product/review_policy.py": "909768f90b7e6111fc67af86291dd3ba2241d4f773a7fdcca2b3330200b7cb8b",
+    "src/product/critic.py": "906179d8a3c528d5bef01f35f3cf63e5db7aa696f08120da9b736cb34d0190e5",
+    "benchmarks/b2_ai/prepare_input.py": "bf5f1852f14d9f9d74e1c8f0dcfa4ba6e14e53afd5d533467ae1423a5290d239",
+    "benchmarks/b2_ai/product_system.py": "8a118ce8d297f41198a5cb8916284af3bdd77bb46c18be551e119a55848d2e33",
+    "benchmarks/b2_ai/run_npa_contract.py": "5b6705d0d8992352ef940f90e98aa6483e610061279f125c1aa5088c79cb47d2",
+    "benchmarks/b2_ai/score_npa_contract.py": "68e67281dd1dd0b94eda57bdfba8d4b53ce64bc858583865a0a4f48076ff36ba",
+    "benchmarks/b2_ai/evaluate.py": "7ddeaba146606dd89b7efa2d76eb91cc204673b528c05a29b6da2c1caa502360",
+    "benchmarks/b2_ai/data/v1/checksums.sha256": "fcce12a5b868a0a053d1a0871e9120e47d04d21b624fcf35d84b26b066fd1078",
+    "benchmarks/b2_ai/data/v1/contract.json": "15979779b2354755719efb10c49a5ddca675dbcbc43555a3c1c26254f9b49e82"
+  }
+}

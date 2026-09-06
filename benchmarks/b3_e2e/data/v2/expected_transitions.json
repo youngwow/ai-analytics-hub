@@ -1,0 +1,70 @@
+{
+  "A": {
+    "must_create_or_update": [
+      "EV-A1",
+      "EV-A2",
+      "NPA-A",
+      "OBJ-A07",
+      "OBJ-A08",
+      "OBJ-A09",
+      "OBJ-A20"
+    ],
+    "release_required": true
+  },
+  "B": {
+    "must_create_or_update": [
+      "EV-B1",
+      "EV-B2",
+      "NPA-B",
+      "OBJ-B08",
+      "OBJ-B09",
+      "OBJ-B10"
+    ],
+    "release_required": true
+  },
+  "D1_critical": {
+    "must_create_or_update": [
+      "EV-D1"
+    ],
+    "urgent_alert_required": true,
+    "must_not_claim": [
+      "automatic device recall",
+      "GS Labs uses affected version"
+    ]
+  },
+  "D2_event_boundary": {
+    "must_create_or_update": [
+      "EV-D2A"
+    ],
+    "must_keep_separate": [
+      [
+        "EV-D2A",
+        "EV-D2B"
+      ]
+    ],
+    "must_not_reopen": [
+      "ARCH-VOICE-2025"
+    ]
+  },
+  "D3_new_npa": {
+    "must_create": [
+      "NPA-D3"
+    ],
+    "must_not_merge_with": [
+      "NPA-LOG-OLD"
+    ],
+    "expected_stage": "public_discussion"
+  },
+  "D4_known_npa": {
+    "must_update": [
+      "NPA-D4"
+    ],
+    "must_not_create_duplicate": [
+      "RU-IOT-77"
+    ],
+    "expected_stage": "adopted",
+    "expected_version": "v3_system_software_12_months",
+    "expected_effective_from": "2026-12-01",
+    "archive_eligible_after": "2026-12-01"
+  }
+}

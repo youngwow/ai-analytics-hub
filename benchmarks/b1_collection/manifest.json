@@ -1,0 +1,95 @@
+{
+  "version": "2.0",
+  "captured_at": "2026-09-02T12:00:00+00:00",
+  "note": "Сохранённые ответы реальных форматов из tests/fixtures. Содержимое не генерировалось специально для benchmark.",
+  "scenarios": [
+    {
+      "id": "rss-yandex-fulltext",
+      "kind": "rss",
+      "category": "media",
+      "url": "https://example.ru/rss.xml",
+      "fixture": "rss_yandex_fulltext.xml",
+      "expected_count": 4,
+      "expected_ids_sha256": "203e22fb4b10a54ce9dc4b86fd058527257369f1eb05fa2cc326cfa725fd16f9",
+      "required_ids": ["news-123", "https://example.ru/news/124"],
+      "required_fields": ["external_id", "url", "title", "published_at"]
+    },
+    {
+      "id": "rss-cbr-fulltext",
+      "kind": "rss",
+      "category": "regulator",
+      "url": "https://www.cbr.ru/rss/RssPress",
+      "fixture": "rss_cbr_fulltext.xml",
+      "expected_count": 2,
+      "expected_ids_sha256": "38f09e3d2817e361044734f529f5fb364ad250e2f02f05059b7afdc50b4dcfe0",
+      "required_ids": ["docid_41602", "docid_41600"],
+      "required_fields": ["external_id", "url", "title", "text", "published_at"]
+    },
+    {
+      "id": "atom",
+      "kind": "rss",
+      "category": "media",
+      "url": "https://example.ru/atom.xml",
+      "fixture": "atom_sample.xml",
+      "expected_count": 2,
+      "expected_ids_sha256": "1d78208fb471bf9346753a3316fbcf5a86d710134aae79c3f83a0017a8601ff8",
+      "required_ids": ["urn:uuid:0001", "https://example.ru/atom/2"],
+      "required_fields": ["external_id", "url", "title", "published_at"]
+    },
+    {
+      "id": "telegram-preview",
+      "kind": "telegram",
+      "category": "telegram",
+      "url": "https://t.me/s/cit_gov",
+      "fixture": "tg_channel.html",
+      "expected_count": 4,
+      "expected_ids_sha256": "2e1839d0105ebfa41dc5f18b08c197216918a98970338e65599bd6a3cf875b00",
+      "required_ids": ["cit_gov/1482", "cit_gov/1485"],
+      "required_fields": ["external_id", "url", "title", "text", "published_at"]
+    },
+    {
+      "id": "telegram-media-only",
+      "kind": "telegram",
+      "category": "telegram",
+      "url": "https://t.me/s/cit_gov?after=1498",
+      "fixture": "tg_channel_after.html",
+      "expected_count": 1,
+      "expected_ids_sha256": "fd6b6995830639267e00b941b6e54ae6ecdb8c975cf2c3c181cd661d4b3199cc",
+      "required_ids": ["cit_gov/1501"],
+      "required_fields": ["external_id", "url", "title", "text", "published_at"]
+    },
+    {
+      "id": "sitemap-urlset",
+      "kind": "sitemap",
+      "category": "regulator",
+      "url": "https://site.ru/sitemap.xml",
+      "fixture": "sitemap_urlset.xml",
+      "expected_count": 3,
+      "expected_ids_sha256": "06abf767bbaf02a11b3afabf758ddd0d1e6bb53b2e06fd91493faba9dbd885b6",
+      "required_ids": ["https://site.ru/news/1", "https://site.ru/news/2"],
+      "required_fields": ["external_id", "url", "fetched_at"]
+    },
+    {
+      "id": "html-list",
+      "kind": "html",
+      "category": "media",
+      "url": "https://www.cableman.ru/",
+      "fixture": "list_page_cableman.html",
+      "expected_count": 38,
+      "expected_ids_sha256": "1b6e2054766b0c45802a064d4fb59b1a9fa967cf82ab85fa40f81fe22509f998",
+      "required_ids": ["https://www.cableman.ru/content/rynok-svyazi-v-rossii-sokrashchaetsya-kolichestvo-telekom-kompanii-upalo-na-tret-za-sem-let"],
+      "required_fields": ["external_id", "url", "fetched_at"]
+    },
+    {
+      "id": "search-tavily",
+      "kind": "search",
+      "category": "media",
+      "url": "tavily://search?q=GS+Labs+%D0%A2%D1%80%D0%B8%D0%BA%D0%BE%D0%BB%D0%BE%D1%80&domains=&days=7&topic=news&summary=1",
+      "fixture": "tavily_news.json",
+      "expected_count": 3,
+      "expected_ids_sha256": "559ce7c7419a3e1b3a28d7e67d80185e867e039bdb37945ce67ca73605946ef5",
+      "required_ids": ["https://gs-group.com/press-center/news/ddr-pyatogo-pokoleniya-lokalizovany-v-rossii-po-novym-trebovaniyam"],
+      "required_fields": ["external_id", "title", "text"]
+    }
+  ]
+}

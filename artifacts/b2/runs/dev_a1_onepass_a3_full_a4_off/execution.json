@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/Users/dvmalikov/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "one_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--configuration-id",
+    "dev-a1-onepass-a3-full-a4-off",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/dev_a1_onepass_a3_full_a4_off/benchmark_input.json"
+  ],
+  "returncode": 1,
+  "wall_seconds": 0.028463041002396494,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py\", line 23, in <module>\n    from src.config import Config  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/src/config.py\", line 12, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\n"
+}

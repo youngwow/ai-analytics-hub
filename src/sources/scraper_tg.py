@@ -191,9 +191,10 @@ class TelegramAdapter:
         if backfill:
             page = reader.channel_posts(channel, limit=self.tg.backfill_posts)
         else:
-            # Never ask for more than the collector will store: its per-source cap
-            # would otherwise drop posts the cursor has already moved past.
-            limit = min(self.tg.max_posts, self.config.max_new_per_source)
+            # `reverse=True` in TelethonReader returns the oldest posts above
+            # `min_id` first. Advancing to the last returned id is therefore a
+            # safe continuation even when a busy channel fills this batch.
+            limit = self.tg.max_posts
             page = reader.channel_posts(
                 channel,
                 min_id=last_id,
@@ -214,8 +215,18 @@ class TelegramAdapter:
         if newest:
             cursor["last_post_id"] = newest
         log.debug("%s: %d posts over MTProto, cursor -> %s", source.name, len(docs), newest)
+        pending = not backfill and len(page.posts) >= limit
         return FetchResult(
-            documents=docs, state_update={"cursor": cursor}, source_title=page.title or None
+            documents=docs,
+            state_update={
+                "cursor": cursor,
+                "native_cursor": str(newest) if newest else None,
+                "high_watermark": str(newest) if newest else state.high_watermark,
+                "backlog_status": "pending" if pending else "clear",
+                "coverage_status": "partial" if pending else "complete",
+            },
+            source_title=page.title or None,
+            warnings=["telegram batch full; continuation will resume next cycle"] if pending else [],
         )
 
     def close(self) -> None:
@@ -286,7 +297,8 @@ class TelegramAdapter:
         if last_id and not backfill:
             # Catch up strictly after the cursor; loop in case more than one page is new.
             cursor = int(last_id)
-            for _ in range(MAX_INCREMENTAL_PAGES):
+            exhausted_budget = False
+            for page_index in range(MAX_INCREMENTAL_PAGES):
                 result = self._load(client, f"{base}?after={cursor}", source_id, now)
                 if result.error:
                     return FetchResult(error=result.error)
@@ -297,6 +309,7 @@ class TelegramAdapter:
                 if not new_ids:
                     break
                 cursor = max(new_ids)
+                exhausted_budget = page_index == MAX_INCREMENTAL_PAGES - 1
         else:
             result = self._load(client, base, source_id, now)
             if result.error:
@@ -322,6 +335,18 @@ class TelegramAdapter:
         if newest:
             cursor_update["last_post_id"] = newest
         log.debug("%s: %d posts parsed, cursor -> %s", source.name, len(docs), newest)
+        pending = bool(last_id and not backfill and exhausted_budget)
         return FetchResult(
-            documents=docs, state_update={"cursor": cursor_update}, source_title=title or None
+            documents=docs,
+            state_update={
+                "cursor": cursor_update,
+                "native_cursor": str(newest) if newest else None,
+                "high_watermark": str(newest) if newest else state.high_watermark,
+                "backlog_status": "pending" if pending else "clear",
+                "coverage_status": "partial" if pending else "complete",
+            },
+            source_title=title or None,
+            warnings=["telegram web page budget reached; continuation will resume next cycle"]
+            if pending
+            else [],
         )

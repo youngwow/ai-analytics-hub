@@ -1,0 +1,113 @@
+{
+  "dataset_version": "v1.0.0",
+  "split": "holdout",
+  "usage": {
+    "model_calls": 10,
+    "input_tokens": 4450,
+    "output_tokens": 3283,
+    "wall_seconds": 49.194780375022674,
+    "provider_latency_ms": 29477,
+    "attempted_calls": 15,
+    "failed_calls": 5
+  },
+  "npa_link_predictions": [
+    {
+      "case_id": "N01-positive-0",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N01-positive-1",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N05-positive-0",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N05-positive-1",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N06-positive-0",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N06-positive-1",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "N01-mention-old",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "N01-stale-repost",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "N01-new-stage",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "D05-cas-vs-software-registry",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "D06-marking-vs-videogames",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "D07-registry-vs-cas-mention",
+      "same_npa": false,
+      "relation": "different"
+    }
+  ],
+  "npa_state_predictions": [
+    {
+      "id": "n01-1",
+      "stage": "announcement"
+    },
+    {
+      "id": "n01-2",
+      "stage": "introduced"
+    },
+    {
+      "id": "n01-3",
+      "stage": "scheduled_first_reading"
+    },
+    {
+      "id": "n05-1",
+      "stage": "introduced"
+    },
+    {
+      "id": "n05-2",
+      "stage": "returned_for_revision"
+    },
+    {
+      "id": "n05-3",
+      "stage": "review_resumed"
+    },
+    {
+      "id": "n06-1",
+      "stage": "adopted"
+    },
+    {
+      "id": "n06-2",
+      "stage": "effective"
+    },
+    {
+      "id": "n06-3",
+      "stage": "annual_update_window"
+    }
+  ]
+}

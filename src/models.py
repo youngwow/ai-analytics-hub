@@ -14,6 +14,23 @@ from .common import sha256_text
 
 KINDS = ("rss", "telegram", "sitemap", "html", "manual", "search")
 CATEGORIES = ("media", "regulator", "telegram", "manual")
+DIRECTIONS = ("pr", "gr", "both")
+
+
+def _row_value(row, key: str, default=None):
+    """Read sqlite.Row or a partial dict produced by older tests/importers."""
+    try:
+        return row[key]
+    except (KeyError, IndexError):
+        return default
+
+
+def _json_dict(raw) -> dict:
+    try:
+        value = json.loads(raw or "{}")
+    except (ValueError, TypeError):
+        return {}
+    return value if isinstance(value, dict) else {}
 
 
 @dataclass
@@ -29,6 +46,14 @@ class Source:
     enabled: bool = True
     created_at: str = ""
     notes: str = ""
+    direction: str = "both"
+    source_class: str = "ordinary"
+    status: str = "active"
+
+    def __post_init__(self) -> None:
+        self.direction = self.direction.lower()
+        if self.direction not in DIRECTIONS:
+            raise ValueError(f"direction must be one of {DIRECTIONS}, got {self.direction!r}")
 
     @classmethod
     def from_row(cls, row) -> "Source":
@@ -42,6 +67,9 @@ class Source:
             enabled=bool(row["enabled"]),
             created_at=row["created_at"],
             notes=row["notes"] or "",
+            direction=_row_value(row, "direction", "both") or "both",
+            source_class=_row_value(row, "source_class", "ordinary") or "ordinary",
+            status=_row_value(row, "status", "active") or "active",
         )
 
 
@@ -118,6 +146,13 @@ class FetchState:
     consecutive_failures: int = 0
     last_doc_count: int = 0
     cursor: dict = field(default_factory=dict)
+    native_cursor: str | None = None
+    high_watermark: str | None = None
+    continuation_cursor: dict = field(default_factory=dict)
+    backlog_status: str = "clear"
+    coverage_from: str | None = None
+    coverage_to: str | None = None
+    coverage_status: str = "unknown"
 
     @property
     def first_run(self) -> bool:
@@ -125,10 +160,7 @@ class FetchState:
 
     @classmethod
     def from_row(cls, row) -> "FetchState":
-        try:
-            cursor = json.loads(row["cursor"] or "{}")
-        except (ValueError, TypeError):
-            cursor = {}
+        cursor = _json_dict(row["cursor"])
         return cls(
             source_id=row["source_id"],
             etag=row["etag"],
@@ -139,6 +171,13 @@ class FetchState:
             consecutive_failures=row["consecutive_failures"] or 0,
             last_doc_count=row["last_doc_count"] or 0,
             cursor=cursor if isinstance(cursor, dict) else {},
+            native_cursor=_row_value(row, "native_cursor"),
+            high_watermark=_row_value(row, "high_watermark"),
+            continuation_cursor=_json_dict(_row_value(row, "continuation_cursor")),
+            backlog_status=_row_value(row, "backlog_status", "clear") or "clear",
+            coverage_from=_row_value(row, "coverage_from"),
+            coverage_to=_row_value(row, "coverage_to"),
+            coverage_status=_row_value(row, "coverage_status", "unknown") or "unknown",
         )
 
 
@@ -151,6 +190,9 @@ class FetchResult:
     not_modified: bool = False
     error: str | None = None
     source_title: str | None = None  # title the site/channel reports about itself
+    # Recoverable subrequest/parser failures. The source may still return useful
+    # documents, but the collector must expose the run as partial, never as clean ok.
+    warnings: list[str] = field(default_factory=list)
 
     @property
     def ok(self) -> bool:
@@ -172,6 +214,7 @@ class CollectReport:
     started_at: str = ""
     finished_at: str = ""
     sources_ok: int = 0
+    sources_partial: int = 0
     sources_fail: int = 0
     sources_not_modified: int = 0
     docs_new: int = 0
@@ -180,6 +223,7 @@ class CollectReport:
     def summary_line(self) -> str:
         return (
             f"{self.docs_new} new documents; sources ok={self.sources_ok} "
+            f"partial={self.sources_partial} "
             f"not_modified={self.sources_not_modified} failed={self.sources_fail}"
         )
 

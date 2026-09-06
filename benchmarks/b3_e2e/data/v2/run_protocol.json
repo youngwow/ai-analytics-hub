@@ -1,0 +1,59 @@
+{
+  "freeze_before_run": [
+    "data/v2 checksums",
+    "B1/B2 versions",
+    "product build",
+    "risk and release policies",
+    "scoring rules"
+  ],
+  "machine_runs": [
+    {
+      "scenario": "A",
+      "modes": [
+        "fixed",
+        "search",
+        "hybrid"
+      ]
+    },
+    {
+      "scenario": "B",
+      "modes": [
+        "fixed",
+        "search",
+        "hybrid"
+      ]
+    },
+    {
+      "scenario": "D1_critical",
+      "modes": [
+        "hybrid"
+      ]
+    },
+    {
+      "scenario": "D2_event_boundary",
+      "modes": [
+        "hybrid"
+      ]
+    },
+    {
+      "scenario": "D3_new_npa",
+      "modes": [
+        "hybrid"
+      ]
+    },
+    {
+      "scenario": "D4_known_npa",
+      "modes": [
+        "hybrid"
+      ]
+    }
+  ],
+  "human_runs": {
+    "VALUE": "Cross-over A/B: one participant starts with baseline, another with product; swap on the second flow.",
+    "H2": "Reuse frozen AI outputs; compare review-all and risk-only without rerunning the model.",
+    "H3": "Compare different balanced clusters in flat and event views.",
+    "H4": "Compare manual role cleaning of a common release with checking role-specific releases.",
+    "H5": "Compare full queue with top layer plus drill-down on different balanced flows."
+  },
+  "reporting": "Never combine safety, AI quality, human time and hypothesis decisions into one score."
+}

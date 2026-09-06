@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "one_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--configuration-id",
+    "b2-final-v3-r1",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/holdout_final_v3_r1/benchmark_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/holdout_final_v3_r1/prediction.json"
+  ],
+  "returncode": 0,
+  "wall_seconds": 372.11974749999354,
+  "stdout": "",
+  "stderr": ""
+}

@@ -1,0 +1,103 @@
+{
+  "counts": {
+    "materials_total": 68,
+    "b2_f_r_materials": 68,
+    "b2_f_r_without_rat": 58,
+    "event_cases": 8,
+    "event_publications": 26,
+    "npa_trajectories": 6,
+    "npa_states": 18,
+    "rat_materials": 10,
+    "npa_pair_cases": 22,
+    "npa_positive_pairs": 15,
+    "npa_negative_pairs": 7,
+    "long_materials_500_chars": 9,
+    "long_materials_1000_chars": 8
+  },
+  "by_split": {
+    "development": 17,
+    "holdout": 20,
+    "rat": 10,
+    "validation": 21
+  },
+  "by_source_type": {
+    "corporate_site": 3,
+    "html": 8,
+    "regulator_site": 29,
+    "rss": 18,
+    "sitemap": 1,
+    "telegram": 9
+  },
+  "by_relevance": {
+    "borderline": 11,
+    "irrelevant": 8,
+    "relevant": 47,
+    "unknown": 2
+  },
+  "by_importance": {
+    "critical": 1,
+    "high": 18,
+    "low": 18,
+    "medium": 31
+  },
+  "by_role": {
+    "GR": 44,
+    "HEAD": 38,
+    "PR": 25
+  },
+  "by_provenance": {
+    "b1_live_capture": 8,
+    "case_owner_excerpt": 10,
+    "diagnostic_synthetic": 50
+  },
+  "by_set": {
+    "B2-E": 26,
+    "B2-F": 68,
+    "B2-H": 10,
+    "B2-N": 18,
+    "B2-R": 68
+  },
+  "by_diagnostic_risk": {
+    "ai_keyword_noise": 1,
+    "attribution": 3,
+    "conflicting_numbers": 3,
+    "correction": 3,
+    "date_trap": 3,
+    "developing_event": 3,
+    "different_methodology": 3,
+    "exact_duplicate": 3,
+    "generic_software_noise": 1,
+    "hidden_long_text_fact": 1,
+    "independent_positions": 3,
+    "keyword_false_merge": 4,
+    "keyword_false_positive": 5,
+    "missing_company_attribute": 1,
+    "new_stage": 3,
+    "npa_identity": 18,
+    "number_preservation": 3,
+    "paraphrase": 3,
+    "plausible_but_unproven_company_link": 1,
+    "premature_causality": 3,
+    "rat_pairing": 10,
+    "real_distribution_anchor": 8,
+    "same_entity_different_event": 4,
+    "similar_topic_not_same_event": 4,
+    "stage_change": 18,
+    "stale_republication": 3,
+    "unique_fact_per_source": 3,
+    "unknown_internal_scope": 1,
+    "version_history": 18
+  },
+  "known_limitations": [
+    "Основной диагностический пул синтетический и требует ручного аудита предметным экспертом до заморозки.",
+    "Десять RAT-якорей содержат выдержки Excel, а не полные снимки оригиналов; RAT запускать нельзя до сохранения оригиналов.",
+    "Корзина диагностическая, а не статистически репрезентативная для промышленного потока.",
+    "Критичность в синтетических сценариях проверяет защитную логику и не является оценкой реального риска GS Labs."
+  ],
+  "audit_findings_fixed": [
+    "E01 теперь содержит настоящий точный дубль текста в трёх каналах.",
+    "Для T1 добавлены положительные и отрицательные pair-cases, включая сторонние упоминания и ложные семантические совпадения.",
+    "У длинных реальных материалов расширена разметка обязательных фактов; отдельный длинный material проверяет скрытые сроки 24/72 часа.",
+    "Добавлена явная карта покрытия A1–A3, T1, RAT и границ H1–H5."
+  ]
+}

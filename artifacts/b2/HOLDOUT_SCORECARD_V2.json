@@ -1,0 +1,147 @@
+{
+  "benchmark": "B2 AI repeated holdout",
+  "repeats": 3,
+  "verdict": "FAIL",
+  "blocking_reasons": [
+    "provider failures occurred in every frozen end-to-end result",
+    "NPA identity linking is below the acceptance orientation",
+    "NPA stage tracking is below the acceptance orientation"
+  ],
+  "runs": [
+    {
+      "relevance_accuracy": 0.75,
+      "importance_accuracy": 0.7,
+      "critical_gate_accuracy": 0.9,
+      "roles_exact_accuracy": 0.6,
+      "event_pair_f1": 0.6666666666666666,
+      "npa_identity_accuracy": 0.25,
+      "npa_relation_accuracy": 0.25,
+      "npa_stage_accuracy": 0.0,
+      "review_workload_rate": 0.85,
+      "review_label_error_recall": 1.0,
+      "review_critical_recall": 1.0,
+      "verbatim_evidence_rate": 1.0,
+      "wall_seconds": 640.3630452499783,
+      "attempted_calls": 24,
+      "failed_calls": 2,
+      "report": "artifacts/b2/runs/holdout_final_v2_r1/deterministic_report.json",
+      "contract_errors": 0
+    },
+    {
+      "relevance_accuracy": 0.9,
+      "importance_accuracy": 0.75,
+      "critical_gate_accuracy": 0.9,
+      "roles_exact_accuracy": 0.5,
+      "event_pair_f1": 0.8571428571428571,
+      "npa_identity_accuracy": 0.25,
+      "npa_relation_accuracy": 0.25,
+      "npa_stage_accuracy": 0.0,
+      "review_workload_rate": 0.85,
+      "review_label_error_recall": 1.0,
+      "review_critical_recall": 1.0,
+      "verbatim_evidence_rate": 1.0,
+      "wall_seconds": 658.6794344579976,
+      "attempted_calls": 23,
+      "failed_calls": 3,
+      "report": "artifacts/b2/runs/holdout_final_v2_r2/deterministic_report.json",
+      "contract_errors": 0
+    },
+    {
+      "relevance_accuracy": 0.85,
+      "importance_accuracy": 0.85,
+      "critical_gate_accuracy": 0.9,
+      "roles_exact_accuracy": 0.65,
+      "event_pair_f1": 1.0,
+      "npa_identity_accuracy": 0.25,
+      "npa_relation_accuracy": 0.25,
+      "npa_stage_accuracy": 0.0,
+      "review_workload_rate": 0.85,
+      "review_label_error_recall": 1.0,
+      "review_critical_recall": 1.0,
+      "verbatim_evidence_rate": 1.0,
+      "wall_seconds": 552.1104879170016,
+      "attempted_calls": 25,
+      "failed_calls": 1,
+      "report": "artifacts/b2/runs/holdout_final_v2_r3/deterministic_report.json",
+      "contract_errors": 0
+    }
+  ],
+  "aggregates": {
+    "relevance_accuracy": {
+      "mean": 0.8333333333333334,
+      "min": 0.75,
+      "max": 0.9
+    },
+    "importance_accuracy": {
+      "mean": 0.7666666666666666,
+      "min": 0.7,
+      "max": 0.85
+    },
+    "critical_gate_accuracy": {
+      "mean": 0.9,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "roles_exact_accuracy": {
+      "mean": 0.5833333333333334,
+      "min": 0.5,
+      "max": 0.65
+    },
+    "event_pair_f1": {
+      "mean": 0.8412698412698413,
+      "min": 0.6666666666666666,
+      "max": 1.0
+    },
+    "npa_identity_accuracy": {
+      "mean": 0.25,
+      "min": 0.25,
+      "max": 0.25
+    },
+    "npa_relation_accuracy": {
+      "mean": 0.25,
+      "min": 0.25,
+      "max": 0.25
+    },
+    "npa_stage_accuracy": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "review_workload_rate": {
+      "mean": 0.85,
+      "min": 0.85,
+      "max": 0.85
+    },
+    "review_label_error_recall": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "review_critical_recall": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "verbatim_evidence_rate": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "wall_seconds": {
+      "mean": 617.0509892083259,
+      "min": 552.1104879170016,
+      "max": 658.6794344579976
+    },
+    "attempted_calls": {
+      "mean": 24.0,
+      "min": 23,
+      "max": 25
+    },
+    "failed_calls": {
+      "mean": 2.0,
+      "min": 1,
+      "max": 3
+    }
+  },
+  "aggregation_rule": "Report mean/min/max separately. Contract, safety, provider failure and NPA blocking conditions cannot be averaged away."
+}

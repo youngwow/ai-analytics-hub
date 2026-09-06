@@ -1,0 +1,458 @@
+{
+  "benchmark": "B3 E2E",
+  "dataset_version": "v2.0.0",
+  "scenario_id": "D4_known_npa",
+  "mode": "hybrid",
+  "view": "normalized",
+  "scenario": {
+    "kind": "diagnostic_episode",
+    "item_ids": [
+      "D401",
+      "D402",
+      "D403",
+      "D404"
+    ],
+    "initial_state_id": "D4_known_npa",
+    "release_at": null
+  },
+  "company_context": {
+    "company": "GS Labs",
+    "relation": "Developer of software and equipment for digital television and adjacent media technologies within GS Group.",
+    "interests": [
+      "digital television",
+      "subscriber devices",
+      "middleware and interfaces",
+      "content protection CAS/DRM",
+      "recommendation systems",
+      "device security and updates",
+      "broadcasting regulation",
+      "radioelectronics support",
+      "operator tenders and partnerships"
+    ],
+    "roles": {
+      "PR": "Company and market narratives, reputation, partnerships, public positions and opportunities.",
+      "GR": "Draft laws, standards, regulator actions, deadlines, stages, versions and potential regulatory impact.",
+      "HEAD": "High-impact company, market, security and regulatory changes; always receives confirmed critical items."
+    },
+    "uncertainty_rule": "Unknown internal facts such as a dependency or eligibility must be surfaced as a check, not invented.",
+    "benchmark_scope": "Synthetic isolated replay world; the context is fixed across hypothesis variants.",
+    "delivery_policy": {
+      "status": "Benchmark test configuration, not a confirmed customer requirement.",
+      "planned_release": "18:00 virtual time",
+      "urgent": "Critical confirmed signals bypass the planned release after review.",
+      "critical_core": "Confirmed critical objects are visible to every intended recipient."
+    },
+    "npa_policy": "Track identity, stage, version and history. Official sources define legal state; secondary sources may add interpretation but cannot overwrite it."
+  },
+  "initial_state": {
+    "scenario_id": "D4_known_npa",
+    "virtual_now": "2026-09-02T09:20:00+03:00",
+    "known_events": [
+      {
+        "object_id": "KNOWN-D4_known_npa-01",
+        "title": "Первая публикация проекта RU-IOT-77",
+        "status": "confirmed",
+        "last_seen_at": "2026-08-01T10:00:00+03:00"
+      },
+      {
+        "object_id": "KNOWN-D4_known_npa-02",
+        "title": "Сводка замечаний к RU-IOT-77",
+        "status": "confirmed",
+        "last_seen_at": "2026-08-10T17:00:00+03:00"
+      },
+      {
+        "object_id": "KNOWN-D4_known_npa-03",
+        "title": "Смежный проект требований к мобильным приложениям",
+        "status": "confirmed",
+        "last_seen_at": "2026-08-16T11:00:00+03:00"
+      },
+      {
+        "object_id": "KNOWN-D4_known_npa-04",
+        "title": "Архивное обсуждение обновлений телевизоров 2025 года",
+        "status": "archived",
+        "last_seen_at": "2026-08-05T15:00:00+03:00"
+      }
+    ],
+    "archived_events": [],
+    "tracked_npas": [
+      {
+        "object_id": "NPA-PREINSTALL",
+        "external_id": "02/15/07-26/00181111",
+        "title": "Предустановка медиаприложений",
+        "current_stage": "public_discussion",
+        "current_version": "v1",
+        "history": [
+          {
+            "event_id": "INIT-COMMON-01",
+            "at": "2026-08-12",
+            "stage": "public_discussion",
+            "version": "v1"
+          }
+        ]
+      },
+      {
+        "object_id": "NPA-ACCESS",
+        "external_id": "STD-TV-14",
+        "title": "Доступность интерфейсов Smart TV",
+        "current_stage": "approved_voluntary",
+        "current_version": "v1",
+        "history": [
+          {
+            "event_id": "INIT-COMMON-02",
+            "at": "2026-08-15",
+            "stage": "approved_voluntary",
+            "version": "v1"
+          }
+        ]
+      },
+      {
+        "object_id": "NPA-D4",
+        "external_id": "RU-IOT-77",
+        "title": "Безопасное обновление абонентских устройств",
+        "current_stage": "revised_draft",
+        "current_version": "v2_all_packages_24_months",
+        "history": [
+          {
+            "event_id": "INIT-D4-01",
+            "at": "2026-08-01",
+            "stage": "public_discussion",
+            "version": "v1_all_packages_24_months"
+          },
+          {
+            "event_id": "INIT-D4-02",
+            "at": "2026-08-10",
+            "stage": "revised_draft",
+            "version": "v2_all_packages_24_months"
+          }
+        ]
+      }
+    ],
+    "human_decisions": [
+      {
+        "target_id": "KNOWN-D4_known_npa-04",
+        "action": "archive",
+        "reason": "Событие завершено"
+      }
+    ],
+    "last_release": {
+      "release_id": "REL-D4_known_npa-PREV",
+      "released_at": "2026-08-20T18:00:00+03:00",
+      "recipients": [
+        "PR",
+        "GR",
+        "HEAD"
+      ],
+      "object_ids": [
+        "KNOWN-D4_known_npa-01",
+        "KNOWN-D4_known_npa-02"
+      ]
+    },
+    "source_cursors": {
+      "rss": "cursor-1042",
+      "telegram": "msg-8821",
+      "regulator": "event-411",
+      "search": "query-window-prev"
+    }
+  },
+  "task": "Process the supplied scenario timeline as the GS Labs monitoring product. Use only the visible company context and source observations. Multiple observations can point to the same canonical_item_id when a publication was discovered through both a fixed source and search; make one item decision per canonical_item_id and do not count those observations as separate publications. Classify every canonical item, form publication/event/NPA objects, preserve provenance and conflicting positions, identify uncertainty and risk, and prepare planned or urgent role-specific deliveries. Express every factual object claim separately with one or more verbatim supporting quotes. For NPA objects, return current stage, version, history item IDs and change summary. Never invent GS Labs impact: mark unknown when internal applicability cannot be established. Return one JSON object conforming to prediction.schema.json.\n\nThe initial state is authoritative for already known objects. Update it; do not recreate tracked objects or reopen archived events unless new primary evidence requires it.\n",
+  "response_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "required": [
+      "run_id",
+      "scenario_id",
+      "mode",
+      "item_decisions",
+      "objects",
+      "deliveries"
+    ],
+    "properties": {
+      "run_id": {
+        "type": "string"
+      },
+      "scenario_id": {
+        "enum": [
+          "A",
+          "B",
+          "D1_critical",
+          "D2_event_boundary",
+          "D3_new_npa",
+          "D4_known_npa"
+        ]
+      },
+      "mode": {
+        "enum": [
+          "fixed",
+          "search",
+          "hybrid"
+        ]
+      },
+      "item_decisions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "relevance",
+            "importance",
+            "critical",
+            "roles",
+            "risk_flag"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "relevance": {
+              "enum": [
+                "relevant",
+                "borderline",
+                "irrelevant",
+                "unknown"
+              ]
+            },
+            "importance": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "critical"
+              ]
+            },
+            "critical": {
+              "type": "boolean"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "PR",
+                  "GR",
+                  "HEAD"
+                ]
+              }
+            },
+            "risk_flag": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "objects": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "object_id",
+            "type",
+            "member_ids",
+            "summary",
+            "importance",
+            "critical",
+            "roles",
+            "claims"
+          ],
+          "properties": {
+            "object_id": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "publication",
+                "event",
+                "npa"
+              ]
+            },
+            "member_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "summary": {
+              "type": "string"
+            },
+            "impact_on_gs_labs": {
+              "type": "string"
+            },
+            "importance": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "critical"
+              ]
+            },
+            "critical": {
+              "type": "boolean"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "PR",
+                  "GR",
+                  "HEAD"
+                ]
+              }
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "claim_id",
+                  "text",
+                  "evidence"
+                ],
+                "properties": {
+                  "claim_id": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "source_item_id",
+                        "quote"
+                      ],
+                      "properties": {
+                        "source_item_id": {
+                          "type": "string"
+                        },
+                        "quote": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "npa_state": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "current_stage": {
+                  "type": "string"
+                },
+                "current_version": {
+                  "type": "string"
+                },
+                "history_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "change_summary": {
+                  "type": "string"
+                },
+                "effective_from": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "deliveries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "delivery_type",
+            "recipient",
+            "object_ids",
+            "digest_text"
+          ],
+          "properties": {
+            "delivery_type": {
+              "enum": [
+                "planned_digest",
+                "urgent_alert",
+                "npa_update"
+              ]
+            },
+            "recipient": {
+              "enum": [
+                "PR",
+                "GR",
+                "HEAD"
+              ]
+            },
+            "object_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "digest_text": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "timeline": [
+    {
+      "observation_id": "D401::fixed",
+      "canonical_item_id": "D401",
+      "discovery_channel": "fixed",
+      "available_at": "2026-09-02T09:30:00+03:00",
+      "source_name": "RSS портала регулирования устройств",
+      "source_url": "https://fixtures.gs-labs.invalid/rss/d401",
+      "language": "ru",
+      "title": "Проект RU-IOT-77 направлен на повторное согласование",
+      "raw_text": "Карточка уже отслеживаемого проекта RU-IOT-77 обновлена: после первой доработки документ направлен на повторное межведомственное согласование. Идентификатор и предмет регулирования не изменились. Приложена таблица замечаний; обязательных требований пока не введено.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.\n\nКонтекст 4. Цифры относятся к указанному этапу проекта. Потенциальный масштаб, обсуждаемый участниками рынка, не является фактическим охватом или заключённым контрактом.\n\nКонтекст 5. Обновление материала будет выпущено отдельно, если появится первичный документ. Текущая версия статьи не должна использоваться как подтверждение изменения юридического статуса.\n\nКонтекст 6. Смежные участники рынка оценивают событие по-разному. Их комментарии сохраняются как позиции конкретных спикеров, а не как установленный факт.\n\nКонтекст 7. В открытых материалах не раскрыты коммерческие условия, бюджет и внутренняя технологическая схема. Эти сведения редакция не реконструирует самостоятельно.\n\nКонтекст 8. Ссылка на источник и время обновления сохранены, чтобы отличать исходную публикацию от более поздних пересказов и исправлений."
+    },
+    {
+      "observation_id": "D402::fixed",
+      "canonical_item_id": "D402",
+      "discovery_channel": "fixed",
+      "available_at": "2026-09-09T14:10:00+03:00",
+      "source_name": "Портал безопасных устройств",
+      "source_url": "https://fixtures.gs-labs.invalid/regulator_html/d402",
+      "language": "ru",
+      "title": "Новая редакция RU-IOT-77 сокращает срок хранения журнала",
+      "raw_text": "Опубликована новая редакция проекта RU-IOT-77. Срок хранения журнала безопасных обновлений сокращён с 24 до 12 месяцев; требование теперь относится только к обновлениям системного программного обеспечения, а не ко всем пакетам приложений. Стадия остаётся повторным согласованием.\n\nРаздел 1. Карточка документа содержит сведения об органе-разработчике, текущем этапе, датах размещения и приложенных файлах. Юридическую силу имеет официальный текст актуальной редакции, а не заголовок карточки или пересказ в СМИ.\n\nРаздел 2. В истории размещения сохраняются предыдущие редакции и события рассмотрения. Публикация проекта, направление на согласование и принятие нормативного акта являются разными стадиями и не должны объединяться в одну.\n\nРаздел 3. Раздел с документами включает основной текст, пояснительную записку и таблицу замечаний. Если применимость к конкретному продукту нельзя определить из карточки, требуется внутренняя проверка, а не автоматический вывод.\n\nРаздел 4. Общие положения описывают предмет документа и используемые термины. Они не расширяют круг адресатов за пределы прямо указанной области и не подтверждают принадлежность конкретной организации к этой области.\n\nРаздел 5. Порядок рассмотрения предусматривает регистрацию замечаний, подготовку сводной таблицы и публикацию доработанной редакции. Само поступление замечания не означает, что оно принято разработчиком.\n\nРаздел 6. Сведения о сроках приведены отдельно для обсуждения, переходного периода и предполагаемого применения. Эти даты имеют разный смысл и должны храниться как разные поля.\n\nРаздел 7. Приложенная пояснительная записка объясняет мотивы разработчика, но не заменяет нормативные формулировки. При расхождении приоритет имеет актуальный текст проекта или итогового акта.\n\nРаздел 8. История версий позволяет восстановить добавленные, исключённые и изменённые положения. Новый URL карточки сам по себе не доказывает появление нового независимого проекта.\n\nРаздел 9. В разделе статуса отдельно указываются этап, дата события и основание изменения. Только это поле показывает, продолжается ли процедура, завершена она или прекращена.\n\nРаздел 10. Перечень приложений может включать текст, сравнительную таблицу, финансовое обоснование и протокол. Отсутствующий файл не следует реконструировать по названию.\n\nРаздел 11. Контрольная информация предназначена для проверки происхождения: идентификатор карточки, время обновления и орган-разработчик сохраняются без нормализации смысла.\n\nРаздел 12. Раздел уведомлений фиксирует только действия на портале. Уведомление о размещении редакции не равно уведомлению о вступлении требований в силу.\n\nРаздел 13. Если вторичная публикация противоречит карточке, её можно сохранить как отдельную позицию или риск коммуникации, но нельзя ею перезаписывать официальный статус.\n\nРаздел 14. Предметная применимость определяется по определениям и области действия документа. Название технологии или отрасли в тексте ещё не доказывает влияние на конкретный продукт GS Labs.\n\nРаздел 15. Архивная версия остаётся доступной для сравнения. Текущая редакция и перечень существенных изменений относительно прошлой опубликованы раздельно.\n\nРаздел 16. Поля карточки могут обновляться не одновременно: дата страницы, дата документа и дата события различаются и приводятся в отдельных реквизитах.\n\nРаздел 17. Решение о прекращении, возврате или доработке не стирает прежнюю историю. Оно добавляется как новое состояние долгоживущего объекта НПА.\n\nРаздел 18. Сводные сведения процедуры включают идентификатор объекта, текущий этап, актуальную редакцию и перечень внесённых изменений.\n\nРаздел 19. Сведения об ответственном подразделении помогают отличить официальный документ от материалов с похожим названием, выпущенных другим органом.\n\nРаздел 20. Версия основного файла фиксируется вместе с контрольной суммой и датой загрузки. Замена вложения без изменения заголовка карточки всё равно считается новой редакцией.\n\nРаздел 21. Таблица разногласий показывает, какие предложения учтены, отклонены или требуют дополнительного согласования. Она не меняет текст до публикации новой редакции.\n\nРаздел 22. Поле предполагаемой даты применения заполняется разработчиком и может измениться на следующем этапе. Оно не тождественно дате принятия или публикации."
+    },
+    {
+      "observation_id": "D403::fixed",
+      "canonical_item_id": "D403",
+      "discovery_channel": "fixed",
+      "available_at": "2026-09-16T16:00:00+03:00",
+      "source_name": "Портал регулирования устройств",
+      "source_url": "https://fixtures.gs-labs.invalid/regulator_html/d403",
+      "language": "ru",
+      "title": "Акт RU-IOT-77 принят с датой начала действия 1 декабря",
+      "raw_text": "В карточке RU-IOT-77 опубликован итоговый акт: требования к журналам обновления системного программного обеспечения приняты в редакции со сроком хранения 12 месяцев и начинают действовать 1 декабря 2026 года. До этой даты акт принят, но ещё не действует; история проекта остаётся доступной.\n\nРаздел 1. Карточка документа содержит сведения об органе-разработчике, текущем этапе, датах размещения и приложенных файлах. Юридическую силу имеет официальный текст актуальной редакции, а не заголовок карточки или пересказ в СМИ.\n\nРаздел 2. В истории размещения сохраняются предыдущие редакции и события рассмотрения. Публикация проекта, направление на согласование и принятие нормативного акта являются разными стадиями и не должны объединяться в одну.\n\nРаздел 3. Раздел с документами включает основной текст, пояснительную записку и таблицу замечаний. Если применимость к конкретному продукту нельзя определить из карточки, требуется внутренняя проверка, а не автоматический вывод.\n\nРаздел 4. Общие положения описывают предмет документа и используемые термины. Они не расширяют круг адресатов за пределы прямо указанной области и не подтверждают принадлежность конкретной организации к этой области.\n\nРаздел 5. Порядок рассмотрения предусматривает регистрацию замечаний, подготовку сводной таблицы и публикацию доработанной редакции. Само поступление замечания не означает, что оно принято разработчиком.\n\nРаздел 6. Сведения о сроках приведены отдельно для обсуждения, переходного периода и предполагаемого применения. Эти даты имеют разный смысл и должны храниться как разные поля."
+    },
+    {
+      "observation_id": "D404::fixed",
+      "canonical_item_id": "D404",
+      "discovery_channel": "fixed",
+      "available_at": "2026-09-18T08:20:00+03:00",
+      "source_name": "Право и техника",
+      "source_url": "https://fixtures.gs-labs.invalid/telegram/d404",
+      "language": "ru",
+      "title": "Производителей обязали два года хранить журналы обновлений",
+      "raw_text": "Утренний дайджест повторяет раннюю версию RU-IOT-77 со сроком 24 месяца и пишет, что правило уже действует. Официально акт принят со сроком 12 месяцев, но начнёт действовать только 1 декабря 2026 года и касается системного ПО.\n\nКонтекст 1. В подборке рядом также упомянуты запуск курса для студентов и обновление приложения доставки; эти пункты не связаны с основной темой сообщения."
+    }
+  ]
+}

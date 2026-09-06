@@ -1,0 +1,269 @@
+{
+  "benchmark": "B2-A3 retrieval",
+  "source_dataset": "v1.0.0",
+  "bank_size": 30,
+  "cases": 11,
+  "positive_cases": 7,
+  "negative_cases": 4,
+  "retrieval_recall_at_20": 1.0,
+  "full_scan_accuracy": 0.9090909090909091,
+  "embedding_top20_accuracy": 0.9090909090909091,
+  "full_scan_latency_ms": 40931,
+  "embedding_top20_latency_ms": 47668,
+  "wall_seconds": 103.77674433300854,
+  "rows": [
+    {
+      "case_id": "E01-positive-0",
+      "query_id": "e01-b",
+      "target_event_id": "event:e01-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": "event:e01-a",
+        "relation": "same_event",
+        "evidence": "Идентичный объект (ЦТС/GS Group), действие (выпуск 30-миллионной ТВ-приставки) и хронология совпадают; текст сигнала дословно повторяет заголовок и содержание кандидата.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 2311
+      },
+      "embedding_top20": {
+        "event_id": "event:e01-a",
+        "relation": "same_event",
+        "evidence": "Сигнал дословно совпадает с заголовком и текстом кандидата: один субъект (ЦТС/GS Group, Гусев), одно действие (выпуск 30-миллионной телевизионной приставки), совместимая хронология.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 3610
+      }
+    },
+    {
+      "case_id": "E02-positive-0",
+      "query_id": "e02-b",
+      "target_event_id": "event:e02-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": "event:e02-a",
+        "relation": "same_event",
+        "evidence": "Заголовок сигнала полностью совпадает с заголовком события о дефиците мощностей ЦОД в Москве и Санкт-Петербурге; объект и действие идентичны.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 2644
+      },
+      "embedding_top20": {
+        "event_id": "event:e02-a",
+        "relation": "same_event",
+        "evidence": "Заголовок сигнала дословно совпадает с заголовком кандидата; текст кандидата раскрывает тот же факт — дефицит свободных мощностей ЦОД в Москве и Санкт-Петербурге.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 3687
+      }
+    },
+    {
+      "case_id": "E03-positive-0",
+      "query_id": "e03-b",
+      "target_event_id": "event:e03-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": "event:e03-a",
+        "relation": "same_event",
+        "evidence": "Сигнал дословно совпадает с заголовком и темой кандидата: реформа лицензирования операторов связи (Минцифры, три уровня лицензий). Объект и действие идентичны, хронология совместима.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 2164
+      },
+      "embedding_top20": {
+        "event_id": "event:e03-a",
+        "relation": "same_event",
+        "evidence": "Сигнал дословно совпадает с заголовком и темой кандидата: реформа лицензирования операторов связи (Минцифры, три уровня лицензий). Объект, действие и хронология совместимы.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 3174
+      }
+    },
+    {
+      "case_id": "E05-positive-0",
+      "query_id": "e05-b",
+      "target_event_id": "event:e05-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": "event:e05-a",
+        "relation": "same_event",
+        "evidence": "Сигнал дословно совпадает с заголовком события e05-a о массовом сбое авторизации приставок у операторов платного ТВ; объект, действие и тема идентичны.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 2747
+      },
+      "embedding_top20": {
+        "event_id": "event:e05-a",
+        "relation": "same_event",
+        "evidence": "Сигнал дословно совпадает с событием: массовый сбой авторизации приставок у нескольких операторов платного ТВ; объект, действие и хронология совпадают.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 3585
+      }
+    },
+    {
+      "case_id": "E06-positive-0",
+      "query_id": "e06-b",
+      "target_event_id": "event:e06-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": "event:e06-a",
+        "relation": "same_event",
+        "evidence": "Заголовок и текст сигнала полностью совпадают с кандидатом: оценка TelecomDaily о 72 млн подписчиков онлайн-кинотеатров; объект и действие идентичны.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 2024
+      },
+      "embedding_top20": {
+        "event_id": "event:e06-a",
+        "relation": "same_event",
+        "evidence": "Сигнал дословно совпадает с заголовком и темой кандидата: оценки аудитории российских онлайн-кинотеатров (TelecomDaily, 72 млн подписок). Объект и действие идентичны, других кандидатов по этой теме нет.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 2661
+      }
+    },
+    {
+      "case_id": "E07-positive-0",
+      "query_id": "e07-b",
+      "target_event_id": "event:e07-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал слишком общий: только тема «производитель смартфонов», без действия и хронологии. Кандидаты e07-a (дело ФАС о предустановке), e07-c (функция субтитров) и e07-d (контракт на дисплеи) описывают разные действия одного объекта, выбрать между ними нельзя.",
+        "needs_human_review": true,
+        "correct": false,
+        "latency_ms": 4567
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал — общий заголовок без конкретного действия или факта; он совпадает с заголовками трёх разных событий о производителе смартфонов (дело ФАС, функция субтитров, контракт поставщика), поэтому выбрать одного кандидата для same_event/event_update нельзя.",
+        "needs_human_review": true,
+        "correct": false,
+        "latency_ms": 5400
+      }
+    },
+    {
+      "case_id": "E08-positive-0",
+      "query_id": "e08-b",
+      "target_event_id": "event:e08-a",
+      "bank_size": 30,
+      "target_in_top20": true,
+      "full_scan": {
+        "event_id": "event:e08-a",
+        "relation": "same_event",
+        "evidence": "Сигнал дословно совпадает с заголовком и темой кандидата e08-a: законопроект о российских CAS и DRM, внесённый в декабре 2025 года. Новых фактов в сигнале нет, объект и действие совпадают, хронология совместима.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 4487
+      },
+      "embedding_top20": {
+        "event_id": "event:e08-a",
+        "relation": "same_event",
+        "evidence": "Текст сигнала дословно совпадает с названием и содержанием события e08-a: законопроект о требованиях к российским CAS и DRM, внесённый в декабре 2025 года. Объект и действие совпадают; другие кандидаты по CAS/DRM (n01-1, n01-2, n01-3) описывают иные стадии той же темы, но сигнал не содержит новых фактов, указывающих на обновление.",
+        "needs_human_review": false,
+        "correct": true,
+        "latency_ms": 6964
+      }
+    },
+    {
+      "case_id": "E04-negative-0",
+      "query_id": "e04-a",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал содержит только общий заголовок «Новые меры государственной поддержки» без деталей. Кандидаты e04-b (РФРИТ, отбор по внедрению отечественного ПО), e04-c (ФРП, льготная ставка 1% на станки и роботы) и e04-d (региональные субсидии аграриям) описывают разные меры с разными объектами и действиями — объединить с одним из них нельзя.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 5579
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал содержит лишь общий заголовок без указания объекта, действия или хронологии. Три кандидата (e04-b, e04-c, e04-d) имеют идентичный заголовок, но описывают разные меры (субсидии аграриям, льготная ставка ФРП, отбор РФРИТ). Выбрать одного кандидата для same_event/event_update нельзя, а объединение по общей теме запрещено.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 5324
+      }
+    },
+    {
+      "case_id": "E04-negative-1",
+      "query_id": "e04-b",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал содержит только общий заголовок «Новые меры государственной поддержки» без указания объекта и действия. Под этот заголовок подходят три разных события: e04-a (грантовое софинансирование ИТ-проектов до 80%), e04-c (льготная ставка ФРП 1% на российские станки и роботов) и e04-d (региональные субсидии аграриям на точное земледелие). Это разные меры с разными объектами и получателями, объединять по общей теме нельзя, а выбрать конкретного кандидата из сигнала невозможно — требуется проверка человеком.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 6164
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал — только общий заголовок без объекта, действия и дат. Тематически совпадает с группой e04 (субсидии аграриям, льготная ставка ФРП, гранты ИТ-проектам), но выбрать конкретное событие нельзя: совпадения объекта и действия нет.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 4808
+      }
+    },
+    {
+      "case_id": "E04-negative-2",
+      "query_id": "e04-c",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал — лишь общий заголовок «Новые меры государственной поддержки» без объекта и действия; кандидаты e04-a (гранты ИТ-проектам до 80%), e04-b (отбор РФРИТ по отечественному ПО, 50%) и e04-d (субсидии аграриям) описывают разные меры с разными объектами, объединять нельзя.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 4192
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал содержит только общий заголовок «Новые меры государственной поддержки» без указания объекта, действия или деталей. Под эту тему подходят несколько разных событий (субсидии аграриям e04-d, отбор РФРИТ e04-b, гранты ИТ-проектам e04-a), объединять по общей теме нельзя.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 3226
+      }
+    },
+    {
+      "case_id": "E04-negative-3",
+      "query_id": "e04-d",
+      "target_event_id": null,
+      "bank_size": 30,
+      "target_in_top20": null,
+      "full_scan": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал — общий заголовок без объекта и действия; он совпадает с названиями трёх разных мер (грантовое софинансирование 80%, отбор РФРИТ 50%, ставка ФРП 1%), поэтому выбрать одного кандидата для same_event/event_update нельзя, а объединять по общей теме запрещено.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 4052
+      },
+      "embedding_top20": {
+        "event_id": null,
+        "relation": "different",
+        "evidence": "Сигнал содержит лишь общий заголовок без объекта, действия и дат. Он топически совпадает с группой мер господдержки (e04-a: гранты ИТ-проектам до 80%; e04-b: отбор РФРИТ по внедрению российского ПО; e04-c: льготная ставка ФРП 1% на станки и роботов), но определить, о какой именно мере идёт речь, невозможно. Объединение по общей теме недопустимо — требуется уточнение человеком.",
+        "needs_human_review": true,
+        "correct": true,
+        "latency_ms": 5229
+      }
+    }
+  ]
+}

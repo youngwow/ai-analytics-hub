@@ -1,0 +1,80 @@
+{
+  "object_results": [
+    {
+      "expected_object_id": "EV-D1",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    }
+  ],
+  "safety_gates": [
+    {
+      "gate": "critical_recall",
+      "verdict": "pass",
+      "item_ids": [
+        "D101",
+        "D102",
+        "D103"
+      ]
+    },
+    {
+      "gate": "no_critical_low",
+      "verdict": "pass",
+      "item_ids": [
+        "D101",
+        "D102",
+        "D103"
+      ]
+    },
+    {
+      "gate": "no_unsupported_released_fact",
+      "verdict": "pass",
+      "item_ids": [
+        "D101",
+        "D102",
+        "D103"
+      ]
+    },
+    {
+      "gate": "opinion_attribution",
+      "verdict": "pass",
+      "item_ids": [
+        "D102"
+      ]
+    },
+    {
+      "gate": "npa_state",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "critical_role_delivery",
+      "verdict": "pass",
+      "item_ids": [
+        "D101",
+        "D102",
+        "D103"
+      ]
+    }
+  ],
+  "hypothesis_results": {
+    "value_proxy": "not_tested",
+    "H1": "supported",
+    "H2_prerequisites": "not_tested",
+    "H3": "supported",
+    "H4_proxy": "not_tested",
+    "H5_content_proxy": "not_tested"
+  },
+  "limitations": [
+    "No timed human observations are available; H2_prerequisites, H4_proxy, H5_content_proxy and value_proxy cannot be supported from text quality alone and are marked not_tested.",
+    "Item-level role set for D101 was predicted as [GR, HEAD], missing PR versus ground truth [GR, PR, HEAD] (deterministic report: roles correct 2/3); object-level roles [GR, HEAD, PR] and urgent_alert deliveries to all three recipients were complete, so no recipient lost the critical event.",
+    "The digest's evaluative phrase 'существенное публичное искажение регуляторного события' is unattributed system analysis; its factual basis (news claims universal recall, registry card does not) is quoted from D102, but the characterization itself is the system's own assessment.",
+    "Two submitted claims contain clauses beyond their submitted quote that are accurate per the same source item but not covered by that quote: D103:s1:c2 ('иные версии сохраняют собственный статус', from D103 Раздел 4) and D101:s1:c3 (applicability-by-version clause, from D101 Раздел 1). Released digest sentences remain fully supported.",
+    "Semantic groundedness and meaning preservation were judged by the evaluator; the deterministic rules explicitly do not score summary sufficiency or human task time and cognitive load."
+  ]
+}

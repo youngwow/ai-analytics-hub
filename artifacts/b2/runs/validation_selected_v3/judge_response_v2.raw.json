@@ -1,0 +1,232 @@
+[
+  {
+    "type": "materials",
+    "ids": [
+      "e04-a",
+      "e04-b",
+      "e04-c",
+      "e04-d",
+      "e05-a",
+      "e05-b",
+      "e05-c"
+    ],
+    "attempts": [
+      {
+        "material_results": [
+          {
+            "id": "e04-a",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "e04-b",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "e04-c",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "not_applicable"
+          },
+          {
+            "id": "e04-d",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "not_applicable"
+          },
+          {
+            "id": "e05-a",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "e05-b",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "e05-c",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "materials",
+    "ids": [
+      "e06-a",
+      "e06-b",
+      "e06-c",
+      "n03-1",
+      "n03-2",
+      "n03-3",
+      "n04-1"
+    ],
+    "attempts": [
+      {
+        "material_results": [
+          {
+            "id": "e06-a",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "e06-b",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "e06-c",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "n03-1",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "n03-2",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "n03-3",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "n04-1",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "materials",
+    "ids": [
+      "n04-2",
+      "n04-3",
+      "real-04",
+      "real-05",
+      "real-06",
+      "s03",
+      "s04"
+    ],
+    "attempts": [
+      {
+        "material_results": [
+          {
+            "id": "n04-2",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "n04-3",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "real-04",
+            "must_fact_coverage": 0.2,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "fail"
+          },
+          {
+            "id": "real-05",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "not_applicable"
+          },
+          {
+            "id": "real-06",
+            "must_fact_coverage": 0.8,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          },
+          {
+            "id": "s03",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "not_applicable"
+          },
+          {
+            "id": "s04",
+            "must_fact_coverage": 1.0,
+            "unsupported_claims": [],
+            "summary_faithfulness": "pass",
+            "impact_justification": "pass"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "events",
+    "ids": [
+      "E04",
+      "E05",
+      "E06"
+    ],
+    "attempts": [
+      {
+        "event_results": [
+          {
+            "case_id": "E04",
+            "preserved_unique_facts": "pass",
+            "preserved_independent_positions": "not_applicable"
+          },
+          {
+            "case_id": "E05",
+            "preserved_unique_facts": "pass",
+            "preserved_independent_positions": "pass"
+          },
+          {
+            "case_id": "E06",
+            "preserved_unique_facts": "pass",
+            "preserved_independent_positions": "pass"
+          }
+        ]
+      }
+    ]
+  }
+]

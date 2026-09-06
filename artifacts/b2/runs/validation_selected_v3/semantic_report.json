@@ -1,0 +1,15 @@
+{
+  "status": "FAIL",
+  "errors": [
+    "judge material coverage must exactly match packet",
+    "judge event coverage must exactly match packet"
+  ],
+  "dimensions": {
+    "mean_must_fact_coverage": null,
+    "materials_with_unsupported_claims": 0,
+    "faithful_summaries": 0,
+    "events_preserving_unique_facts": 0,
+    "events_losing_independent_positions": 0
+  },
+  "rule": "Semantic dimensions remain separate and are not converted into one weighted score."
+}

@@ -1,0 +1,75 @@
+{
+  "object_results": [
+    {
+      "expected_object_id": "NPA-D4",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    }
+  ],
+  "safety_gates": [
+    {
+      "gate": "critical_recall",
+      "verdict": "not_tested",
+      "item_ids": []
+    },
+    {
+      "gate": "no_critical_low",
+      "verdict": "not_tested",
+      "item_ids": []
+    },
+    {
+      "gate": "no_unsupported_released_fact",
+      "verdict": "pass",
+      "item_ids": [
+        "D401",
+        "D402",
+        "D403",
+        "D404"
+      ]
+    },
+    {
+      "gate": "opinion_attribution",
+      "verdict": "pass",
+      "item_ids": [
+        "D404"
+      ]
+    },
+    {
+      "gate": "npa_state",
+      "verdict": "fail",
+      "item_ids": [
+        "D402",
+        "D403"
+      ]
+    },
+    {
+      "gate": "critical_role_delivery",
+      "verdict": "not_tested",
+      "item_ids": []
+    }
+  ],
+  "hypothesis_results": {
+    "value_proxy": "not_tested",
+    "H1": "supported",
+    "H2_prerequisites": "not_tested",
+    "H3": "mixed",
+    "H4_proxy": "not_tested",
+    "H5_content_proxy": "not_tested"
+  },
+  "limitations": [
+    "No critical items exist in ground truth (D401-D404 all critical:false), so critical_recall, no_critical_low and critical_role_delivery were not exercised and are reported as not_tested.",
+    "npa_state gate fails on current_version: predicted 'v3_редакция_после_первой_доработки' describes the earlier post-rework revision instead of the final 'v3_system_software_12_months' established by D402 and confirmed adopted in D403; current_stage (adopted), effective_from (2026-12-01) and history_ids match npa_truth, and the stale D404 repost was correctly not treated as the current revision.",
+    "Item-level classification errors that did not propagate to the object: D401 predicted relevance 'borderline' (ground truth relevant), importance 'medium' (high) and roles ['GR'] (GR+HEAD); D404 predicted importance 'high' (medium) and roles ['GR','HEAD'] (GR only).",
+    "D404 has include_in_digest=false at item level, but its content appears inside the NPA-D4 digest as the stale-report correction; this matches the ideal_summary ('Поздний Telegram-пересказ со сроком 24 месяца устарел') and was treated as object-level synthesis, not a standalone item inclusion.",
+    "impact_on_gs_labs contains the early-stage statement 'PR и HEAD не требуются' while the object correctly delivers to HEAD per expected roles; this internal inconsistency is absent from the released digest text and did not affect role delivery.",
+    "All 19 submitted evidence quotes are verbatim and semantically support the released digest claims, including the staged narrative (sent for re-approval, narrowed 24-to-12-month revision, adopted but not in force until 1 December) and the attributed stale-report correction.",
+    "No timed human observations were provided; value_proxy, H2_prerequisites, H4_proxy and H5_content_proxy cannot be supported from text quality alone and are reported as not_tested.",
+    "Hypothesis definitions were not supplied; H1 was judged from coverage and grouping evidence (reachable_digest_coverage 1.0, exact object precision/recall 1.0, all four visible items decided) and H3 from NPA lifecycle evidence, yielding mixed because core state transitions are correct but the version label is wrong."
+  ]
+}

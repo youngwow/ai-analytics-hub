@@ -151,6 +151,15 @@ def test_first_and_second_run_over_every_adapter(raw_config, db, fixture_bytes, 
     assert (by_id[sitemap.id]["new"], by_id[sitemap.id]["seen"]) == (3, 3)
     assert (by_id[html.id]["new"], by_id[html.id]["seen"]) == (38, 38)
     assert all(e["status"] == "ok" for e in report.per_source)
+    assert (
+        by_id[rss.id]["fulltext_attempted"],
+        by_id[rss.id]["fulltext_extracted"],
+        by_id[rss.id]["fulltext_fallback"],
+    ) == (1, 1, 0)
+    assert (
+        by_id[sitemap.id]["fulltext_attempted"],
+        by_id[sitemap.id]["fulltext_extracted"],
+    ) == (3, 3)
 
     # rss: full text came from the feed for 3 items and from the page for the 4th
     assert _stored_ids(db, rss.id) == [
@@ -199,7 +208,10 @@ def test_first_and_second_run_over_every_adapter(raw_config, db, fixture_bytes, 
     assert sm_rows["https://site.ru/news/1"]["title"] == (
         "Минцифры предложило правила управления M2M SIM-картами"
     )
-    assert db.fetch_state.get(sitemap.id).cursor == {"lastmod": "2026-09-02T06:00:00+00:00"}
+    assert db.fetch_state.get(sitemap.id).cursor == {
+        "lastmod": "2026-09-02T06:00:00+00:00",
+        "last_loc": "https://site.ru/news/1",
+    }
     assert db.sources.get(sitemap.id).name == "Сайт"
 
     # html: every candidate seen, all 38 dated by their page and stored
@@ -275,6 +287,34 @@ def test_failed_source_is_recorded_and_the_run_continues(raw_config, db, now, tm
     collector.run()
     assert db.fetch_state.get(bad.id).consecutive_failures == 2
     assert db.runs.latest()["sources_fail"] == 1
+
+
+def test_recoverable_warning_is_reported_as_partial(raw_config, db, now, tmp_path):
+    config = _config(raw_config, fetch_fulltext=False)
+    source = _add(db)
+    collector = _collector(config, db, MockRoutes({}), now, tmp_path)
+    collector.adapters["rss"].fetch = lambda *args, **kwargs: FetchResult(
+        documents=[
+            RawDocument(
+                source_id=source.id,
+                external_id="one",
+                url="https://example.ru/one",
+                title="Сохранённый материал",
+            )
+        ],
+        warnings=["child request: HTTP 500"],
+    )
+
+    report = collector.run()
+
+    assert (report.sources_ok, report.sources_partial, report.sources_fail, report.docs_new) == (
+        0,
+        1,
+        0,
+        1,
+    )
+    assert report.per_source[0]["status"] == "partial"
+    assert report.per_source[0]["warnings"] == ["child request: HTTP 500"]
 
 
 def test_success_after_failure_clears_error_and_counter(raw_config, db, now, tmp_path):
@@ -370,7 +410,7 @@ def test_future_dates_are_clamped_to_now(raw_config, db, now, tmp_path):
     assert row["published_at"] == "2026-09-02T12:00:00+00:00"
 
 
-def test_max_new_per_source_caps_inserts(raw_config, db, now, tmp_path):
+def test_collector_never_discards_a_returned_tail(raw_config, db, now, tmp_path):
     config = _config(raw_config, fetch_fulltext=False, max_new_per_source=3)
     feed = rss_bytes(
         [{"title": f"Новость {i}", "link": f"https://example.ru/{i}"} for i in range(6)]
@@ -379,8 +419,8 @@ def test_max_new_per_source_caps_inserts(raw_config, db, now, tmp_path):
     source = _add(db)
     report = _collector(config, db, routes, now, tmp_path).run()
     entry = report.per_source[0]
-    assert (entry["seen"], entry["new"]) == (6, 3)
-    assert set(_stored_ids(db, source.id)) == {f"https://example.ru/{i}" for i in range(3)}
+    assert (entry["seen"], entry["new"]) == (6, 6)
+    assert set(_stored_ids(db, source.id)) == {f"https://example.ru/{i}" for i in range(6)}
 
 
 def test_documents_without_title_text_or_summary_are_dropped(raw_config, db, now, tmp_path):
@@ -730,53 +770,92 @@ def test_search_run_stores_hits_older_than_the_collect_window(raw_config, db, no
     assert db.fetch_state.get(source.id).cursor == {"since": "2026-09-02", "days": 7}
 
 
-def test_search_digest_is_stored_once_per_utc_day(raw_config, db, fixture_bytes, now, tmp_path):
+def test_search_stores_only_source_backed_hits(raw_config, db, fixture_bytes, now, tmp_path):
     config = _config(raw_config, fetch_fulltext=False)
     routes = _tavily_routes(fixture_bytes)
     source = _search_source(db)
     collector = _collector(config, db, routes, now, tmp_path)
 
-    assert collector.run().docs_new == 4
-    assert db.documents.exists(source.id, DIGEST_ID)
+    assert collector.run().docs_new == 3
+    assert not db.documents.exists(source.id, DIGEST_ID)
 
     collector.now = lambda: now + timedelta(hours=1)
     same_day = collector.run()
-    assert (same_day.docs_new, same_day.per_source[0]["seen"]) == (0, 4)
-    assert db.documents.count(source.id) == 4
+    assert (same_day.docs_new, same_day.per_source[0]["seen"]) == (0, 3)
+    assert db.documents.count(source.id) == 3
 
     collector.now = lambda: now + timedelta(days=1)
     next_day = collector.run()
-    assert next_day.docs_new == 1
-    assert next_day.per_source[0]["new_external_ids"] == ["summary:2026-09-03"]
-    assert db.documents.count(source.id) == 5
-    rows = db.documents.list(source_id=source.id)
-    digests = [r for r in rows if r["external_id"].startswith("summary:")]
-    assert {r["external_id"] for r in digests} == {DIGEST_ID, "summary:2026-09-03"}
-    assert all(r["url"] == "" for r in digests)
+    assert next_day.docs_new == 0
+    assert next_day.per_source[0]["new_external_ids"] == []
+    assert db.documents.count(source.id) == 3
     assert db.fetch_state.get(source.id).cursor == {"since": "2026-09-03", "days": 7}
 
 
-def test_per_source_cap_keeps_the_digest_of_a_search_batch(raw_config, db, fixture_bytes, now,
-                                                            tmp_path):
+def test_search_batch_is_not_cut_by_legacy_collector_cap(raw_config, db, fixture_bytes, now,
+                                                         tmp_path):
     config = _config(raw_config, fetch_fulltext=False, max_new_per_source=2)
     routes = _tavily_routes(fixture_bytes)  # 3 hits + digest
     source = _search_source(db)
     _, entry = _collector(config, db, routes, now, tmp_path).collect_one(source)
-    assert (entry["seen"], entry["new"]) == (4, 3)
-    assert entry["new_external_ids"] == [GS_GROUP_URL, TELESPUTNIK_URL, DIGEST_ID]
-    assert set(_stored_ids(db, source.id)) == {GS_GROUP_URL, TELESPUTNIK_URL, DIGEST_ID}
-    assert db.documents.exists(source.id, FORUM_URL) is False
+    assert (entry["seen"], entry["new"]) == (3, 3)
+    assert entry["new_external_ids"] == [GS_GROUP_URL, TELESPUTNIK_URL, FORUM_URL]
+    assert set(_stored_ids(db, source.id)) == {GS_GROUP_URL, TELESPUTNIK_URL, FORUM_URL}
 
 
-def test_per_source_cap_still_cuts_url_bearing_documents(raw_config, db, now, tmp_path):
+def test_legacy_per_source_cap_never_cuts_url_documents(raw_config, db, now, tmp_path):
     config = _config(raw_config, fetch_fulltext=False, max_new_per_source=2)
     feed = rss_bytes([{"title": f"Новость {i}", "link": f"https://example.ru/{i}"} for i in range(3)])
     routes = MockRoutes({RSS_URL: (200, feed, RSS)})
     source = _add(db)
     entry = _collector(config, db, routes, now, tmp_path).run().per_source[0]
-    assert (entry["seen"], entry["new"]) == (3, 2)
-    assert entry["new_external_ids"] == ["https://example.ru/0", "https://example.ru/1"]
-    assert db.documents.count(source.id) == 2
+    assert (entry["seen"], entry["new"]) == (3, 3)
+    assert entry["new_external_ids"] == [
+        "https://example.ru/0", "https://example.ru/1", "https://example.ru/2"
+    ]
+    assert db.documents.count(source.id) == 3
+
+
+def test_regulator_document_change_creates_an_immutable_revision(
+    raw_config, db, now, tmp_path
+):
+    config = _config(raw_config, fetch_fulltext=False)
+    source = _add(db)
+    source.category = "regulator"
+    db.sources.update(source)
+    first = rss_bytes(
+        [{"title": "Проект НПА", "link": "https://example.ru/npa", "description": "Версия 1"}]
+    )
+    second = rss_bytes(
+        [{"title": "Проект НПА", "link": "https://example.ru/npa", "description": "Версия 2"}]
+    )
+    collector = _collector(config, db, MockRoutes({RSS_URL: (200, first, RSS)}), now, tmp_path)
+    assert collector.run().docs_new == 1
+    collector.transport = MockRoutes({RSS_URL: (200, second, RSS)}).transport()
+    collector.now = lambda: now + timedelta(hours=1)
+    report = collector.run()
+    assert report.docs_new == 0
+    assert report.per_source[0]["updated"] == 1
+    row = db.documents.row_by_external_id(source.id, "https://example.ru/npa")
+    revisions = db.document_revisions.list(int(row["id"]))
+    assert [r["revision"] for r in revisions] == [1, 2]
+    assert '"summary": "Версия 1"' in revisions[0]["payload"]
+    assert '"summary": "Версия 2"' in revisions[1]["payload"]
+
+
+def test_every_successful_poll_writes_a_sanitized_fetch_manifest(
+    raw_config, db, now, tmp_path
+):
+    config = _config(raw_config, fetch_fulltext=False)
+    source = _add(db)
+    feed = rss_bytes([{"title": "Новость", "link": "https://example.ru/1"}])
+    _collector(config, db, MockRoutes({RSS_URL: (200, feed, RSS)}), now, tmp_path).run()
+    row = db.conn.execute("SELECT * FROM fetch_artifacts").fetchone()
+    assert row["source_id"] == source.id
+    assert row["status"] == "ok"
+    assert row["sanitized_headers"] == "{}"
+    assert row["body_hash"]
+    assert b"https://example.ru/1" in row["bounded_body"]
 
 
 def test_search_source_is_never_renamed(raw_config, db, fixture_bytes, now, tmp_path):
@@ -820,18 +899,18 @@ def test_collect_one_polls_a_disabled_source_and_records_the_run(raw_config, db,
     result, entry = _collector(config, db, routes, now, tmp_path).collect_one(source)
 
     assert result.error is None
-    assert [d.external_id for d in result.documents] == [*HIT_IDS, DIGEST_ID]
+    assert [d.external_id for d in result.documents] == HIT_IDS
     assert (entry["id"], entry["kind"], entry["status"]) == (source.id, "search", "ok")
-    assert (entry["seen"], entry["new"]) == (4, 4)
-    assert entry["new_external_ids"] == [*HIT_IDS, DIGEST_ID]
-    assert set(_stored_ids(db, source.id)) == {*HIT_IDS, DIGEST_ID}
+    assert (entry["seen"], entry["new"]) == (3, 3)
+    assert entry["new_external_ids"] == HIT_IDS
+    assert set(_stored_ids(db, source.id)) == set(HIT_IDS)
     assert _tavily_payloads(routes)[0]["days"] == 7
     state = db.fetch_state.get(source.id)
     assert state.cursor == {"since": "2026-09-02", "days": 7}
     assert state.last_success_at == "2026-09-02T12:00:00+00:00"
-    assert state.last_doc_count == 4
+    assert state.last_doc_count == 3
     run = db.runs.latest()
-    assert (run["sources_ok"], run["sources_fail"], run["docs_new"]) == (1, 0, 4)
+    assert (run["sources_ok"], run["sources_fail"], run["docs_new"]) == (1, 0, 3)
     assert run["started_at"] == run["finished_at"] == "2026-09-02T12:00:00+00:00"
     assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 1
     assert db.sources.get(source.id).enabled is False
@@ -867,10 +946,10 @@ def test_collect_one_returns_known_hits_but_lists_only_new_ids(raw_config, db, f
 
     collector.now = lambda: now + timedelta(hours=1)
     result, entry = collector.collect_one(source)
-    assert [d.external_id for d in result.documents] == [*HIT_IDS, DIGEST_ID]
-    assert (entry["status"], entry["seen"], entry["new"]) == ("ok", 4, 0)
+    assert [d.external_id for d in result.documents] == HIT_IDS
+    assert (entry["status"], entry["seen"], entry["new"]) == ("ok", 3, 0)
     assert entry["new_external_ids"] == []
-    assert db.documents.count(source.id) == 4
+    assert db.documents.count(source.id) == 3
     assert db.runs.latest()["docs_new"] == 0
     assert db.conn.execute("SELECT count(*) FROM collect_runs").fetchone()[0] == 2
 
@@ -999,7 +1078,7 @@ def test_telegram_run_over_mtproto_stores_documents_and_the_cursor(raw_config, d
     assert rows["cit_gov/1490"]["published_at"] == "2026-09-02T10:00:00+00:00"
     assert rows["cit_gov/1491"]["attachments"] == '["file:Приказ.pdf", "https://gov.ru/doc"]'
     assert reader.closed == 1
-    assert reader.calls[0] == {"channel": "cit_gov", "min_id": 0, "limit": 50,
+    assert reader.calls[0] == {"channel": "cit_gov", "min_id": 0, "limit": 100,
                                "offset_date": now - timedelta(hours=72)}
 
 

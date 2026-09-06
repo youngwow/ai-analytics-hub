@@ -1,0 +1,26 @@
+[
+  {
+    "number": 1,
+    "method": "POST",
+    "url": "https://api.tavily.com/search",
+    "started_at": "2026-09-06T01:52:33.251370+00:00",
+    "elapsed_ms": 1251.555,
+    "status": 200,
+    "request_body_sha256": "294b3e53f759d53429c6333deaacd8ea747a1a60ccf4371b2501f7255ec67eb6",
+    "response_body_sha256": "579d63f877e2e38a1624240257c08be2d3cf0026dfb88426c7d2ff52ee31cbac",
+    "request_file": "search_artifacts/01_request.json",
+    "response_file": "search_artifacts/01_response.json"
+  },
+  {
+    "number": 2,
+    "method": "POST",
+    "url": "https://api.tavily.com/search",
+    "started_at": "2026-09-06T01:52:33.574485+00:00",
+    "elapsed_ms": 2552.366,
+    "status": 200,
+    "request_body_sha256": "cf92902035ac8939847b02fc8d6fe10ccaee35eec80a9c03f4bf9982f56c41bd",
+    "response_body_sha256": "f2accbe0e017c891d38f4935b8aa1d8e1c840b1478dea356d3b58ff026ee5a46",
+    "request_file": "search_artifacts/02_request.json",
+    "response_file": "search_artifacts/02_response.json"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "expected_objects": 8,
+  "required_safety_gates": 6
+}

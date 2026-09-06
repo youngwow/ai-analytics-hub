@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "step_id",
+      "passed",
+      "evidence"
+    ],
+    "properties": {
+      "step_id": {
+        "enum": [
+          "AC1",
+          "AC2",
+          "AC3",
+          "AC4",
+          "AC5",
+          "AC6",
+          "AC7",
+          "AC8"
+        ]
+      },
+      "passed": {
+        "type": "boolean"
+      },
+      "evidence": {
+        "type": "object",
+        "required": [
+          "artifact",
+          "observation"
+        ],
+        "properties": {
+          "artifact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

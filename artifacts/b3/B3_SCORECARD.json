@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-06",
+  "status": "TECHNICAL_E2E_PASS_PRODUCT_VALUE_UNPROVEN",
+  "provider_boundaries": {
+    "generation": "ollama/glm-5.3-flash:cloud",
+    "embeddings": "openrouter/google/gemini-embedding-001",
+    "search": "tavily"
+  },
+  "authoritative_runs": {
+    "A_fixed": "final_rerun/a_fixed",
+    "A_search": "final_protocol/a_search",
+    "A_hybrid": "final_rerun/a_hybrid",
+    "B_fixed": "final_rerun/b_fixed",
+    "B_search": "final_protocol/b_search",
+    "B_hybrid": "final_rerun/b_hybrid",
+    "D1_critical": "final_protocol/d1_critical_hybrid",
+    "D2_event_boundary": "final_protocol/d2_event_boundary_hybrid",
+    "D3_new_npa": "final_rerun/d3_new_npa_hybrid",
+    "D4_known_npa": "final_rerun/d4_known_npa_hybrid"
+  },
+  "runs": [
+    {"id":"A_fixed","coverage":0.857,"relevance":0.9,"importance":0.8,"critical":1.0,"roles":0.85,"review":0.7,"grouping":1.0,"delivery_errors":2,"wall_seconds":171.7},
+    {"id":"A_search","coverage":0.429,"relevance":1.0,"importance":0.25,"critical":1.0,"roles":0.25,"review":1.0,"grouping":1.0,"delivery_errors":0,"wall_seconds":33.6},
+    {"id":"A_hybrid","coverage":1.0,"relevance":0.909,"importance":0.773,"critical":1.0,"roles":0.727,"review":0.773,"grouping":1.0,"delivery_errors":2,"wall_seconds":191.2},
+    {"id":"B_fixed","coverage":1.0,"relevance":1.0,"importance":0.8,"critical":1.0,"roles":0.7,"review":0.85,"grouping":1.0,"delivery_errors":0,"wall_seconds":185.0},
+    {"id":"B_search","coverage":0.333,"relevance":0.75,"importance":0.75,"critical":1.0,"roles":0.75,"review":0.75,"grouping":1.0,"delivery_errors":1,"wall_seconds":32.5},
+    {"id":"B_hybrid","coverage":1.0,"relevance":0.955,"importance":0.773,"critical":1.0,"roles":0.727,"review":0.818,"grouping":1.0,"delivery_errors":1,"wall_seconds":217.2},
+    {"id":"D1_critical","coverage":1.0,"relevance":1.0,"importance":1.0,"critical":1.0,"roles":0.667,"review":1.0,"grouping":1.0,"delivery_errors":0,"wall_seconds":59.3},
+    {"id":"D2_event_boundary","coverage":1.0,"relevance":0.6,"importance":0.6,"critical":1.0,"roles":0.4,"review":0.6,"grouping":1.0,"delivery_errors":0,"wall_seconds":44.3},
+    {"id":"D3_new_npa","coverage":1.0,"relevance":1.0,"importance":1.0,"critical":1.0,"roles":1.0,"review":1.0,"grouping":1.0,"delivery_errors":0,"wall_seconds":18.9},
+    {"id":"D4_known_npa","coverage":1.0,"relevance":0.75,"importance":0.5,"critical":1.0,"roles":0.5,"review":1.0,"grouping":1.0,"delivery_errors":0,"wall_seconds":86.8}
+  ],
+  "decisions": {
+    "search_replaces_fixed_sources": "REJECTED",
+    "search_as_targeted_supplement": "CONDITIONALLY_SUPPORTED",
+    "event_grouping": "TECHNICALLY_SUPPORTED",
+    "critical_safety": "TECHNICALLY_SUPPORTED",
+    "role_personalization": "UNPROVEN_NEEDS_PILOT",
+    "short_top_layer": "UNPROVEN_NEEDS_PILOT",
+    "value_and_time_saving": "UNPROVEN_NEEDS_HUMAN_BASELINE",
+    "autonomous_publication": "REJECTED_FOR_MVP"
+  },
+  "limitations": [
+    "No observed human baseline or pilot",
+    "Semantic judge uses the same GLM family and is not independent",
+    "Importance and role calibration remain below autonomous-release quality",
+    "New NPA version can remain unknown when the source contains no explicit identifier"
+  ]
+}

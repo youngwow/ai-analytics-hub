@@ -1,4 +1,4 @@
-.PHONY: install test lint format seed collect watch tg-login tg-status process quality happy-pr happy-gr
+.PHONY: install test lint verify format seed collect watch tg-login tg-status process quality happy-pr happy-gr web demo
 
 install:
 	uv sync
@@ -7,7 +7,9 @@ test:
 	uv run pytest -q
 
 lint:
-	uv run ruff check src tests
+	uv run ruff check .
+
+verify: test lint
 
 format:
 	uv run ruff format src tests
@@ -38,3 +40,9 @@ process:
 
 quality:
 	uv run python -m src quality --gold
+
+web:
+	uv run python -m src.product.web --host 127.0.0.1 --port 3002
+
+demo:
+	uv run python -m src.product.web --host 127.0.0.1 --port 3002 --db artifacts/demo/gs_labs_demo.db

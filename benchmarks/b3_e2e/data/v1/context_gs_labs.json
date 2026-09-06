@@ -1,0 +1,21 @@
+{
+  "company": "GS Labs",
+  "relation": "Developer of software and equipment for digital television and adjacent media technologies within GS Group.",
+  "interests": [
+    "digital television",
+    "subscriber devices",
+    "middleware and interfaces",
+    "content protection CAS/DRM",
+    "recommendation systems",
+    "device security and updates",
+    "broadcasting regulation",
+    "radioelectronics support",
+    "operator tenders and partnerships"
+  ],
+  "roles": {
+    "PR": "Company and market narratives, reputation, partnerships, public positions and opportunities.",
+    "GR": "Draft laws, standards, regulator actions, deadlines, stages, versions and potential regulatory impact.",
+    "HEAD": "High-impact company, market, security and regulatory changes; always receives confirmed critical items."
+  },
+  "uncertainty_rule": "Unknown internal facts such as a dependency or eligibility must be surfaced as a check, not invented."
+}

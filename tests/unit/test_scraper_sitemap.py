@@ -172,6 +172,10 @@ def test_index_skips_nested_index_and_broken_children(config, mock_client, fixtu
     )
     assert result.error is None
     assert result.documents == []
+    assert result.warnings == [
+        f"nested sitemap index unsupported: {NEWS_GZ}",
+        f"child sitemap {OLD_CHILD}: HTTP 500",
+    ]
     assert routes.urls() == [SITEMAP_URL, NEWS_GZ, OLD_CHILD]
 
 
@@ -201,7 +205,11 @@ def test_first_run_keeps_window_and_undated_drops_old_and_off_host(config, mock_
     assert all(d.source_id == 5 for d in docs)
     assert all(d.fetched_at == "2026-09-02T12:00:00+00:00" for d in docs)
     assert all(d.title == "" and d.text == "" for d in docs)
-    assert result.state_update == {"cursor": {"lastmod": "2026-09-02T06:00:00+00:00"}}
+    assert result.state_update["cursor"] == {
+        "lastmod": "2026-09-02T06:00:00+00:00",
+        "last_loc": "https://site.ru/news/1",
+    }
+    assert result.state_update["coverage_status"] == "complete"
 
 
 def test_incremental_run_keeps_only_entries_at_or_after_cursor(config, mock_client, fixture_bytes, now):
@@ -215,7 +223,10 @@ def test_incremental_run_keeps_only_entries_at_or_after_cursor(config, mock_clie
         _source(), state, mock_client(routes), now=now, since=now - timedelta(days=30)
     )
     assert [d.url for d in result.documents] == ["https://site.ru/news/1"]
-    assert result.state_update == {"cursor": {"lastmod": "2026-09-02T06:00:00+00:00"}}
+    assert result.state_update["cursor"] == {
+        "lastmod": "2026-09-02T06:00:00+00:00",
+        "last_loc": "https://site.ru/news/1",
+    }
 
 
 def test_incremental_run_treats_cursor_equality_as_new(config, mock_client, fixture_bytes, now):
@@ -225,7 +236,10 @@ def test_incremental_run_treats_cursor_equality_as_new(config, mock_client, fixt
     )
     result = _adapter(config).fetch(_source(), state, mock_client(routes), now=now)
     assert [d.url for d in result.documents] == ["https://site.ru/news/1"]
-    assert result.state_update == {"cursor": {"lastmod": "2026-09-02T06:00:00+00:00"}}
+    assert result.state_update["cursor"] == {
+        "lastmod": "2026-09-02T06:00:00+00:00",
+        "last_loc": "https://site.ru/news/1",
+    }
 
 
 def test_cursor_only_moves_forward(config, mock_client, fixture_bytes, now):
@@ -237,7 +251,9 @@ def test_cursor_only_moves_forward(config, mock_client, fixture_bytes, now):
     )
     result = _adapter(config).fetch(_source(), state, mock_client(routes), now=now)
     assert result.documents == []
-    assert result.state_update == {"cursor": {"lastmod": "2026-09-03T00:00:00+00:00", "other": 1}}
+    assert result.state_update["cursor"] == {
+        "lastmod": "2026-09-03T00:00:00+00:00", "other": 1
+    }
 
 
 def test_backfill_keeps_everything_on_host(config, mock_client, fixture_bytes, now):
@@ -269,7 +285,9 @@ def test_www_prefix_does_not_break_same_host_check(config, mock_client, fixture_
     assert len(result.documents) == 4
 
 
-def test_max_urls_caps_newest_first(raw_config, mock_client, fixture_bytes, now):
+def test_max_urls_uses_lossless_oldest_first_continuation(
+    raw_config, mock_client, fixture_bytes, now
+):
     from src.config import Config
 
     raw_config["sitemap"]["max_urls"] = 2
@@ -278,7 +296,12 @@ def test_max_urls_caps_newest_first(raw_config, mock_client, fixture_bytes, now)
     result = _adapter(config).fetch(
         _source(), FetchState(source_id=5), mock_client(routes), now=now, backfill=True
     )
-    assert [d.url for d in result.documents] == ["https://site.ru/news/1", "https://site.ru/news/2"]
+    assert [d.url for d in result.documents] == [
+        "https://site.ru/news/old", "https://site.ru/news/2"
+    ]
+    assert result.state_update["coverage_status"] == "partial"
+    assert result.state_update["backlog_status"] == "pending"
+    assert result.warnings
 
 
 @pytest.mark.parametrize(

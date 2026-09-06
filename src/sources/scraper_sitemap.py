@@ -122,12 +122,14 @@ class SitemapAdapter:
         backfill: bool = False,
     ) -> FetchResult:
         cursor = parse_datetime(state.cursor.get("lastmod"))
+        cursor_loc = str(state.cursor.get("last_loc") or "")
         lower = None if backfill else (cursor or since)
 
         kind, entries, error = self._load(client, source.fetch_url)
         if error:
             return FetchResult(error=error)
         urls: list[SitemapEntry] = []
+        warnings: list[str] = []
         if kind == "index":
             children = [e for e in entries if _same_host(e.loc, source.fetch_url)]
             children.sort(key=lambda e: _child_priority(e, now.year), reverse=True)
@@ -136,10 +138,14 @@ class SitemapAdapter:
                     continue  # whole child sitemap is older than what we need
                 ckind, centries, cerror = self._load(client, child.loc)
                 if cerror:
-                    log.warning("%s: child sitemap %s: %s", source.name, child.loc, cerror)
+                    warning = f"child sitemap {child.loc}: {cerror}"
+                    warnings.append(warning)
+                    log.warning("%s: %s", source.name, warning)
                     continue
                 if ckind == "index":
-                    log.info("%s: skipping nested sitemap index %s", source.name, child.loc)
+                    warning = f"nested sitemap index unsupported: {child.loc}"
+                    warnings.append(warning)
+                    log.warning("%s: %s", source.name, warning)
                     continue
                 urls.extend(centries)
         else:
@@ -147,17 +153,36 @@ class SitemapAdapter:
 
         urls = [u for u in urls if _same_host(u.loc, source.fetch_url)]
         first_run = state.first_run and not cursor
-        selected: list[SitemapEntry] = []
+        dated: list[SitemapEntry] = []
+        undated: list[SitemapEntry] = []
         for u in urls:
             if u.lastmod is None:
-                if first_run or backfill:
-                    selected.append(u)  # can't date it; only worth it once
+                if first_run or backfill or state.backlog_status == "pending":
+                    undated.append(u)
                 continue
             if lower and u.lastmod < lower:
                 continue
-            selected.append(u)
-        selected.sort(key=lambda e: e.lastmod or _EPOCH, reverse=True)
-        selected = selected[: self.sm.max_urls]
+            if cursor and u.lastmod == cursor and cursor_loc and u.loc <= cursor_loc:
+                continue
+            dated.append(u)
+
+        # Oldest first is deliberate: when the budget is full, the next cycle
+        # resumes after the last processed (lastmod, URL) pair instead of jumping
+        # the cursor to the newest URL and silently losing the tail.
+        dated.sort(key=lambda e: (e.lastmod or _EPOCH, e.loc))
+        undated.sort(key=lambda e: e.loc)
+        undated_after = str(state.continuation_cursor.get("undated_after") or "")
+        if undated_after:
+            undated = [u for u in undated if u.loc > undated_after]
+        eligible = [*dated, *undated]
+        remaining = len(eligible) > self.sm.max_urls
+        if remaining:
+            selected = eligible[: self.sm.max_urls]
+        else:
+            # Preserve the familiar newest-first output when the whole observed
+            # set fits. Ordering only becomes oldest-first when continuation is
+            # required to make the cursor lossless.
+            selected = [*reversed(dated), *undated]
 
         docs = [
             RawDocument(
@@ -170,9 +195,33 @@ class SitemapAdapter:
             )
             for u in selected
         ]
-        newest = max((u.lastmod for u in urls if u.lastmod), default=None)
         cursor_update = dict(state.cursor)
-        if newest and (cursor is None or newest > cursor):
-            cursor_update["lastmod"] = to_utc_iso(newest)
+        processed_dated = [u for u in selected if u.lastmod is not None]
+        if processed_dated:
+            last = max(processed_dated, key=lambda u: (u.lastmod or _EPOCH, u.loc))
+            cursor_update["lastmod"] = to_utc_iso(last.lastmod)
+            cursor_update["last_loc"] = last.loc
+        processed_undated = [u for u in selected if u.lastmod is None]
+        continuation = dict(state.continuation_cursor)
+        if processed_undated and remaining:
+            continuation["undated_after"] = processed_undated[-1].loc
+        elif not remaining:
+            continuation.pop("undated_after", None)
+        coverage_dates = [u.lastmod for u in selected if u.lastmod]
+        if remaining:
+            warnings.append("sitemap URL budget reached; continuation will resume next cycle")
         log.debug("%s: %d sitemap urls, %d selected", source.name, len(urls), len(docs))
-        return FetchResult(documents=docs, state_update={"cursor": cursor_update})
+        return FetchResult(
+            documents=docs,
+            state_update={
+                "cursor": cursor_update,
+                "native_cursor": cursor_update.get("lastmod"),
+                "high_watermark": cursor_update.get("lastmod"),
+                "continuation_cursor": continuation,
+                "backlog_status": "pending" if remaining else "clear",
+                "coverage_from": to_utc_iso(min(coverage_dates)) if coverage_dates else None,
+                "coverage_to": to_utc_iso(max(coverage_dates)) if coverage_dates else None,
+                "coverage_status": "partial" if remaining else "complete",
+            },
+            warnings=warnings,
+        )

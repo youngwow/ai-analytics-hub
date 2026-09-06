@@ -1,0 +1,9 @@
+{
+  "run_id": "585c4a0d-791d-4960-b2c8-07520eec3887",
+  "configuration_id": "selected-v3-onepass-fullscan-no-critic-with-impact",
+  "material_results": [],
+  "event_results": [],
+  "limitations": [
+    "Judge и тестируемая система используют одну GLM-5.3; это воспроизводимая автооценка, а не независимая человеческая проверка."
+  ]
+}

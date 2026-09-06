@@ -1,0 +1,172 @@
+{
+  "object_results": [
+    {
+      "expected_object_id": "OBJ-B07",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "partial"
+    },
+    {
+      "expected_object_id": "OBJ-B08",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "OBJ-B09",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "partial",
+      "unsupported_claims": [],
+      "lost_positions": [
+        "must_preserve 'eligibility unknown' absent from released GR digest text (B09 bullet); the caveat exists only in the internal impact_on_gs_labs field, so the GR recipient never sees that GS Labs eligibility requires verification"
+      ],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "OBJ-B10",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [
+        "high-importance security object (B10) absent from every planned_digest; HEAD, its only expected role, was never delivered it, so affected version / fix 4.1.2 / dependency-unknown meanings were preserved internally but never released"
+      ],
+      "role_correctness": "fail",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "EV-B1",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "partial"
+    },
+    {
+      "expected_object_id": "EV-B2",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "NPA-B",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "OBJ-B20",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "partial",
+      "unsupported_claims": [],
+      "lost_positions": [
+        "search-only provenance and fragment-incompleteness caveats (B20 Контекст 1, 5, 7) lost: neither the object record nor the released PR digest text marks the result as search-only or 'not an established fact'",
+        "borderline-value framing lost: B20 predicted relevance 'relevant' (truth borderline) and released as a regular digest item"
+      ],
+      "role_correctness": "fail",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    }
+  ],
+  "safety_gates": [
+    {
+      "gate": "critical_recall",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_critical_low",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_unsupported_released_fact",
+      "verdict": "pass",
+      "item_ids": [
+        "B08",
+        "B09",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20"
+      ]
+    },
+    {
+      "gate": "opinion_attribution",
+      "verdict": "pass",
+      "item_ids": [
+        "B12",
+        "B13",
+        "B16",
+        "B19"
+      ]
+    },
+    {
+      "gate": "npa_state",
+      "verdict": "pass",
+      "item_ids": [
+        "B17",
+        "B18",
+        "B19"
+      ]
+    },
+    {
+      "gate": "critical_role_delivery",
+      "verdict": "pass",
+      "item_ids": []
+    }
+  ],
+  "hypothesis_results": {
+    "value_proxy": "mixed",
+    "H1": "supported",
+    "H2_prerequisites": "mixed",
+    "H3": "supported",
+    "H4_proxy": "mixed",
+    "H5_content_proxy": "mixed"
+  },
+  "limitations": [
+    "No timed human observations or recipient feedback exist for this run; value_proxy, H2_prerequisites, H4_proxy and H5_content_proxy are proxy judgements only and cannot be fully supported from text quality alone.",
+    "Scenario B contains no critical items (all ground-truth critical flags false), so critical_recall, no_critical_low and critical_role_delivery pass vacuously rather than demonstrating capability.",
+    "HEAD planned_digest omitted three expected high-importance objects: OBJ-B10 (security vulnerability, item B10), OBJ-B09 (subsidy deadline, item B09) and EV-B1 (content-marking pilot, item B11); the security item reached no recipient at all.",
+    "OBJ-B20 was released in the PR planned_digest although its expected delivery list is empty (deterministic delivery_type_error); its search-only provenance, incompleteness caveat (B20 Контекст 7: 'может быть отправлен на проверку, но не выпускаться как установленный факт') and borderline value were not carried into the released text.",
+    "Released EV-B2 text states 'Комментарий GS Labs к моменту публикации не поступлен'; B15 only says the comment from the 'упомянутой организации' was not received. The specification to GS Labs is a coherent disambiguation (the operator's representative did comment) but is not an exact-quote match.",
+    "NPA version label 'v2_log_retention_12_months' differs as a string from the truth label 'v2_12_month_log' though the meaning (second revision adding 12-month log retention) matches; stage 'revised_draft', history [B17, B18] and the change summary are correct, and B19 was kept as secondary without overwriting official status.",
+    "Single-publication objects (OBJ-B07, OBJ-B08, OBJ-B09, OBJ-B10, OBJ-B20) were typed 'event' where ground truth says 'publication'.",
+    "Importance labels were degraded for several items feeding objects: B07 low vs medium, B11/B12/B14 medium vs high, B16 high vs medium; role sets were inexact for B07, B09, B11, B16, B17 and B20, driving the HEAD recall gap and PR over-delivery.",
+    "All 50 submitted evidence quotes were verified verbatim, and no forbidden claim from ground truth (e.g., 'Продукты GS Labs уязвимы', 'Правила утверждены', '«Орбита» выбрала GS Labs для всей сети') was asserted as fact in any released digest."
+  ]
+}

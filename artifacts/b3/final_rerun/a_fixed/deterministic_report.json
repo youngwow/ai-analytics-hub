@@ -1,0 +1,589 @@
+{
+  "run_id": "2512540e-cc89-4fe5-8deb-db6a909af5fe",
+  "scenario_id": "A",
+  "mode": "fixed",
+  "contract_errors": [],
+  "coverage": {
+    "visible_items": 20,
+    "decisions": 20
+  },
+  "discovery": {
+    "all_digest_objects_in_scenario": [
+      "EV-A1",
+      "EV-A2",
+      "NPA-A",
+      "OBJ-A07",
+      "OBJ-A08",
+      "OBJ-A09",
+      "OBJ-A20"
+    ],
+    "digest_objects_reachable_in_mode": [
+      "EV-A1",
+      "EV-A2",
+      "NPA-A",
+      "OBJ-A07",
+      "OBJ-A08",
+      "OBJ-A09"
+    ],
+    "reachable_digest_coverage": 0.8571428571428571,
+    "irrelevant_items_exposed_by_mode": 7
+  },
+  "item_labels": {
+    "relevance": {
+      "correct": 18,
+      "total": 20,
+      "accuracy": 0.9
+    },
+    "importance": {
+      "correct": 16,
+      "total": 20,
+      "accuracy": 0.8
+    },
+    "critical": {
+      "correct": 20,
+      "total": 20,
+      "accuracy": 1.0
+    },
+    "roles": {
+      "correct": 17,
+      "total": 20,
+      "exact_set_accuracy": 0.85
+    },
+    "review_policy": {
+      "correct": 14,
+      "total": 20,
+      "accuracy": 0.7
+    }
+  },
+  "classification_by_class": {
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 12,
+          "predicted": 12,
+          "precision": 0.9166666666666666,
+          "recall": 0.9166666666666666,
+          "f1": 0.9166666666666666
+        },
+        "borderline": {
+          "support": 1,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 7,
+          "predicted": 7,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 0.9583333333333333
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 7,
+          "predicted": 8,
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333
+        },
+        "medium": {
+          "support": 5,
+          "predicted": 7,
+          "precision": 0.5714285714285714,
+          "recall": 0.8,
+          "f1": 0.6666666666666666
+        },
+        "high": {
+          "support": 8,
+          "predicted": 5,
+          "precision": 1.0,
+          "recall": 0.625,
+          "f1": 0.7692307692307693
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 0.7897435897435897
+    }
+  },
+  "safety": {
+    "critical_recall": null,
+    "critical_item_recall": null,
+    "critical_object_recall": null,
+    "critical_delivery_recall": null,
+    "critical_recipient_recall": null,
+    "missing_critical_recipients": [],
+    "critical_items_in_low": [],
+    "all_submitted_evidence_quotes_verbatim": true,
+    "submitted_claims": 50,
+    "claim_support_by_meaning": "requires_semantic_judge",
+    "evidence_quote_checks": [
+      {
+        "object_id": "evt-6790867efb4d",
+        "claim_id": "A07:s1:c1",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-6790867efb4d",
+        "claim_id": "A07:s1:c2",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-6790867efb4d",
+        "claim_id": "A07:s1:c3",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-e4c13da537e2",
+        "claim_id": "A08:s1:c1",
+        "source_item_id": "A08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-e4c13da537e2",
+        "claim_id": "A08:s1:c2",
+        "source_item_id": "A08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-e4c13da537e2",
+        "claim_id": "A08:s1:c3",
+        "source_item_id": "A08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a554e3ebc121",
+        "claim_id": "A09:s1:c1",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a554e3ebc121",
+        "claim_id": "A09:s1:c2",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a554e3ebc121",
+        "claim_id": "A09:s1:c3",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-a554e3ebc121",
+        "claim_id": "A09:s1:c4",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-4a9acc597094",
+        "claim_id": "A10:s1:c1",
+        "source_item_id": "A10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-4a9acc597094",
+        "claim_id": "A10:s1:c2",
+        "source_item_id": "A10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A11:s1:c1",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A11:s1:c2",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A11:s1:c3",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A11:s1:c4",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A11:s1:c5",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A12:s1:c1",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A12:s1:c2",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A12:s1:c3",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A12:s1:c4",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A13:s1:c1",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A13:s1:c2",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A13:s1:c3",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d0e852ae8195",
+        "claim_id": "A13:s1:c4",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A14:s1:c1",
+        "source_item_id": "A14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A14:s1:c2",
+        "source_item_id": "A14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A14:s1:c3",
+        "source_item_id": "A14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A15:s1:c1",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A15:s1:c2",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A15:s1:c3",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A15:s1:c4",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A15:s1:c5",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A16:s1:c1",
+        "source_item_id": "A16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A16:s1:c2",
+        "source_item_id": "A16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-77f233f11afb",
+        "claim_id": "A16:s1:c3",
+        "source_item_id": "A16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c1",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c2",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c3",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c4",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c5",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c1",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c2",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c3",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c4",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c5",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A19:s1:c1",
+        "source_item_id": "A19",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A19:s1:c2",
+        "source_item_id": "A19",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A19:s1:c3",
+        "source_item_id": "A19",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A19:s1:c4",
+        "source_item_id": "A19",
+        "verbatim_quote": true
+      }
+    ]
+  },
+  "grouping": {
+    "pair_true_positive": 9,
+    "pair_false_positive": 0,
+    "pair_false_negative": 0,
+    "pair_precision": 1.0,
+    "pair_recall": 1.0,
+    "exact_expected_objects": 7,
+    "expected_objects": 7,
+    "predicted_objects": 7,
+    "exact_object_precision": 1.0,
+    "exact_object_recall": 1.0,
+    "unexpected_member_sets": [],
+    "missing_member_sets": [],
+    "object_attributes": {
+      "OBJ-A07": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "OBJ-A08": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "OBJ-A09": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "OBJ-A10": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "EV-A1": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": false,
+        "critical": true,
+        "roles": false
+      },
+      "EV-A2": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "NPA-A": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      }
+    }
+  },
+  "role_deliveries": {
+    "PR": {
+      "expected": [
+        "EV-A1",
+        "EV-A2",
+        "OBJ-A08",
+        "OBJ-A09"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A1",
+        "EV-A2",
+        "OBJ-A08",
+        "OBJ-A09",
+        "OBJ-A10"
+      ],
+      "precision": 0.8,
+      "recall": 1.0
+    },
+    "GR": {
+      "expected": [
+        "EV-A1",
+        "NPA-A",
+        "OBJ-A07"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A1",
+        "NPA-A",
+        "OBJ-A07",
+        "OBJ-A10"
+      ],
+      "precision": 0.75,
+      "recall": 1.0
+    },
+    "HEAD": {
+      "expected": [
+        "EV-A1",
+        "EV-A2",
+        "NPA-A",
+        "OBJ-A07",
+        "OBJ-A08",
+        "OBJ-A09"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A2",
+        "NPA-A",
+        "OBJ-A07",
+        "OBJ-A08",
+        "OBJ-A09"
+      ],
+      "precision": 1.0,
+      "recall": 0.8333333333333334
+    }
+  },
+  "delivery_type_errors": [
+    {
+      "recipient": "GR",
+      "object_id": "OBJ-A10",
+      "actual": "planned_digest",
+      "expected": []
+    },
+    {
+      "recipient": "PR",
+      "object_id": "OBJ-A10",
+      "actual": "planned_digest",
+      "expected": []
+    }
+  ],
+  "duplicate_deliveries": [],
+  "npa_state": {
+    "NPA-A": {
+      "present": true,
+      "current_stage": true,
+      "current_version": false,
+      "effective_from": true,
+      "history_ids": false,
+      "change_summary": "semantic_judge"
+    }
+  },
+  "not_scored_by_rules": [
+    "semantic groundedness beyond submitted evidence quotes",
+    "summary sufficiency and preservation of meaning",
+    "human task time and cognitive load",
+    "product-value verdicts H2/H4/H5"
+  ]
+}

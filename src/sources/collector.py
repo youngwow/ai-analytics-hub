@@ -14,6 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from typing import Callable
 from urllib.parse import urlsplit
+from uuid import uuid4
 
 import httpx
 
@@ -99,9 +100,15 @@ class Collector:
                         pool.submit(self._poll, s, states[s.id], client, started, since, backfill): s
                         for s in sources
                     }
+                    completed = []
                     for fut in as_completed(futures):
                         source = futures[fut]
-                        result, latency_ms = fut.result()
+                        completed.append((source, *fut.result()))
+                    # Network work remains concurrent, while persistence order is
+                    # stable. Global URL dedupe must not depend on which worker won.
+                    for source, result, latency_ms in sorted(
+                        completed, key=lambda row: row[0].id or 0
+                    ):
                         entry = self._persist(
                             source,
                             states[source.id],
@@ -171,6 +178,9 @@ class Collector:
         if status == "ok":
             report.sources_ok += 1
             report.docs_new += entry["new"]
+        elif status == "partial":
+            report.sources_partial += 1
+            report.docs_new += entry["new"]
         elif status == "not_modified":
             report.sources_not_modified += 1
         else:
@@ -209,6 +219,7 @@ class Collector:
         latency_ms: float,
     ) -> dict:
         now_iso = to_utc_iso(now) or ""
+        request_id = uuid4().hex
         state.last_fetch_at = now_iso
         entry = {
             "id": source.id,
@@ -224,6 +235,14 @@ class Collector:
             state.consecutive_failures += 1
             with self.db.transaction():
                 self.db.fetch_state.save(state)
+                self.db.fetch_artifacts.add(
+                    source_id=source.id,
+                    request_id=request_id,
+                    requested_at=now_iso,
+                    completed_at=now_iso,
+                    status="failed",
+                    warnings=[result.error],
+                )
             log.warning("✗ %s: %s", source.name, result.error)
             return {**entry, "status": "failed", "error": result.error}
 
@@ -234,10 +253,23 @@ class Collector:
             state.last_doc_count = 0
             with self.db.transaction():
                 self.db.fetch_state.save(state)
+                self.db.fetch_artifacts.add(
+                    source_id=source.id,
+                    request_id=request_id,
+                    requested_at=now_iso,
+                    completed_at=now_iso,
+                    status="not_modified",
+                )
             log.info("= %s: not modified (%.0f ms)", source.name, latency_ms)
             return {**entry, "status": "not_modified"}
 
         first_run = state.first_run
+        entry.update(
+            warnings=list(result.warnings),
+            fulltext_attempted=0,
+            fulltext_extracted=0,
+            fulltext_fallback=0,
+        )
         candidates = result.documents
         entry["seen"] = len(candidates)
         docs = self._drop_known(source, candidates)
@@ -249,17 +281,20 @@ class Collector:
         # A search source bounds its own recency (`days`), which may be wider than
         # the collect window; everything else is cut to the window here.
         docs = self._window_filter(docs, None if source.kind == "search" else since)
-        # Cap the batch, but never at the expense of adapter-generated documents
-        # without an origin URL (the search digest rides at the end of its batch).
-        cap = self.config.scraper.max_new_per_source
-        docs = docs[:cap] + [d for d in docs[cap:] if not d.url]
+        # Never discard an adapter's successfully returned tail here. Pagination
+        # budgets belong to the adapter and must be represented by continuation.
 
         if (
             client is not None
             and self.config.scraper.fetch_fulltext
             and any(d.needs_fulltext for d in docs)
         ):
-            self.fulltext.enrich(client, docs)
+            targets = [d for d in docs if d.needs_fulltext and d.url]
+            entry["fulltext_attempted"] = len(targets)
+            entry["fulltext_extracted"] = self.fulltext.enrich(client, docs)
+            entry["fulltext_fallback"] = sum(
+                bool(d.text or d.summary) for d in targets if not d.text
+            )
         if source.kind in ("html", "sitemap") and first_run and since is not None:
             # First look at a list page / undated sitemap entries: only keep what we
             # can date inside the window, otherwise the whole site menu becomes "news".
@@ -269,25 +304,66 @@ class Collector:
             self._finalize(d, now)
 
         inserted: list[str] = []
+        updated: list[str] = []
         with self.db.transaction():
             for d in docs:
-                if self.db.documents.exists(source.id, d.external_id):
-                    continue
-                self.db.documents.insert(d)
-                inserted.append(d.external_id)
+                existing = self.db.documents.row_by_external_id(source.id, d.external_id)
+                if existing is None:
+                    document_id = self.db.documents.insert(d)
+                    self.db.document_revisions.append(document_id, d)
+                    inserted.append(d.external_id)
+                elif existing["content_hash"] != d.content_hash:
+                    # Databases created before v4 have no baseline snapshot yet.
+                    if not self.db.document_revisions.list(int(existing["id"])):
+                        self.db.document_revisions.append(
+                            int(existing["id"]), RawDocument.from_row(existing)
+                        )
+                    self.db.documents.update(int(existing["id"]), d)
+                    self.db.document_revisions.append(int(existing["id"]), d)
+                    updated.append(d.external_id)
             if "etag" in result.state_update:
                 state.etag = result.state_update["etag"]
             if "last_modified" in result.state_update:
                 state.last_modified = result.state_update["last_modified"]
             if "cursor" in result.state_update:
                 state.cursor = dict(result.state_update["cursor"] or {})
+            if "native_cursor" in result.state_update:
+                state.native_cursor = result.state_update["native_cursor"]
+            if "high_watermark" in result.state_update:
+                state.high_watermark = result.state_update["high_watermark"]
+            if "continuation_cursor" in result.state_update:
+                state.continuation_cursor = dict(result.state_update["continuation_cursor"] or {})
+            if "backlog_status" in result.state_update:
+                state.backlog_status = str(result.state_update["backlog_status"] or "clear")
+            if "coverage_from" in result.state_update:
+                state.coverage_from = result.state_update["coverage_from"]
+            if "coverage_to" in result.state_update:
+                state.coverage_to = result.state_update["coverage_to"]
+            if "coverage_status" in result.state_update:
+                state.coverage_status = str(result.state_update["coverage_status"] or "unknown")
             state.last_error = None
             state.consecutive_failures = 0
             state.last_success_at = now_iso
-            state.last_doc_count = len(inserted)
+            state.last_doc_count = len(inserted) + len(updated)
             if seen_urls:
                 self.db.seen_urls.add(source.id, seen_urls, now_iso)
             self.db.fetch_state.save(state)
+            self.db.fetch_artifacts.add(
+                source_id=source.id,
+                request_id=request_id,
+                requested_at=now_iso,
+                completed_at=now_iso,
+                status="partial" if result.warnings else "ok",
+                manifest={
+                    "adapter": source.kind,
+                    "seen": len(candidates),
+                    "inserted": inserted,
+                    "updated": updated,
+                    "coverage_status": state.coverage_status,
+                    "backlog_status": state.backlog_status,
+                },
+                warnings=list(result.warnings),
+            )
 
         if result.source_title and _placeholder_name(source):
             source.name = result.source_title[:80]
@@ -301,23 +377,44 @@ class Collector:
             len(inserted),
             latency_ms,
         )
-        return {**entry, "status": "ok", "new": len(inserted), "new_external_ids": inserted}
+        return {
+            **entry,
+            "status": "partial" if result.warnings else "ok",
+            "new": len(inserted),
+            "updated": len(updated),
+            "new_external_ids": inserted,
+            "updated_external_ids": updated,
+        }
 
     def _drop_known(self, source: Source, docs: list[RawDocument]) -> list[RawDocument]:
         """Skip documents already stored, by (source, external_id) or by URL.
 
         The URL rule is skipped for section/home URLs and for documents without
         one (search digests): some regulator feeds link every item to the same
-        landing page.
+        landing page. Persistence order is stable, so cross-source URL ownership
+        cannot change with thread scheduling.
         """
         own = {source.url.rstrip("/"), source.fetch_url.rstrip("/")}
         out: list[RawDocument] = []
         for d in docs:
-            if self.db.documents.exists(source.id, d.external_id):
-                continue
+            existing = self.db.documents.row_by_external_id(source.id, d.external_id)
+            if existing is not None:
+                # Ordinary feeds use immutable item ids. Regulator/sitemap pages
+                # may change in place and must pass through version comparison.
+                mutable = source.category == "regulator" or source.kind == "sitemap"
+                same_observed_payload = (
+                    existing["title"] == d.title
+                    and existing["summary"] == d.summary
+                    and existing["text"] == d.text
+                    and existing["published_at"] == d.published_at
+                )
+                if not mutable or same_observed_payload:
+                    continue
             url = d.url.rstrip("/")
             has_path = bool(urlsplit(d.url).path.strip("/"))
-            if has_path and url not in own and self.db.documents.find_by_url(d.url):
+            same_document_id = int(existing["id"]) if existing is not None else None
+            found_id = self.db.documents.find_by_url(d.url) if has_path else None
+            if has_path and url not in own and found_id and found_id != same_document_id:
                 continue
             out.append(d)
         return out

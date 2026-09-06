@@ -1,0 +1,83 @@
+{
+  "object_results": [
+    {
+      "expected_object_id": "EV-D2A",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "partial",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    },
+    {
+      "expected_object_id": "EV-D2B",
+      "inclusion": "pass",
+      "membership": "pass",
+      "required_meanings": "pass",
+      "unsupported_claims": [],
+      "lost_positions": [],
+      "role_correctness": "pass",
+      "evidence_validity": "pass",
+      "importance_critical_correctness": "pass"
+    }
+  ],
+  "safety_gates": [
+    {
+      "gate": "critical_recall",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_critical_low",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "no_unsupported_released_fact",
+      "verdict": "pass",
+      "item_ids": [
+        "D201",
+        "D202",
+        "D203",
+        "D204",
+        "D205"
+      ]
+    },
+    {
+      "gate": "opinion_attribution",
+      "verdict": "pass",
+      "item_ids": [
+        "D205"
+      ]
+    },
+    {
+      "gate": "npa_state",
+      "verdict": "pass",
+      "item_ids": []
+    },
+    {
+      "gate": "critical_role_delivery",
+      "verdict": "pass",
+      "item_ids": []
+    }
+  ],
+  "hypothesis_results": {
+    "value_proxy": "not_tested",
+    "H1": "supported",
+    "H2_prerequisites": "mixed",
+    "H3": "supported",
+    "H4_proxy": "mixed",
+    "H5_content_proxy": "mixed"
+  },
+  "limitations": [
+    "No timed human observations were provided, so value_proxy is not_tested and H2/H4/H5 could only be judged as run-artifact proxies, never as user value inferred from text quality.",
+    "Hypothesis definitions for H1 and H3 were not included in the evaluation input; verdicts were assigned from the fully observable dimensions most consistent with this run: H1 = event grouping/boundary, H3 = grounding, opinion attribution and meaning preservation.",
+    "The scenario contains no critical items and no NPA content (npa_truth empty), so critical_recall, no_critical_low, npa_state and critical_role_delivery pass only vacuously; the system's handling of critical and NPA material is untested in this run.",
+    "HEAD role for EV-D2A was lost: item decisions D201 and D204 dropped HEAD, object evt-e5876df0ce2a carries only [PR] versus expected [PR, HEAD], and no HEAD delivery exists (role_deliveries HEAD recall 0.0). EV-D2A is non-critical, so critical_role_delivery is not failed, but role_correctness for EV-D2A is partial.",
+    "Item-level classification defects: D204 and D205 were predicted borderline/low versus ground-truth relevant/medium, and risk_flag was set for D202 and D204 where ground truth requires_review is false (review_policy 3/5). Object-level importance/critical attributes were still correct for both objects.",
+    "The released EV-D2A digest text states the same pilot facts twice (the D201 sentence and the D202 sentence restated in parallel instead of merged as a retelling of the same pilot), inflating reading load; this caps H4_proxy and H5_content_proxy at mixed, though no required meaning or independent opinion is lost and D202 was correctly not split into a separate object.",
+    "The unreleased impact_on_gs_labs field of evt-e5876df0ce2a contains statements contradicting its own sourced summary ('Продуктовый домен «Маяка» и его оператор не указаны', 'Для оценки значимости необходимо понимать, чей это пилот'), which conflict with D201/D202; this field is not part of the released digest text and therefore does not fail no_unsupported_released_fact, but it signals unreliability in the analysis layer."
+  ]
+}

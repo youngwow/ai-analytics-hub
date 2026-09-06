@@ -1,0 +1,47 @@
+{
+  "dataset_version": "v1.0.0",
+  "split": "development",
+  "usage": {
+    "model_calls": 1,
+    "input_tokens": 1738,
+    "output_tokens": 2170,
+    "wall_seconds": 15.86482425002032,
+    "provider_latency_ms": 15817
+  },
+  "npa_link_predictions": [
+    {
+      "case_id": "N02-positive-0",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N02-positive-1",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "D01-ai-law-vs-regional-ai",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "D02-ai-law-vs-telecom-reform",
+      "same_npa": false,
+      "relation": "different"
+    }
+  ],
+  "npa_state_predictions": [
+    {
+      "id": "n02-1",
+      "stage": "draft"
+    },
+    {
+      "id": "n02-2",
+      "stage": "revised_draft"
+    },
+    {
+      "id": "n02-3",
+      "stage": "adopted"
+    }
+  ]
+}

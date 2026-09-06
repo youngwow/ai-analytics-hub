@@ -1,0 +1,163 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v1.0.0",
+  "run_id": "edfa29b8-19bb-4537-a1e1-32fa688f270a",
+  "configuration_id": "b2-final-v1-r1",
+  "usage": {
+    "model_calls": 25,
+    "input_tokens": 30742,
+    "output_tokens": 121753,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 1067.240098292008,
+    "provider_latency_ms": 765150
+  },
+  "split": "holdout",
+  "contract_errors": [
+    "NPA state prediction IDs do not exactly match visible NPA states"
+  ],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 17,
+        "total": 20,
+        "accuracy": 0.85
+      },
+      "importance": {
+        "correct": 17,
+        "total": 20,
+        "accuracy": 0.85
+      },
+      "critical_or_escalate": {
+        "correct": 19,
+        "total": 20,
+        "accuracy": 0.95
+      },
+      "roles": {
+        "correct": 11,
+        "total": 20,
+        "exact_set_accuracy": 0.55
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 14,
+          "predicted": 11,
+          "precision": 1.0,
+          "recall": 0.7857142857142857,
+          "f1": 0.88
+        },
+        "borderline": {
+          "support": 3,
+          "predicted": 6,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "irrelevant": {
+          "support": 3,
+          "predicted": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.8488888888888889
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 6,
+          "predicted": 7,
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.923076923076923
+        },
+        "medium": {
+          "support": 4,
+          "predicted": 5,
+          "precision": 0.6,
+          "recall": 0.75,
+          "f1": 0.6666666666666665
+        },
+        "high": {
+          "support": 10,
+          "predicted": 8,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.8262108262108262
+    },
+    "roles_by_label": {
+      "GR": {
+        "support": 17,
+        "predicted": 15,
+        "precision": 1.0,
+        "recall": 0.8823529411764706
+      },
+      "HEAD": {
+        "support": 12,
+        "predicted": 9,
+        "precision": 1.0,
+        "recall": 0.75
+      },
+      "PR": {
+        "support": 2,
+        "predicted": 7,
+        "precision": 0.2857142857142857,
+        "recall": 1.0
+      }
+    }
+  },
+  "safety": {
+    "critical_total": 4,
+    "critical_in_low": [],
+    "submitted_claims": 50,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "review_policy": {
+    "available": true,
+    "reviewed_items": 17,
+    "workload_rate": 0.85,
+    "label_error_recall": 1.0,
+    "critical_recall": 1.0,
+    "unreviewed_label_error_ids": []
+  },
+  "event_grouping": {
+    "pair_precision": 1.0,
+    "pair_recall": 1.0,
+    "pair_f1": 1.0,
+    "b_cubed": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "false_merge_pairs": 0,
+    "false_split_pairs": 0
+  },
+  "npa": {
+    "link_identity_accuracy": 1.0,
+    "relation_accuracy": 0.9166666666666666,
+    "stage_accuracy": 1.0
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

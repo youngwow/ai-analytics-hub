@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "B2 AI prediction",
+  "type": "object",
+  "required": ["run_id", "configuration_id", "dataset_version", "split", "material_predictions", "event_clusters", "npa_link_predictions", "npa_state_predictions"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "configuration_id": {"type": "string", "minLength": 1},
+    "dataset_version": {"type": "string", "minLength": 1},
+    "split": {"enum": ["all", "development", "validation", "holdout", "rat"]},
+    "usage": {
+      "type": "object",
+      "properties": {
+        "model_calls": {"type": "integer", "minimum": 0},
+        "input_tokens": {"type": "integer", "minimum": 0},
+        "output_tokens": {"type": "integer", "minimum": 0},
+        "estimated_cost": {"type": "number", "minimum": 0},
+        "currency": {"type": "string"}
+      }
+    },
+    "material_predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "relevance", "importance", "critical_or_escalate", "roles", "summary", "impact", "claims"],
+        "properties": {
+          "id": {"type": "string"},
+          "relevance": {"enum": ["relevant", "borderline", "irrelevant", "unknown"]},
+          "importance": {"enum": ["low", "medium", "high", "critical"]},
+          "critical_or_escalate": {"type": "boolean"},
+          "roles": {"type": "array", "items": {"enum": ["PR", "GR", "HEAD"]}, "uniqueItems": true},
+          "summary": {"type": "string"},
+          "impact": {"type": "string"},
+          "review_required": {"type": "boolean"},
+          "review_reasons": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["text", "evidence_quote"],
+              "properties": {"text": {"type": "string"}, "evidence_quote": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "event_clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cluster_id", "member_ids"],
+        "properties": {
+          "cluster_id": {"type": "string"},
+          "member_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}
+        }
+      }
+    },
+    "npa_link_predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case_id", "same_npa", "relation"],
+        "properties": {"case_id": {"type": "string"}, "same_npa": {"type": "boolean"}, "relation": {"type": "string"}}
+      }
+    },
+    "npa_state_predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "stage"],
+        "properties": {"id": {"type": "string"}, "stage": {"type": "string"}}
+      }
+    }
+  }
+}
