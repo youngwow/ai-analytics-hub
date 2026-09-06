@@ -154,6 +154,17 @@ def _db(paths: ProjectPaths):
          {"func": cli._cmd_telegram_logout, "action": "logout", "yes": False}),
         (["telegram", "logout", "--yes"], {"func": cli._cmd_telegram_logout, "yes": True}),
         (["import-url", "https://a.ru/x"], {"func": cli._cmd_import_url, "url": "https://a.ru/x"}),
+        (
+            ["process"],
+            {"func": cli._cmd_process, "limit": None, "source": None, "since": None,
+             "profile": None, "force": False, "dry_run": False, "only_failed": False},
+        ),
+        (
+            ["process", "--limit", "5", "--source", "3", "--since", "2026-09-01",
+             "--profile", "2", "--force", "--only-failed"],
+            {"func": cli._cmd_process, "limit": 5, "source": 3, "since": "2026-09-01",
+             "profile": 2, "force": True, "dry_run": False, "only_failed": True},
+        ),
         (["docs"], {"func": cli._cmd_docs, "source": None, "limit": 20, "unprocessed": False}),
         (["docs", "--source", "1", "--limit", "5"], {"source": 1, "limit": 5}),
         (["docs", "--unprocessed"], {"func": cli._cmd_docs, "unprocessed": True}),

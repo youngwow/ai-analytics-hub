@@ -23,10 +23,12 @@ from src.repositories.database import (
 )
 
 NOW = "2026-09-02T12:00:00+00:00"
-# v5 — новейший шаг, поэтому литерал версии живёт здесь; более старые файлы
-# миграций сверяются с `max(_MIGRATIONS)`.
-CURRENT_VERSION = 5
+# Этот файл — про то, что заводит v5; следующие шаги едут следом, поэтому версия
+# сверяется с концом цепочки (литерал новейшего шага живёт в его собственном файле).
+CURRENT_VERSION = max(_MIGRATIONS)
 
+# Форма `processing_runs`, какой её оставила v5: v7 дописывает свои колонки в
+# конец, поэтому здесь проверяется именно начало списка.
 RUN_COLUMNS = [
     "id",
     "started_at",
@@ -98,14 +100,11 @@ def _columns(db: Database, table: str) -> list[str]:
 # ── версия ─────────────────────────────────────────────────────────────────
 
 
-def test_v5_is_the_newest_migration():
-    assert max(_MIGRATIONS) == CURRENT_VERSION
-
-
 def test_opening_a_v4_database_migrates_it_to_v5(v4_database):
     db = Database(v4_database)
     try:
         assert db.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
+        assert CURRENT_VERSION >= 5
     finally:
         db.close()
 
@@ -114,13 +113,15 @@ def test_an_in_memory_database_lands_on_v5_too(db):
     assert db.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
 
 
-def test_only_the_v5_step_is_logged_for_a_v4_database(v4_database, caplog):
+def test_the_steps_after_v4_are_logged_once_each(v4_database, caplog):
     """Индекс поиска v4 уже собран: его наполнение не должно запускаться повторно."""
     with caplog.at_level(logging.INFO, logger="db"):
         Database(v4_database).close()
 
     migrated = [r.getMessage() for r in caplog.records if "schema migrated" in r.getMessage()]
-    assert migrated == ["schema migrated to v5"]
+    assert migrated == [
+        f"schema migrated to v{version}" for version in range(5, CURRENT_VERSION + 1)
+    ]
     assert "поисковый индекс собран" not in caplog.text
 
 
@@ -131,7 +132,7 @@ def test_v5_adds_the_processing_runs_table_with_every_column(v4_database):
     db = Database(v4_database)
     try:
         assert "processing_runs" in _names(db, "table")
-        assert _columns(db, "processing_runs") == RUN_COLUMNS
+        assert _columns(db, "processing_runs")[: len(RUN_COLUMNS)] == RUN_COLUMNS
     finally:
         db.close()
 

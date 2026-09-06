@@ -62,11 +62,22 @@ def _run(**overrides) -> ProcessingRun:
     base = dict(
         started_at=NOW, finished_at=NOW, status="done", trigger="api",
         params={"limit": 5, "source_id": None, "since": "2026-09-01", "profile_id": None,
-                "force": False},
-        documents=3, clusters=2, items_new=2, items_joined=1, items_updated=0, degraded=1,
-        needs_review=1, calls=4, failed=0, elapsed_s=1.5, error="", id=8,
+                "force": False, "only_failed": False},
+        documents=3, processed=2, clusters=2, items_new=2, items_joined=1, items_updated=0,
+        degraded=1, needs_review=1, calls=4, failed=0, elapsed_s=1.5, error="",
+        heartbeat_at=NOW, id=8,
     )
     return ProcessingRun(**{**base, **overrides})
+
+
+def _wire(run: ProcessingRun) -> dict:
+    """Прогон в проводной форме: поля dataclass плюс вычисляемый `progress`."""
+    share = round(run.processed / run.documents, 3) if run.documents else None
+    return {**asdict(run), "progress": min(share, 1.0) if share is not None else None}
+
+
+# Поля ответа, которых нет в dataclass: считаются на границе, а не хранятся.
+COMPUTED = {ProcessingRunResponse: {"progress"}}
 
 
 ROUND_TRIPS = [
@@ -134,7 +145,11 @@ ROUND_TRIPS = [
     ids=[f"{cls.__name__}-{i}" for i, (cls, _) in enumerate(ROUND_TRIPS)],
 )
 def test_from_domain_round_trips_every_dataclass_field(response_cls, obj):
-    assert response_cls.from_domain(obj).model_dump() == asdict(obj)
+    dump = response_cls.from_domain(obj).model_dump()
+    computed = COMPUTED.get(response_cls, set())
+
+    assert set(dump) == set(asdict(obj)) | computed
+    assert {k: v for k, v in dump.items() if k not in computed} == asdict(obj)
 
 
 def test_probe_response_round_trips_the_probe_result():
@@ -263,31 +278,32 @@ def test_processing_run_list_response_wraps_the_history_in_order():
     response = ProcessingRunListResponse(runs=[ProcessingRunResponse.from_domain(r) for r in runs])
 
     assert [r.id for r in response.runs] == [2, 1]
-    assert response.model_dump() == {"runs": [asdict(r) for r in runs]}
+    assert response.model_dump() == {"runs": [_wire(r) for r in runs]}
 
 
 def test_processing_status_response_wraps_the_open_and_the_last_run():
     open_run, last = _run(id=3, status="running", finished_at=None), _run(id=2)
 
     response = ProcessingStatusResponse.from_domain(
-        {"running": open_run, "last": last, "unprocessed": 4, "llm_available": False}
+        {"running": open_run, "last": last, "unprocessed": 4, "failed": 1, "llm_available": False}
     )
 
     assert response.model_dump() == {
-        "running": asdict(open_run),
-        "last": asdict(last),
+        "running": _wire(open_run),
+        "last": _wire(last),
         "unprocessed": 4,
+        "failed": 1,
         "llm_available": False,
     }
 
 
 def test_processing_status_response_accepts_an_empty_queue():
     response = ProcessingStatusResponse.from_domain(
-        {"running": None, "last": None, "unprocessed": 0, "llm_available": True}
+        {"running": None, "last": None, "unprocessed": 0, "failed": 0, "llm_available": True}
     )
 
     assert response.model_dump() == {
-        "running": None, "last": None, "unprocessed": 0, "llm_available": True,
+        "running": None, "last": None, "unprocessed": 0, "failed": 0, "llm_available": True,
     }
 
 
@@ -298,7 +314,35 @@ def test_processing_status_response_accepts_what_the_service_returns(config, db)
     response = ProcessingStatusResponse.from_domain(service.queue_status())
 
     assert response.running.id == response.last.id == run.id
-    assert (response.unprocessed, response.llm_available) == (0, False)
+    assert (response.unprocessed, response.failed, response.llm_available) == (0, 0, False)
+
+
+# ── прогресс прогона: доля пройденного, а не «идёт» ────────────────────────
+
+
+@pytest.mark.parametrize(
+    ("documents", "processed", "expected"),
+    [
+        (0, 0, None),
+        (4, 0, 0.0),
+        (4, 1, 0.25),
+        (3, 1, 0.333),
+        (4, 4, 1.0),
+        (4, 7, 1.0),
+    ],
+    ids=["nothing-to-do", "just-started", "quarter", "rounded", "done", "over-count"],
+)
+def test_progress_is_the_share_of_documents_processed(documents, processed, expected):
+    run = _run(documents=documents, processed=processed)
+
+    progress = ProcessingRunResponse.from_domain(run).progress
+
+    assert progress == expected
+
+
+def test_progress_of_an_empty_run_is_none_not_zero():
+    """Ноль из нуля — не «0% сделано»: прогону нечего было брать."""
+    assert ProcessingRunResponse.from_domain(_run(documents=0, processed=0)).progress is None
 
 
 # ── сбор ───────────────────────────────────────────────────────────────────

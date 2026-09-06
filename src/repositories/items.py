@@ -374,7 +374,7 @@ class ItemTagRepo:
 
     def add(self, item_id: int, tags: Iterable[str], *, is_manual: bool = True) -> int:
         """Добавить теги, не трогая остальные (в отличие от `set_tags`)."""
-        rows = [(item_id, t, int(is_manual)) for t in dict.fromkeys(tags) if t]
+        rows = [(item_id, t.strip(), int(is_manual)) for t in dict.fromkeys(tags) if t and t.strip()]
         if not rows:
             return 0
         before = self._count(item_id)

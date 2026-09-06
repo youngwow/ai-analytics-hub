@@ -20,7 +20,15 @@ from src.services.processing_service import ProcessingService, run_in_background
 
 NOW = "2026-09-02T12:00:00+00:00"
 PROBLEM = "application/problem+json"
-DEFAULT_PARAMS = {"limit": None, "source_id": None, "since": None, "profile_id": None, "force": False}
+DEFAULT_PARAMS = {
+    "limit": None,
+    "source_id": None,
+    "since": None,
+    "profile_id": None,
+    "force": False,
+    "only_failed": False,
+}
+IDLE_QUEUE = {"running": None, "last": None, "unprocessed": 0, "failed": 0, "llm_available": True}
 FEED_URL = "https://a.ru/rss"
 
 
@@ -223,10 +231,11 @@ def test_run_records_a_done_row_with_the_report_counters_and_the_cli_trigger(ser
 
 
 def test_run_records_the_parameters_it_was_given(service, db):
-    service.run(limit=5, source_id=7, since="2026-09-01", force=True)
+    service.run(limit=5, source_id=7, since="2026-09-01", force=True, only_failed=True)
 
     assert db.processing_runs.latest().params == {
         "limit": 5, "source_id": 7, "since": "2026-09-01", "profile_id": None, "force": True,
+        "only_failed": True,
     }
 
 
@@ -299,6 +308,7 @@ def test_enqueue_opens_a_running_row_with_the_api_trigger(service, db):
     assert (run.status, run.trigger, run.started_at) == ("running", "api", NOW)
     assert run.params == {
         "limit": 5, "source_id": 2, "since": "2026-09-01", "profile_id": None, "force": True,
+        "only_failed": False,
     }
     assert db.processing_runs.running().id == run.id
 
@@ -365,9 +375,7 @@ def test_list_runs_is_newest_first_and_honours_the_limit(service, db):
 def test_queue_status_of_an_idle_service_with_one_document_waiting(service, db):
     _queue_document(db)
 
-    assert service.queue_status() == {
-        "running": None, "last": None, "unprocessed": 1, "llm_available": True,
-    }
+    assert service.queue_status() == {**IDLE_QUEUE, "unprocessed": 1}
 
 
 def test_queue_status_reports_the_open_run_as_both_running_and_last(service, db):
@@ -469,9 +477,7 @@ def test_the_processing_status_of_an_empty_hub(client):
     response = client.get("/api/v1/processing")
 
     assert response.status_code == 200
-    assert response.json() == {
-        "running": None, "last": None, "unprocessed": 0, "llm_available": True,
-    }
+    assert response.json() == IDLE_QUEUE
 
 
 def test_starting_a_run_answers_202_and_the_run_is_done_on_the_next_read(

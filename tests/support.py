@@ -13,11 +13,13 @@ from __future__ import annotations
 
 import copy
 import os
+import sqlite3
 from typing import Callable, Sequence
 
 import httpx
 
 from src.processing.llm import Completion
+from src.repositories.database import _MIGRATIONS
 
 FIXTURES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
 
@@ -45,6 +47,23 @@ EMPTY_CHANNEL_PAGE = (
 def read_fixture(name: str) -> bytes:
     with open(os.path.join(FIXTURES_DIR, name), "rb") as f:
         return f.read()
+
+
+def frozen_database(path: str, version: int) -> sqlite3.Connection:
+    """Открыть базу, застывшую на `PRAGMA user_version = version`.
+
+    Это установка, которую ещё не трогал новый шаг миграции: схема собрана
+    скриптами до `version` включительно, дальше — ничего. Тест наполняет её
+    сам и открывает уже через `Database`, чтобы увидеть настоящий переезд.
+    """
+    conn = sqlite3.connect(path)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
+    for step in range(1, version + 1):
+        conn.executescript(_MIGRATIONS[step])
+    conn.execute(f"PRAGMA user_version = {version}")
+    conn.commit()
+    return conn
 
 
 def default_raw_config() -> dict:

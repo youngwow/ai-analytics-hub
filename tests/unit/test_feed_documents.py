@@ -9,7 +9,7 @@ from __future__ import annotations
 import pytest
 
 from src.exceptions import QueryError
-from src.models.queries import DocumentQuery, FeedQuery
+from src.models.queries import DOCUMENT_ORDERS, DocumentQuery, FeedQuery
 
 PROBLEM = "application/problem+json"
 
@@ -92,8 +92,21 @@ def test_the_row_carries_what_the_unprocessed_list_shows(feed, unprocessed, corp
     assert row["source_id"] == corpus_sources["media"].id
     assert row["source_name"] == "Ведомости"
     assert row["published_at"] == "2026-09-04T15:00:00+00:00"
+    assert row["fetched_at"] == "2026-09-05T09:00:00+00:00"
+    assert row["last_error"] == ""
     assert row["chars"] == len("Полный текст на сорок символов ровно.")
     assert row["url"].endswith("free-1")
+
+
+def test_the_row_shows_why_a_document_is_still_here(feed, document_factory, corpus_sources):
+    """Без `last_error` «упал в прошлом прогоне» и «ещё не брали» выглядят одинаково."""
+    document_factory(
+        corpus_sources["media"], title="Упал в прошлом прогоне", last_error="RuntimeError: боль"
+    )
+
+    row = feed.documents(DocumentQuery.build(limit=50))["documents"][0]
+
+    assert row["last_error"] == "RuntimeError: боль"
 
 
 def test_the_newest_document_comes_first_and_the_undated_one_last(feed, unprocessed):
@@ -168,6 +181,148 @@ def test_the_query_matches_the_document_title(feed, unprocessed):
 
     assert _titles(result) == ["Документ постарше"]
     assert result["total"] == 1
+
+
+# ── поиск по подстроке: шаблонные символы ищутся как символы ───────────────
+
+
+@pytest.fixture
+def wildcards(document_factory, corpus_sources) -> dict[str, int]:
+    """Заголовки, в которых живут `%`, `_` и `\\` — то, на чём ломался `LIKE` без ESCAPE."""
+    media = corpus_sources["media"]
+    return {
+        "percent": document_factory(media, title="Скидка 100% на подписку"),
+        "underscore": document_factory(media, title="Файл отчёт_2026 подготовлен"),
+        "backslash": document_factory(media, title="Путь C:\\отчёты готов"),
+        "plain": document_factory(media, title="Обычный документ без знаков"),
+    }
+
+
+@pytest.mark.parametrize(
+    ("query", "key"),
+    [
+        ("100%", "percent"),
+        ("%", "percent"),
+        ("отчёт_2026", "underscore"),
+        ("_", "underscore"),
+        ("C:\\отчёты", "backslash"),
+        ("\\", "backslash"),
+    ],
+    ids=["percent-in-context", "bare-percent", "underscore-in-context", "bare-underscore",
+         "backslash-in-context", "bare-backslash"],
+)
+def test_a_like_wildcard_in_the_query_is_matched_literally(feed, wildcards, query, key):
+    result = feed.documents(DocumentQuery.build(q=query, limit=50))
+
+    assert _ids(result) == [wildcards[key]]
+    assert result["total"] == 1
+
+
+def test_an_underscore_does_not_stand_for_any_character(feed, wildcards):
+    """До ESCAPE «отчёт_2026» нашло бы и «отчёт 2026», и «отчётX2026»."""
+    assert _titles(feed.documents(DocumentQuery.build(q="отчёт_", limit=50))) == [
+        "Файл отчёт_2026 подготовлен"
+    ]
+
+
+def test_a_percent_does_not_match_everything(feed, wildcards):
+    result = feed.documents(DocumentQuery.build(q="100%%", limit=50))
+
+    assert result["total"] == 0
+
+
+def test_a_plain_substring_still_matches(feed, wildcards):
+    assert _ids(feed.documents(DocumentQuery.build(q="подписку", limit=50))) == [
+        wildcards["percent"]
+    ]
+
+
+# ── порядок: по публикации или по времени сбора ────────────────────────────
+
+
+@pytest.fixture
+def by_fetch(document_factory, corpus_sources) -> dict[str, int]:
+    """Свежая публикация, забранная позже всех, и старая, забранная первой."""
+    media = corpus_sources["media"]
+    return {
+        "published_first": document_factory(
+            media,
+            title="Опубликован раньше, забран позже",
+            published_at="2026-09-01T09:00:00+00:00",
+            fetched_at="2026-09-05T12:00:00+00:00",
+        ),
+        "fetched_first": document_factory(
+            media,
+            title="Опубликован позже, забран раньше",
+            published_at="2026-09-04T09:00:00+00:00",
+            fetched_at="2026-09-05T06:00:00+00:00",
+        ),
+    }
+
+
+def test_the_default_order_is_still_by_publication(feed, by_fetch):
+    assert _ids(feed.documents(DocumentQuery.build(limit=50))) == [
+        by_fetch["fetched_first"], by_fetch["published_first"]
+    ]
+
+
+def test_the_fetch_order_lists_what_arrived_last_first(feed, by_fetch):
+    """Очередь дежурного — это «что приехало», а не «что напечатали»."""
+    result = feed.documents(DocumentQuery.build(order="fetched", limit=50))
+
+    assert _ids(result) == [by_fetch["published_first"], by_fetch["fetched_first"]]
+
+
+def test_paging_in_fetch_order_repeats_nothing_and_keeps_the_order(feed, queue, by_fetch):
+    paged = _walk(feed, limit=2, order="fetched")
+
+    assert len(set(paged)) == len(paged) == 9
+    assert paged[:2] == _ids(feed.documents(DocumentQuery.build(order="fetched", limit=2)))
+
+
+def test_the_sort_field_follows_the_order(feed):
+    assert DocumentQuery.build().sort_field == "published_at"
+    assert DocumentQuery.build(order="published").sort_field == "published_at"
+    assert DocumentQuery.build(order="fetched").sort_field == "fetched_at"
+
+
+def test_the_orders_the_queue_knows(feed):
+    assert DOCUMENT_ORDERS == ("published", "fetched")
+
+
+@pytest.mark.parametrize("order", ["priority", "processed", "FETCHED", "дата"],
+                         ids=["feed-order", "feed-order-2", "upper", "cyrillic"])
+def test_an_unknown_order_is_a_validation_error(order):
+    with pytest.raises(QueryError, match="order") as excinfo:
+        DocumentQuery.build(order=order, limit=50)
+
+    assert excinfo.value.code == "validation_error"
+
+
+@pytest.mark.parametrize("order", [None, ""], ids=["absent", "empty"])
+def test_no_order_at_all_means_the_default_one(order):
+    """`?order=` из формы — это «не задано», а не ошибка."""
+    assert DocumentQuery.build(order=order, limit=50).order == "published"
+
+
+def test_the_order_is_part_of_the_cursor_fingerprint(feed, queue):
+    token = feed.documents(DocumentQuery.build(limit=3))["next_cursor"]
+
+    with pytest.raises(QueryError, match="другому набору фильтров") as excinfo:
+        feed.documents(DocumentQuery.build(limit=3, cursor=token, order="fetched"))
+
+    assert excinfo.value.code == "invalid_cursor"
+
+
+def test_a_fetch_order_cursor_is_refused_by_the_default_order(feed, queue):
+    token = feed.documents(DocumentQuery.build(limit=3, order="fetched"))["next_cursor"]
+
+    with pytest.raises(QueryError, match="другому набору фильтров"):
+        feed.documents(DocumentQuery.build(limit=3, cursor=token))
+
+
+def test_the_fingerprint_of_the_two_orders_differs():
+    assert DocumentQuery.build().fingerprint() != DocumentQuery.build(order="fetched").fingerprint()
 
 
 # ── неприменимые фильтры ───────────────────────────────────────────────────
@@ -438,3 +593,65 @@ def test_a_feed_cursor_is_refused_by_the_documents_endpoint(client, corpus, queu
 
     assert response.status_code == 400
     assert response.json()["code"] == "invalid_cursor"
+
+
+def test_the_fetch_order_is_available_over_http(client, by_fetch):
+    body = client.get("/api/v1/documents", params={"order": "fetched", "limit": 50}).json()
+
+    assert [row["id"] for row in body["documents"]] == [
+        by_fetch["published_first"], by_fetch["fetched_first"]
+    ]
+
+
+@pytest.mark.parametrize("order", ["priority", "дата"], ids=["feed-order", "cyrillic"])
+def test_an_unknown_order_is_a_400_problem(client, queue, order):
+    response = client.get("/api/v1/documents", params={"order": order})
+
+    assert response.status_code == 400
+    assert response.headers["content-type"] == PROBLEM
+    assert response.json()["code"] == "validation_error"
+
+
+def test_an_empty_order_in_the_query_string_falls_back_to_the_default(client, by_fetch):
+    body = client.get("/api/v1/documents", params={"order": "", "limit": 50}).json()
+
+    assert [row["id"] for row in body["documents"]] == [
+        by_fetch["fetched_first"], by_fetch["published_first"]
+    ]
+
+
+def test_a_cursor_from_the_other_order_is_refused_over_http(client, queue):
+    token = client.get("/api/v1/documents", params={"limit": 3}).json()["next_cursor"]
+
+    response = client.get(
+        "/api/v1/documents", params={"limit": 3, "cursor": token, "order": "fetched"}
+    )
+
+    assert response.status_code == 400
+    assert response.json()["code"] == "invalid_cursor"
+
+
+def test_the_document_row_carries_the_fetch_time_and_the_last_error_over_http(
+    client, document_factory, corpus_sources
+):
+    document_factory(
+        corpus_sources["media"],
+        title="Упал в прошлом прогоне",
+        fetched_at="2026-09-05T06:00:00+00:00",
+        last_error="RuntimeError: боль",
+    )
+
+    row = client.get("/api/v1/documents").json()["documents"][0]
+
+    assert row["fetched_at"] == "2026-09-05T06:00:00+00:00"
+    assert row["last_error"] == "RuntimeError: боль"
+
+
+def test_the_query_escapes_a_wildcard_over_http(client, document_factory, corpus_sources):
+    wanted = document_factory(corpus_sources["media"], title="Скидка 100% на подписку")
+    document_factory(corpus_sources["media"], title="Обычный документ")
+
+    body = client.get("/api/v1/documents", params={"q": "100%"}).json()
+
+    assert [row["id"] for row in body["documents"]] == [wanted]
+    assert body["total"] == 1

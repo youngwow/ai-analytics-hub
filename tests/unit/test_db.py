@@ -483,6 +483,7 @@ def test_runs_add_and_latest(db):
 
 def test_migration_to_v2_creates_every_processing_table(db):
     tables = {r[0] for r in db.conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+    # `items_fts` тоже родом из v2, но v6 его снял: у ленты один индекс `items_search`.
     assert {
         "clusters",
         "items",
@@ -493,15 +494,15 @@ def test_migration_to_v2_creates_every_processing_table(db):
         "company_profiles",
         "prompt_versions",
         "llm_calls",
-        "items_fts",
     } <= tables
 
 
-def test_migration_to_v2_creates_the_fts_sync_triggers(db):
+def test_the_card_write_path_carries_no_triggers(db):
+    """Три триггера `items_fts` из v2 сняты v6: запись карточки за них больше не платит."""
     triggers = {
         r[0] for r in db.conn.execute("SELECT name FROM sqlite_master WHERE type='trigger'")
     }
-    assert {"items_fts_ai", "items_fts_ad", "items_fts_au"} <= triggers
+    assert triggers == set()
 
 
 def test_migration_to_v2_adds_the_derived_columns_to_documents(db):
@@ -521,7 +522,7 @@ def test_reopening_a_database_keeps_v2_data_and_does_not_remigrate(tmp_path):
         assert second.conn.execute("PRAGMA user_version").fetchone()[0] == CURRENT_VERSION
         assert second.items.count() == 1
         assert second.items.get(item_id).title == "Минцифры расширило реестр"
-        assert [r["id"] for r in second.items.list(query="реестр")] == [item_id]
+        assert [r["id"] for r in second.items.list()] == [item_id]
     finally:
         second.close()
 
@@ -740,40 +741,19 @@ def test_items_list_carries_the_cluster_size_as_sources_count(db, feed):
     assert next(r for r in db.items.list() if r["id"] == feed["npa"])["sources_count"] == 3
 
 
-@pytest.mark.parametrize(
-    ("query", "expected"),
-    [
-        ("аккредитации", ["npa"]),
-        ("законопроект", ["npa"]),
-        ("просмотров", ["news"]),  # matches the summary, not the title
-        ("рекомендательный OR законопроект", ["npa", "news"]),
-        ("вообщенетакогослова", []),
-    ],
-    ids=["title-word", "title-word-2", "summary-word", "or-query", "no-hit"],
-)
-def test_items_list_full_text_query_goes_through_items_fts(db, feed, query, expected):
-    assert [r["id"] for r in db.items.list(query=query)] == [feed[name] for name in expected]
+def test_items_list_does_not_search_text_anymore(db, feed):
+    """Поиск живёт в `FeedRepository` (`items_search`); v6 снял второй индекс и этот путь."""
+    with pytest.raises(TypeError, match="query"):
+        db.items.list(query="аккредитации")
 
 
-def test_items_fts_follows_a_card_through_update_and_delete(db, feed):
-    item = db.items.get(feed["news"])
-    item.title = "Спутниковый оператор обновил телегид"
-    with db.transaction():
-        db.items.update(item)
-    assert [r["id"] for r in db.items.list(query="телегид")] == [feed["news"]]
-    assert db.items.list(query="рекомендательный") == []
-    with db.transaction():
-        db.conn.execute("DELETE FROM items WHERE id=?", (feed["news"],))
-    assert db.items.list(query="телегид") == []
-
-
-def test_items_list_full_text_query_combines_with_the_other_filters(db, feed):
-    assert [r["id"] for r in db.items.list(query="аккредитации", type_="npa")] == [feed["npa"]]
-    assert db.items.list(query="аккредитации", type_="news") == []
-    # The hidden card also mentions «аккредитации» and must stay out by default.
-    assert [r["id"] for r in db.items.list(query="аккредитации", include_hidden=True)] == [
+def test_items_list_combines_the_filters_it_does_take(db, feed):
+    assert [r["id"] for r in db.items.list(type_="npa", priority="high")] == [feed["npa"]]
+    assert db.items.list(type_="npa", priority="low") == []
+    # Скрытая карточка — тоже новость: под `include_hidden` видно обе, свежая первой.
+    assert [r["id"] for r in db.items.list(type_="news", include_hidden=True)] == [
         feed["hidden"],
-        feed["npa"],
+        feed["news"],
     ]
 
 

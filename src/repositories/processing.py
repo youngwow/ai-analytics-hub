@@ -165,8 +165,13 @@ class ProfileRepo:
         ]
 
     def save(self, profile: CompanyProfile) -> CompanyProfile:
-        """Insert or bump the version of an existing profile; never edits in place."""
+        """Insert or bump the version of an existing profile; never edits in place.
+
+        Отметка времени возвращается вместе с записью: иначе тело ответа на
+        создание расходится с тем, что потом отдаёт чтение.
+        """
         payload = json.dumps(profile.payload, ensure_ascii=False)
+        now = _now_iso()
         existing = self.conn.execute(
             "SELECT * FROM company_profiles WHERE name=?", (profile.name,)
         ).fetchone()
@@ -174,17 +179,18 @@ class ProfileRepo:
             cur = self.conn.execute(
                 "INSERT INTO company_profiles (name, payload, version, is_default, updated_at) "
                 "VALUES (?, ?, ?, ?, ?)",
-                (profile.name, payload, 1, int(profile.is_default), _now_iso()),
+                (profile.name, payload, 1, int(profile.is_default), now),
             )
             self.conn.commit()
-            profile.id, profile.version = int(cur.lastrowid), 1
+            profile.id, profile.version, profile.updated_at = int(cur.lastrowid), 1, now
             return profile
         version = (existing["version"] or 1) + 1
         self.conn.execute(
             "UPDATE company_profiles SET payload=?, version=?, updated_at=? WHERE id=?",
-            (payload, version, _now_iso(), existing["id"]),
+            (payload, version, now, existing["id"]),
         )
         self.conn.commit()
+        profile.updated_at = now
         profile.id, profile.version = int(existing["id"]), version
         return profile
 

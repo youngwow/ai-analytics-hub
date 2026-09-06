@@ -2,18 +2,25 @@
 
 Three steps, cheapest first (research.md, R-04): exact hash, then SimHash over
 shingles, then cosine over embeddings — but only among candidates the first two
-steps left standing. That blocking is what keeps a pure-Python cosine fast
-enough to need neither numpy nor a vector index.
+steps left standing.
+
+Косинусы считает numpy одним умножением матрицы на вектор: блокировка по SimHash
+отсеивает не всё, поэтому на окне в 2000 кандидатов и прогоне в 200 документов
+набегает 400 тысяч сравнений по 768 чисел. В чистом Python это была самая дорогая
+часть прогона; матрица кандидатов собирается один раз, строки нормированы заранее,
+и на документ приходится один вызов BLAS. Векторного индекса по-прежнему не нужно:
+окно кандидатов ограничено семью днями.
 """
 
 from __future__ import annotations
 
 import hashlib
-import math
 import re
 from array import array
 from dataclasses import dataclass
 from typing import Iterable, Sequence
+
+import numpy as np
 
 _TOKEN_RE = re.compile(r"[А-Яа-яЁёA-Za-z0-9]+")
 _BITS = 64
@@ -33,7 +40,7 @@ class Candidate:
 
     Вектор из BLOB'а раскодирован, норма посчитана: иначе на 2000 кандидатов ×
     200 документов приходится 400 тысяч раскодирований и вдвое больше корней —
-    самая дорогая часть прогона, а результат каждый раз один и тот же.
+    результат-то каждый раз один и тот же.
     """
 
     item_id: int
@@ -63,11 +70,78 @@ class Candidate:
 
 def prepare(rows: Iterable) -> list[Candidate]:
     """Подготовить пул кандидатов: раскодировать векторы и посчитать нормы."""
+    if isinstance(rows, CandidatePool):
+        return rows.candidates
     return [row if isinstance(row, Candidate) else Candidate.from_row(row) for row in rows]
 
 
+def pool(rows: Iterable) -> "CandidatePool":
+    """Пул кандидатов с матрицей эмбеддингов — строится один раз на прогон."""
+    return rows if isinstance(rows, CandidatePool) else CandidatePool(prepare(rows))
+
+
+class CandidatePool:
+    """Кандидаты прогона плюс матрица их нормированных векторов.
+
+    Косинусы ко всем кандидатам считаются одним умножением матрицы на вектор
+    запроса. Порядок кандидатов сохраняется: на нём держится выбор лучшего
+    совпадения (строго `>`, поэтому при равенстве побеждает первый).
+    """
+
+    def __init__(self, candidates: list[Candidate]):
+        self.candidates = candidates
+        usable = [
+            (position, candidate)
+            for position, candidate in enumerate(candidates)
+            if candidate.embedding and candidate.norm
+        ]
+        # В базе могут лежать векторы от прежней модели другой размерности:
+        # матрица из разных длин — это ValueError, поэтому берём преобладающую.
+        # Остальные не сравниваются вовсе — ровно как раньше, когда косинус
+        # разноразмерных векторов давал 0.0 и до порога не доходил.
+        width = _dominant_width([c for _, c in usable])
+        rows = [(position, c) for position, c in usable if len(c.embedding) == width]
+        self._positions = np.array([position for position, _ in rows], dtype=np.intp)
+        if rows:
+            matrix = np.array([c.embedding for _, c in rows], dtype=np.float64)
+            # Строки нормируются заранее: тогда косинус — это просто скалярное
+            # произведение на нормированный вектор запроса.
+            self._matrix = matrix / np.array([[c.norm] for _, c in rows], dtype=np.float64)
+        else:
+            self._matrix = np.empty((0, 0), dtype=np.float64)
+
+    def __iter__(self):
+        return iter(self.candidates)
+
+    def __len__(self) -> int:
+        return len(self.candidates)
+
+    def scores(self, embedding: Sequence[float] | None) -> np.ndarray | None:
+        """Косинусы ко всем кандидатам одним умножением; `None`, если считать нечего."""
+        if embedding is None or len(embedding) == 0 or not len(self._positions):
+            return None
+        query = np.asarray(embedding, dtype=np.float64)
+        norm = float(np.linalg.norm(query))
+        if not norm or query.shape[0] != self._matrix.shape[1]:
+            return None
+        result = np.zeros(len(self.candidates), dtype=np.float64)
+        result[self._positions] = self._matrix @ (query / norm)
+        return result
+
+
+def _dominant_width(candidates: list[Candidate]) -> int:
+    """Самая частая размерность вектора среди кандидатов (0, если их нет)."""
+    counts: dict[int, int] = {}
+    for candidate in candidates:
+        width = len(candidate.embedding)
+        counts[width] = counts.get(width, 0) + 1
+    return max(counts, key=lambda width: (counts[width], width)) if counts else 0
+
+
 def vector_norm(vector: Sequence[float]) -> float:
-    return math.sqrt(sum(a * a for a in vector)) if vector else 0.0
+    if vector is None or len(vector) == 0:
+        return 0.0
+    return float(np.linalg.norm(np.asarray(vector, dtype=np.float64)))
 
 
 @dataclass(frozen=True)
@@ -132,23 +206,27 @@ def decode_vector(blob: bytes | None) -> list[float]:
 
 
 def cosine(left: Sequence[float], right: Sequence[float]) -> float:
-    if not left or not right or len(left) != len(right):
+    """Косинус пары векторов. Пакетный путь считает то же самое матрицей."""
+    if left is None or right is None or len(left) == 0 or len(right) == 0:
         return 0.0
-    dot = sum(a * b for a, b in zip(left, right))
-    norm_left = math.sqrt(sum(a * a for a in left))
-    norm_right = math.sqrt(sum(b * b for b in right))
-    if not norm_left or not norm_right:
+    if len(left) != len(right):
         return 0.0
-    return dot / (norm_left * norm_right)
+    a = np.asarray(left, dtype=np.float64)
+    b = np.asarray(right, dtype=np.float64)
+    return cosine_prepared(a, float(np.linalg.norm(a)), b, float(np.linalg.norm(b)))
 
 
 def cosine_prepared(
     left: Sequence[float], left_norm: float, right: Sequence[float], right_norm: float
 ) -> float:
     """Косинус с заранее посчитанными нормами — то же число, вдвое меньше работы."""
-    if not left or not right or len(left) != len(right) or not left_norm or not right_norm:
+    if left is None or right is None or len(left) == 0 or len(right) == 0:
         return 0.0
-    return sum(a * b for a, b in zip(left, right)) / (left_norm * right_norm)
+    if len(left) != len(right) or not left_norm or not right_norm:
+        return 0.0
+    a = np.asarray(left, dtype=np.float64)
+    b = np.asarray(right, dtype=np.float64)
+    return float(a @ b) / (left_norm * right_norm)
 
 
 def centroid(vectors: Iterable[Sequence[float]]) -> list[float]:
@@ -180,9 +258,10 @@ def find_match(
     never joined here: their identity is the act number, decided by the service.
     """
     best: Match | None = None
-    # Норма запроса считается один раз, а не заново на каждого кандидата.
-    query_norm = vector_norm(embedding or [])
-    for candidate in prepare(candidates):
+    prepared = pool(candidates)
+    # Все косинусы сразу: дальше остаётся обычный обход в исходном порядке.
+    scores = prepared.scores(embedding)
+    for position, candidate in enumerate(prepared.candidates):
         if candidate.type == "npa":
             continue
         distance = hamming(text_simhash, candidate.simhash)
@@ -193,8 +272,8 @@ def find_match(
                     candidate.item_id, candidate.cluster_id, score, f"simhash d={distance}"
                 )
             continue
-        if embedding and candidate.embedding:
-            score = cosine_prepared(embedding, query_norm, candidate.embedding, candidate.norm)
+        if scores is not None and candidate.embedding:
+            score = float(scores[position])
             if score >= threshold and (best is None or score > best.score):
                 best = Match(
                     candidate.item_id, candidate.cluster_id, score, f"cosine {score:.3f}"

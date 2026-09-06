@@ -12,6 +12,8 @@ from src.processing.pipeline import Draft
 from src.repositories import Database
 from src.services.processing_service import ProcessingService, _Unit
 
+NOW = "2026-09-02T12:00:00+00:00"
+
 
 @pytest.fixture
 def db(tmp_path):
@@ -120,3 +122,69 @@ def test_run_commits_cards_and_counters_before_later_drafts(db, monkeypatch):
     result = svc.run(limit=2)
     assert result.items_new == 2
     assert db.processing_runs.latest().status == 'done'
+
+
+def _queued_units(db, count: int) -> list[_Unit]:
+    """`count` собранных документов и готовые к записи единицы поверх них."""
+    source = db.sources.add(
+        Source(name='Local', url='manual://progress', fetch_url='manual://progress', kind='manual')
+    )
+    units = []
+    for n in range(1, count + 1):
+        doc = RawDocument(
+            source_id=source.id, external_id=str(n), url=f'manual://{n}', title=str(n),
+            text=f'Текст {n}', published_at=NOW, fetched_at=NOW,
+        )
+        with db.transaction():
+            doc_id = db.documents.insert(doc)
+        units.append(
+            _Unit(document_id=doc_id, document=doc, norm_text=f'Текст {n}',
+                  simhash=f'{n:016x}', members=[doc_id])
+        )
+    return units
+
+
+def test_progress_publishes_the_processed_count_and_a_heartbeat(db, frozen_clock):
+    run = db.processing_runs.start({})
+
+    db.processing_runs.progress(run.id, {"documents": 10, "processed": 4, "items_new": 3})
+
+    stored = db.processing_runs.get(run.id)
+    assert (stored.documents, stored.processed) == (10, 4)
+    assert stored.heartbeat_at == NOW
+
+
+def test_a_closed_run_gets_no_heartbeat(db, frozen_clock):
+    """Биение застрявшего прогона — единственный признак жизни, врать им нельзя."""
+    run = db.processing_runs.start({})
+    db.processing_runs.finish(run.id, {"documents": 1, "processed": 1})
+
+    db.processing_runs.progress(run.id, {"documents": 9, "processed": 9})
+
+    stored = db.processing_runs.get(run.id)
+    assert (stored.documents, stored.processed) == (1, 1)
+    assert stored.heartbeat_at is None
+
+
+def test_the_run_publishes_progress_after_every_unit_not_only_at_the_end(
+    db, monkeypatch, frozen_clock
+):
+    svc = service(db)
+    units = _queued_units(db, 2)
+    seen: list[tuple[int, int, str | None]] = []
+
+    def drafts(values, company, on_ready):
+        for value in values:
+            value.draft = Draft(title=value.document.title, summary=['Итог.'])
+            on_ready(value)
+            row = db.processing_runs.running()
+            seen.append((row.documents, row.processed, row.heartbeat_at))
+
+    monkeypatch.setattr(svc, '_prepare', lambda rows, embed: units)
+    monkeypatch.setattr(svc, '_draft_all', drafts)
+
+    report = svc.run(limit=2)
+
+    assert seen == [(2, 1, NOW), (2, 2, NOW)]
+    assert report.processed == 2
+    assert db.processing_runs.latest().processed == 2

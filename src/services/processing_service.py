@@ -298,8 +298,9 @@ class ProcessingService:
         """
         units: list[_Unit] = []
         window = self._window_start()
-        # Пул кандидатов готовится один раз на прогон, а не на каждый документ.
-        candidates = dedup.prepare(self.db.documents.clustered_candidates(since=window))
+        # Пул кандидатов готовится один раз на прогон, а не на каждый документ:
+        # векторы раскодированы, матрица нормирована, косинусы считаются пачкой.
+        candidates = dedup.pool(self.db.documents.clustered_candidates(since=window))
         texts: list[str] = []
         pending: list[_Unit] = []
 

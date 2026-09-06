@@ -21,12 +21,18 @@ CREATED = [
     "POST /api/v1/items",
     "POST /api/v1/items/{item_id}/events",
     "POST /api/v1/items/{item_id}/notes",
+    "POST /api/v1/profiles",
     "POST /api/v1/sources",
 ]
 ACCEPTED = [
     "POST /api/v1/collection/runs",
     "POST /api/v1/processing/runs",
 ]
+# Выгрузки отдают файл: у них нет `response_model`, поэтому и `$ref` в схеме нет.
+FILE_DOWNLOADS = {
+    "GET /api/v1/export/feed.xml": "application/rss+xml",
+    "GET /api/v1/export/items.csv": "text/csv",
+}
 # Маршруты, появившиеся вместе с очередью ИИ, мониторингом, архивом и хронологией.
 ADDED_OPERATIONS = {
     "GET /api/v1/processing",
@@ -40,6 +46,18 @@ ADDED_OPERATIONS = {
     "POST /api/v1/items/{item_id}/events",
     "POST /api/v1/items/{item_id}/archive",
     "POST /api/v1/items/{item_id}/unarchive",
+}
+# Маршруты плана 2026-09-05: массовые правки, выгрузки, профиль компании.
+BACKEND_2026_09_05_OPERATIONS = {
+    "POST /api/v1/items/tags/bulk",
+    "POST /api/v1/items/archive/bulk",
+    "GET /api/v1/export/feed.xml",
+    "GET /api/v1/export/items.csv",
+    "GET /api/v1/profiles",
+    "GET /api/v1/profiles/active",
+    "POST /api/v1/profiles",
+    "GET /api/v1/profiles/{profile_id}",
+    "POST /api/v1/profiles/{profile_id}/default",
 }
 
 
@@ -62,17 +80,31 @@ def _schema_ref(operation: dict, code: str) -> str:
     return operation["responses"][code]["content"]["application/json"]["schema"]["$ref"]
 
 
-def test_every_operation_has_a_success_response_with_a_named_schema(client):
+def test_every_json_operation_has_a_success_response_with_a_named_schema(client):
     schema = client.get("/openapi.json").json()
 
     operations = _operations(schema)
 
-    assert len(operations) >= 39
+    assert len(operations) >= 49
     for name, operation in operations.items():
+        if name in FILE_DOWNLOADS:
+            continue  # выгрузки отдают файл, а не модель — проверяются отдельно
         success = _success(operation)
         assert success is not None, name
         assert "content" in success, name
         assert "$ref" in success["content"]["application/json"]["schema"], name
+
+
+@pytest.mark.parametrize(("name", "media_type"), sorted(FILE_DOWNLOADS.items()), ids=lambda v: v)
+def test_a_file_download_declares_its_media_type_and_a_string_body(client, name, media_type):
+    """У выгрузки нет модели ответа, но контракт всё равно объявлен: тип и тело-строка."""
+    operation = _operations(client.get("/openapi.json").json())[name]
+
+    content = operation["responses"]["200"]["content"]
+
+    assert list(content) == [media_type]
+    assert content[media_type]["schema"] == {"type": "string"}
+    assert "application/json" not in content
 
 
 def test_no_operation_declares_two_success_codes(client):
@@ -105,6 +137,12 @@ def test_the_new_routes_are_all_declared(client):
     assert ADDED_OPERATIONS <= set(operations)
 
 
+def test_the_bulk_export_and_profile_routes_are_declared(client):
+    operations = _operations(client.get("/openapi.json").json())
+
+    assert BACKEND_2026_09_05_OPERATIONS <= set(operations)
+
+
 @pytest.mark.parametrize(
     ("name", "code", "ref"),
     [
@@ -116,6 +154,14 @@ def test_the_new_routes_are_all_declared(client):
         ("POST /api/v1/items/{item_id}/events", "201", "#/components/schemas/NpaEventResponse"),
         ("POST /api/v1/items/{item_id}/archive", "200", "#/components/schemas/ArchiveResponse"),
         ("POST /api/v1/items/{item_id}/unarchive", "200", "#/components/schemas/ArchiveResponse"),
+        ("POST /api/v1/items/tags/bulk", "200", "#/components/schemas/BulkItemsResponse"),
+        ("POST /api/v1/items/archive/bulk", "200", "#/components/schemas/BulkItemsResponse"),
+        ("GET /api/v1/profiles", "200", "#/components/schemas/ProfileListResponse"),
+        ("GET /api/v1/profiles/active", "200", "#/components/schemas/ProfileResponse"),
+        ("POST /api/v1/profiles", "201", "#/components/schemas/ProfileResponse"),
+        ("GET /api/v1/profiles/{profile_id}", "200", "#/components/schemas/ProfileResponse"),
+        ("POST /api/v1/profiles/{profile_id}/default", "200",
+         "#/components/schemas/ProfileResponse"),
     ],
     ids=[
         "processing-run",
@@ -126,6 +172,13 @@ def test_the_new_routes_are_all_declared(client):
         "npa-event",
         "archive",
         "unarchive",
+        "bulk-tags",
+        "bulk-archive",
+        "profiles-list",
+        "profiles-active",
+        "profiles-save",
+        "profiles-get",
+        "profiles-default",
     ],
 )
 def test_the_new_routes_are_declared_with_their_response_schema(client, name, code, ref):
@@ -152,11 +205,27 @@ def test_the_documents_schema_carries_the_cursor(client):
     assert "next_cursor" in documents
 
 
-def test_the_literal_item_paths_come_before_the_parametrised_one(client):
+@pytest.mark.parametrize(
+    "literal",
+    [
+        "/api/v1/items/facets",
+        "/api/v1/items/bulk",
+        "/api/v1/items/tags/bulk",
+        "/api/v1/items/archive/bulk",
+    ],
+    ids=lambda p: p.rsplit("/items/", 1)[1],
+)
+def test_the_literal_item_paths_come_before_the_parametrised_one(client, literal):
     paths = list(client.get("/openapi.json").json()["paths"])
 
-    assert paths.index("/api/v1/items/facets") < paths.index("/api/v1/items/{item_id}")
-    assert paths.index("/api/v1/items/bulk") < paths.index("/api/v1/items/{item_id}")
+    assert paths.index(literal) < paths.index("/api/v1/items/{item_id}")
+
+
+def test_the_literal_profile_path_comes_before_the_parametrised_one(client):
+    """Иначе «active» уедет в разбор `int` и вернёт 422 вместо профиля (R-09)."""
+    paths = list(client.get("/openapi.json").json()["paths"])
+
+    assert paths.index("/api/v1/profiles/active") < paths.index("/api/v1/profiles/{profile_id}")
 
 
 def test_the_literal_processing_path_comes_before_the_parametrised_one(client):
