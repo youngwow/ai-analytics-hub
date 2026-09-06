@@ -49,11 +49,12 @@ export interface SourceUpdate { url?: string; type?: string; fetch_url?: string;
 export interface ManualResult { id: number | null; document_id: number; origin: string; processing_status: string }
 
 export interface NpaEventCreate { status: string; occurred_at?: string; source_url: string; note: string }
-export interface ProcessingRunRequest { limit?: number; source_id?: number; since?: string; profile_id?: number; force: boolean; only_failed?: boolean }
+export interface ProcessingRunRequest { limit?: number | null; source_id?: number; since?: string; profile_id?: number; force: boolean; only_failed?: boolean }
 export interface ProcessingRun {
   id: number; started_at: string; finished_at: string | null; status: 'running' | 'done' | 'failed'; trigger: string
   params: Record<string, unknown>; documents: number; processed: number; progress: number | null; heartbeat_at: string | null; clusters: number; items_new: number; items_joined: number
   items_updated: number; degraded: number; needs_review: number; calls: number; failed: number; elapsed_s: number; error: string
+  stop_requested: boolean; stopped: boolean
 }
 export interface ProcessingStatus { running: ProcessingRun | null; last: ProcessingRun | null; unprocessed: number; failed: number; llm_available: boolean }
 export interface CompanyProfile { id: number; name: string; payload: Record<string, unknown>; version: number; is_default: boolean; updated_at: string }
@@ -65,9 +66,9 @@ export interface Quality {
   by_stage: { stage: string; status: string; calls: number; avg_latency_ms: number; tokens_in: number; tokens_out: number }[]
   by_day: { day: string; calls: number; tokens_in: number; tokens_out: number; failed: number }[]
 }
-export interface CollectionRunRequest { source_ids?: number[]; due_only: boolean; backfill: boolean; force: boolean }
+export interface CollectionRunRequest { source_ids?: number[]; due_only: boolean; backfill: boolean; force: boolean; date_window_hours?: number }
 export interface CollectionStatus {
-  running: boolean; busy: boolean; interval_seconds: number; started_at: string | null; next_tick_at: string | null
+  running: boolean; busy: boolean; interval_seconds: number; date_window_hours: number; started_at: string | null; next_tick_at: string | null
   cycles: number; last_error: string; due_sources: number
   last_collect: { id: number; started_at: string; finished_at: string; sources_ok: number; sources_fail: number; sources_not_modified: number; docs_new: number } | null
 }

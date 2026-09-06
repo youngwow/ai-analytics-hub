@@ -46,6 +46,7 @@ export function harness() {
       if (path === '/processing/runs' && call.method === 'POST') return json(processingRun, 202)
       if (path === '/processing/runs') return json({ runs: [] })
       if (path === '/processing/runs/7') return json(processingRun)
+      if (path === '/processing/runs/7/stop') return json({ ...processingRun, stop_requested: true })
       if (path.startsWith('/collection')) return json(collection, path.endsWith('/runs') ? 202 : 200)
       if (path === '/documents') return json({ documents: [], total: 0, next_cursor: null, took_ms: 1 })
       if (path === '/sources' && call.method === 'GET') return json({ sources: [source] })

@@ -112,6 +112,23 @@ class ProcessingRunRepo:
         )
         self.conn.commit()
 
+    def request_stop(self, run_id: int) -> None:
+        self.conn.execute(
+            "UPDATE processing_runs SET params=json_set(params, '$.stop_requested', json('true')) "
+            "WHERE id=? AND status='running'", (run_id,),
+        )
+        self.conn.commit()
+
+    def stop(self, run_id: int) -> None:
+        # Keep the existing database status constraint; expose a separate stopped
+        # flag so user cancellation is distinguishable from a processing error.
+        self.conn.execute(
+            "UPDATE processing_runs SET status='failed', finished_at=?, "
+            "params=json_set(params, '$.stopped', json('true')), error='Остановлен пользователем' "
+            "WHERE id=? AND status='running'", (_now_iso(), run_id),
+        )
+        self.conn.commit()
+
     def get(self, run_id: int) -> ProcessingRun | None:
         row = self.conn.execute("SELECT * FROM processing_runs WHERE id=?", (run_id,)).fetchone()
         return ProcessingRun.from_row(row) if row else None

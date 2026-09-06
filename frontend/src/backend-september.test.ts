@@ -40,7 +40,7 @@ describe('processing telemetry and retries', () => {
     // Locate by label so adding collection options cannot change this action.
     const label = h.app().findAll('label').find(label => label.text() === 'Только сбойные документы')!
     await label.get('input').setValue(true); await h.click('Обработать очередь ИИ')
-    expect(last('/processing/runs').body).toMatchObject({ only_failed: true, profile_id: 1, limit: 10 })
+    expect(last('/processing/runs').body).toMatchObject({ only_failed: true, profile_id: 1, limit: null })
   })
   it('shows document-based progress and heartbeat without mistaking clusters for documents', async () => {
     h.handle(call => call.url.pathname === '/api/v1/processing' ? json({ ...processing, failed: 3, running: { ...processingRun, documents: 10, processed: 6, clusters: 2, progress: 0.6, heartbeat_at: '2026-01-01T00:01:00Z' } }) : undefined)

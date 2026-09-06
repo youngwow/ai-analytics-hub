@@ -115,7 +115,7 @@ class SqliteDocumentRepository(DocumentRepository):
 
     def unprocessed(
         self,
-        limit: int = 200,
+        limit: int | None = 200,
         source_id: int | None = None,
         since: str | None = None,
         force: bool = False,
@@ -142,7 +142,7 @@ class SqliteDocumentRepository(DocumentRepository):
             params.append(since)
         weight, weight_params = _category_rank(category_weights)
         params.extend(weight_params)
-        params.append(limit)
+        params.append(-1 if limit is None else limit)
         return list(
             self.conn.execute(
                 "SELECT d.* FROM documents d "

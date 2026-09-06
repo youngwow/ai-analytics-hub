@@ -64,6 +64,11 @@ class ProcessingReport:
         return int(sum(self.latencies_ms) / len(self.latencies_ms)) if self.latencies_ms else 0
 
 
+class ProcessingStopped(Exception):
+    def __init__(self, report: ProcessingReport):
+        self.report = report
+
+
 @dataclass
 class _Unit:
     """One prospective card: the canonical document plus everything joining it."""
@@ -89,6 +94,7 @@ class ProcessingService:
         provider: LLMProvider | None = None,
         embedder: EmbeddingProvider | None = None,
     ):
+        self._run_id: int | None = None
         self.config = config
         self.db = db
         self.provider = provider
@@ -128,12 +134,17 @@ class ProcessingService:
                 if run_id is not None
                 else self.db.processing_runs.start(params, trigger=trigger)
             )
+        self._run_id = record.id if record else None
         try:
             report = self._run(
                 limit=limit, source_id=source_id, since=since, profile_id=profile_id,
                 force=force, dry_run=dry_run, only_failed=only_failed,
                 progress_run_id=record.id if record else None,
             )
+        except ProcessingStopped as e:
+            if record is not None:
+                self.db.processing_runs.stop(record.id)
+            return e.report
         except Exception as e:
             if record is not None:
                 self.db.processing_runs.fail(record.id, f"{type(e).__name__}: {e}")
@@ -174,6 +185,15 @@ class ProcessingService:
             raise RunNotFoundError(f"прогон #{run_id} не найден")
         return run
 
+    def stop_run(self, run_id: int) -> ProcessingRun:
+        self.get_run(run_id)
+        self.db.processing_runs.request_stop(run_id)
+        return self.get_run(run_id)
+
+    def _stop_requested(self) -> bool:
+        run = self.db.processing_runs.get(self._run_id) if self._run_id is not None else None
+        return bool(run and run.params.get("stop_requested"))
+
     def list_runs(self, limit: int = 20) -> list[ProcessingRun]:
         return self.db.processing_runs.list(limit)
 
@@ -207,7 +227,12 @@ class ProcessingService:
             if progress_run_id is not None:
                 self.db.processing_runs.progress(progress_run_id, _counters(report))
 
-        limit = limit or self.config.processing.max_new_per_run
+        def check_stop() -> None:
+            if self._stop_requested():
+                publish()
+                raise ProcessingStopped(report)
+
+        check_stop()
         rows = self.db.documents.unprocessed(
             limit=limit,
             source_id=source_id,
@@ -236,6 +261,7 @@ class ProcessingService:
         units = self._prepare(rows, embed=not dry_run) if rows else []
         report.clusters = len(units)
         publish()
+        check_stop()
         if dry_run:
             report.items_updated = len(carded)
             report.elapsed_s = time.monotonic() - started
@@ -273,12 +299,15 @@ class ProcessingService:
             publish()
 
         for unit in units:
+            check_stop()
             if unit.join_item_id is not None:
                 save_unit(unit)
         fresh = [u for u in units if u.join_item_id is None]
         self._draft_all(fresh, company, on_ready=save_unit)
+        check_stop()
 
         for item_id in dict.fromkeys(carded):
+            check_stop()
             try:
                 self.reprocess(item_id, profile_id=profile_id)
                 report.items_updated += 1
@@ -287,6 +316,7 @@ class ProcessingService:
                 log.error("карточка #%s не пересобрана: %s", item_id, e)
             report.processed += 1
             publish()
+        check_stop()
         report.elapsed_s = time.monotonic() - started
         return report
 
@@ -376,7 +406,7 @@ class ProcessingService:
 
     def _draft_all(self, units: list[_Unit], company: CompanyProfile, on_ready=None) -> None:
         """The slow part: one model call per cluster, bounded by processing.concurrency."""
-        if not units:
+        if not units or self._stop_requested():
             return
         workers = max(1, min(self.config.processing.concurrency, len(units)))
 
@@ -391,6 +421,8 @@ class ProcessingService:
 
         if workers == 1:
             for unit in units:
+                if self._stop_requested():
+                    break
                 work(unit)
                 if on_ready is not None:
                     on_ready(unit)
@@ -409,6 +441,8 @@ class ProcessingService:
                     if on_ready is not None:
                         on_ready(unit)  # SQLite stays on the owner thread.
                 for _ in done:
+                    if self._stop_requested():
+                        break
                     unit = next(remaining, None)
                     if unit is not None:
                         pending[pool.submit(work, unit)] = unit

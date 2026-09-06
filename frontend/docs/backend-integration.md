@@ -59,7 +59,7 @@ Automated component tests use isolated HTTP fixtures to cover UI successes and f
 
 External media/Telegram availability, paid search, LLM output quality, Docker networking and real-browser rendering require their corresponding services/runtime. They are not simulated as successful checks.
 
-Latest local validation: **149 frontend tests passed**, **75 live integration checks passed**, and **production build with Vue/TypeScript checking passed**.
+Latest local validation: **160 frontend tests passed**, **83 live integration checks passed**, and **production build with Vue/TypeScript checking passed**.
 
 ## Compatibility with the updated backend
 
@@ -94,3 +94,14 @@ Quality date bounds apply to model-call telemetry. Card/queue counters describe 
 Bulk failures preserve the selection and tag draft. Successful edits refresh the feed and facets. Exports use the server's CSV/RSS response, validate its media type, and enforce visible/nonarchived scope even when the screen includes hidden or archived cards.
 
 Live integration now also verifies profile creation/versioning/activation, bulk tags/archive persistence, CSV/RSS content and note exclusion, collection-time cursors, processing progress/heartbeat, failed-only retries and quality windows. No external LLM requests are made by the test suite.
+
+## Digest, search and worker controls — 2026-09-07
+
+- Markdown digests render headings, lists, links, tables and code in a preview. Editing and download retain the Markdown source; JSON stays literal. Raw HTML is disabled and unsafe link protocols are rejected by the renderer.
+- Enter `#48` to find card 48 by its exact ID. Other feed filters, visibility rules, archive selection and facets still apply. Bare numbers retain normal text-search behavior.
+- Processing defaults to no limit (`limit: null`, or omitted): all matching documents present when the run starts. Enable the limit checkbox to send a positive integer instead. Newly collected documents wait for a subsequent run.
+- `POST /processing/runs/{id}/stop` persists a stop request. Already submitted documents finish and save their results; no additional documents are scheduled. The UI shows stopping until those requests finish, then permits a new run. Unprocessed documents remain in the queue. Repeated stop requests are safe, and completed runs are unchanged. The API adds `stop_requested` and `stopped`; stopped runs retain the existing database terminal status constraint and are identified by the explicit stopped flag.
+- Monitoring intervals are entered in whole minutes (minimum one); the frontend converts them to the existing seconds API contract.
+- Automatic and one-off collection each accept a lookback window in hours (`date_window_hours`, minimum one). The setting is scoped to the selected operation and does not rewrite global configuration. Backfill explicitly bypasses the age window. Source retention/pagination may limit how far back collection can reach; undated publications can still be included.
+
+Regression coverage includes cancellation before start and with concurrent work in flight, preservation/resumption of queued documents, a default run larger than 200 documents, ID searches and filters, collection-window propagation and rendered Markdown safety. Live integration collects a 96-hour-old local article with a 168-hour window and excludes it with a 24-hour window. Backend unit suite: 2,473 passed and 3 expected failures.

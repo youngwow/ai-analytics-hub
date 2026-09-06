@@ -73,11 +73,12 @@ def _run(**overrides) -> ProcessingRun:
 def _wire(run: ProcessingRun) -> dict:
     """Прогон в проводной форме: поля dataclass плюс вычисляемый `progress`."""
     share = round(run.processed / run.documents, 3) if run.documents else None
-    return {**asdict(run), "progress": min(share, 1.0) if share is not None else None}
+    return {**asdict(run), "progress": min(share, 1.0) if share is not None else None,
+            "stop_requested": bool(run.params.get("stop_requested")), "stopped": bool(run.params.get("stopped"))}
 
 
 # Поля ответа, которых нет в dataclass: считаются на границе, а не хранятся.
-COMPUTED = {ProcessingRunResponse: {"progress"}}
+COMPUTED = {ProcessingRunResponse: {"progress", "stop_requested", "stopped"}}
 
 
 ROUND_TRIPS = [

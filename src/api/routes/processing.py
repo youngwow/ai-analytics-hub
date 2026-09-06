@@ -80,3 +80,9 @@ def quality(
 @router.get("/runs/{run_id}", response_model=ProcessingRunResponse, summary="Один прогон")
 def get_run(run_id: RunId, service: ProcessingServiceDep) -> ProcessingRunResponse:
     return ProcessingRunResponse.from_domain(service.get_run(run_id))
+
+
+@router.post("/runs/{run_id}/stop", response_model=ProcessingRunResponse,
+             summary="Остановить прогон после завершения текущих запросов модели")
+def stop_run(run_id: RunId, service: ProcessingServiceDep) -> ProcessingRunResponse:
+    return ProcessingRunResponse.from_domain(service.stop_run(run_id))

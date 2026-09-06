@@ -83,6 +83,9 @@ try {
   const query = { q: 'редакция', type: 'npa', npa_status: 'действует', priority: ['high'], tag: ['регуляторика'], order: 'priority' }
   check((await api.feed(query)).items[0]?.id === id, 'combined feed filters and search')
   check((await api.facets(query)).total === 1, 'facets agree with feed')
+  check((await api.feed({ q: `#${id}` })).items[0]?.id === id, 'card number search works without an ID in the card text')
+  check((await api.facets({ q: `#${id}` })).total === 1, 'card number search and facets agree')
+  check((await api.feed({ q: `#${id}`, priority: ['low'] })).total === 0, 'card number search retains other filters')
   await api.note(id, 'Рассмотреть на совещании', 'Аналитик')
   card = await api.card(id)
   check(card.notes[0]?.body === 'Рассмотреть на совещании', 'notes saved')
@@ -133,11 +136,12 @@ try {
   await api.restoreSource(sourceId)
   check((await api.source(sourceId)).status === 'active', 'source restored')
   // Exercise real RSS detection and collection using a loopback-only test feed.
-  let feedUnavailable = false; let secondArticle = false
+  let feedUnavailable = false; let secondArticle = false; let olderArticle = false
   feedServer = createHttpServer((request, response) => {
     if (feedUnavailable) { response.writeHead(503); response.end('Feed temporarily unavailable'); return }
     response.setHeader('Content-Type', 'application/rss+xml')
-    const extra = secondArticle ? `<item><title>Second queue document</title><link>http://127.0.0.1:${feedServer.address().port}/second</link><guid>integration-rss-2</guid><pubDate>${new Date().toUTCString()}</pubDate><description>Independent second document for pagination.</description></item>` : ''
+    const old = olderArticle ? `<item><title>Older window document</title><link>http://127.0.0.1:${feedServer.address().port}/older</link><guid>integration-rss-older</guid><pubDate>${new Date(Date.now() - 96 * 3600000).toUTCString()}</pubDate><description>Published four days ago.</description></item>` : ''
+    const extra = (secondArticle ? `<item><title>Second queue document</title><link>http://127.0.0.1:${feedServer.address().port}/second</link><guid>integration-rss-2</guid><pubDate>${new Date().toUTCString()}</pubDate><description>Independent second document for pagination.</description></item>` : '') + old
     response.end(`<?xml version="1.0"?><rss version="2.0"><channel><title>Integration RSS</title><link>http://127.0.0.1/</link><description>Test-only source</description><item><title>RSS integration document</title><link>http://127.0.0.1:${feedServer.address().port}/article</link><guid>integration-rss-1</guid><pubDate>${new Date().toUTCString()}</pubDate><description>${'Local integration test article. '.repeat(30)}</description></item>${extra}</channel></rss>`)
   })
   feedServer.listen(0, '127.0.0.1'); await once(feedServer, 'listening')
@@ -176,11 +180,13 @@ try {
   const fetchedNext = await api.documents({ source_id: [added.id], order: 'fetched', limit: 1, cursor: fetchedPage.next_cursor })
   check(fetchedNext.documents[0].id !== fetchedPage.documents[0].id, 'collection-time sorting paginates without duplicates')
   check(!(await api.processing()).llm_available, 'isolated processing explicitly has no LLM')
-  const run = await api.startProcessing({ source_id: added.id, limit: 2, force: false })
+  const run = await api.startProcessing({ source_id: added.id, limit: null, force: false })
   check(run.id && run.status === 'running', 'processing accepted as a background run')
+  check(run.params.limit === null, 'unlimited processing is recorded without an implicit batch cap')
   const completed = await until(() => api.processingRun(run.id), result => result.status !== 'running')
   check(completed.status === 'done' && completed.documents === 2 && completed.degraded > 0, 'processing completes with honest degraded results')
   check(completed.processed === 2 && completed.progress === 1 && completed.heartbeat_at, 'document-based progress and heartbeat are returned')
+  check((await api.stopProcessing(run.id)).status === 'done', 'stop endpoint leaves an already completed run intact')
   const retried = await api.startProcessing({ only_failed: true, force: false, profile_id: savedProfile.id, limit: 2 })
   const retriedDone = await until(() => api.processingRun(retried.id), result => result.status !== 'running')
   check(retriedDone.params.only_failed && retriedDone.params.profile_id === savedProfile.id && retriedDone.documents === 0, 'failed-only retry uses selected profile and skips successful documents')
@@ -189,10 +195,19 @@ try {
   check(Array.isArray((await api.quality({ since: '2026-01-01T00:00:00Z', until: '2027-01-01T00:00:00Z' })).by_day), 'quality accepts a bounded reporting window')
   check((await api.processingRuns()).runs.some(entry => entry.id === run.id), 'processing history includes completed run')
   check((await api.documents({ source_id: [added.id] })).total === 0, 'processed documents leave the queue')
-  const started = await api.startCollection(900)
+  const started = await api.startCollection(300, 24)
   check(started.running, 'automatic monitoring starts')
+  check(started.interval_seconds === 300 && started.date_window_hours === 24, 'five-minute monitoring interval and collection window reach the server')
   await until(() => api.collection(), result => !result.busy)
   check(!(await api.stopCollection()).running, 'automatic monitoring stops')
+  olderArticle = true
+  for (const hours of [24, 168]) {
+    const before = (await api.collection()).last_collect?.id
+    await api.collect({ source_ids: [added.id], due_only: false, backfill: false, force: false, date_window_hours: hours })
+    await until(() => api.collection(), state => !state.busy && state.last_collect?.id !== before)
+    const queued = await api.documents({ source_id: [added.id] })
+    check(queued.total === (hours === 24 ? 0 : 1), `collection window ${hours}h correctly filters the 96-hour-old article`)
+  }
   try { await api.card(999999); assert.fail('missing card should fail') }
   catch (error) { check(error instanceof ApiError && error.status === 404, 'real HTTP problem translated by frontend') }
   console.log(`PASS: ${checks} live integration checks (frontend client → Vite proxy → backend).`)

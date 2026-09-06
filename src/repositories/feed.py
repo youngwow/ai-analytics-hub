@@ -82,6 +82,11 @@ def where(query: FeedQuery) -> tuple[list[str], list]:
     clauses: list[str] = []
     params: list = []
 
+    card_number = re.fullmatch(r"\s*#\s*([0-9]+)\s*", query.q or "")
+    if card_number:
+        clauses.append("i.id = ?")
+        params.append(card_number.group(1))
+
     if not query.include_hidden:
         clauses.append("i.visibility NOT IN ('hidden_feed', 'deleted')")
     if query.archived == "exclude":
@@ -118,6 +123,8 @@ def where(query: FeedQuery) -> tuple[list[str], list]:
 
 
 def match_expression(query: FeedQuery) -> str:
+    if re.fullmatch(r"\s*#\s*[0-9]+\s*", query.q or ""):
+        return ""
     return to_match(query.q)
 
 
