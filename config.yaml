@@ -64,3 +64,9 @@ processing:
   cosine_threshold: 0.86          # порог схлопывания по эмбеддингам (консервативный)
   borderline_low: 0.35            # нижняя граница пограничной зоны relevance_score
   borderline_high: 0.5            # верхняя граница; в ней приоритет повышается на ступень
+
+api:
+  host: 127.0.0.1                 # адрес HTTP-API (`python -m src serve`)
+  port: 8000
+  docs: true                      # отдавать /docs и /openapi.json
+  timezone: Europe/Moscow         # голая дата в фильтре — это местные сутки, а не UTC

@@ -8,6 +8,7 @@ global, which keeps them trivially testable via `Config.from_dict(...)`.
 from __future__ import annotations
 
 from dataclasses import MISSING, dataclass, field
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import yaml
 
@@ -120,6 +121,16 @@ class ProcessingConfig:
     borderline_high: float = 0.5
 
 
+@dataclass(frozen=True)
+class ApiConfig:
+    """HTTP-слой этапа 1.4: `python -m src serve`."""
+
+    host: str = "127.0.0.1"
+    port: int = 8000
+    docs: bool = True  # /docs и /openapi.json
+    timezone: str = "Europe/Moscow"  # чьи это сутки, когда фильтр получил голую дату
+
+
 _SECTIONS = {
     "scraper": ScraperConfig,
     "telegram": TelegramConfig,
@@ -127,14 +138,19 @@ _SECTIONS = {
     "tavily": TavilyConfig,
     "llm": LLMConfig,
     "processing": ProcessingConfig,
+    "api": ApiConfig,
 }
 
 
 def _build_section(name: str, cls: type, raw: dict):
+    fields = cls.__dataclass_fields__
     section = raw.get(name)
+    if section is None and all(f.default is not MISSING for f in fields.values()):
+        # Секция, у которой все поля со значениями по умолчанию, необязательна:
+        # старый config.yaml должен грузиться после добавления новой секции.
+        section = {}
     if not isinstance(section, dict):
         raise ConfigError(f"config.yaml: missing or non-mapping section '{name}'")
-    fields = cls.__dataclass_fields__
     missing = [k for k, f in fields.items() if k not in section and f.default is MISSING]
     if missing:
         raise ConfigError(f"config.yaml: section '{name}' missing keys: {missing}")
@@ -152,6 +168,7 @@ class Config:
     tavily: TavilyConfig
     llm: LLMConfig = field(default_factory=LLMConfig)
     processing: ProcessingConfig = field(default_factory=ProcessingConfig)
+    api: ApiConfig = field(default_factory=ApiConfig)
     raw: dict = field(default_factory=dict, repr=False)
 
     @classmethod
@@ -238,3 +255,11 @@ class Config:
             raise ConfigError(
                 "config.yaml: processing.borderline_low must be <= borderline_high"
             )
+        if not 1 <= self.api.port <= 65535:
+            raise ConfigError("config.yaml: api.port must be within [1, 65535]")
+        if not self.api.host.strip():
+            raise ConfigError("config.yaml: api.host must be non-empty")
+        try:
+            ZoneInfo(self.api.timezone)
+        except (ZoneInfoNotFoundError, ValueError) as e:
+            raise ConfigError(f"config.yaml: unknown api.timezone '{self.api.timezone}'") from e

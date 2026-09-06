@@ -14,14 +14,26 @@ from courlan import get_base_url
 
 from .common import get_logger, load_env_secret
 from .config import Config, ConfigError
-from .models import CATEGORIES, ITEM_TYPES, KINDS, PRIORITIES, Resolution, Source
+from .feed.query import DocumentQuery, FeedQuery, QueryError
+from .feed.service import FeedService
+from .models import (
+    CATEGORIES,
+    EDIT_REASONS,
+    ITEM_TYPES,
+    KINDS,
+    NPA_STATUSES,
+    PRIORITIES,
+    Resolution,
+    Source,
+)
 from .paths import DEFAULT_PATHS, ProjectPaths
 from .processing import profile as company_profile
 from .processing.llm import LlmConfigError, build_provider
 from .processing.quality import GOLD_PATH, evaluate, load_gold
-from .processing.service import EDITABLE_FIELDS, ProcessingService
+from .processing.service import EDITABLE_FIELDS, REVERTIBLE_FIELDS, ItemError, ProcessingService
 from .sources.base import HostLimiter, make_client
 from .sources.collector import Collector
+from .sources.manage import SourceError, SourceService
 from .sources.resolver import Resolver
 from .sources.scraper_search import SEARCH_MAX_RESULTS, SUMMARY_PREFIX, SearchQuery
 from .sources.telegram_mtproto import (
@@ -153,12 +165,20 @@ def _cmd_collect(args, config: Config, paths: ProjectPaths, sleep=time.sleep) ->
     collector = Collector(config, paths, db)
     try:
         while True:
-            report = collector.run(source_ids=args.source, backfill=args.backfill, force=args.force)
-            print(report.summary_line())
+            # Разовый `collect` опрашивает всё включённое; `--watch` тикает часто и
+            # берёт только тех, чья очередь пришла по `next_run_at` (scheduler.py).
+            due_only = bool(args.watch and not args.source and not args.backfill and not args.force)
+            report = collector.run(
+                source_ids=args.source,
+                backfill=args.backfill,
+                force=args.force,
+                due_only=due_only,
+            )
+            if report.per_source or not due_only:
+                print(report.summary_line())
             if not args.watch:
                 polled = len(report.per_source)
                 return 1 if polled and report.sources_fail == polled else 0
-            log.info("watch: next run in %ds", args.interval)
             sleep(args.interval)
     except KeyboardInterrupt:
         return 0
@@ -177,7 +197,7 @@ def _cmd_sources_list(args, config: Config, paths: ProjectPaths) -> int:
         rows.append(
             [
                 str(s.id),
-                "on" if s.enabled else "off",
+                "on" if s.active else s.status[:3],
                 s.kind,
                 s.category,
                 s.name[:40],
@@ -222,7 +242,7 @@ def _cmd_sources_add(args, config: Config, paths: ProjectPaths) -> int:
 
 def _cmd_sources_toggle(args, config: Config, paths: ProjectPaths) -> int:
     db = Database(paths.db_path)
-    ok = db.sources.set_enabled(args.id, args.enable)
+    ok = db.sources.set_status(args.id, "active" if args.enable else "paused")
     db.close()
     if not ok:
         print(f"no source #{args.id}", file=sys.stderr)
@@ -300,12 +320,12 @@ def _cmd_sources_seed(args, config: Config, paths: ProjectPaths) -> int:
         counts[status] += 1
         if status == "ok" and item.get("enabled") is False:
             # Seeded but not polled until `sources enable` (low-priority or paid sources).
-            db.sources.set_enabled(source.id, False)
-            source.enabled = False
+            db.sources.set_status(source.id, "paused")
+            source.status = "paused"
         mark = {"ok": "+", "exists": "="}[status]
         print(
             f"{mark} #{source.id} [{source.kind}/{source.category}] {source.name} → {source.fetch_url}"
-            + ("" if source.enabled else "  (off)")
+            + ("" if source.active else "  (off)")
         )
     for item in doc.get("excluded", []):
         print(f"- skipped {item.get('name', '?')}: {item.get('reason', '')}")
@@ -413,11 +433,11 @@ def _cmd_search(args, config: Config, paths: ProjectPaths) -> int:
             notes=f"Tavily: {query.describe()}",
         )
         if status == "ok" and not args.save:
-            db.sources.set_enabled(source.id, False)
-            source.enabled = False
-        elif args.save and not source.enabled:
-            db.sources.set_enabled(source.id, True)
-            source.enabled = True
+            db.sources.set_status(source.id, "paused")
+            source.status = "paused"
+        elif args.save and not source.active:
+            db.sources.set_status(source.id, "active")
+            source.status = "active"
 
         collector = Collector(config, paths, db, tavily_key=api_key)
         result, entry = collector.collect_one(source, force=True)
@@ -444,9 +464,9 @@ def _cmd_search(args, config: Config, paths: ProjectPaths) -> int:
             print(f"\n{digest.title}\n{digest.text}\n")
         print(
             f"{len(hits)} hits, {entry['new']} new document(s) → source #{source.id} "
-            f"«{source.name}» [{'on' if source.enabled else 'off'}]"
+            f"«{source.name}» [{'on' if source.active else 'off'}]"
         )
-        if not source.enabled:
+        if not source.active:
             print(f"  hint: `sources enable {source.id}` keeps polling this query with `collect`")
     finally:
         db.close()
@@ -541,7 +561,37 @@ def _cmd_telegram_logout(args, config: Config, paths: ProjectPaths) -> int:
     return 0
 
 
+def _cmd_docs_unprocessed(args, config: Config, paths: ProjectPaths) -> int:
+    """Собрано, но карточки ещё нет — материал доступен, пока обработка догоняет."""
+    db, feed = _feed_service(config, paths)
+    try:
+        result = feed.documents(
+            DocumentQuery.build(
+                source_ids=[args.source] if args.source else [],
+                limit=args.limit,
+                timezone_name=config.api.timezone,
+            )
+        )
+    finally:
+        db.close()
+    rows = [
+        [
+            str(r["id"]),
+            (r["published_at"] or "-")[:10],
+            (r["source_name"] or "")[:22],
+            (r["title"] or "")[:56],
+            str(r["chars"] or 0),
+        ]
+        for r in result["documents"]
+    ]
+    print(_table(["id", "date", "источник", "title", "chars"], rows) if rows else "всё обработано")
+    print(f"({result['total']} документов без карточки)")
+    return 0
+
+
 def _cmd_docs(args, config: Config, paths: ProjectPaths) -> int:
+    if args.unprocessed:
+        return _cmd_docs_unprocessed(args, config, paths)
     db = Database(paths.db_path)
     rows = [
         [
@@ -620,35 +670,63 @@ def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
     return 2 if (report.degraded and report.items_new) or report.failed else 0
 
 
-def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
+def _feed_service(config: Config, paths: ProjectPaths):
     db = Database(paths.db_path)
-    rows = db.items.list(
-        type_=args.type,
-        priority=args.priority,
-        tag=args.tag,
-        query=args.q,
-        since=args.since,
-        limit=args.limit,
-    )
-    table = [
+    return db, FeedService(config, db)
+
+
+def _feed_query(args, config: Config, **overrides):
+    """Один и тот же фильтр, что и у API: описан один раз в FeedQuery."""
+    kwargs = {
+        "q": getattr(args, "q", None),
+        "type": getattr(args, "type", None),
+        "npa_status": getattr(args, "npa_status", None),
+        "priority": getattr(args, "priority", None) or [],
+        "tags": getattr(args, "tag", None) or [],
+        "source_ids": getattr(args, "source", None) or [],
+        "date_from": getattr(args, "date_from", None),
+        "date_to": getattr(args, "date_to", None),
+        "order": getattr(args, "order", "published"),
+        "limit": getattr(args, "limit", None),
+        "cursor": getattr(args, "cursor", None),
+        "include_hidden": getattr(args, "include_hidden", False),
+        "timezone_name": config.api.timezone,
+    }
+    kwargs.update(overrides)
+    return FeedQuery.build(**kwargs)
+
+
+def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
+    db, feed = _feed_service(config, paths)
+    try:
+        result = feed.items(_feed_query(args, config))
+    except QueryError as e:
+        log.error("%s", e.message)
+        return 1
+    finally:
+        db.close()
+    rows = [
         [
             str(r["id"]),
             (r["published_at"] or "-")[:10],
             r["type"],
             r["priority"],
             str(r["sources_count"]),
-            ("⚠ " if r["needs_review"] else "") + (r["title"] or "")[:70],
+            (r["source_name"] or "—")[:18],
+            ("⚠ " if r["flags"]["needs_review"] else "")
+            + ("· " if r["visibility"] != "visible" else "")
+            + (r["title"] or "")[:52],
         ]
-        for r in rows
+        for r in result["items"]
     ]
-    total = db.items.count()
-    db.close()
     print(
-        _table(["id", "date", "type", "priority", "src", "title"], table)
-        if table
-        else "карточек нет — запустите `process`"
+        _table(["id", "date", "type", "priority", "src", "источник", "title"], rows)
+        if rows
+        else "по этому срезу карточек нет"
     )
-    print(f"({total} карточек всего)")
+    print(f"({result['total']} в срезе, показано {len(rows)}, {result['took_ms']} мс)")
+    if result["next_cursor"]:
+        print(f"следующая страница: --cursor {result['next_cursor']}")
     return 0
 
 
@@ -718,13 +796,13 @@ def _cmd_item_edit(args, config: Config, paths: ProjectPaths) -> int:
     db = Database(paths.db_path)
     service = ProcessingService(config, db)
     try:
-        item = service.edit_item(args.id, fields)
+        item = service.edit_item(args.id, fields, reason=args.reason or "")
     except ValueError as e:
         log.error("%s", e)
         return 1
     finally:
         db.close()
-    print(f"#{item.id}: правки сохранены, поля защищены от перезаписи: {item.edited_fields or '—'}")
+    print(f"#{item.id}: правки сохранены, поля защищены от перезаписи: {item.manual_overrides or '—'}")
     return 0
 
 
@@ -744,7 +822,7 @@ def _cmd_reprocess(args, config: Config, paths: ProjectPaths) -> int:
     finally:
         service.close()
         db.close()
-    print(f"#{item.id}: пересобрано ({item.priority}, {item.type}); сохранено: {item.edited_fields or '—'}")
+    print(f"#{item.id}: пересобрано ({item.priority}, {item.type}); сохранено: {item.manual_overrides or '—'}")
     return 2 if item.degraded else 0
 
 
@@ -849,7 +927,307 @@ def _cmd_quality(args, config: Config, paths: ProjectPaths) -> int:
     return code
 
 
+
+# ── управление источниками и данными (task 1.4) ────────────────────────────
+
+
+def _sources_service(config: Config, paths: ProjectPaths):
+    db = Database(paths.db_path)
+    return db, SourceService(config, db)
+
+
+def _report_service_error(e) -> int:
+    log.error("%s", e.message)
+    if e.details:
+        print(f"  {e.details}")
+    return 2 if e.code in ("network_unreachable", "telegram_preview_unavailable") else 1
+
+
+def _cmd_sources_probe(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _sources_service(config, paths)
+    try:
+        result = svc.probe(args.url)
+    except SourceError as e:
+        return _report_service_error(e)
+    finally:
+        db.close()
+    print(f"тип:       {result.resolved_type}")
+    print(f"адрес:     {result.feed_url or '-'}")
+    print(f"название:  {result.title or '-'}")
+    print(f"как нашли: {result.detection_method}; периодичность: {result.suggested_poll_interval}")
+    if result.already_exists:
+        print(f"уже добавлен как источник #{result.already_exists_source_id}")
+    if result.warnings:
+        print(f"предупреждения: {', '.join(result.warnings)}")
+    if result.preview:
+        print("\nпоследние материалы:")
+        for row in result.preview:
+            print(f"  {(row['published_at'] or '-')[:16]}  {(row['title'] or '')[:70]}")
+    else:
+        print("превью пустое")
+    return 0 if result.resolved_type != "unsupported" else 1
+
+
+def _cmd_sources_health(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _sources_service(config, paths)
+    try:
+        data = svc.health(args.id, args.limit)
+    except SourceError as e:
+        return _report_service_error(e)
+    finally:
+        db.close()
+    source = data["source"]
+    print(f"#{source.id} {source.name} [{source.status}] каждые {source.poll_interval}")
+    print(f"документов {data['documents']}, следующий опрос {source.next_run_at or '-'}")
+    print(f"последний успех {data['last_success_at'] or '-'}, подряд неудач {data['consecutive_failures']}")
+    if data["last_error"]:
+        print(f"последняя ошибка: {data['last_error'][:120]}")
+    rows = [
+        [
+            r.started_at[:16],
+            str(r.items_found),
+            str(r.items_new),
+            r.error_code or "ok",
+            (r.error_message or "")[:48],
+        ]
+        for r in data["runs"]
+    ]
+    print()
+    print(_table(["когда", "нашли", "новых", "код", "ошибка"], rows) if rows else "опросов ещё не было")
+    return 0
+
+
+def _cmd_sources_status(args, config: Config, paths: ProjectPaths) -> int:
+    """pause / resume / restore — одна команда, разные целевые состояния."""
+    db, svc = _sources_service(config, paths)
+    try:
+        source = svc.restore(args.id) if args.action == "restore" else svc.update(
+            args.id, status="paused" if args.action == "pause" else "active"
+        )
+    except SourceError as e:
+        return _report_service_error(e)
+    finally:
+        db.close()
+    print(f"#{source.id} «{source.name}» → {source.status}")
+    return 0
+
+
+def _cmd_sources_refresh(args, config: Config, paths: ProjectPaths) -> int:
+    db = Database(paths.db_path)
+    svc = SourceService(config, db)
+    try:
+        source = svc.get(args.id)
+    except SourceError as e:
+        db.close()
+        return _report_service_error(e)
+    collector = Collector(config, db, paths=paths)
+    try:
+        result, entry = collector.collect_one(source, force=args.force)
+    finally:
+        db.close()
+    if entry.get("error"):
+        print(f"#{source.id} «{source.name}»: {entry['error']}")
+        return 2
+    print(f"#{source.id} «{source.name}»: найдено {entry.get('seen', 0)}, новых {entry.get('new', 0)}")
+    return 0
+
+
+def _item_service(config: Config, paths: ProjectPaths):
+    db = Database(paths.db_path)
+    key = load_env_secret(config.llm.api_key_env, paths.env_path)
+    provider = build_provider(config.llm, key) if key else None
+    return db, ProcessingService(config, db, provider=provider, embedder=provider)
+
+
+def _cmd_items_hide(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _item_service(config, paths)
+    try:
+        if len(args.id) > 1:
+            changed = svc.bulk_visibility(args.id, args.scope, args.reason or "")
+            print(f"скрыто карточек: {changed} (область: {args.scope})")
+        else:
+            item = svc.set_visibility(args.id[0], args.scope, args.reason or "")
+            print(f"#{item.id}: {item.visibility}")
+    except ItemError as e:
+        return _report_service_error(e)
+    finally:
+        svc.close()
+        db.close()
+    return 0
+
+
+def _cmd_items_unhide(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _item_service(config, paths)
+    try:
+        if len(args.id) > 1:
+            print(f"возвращено в ленту: {svc.bulk_visibility(args.id, 'visible')}")
+        else:
+            item = svc.set_visibility(args.id[0], restore=True)
+            print(f"#{item.id}: {item.visibility}")
+    except ItemError as e:
+        return _report_service_error(e)
+    finally:
+        svc.close()
+        db.close()
+    return 0
+
+
+def _cmd_item_note(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _item_service(config, paths)
+    try:
+        note = svc.add_note(args.id, args.text, args.author or "")
+    except ItemError as e:
+        return _report_service_error(e)
+    finally:
+        svc.close()
+        db.close()
+    print(f"#{note.item_id}: заметка сохранена ({len(note.body)} символов)")
+    return 0
+
+
+def _cmd_item_revert(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _item_service(config, paths)
+    try:
+        item = svc.revert(args.id, args.field)
+    except ItemError as e:
+        return _report_service_error(e)
+    finally:
+        svc.close()
+        db.close()
+    print(f"#{item.id}: поле «{args.field}» возвращено к версии модели")
+    print(f"под защитой человека осталось: {item.manual_overrides or '—'}")
+    return 0
+
+
+def _cmd_item_revisions(args, config: Config, paths: ProjectPaths) -> int:
+    db = Database(paths.db_path)
+    revisions = db.items.revisions(args.id)
+    db.close()
+    rows = [
+        [
+            r.created_at[:16],
+            "модель" if r.source_of_change == "llm" else r.actor,
+            r.field,
+            (r.old_value or "—")[:34],
+            (r.new_value or "—")[:34],
+            r.edit_reason or "",
+        ]
+        for r in revisions
+    ]
+    print(
+        _table(["когда", "кто", "поле", "было", "стало", "причина"], rows)
+        if rows
+        else "правок не было"
+    )
+    return 0
+
+
+def _cmd_items_add(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _item_service(config, paths)
+    try:
+        result = svc.add_manual(
+            title=args.title or "",
+            url=args.url or "",
+            text=args.text or "",
+            published_at=args.published_at,
+            item_type=args.type,
+            npa_status=args.npa_status,
+            run_llm=not args.no_llm,
+            force=args.force,
+        )
+    except ItemError as e:
+        if e.code == "possible_duplicate":
+            log.error("%s", e.message)
+            print(f"  найдено: карточка #{e.details.get('item_id')} ({e.details.get('reason')})")
+            print("  создать всё равно: повторите с --force")
+            return 1
+        return _report_service_error(e)
+    finally:
+        svc.close()
+        db.close()
+    print(f"карточка #{result['item_id']} создана (документ #{result['document_id']}, origin=manual)")
+    return 0
+
+
+def _cmd_serve(args, config: Config, paths: ProjectPaths) -> int:
+    import uvicorn
+
+    from .api.app import create_app
+
+    host = args.host or config.api.host
+    port = args.port or config.api.port
+    print(f"API на http://{host}:{port}" + (" (документация /docs)" if config.api.docs else ""))
+    uvicorn.run(create_app(config, paths), host=host, port=port, log_level="info")
+    return 0
+
+
+
+def _cmd_digest(args, config: Config, paths: ProjectPaths) -> int:
+    db, feed = _feed_service(config, paths)
+    try:
+        result = feed.digest(
+            _feed_query(args, config, limit=200, order="priority"),
+            fmt=args.format,
+            title=args.title or "",
+            include_notes=args.include_notes,
+        )
+    except QueryError as e:
+        log.error("%s", e.message)
+        return 1
+    finally:
+        db.close()
+    if args.out:
+        with open(args.out, "w", encoding="utf-8") as handle:
+            handle.write(result["body"])
+        print(f"{result['items']} материал(ов) → {args.out}")
+    else:
+        print(result["body"])
+    return 0
+
+
+def _cmd_status(args, config: Config, paths: ProjectPaths) -> int:
+    db, feed = _feed_service(config, paths)
+    try:
+        data = feed.status()
+    finally:
+        db.close()
+    print(f"последний сбор: {data['last_collect_at'] or '—'}")
+    print(
+        f"документов {data['documents']}, карточек {data['items']}, "
+        f"без карточки {data['unprocessed']}"
+    )
+    print("источники: " + ", ".join(f"{k} {v}" for k, v in sorted(data["sources"].items())))
+    if data["stale_sources"]:
+        rows = [
+            [
+                str(s["id"]),
+                s["name"][:28],
+                f"{s['overdue_minutes']} мин",
+                str(s["consecutive_failures"]),
+                (s["last_error"] or "")[:40],
+            ]
+            for s in data["stale_sources"]
+        ]
+        print()
+        print(_table(["id", "источник", "просрочен", "неудач", "ошибка"], rows))
+    return 0
+
+
 # ── parser ─────────────────────────────────────────────────────────────────
+
+
+def _feed_filter_args(parser) -> None:
+    """Фильтры ленты — одни и те же у `items` и `digest`."""
+    parser.add_argument("--q", help="search over card, tags, entities and the original text")
+    parser.add_argument("--type", choices=ITEM_TYPES)
+    parser.add_argument("--npa-status", dest="npa_status", choices=NPA_STATUSES)
+    parser.add_argument("--priority", choices=PRIORITIES, action="append")
+    parser.add_argument("--tag", action="append")
+    parser.add_argument("--source", type=int, action="append", help="source id (repeatable)")
+    parser.add_argument("--from", dest="date_from", help="local date or ISO timestamp")
+    parser.add_argument("--to", dest="date_to")
+    parser.add_argument("--order", choices=("published", "priority", "processed"),
+                        default="published")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -863,7 +1241,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--backfill", action="store_true", help="walk history (older pages, no window)")
     p.add_argument("--force", action="store_true", help="ignore ETag/cursor and re-read everything")
     p.add_argument("--watch", action="store_true", help="keep polling")
-    p.add_argument("--interval", type=int, default=900, help="seconds between polls with --watch")
+    p.add_argument(
+        "--interval",
+        type=int,
+        default=60,
+        help="seconds between watch ticks; each tick polls only sources due by their schedule",
+    )
     p.set_defaults(func=_cmd_collect)
 
     ps = sub.add_parser("sources", help="manage sources").add_subparsers(
@@ -890,6 +1273,22 @@ def build_parser() -> argparse.ArgumentParser:
     p = ps.add_parser("seed", help="load sources.json")
     p.add_argument("file", nargs="?")
     p.set_defaults(func=_cmd_sources_seed)
+
+    p = ps.add_parser("probe", help="resolve a URL and preview it without saving")
+    p.add_argument("url")
+    p.set_defaults(func=_cmd_sources_probe)
+    p = ps.add_parser("health", help="poll history and the last error for a source")
+    p.add_argument("id", type=int)
+    p.add_argument("--limit", type=int, default=20)
+    p.set_defaults(func=_cmd_sources_health)
+    for action in ("pause", "resume", "restore"):
+        p = ps.add_parser(action, help=f"{action} a source")
+        p.add_argument("id", type=int)
+        p.set_defaults(func=_cmd_sources_status, action=action)
+    p = ps.add_parser("refresh", help="poll one source right now")
+    p.add_argument("id", type=int)
+    p.add_argument("--force", action="store_true")
+    p.set_defaults(func=_cmd_sources_refresh)
 
     p = sub.add_parser("resolve", help="dry-run: how would this URL be polled?")
     p.add_argument("url")
@@ -948,13 +1347,25 @@ def build_parser() -> argparse.ArgumentParser:
     p.set_defaults(func=_cmd_process)
 
     p = sub.add_parser("items", help="the feed: cards with filters")
-    p.add_argument("--type", choices=ITEM_TYPES)
-    p.add_argument("--priority", choices=PRIORITIES)
-    p.add_argument("--tag")
-    p.add_argument("--q", help="full-text query over title and summary")
-    p.add_argument("--since", help="ISO date lower bound")
+    _feed_filter_args(p)
     p.add_argument("--limit", type=int, default=20)
+    p.add_argument("--cursor", help="next page token from the previous call")
+    p.add_argument(
+        "--include-hidden", action="store_true", help="show hidden and deleted cards too"
+    )
     p.set_defaults(func=_cmd_items)
+
+    p = sub.add_parser("digest", help="export the current slice for a manager")
+    _feed_filter_args(p)
+    p.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    p.add_argument("--title")
+    p.add_argument("--include-notes", action="store_true", help="include analyst notes")
+    p.add_argument("--out", help="write to a file instead of stdout")
+    p.set_defaults(func=_cmd_digest)
+
+    sub.add_parser("status", help="collection and processing health").set_defaults(
+        func=_cmd_status
+    )
 
     p = sub.add_parser("item", help="one card: summary, entities, sources, history")
     p.add_argument("id", type=int)
@@ -969,6 +1380,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--npa-status", dest="npa_status")
     p.add_argument("--tags", help="comma-separated list")
     p.add_argument("--note", help="analyst note — never sent to the model")
+    p.add_argument(
+        "--reason", choices=EDIT_REASONS, help="why the edit was needed — feeds quality metrics"
+    )
     p.set_defaults(func=_cmd_item_edit)
 
     p = sub.add_parser("reprocess", help="re-run the model for one card")
@@ -1009,6 +1423,47 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--gold-path", help=f"path to the gold set (default: {'tests/fixtures/gold/gold_set.jsonl'})")
     p.set_defaults(func=_cmd_quality)
 
+    p = sub.add_parser("hide", help="hide cards from the feed or from the next digest")
+    p.add_argument("id", type=int, nargs="+")
+    p.add_argument("--scope", choices=("feed", "digest"), default="feed")
+    p.add_argument("--reason")
+    p.set_defaults(func=_cmd_items_hide)
+
+    p = sub.add_parser("unhide", help="bring cards back to the feed")
+    p.add_argument("id", type=int, nargs="+")
+    p.set_defaults(func=_cmd_items_unhide)
+
+    p = sub.add_parser("note", help="analyst note on a card — never sent to the model")
+    p.add_argument("id", type=int)
+    p.add_argument("--text", required=True)
+    p.add_argument("--author")
+    p.set_defaults(func=_cmd_item_note)
+
+    p = sub.add_parser("revert", help="restore the model's version of a field")
+    p.add_argument("id", type=int)
+    p.add_argument("--field", required=True, choices=REVERTIBLE_FIELDS)
+    p.set_defaults(func=_cmd_item_revert)
+
+    p = sub.add_parser("revisions", help="edit history of a card")
+    p.add_argument("id", type=int)
+    p.set_defaults(func=_cmd_item_revisions)
+
+    p = sub.add_parser("add-item", help="add a publication by hand (US-12, US-13)")
+    p.add_argument("--url")
+    p.add_argument("--title")
+    p.add_argument("--text")
+    p.add_argument("--published-at", dest="published_at")
+    p.add_argument("--type", choices=ITEM_TYPES, default="news")
+    p.add_argument("--npa-status", dest="npa_status")
+    p.add_argument("--no-llm", action="store_true", help="do not call the model")
+    p.add_argument("--force", action="store_true", help="create even if a duplicate is found")
+    p.set_defaults(func=_cmd_items_add)
+
+    p = sub.add_parser("serve", help="run the HTTP API")
+    p.add_argument("--host")
+    p.add_argument("--port", type=int)
+    p.set_defaults(func=_cmd_serve)
+
     p = sub.add_parser("import-url", help="one-off: fetch a page into the manual source")
     p.add_argument("url")
     p.set_defaults(func=_cmd_import_url)
@@ -1016,6 +1471,9 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("docs", help="show collected documents")
     p.add_argument("--source", type=int)
     p.add_argument("--limit", type=int, default=20)
+    p.add_argument(
+        "--unprocessed", action="store_true", help="only documents that have no card yet"
+    )
     p.set_defaults(func=_cmd_docs)
     return parser
 

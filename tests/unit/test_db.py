@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sqlite3
+from dataclasses import replace
 
 import pytest
 
@@ -73,7 +74,7 @@ def _seeded_documents(db: Database, count: int = 1, **overrides) -> list[int]:
 
 
 def test_schema_version_and_pragmas(db):
-    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 2
+    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 4
     assert db.conn.execute("PRAGMA foreign_keys").fetchone()[0] == 1
     tables = {
         r[0] for r in db.conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
@@ -87,7 +88,7 @@ def test_file_database_creates_parent_dir_and_uses_wal(tmp_path):
     try:
         assert path.exists()
         assert database.conn.execute("PRAGMA journal_mode").fetchone()[0] == "wal"
-        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == 2
+        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == 4
     finally:
         database.close()
 
@@ -119,12 +120,24 @@ def test_transaction_commits_on_success_and_rolls_back_on_error(db):
 # ── sources ────────────────────────────────────────────────────────────────
 
 
-def test_add_assigns_id_and_created_at(db):
+def test_add_assigns_id_created_at_and_the_normalised_url(db):
     source = db.sources.add(_source())
     assert source.id == 1
     assert source.created_at.endswith("+00:00")
+    assert source.normalized_url == "vedomosti.ru/rss/news"
     stored = db.sources.get(1)
-    assert stored == source
+    # `add` schedules the first poll for "now"; the in-memory object keeps None,
+    # so compare everything else field by field.
+    assert stored.next_run_at == source.created_at
+    assert replace(stored, next_run_at=None) == source
+
+
+def test_add_starts_every_source_active_on_the_default_interval(db):
+    source = db.sources.add(_source())
+    stored = db.sources.get(source.id)
+    assert (stored.status, stored.active) == ("active", True)
+    assert stored.poll_interval == "1h"
+    assert stored.deleted_at is None
 
 
 def test_add_rejects_duplicate_fetch_url(db):
@@ -141,11 +154,29 @@ def test_get_by_fetch_url_and_missing_lookups(db):
     assert db.sources.get(999) is None
 
 
-def test_list_orders_by_id_and_filters_enabled(db):
+def test_list_orders_by_id_and_filters_by_status(db):
     a = db.sources.add(_source(name="A"))
-    b = db.sources.add(_source(name="B", fetch_url="https://b.ru/rss", enabled=False))
+    b = db.sources.add(_source(name="B", fetch_url="https://b.ru/rss", status="paused"))
     assert [s.id for s in db.sources.list()] == [a.id, b.id]
     assert [s.id for s in db.sources.list(enabled_only=True)] == [a.id]
+    assert [s.id for s in db.sources.list(status="active")] == [a.id]
+    assert [s.id for s in db.sources.list(status="paused")] == [b.id]
+
+
+def test_list_hides_deleted_sources_unless_asked_for_them(db):
+    live = db.sources.add(_source(name="A"))
+    gone = db.sources.add(_source(name="B", fetch_url="https://b.ru/rss"))
+    db.sources.remove(gone.id)
+    assert [s.id for s in db.sources.list()] == [live.id]
+    assert [s.id for s in db.sources.list(include_deleted=True)] == [live.id, gone.id]
+    assert [s.id for s in db.sources.list(status="deleted")] == [gone.id]
+
+
+def test_list_filters_by_kind(db):
+    rss = db.sources.add(_source(name="A"))
+    db.sources.add(_source(name="B", kind="html", fetch_url="https://b.ru/"))
+    assert [s.id for s in db.sources.list(kind="rss")] == [rss.id]
+    assert db.sources.list(kind="sitemap") == []
 
 
 def test_update_persists_every_editable_field(db):
@@ -154,34 +185,88 @@ def test_update_persists_every_editable_field(db):
     source.kind = "sitemap"
     source.category = "regulator"
     source.fetch_url = "https://www.vedomosti.ru/sitemap.xml"
-    source.enabled = False
+    source.status = "paused"
+    source.normalized_url = "vedomosti.ru/sitemap.xml"
+    source.poll_interval = "6h"
+    source.next_run_at = "2026-09-02T18:00:00+00:00"
+    source.category_hint = "npa"
     source.notes = "заметка"
     db.sources.update(source)
-    stored = db.sources.get(source.id)
-    assert stored == source
+    assert db.sources.get(source.id) == source
 
 
-def test_set_enabled_reports_whether_a_row_changed(db):
+def test_set_status_reports_whether_a_row_changed_and_stamps_deleted_at(db):
     source = db.sources.add(_source())
-    assert db.sources.set_enabled(source.id, False) is True
-    assert db.sources.get(source.id).enabled is False
-    assert db.sources.set_enabled(source.id, True) is True
-    assert db.sources.set_enabled(999, False) is False
+    assert db.sources.set_status(source.id, "paused") is True
+    assert db.sources.get(source.id).status == "paused"
+    assert db.sources.get(source.id).deleted_at is None
+    assert db.sources.set_status(source.id, "deleted") is True
+    assert db.sources.get(source.id).deleted_at.endswith("+00:00")
+    assert db.sources.set_status(999, "paused") is False
 
 
-def test_remove_cascades_documents_fetch_state_and_seen_urls(db):
+def test_set_status_back_to_active_clears_deleted_at(db):
+    source = db.sources.add(_source())
+    db.sources.set_status(source.id, "deleted")
+    db.sources.set_status(source.id, "active")
+    assert db.sources.get(source.id).deleted_at is None
+
+
+def test_remove_is_a_soft_delete_that_keeps_documents_and_history(db):
     source = db.sources.add(_source())
     with db.transaction():
         db.documents.insert(_doc(source.id, "a"))
         db.fetch_state.save(FetchState(source_id=source.id, etag='W/"1"'))
         db.seen_urls.add(source.id, ["https://example.ru/a"])
     assert db.sources.remove(source.id) is True
+    stored = db.sources.get(source.id)
+    assert stored is not None
+    assert (stored.status, stored.active) == ("deleted", False)
+    assert db.documents.count(source.id) == 1
+    assert db.fetch_state.get(source.id).etag == 'W/"1"'
+    assert db.seen_urls.known(source.id, ["https://example.ru/a"]) == {"https://example.ru/a"}
+    assert db.sources.remove(999) is False
+
+
+def test_deleting_a_source_row_still_cascades_to_its_children(db):
+    """Soft delete is the API; the FK cascade underneath it must stay intact."""
+    source = db.sources.add(_source())
+    with db.transaction():
+        db.documents.insert(_doc(source.id, "a"))
+        db.fetch_state.save(FetchState(source_id=source.id, etag='W/"1"'))
+        db.seen_urls.add(source.id, ["https://example.ru/a"])
+        db.source_runs.start(source.id, NOW)
+    with db.transaction():
+        db.conn.execute("DELETE FROM sources WHERE id=?", (source.id,))
     assert db.sources.get(source.id) is None
     assert db.documents.count(source.id) == 0
     assert db.fetch_state.get(source.id).etag is None
-    assert db.seen_urls.known(source.id, ["https://example.ru/a"]) == set()
     assert db.conn.execute("SELECT count(*) FROM seen_urls").fetchone()[0] == 0
-    assert db.sources.remove(source.id) is False
+    assert db.source_runs.history(source.id) == []
+
+
+def test_get_by_normalized_finds_a_live_source_and_ignores_deleted_ones(db):
+    source = db.sources.add(_source())
+    assert db.sources.get_by_normalized("vedomosti.ru/rss/news").id == source.id
+    assert db.sources.get_by_normalized("") is None
+    assert db.sources.get_by_normalized("nope.ru/rss") is None
+    db.sources.remove(source.id)
+    assert db.sources.get_by_normalized("vedomosti.ru/rss/news") is None
+
+
+def test_two_live_sources_cannot_share_a_normalised_url(db):
+    db.sources.add(_source())
+    with pytest.raises(sqlite3.IntegrityError):
+        db.sources.add(
+            _source(name="Зеркало", fetch_url="https://VEDOMOSTI.ru/rss/news/?utm_source=x")
+        )
+
+
+def test_deleting_a_source_frees_its_normalised_url(db):
+    first = db.sources.add(_source())
+    db.sources.remove(first.id)
+    second = db.sources.add(_source(name="Снова Ведомости", fetch_url="https://vedomosti.ru/rss/news"))
+    assert db.sources.get_by_normalized("vedomosti.ru/rss/news").id == second.id
 
 
 def test_ensure_manual_is_idempotent(db):
@@ -430,7 +515,7 @@ def test_reopening_a_database_keeps_v2_data_and_does_not_remigrate(tmp_path):
 
     second = Database(path)
     try:
-        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 2
+        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 4
         assert second.items.count() == 1
         assert second.items.get(item_id).title == "Минцифры расширило реестр"
         assert [r["id"] for r in second.items.list(query="реестр")] == [item_id]
@@ -602,7 +687,7 @@ def feed(db) -> dict[str, int]:
             type="news",
             priority="medium",
             title="Скрытая карточка про правила аккредитации",
-            is_hidden=True,
+            visibility="hidden_feed",
             published_at="2026-09-03T00:00:00+00:00",
         ),
     }
@@ -768,10 +853,10 @@ def test_revisions_keep_the_before_and_after(db):
     assert revision.created_at.endswith("+00:00")
 
 
-def test_edited_share_counts_only_cards_with_edited_fields(db):
+def test_edited_share_counts_only_cards_with_manual_overrides(db):
     plain, edited = _seeded_documents(db, 2, published_at="2026-09-02T00:00:00+00:00")
     _card(db, plain)
-    _card(db, edited, edited_fields=["priority"], processed_at="2026-09-02T12:00:00+00:00")
+    _card(db, edited, manual_overrides=["priority"], processed_at="2026-09-02T12:00:00+00:00")
     assert db.items.edited_share() == pytest.approx(0.5)
     assert db.items.edited_share(since="2026-09-02T00:00:00+00:00") == pytest.approx(0.5)
     assert db.items.edited_share(since="2026-09-03T00:00:00+00:00") == pytest.approx(0.0)

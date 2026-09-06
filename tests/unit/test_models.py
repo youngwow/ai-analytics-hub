@@ -4,8 +4,24 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 from src.common import sha256_text
-from src.models import CollectReport, FetchResult, FetchState, RawDocument, Source
+from src.models import (
+    POLL_INTERVALS,
+    SOURCE_STATUSES,
+    VISIBILITIES,
+    CollectReport,
+    FetchResult,
+    FetchState,
+    Item,
+    ItemNote,
+    ItemRevision,
+    ItemTag,
+    RawDocument,
+    Source,
+    SourceRun,
+)
 
 
 def test_raw_document_hash_uses_title_and_text():
@@ -104,7 +120,47 @@ def test_collect_report_summary_line():
     assert report.summary_line() == "7 new documents; sources ok=3 not_modified=2 failed=1"
 
 
-def test_source_from_row_normalises_enabled_and_notes():
+def _source_row(**overrides) -> dict:
+    base = {
+        "id": 9,
+        "name": "Ведомости",
+        "url": "https://www.vedomosti.ru",
+        "kind": "rss",
+        "category": "media",
+        "fetch_url": "https://www.vedomosti.ru/rss/news",
+        "status": "active",
+        "normalized_url": "vedomosti.ru/rss/news",
+        "poll_interval": "6h",
+        "next_run_at": "2026-09-02T13:00:00+00:00",
+        "category_hint": None,
+        "created_at": "2026-09-02T12:00:00+00:00",
+        "notes": None,
+        "deleted_at": None,
+        "created_by": None,
+    }
+    return {**base, **overrides}
+
+
+def test_source_from_row_reads_the_schedule_and_normalises_null_text():
+    source = Source.from_row(_source_row())
+    assert source.id == 9
+    assert source.status == "active"
+    assert source.poll_interval == "6h"
+    assert source.next_run_at == "2026-09-02T13:00:00+00:00"
+    assert source.normalized_url == "vedomosti.ru/rss/news"
+    assert (source.notes, source.created_by) == ("", "")
+
+
+@pytest.mark.parametrize(
+    ("status", "active"),
+    [("active", True), ("paused", False), ("error", False), ("deleted", False)],
+)
+def test_source_active_is_true_only_for_the_active_status(status, active):
+    assert Source.from_row(_source_row(status=status)).active is active
+
+
+def test_source_from_row_defaults_a_pre_v3_row_to_active():
+    """A row read before the v3 columns exist must still build a usable `Source`."""
     row = {
         "id": 9,
         "name": "Ведомости",
@@ -112,11 +168,106 @@ def test_source_from_row_normalises_enabled_and_notes():
         "kind": "rss",
         "category": "media",
         "fetch_url": "https://www.vedomosti.ru/rss/news",
-        "enabled": 0,
         "created_at": "2026-09-02T12:00:00+00:00",
         "notes": None,
     }
     source = Source.from_row(row)
-    assert source.enabled is False
-    assert source.notes == ""
-    assert source.id == 9
+    assert (source.status, source.active) == ("active", True)
+    assert (source.poll_interval, source.next_run_at) == ("1h", None)
+    assert (source.normalized_url, source.deleted_at, source.created_by) == ("", None, "")
+
+
+# ── stage 1.4 vocabularies and rows ────────────────────────────────────────
+
+
+def test_the_state_vocabularies_are_the_ones_the_schema_checks():
+    assert VISIBILITIES == ("visible", "hidden_feed", "hidden_digest", "deleted")
+    assert SOURCE_STATUSES == ("active", "paused", "error", "deleted")
+    assert POLL_INTERVALS == ("15m", "1h", "6h", "24h")
+
+
+def test_item_to_row_serialises_manual_overrides_and_visibility():
+    item = Item(
+        cluster_id=1,
+        title="Заголовок",
+        manual_overrides=["summary", "priority"],
+        visibility="hidden_digest",
+        hidden_reason="нерелевантно",
+        origin="manual",
+        tags=["регуляторика"],
+    )
+    row = item.to_row()
+    assert row["manual_overrides"] == '["summary", "priority"]'
+    assert (row["visibility"], row["hidden_reason"]) == ("hidden_digest", "нерелевантно")
+    assert row["origin"] == "manual"
+    assert row["tags"] == '["регуляторика"]'
+
+
+def test_item_from_row_tolerates_broken_manual_overrides_json():
+    row = {k: v for k, v in Item(cluster_id=1).to_row().items()}
+    row.update({"id": 3, "manual_overrides": "{not json", "tags": None})
+    item = Item.from_row(row)
+    assert item.manual_overrides == []
+    assert item.tags == []
+    assert item.visibility == "visible"
+
+
+def test_item_revision_from_row_defaults_source_of_change_to_human():
+    row = {
+        "item_id": 1,
+        "field": "summary",
+        "old_value": "было",
+        "new_value": "стало",
+        "actor": None,
+        "created_at": "2026-09-02T12:00:00+00:00",
+        "id": 5,
+    }
+    revision = ItemRevision.from_row(row)
+    assert (revision.actor, revision.source_of_change, revision.edit_reason) == (
+        "user",
+        "human",
+        "",
+    )
+
+
+def test_item_revision_from_row_reads_the_model_origin_and_reason():
+    row = {
+        "item_id": 1,
+        "field": "summary",
+        "old_value": None,
+        "new_value": "версия модели",
+        "actor": "model",
+        "source_of_change": "llm",
+        "edit_reason": "",
+        "created_at": "2026-09-02T12:00:00+00:00",
+        "id": 5,
+    }
+    revision = ItemRevision.from_row(row)
+    assert (revision.actor, revision.source_of_change) == ("model", "llm")
+
+
+def test_source_run_from_row_normalises_null_counters_and_error_text():
+    row = {
+        "id": 1,
+        "source_id": 7,
+        "started_at": "2026-09-02T12:00:00+00:00",
+        "finished_at": None,
+        "http_status": None,
+        "items_found": None,
+        "items_new": None,
+        "error_code": None,
+        "error_message": None,
+    }
+    run = SourceRun.from_row(row)
+    assert (run.items_found, run.items_new) == (0, 0)
+    assert (run.error_code, run.error_message) == ("", "")
+    assert run.finished_at is None
+
+
+def test_item_note_and_tag_from_row():
+    note = ItemNote.from_row(
+        {"id": 2, "item_id": 7, "body": "Взяли в дайджест", "author": None, "created_at": None}
+    )
+    assert (note.body, note.author, note.created_at) == ("Взяли в дайджест", "", "")
+    tag = ItemTag.from_row({"item_id": 7, "tag": "регуляторика", "is_manual": 1})
+    assert (tag.tag, tag.is_manual) == ("регуляторика", True)

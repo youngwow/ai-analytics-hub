@@ -26,12 +26,23 @@ class Source:
     kind: str = "html"
     category: str = "media"
     fetch_url: str = ""
-    enabled: bool = True
+    status: str = "active"  # active | paused | error | deleted
+    normalized_url: str = ""
+    poll_interval: str = "1h"  # 15m | 1h | 6h | 24h
+    next_run_at: str | None = None
+    category_hint: str | None = None  # npa | news
     created_at: str = ""
     notes: str = ""
+    deleted_at: str | None = None
+    created_by: str = ""
+
+    @property
+    def active(self) -> bool:
+        return self.status == "active"
 
     @classmethod
     def from_row(cls, row) -> "Source":
+        keys = row.keys()
         return cls(
             id=row["id"],
             name=row["name"],
@@ -39,9 +50,15 @@ class Source:
             kind=row["kind"],
             category=row["category"],
             fetch_url=row["fetch_url"],
-            enabled=bool(row["enabled"]),
+            status=row["status"] if "status" in keys else "active",
+            normalized_url=row["normalized_url"] if "normalized_url" in keys else "",
+            poll_interval=row["poll_interval"] if "poll_interval" in keys else "1h",
+            next_run_at=row["next_run_at"] if "next_run_at" in keys else None,
+            category_hint=row["category_hint"] if "category_hint" in keys else None,
             created_at=row["created_at"],
             notes=row["notes"] or "",
+            deleted_at=row["deleted_at"] if "deleted_at" in keys else None,
+            created_by=(row["created_by"] or "") if "created_by" in keys else "",
         )
 
 
@@ -261,7 +278,9 @@ class Item:
     confidence: float = 0.0
     tags: list[str] = field(default_factory=list)
     analyst_note: str = ""
-    is_hidden: bool = False
+    visibility: str = "visible"  # visible | hidden_feed | hidden_digest | deleted
+    hidden_reason: str = ""
+    origin: str = "collected"  # collected | manual
     is_archived: bool = False
     degraded: bool = False
     needs_review: bool = False
@@ -269,7 +288,7 @@ class Item:
     model_name: str = ""
     prompt_version: int | None = None
     profile_version: int | None = None
-    edited_fields: list[str] = field(default_factory=list)
+    manual_overrides: list[str] = field(default_factory=list)
     processed_at: str = ""
     published_at: str | None = None
     id: int | None = None
@@ -288,7 +307,9 @@ class Item:
             "confidence": float(self.confidence),
             "tags": json.dumps(self.tags, ensure_ascii=False),
             "analyst_note": self.analyst_note,
-            "is_hidden": int(self.is_hidden),
+            "visibility": self.visibility,
+            "hidden_reason": self.hidden_reason,
+            "origin": self.origin,
             "is_archived": int(self.is_archived),
             "degraded": int(self.degraded),
             "needs_review": int(self.needs_review),
@@ -296,7 +317,7 @@ class Item:
             "model_name": self.model_name,
             "prompt_version": self.prompt_version,
             "profile_version": self.profile_version,
-            "edited_fields": json.dumps(self.edited_fields, ensure_ascii=False),
+            "manual_overrides": json.dumps(self.manual_overrides, ensure_ascii=False),
             "processed_at": self.processed_at,
             "published_at": self.published_at,
         }
@@ -316,7 +337,9 @@ class Item:
             confidence=row["confidence"] or 0.0,
             tags=_json_list(row["tags"]),
             analyst_note=row["analyst_note"] or "",
-            is_hidden=bool(row["is_hidden"]),
+            visibility=row["visibility"] or "visible",
+            hidden_reason=row["hidden_reason"] or "",
+            origin=row["origin"] or "collected",
             is_archived=bool(row["is_archived"]),
             degraded=bool(row["degraded"]),
             needs_review=bool(row["needs_review"]),
@@ -324,7 +347,7 @@ class Item:
             model_name=row["model_name"] or "",
             prompt_version=row["prompt_version"],
             profile_version=row["profile_version"],
-            edited_fields=_json_list(row["edited_fields"]),
+            manual_overrides=_json_list(row["manual_overrides"]),
             processed_at=row["processed_at"] or "",
             published_at=row["published_at"],
             id=row["id"],
@@ -367,17 +390,22 @@ class ItemRevision:
     old_value: str | None = None
     new_value: str | None = None
     actor: str = "user"
+    source_of_change: str = "human"  # llm | human
+    edit_reason: str = ""
     created_at: str = ""
     id: int | None = None
 
     @classmethod
     def from_row(cls, row) -> "ItemRevision":
+        keys = row.keys()
         return cls(
             item_id=row["item_id"],
             field=row["field"],
             old_value=row["old_value"],
             new_value=row["new_value"],
             actor=row["actor"] or "user",
+            source_of_change=(row["source_of_change"] if "source_of_change" in keys else "human"),
+            edit_reason=(row["edit_reason"] or "") if "edit_reason" in keys else "",
             created_at=row["created_at"] or "",
             id=row["id"],
         )
@@ -446,3 +474,74 @@ class LlmCall:
     error: str = ""
     created_at: str = ""
     id: int | None = None
+
+
+VISIBILITIES = ("visible", "hidden_feed", "hidden_digest", "deleted")
+SOURCE_STATUSES = ("active", "paused", "error", "deleted")
+POLL_INTERVALS = ("15m", "1h", "6h", "24h")
+EDIT_REASONS = ("hallucination", "wrong_focus", "wrong_priority", "other")
+
+
+@dataclass
+class SourceRun:
+    """One poll of one source — without this history a silent source and a broken
+    parser look identical (US-4)."""
+
+    source_id: int
+    started_at: str
+    finished_at: str | None = None
+    http_status: int | None = None
+    items_found: int = 0
+    items_new: int = 0
+    error_code: str = ""
+    error_message: str = ""
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "SourceRun":
+        return cls(
+            source_id=row["source_id"],
+            started_at=row["started_at"],
+            finished_at=row["finished_at"],
+            http_status=row["http_status"],
+            items_found=row["items_found"] or 0,
+            items_new=row["items_new"] or 0,
+            error_code=row["error_code"] or "",
+            error_message=row["error_message"] or "",
+            id=row["id"],
+        )
+
+
+@dataclass
+class ItemNote:
+    """An analyst's own note: a decision, not a fact from the source. Never leaves
+    the system."""
+
+    item_id: int
+    body: str
+    author: str = ""
+    created_at: str = ""
+    id: int | None = None
+
+    @classmethod
+    def from_row(cls, row) -> "ItemNote":
+        return cls(
+            item_id=row["item_id"],
+            body=row["body"],
+            author=row["author"] or "",
+            created_at=row["created_at"] or "",
+            id=row["id"],
+        )
+
+
+@dataclass
+class ItemTag:
+    """A tag with its origin: manual tags survive reprocessing, model tags do not."""
+
+    item_id: int
+    tag: str
+    is_manual: bool = False
+
+    @classmethod
+    def from_row(cls, row) -> "ItemTag":
+        return cls(item_id=row["item_id"], tag=row["tag"], is_manual=bool(row["is_manual"]))
