@@ -224,6 +224,7 @@ class FeedService:
             "relevance_score": row["relevance_score"],
             "reasoning": row["reasoning"],
             "snippet": row.get("snippet"),
+            "duplicate_similarity": row.get("duplicate_similarity"),
             "flags": {
                 "degraded": bool(row["degraded"]),
                 "needs_review": bool(row["needs_review"]),

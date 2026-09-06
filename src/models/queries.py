@@ -44,6 +44,9 @@ class FeedQuery:
     cursor: str | None = None
     include_hidden: bool = False
     archived: str = "exclude"
+    # Только карточки с открытым предложением «вероятный дубль» со сходством не
+    # ниже этого (0 — любое); None — фильтр не применяется.
+    duplicate: float | None = None
 
     @classmethod
     def build(
@@ -62,6 +65,7 @@ class FeedQuery:
         cursor: str | None = None,
         include_hidden: bool = False,
         archived: str | None = None,
+        duplicate=None,
         timezone_name: str = "Europe/Moscow",
     ) -> "FeedQuery":
         """Собрать и проверить фильтр. Всё, что не проходит, — `QueryValidationError`."""
@@ -81,6 +85,8 @@ class FeedQuery:
         limit = DEFAULT_LIMIT if limit is None else _int(limit, "limit")
         if not 1 <= limit <= MAX_LIMIT:
             raise QueryValidationError(f"limit должен быть в диапазоне 1..{MAX_LIMIT}, получено {limit}")
+
+        duplicate = _similarity(duplicate)
 
         zone = ZoneInfo(timezone_name)
         start = _boundary(date_from, zone, end=False)
@@ -102,6 +108,7 @@ class FeedQuery:
             cursor=cursor,
             include_hidden=bool(include_hidden),
             archived=archived,
+            duplicate=duplicate,
         )
 
     # -- курсор --
@@ -121,6 +128,7 @@ class FeedQuery:
                 self.order,
                 self.include_hidden,
                 self.archived,
+                self.duplicate,
             ],
             ensure_ascii=False,
         )
@@ -226,6 +234,27 @@ def _int(value, name: str) -> int:
         return int(value)
     except (TypeError, ValueError) as e:
         raise QueryValidationError(f"{name}: ожидалось целое число, получено {value!r}") from e
+
+
+def _similarity(value) -> float | None:
+    """Порог сходства «вероятного дубля»: доля 0..1 или проценты 1..100; пусто — нет фильтра.
+
+    `duplicate=0.8` и `duplicate=80` — одно и то же: аналитик думает в процентах,
+    а в базе лежит косинус.
+    """
+    if value is None or value == "" or value is False:
+        return None
+    if value is True:
+        return 0.0
+    try:
+        number = float(value)
+    except (TypeError, ValueError) as e:
+        raise QueryValidationError(f"duplicate: ожидалось число 0..1 или проценты, получено {value!r}") from e
+    if 1 < number <= 100:
+        number /= 100
+    if not 0 <= number <= 1:
+        raise QueryValidationError(f"duplicate: сходство должно быть в диапазоне 0..1 (или 0..100 %), получено {value!r}")
+    return round(number, 4)
 
 
 def _one_of(value: str, allowed, name: str) -> None:

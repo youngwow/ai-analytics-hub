@@ -123,9 +123,20 @@ describe('material CRUD, notes, history and originals', () => {
     await h.click('Объединить'); expect(mutation('/items/101/merge')!.body).toEqual({ item_ids: [102], reason: '' })
     await h.click('Не дубль'); expect(mutation('/items/101/not-duplicate')).toBeTruthy()
   })
+  it('filters the feed by probable-duplicate similarity', async () => {
+    await h.launch(); await h.field('Вероятный дубль, сходство от', '0.8'); await h.settle()
+    expect(path('/items').slice(-1)[0]!.url.searchParams.get('duplicate')).toBe('0.8')
+    await h.field('Вероятный дубль, сходство от', '0'); await h.settle()
+    expect(path('/items').slice(-1)[0]!.url.searchParams.get('duplicate')).toBe('0')
+    const before = path('/items').length
+    await h.field('Вероятный дубль, сходство от', '1.5'); await h.settle()
+    expect(path('/items').length).toBe(before)  // вне 0–1 — фильтр не меняется
+    await h.field('Вероятный дубль, сходство от', ''); await h.settle()
+    expect(path('/items').slice(-1)[0]!.url.searchParams.get('duplicate')).toBeNull()
+  })
   it('marks a card with an open duplicate proposal in the feed', async () => {
-    h.handle(call => call.url.pathname === '/api/v1/items' ? json({ items: [{ ...item, flags: { ...item.flags, duplicate: true } }], total: 1, next_cursor: null, took_ms: 1 }) : undefined)
-    await h.launch(); expect(h.app().text()).toContain('Вероятный дубль')
+    h.handle(call => call.url.pathname === '/api/v1/items' ? json({ items: [{ ...item, duplicate_similarity: 0.82, flags: { ...item.flags, duplicate: true } }], total: 1, next_cursor: null, took_ms: 1 }) : undefined)
+    await h.launch(); expect(h.app().text()).toContain('Вероятный дубль · 82 %')
   })
   it('hides, unhides, deletes and restores through distinct backend actions', async () => {
     await h.launch(); await openCard(); await h.click('Скрыть из ленты'); expect(mutation('/items/101/hide')!.body).toMatchObject({ scope: 'feed' })

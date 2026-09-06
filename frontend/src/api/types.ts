@@ -7,10 +7,10 @@ export interface FeedItem {
   title: string | null; summary: string | null; priority: Priority; tags: string[]
   published_at: string | null; canonical_url: string | null; source_name: string | null; sources_count: number | null
   visibility: Visibility; hidden_reason: string; origin: string; confidence: number | null
-  relevance_score: number | null; reasoning: string | null; snippet: string | null
+  relevance_score: number | null; reasoning: string | null; snippet: string | null; duplicate_similarity: number | null
   flags: { degraded: boolean; needs_review: boolean; date_estimated: boolean; edited: boolean; duplicate: boolean }
 }
-export interface Item extends Omit<FeedItem, 'flags' | 'canonical_url' | 'source_name' | 'sources_count' | 'snippet'> {
+export interface Item extends Omit<FeedItem, 'flags' | 'canonical_url' | 'source_name' | 'sources_count' | 'snippet' | 'duplicate_similarity'> {
   cluster_id: number; analyst_note: string; manual_overrides: string[]; is_archived: boolean
   degraded: boolean; needs_review: boolean; date_estimated: boolean; model_name: string
   prompt_version: number | null; profile_version: number | null; processed_at: string
@@ -43,7 +43,7 @@ export interface Feed { items: FeedItem[]; total: number; next_cursor: string | 
 export interface Documents { documents: { id: number; title: string | null; url: string; source_id: number; source_name: string | null; published_at: string | null; fetched_at: string | null; last_error: string; chars: number | null }[]; total: number; next_cursor: string | null; took_ms: number }
 export type DocumentQuery = Pick<FeedQuery, 'q' | 'source_id' | 'from' | 'to' | 'limit' | 'cursor'> & { order?: 'published' | 'fetched' }
 export interface Digest { title: string; generated_at: string; items: number; format: 'markdown' | 'json'; body: string }
-export interface FeedQuery { q?: string; type?: string; npa_status?: string; priority?: string[]; tag?: string[]; source_id?: number[]; from?: string; to?: string; order?: string; limit?: number; cursor?: string; include_hidden?: boolean; archived?: 'exclude' | 'include' | 'only' }
+export interface FeedQuery { q?: string; type?: string; npa_status?: string; priority?: string[]; tag?: string[]; source_id?: number[]; from?: string; to?: string; order?: string; limit?: number; cursor?: string; include_hidden?: boolean; archived?: 'exclude' | 'include' | 'only'; duplicate?: number }
 export interface ItemUpdate { title?: string; summary?: string; type?: ItemType; npa_status?: string; priority?: Priority; tags?: string[]; edit_reason?: string }
 export interface ItemCreate { title: string; url: string; raw_text: string; type: ItemType; npa_status?: string; published_at?: string; run_llm: boolean; force: boolean }
 export interface SourceCreate { url: string; title: string; type: string; poll_interval: string; category_hint: string | null; backfill_limit: number; created_by: string }

@@ -9,3 +9,4 @@ export const NPA_STATUSES = ['анонс', 'разработка', 'внесён
 export const EDIT_REASONS: Record<string, string> = { hallucination: 'Неточность ИИ', wrong_focus: 'Изменение акцента', wrong_priority: 'Неверный приоритет', other: 'Другое' }
 export const VISIBILITY: Record<string, string> = { visible: 'В ленте', hidden_feed: 'Скрыт из ленты', hidden_digest: 'Исключён из дайджеста', deleted: 'Удалён' }
 export const ENTITY_ROLES: Record<string, string> = { who: 'Кто', what: 'Что', when: 'Когда', impact: 'Последствия', org: 'Организация', act_number: 'Номер акта' }
+

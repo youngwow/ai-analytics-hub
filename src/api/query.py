@@ -23,6 +23,7 @@ def feed_query(request: Request, timezone_name: str) -> FeedQuery:
         cursor=params.get("cursor"),
         include_hidden=params.get("include_hidden", "").lower() in ("1", "true", "yes"),
         archived=params.get("archived"),
+        duplicate=params.get("duplicate"),
         timezone_name=timezone_name,
     )
 
@@ -36,6 +37,7 @@ def document_query(request: Request, timezone_name: str) -> DocumentQuery:
             "type": params.get("type"),
             "tag": params.getlist("tag"),
             "npa_status": params.get("npa_status"),
+            "duplicate": params.get("duplicate"),
         },
         q=params.get("q"),
         source_ids=params.getlist("source_id"),
@@ -62,5 +64,6 @@ def digest_query(filters: dict, timezone_name: str) -> FeedQuery:
         order=filters.get("order", "priority"),
         limit=200,
         archived=filters.get("archived"),
+        duplicate=filters.get("duplicate"),
         timezone_name=timezone_name,
     )

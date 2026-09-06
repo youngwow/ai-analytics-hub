@@ -70,6 +70,7 @@ def test_a_feed_row_carries_everything_the_dashboard_shows(feed, card_factory, s
         "relevance_score": pytest.approx(0.86),
         "reasoning": "Затрагивает реестр отечественного ПО.",
         "snippet": None,
+        "duplicate_similarity": None,
         "flags": {
             "degraded": False,
             "needs_review": False,

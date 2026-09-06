@@ -730,6 +730,7 @@ def _feed_query(args, config: Config, **overrides):
         "limit": getattr(args, "limit", None),
         "cursor": getattr(args, "cursor", None),
         "include_hidden": getattr(args, "include_hidden", False),
+        "duplicate": getattr(args, "duplicate", None),
         "timezone_name": config.api.timezone,
     }
     kwargs.update(overrides)
@@ -754,7 +755,11 @@ def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
             str(r["sources_count"]),
             (r["source_name"] or "—")[:18],
             ("⚠ " if r["flags"]["needs_review"] else "")
-            + ("≈ " if r["flags"].get("duplicate") else "")
+            + (
+                f"≈{round(r['duplicate_similarity'] * 100)}% "
+                if r["flags"].get("duplicate") and r.get("duplicate_similarity") is not None
+                else "≈ " if r["flags"].get("duplicate") else ""
+            )
             + ("· " if r["visibility"] != "visible" else "")
             + (r["title"] or "")[:52],
         ]
@@ -1371,6 +1376,11 @@ def _feed_filter_args(parser) -> None:
     parser.add_argument("--to", dest="date_to")
     parser.add_argument("--order", choices=("published", "priority", "processed"),
                         default="published")
+    parser.add_argument(
+        "--duplicate", nargs="?", const="0", metavar="SIMILARITY",
+        help="only cards with a probable-duplicate proposal; optional minimum similarity "
+             "(0.8 or 80 for 80 %%)",
+    )
 
 
 def build_parser() -> argparse.ArgumentParser:

@@ -9,6 +9,15 @@ function set(key: keyof FeedQuery, value: unknown) {
   emit('update:modelValue', { ...props.modelValue, [key]: value, ...(key === 'type' && value !== 'npa' ? { npa_status: undefined } : {}), cursor: undefined })
 }
 const value = (event: Event) => (event.target as HTMLInputElement).value
+// Порог сходства «вероятного дубля»: число 0–1 (запятая тоже читается), пусто — без фильтра.
+function setSimilarity(raw: string) {
+  const text = raw.trim().replace(',', '.')
+  const current = props.modelValue.duplicate
+  if (text === '') { if (current !== undefined) set('duplicate', undefined); return }
+  const number = Number(text)
+  // Промежуточный ввод («0.», «0.8» после «0») не должен дёргать ленту лишний раз.
+  if (Number.isFinite(number) && number >= 0 && number <= 1 && number !== current) set('duplicate', number)
+}
 </script>
 <template>
   <div class="toolbar filter-toolbar gap-3 py-2.5" aria-label="Фильтры материалов">
@@ -17,6 +26,7 @@ const value = (event: Event) => (event.target as HTMLInputElement).value
     <label v-if="npa || modelValue.type === 'npa'" class="field-label">Статус НПА<select class="form-control" :value="modelValue.npa_status ?? ''" @change="set('npa_status', value($event) || undefined)"><option value="">Все статусы</option><option v-for="status in filters?.npa_statuses ?? NPA_STATUSES" :key="status">{{ status }}</option></select></label>
     <label v-if="!documents" class="field-label">Приоритет<select class="form-control" :value="modelValue.priority?.[0] ?? ''" @change="set('priority', value($event) ? [value($event)] : undefined)"><option value="">Все приоритеты</option><option v-for="(label, key) in PRIORITIES" :key="key" :value="key">{{ label }}</option></select></label>
     <label v-if="!documents" class="field-label">Категория / тег<select class="form-control" :value="modelValue.tag?.[0] ?? ''" @change="set('tag', value($event) ? [value($event)] : undefined)"><option value="">Все категории</option><option v-for="tag in [...new Set([...CATEGORIES, ...(filters?.tags ?? [])])]" :key="tag">{{ tag }}</option></select></label>
+    <label v-if="!documents" class="field-label">Вероятный дубль, сходство от<input type="number" class="form-control" min="0" max="1" step="0.01" inputmode="decimal" placeholder="0–1, пусто — не фильтровать" :value="modelValue.duplicate ?? ''" @input="setSimilarity(value($event))" /></label>
     <label v-if="archive" class="field-label">Архив<select class="form-control" :value="modelValue.archived ?? 'exclude'" @change="set('archived', value($event))"><option value="exclude">Без архивных</option><option value="only">Только архивные</option><option value="include">Включая архивные</option></select></label>
     <label class="field-label">С даты<input type="date" class="form-control" :value="modelValue.from ?? ''" @change="set('from', value($event) || undefined)" /></label>
     <label class="field-label">По дату<input type="date" class="form-control" :value="modelValue.to ?? ''" @change="set('to', value($event) || undefined)" /></label>

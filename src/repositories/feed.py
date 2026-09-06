@@ -53,17 +53,28 @@ _PROCESSED = "COALESCE(i.processed_at, '')"
 # Открытое предложение «вероятный дубль» — последняя ревизия `duplicate_of` от
 # модели (ревизия человека закрывает его). Подзапрос идёт по индексу
 # `idx_item_revisions_field`, на странице ленты это десятки строк.
-DUPLICATE_FLAG = """
+_LAST_DUPLICATE_REVISION = """
+    SELECT r.id FROM item_revisions r
+     WHERE r.item_id = i.id AND r.field = 'duplicate_of'
+     ORDER BY r.created_at DESC, r.id DESC LIMIT 1
+"""
+DUPLICATE_FLAG = f"""
     (SELECT r.source_of_change = 'llm' FROM item_revisions r
-      WHERE r.item_id = i.id AND r.field = 'duplicate_of'
-      ORDER BY r.created_at DESC, r.id DESC LIMIT 1) AS duplicate_flag
+      WHERE r.id = ({_LAST_DUPLICATE_REVISION})) AS duplicate_flag
+"""
+# Сходство открытого предложения (среднее по группе, из JSON ревизии) — по нему
+# фильтр `duplicate` и подпись «Вероятный дубль · 82 %» в ленте.
+DUPLICATE_SIMILARITY = f"""
+    (SELECT CASE WHEN r.source_of_change = 'llm'
+                 THEN json_extract(r.new_value, '$.similarity') END
+       FROM item_revisions r WHERE r.id = ({_LAST_DUPLICATE_REVISION})) AS duplicate_similarity
 """
 FEED_COLUMNS = """
     i.id, i.type, i.npa_status, i.npa_key, i.priority, i.title, i.summary, i.tags,
     i.published_at, i.visibility, i.hidden_reason, i.origin, i.degraded, i.needs_review,
     i.date_estimated, i.manual_overrides, i.confidence, i.relevance_score, i.reasoning,
     c.size AS sources_count, d.url AS canonical_url, sr.name AS source_name,
-""" + DUPLICATE_FLAG
+""" + DUPLICATE_FLAG + ", " + DUPLICATE_SIMILARITY
 FEED_FROM = """
     FROM items i
     JOIN clusters c ON c.id = i.cluster_id
@@ -127,6 +138,16 @@ def where(query: FeedQuery) -> tuple[list[str], list]:
     if query.date_to:
         clauses.append("i.published_at <= ?")
         params.append(to_utc_iso(query.date_to))
+    if query.duplicate is not None:
+        # Открытое предложение «вероятный дубль» (последняя ревизия поля — от
+        # модели) со сходством не ниже порога. Предложение без числа сходства
+        # считается порогом 0 — фильтр «любое сходство» его не теряет.
+        clauses.append(
+            "EXISTS (SELECT 1 FROM item_revisions r "
+            f"WHERE r.id = ({_LAST_DUPLICATE_REVISION}) AND r.source_of_change = 'llm' "
+            "AND COALESCE(json_extract(r.new_value, '$.similarity'), 0) >= ?)"
+        )
+        params.append(query.duplicate)
     return clauses, params
 
 

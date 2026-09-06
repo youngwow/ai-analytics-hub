@@ -408,6 +408,7 @@ class FeedItemResponse(BaseModel):
     relevance_score: float | None
     reasoning: str | None
     snippet: str | None
+    duplicate_similarity: float | None = None  # сходство открытого предложения «вероятный дубль»
     flags: FeedFlags
 
 
