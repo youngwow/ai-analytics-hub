@@ -81,11 +81,13 @@ class EventLinker:
         signal: SignalDraft,
         events: list[EventRecord],
         *,
-        mode: Literal["full_scan", "embedding_top20"] = "embedding_top20",
+        mode: Literal["full_scan", "embedding_top20", "adaptive"] = "adaptive",
     ) -> LinkDecision:
         if not events:
             return LinkDecision(signal.signal_id, None, "different", 1.0, "event bank is empty")
         candidates = events
+        if mode == "adaptive":
+            mode = "full_scan" if len(events) <= 20 else "embedding_top20"
         if mode == "embedding_top20":
             events = self.ensure_embeddings(events)
             if self.embedder is None:

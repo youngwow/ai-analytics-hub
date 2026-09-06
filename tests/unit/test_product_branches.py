@@ -250,6 +250,25 @@ def test_a3_embeddings_only_select_candidates_and_glm_decides():
     assert len(fake.embedded) == 1
 
 
+def test_a3_adaptive_skips_embeddings_for_small_bank():
+    fake = FakeLLM(
+        {
+            "event_id": "e1",
+            "relation": "same_event",
+            "confidence": 0.9,
+            "evidence": "same event",
+            "needs_human_review": False,
+        },
+        embedder=AssertionError("embedding must not be called for a small bank"),
+    )
+    result = EventLinker(fake, fake, model="glm-5.3-flash:cloud").link(
+        signal(), [EventRecord("e1", "", "", (), (), "x")], mode="adaptive"
+    )
+
+    assert result.event_id == "e1"
+    assert fake.embedded == []
+
+
 def test_a3_rejects_event_id_outside_candidates():
     fake = FakeLLM({"event_id": "invented", "relation": "same_event", "confidence": 1, "evidence": "", "needs_human_review": False})
     result = EventLinker(fake, None, model="glm-5.3-flash:cloud").link(signal(), [EventRecord("e1", "", "", (), (), "x")], mode="full_scan")

@@ -150,7 +150,9 @@ class ProductAgentRuntime:
             for signal in final_signals.values()
             if signal.kind in {"npa", "npa_candidate"}
         ]
-        resolutions = self._resolve_npas(npa_signals, document_map, initial_state)
+        resolutions = self._resolve_npas(
+            npa_signals, document_map, initial_state, mode=config.a3
+        )
         resolved_npa_ids = {
             signal_id
             for resolution in resolutions
@@ -255,9 +257,11 @@ class ProductAgentRuntime:
         signals: list[SignalDraft],
         documents: dict[str, PreparedDocument],
         initial_state: dict[str, Any],
+        *,
+        mode: str,
     ) -> tuple[NpaResolution, ...]:
         tracked = list(initial_state.get("tracked_npas", []))
-        resolved = self.npa_resolver.resolve(signals, documents, tracked)
+        resolved = self.npa_resolver.resolve(signals, documents, tracked, mode=mode)
         tracked_ids = {
             str(item["object_id"]) for item in tracked if item.get("object_id")
         }

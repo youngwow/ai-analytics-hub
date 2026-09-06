@@ -27,7 +27,7 @@ from .store import ProductStore
 class BranchConfiguration:
     a1: Literal["one_pass", "two_pass"] = "one_pass"
     a2: Literal["without_research", "targeted_research"] = "without_research"
-    a3: Literal["full_scan", "embedding_top20"] = "full_scan"
+    a3: Literal["full_scan", "embedding_top20", "adaptive"] = "adaptive"
     a4: Literal["without_critic", "with_critic"] = "without_critic"
 
     @property

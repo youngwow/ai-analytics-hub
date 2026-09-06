@@ -1,0 +1,247 @@
+{
+  "benchmark": "B4-contextual-v1",
+  "interpretation": "Counts only; human time/usability/trust are not measured.",
+  "H1": {
+    "A": {
+      "fixed": {
+        "reachable_digest_objects": 6,
+        "all_digest_objects": 7,
+        "irrelevant_exposed": 7
+      },
+      "search": {
+        "reachable_digest_objects": 3,
+        "all_digest_objects": 7,
+        "irrelevant_exposed": 1
+      },
+      "hybrid": {
+        "reachable_digest_objects": 7,
+        "all_digest_objects": 7,
+        "irrelevant_exposed": 8
+      }
+    },
+    "B": {
+      "fixed": {
+        "reachable_digest_objects": 6,
+        "all_digest_objects": 6,
+        "irrelevant_exposed": 7
+      },
+      "search": {
+        "reachable_digest_objects": 2,
+        "all_digest_objects": 6,
+        "irrelevant_exposed": 1
+      },
+      "hybrid": {
+        "reachable_digest_objects": 6,
+        "all_digest_objects": 6,
+        "irrelevant_exposed": 8
+      }
+    }
+  },
+  "H2": {
+    "A": {
+      "review_all_items": 22,
+      "risk_only_items": 13,
+      "gold_risk_items": 8,
+      "gold_risk_caught": 8,
+      "gold_risk_missed_ids": [],
+      "extra_review_ids": [
+        "A09",
+        "A11",
+        "A13",
+        "A14",
+        "A16"
+      ]
+    },
+    "B": {
+      "review_all_items": 22,
+      "risk_only_items": 13,
+      "gold_risk_items": 9,
+      "gold_risk_caught": 9,
+      "gold_risk_missed_ids": [],
+      "extra_review_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B20"
+      ]
+    },
+    "D1_critical": {
+      "review_all_items": 3,
+      "risk_only_items": 3,
+      "gold_risk_items": 3,
+      "gold_risk_caught": 3,
+      "gold_risk_missed_ids": [],
+      "extra_review_ids": []
+    },
+    "D2_event_boundary": {
+      "review_all_items": 5,
+      "risk_only_items": 4,
+      "gold_risk_items": 2,
+      "gold_risk_caught": 2,
+      "gold_risk_missed_ids": [],
+      "extra_review_ids": [
+        "D201",
+        "D204"
+      ]
+    },
+    "D3_new_npa": {
+      "review_all_items": 2,
+      "risk_only_items": 2,
+      "gold_risk_items": 2,
+      "gold_risk_caught": 2,
+      "gold_risk_missed_ids": [],
+      "extra_review_ids": []
+    },
+    "D4_known_npa": {
+      "review_all_items": 4,
+      "risk_only_items": 4,
+      "gold_risk_items": 4,
+      "gold_risk_caught": 4,
+      "gold_risk_missed_ids": [],
+      "extra_review_ids": []
+    }
+  },
+  "H3": {
+    "A": {
+      "flat_digest_materials": 13,
+      "expected_digest_objects": 7,
+      "exact_object_membership": 7,
+      "multi_source_objects": 3
+    },
+    "B": {
+      "flat_digest_materials": 12,
+      "expected_digest_objects": 6,
+      "exact_object_membership": 6,
+      "multi_source_objects": 3
+    },
+    "D1_critical": {
+      "flat_digest_materials": 3,
+      "expected_digest_objects": 1,
+      "exact_object_membership": 1,
+      "multi_source_objects": 1
+    },
+    "D2_event_boundary": {
+      "flat_digest_materials": 5,
+      "expected_digest_objects": 2,
+      "exact_object_membership": 2,
+      "multi_source_objects": 1
+    },
+    "D3_new_npa": {
+      "flat_digest_materials": 2,
+      "expected_digest_objects": 1,
+      "exact_object_membership": 1,
+      "multi_source_objects": 1
+    },
+    "D4_known_npa": {
+      "flat_digest_materials": 4,
+      "expected_digest_objects": 1,
+      "exact_object_membership": 1,
+      "multi_source_objects": 1
+    }
+  },
+  "H4": {
+    "A": {
+      "general_stream_items": 22,
+      "roles": {
+        "PR": {
+          "correctly_visible": 7,
+          "extra": 1,
+          "missed": 2
+        },
+        "GR": {
+          "correctly_visible": 8,
+          "extra": 0,
+          "missed": 0
+        }
+      },
+      "critical_role_misses": []
+    },
+    "B": {
+      "general_stream_items": 22,
+      "roles": {
+        "PR": {
+          "correctly_visible": 7,
+          "extra": 3,
+          "missed": 0
+        },
+        "GR": {
+          "correctly_visible": 6,
+          "extra": 0,
+          "missed": 2
+        }
+      },
+      "critical_role_misses": []
+    },
+    "D1_critical": {
+      "general_stream_items": 3,
+      "roles": {
+        "PR": {
+          "correctly_visible": 3,
+          "extra": 0,
+          "missed": 0
+        },
+        "GR": {
+          "correctly_visible": 3,
+          "extra": 0,
+          "missed": 0
+        }
+      },
+      "critical_role_misses": []
+    },
+    "D2_event_boundary": {
+      "general_stream_items": 5,
+      "roles": {
+        "PR": {
+          "correctly_visible": 5,
+          "extra": 0,
+          "missed": 0
+        },
+        "GR": {
+          "correctly_visible": 0,
+          "extra": 0,
+          "missed": 0
+        }
+      },
+      "critical_role_misses": []
+    },
+    "D3_new_npa": {
+      "general_stream_items": 2,
+      "roles": {
+        "PR": {
+          "correctly_visible": 0,
+          "extra": 0,
+          "missed": 0
+        },
+        "GR": {
+          "correctly_visible": 2,
+          "extra": 0,
+          "missed": 0
+        }
+      },
+      "critical_role_misses": []
+    },
+    "D4_known_npa": {
+      "general_stream_items": 4,
+      "roles": {
+        "PR": {
+          "correctly_visible": 0,
+          "extra": 0,
+          "missed": 0
+        },
+        "GR": {
+          "correctly_visible": 4,
+          "extra": 0,
+          "missed": 0
+        }
+      },
+      "critical_role_misses": []
+    }
+  },
+  "H5": {
+    "working_stream_items": 58,
+    "top_layer_expected_objects": 18,
+    "top_layer_exact_objects": 18,
+    "critical_objects": 1,
+    "critical_objects_missing": []
+  }
+}

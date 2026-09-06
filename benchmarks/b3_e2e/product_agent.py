@@ -259,7 +259,9 @@ def main(argv=None) -> int:
     parser.add_argument(
         "--a2", choices=["without_research", "targeted_research"], default="without_research"
     )
-    parser.add_argument("--a3", choices=["full_scan", "embedding_top20"], default="full_scan")
+    parser.add_argument(
+        "--a3", choices=["full_scan", "embedding_top20", "adaptive"], default="adaptive"
+    )
     parser.add_argument("--a4", choices=["without_critic", "with_critic"], default="without_critic")
     parser.add_argument(
         "--concurrency",
@@ -287,7 +289,7 @@ def main(argv=None) -> int:
     raw_document_ids = persist_raw_documents(db, documents)
     branches = BranchConfiguration(args.a1, args.a2, args.a3, args.a4)
     embedder = None
-    if branches.a3 == "embedding_top20":
+    if branches.a3 in {"embedding_top20", "adaptive"}:
         embedder = build_embedding_provider(
             config.embeddings,
             load_env_secret(config.embeddings.api_key_env, DEFAULT_PATHS.env_path),
@@ -303,7 +305,7 @@ def main(argv=None) -> int:
     runtime = ProductAgentRuntime(
         PrimaryAnalyzer(provider, model=config.llm.model, max_chars=config.processing.max_chars),
         EventLinker(provider, embedder, model=config.llm.model),
-        NpaResolver(npa_provider, model=config.llm.model),
+        NpaResolver(npa_provider, model=config.llm.model, embedder=embedder),
         store,
         researcher=researcher,
         critic=(

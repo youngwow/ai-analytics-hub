@@ -17,6 +17,8 @@ def signal(signal_id="m1:s1", material_id="m1", *, critical=False):
         impact="Влияет на продукт",
         urgency="urgent" if critical else "routine",
         confidence=0.9,
+        unknowns=("Применимость к GS Labs не подтверждена",),
+        research_questions=("Используется ли компонент в продуктах?",),
         recipient_roles=("PR", "GR", "HEAD"),
     )
 
@@ -34,9 +36,31 @@ def test_release_projection_keeps_evidence_and_routes_critical():
     assert obj is not None
     assert obj["type"] == "event"
     assert obj["claims"][0]["evidence"][0]["quote"] == "Подтверждён факт"
+    assert obj["unknowns"] == [
+        {"source_item_id": "m1", "text": "Применимость к GS Labs не подтверждена"}
+    ]
+    assert obj["research_questions"] == ["Используется ли компонент в продуктах?"]
     deliveries = build_deliveries([obj])
     assert {row["delivery_type"] for row in deliveries} == {"urgent_alert"}
     assert {row["recipient"] for row in deliveries} == {"PR", "GR", "HEAD"}
+
+
+def test_critical_signal_is_always_visible_in_shared_critical_core():
+    current = SignalDraft(
+        signal_id="m1:s1",
+        material_id="m1",
+        summary="Критичное событие",
+        claims=(EvidenceClaim("Факт", "Факт"),),
+        relevance="relevant",
+        importance="critical",
+        interest="GR",
+        impact="Нужна срочная проверка",
+        urgency="urgent",
+        confidence=0.8,
+        recipient_roles=("GR",),
+    )
+
+    assert current.roles == ["PR", "GR", "HEAD"]
 
 
 def test_irrelevant_empty_analysis_is_not_flagged_for_review():

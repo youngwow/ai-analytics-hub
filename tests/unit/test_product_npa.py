@@ -98,6 +98,88 @@ def test_npa_resolver_receives_structured_state_from_primary_analysis():
     assert row["change_summary"] == "Срок сокращён"
 
 
+def test_large_npa_bank_uses_embedding_candidates_and_keeps_exact_id():
+    answer = {
+        "objects": [
+            {
+                "object_id": "TRACKED-24",
+                "member_signal_ids": ["m1:s1"],
+                "external_id": "RU-1",
+                "current_stage": "adopted",
+                "current_version": "v2",
+                "change_summary": "Срок изменён",
+                "effective_from": "2026-12-01",
+                "stale_signal_ids": [],
+                "needs_human_review": False,
+            }
+        ]
+    }
+
+    def vectors(texts):
+        return [[1.0, 0.0] if "RU-1" in text else [0.0, 1.0] for text in texts]
+
+    provider = FakeLLM(answer, embedder=vectors)
+    tracked = [
+        {
+            "object_id": f"TRACKED-{index}",
+            "external_id": "RU-1" if index == 24 else f"RU-{100 + index}",
+            "title": f"Проект {index}",
+            "current_version": "v1",
+        }
+        for index in range(25)
+    ]
+
+    result = NpaResolver(
+        provider, model="glm-5.3-flash:cloud", embedder=provider
+    ).resolve(
+        [signal()],
+        {"m1": PreparedDocument("m1", "НПА", "Опубликована новая редакция")},
+        tracked,
+        mode="adaptive",
+    )
+
+    payload = json.loads(provider.prompts[0])
+    assert len(payload["tracked_npas"]) <= 20
+    assert any(row["object_id"] == "TRACKED-24" for row in payload["tracked_npas"])
+    assert result[0].object_id == "TRACKED-24"
+
+
+def test_large_npa_bank_without_embedder_degrades_to_exact_ids_only():
+    answer = {
+        "objects": [
+            {
+                "object_id": "TRACKED-24",
+                "member_signal_ids": ["m1:s1"],
+                "external_id": "RU-1",
+                "current_stage": "adopted",
+                "current_version": "v2",
+                "change_summary": "Срок изменён",
+                "effective_from": "2026-12-01",
+                "stale_signal_ids": [],
+                "needs_human_review": False,
+            }
+        ]
+    }
+    provider = FakeLLM(answer)
+    tracked = [
+        {
+            "object_id": f"TRACKED-{index}",
+            "external_id": "RU-1" if index == 24 else f"RU-{100 + index}",
+        }
+        for index in range(25)
+    ]
+
+    NpaResolver(provider, model="glm-5.3-flash:cloud").resolve(
+        [signal()],
+        {"m1": PreparedDocument("m1", "НПА", "Опубликована новая редакция")},
+        tracked,
+        mode="adaptive",
+    )
+
+    payload = json.loads(provider.prompts[0])
+    assert [row["object_id"] for row in payload["tracked_npas"]] == ["TRACKED-24"]
+
+
 def test_npa_resolver_fails_safe_without_dropping_signal():
     resolver = NpaResolver(
         FakeLLM(LlmTemporaryError("down")), model="glm-5.3-flash:cloud"

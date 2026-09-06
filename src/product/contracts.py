@@ -187,6 +187,11 @@ class SignalDraft:
 
     @property
     def roles(self) -> list[str]:
+        # Product policy: an actually critical/urgent signal belongs to the
+        # shared critical core.  It must not disappear from either specialist
+        # view because the model selected only one functional profile.
+        if self.critical_or_escalate:
+            return ["PR", "GR", "HEAD"]
         if self.recipient_roles:
             return list(dict.fromkeys(self.recipient_roles))
         if self.interest == "BOTH":

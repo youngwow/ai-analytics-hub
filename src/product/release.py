@@ -104,6 +104,20 @@ def _object_payload(object_id: str, kind: str, signals: list[SignalDraft]) -> di
             )
     summaries = list(dict.fromkeys(signal.summary for signal in signals if signal.summary))
     impacts = list(dict.fromkeys(signal.impact for signal in signals if signal.impact))
+    unknowns = [
+        {"source_item_id": signal.material_id, "text": unknown}
+        for signal in signals
+        for unknown in signal.unknowns
+        if unknown
+    ]
+    research_questions = list(
+        dict.fromkeys(
+            question
+            for signal in signals
+            for question in signal.research_questions
+            if question
+        )
+    )
     return {
         "object_id": object_id,
         "type": kind,
@@ -114,6 +128,11 @@ def _object_payload(object_id: str, kind: str, signals: list[SignalDraft]) -> di
         "critical": any(signal.critical_or_escalate for signal in signals),
         "roles": roles,
         "claims": claims,
+        # Uncertainty is part of the user-facing object, not hidden telemetry.
+        # Otherwise a correct internal analysis can become an overconfident
+        # short digest when the summary is projected for release.
+        "unknowns": unknowns,
+        "research_questions": research_questions,
     }
 
 

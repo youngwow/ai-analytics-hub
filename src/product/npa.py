@@ -6,10 +6,11 @@ import hashlib
 import json
 import re
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Literal
 
-from ..processing.llm import LLMProvider, LlmTemporaryError
+from ..processing.llm import EmbeddingProvider, LLMProvider, LlmTemporaryError
 from .contracts import PreparedDocument, SignalDraft
+from .events import cosine
 
 NPA_SCHEMA: dict[str, Any] = {
     "type": "object",
@@ -111,18 +112,31 @@ class NpaResolution:
 
 
 class NpaResolver:
-    def __init__(self, provider: LLMProvider, *, model: str):
+    def __init__(
+        self,
+        provider: LLMProvider,
+        *,
+        model: str,
+        embedder: EmbeddingProvider | None = None,
+        candidate_limit: int = 20,
+    ):
         self.provider = provider
         self.model = model
+        self.embedder = embedder
+        self.candidate_limit = candidate_limit
+        self._embedding_cache: dict[tuple[str, str], tuple[float, ...]] = {}
 
     def resolve(
         self,
         signals: list[SignalDraft],
         documents: dict[str, PreparedDocument],
         tracked: list[dict[str, Any]],
+        *,
+        mode: Literal["full_scan", "embedding_top20", "adaptive"] = "adaptive",
     ) -> tuple[NpaResolution, ...]:
         if not signals:
             return ()
+        tracked = self._select_tracked(signals, tracked, mode)
         payload = {
             "tracked_npas": tracked,
             "signals": [
@@ -141,6 +155,96 @@ class NpaResolver:
             for resolution in self._validate(completion.data, signals, tracked)
         )
         return self._attach_unresolved(resolved, signals, documents, tracked)
+
+    def _select_tracked(
+        self,
+        signals: list[SignalDraft],
+        tracked: list[dict[str, Any]],
+        mode: Literal["full_scan", "embedding_top20", "adaptive"],
+    ) -> list[dict[str, Any]]:
+        """Keep exact identities and retrieve semantic candidates for a large bank."""
+        if mode == "adaptive":
+            mode = "full_scan" if len(tracked) <= self.candidate_limit else "embedding_top20"
+        if mode == "full_scan" or len(tracked) <= self.candidate_limit:
+            return tracked
+        if mode != "embedding_top20":
+            raise ValueError(f"unknown NPA candidate mode: {mode}")
+
+        exact_ids = {
+            str(signal.npa_identifier).strip()
+            for signal in signals
+            if signal.npa_identifier
+        }
+        exact = [
+            row for row in tracked
+            if str(row.get("external_id") or "").strip() in exact_ids
+        ]
+        if self.embedder is None:
+            # Safe degradation: preserve exact official IDs and refuse a broad
+            # implicit match. Signals without an exact identity become review
+            # candidates downstream instead of forcing a huge LLM prompt.
+            return exact
+
+        texts = [self._tracked_text(row) for row in tracked]
+        missing_rows = []
+        missing_texts = []
+        vectors: list[tuple[float, ...] | None] = []
+        for row, text in zip(tracked, texts):
+            key = (str(row.get("object_id") or ""), str(row.get("current_version") or ""))
+            cached = self._embedding_cache.get(key)
+            vectors.append(cached)
+            if cached is None:
+                missing_rows.append((len(vectors) - 1, key))
+                missing_texts.append(text)
+        if missing_texts:
+            generated = self.embedder.embed(missing_texts)
+            for (index, key), vector in zip(missing_rows, generated):
+                normalized = tuple(vector)
+                vectors[index] = normalized
+                self._embedding_cache[key] = normalized
+
+        chosen: dict[str, dict[str, Any]] = {
+            str(row.get("object_id")): row for row in exact
+        }
+        queries = self.embedder.embed([self._signal_text(signal) for signal in signals])
+        ranked = sorted(
+            zip(tracked, vectors),
+            key=lambda pair: max(
+                cosine(query, pair[1] or ()) for query in queries
+            ),
+            reverse=True,
+        )
+        for row, _ in ranked:
+            if len(chosen) >= self.candidate_limit:
+                break
+            chosen[str(row.get("object_id"))] = row
+        return list(chosen.values())
+
+    @staticmethod
+    def _tracked_text(row: dict[str, Any]) -> str:
+        return "\n".join(
+            str(row.get(key) or "")
+            for key in (
+                "external_id",
+                "title",
+                "current_stage",
+                "current_version",
+                "change_summary",
+                "summary",
+            )
+        ).strip()
+
+    @staticmethod
+    def _signal_text(signal: SignalDraft) -> str:
+        return "\n".join(
+            (
+                signal.npa_identifier or "",
+                signal.source_title,
+                signal.summary,
+                " ".join(claim.text for claim in signal.claims),
+                signal.npa_change_summary or "",
+            )
+        ).strip()
 
     @staticmethod
     def _signal_payload(signal: SignalDraft, document: PreparedDocument) -> dict[str, Any]:

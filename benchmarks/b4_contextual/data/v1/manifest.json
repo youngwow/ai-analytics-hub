@@ -1,0 +1,18 @@
+{
+  "version": "b4-v1",
+  "case_count": 18,
+  "sources": {
+    "benchmarks/b3_e2e/data/v2/timeline.jsonl": "3088d4038edf563145991834d888b6c7742191d020f8576292a1a5bc75700396",
+    "benchmarks/b3_e2e/data/v2/ground_truth.jsonl": "e81db349e56a9cbfde8e565f9f08ba93cf1b053bb3d9131d6dcb32b6935e3ea2",
+    "benchmarks/b3_e2e/data/v2/object_truth.jsonl": "69d843f72de174644f6bbb0da9dab39e9cf3b61701ee9ebf3702cb74cfb66f1d",
+    "project/ЦИФРА/02_НАЙТИ_И_ПРОВЕРИТЬ_СТАВКУ/03_СРЕДА_ЭКСПЕРИМЕНТОВ/CONTEXT_TRUTH_V1/context.json": "9925d672b43b4501f4abbb2ad0502fe00e3e54e4429e38252e1b8b3e9c3b9952",
+    "project/ЦИФРА/02_НАЙТИ_И_ПРОВЕРИТЬ_СТАВКУ/03_СРЕДА_ЭКСПЕРИМЕНТОВ/CONTEXT_TRUTH_V1/claims.jsonl": "26cf45ff422aa7b550daf2aff47ec162c6fdf5f36de243dd30564fcaaab31962",
+    "artifacts/b3/runs/v4_policy_A_projection/prediction.json": "842065331a61c044965bfb79470dd96eebc1a9b98d9419e1d5901b88dce776cc",
+    "artifacts/b3/runs/v4_policy_B_projection/prediction.json": "9f3ec2b5362d96f28917059cec07ec0600606d14cca1c81d065e588a8de8032a",
+    "artifacts/b3/runs/v4_policy_D1_critical_hybrid/prediction.json": "fd433587155b4daa1adf550701e77ec7e865039d3c7137feac60a48202678563",
+    "artifacts/b3/runs/v3_final_D2_event_boundary_hybrid/prediction.json": "cebc2245a6a0bcd1492c440eb87b61efd6cddd8cf5ccfde9defe601be77ef700",
+    "artifacts/b3/runs/v3_final_D3_new_npa_hybrid/prediction.json": "7df6ccb380dc0c9a2690261e248997f573dd94ec3219ffe5a1f81c05c27a20ac",
+    "artifacts/b3/runs/v3_final_D4_known_npa_hybrid/prediction.json": "183ca4af247cbfd081eee455ef55b15085beca686a2abb5d374454f1acaaf27f",
+    "benchmarks/b4_contextual/data/v1/judge_packet.json": "2aec5ac4d41557a4e13c384b72201ee7d25524d3c276fa9a419efb3c88d4edff"
+  }
+}
