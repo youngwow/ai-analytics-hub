@@ -1,0 +1,141 @@
+{
+  "benchmark": "B2 repeated holdout",
+  "dataset_version": "v4.0.0",
+  "runs": 3,
+  "stability_verdict": "PASS",
+  "content_verdict": "NOT_ASSIGNED_BY_THIS_SUMMARY",
+  "safety_pass_all_runs": true,
+  "metrics": {
+    "relevance_macro_f1": {
+      "values": [
+        0.6428571428571429,
+        0.5925925925925926,
+        0.6428571428571429
+      ],
+      "worst": 0.5925925925925926,
+      "best": 0.6428571428571429
+    },
+    "importance_macro_f1": {
+      "values": [
+        0.8387096774193548,
+        0.8,
+        0.8387096774193548
+      ],
+      "worst": 0.8,
+      "best": 0.8387096774193548
+    },
+    "roles_exact": {
+      "values": [
+        0.5263157894736842,
+        0.5789473684210527,
+        0.5789473684210527
+      ],
+      "worst": 0.5263157894736842,
+      "best": 0.5789473684210527
+    },
+    "critical_accuracy": {
+      "values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "worst": 1.0,
+      "best": 1.0
+    },
+    "event_pair_f1": {
+      "values": [
+        0.5,
+        0.8,
+        0.8
+      ],
+      "worst": 0.5,
+      "best": 0.8
+    },
+    "event_b_cubed_f1": {
+      "values": [
+        0.9615384615384615,
+        0.9811320754716981,
+        0.9811320754716981
+      ],
+      "worst": 0.9615384615384615,
+      "best": 0.9811320754716981
+    },
+    "npa_identity_accuracy": {
+      "values": [
+        null,
+        null,
+        null
+      ],
+      "worst": null,
+      "best": null
+    },
+    "npa_relation_accuracy": {
+      "values": [
+        null,
+        null,
+        null
+      ],
+      "worst": null,
+      "best": null
+    },
+    "npa_stage_accuracy": {
+      "values": [
+        null,
+        null,
+        null
+      ],
+      "worst": null,
+      "best": null
+    },
+    "review_error_recall": {
+      "values": [
+        0.9090909090909091,
+        0.8333333333333334,
+        0.8181818181818182
+      ],
+      "worst": 0.8181818181818182,
+      "best": 0.9090909090909091
+    },
+    "review_critical_recall": {
+      "values": [
+        null,
+        null,
+        null
+      ],
+      "worst": null,
+      "best": null
+    }
+  },
+  "safety": [
+    {
+      "run_id": "cb8d8225-a6ec-4948-a000-328b410b99c3",
+      "contract_errors": [],
+      "critical_in_low": [],
+      "verbatim_evidence_rate": 1.0,
+      "failed_calls": 0,
+      "wall_seconds": 224.40014162499574
+    },
+    {
+      "run_id": "80957b15-d224-4fa5-99ee-b3cf502f405f",
+      "contract_errors": [],
+      "critical_in_low": [],
+      "verbatim_evidence_rate": 1.0,
+      "failed_calls": 0,
+      "wall_seconds": 216.96502491700812
+    },
+    {
+      "run_id": "458c23aa-fbcf-4b70-89c6-19d4aad97cd7",
+      "contract_errors": [],
+      "critical_in_low": [],
+      "verbatim_evidence_rate": 1.0,
+      "failed_calls": 0,
+      "wall_seconds": 252.33956920797937
+    }
+  ],
+  "limitations": [
+    "Internal labels are not customer gold; inspect dataset annotation provenance.",
+    "Semantic quality remains pending an explicitly independent judge/B4.",
+    "No user-time, usability or adoption claim is supported.",
+    "A technical stability pass is not a content-quality pass."
+  ]
+}

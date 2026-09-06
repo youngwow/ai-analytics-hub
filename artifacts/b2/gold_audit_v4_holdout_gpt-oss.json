@@ -1,0 +1,574 @@
+{
+  "status": "PROPOSAL_ONLY",
+  "dataset_version": "v4",
+  "split": "holdout",
+  "judge_model": "gpt-oss:120b-cloud",
+  "existing_gold_was_visible": false,
+  "labels": [
+    {
+      "id": "h4-031",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "PR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Тема AI‑инструмента Nvidia не связана с продуктами и рынками GS Labs, но отражает технологический тренд, потенциально интересный для коммуникаций (PR‑контур: упоминание технологических трендов без прямой связи)."
+    },
+    {
+      "id": "h4-037",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "План Минцифры по запуску 5G в России влияет на инфраструктуру, необходимую для OTT/IPTV‑сервисов GS Labs, поэтому относится к GR‑контур (GR‑контур: изменение государственной программы, потенциально влияющей на рынок компании)."
+    },
+    {
+      "id": "h4-039",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "PR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Обсуждение импортозамещения и требований к отечественным IT‑продуктам относится к рыночным тенденциям, важным для PR‑коммуникаций компании (PR‑контур: рыночный сигнал о спросе на отечественные решения)."
+    },
+    {
+      "id": "h4-040",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "В тексте нет упоминания GS Labs, её продуктов или прямого влияния на компанию; материал относится к общим рыночным показателям VK и не создает конкретного риска или возможности для GS Labs."
+    },
+    {
+      "id": "h4-042",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал описывает инициативу операторов дата‑центров без связи с GS Labs, её продуктами или регуляторными обязательствами, поэтому не представляет значимого риска или возможности."
+    },
+    {
+      "id": "h4-043",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Постановление не содержит информации, указывающей на применение к продуктам или деятельности GS Labs; без подтверждённой связи материал считается нерелевантным."
+    },
+    {
+      "id": "h4-044",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "В тексте нет упоминаний GS Labs, её продуктов или регуляций, которые могли бы повлиять на компанию."
+    },
+    {
+      "id": "h4-045",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "В тексте нет упоминаний GS Labs, её продуктов или регуляций, которые могли бы повлиять на компанию."
+    },
+    {
+      "id": "h4-049",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Текст не содержит упоминаний GS Labs, её продуктов или регулятивных вопросов, влияющих на компанию."
+    },
+    {
+      "id": "h4-053",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Текст не содержит упоминаний GS Labs, её продуктов, рынка или регулятивных вопросов, поэтому не представляет интереса."
+    },
+    {
+      "id": "h4-058",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал касается лишь работы Государственной Думы и не имеет связи с GS Labs, её продуктами или регулятивным воздействием."
+    },
+    {
+      "id": "h4-061",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Содержимое относится к рекомендациям ФСБ по мошенничеству и не затрагивает GS Labs, её бизнес или регулятивные риски."
+    },
+    {
+      "id": "h4-069",
+      "relevance": "irrelevant",
+      "importance": "medium",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Текст не содержит упоминаний GS Labs, их продуктов или регуляторных изменений, влияющих на компанию."
+    },
+    {
+      "id": "h4-076",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Указ президента вводит государственное управление имуществом при недостаточной защите критической инфраструктуры, что может затронуть решения GS Labs в области кибер‑устойчивости."
+    },
+    {
+      "id": "h4-078",
+      "relevance": "irrelevant",
+      "importance": "medium",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал посвящён материалам для микро‑ и наноэлектроники и не имеет прямой связи с продуктами или рынком GS Labs."
+    },
+    {
+      "id": "h4-082",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал не содержит упоминания GS Labs, её продуктов или прямого влияния на рынок, поэтому считается нерелевантным."
+    },
+    {
+      "id": "h4-086",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "PR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Упоминается изменение инфраструктуры операторов (вывод 5G базовых станций), что относится к важным рыночным изменениям для OTT/IPTV, поэтому материал релевантен в PR‑контуре."
+    },
+    {
+      "id": "h4-087",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Материал описывает регуляторные требования к администрированию доменов, что может создать риск потери онлайн‑ресурсов для компаний, включая GS Labs, поэтому относится к GR‑контур."
+    },
+    {
+      "id": "h4-091",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Текст не упоминает GS Labs и не относится к их продуктовым доменам, поэтому не представляет прямой риск или возможность. Отсутствие связи с важными примерами PR/GR сигнала."
+    },
+    {
+      "id": "h4-094",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Сокращение венчурных инвестиций отражает общую макроэкономическую ситуацию, но не содержит упоминаний GS Labs и не затрагивает их продуктовые или регуляторные области. Не соответствует критериям PR/GR сигнала."
+    },
+    {
+      "id": "h4-098",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "PR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Пилотный проект спутникового интернета создаёт потенциальный канал доставки OTT/IPTV сервисов, что может стать коммуникационным поводом для GS Labs. Соответствует важным примерам PR‑сигнала о изменении инфраструктуры цифрового контента."
+    },
+    {
+      "id": "h4-103",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "В тексте нет упоминания GS Labs, её продуктов или регулятивных вопросов, поэтому материал не представляет интереса для PR/GR."
+    },
+    {
+      "id": "h4-112",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Содержимое касается государственных инициатив и операторов, но не связано напрямую с GS Labs, её продуктами или обязательствами."
+    },
+    {
+      "id": "h4-113",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал описывает функции сервисов и уязвимости, не имея отношения к GS Labs, её рынку или регулятивным аспектам."
+    },
+    {
+      "id": "h4-e42",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Отсутствует упоминание GS Labs, её продуктов или регулятивных изменений, материал не относится к мониторингу."
+    },
+    {
+      "id": "h4-e43",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Текст лишь пересказывает постановление без связи с GS Labs, поэтому не релевантен."
+    },
+    {
+      "id": "h4-e113",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Сервис «Контур.Толк» не связан с GS Labs, материал не имеет отношения к интересам компании."
+    }
+  ],
+  "limitations": [
+    "LLM second opinion is not customer gold.",
+    "No frozen label is changed without explicit adjudication."
+  ],
+  "raw_batches": [
+    {
+      "expected": [
+        "h4-031",
+        "h4-037",
+        "h4-039"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-031",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "PR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Тема AI‑инструмента Nvidia не связана с продуктами и рынками GS Labs, но отражает технологический тренд, потенциально интересный для коммуникаций (PR‑контур: упоминание технологических трендов без прямой связи)."
+          },
+          {
+            "id": "h4-037",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "План Минцифры по запуску 5G в России влияет на инфраструктуру, необходимую для OTT/IPTV‑сервисов GS Labs, поэтому относится к GR‑контур (GR‑контур: изменение государственной программы, потенциально влияющей на рынок компании)."
+          },
+          {
+            "id": "h4-039",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "PR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Обсуждение импортозамещения и требований к отечественным IT‑продуктам относится к рыночным тенденциям, важным для PR‑коммуникаций компании (PR‑контур: рыночный сигнал о спросе на отечественные решения)."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-040",
+        "h4-042",
+        "h4-043"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-040",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "В тексте нет упоминания GS Labs, её продуктов или прямого влияния на компанию; материал относится к общим рыночным показателям VK и не создает конкретного риска или возможности для GS Labs."
+          },
+          {
+            "id": "h4-042",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал описывает инициативу операторов дата‑центров без связи с GS Labs, её продуктами или регуляторными обязательствами, поэтому не представляет значимого риска или возможности."
+          },
+          {
+            "id": "h4-043",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Постановление не содержит информации, указывающей на применение к продуктам или деятельности GS Labs; без подтверждённой связи материал считается нерелевантным."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-044",
+        "h4-045",
+        "h4-049"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-044",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "В тексте нет упоминаний GS Labs, её продуктов или регуляций, которые могли бы повлиять на компанию."
+          },
+          {
+            "id": "h4-045",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "В тексте нет упоминаний GS Labs, её продуктов или регуляций, которые могли бы повлиять на компанию."
+          },
+          {
+            "id": "h4-049",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Текст не содержит упоминаний GS Labs, её продуктов или регулятивных вопросов, влияющих на компанию."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-053",
+        "h4-058",
+        "h4-061"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-053",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Текст не содержит упоминаний GS Labs, её продуктов, рынка или регулятивных вопросов, поэтому не представляет интереса."
+          },
+          {
+            "id": "h4-058",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал касается лишь работы Государственной Думы и не имеет связи с GS Labs, её продуктами или регулятивным воздействием."
+          },
+          {
+            "id": "h4-061",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Содержимое относится к рекомендациям ФСБ по мошенничеству и не затрагивает GS Labs, её бизнес или регулятивные риски."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-069",
+        "h4-076",
+        "h4-078"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-069",
+            "relevance": "irrelevant",
+            "importance": "medium",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Текст не содержит упоминаний GS Labs, их продуктов или регуляторных изменений, влияющих на компанию."
+          },
+          {
+            "id": "h4-076",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Указ президента вводит государственное управление имуществом при недостаточной защите критической инфраструктуры, что может затронуть решения GS Labs в области кибер‑устойчивости."
+          },
+          {
+            "id": "h4-078",
+            "relevance": "irrelevant",
+            "importance": "medium",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал посвящён материалам для микро‑ и наноэлектроники и не имеет прямой связи с продуктами или рынком GS Labs."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-082",
+        "h4-086",
+        "h4-087"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-082",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал не содержит упоминания GS Labs, её продуктов или прямого влияния на рынок, поэтому считается нерелевантным."
+          },
+          {
+            "id": "h4-086",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "PR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Упоминается изменение инфраструктуры операторов (вывод 5G базовых станций), что относится к важным рыночным изменениям для OTT/IPTV, поэтому материал релевантен в PR‑контуре."
+          },
+          {
+            "id": "h4-087",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Материал описывает регуляторные требования к администрированию доменов, что может создать риск потери онлайн‑ресурсов для компаний, включая GS Labs, поэтому относится к GR‑контур."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-091",
+        "h4-094",
+        "h4-098"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-091",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Текст не упоминает GS Labs и не относится к их продуктовым доменам, поэтому не представляет прямой риск или возможность. Отсутствие связи с важными примерами PR/GR сигнала."
+          },
+          {
+            "id": "h4-094",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Сокращение венчурных инвестиций отражает общую макроэкономическую ситуацию, но не содержит упоминаний GS Labs и не затрагивает их продуктовые или регуляторные области. Не соответствует критериям PR/GR сигнала."
+          },
+          {
+            "id": "h4-098",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "PR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Пилотный проект спутникового интернета создаёт потенциальный канал доставки OTT/IPTV сервисов, что может стать коммуникационным поводом для GS Labs. Соответствует важным примерам PR‑сигнала о изменении инфраструктуры цифрового контента."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-103",
+        "h4-112",
+        "h4-113"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-103",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "В тексте нет упоминания GS Labs, её продуктов или регулятивных вопросов, поэтому материал не представляет интереса для PR/GR."
+          },
+          {
+            "id": "h4-112",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Содержимое касается государственных инициатив и операторов, но не связано напрямую с GS Labs, её продуктами или обязательствами."
+          },
+          {
+            "id": "h4-113",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал описывает функции сервисов и уязвимости, не имея отношения к GS Labs, её рынку или регулятивным аспектам."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-e42",
+        "h4-e43",
+        "h4-e113"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-e42",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Отсутствует упоминание GS Labs, её продуктов или регулятивных изменений, материал не относится к мониторингу."
+          },
+          {
+            "id": "h4-e43",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Текст лишь пересказывает постановление без связи с GS Labs, поэтому не релевантен."
+          },
+          {
+            "id": "h4-e113",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Сервис «Контур.Толк» не связан с GS Labs, материал не имеет отношения к интересам компании."
+          }
+        ]
+      }
+    }
+  ]
+}

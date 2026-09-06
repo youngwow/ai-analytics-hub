@@ -351,6 +351,11 @@ def main(argv=None) -> int:
         help="Experiment-only sampling temperature override.",
     )
     parser.add_argument("--configuration-id")
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        help="Parallel independent material calls; defaults to config.processing.concurrency.",
+    )
     parser.add_argument("input", nargs="?", default=os.environ.get("B2_INPUT"))
     parser.add_argument("output", nargs="?", default=os.environ.get("B2_OUTPUT"))
     args = parser.parse_args(argv)
@@ -407,9 +412,10 @@ def main(argv=None) -> int:
                 )
             return item_id, draft, material_prediction(document, draft)
 
-        with concurrent.futures.ThreadPoolExecutor(
-            max_workers=config.processing.concurrency
-        ) as executor:
+        concurrency = args.concurrency or config.processing.concurrency
+        if concurrency < 1:
+            parser.error("--concurrency must be >= 1")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=concurrency) as executor:
             for item_id, draft, prediction in executor.map(
                 analyze_item, material_ids["B2-F"]
             ):

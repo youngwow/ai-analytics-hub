@@ -261,6 +261,11 @@ def main(argv=None) -> int:
     )
     parser.add_argument("--a3", choices=["full_scan", "embedding_top20"], default="full_scan")
     parser.add_argument("--a4", choices=["without_critic", "with_critic"], default="without_critic")
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        help="Parallel independent primary-analysis calls; defaults to processing config.",
+    )
     args = parser.parse_args(argv)
     if not args.input or not args.output:
         parser.error("input/output paths or B3_INPUT/B3_OUTPUT are required")
@@ -306,6 +311,7 @@ def main(argv=None) -> int:
             if branches.a4 == "with_critic"
             else None
         ),
+        analysis_concurrency=args.concurrency or config.processing.concurrency,
     )
     try:
         result = runtime.run(

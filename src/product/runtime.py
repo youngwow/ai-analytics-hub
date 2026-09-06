@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import replace
 from typing import Any
 
@@ -46,6 +47,7 @@ class ProductAgentRuntime:
         *,
         researcher: TargetedResearcher | None = None,
         critic: SignalCritic | None = None,
+        analysis_concurrency: int = 1,
     ) -> None:
         self.analyzer = analyzer
         self.linker = linker
@@ -53,6 +55,9 @@ class ProductAgentRuntime:
         self.store = store
         self.researcher = researcher
         self.critic = critic
+        if analysis_concurrency < 1:
+            raise ValueError("analysis_concurrency must be >= 1")
+        self.analysis_concurrency = analysis_concurrency
 
     def run(
         self,
@@ -76,15 +81,29 @@ class ProductAgentRuntime:
         errors: list[str] = []
         final_signals: dict[str, SignalDraft] = {}
 
+        prepared_versions = {}
         for document in documents:
             prepared_version = self.store.save_prepared(
                 document.id,
                 document,
                 raw_document_id=raw_document_ids.get(document.id),
             )
-            draft = self.analyzer.analyze(document, context, mode=config.a1)
+            prepared_versions[document.id] = prepared_version
+
+        def analyze(document: PreparedDocument):
+            return self.analyzer.analyze(document, context, mode=config.a1)
+
+        if self.analysis_concurrency == 1:
+            drafts = [analyze(document) for document in documents]
+        else:
+            with ThreadPoolExecutor(max_workers=self.analysis_concurrency) as executor:
+                drafts = list(executor.map(analyze, documents))
+
+        for document, draft in zip(documents, drafts):
             draft = replace(draft, configuration_id=config.id)
-            self.store.save_analysis(draft, prepared_version=prepared_version)
+            self.store.save_analysis(
+                draft, prepared_version=prepared_versions[document.id]
+            )
             resolved_signals = []
             for original in draft.signals:
                 signal = original

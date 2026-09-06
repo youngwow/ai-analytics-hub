@@ -1,0 +1,167 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v4.0.0",
+  "run_id": "80957b15-d224-4fa5-99ee-b3cf502f405f",
+  "configuration_id": "frozen-v4-one-pass-glm-full-scan-no-critic-c4",
+  "usage": {
+    "model_calls": 45,
+    "input_tokens": 150342,
+    "output_tokens": 108247,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 216.96502491700812,
+    "provider_latency_ms": 600539,
+    "attempted_calls": 45,
+    "failed_calls": 0,
+    "provider_errors": []
+  },
+  "split": "holdout",
+  "contract_errors": [],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 8,
+        "total": 19,
+        "accuracy": 0.42105263157894735
+      },
+      "importance": {
+        "correct": 12,
+        "total": 18,
+        "accuracy": 0.6666666666666666
+      },
+      "critical_or_escalate": {
+        "correct": 27,
+        "total": 27,
+        "accuracy": 1.0
+      },
+      "roles": {
+        "correct": 11,
+        "total": 19,
+        "exact_set_accuracy": 0.5789473684210527
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 0,
+          "predicted": 2,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "borderline": {
+          "support": 0,
+          "predicted": 5,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 19,
+          "predicted": 8,
+          "precision": 1.0,
+          "recall": 0.42105263157894735,
+          "f1": 0.5925925925925926
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 4,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.5925925925925926
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 18,
+          "predicted": 12,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "medium": {
+          "support": 0,
+          "predicted": 5,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "high": {
+          "support": 0,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.8
+    },
+    "roles_by_label": {
+      "GR": {
+        "support": 0,
+        "predicted": 6,
+        "precision": 0.0,
+        "recall": null
+      },
+      "HEAD": {
+        "support": 0,
+        "predicted": 0,
+        "precision": null,
+        "recall": null
+      },
+      "PR": {
+        "support": 0,
+        "predicted": 4,
+        "precision": 0.0,
+        "recall": null
+      }
+    }
+  },
+  "safety": {
+    "critical_total": 0,
+    "critical_in_low": [],
+    "submitted_claims": 70,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "review_policy": {
+    "available": true,
+    "reviewed_items": 16,
+    "workload_rate": 0.5925925925925926,
+    "label_error_recall": 0.8333333333333334,
+    "critical_recall": null,
+    "unreviewed_label_error_ids": [
+      "h4-040",
+      "h4-103"
+    ]
+  },
+  "event_grouping": {
+    "pair_precision": 1.0,
+    "pair_recall": 0.6666666666666666,
+    "pair_f1": 0.8,
+    "b_cubed": {
+      "precision": 1.0,
+      "recall": 0.9629629629629629,
+      "f1": 0.9811320754716981
+    },
+    "false_merge_pairs": 0,
+    "false_split_pairs": 1
+  },
+  "npa": {
+    "link_identity_accuracy": null,
+    "relation_accuracy": null,
+    "stage_accuracy": null
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

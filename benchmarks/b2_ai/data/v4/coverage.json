@@ -1,0 +1,86 @@
+{
+  "materials_total": 119,
+  "new_real_flow": 24,
+  "by_split": {
+    "development": 53,
+    "validation": 29,
+    "rat": 10,
+    "holdout": 27
+  },
+  "by_layer": {
+    "challenge": 41,
+    "rare-safety": 9,
+    "real-flow": 32,
+    "case-anchor": 10
+  },
+  "by_source_type": {
+    "corporate_site": 3,
+    "telegram": 22,
+    "rss": 26,
+    "html": 8,
+    "regulator_site": 29,
+    "sitemap": 3,
+    "search": 1
+  },
+  "by_relevance": {
+    "relevant": 59,
+    "borderline": 16,
+    "irrelevant": 15,
+    "unknown": 2
+  },
+  "by_importance": {
+    "medium": 38,
+    "low": 26,
+    "high": 27,
+    "critical": 1
+  },
+  "event_cases": 14,
+  "npa_trajectories": 6,
+  "scored_field_support": {
+    "relevance": 105,
+    "importance": 106,
+    "roles": 93,
+    "critical_or_escalate": 119
+  },
+  "unresolved_field_counts": {
+    "roles": 18,
+    "importance": 4,
+    "relevance": 6
+  },
+  "fresh_holdout": {
+    "materials": 27,
+    "real": 24,
+    "synthetic_event_variants": 3,
+    "scored_field_support": {
+      "critical_or_escalate": 27,
+      "importance": 18,
+      "relevance": 19,
+      "roles": 19
+    },
+    "disagreement_counts": {
+      "relevance": 8,
+      "importance": 9,
+      "roles": 8
+    },
+    "label_source": "agreement of two blind LLM judges; not customer gold"
+  },
+  "scored_label_distributions": {
+    "relevance": {
+      "relevant": 55,
+      "irrelevant": 50
+    },
+    "importance": {
+      "medium": 36,
+      "low": 58,
+      "high": 12
+    },
+    "roles": {
+      "PR": 12,
+      "GR": 37
+    },
+    "critical_or_escalate": {
+      "false": 118,
+      "true": 1
+    }
+  }
+}

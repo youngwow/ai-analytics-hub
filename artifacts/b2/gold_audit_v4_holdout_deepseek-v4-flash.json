@@ -1,0 +1,550 @@
+{
+  "status": "PROPOSAL_ONLY",
+  "dataset_version": "v4",
+  "split": "holdout",
+  "judge_model": "deepseek-v4-flash:cloud",
+  "existing_gold_was_visible": false,
+  "labels": [
+    {
+      "id": "h4-031",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "По правилу unimportant_examples: совпадение темы ИИ без связи с продуктами, рынками или обязанностями GS Labs."
+    },
+    {
+      "id": "h4-037",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "По правилу unimportant_examples: новость из смежной отрасли без применимого эффекта для GS Labs."
+    },
+    {
+      "id": "h4-039",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "По правилу unimportant_examples: общее обсуждение импортозамещения без конкретного события или подтверждённой применимости."
+    },
+    {
+      "id": "h4-040",
+      "relevance": "relevant",
+      "importance": "low",
+      "roles": [
+        "PR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Новость о росте аудитории VK и изменении монетизации относится к рынку онлайн-видео, но не содержит прямого упоминания GS Labs или её продуктов, поэтому эффект для компании не подтверждён."
+    },
+    {
+      "id": "h4-042",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Обсуждение межрегиональных ЦОД не связано с продуктовым контуром GS Labs (CAS, DRM, OTT/IPTV) и не создаёт применимого риска или возможности для компании."
+    },
+    {
+      "id": "h4-043",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Постановление Правительства не содержит информации о предмете регулирования, поэтому невозможно установить связь с деятельностью GS Labs; требуется уточнение содержания документа."
+    },
+    {
+      "id": "h4-044",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Постановление не связано с продуктами, рынками или обязанностями GS Labs; нет применимого эффекта."
+    },
+    {
+      "id": "h4-045",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Климатические проекты не относятся к сфере деятельности GS Labs; отсутствует связь с продуктами или регуляторными обязательствами."
+    },
+    {
+      "id": "h4-049",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о ВЭФ не содержит упоминаний GS Labs или смежных рынков; общая экономическая повестка без применимого эффекта."
+    },
+    {
+      "id": "h4-053",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о судебном деле основателя iSpring не связана с продуктами, рынками или обязанностями GS Labs; это общая IT-новость без применимого эффекта."
+    },
+    {
+      "id": "h4-058",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Общая информация о законотворческой деятельности Госдумы без конкретных НПА, применимых к GS Labs; отсутствует связь с деятельностью компании."
+    },
+    {
+      "id": "h4-061",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Общее предупреждение ФСБ о мошенничестве не связано с продуктами, рынками или обязанностями GS Labs; отсутствует применимый эффект."
+    },
+    {
+      "id": "h4-069",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о поддержке ИТ в Приморье не упоминает GS Labs или её продукты, отсутствует подтверждённая применимость к компании."
+    },
+    {
+      "id": "h4-076",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал о безопасности ЦОД не содержит связи с GS Labs или её продуктовым контуром, нет доказанного влияния на компанию."
+    },
+    {
+      "id": "h4-078",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Тема микроэлектроники относится к несмежной отрасли без применимого эффекта для GS Labs."
+    },
+    {
+      "id": "h4-082",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Инициатива Минцифры касается предустановки ИИ-помощников и не связана с продуктовым контуром GS Labs (OTT/IPTV, защита контента, CAS/DRM). Отсутствует подтверждённая применимость или эффект для компании."
+    },
+    {
+      "id": "h4-086",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о производстве 5G-базовых станций относится к телеком-оборудованию, а не к ПО или сервисам GS Labs. Нет связи с продуктами, рынками или обязательствами компании."
+    },
+    {
+      "id": "h4-087",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал о рисках регистрации доменов на физлиц носит общий характер для бизнеса, но не содержит упоминания GS Labs или применимого эффекта для её деятельности. Отсутствует конкретная связь с продуктовым контуром."
+    },
+    {
+      "id": "h4-091",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Нет упоминания GS Labs или её продуктовых доменов; общая тема спроса на отечественный софт не создаёт применимого риска или возможности для компании."
+    },
+    {
+      "id": "h4-094",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о венчурных инвестициях не связана с продуктами, рынками или обязанностями GS Labs; отсутствует подтверждённый эффект на компанию."
+    },
+    {
+      "id": "h4-098",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Спутниковый интернет в Амурской области не относится к основным продуктовым доменам GS Labs (OTT/IPTV, защита контента) и не содержит упоминания компании; нет применимого рыночного или регуляторного эффекта."
+    },
+    {
+      "id": "h4-103",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Нет связи с продуктами, рынками или обязанностями GS Labs; отсутствует риск, возможность или репутационный эффект."
+    },
+    {
+      "id": "h4-112",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Отсутствует прямое упоминание GS Labs или ее продуктов; регуляторные изменения не имеют подтвержденной применимости к деятельности компании."
+    },
+    {
+      "id": "h4-113",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Нет связи с продуктами или рынками GS Labs; кибербезопасностные сигналы не имеют доказанной применимости к компании."
+    },
+    {
+      "id": "h4-e42",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о размещении ЦОД не связана с продуктовым контуром GS Labs (OTT/IPTV, защита контента) и не создаёт подтверждённого риска или возможности для компании."
+    },
+    {
+      "id": "h4-e43",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Пересказ постановления без указания содержания и применимости к деятельности GS Labs не позволяет установить регуляторное влияние или обязательство."
+    },
+    {
+      "id": "h4-e113",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "ИИ-функции в видеоконференц-сервисе не относятся к продуктам или рынкам GS Labs и не создают коммуникационного или репутационного эффекта для компании."
+    }
+  ],
+  "limitations": [
+    "LLM second opinion is not customer gold.",
+    "No frozen label is changed without explicit adjudication."
+  ],
+  "raw_batches": [
+    {
+      "expected": [
+        "h4-031",
+        "h4-037",
+        "h4-039"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-031",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "По правилу unimportant_examples: совпадение темы ИИ без связи с продуктами, рынками или обязанностями GS Labs."
+          },
+          {
+            "id": "h4-037",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "По правилу unimportant_examples: новость из смежной отрасли без применимого эффекта для GS Labs."
+          },
+          {
+            "id": "h4-039",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "По правилу unimportant_examples: общее обсуждение импортозамещения без конкретного события или подтверждённой применимости."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-040",
+        "h4-042",
+        "h4-043"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-040",
+            "relevance": "relevant",
+            "importance": "low",
+            "roles": [
+              "PR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Новость о росте аудитории VK и изменении монетизации относится к рынку онлайн-видео, но не содержит прямого упоминания GS Labs или её продуктов, поэтому эффект для компании не подтверждён."
+          },
+          {
+            "id": "h4-042",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Обсуждение межрегиональных ЦОД не связано с продуктовым контуром GS Labs (CAS, DRM, OTT/IPTV) и не создаёт применимого риска или возможности для компании."
+          },
+          {
+            "id": "h4-043",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Постановление Правительства не содержит информации о предмете регулирования, поэтому невозможно установить связь с деятельностью GS Labs; требуется уточнение содержания документа."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-044",
+        "h4-045",
+        "h4-049"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-044",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Постановление не связано с продуктами, рынками или обязанностями GS Labs; нет применимого эффекта."
+          },
+          {
+            "id": "h4-045",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Климатические проекты не относятся к сфере деятельности GS Labs; отсутствует связь с продуктами или регуляторными обязательствами."
+          },
+          {
+            "id": "h4-049",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о ВЭФ не содержит упоминаний GS Labs или смежных рынков; общая экономическая повестка без применимого эффекта."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-053",
+        "h4-058",
+        "h4-061"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-053",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о судебном деле основателя iSpring не связана с продуктами, рынками или обязанностями GS Labs; это общая IT-новость без применимого эффекта."
+          },
+          {
+            "id": "h4-058",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Общая информация о законотворческой деятельности Госдумы без конкретных НПА, применимых к GS Labs; отсутствует связь с деятельностью компании."
+          },
+          {
+            "id": "h4-061",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Общее предупреждение ФСБ о мошенничестве не связано с продуктами, рынками или обязанностями GS Labs; отсутствует применимый эффект."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-069",
+        "h4-076",
+        "h4-078"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-069",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о поддержке ИТ в Приморье не упоминает GS Labs или её продукты, отсутствует подтверждённая применимость к компании."
+          },
+          {
+            "id": "h4-076",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал о безопасности ЦОД не содержит связи с GS Labs или её продуктовым контуром, нет доказанного влияния на компанию."
+          },
+          {
+            "id": "h4-078",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Тема микроэлектроники относится к несмежной отрасли без применимого эффекта для GS Labs."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-082",
+        "h4-086",
+        "h4-087"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-082",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Инициатива Минцифры касается предустановки ИИ-помощников и не связана с продуктовым контуром GS Labs (OTT/IPTV, защита контента, CAS/DRM). Отсутствует подтверждённая применимость или эффект для компании."
+          },
+          {
+            "id": "h4-086",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о производстве 5G-базовых станций относится к телеком-оборудованию, а не к ПО или сервисам GS Labs. Нет связи с продуктами, рынками или обязательствами компании."
+          },
+          {
+            "id": "h4-087",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал о рисках регистрации доменов на физлиц носит общий характер для бизнеса, но не содержит упоминания GS Labs или применимого эффекта для её деятельности. Отсутствует конкретная связь с продуктовым контуром."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-091",
+        "h4-094",
+        "h4-098"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-091",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Нет упоминания GS Labs или её продуктовых доменов; общая тема спроса на отечественный софт не создаёт применимого риска или возможности для компании."
+          },
+          {
+            "id": "h4-094",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о венчурных инвестициях не связана с продуктами, рынками или обязанностями GS Labs; отсутствует подтверждённый эффект на компанию."
+          },
+          {
+            "id": "h4-098",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Спутниковый интернет в Амурской области не относится к основным продуктовым доменам GS Labs (OTT/IPTV, защита контента) и не содержит упоминания компании; нет применимого рыночного или регуляторного эффекта."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-103",
+        "h4-112",
+        "h4-113"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-103",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Нет связи с продуктами, рынками или обязанностями GS Labs; отсутствует риск, возможность или репутационный эффект."
+          },
+          {
+            "id": "h4-112",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Отсутствует прямое упоминание GS Labs или ее продуктов; регуляторные изменения не имеют подтвержденной применимости к деятельности компании."
+          },
+          {
+            "id": "h4-113",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Нет связи с продуктами или рынками GS Labs; кибербезопасностные сигналы не имеют доказанной применимости к компании."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "h4-e42",
+        "h4-e43",
+        "h4-e113"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "h4-e42",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о размещении ЦОД не связана с продуктовым контуром GS Labs (OTT/IPTV, защита контента) и не создаёт подтверждённого риска или возможности для компании."
+          },
+          {
+            "id": "h4-e43",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Пересказ постановления без указания содержания и применимости к деятельности GS Labs не позволяет установить регуляторное влияние или обязательство."
+          },
+          {
+            "id": "h4-e113",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "ИИ-функции в видеоконференц-сервисе не относятся к продуктам или рынкам GS Labs и не создают коммуникационного или репутационного эффекта для компании."
+          }
+        ]
+      }
+    }
+  ]
+}

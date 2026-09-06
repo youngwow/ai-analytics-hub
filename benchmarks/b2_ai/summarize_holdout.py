@@ -68,17 +68,23 @@ def main() -> int:
         and row["failed_calls"] == 0
         for row in safety
     )
+    versions = {report.get("dataset_version") for report in reports}
+    if len(versions) != 1:
+        raise ValueError(f"reports mix dataset versions: {sorted(versions)}")
     result = {
-        "benchmark": "B2 v2 repeated holdout",
+        "benchmark": "B2 repeated holdout",
+        "dataset_version": versions.pop(),
         "runs": len(reports),
-        "verdict": "LIMITED_PASS" if safety_pass else "FAIL",
+        "stability_verdict": "PASS" if safety_pass else "FAIL",
+        "content_verdict": "NOT_ASSIGNED_BY_THIS_SUMMARY",
         "safety_pass_all_runs": safety_pass,
         "metrics": metrics,
         "safety": safety,
         "limitations": [
-            "Single-team labels are not customer gold.",
+            "Internal labels are not customer gold; inspect dataset annotation provenance.",
             "Semantic quality remains pending an explicitly independent judge/B4.",
             "No user-time, usability or adoption claim is supported.",
+            "A technical stability pass is not a content-quality pass.",
         ],
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

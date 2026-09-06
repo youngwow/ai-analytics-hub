@@ -1,0 +1,105 @@
+{
+  "dataset_version": "v4.0.0",
+  "B2_hypotheses": {
+    "A1": {
+      "status": "covered_for_prompt_comparison",
+      "inputs": "Все B2-F в v2, включая 24 real-flow материала и challenge/rare-safety слои.",
+      "tests": [
+        "неподтверждённые факты",
+        "recall обязательных фактов",
+        "доказательные фрагменты",
+        "числа и условия",
+        "атрибуция мнений"
+      ],
+      "remaining_limit": "Полнота эталона длинных текстов требует второго ручного прохода."
+    },
+    "A2": {
+      "status": "covered_for_prompt_comparison",
+      "inputs": "Все B2-R с relevant/borderline/irrelevant/unknown, ролями и low/medium/high/critical.",
+      "tests": [
+        "релевантность",
+        "влияние",
+        "важность",
+        "критичное в низком",
+        "ключевой шум"
+      ],
+      "remaining_limit": "Влияние и важность синтетики требуют предметного утверждения; macro-F1 обязателен из-за дисбаланса классов."
+    },
+    "A3": {
+      "status": "covered_for_prompt_comparison",
+      "inputs": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "RF-E1",
+        "RF-E2",
+        "RF-E3",
+        "RF-SINGLE-development",
+        "RF-SINGLE-validation",
+        "RF-SINGLE-holdout"
+      ],
+      "tests": [
+        "точный дубль",
+        "пересказ",
+        "уникальные факты",
+        "самостоятельные позиции",
+        "похожие несвязанные события",
+        "развивающееся событие",
+        "устаревший репост",
+        "конфликт методик"
+      ],
+      "remaining_limit": "14 диагностических кейсов, включая real-flow; это не промышленная статистика."
+    },
+    "T1": {
+      "status": "covered_for_prompt_comparison",
+      "inputs": {
+        "trajectories": [
+          "N01",
+          "N02",
+          "N03",
+          "N04",
+          "N05",
+          "N06"
+        ],
+        "pair_cases": 22
+      },
+      "tests": [
+        "стабильный идентификатор",
+        "нет идентификатора",
+        "порядок стадий",
+        "старый репост",
+        "стороннее упоминание",
+        "ложное семантическое объединение"
+      ],
+      "remaining_limit": "Траектории синтетические; перед продуктовым выводом нужны живые истории regulation.gov.ru/Госдумы."
+    },
+    "R0_RAT": {
+      "status": "blocked_for_honest_run",
+      "inputs": "Два пакета по пять Excel-якорей выбраны и изолированы.",
+      "remaining_limit": "Вместо полных оригиналов пока только выдержки Excel; время человеческого анализа и качество AI сравнивать нельзя."
+    }
+  },
+  "product_hypotheses_boundary": {
+    "H1": "Не проверяется B2: ценность дополнительного поиска против постоянных источников — B3.",
+    "H2": "B2 готовит и валидирует признаки риска; экономия выборочной проверки человеком — B3.",
+    "H3": "B2 проверяет только корректность A3; удобство событий человеку — B3.",
+    "H4": "Ролевые метки есть как контекст, но ценность адресной выдачи — B3.",
+    "H5": "B2 проверяет фактическое качество краткого слоя, но достаточность для человека — B3."
+  },
+  "annotation_provenance": {
+    "status": "mixed_internal_gold_not_customer_gold",
+    "existing_v3": "field majority of team label and two blind LLM reviews",
+    "fresh_holdout": "agreement of two blind LLM reviews with disagreements excluded",
+    "scored_support": {
+      "relevance": 105,
+      "importance": 106,
+      "roles": 93,
+      "critical_or_escalate": 119
+    }
+  }
+}
