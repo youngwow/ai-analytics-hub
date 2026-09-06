@@ -1,4 +1,4 @@
-// Real frontend client -> Vite proxy -> unchanged Python backend -> isolated SQLite.
+// Real frontend client -> Vite proxy -> Python backend -> isolated SQLite.
 // No production database, external sources, credentials or LLM calls are used.
 import assert from 'node:assert/strict'
 import { spawn } from 'node:child_process'
@@ -62,6 +62,15 @@ try {
   check((await api.feed({})).total === 0, 'empty feed')
   check((await api.documents({})).total === 0, 'empty processing queue')
 
+  const initialProfile = await api.activeProfile()
+  check(initialProfile.id && (await api.profiles()).profiles.some(profile => profile.id === initialProfile.id), 'active profile is available in the profile list')
+  const savedProfile = await api.saveProfile('Integration company', { industry: 'Software', products: ['Analytics'], custom: { retained: true } })
+  check(savedProfile.version === 1 && (await api.profile(savedProfile.id)).payload.industry === 'Software', 'profile creation and detail lookup')
+  const nextProfile = await api.saveProfile(savedProfile.name, { ...savedProfile.payload, topics: ['regulation'] })
+  check(nextProfile.id === savedProfile.id && nextProfile.version === 2, 'profile edits increment version')
+  await api.activateProfile(savedProfile.id)
+  check((await api.activeProfile()).id === savedProfile.id, 'active profile switches on the server')
+
   const created = await api.createItem({ title: 'Проверка интеграции НПА', url: '', raw_text: 'Текст проверки подключения интерфейса к серверу.', type: 'npa', npa_status: 'анонс', run_llm: false, force: false })
   check(created.id && created.processing_status === 'done', 'manual material persisted')
   const id = created.id
@@ -78,6 +87,16 @@ try {
   card = await api.card(id)
   check(card.notes[0]?.body === 'Рассмотреть на совещании', 'notes saved')
   check((await api.revisions(id)).revisions.some(entry => entry.field === 'title'), 'revision history saved')
+  check((await api.bulkTags([id], ['bulk-tag'], ['проверка'])).changed === 1, 'bulk tags reports changed cards')
+  check((await api.card(id)).item.tags.includes('bulk-tag') && !(await api.card(id)).item.tags.includes('проверка'), 'bulk tags persists additions and removals')
+  const csv = await api.exportFeed('csv', { type: 'npa', include_hidden: true, archived: 'include' })
+  check(csv.includes('Новая редакция НПА') && !csv.includes('Рассмотреть на совещании'), 'CSV export uses actual cards and excludes analyst notes')
+  const rss = await api.exportFeed('rss', { type: 'npa' })
+  check(rss.includes('<rss') && rss.includes('Новая редакция НПА'), 'RSS export returns XML instead of JSON')
+  await api.bulkArchive([id], true)
+  check((await api.feed({})).total === 0 && !(await api.exportFeed('csv', {})).includes('Новая редакция НПА'), 'bulk archive removes cards from feed and export')
+  await api.bulkArchive([id], false)
+  check(!(await api.card(id)).item.is_archived, 'bulk unarchive persists')
   const digest = await api.digest({ type: 'npa' }, 'markdown', 'Обзор НПА', true)
   check(digest.items === 1 && digest.body.includes('Новая редакция НПА'), 'Markdown digest uses edited material')
   const json = await api.digest({}, 'json', '', true)
@@ -152,11 +171,22 @@ try {
   check(firstPage.total === 2 && firstPage.next_cursor, 'document cursor returned')
   const secondPage = await api.documents({ source_id: [added.id], limit: 1, cursor: firstPage.next_cursor })
   check(secondPage.documents.length === 1 && secondPage.documents[0].id !== firstPage.documents[0].id && !secondPage.next_cursor, 'next document page has no duplicate')
+  const fetchedPage = await api.documents({ source_id: [added.id], order: 'fetched', limit: 1 })
+  check(fetchedPage.documents[0].fetched_at && fetchedPage.documents[0].last_error === '', 'queue exposes collection date and failure detail')
+  const fetchedNext = await api.documents({ source_id: [added.id], order: 'fetched', limit: 1, cursor: fetchedPage.next_cursor })
+  check(fetchedNext.documents[0].id !== fetchedPage.documents[0].id, 'collection-time sorting paginates without duplicates')
   check(!(await api.processing()).llm_available, 'isolated processing explicitly has no LLM')
   const run = await api.startProcessing({ source_id: added.id, limit: 2, force: false })
   check(run.id && run.status === 'running', 'processing accepted as a background run')
   const completed = await until(() => api.processingRun(run.id), result => result.status !== 'running')
   check(completed.status === 'done' && completed.documents === 2 && completed.degraded > 0, 'processing completes with honest degraded results')
+  check(completed.processed === 2 && completed.progress === 1 && completed.heartbeat_at, 'document-based progress and heartbeat are returned')
+  const retried = await api.startProcessing({ only_failed: true, force: false, profile_id: savedProfile.id, limit: 2 })
+  const retriedDone = await until(() => api.processingRun(retried.id), result => result.status !== 'running')
+  check(retriedDone.params.only_failed && retriedDone.params.profile_id === savedProfile.id && retriedDone.documents === 0, 'failed-only retry uses selected profile and skips successful documents')
+  const quality = await api.quality()
+  check(quality.items > 0 && quality.degraded > 0 && quality.queue.failed === 0 && quality.calls === 0, 'quality reflects degraded cards without inventing model calls')
+  check(Array.isArray((await api.quality({ since: '2026-01-01T00:00:00Z', until: '2027-01-01T00:00:00Z' })).by_day), 'quality accepts a bounded reporting window')
   check((await api.processingRuns()).runs.some(entry => entry.id === run.id), 'processing history includes completed run')
   check((await api.documents({ source_id: [added.id] })).total === 0, 'processed documents leave the queue')
   const started = await api.startCollection(900)
@@ -165,7 +195,7 @@ try {
   check(!(await api.stopCollection()).running, 'automatic monitoring stops')
   try { await api.card(999999); assert.fail('missing card should fail') }
   catch (error) { check(error instanceof ApiError && error.status === 404, 'real HTTP problem translated by frontend') }
-  console.log(`PASS: ${checks} live integration checks (frontend client → Vite proxy → unchanged backend).`)
+  console.log(`PASS: ${checks} live integration checks (frontend client → Vite proxy → backend).`)
 } catch (error) {
   console.error(logs)
   throw error

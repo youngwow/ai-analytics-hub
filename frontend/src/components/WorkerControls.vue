@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onScopeDispose, ref, watch } from 'vue'
 import { api } from '../api/client'
-import type { CollectionStatus, ProcessingRun, ProcessingStatus } from '../api/types'
+import type { CollectionStatus, CompanyProfile, ProcessingRun, ProcessingStatus } from '../api/types'
 import { useDashboard } from '../composables/dashboard'
 import { useRemote } from '../composables/remote'
 import { formatDate } from '../utils/dashboard'
@@ -10,6 +10,8 @@ const store = useDashboard()
 const processState = useRemote<ProcessingStatus | null>(null)
 const collectionState = useRemote<CollectionStatus | null>(null)
 const historyState = useRemote<ProcessingRun[]>([])
+const profileState = useRemote<CompanyProfile[]>([])
+const profiles = profileState.data; const profileError = profileState.error
 const data = computed(() => ({ processing: processState.data.value, collection: collectionState.data.value, runs: historyState.data.value }))
 const loading = computed(() => processState.loading.value || collectionState.loading.value || historyState.loading.value)
 const manualRefreshing = ref(false)
@@ -20,6 +22,7 @@ const activeRun = computed(() => data.value.processing?.running || data.value.pr
 const elapsed = computed(() => activeRun.value ? Math.max(0, Math.floor(((activeRun.value.finished_at ? Date.parse(activeRun.value.finished_at) : clock.value) - Date.parse(activeRun.value.started_at)) / 1000)) : 0)
 const busy = ref(false); const actionError = ref(''); const message = ref('')
 const interval = ref(900); const processLimit = ref(10); const processSource = ref(''); const since = ref(''); const profile = ref(''); const processForce = ref(false)
+const onlyFailed = ref(false)
 const collectSource = ref(''); const dueOnly = ref(false); const backfill = ref(false); const collectForce = ref(false)
 const inspected = ref<ProcessingRun | null>(null); const detailOpen = ref(false); const detailError = ref('')
 const labels = { running: 'Выполняется', done: 'Завершён', failed: 'Ошибка' }
@@ -38,9 +41,10 @@ async function refreshManually() {
   finally { manualRefreshing.value = false }
 }
 watch(data, (value, previous) => {
-  if (value && previous && (value.processing?.last?.finished_at !== previous.processing?.last?.finished_at || value.processing?.running?.items_new !== previous.processing?.running?.items_new || value.collection?.last_collect?.id !== previous.collection?.last_collect?.id)) store.changed()
+  if (value && previous && (value.processing?.last?.finished_at !== previous.processing?.last?.finished_at || value.processing?.running?.processed !== previous.processing?.running?.processed || value.collection?.last_collect?.id !== previous.collection?.last_collect?.id)) store.changed()
 })
 watch(store.revision, () => { void refresh() })
+watch(store.revision, () => { void profileState.run(async () => (await api.profiles()).profiles) }, { immediate: true })
 async function poll() {
   if (disposed) return
   clock.value = Date.now()
@@ -60,6 +64,7 @@ function process() {
   if (data.value.processing?.running || processingError.value) return
   if (!Number.isInteger(processLimit.value) || processLimit.value < 1) { actionError.value = 'Лимит должен быть положительным целым числом.'; return }
   void perform(async () => { const accepted = await api.startProcessing({ limit: processLimit.value, force: processForce.value,
+    ...(onlyFailed.value ? { only_failed: true } : {}),
     ...(processSource.value ? { source_id: Number(processSource.value) } : {}),
     ...(since.value ? { since: new Date(since.value).toISOString() } : {}),
     ...(profile.value ? { profile_id: Number(profile.value) } : {}),
@@ -86,18 +91,19 @@ async function inspect(id: number) {
     <p v-if="error || actionError" role="alert" class="feedback-bar">{{ actionError || error }}</p><p v-if="message" role="status" class="feedback-bar">{{ message }}</p>
     <template v-if="data">
       <div class="form-grid">
-        <section v-if="data.processing" class="border p-3 space-y-3"><h3 class="font-semibold">Очередь ИИ</h3><p>Ожидают обработки: {{ data.processing.unprocessed }} · {{ data.processing.running ? 'Обработка выполняется' : 'Нет активного прогона' }}</p>
+        <section v-if="data.processing" class="border p-3 space-y-3"><h3 class="font-semibold">Очередь ИИ</h3><p>Ожидают обработки: {{ data.processing.unprocessed }} · Сбойных документов: {{ data.processing.failed }} · {{ data.processing.running ? 'Обработка выполняется' : 'Нет активного прогона' }}</p>
           <p v-if="!data.processing.llm_available" class="unavailable">Модель недоступна. Обработка сохранит базовые карточки с пометкой о неполной обработке.</p>
           <form @submit.prevent="process"><fieldset :disabled="busy || !!processingError || !!data.processing.running" class="space-y-2">
             <label class="field-label">Лимит обработки<input v-model.number="processLimit" type="number" min="1" step="1" required class="form-control" /></label>
             <label class="field-label">Источник обработки<select v-model="processSource" class="form-control"><option value="">Все источники</option><option v-for="source in store.filters.value?.sources ?? []" :key="source.id" :value="String(source.id)">{{ source.name }}</option></select></label>
             <details><summary class="text-link cursor-pointer">Параметры обработки</summary><div class="space-y-2 mt-2">
               <label class="field-label">Обрабатывать с даты<input v-model="since" type="datetime-local" class="form-control" /></label>
-              <label class="field-label">ID профиля (необязательно)<input v-model="profile" type="number" min="1" step="1" class="form-control" /></label><p class="text-muted text-[11px]">Пустое поле использует активный профиль. Выбор профиля из списка пока недоступен.</p>
+              <label class="field-label">Профиль обработки<select v-model="profile" class="form-control"><option value="">Активный профиль компании</option><option v-for="entry in profiles" :key="entry.id" :value="String(entry.id)">{{ entry.name }} · версия {{ entry.version }}{{ entry.is_default ? ' · активный' : '' }}</option></select></label><a href="#profiles" class="text-link">Управление профилями</a><p v-if="profileError" role="alert">{{ profileError }} Активный профиль по-прежнему можно использовать.</p>
+              <label class="flex gap-2"><input v-model="onlyFailed" type="checkbox" />Только сбойные документы</label>
               <label class="flex gap-2"><input v-model="processForce" type="checkbox" />Повторно обработать уже обработанные документы</label>
             </div></details><button class="primary-button" type="submit">Обработать очередь ИИ</button><p class="text-muted text-[11px]">Начните с небольшой партии. Ответ модели может занять несколько минут; готовые карточки сохраняются сразу.</p>
           </fieldset></form>
-          <div v-if="activeRun" class="unavailable" role="status" aria-label="Текущая обработка"><strong>Прогон #{{ activeRun.id }} · {{ labels[activeRun.status] }}</strong><p>Время: {{ Math.floor(elapsed / 60) }} мин. {{ elapsed % 60 }} сек. · Документов в партии: {{ activeRun.documents }}</p><p>Новых карточек: {{ activeRun.items_new }} · Объединено: {{ activeRun.items_joined }} · Обновлено: {{ activeRun.items_updated }} · Ошибок: {{ activeRun.failed }}</p><p v-if="activeRun.status === 'running'">Обработка уже запущена. Повторный запуск станет доступен после её завершения.</p><p v-if="activeRun.status === 'done' && activeRun.documents === 0">По выбранным параметрам нет документов для обработки.</p><p v-if="activeRun.error" role="alert">{{ activeRun.error }}</p></div>
+          <div v-if="activeRun" class="unavailable" role="status" aria-label="Текущая обработка"><strong>Прогон #{{ activeRun.id }} · {{ labels[activeRun.status] }}</strong><p>Обработано документов: {{ activeRun.processed }} / {{ activeRun.documents }}<span v-if="activeRun.progress !== null"> · {{ Math.round(activeRun.progress * 100) }}%</span></p><progress v-if="activeRun.documents > 0 && activeRun.progress !== null" class="w-full" :value="activeRun.progress" max="1" aria-label="Прогресс обработки" /><p v-if="activeRun.heartbeat_at" class="text-muted text-[11px]">Последний сигнал сервера: {{ formatDate(activeRun.heartbeat_at, true) }}</p><p>Время: {{ Math.floor(elapsed / 60) }} мин. {{ elapsed % 60 }} сек. · Документов в партии: {{ activeRun.documents }}</p><p>Новых карточек: {{ activeRun.items_new }} · Объединено: {{ activeRun.items_joined }} · Обновлено: {{ activeRun.items_updated }} · Ошибок: {{ activeRun.failed }}</p><p v-if="activeRun.status === 'running'">Обработка уже запущена. Повторный запуск станет доступен после её завершения.</p><p v-if="activeRun.status === 'done' && activeRun.documents === 0">По выбранным параметрам нет документов для обработки.</p><p v-if="activeRun.error" role="alert">{{ activeRun.error }}</p></div>
         </section>
         <section v-if="data.collection" class="border p-3 space-y-3"><h3 class="font-semibold">Мониторинг источников</h3><p>{{ data.collection.running ? 'Мониторинг включён' : 'Мониторинг остановлен' }} · {{ data.collection.busy ? 'Идёт сбор' : 'Сбор свободен' }}</p><p class="text-muted">Источников к опросу: {{ data.collection.due_sources }} · Циклов: {{ data.collection.cycles }}<br />Следующая проверка: {{ formatDate(data.collection.next_tick_at, true) }}</p>
           <p v-if="data.collection.last_error" role="alert">{{ data.collection.last_error }}</p>

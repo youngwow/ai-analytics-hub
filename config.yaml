@@ -54,7 +54,7 @@ llm:
   max_output_tokens: -1           # -1 — без потолка: обрезанный ответ это потраченный впустую вызов
 
 processing:
-  concurrency: 2                  # кластеров обрабатывается параллельно
+  concurrency: 3                  # Ollama Pro: максимум 3 одновременных запроса
   max_new_per_run: 200            # карточек за один прогон process
   max_chars: 12000                # символов текста в промпт; длиннее — map-reduce по чанкам
   chunk_chars: 6000               # размер чанка при map-reduce

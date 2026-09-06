@@ -7,6 +7,8 @@ export const filters = { sources: [source], priorities: ['high', 'medium', 'low'
 export const status = { last_collect_at: null, documents: 1, items: 1, unprocessed: 0, sources: { active: 1 }, stale_sources: [], timezone: 'Europe/Moscow' }
 export const health = { status: 'ok', app: 'hub', environment: 'local', version: '1', checks: { repository: 'ok' } }
 
-export const processingRun = { id: 7, started_at: '2026-01-01T00:00:00Z', finished_at: null, status: 'running', trigger: 'api', params: {}, documents: 0, clusters: 0, items_new: 0, items_joined: 0, items_updated: 0, degraded: 0, needs_review: 0, calls: 0, failed: 0, elapsed_s: 0, error: '' }
-export const processing = { running: null, last: null, unprocessed: 1, llm_available: false }
+export const processingRun = { id: 7, started_at: '2026-01-01T00:00:00Z', finished_at: null, status: 'running', trigger: 'api', params: {}, documents: 0, processed: 0, progress: null, heartbeat_at: null, clusters: 0, items_new: 0, items_joined: 0, items_updated: 0, degraded: 0, needs_review: 0, calls: 0, failed: 0, elapsed_s: 0, error: '' }
+export const processing = { running: null, last: null, unprocessed: 1, failed: 0, llm_available: false }
 export const collection = { running: false, busy: false, interval_seconds: 900, started_at: null, next_tick_at: null, cycles: 0, last_error: '', due_sources: 1, last_collect: null }
+export const profile = { id: 1, name: 'Компания API', payload: { industry: 'ИТ', products: ['Платформа API'], topics: ['регуляторика'], custom: { retained: true } }, version: 2, is_default: true, updated_at: '2026-01-01T00:00:00Z' }
+export const quality = { items: 10, by_priority: { high: 2, medium: 5, low: 3 }, degraded: 2, hallucination_flags: 1, edited_share: 0.3, calls: 12, avg_latency_ms: 12500, tokens_in: 1000, tokens_out: 2000, failed_calls: 2, queue: { unprocessed: 4, failed: 1 }, by_stage: [{ stage: 's2_s5', status: 'ok', calls: 10, avg_latency_ms: 12000, tokens_in: 1000, tokens_out: 2000 }], by_day: [{ day: '2026-01-01', calls: 12, tokens_in: 1000, tokens_out: 2000, failed: 2 }] }

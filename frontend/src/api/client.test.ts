@@ -7,6 +7,12 @@ beforeEach(() => vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('
 afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals() })
 describe('HTTP endpoint contracts', () => {
   const cases: [string, string, () => Promise<unknown>, unknown?][] = [
+    ['/profiles', 'GET', () => api.profiles()], ['/profiles/active', 'GET', () => api.activeProfile()],
+    ['/profiles/2', 'GET', () => api.profile(2)], ['/profiles/2/default', 'POST', () => api.activateProfile(2)],
+    ['/profiles', 'POST', () => api.saveProfile('Company', { industry: 'IT' }), { name: 'Company', payload: { industry: 'IT' } }],
+    ['/processing/quality?since=2026-01-01&until=2026-01-02', 'GET', () => api.quality({ since: '2026-01-01', until: '2026-01-02' })],
+    ['/items/tags/bulk', 'POST', () => api.bulkTags([1, 2], ['review'], ['old']), { item_ids: [1, 2], add: ['review'], remove: ['old'] }],
+    ['/items/archive/bulk', 'POST', () => api.bulkArchive([1, 2], false), { item_ids: [1, 2], archived: false }],
     ['/processing', 'GET', () => api.processing()], ['/processing/runs?limit=20', 'GET', () => api.processingRuns()],
     ['/processing/runs/7', 'GET', () => api.processingRun(7)], ['/processing/runs', 'POST', () => api.startProcessing({ limit: 10, force: false }), { limit: 10, force: false }],
     ['/collection', 'GET', () => api.collection()], ['/collection/start', 'POST', () => api.startCollection(60), { interval_seconds: 60 }],
@@ -57,6 +63,10 @@ describe('API failures and cancellation', () => {
   it('reports a disconnected backend instead of returning demo data', async () => {
     vi.mocked(fetch).mockRejectedValueOnce(new TypeError('network'))
     await expect(api.feed({})).rejects.toThrow('Не удалось подключиться')
+  })
+  it('rejects an HTML app page instead of downloading it as a CSV export', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce(new Response('<html>App</html>', { headers: { 'Content-Type': 'text/html' } }))
+    await expect(api.exportFeed('csv', {})).rejects.toThrow('неверный формат экспорта')
   })
   it.each(['<html>Vite page</html>', 'null', '"text"'])('rejects malformed success responses: %s', async body => {
     vi.mocked(fetch).mockResolvedValueOnce(new Response(body))

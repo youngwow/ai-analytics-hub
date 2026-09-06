@@ -2,7 +2,7 @@ import { beforeEach, afterEach, vi } from 'vitest'
 import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import App from '../App.vue'
-import { card, filters, health, item, source, status, processing, processingRun, collection } from './fixtures'
+import { card, filters, health, item, source, status, processing, processingRun, collection, profile, quality } from './fixtures'
 export interface Call { url: URL; method: string; body: Record<string, unknown> | undefined; signal: AbortSignal | null | undefined }
 export type Handler = (call: Call) => Response | Promise<Response> | undefined
 export const json = (body: unknown, code = 200) => new Response(JSON.stringify(body), { status: code, headers: { 'Content-Type': 'application/json' } })
@@ -27,6 +27,7 @@ export function harness() {
       if (path === '/items' && call.method === 'GET') return json({ items: [item], total: 1, next_cursor: null, took_ms: 1 })
       if (path === '/items' && call.method === 'POST') return json({ id: 102, document_id: 2, origin: 'manual', processing_status: 'done' }, 201)
       if (path === '/items/bulk') return json({ changed: (call.body?.item_ids as number[]).length, scope: call.body?.scope })
+      if (path === '/items/tags/bulk' || path === '/items/archive/bulk') return json({ changed: (call.body?.item_ids as number[]).length, items: call.body?.item_ids })
       if (path === '/items/101' && call.method === 'PATCH') { Object.assign(currentCard.item, call.body); return json({ item: currentCard.item, manual_overrides: ['title'] }) }
       if (path === '/items/101' && call.method === 'DELETE') { currentCard.item.visibility = 'deleted'; return json({ id: 101, visibility: 'deleted' }) }
       if (path === '/items/101') return json(currentCard)
@@ -38,6 +39,10 @@ export function harness() {
       if (path === '/items/101/events') { const event = { id: 1, item_id: 101, ...call.body, created_at: '2026-01-01', created_by: 'user' }; currentCard.events.push(event as typeof currentCard.events[number]); return json(event, 201) }
       if (path === '/items/101/archive' || path === '/items/101/unarchive') { currentCard.item.is_archived = path.endsWith('/archive'); return json({ id: 101, is_archived: currentCard.item.is_archived }) }
       if (path === '/processing') return json(processing)
+      if (path === '/processing/quality') return json(quality)
+      if (path === '/profiles' && call.method === 'GET') return json({ profiles: [profile] })
+      if (path === '/profiles' && call.method === 'POST') return json({ ...profile, ...call.body, version: profile.version + 1 }, 201)
+      if (path.startsWith('/profiles/')) return json(profile)
       if (path === '/processing/runs' && call.method === 'POST') return json(processingRun, 202)
       if (path === '/processing/runs') return json({ runs: [] })
       if (path === '/processing/runs/7') return json(processingRun)

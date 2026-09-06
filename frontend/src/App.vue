@@ -6,9 +6,10 @@ import NpaTracker from './components/NpaTracker.vue'
 import DigestView from './components/DigestView.vue'
 import SourcesPanel from './components/SourcesPanel.vue'
 import StatusView from './components/StatusView.vue'
+import ProfilesView from './components/ProfilesView.vue'
 import { createDashboard, dashboardKey } from './composables/dashboard'
 import { formatDate } from './utils/dashboard'
-type Section = 'feed' | 'npa' | 'digest' | 'sources' | 'status'
+type Section = 'feed' | 'npa' | 'digest' | 'sources' | 'status' | 'profiles'
 const store = createDashboard(); provide(dashboardKey, store)
 const { dark, search, health, status, error, loading, activeSources } = store
 const nav: { id: Section; label: string; title: string; icon: string }[] = [
@@ -17,8 +18,9 @@ const nav: { id: Section; label: string; title: string; icon: string }[] = [
   { id: 'digest', label: 'Дайджест', title: 'Дайджест', icon: 'digest' },
   { id: 'sources', label: 'Источники', title: 'Источники данных', icon: 'sources' },
   { id: 'status', label: 'Сбор и обработка', title: 'Сбор и обработка', icon: 'refresh' },
+  { id: 'profiles', label: 'Профиль компании', title: 'Профили компании', icon: 'sources' },
 ]
-const views = { feed: NewsFeed, npa: NpaTracker, digest: DigestView, sources: SourcesPanel, status: StatusView }
+const views = { feed: NewsFeed, npa: NpaTracker, digest: DigestView, sources: SourcesPanel, status: StatusView, profiles: ProfilesView }
 const currentHash = (): Section => nav.some(item => item.id === location.hash.slice(1)) ? location.hash.slice(1) as Section : 'feed'
 const section = ref(currentHash()); const mobileNav = ref(false); const notifications = ref(false)
 const title = computed(() => nav.find(item => item.id === section.value)!.title)
