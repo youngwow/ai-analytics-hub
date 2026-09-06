@@ -1,0 +1,326 @@
+{
+  "run_id": "adf8e4ed-c4f7-4739-a3af-603626f530e4",
+  "scenario_id": "D2_event_boundary",
+  "mode": "hybrid",
+  "contract_errors": [],
+  "coverage": {
+    "visible_items": 5,
+    "decisions": 5
+  },
+  "discovery": {
+    "all_digest_objects_in_scenario": [
+      "EV-D2A",
+      "EV-D2B"
+    ],
+    "digest_objects_reachable_in_mode": [
+      "EV-D2A",
+      "EV-D2B"
+    ],
+    "reachable_digest_coverage": 1.0,
+    "irrelevant_items_exposed_by_mode": 0
+  },
+  "item_labels": {
+    "relevance": {
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1.0
+    },
+    "importance": {
+      "correct": 4,
+      "total": 5,
+      "accuracy": 0.8
+    },
+    "critical": {
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1.0
+    },
+    "roles": {
+      "correct": 4,
+      "total": 5,
+      "exact_set_accuracy": 0.8
+    },
+    "review_policy": {
+      "correct": 3,
+      "total": 5,
+      "accuracy": 0.6
+    }
+  },
+  "classification_by_class": {
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 5,
+          "predicted": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "borderline": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 1.0
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "medium": {
+          "support": 5,
+          "predicted": 4,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889
+        },
+        "high": {
+          "support": 0,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 0.888888888888889
+    }
+  },
+  "safety": {
+    "critical_recall": null,
+    "critical_item_recall": null,
+    "critical_object_recall": null,
+    "critical_delivery_recall": null,
+    "critical_recipient_recall": null,
+    "missing_critical_recipients": [],
+    "critical_items_in_low": [],
+    "all_submitted_evidence_quotes_verbatim": true,
+    "submitted_claims": 21,
+    "claim_support_by_meaning": "requires_semantic_judge",
+    "evidence_quote_checks": [
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D201:s1:c1",
+        "source_item_id": "D201",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D201:s1:c2",
+        "source_item_id": "D201",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D201:s1:c3",
+        "source_item_id": "D201",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D201:s1:c4",
+        "source_item_id": "D201",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D202:s1:c1",
+        "source_item_id": "D202",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D202:s1:c2",
+        "source_item_id": "D202",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D202:s1:c3",
+        "source_item_id": "D202",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D202:s1:c4",
+        "source_item_id": "D202",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D204:s1:c1",
+        "source_item_id": "D204",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D204:s1:c2",
+        "source_item_id": "D204",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D204:s1:c3",
+        "source_item_id": "D204",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D204:s1:c4",
+        "source_item_id": "D204",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D205:s1:c1",
+        "source_item_id": "D205",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D205:s1:c2",
+        "source_item_id": "D205",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D205:s1:c3",
+        "source_item_id": "D205",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1940f079a2b0",
+        "claim_id": "D205:s1:c4",
+        "source_item_id": "D205",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-eb6f78f5c0e6",
+        "claim_id": "D203:s1:c1",
+        "source_item_id": "D203",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-eb6f78f5c0e6",
+        "claim_id": "D203:s1:c2",
+        "source_item_id": "D203",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-eb6f78f5c0e6",
+        "claim_id": "D203:s1:c3",
+        "source_item_id": "D203",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-eb6f78f5c0e6",
+        "claim_id": "D203:s1:c4",
+        "source_item_id": "D203",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-eb6f78f5c0e6",
+        "claim_id": "D203:s1:c5",
+        "source_item_id": "D203",
+        "verbatim_quote": true
+      }
+    ]
+  },
+  "grouping": {
+    "pair_true_positive": 6,
+    "pair_false_positive": 0,
+    "pair_false_negative": 0,
+    "pair_precision": 1.0,
+    "pair_recall": 1.0,
+    "exact_expected_objects": 2,
+    "expected_objects": 2,
+    "predicted_objects": 2,
+    "exact_object_precision": 1.0,
+    "exact_object_recall": 1.0,
+    "unexpected_member_sets": [],
+    "missing_member_sets": [],
+    "object_attributes": {
+      "EV-D2A": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": false,
+        "critical": true,
+        "roles": true
+      },
+      "EV-D2B": {
+        "present_as_exact_member_set": true,
+        "type": false,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      }
+    }
+  },
+  "role_deliveries": {
+    "PR": {
+      "expected": [
+        "EV-D2A",
+        "EV-D2B"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-D2A",
+        "EV-D2B"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "GR": {
+      "expected": [],
+      "predicted_exactly_mapped": [],
+      "precision": null,
+      "recall": null
+    },
+    "HEAD": {
+      "expected": [
+        "EV-D2A"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-D2A"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "delivery_type_errors": [],
+  "duplicate_deliveries": [],
+  "npa_state": {},
+  "not_scored_by_rules": [
+    "semantic groundedness beyond submitted evidence quotes",
+    "summary sufficiency and preservation of meaning",
+    "human task time and cognitive load",
+    "product-value verdicts H2/H4/H5"
+  ]
+}

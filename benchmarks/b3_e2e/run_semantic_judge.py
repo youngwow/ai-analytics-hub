@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Run the B3 semantic judge packet through the configured GLM provider.
-
-This runner is reproducible but not independent when the product itself uses
-the same model.  Keep that limitation in any evidence derived from its output.
-"""
+"""Run the B3 semantic judge packet through a disclosed model."""
 
 from __future__ import annotations
 
@@ -29,6 +25,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("packet", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--meta", type=Path)
+    parser.add_argument(
+        "--model",
+        default="deepseek-v4-flash:cloud",
+        choices=[
+            "glm-5.3-flash:cloud",
+            "deepseek-v4-flash:cloud",
+            "gpt-oss:120b-cloud",
+        ],
+    )
     args = parser.parse_args(argv)
 
     packet = json.loads(args.packet.read_text(encoding="utf-8"))
@@ -44,9 +49,14 @@ def main(argv: list[str] | None = None) -> int:
     )
     config = Config.load()
     key = load_env_secret(config.llm.api_key_env, DEFAULT_PATHS.env_path)
-    provider = build_llm_provider(
-        replace(config.llm, temperature=0.0, think=None, max_output_tokens=-1), key
+    judge_config = replace(
+        config.llm,
+        model=args.model,
+        temperature=0.0,
+        think=None,
+        max_output_tokens=-1,
     )
+    provider = build_llm_provider(judge_config, key)
     started = time.monotonic()
     try:
         completion = provider.complete(
@@ -74,9 +84,11 @@ def main(argv: list[str] | None = None) -> int:
         json.dumps(
             {
                 "provider": "ollama",
-                "model": config.llm.model,
-                "independent": False,
-                "limitation": "same generation model as the system under test",
+                "model": args.model,
+                "independent_from_generation_model": args.model != config.llm.model,
+                "limitation": (
+                    "LLM judge is an internal proxy, not a GS Labs employee or customer gold."
+                ),
                 "tokens_in": completion.tokens_in,
                 "tokens_out": completion.tokens_out,
                 "latency_ms": completion.latency_ms,

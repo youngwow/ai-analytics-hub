@@ -40,11 +40,16 @@ def item_decision(material_id: str, draft: AnalysisDraft) -> dict[str, Any]:
     }
 
 
-def event_object(event: EventRecord, signals: dict[str, SignalDraft]) -> dict[str, Any] | None:
+def event_object(
+    event: EventRecord,
+    signals: dict[str, SignalDraft],
+    *,
+    kind: str = "event",
+) -> dict[str, Any] | None:
     members = [signals[signal_id] for signal_id in event.signal_ids if signal_id in signals]
     if not members:
         return None
-    return _object_payload(event.id, "event", members)
+    return _object_payload(event.id, kind, members)
 
 
 def npa_object(resolution: NpaResolution, signals: dict[str, SignalDraft]) -> dict[str, Any] | None:

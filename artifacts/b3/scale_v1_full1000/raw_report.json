@@ -1,0 +1,238 @@
+{
+  "benchmark": "B3-SCALE",
+  "version": "1.0.0",
+  "embedding_model": "google/gemini-embedding-001",
+  "embedding_dimensions": 768,
+  "generation_model": "glm-5.3-flash:cloud",
+  "sizes": [
+    1000
+  ],
+  "indexing_ms_for_missing_objects": 0,
+  "result_count": 8,
+  "results": [
+    {
+      "size": 1000,
+      "case_id": "E100_same_event",
+      "kind": "event",
+      "mode": "full_scan",
+      "bank_candidates": 898,
+      "expected_object_id": "EVT-STINGRAY-2026",
+      "expected_relation": "same_event",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "EVT-STINGRAY-2026",
+      "predicted_relation": "same_event",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 7344,
+      "llm_calls": [
+        {
+          "prompt_bytes": 664336,
+          "system_bytes": 1846,
+          "tokens_in": 119564,
+          "tokens_out": 349,
+          "provider_latency_ms": 7272,
+          "wall_latency_ms": 7342
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 1000,
+      "case_id": "E100_hard_negative",
+      "kind": "event",
+      "mode": "full_scan",
+      "bank_candidates": 898,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "EVT-STINGRAY-MARKET",
+      "predicted_relation": "same_event",
+      "object_correct": false,
+      "relation_correct": false,
+      "needs_human_review": false,
+      "wall_ms": 20222,
+      "llm_calls": [
+        {
+          "prompt_bytes": 664397,
+          "system_bytes": 1846,
+          "tokens_in": 119566,
+          "tokens_out": 3823,
+          "provider_latency_ms": 20220,
+          "wall_latency_ms": 20220
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 1000,
+      "case_id": "N100_known_update",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 102,
+      "expected_object_id": "NPA-PREINSTALL",
+      "expected_relation": "same_npa",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "NPA-PREINSTALL",
+      "predicted_relation": "same_npa",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 16447,
+      "llm_calls": [
+        {
+          "prompt_bytes": 26400,
+          "system_bytes": 3262,
+          "tokens_in": 8048,
+          "tokens_out": 4600,
+          "provider_latency_ms": 16447,
+          "wall_latency_ms": 16447
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 1000,
+      "case_id": "N100_similar_other",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 102,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 10002,
+      "llm_calls": [
+        {
+          "prompt_bytes": 26409,
+          "system_bytes": 3262,
+          "tokens_in": 8039,
+          "tokens_out": 2929,
+          "provider_latency_ms": 10001,
+          "wall_latency_ms": 10001
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 1000,
+      "case_id": "E1000_event_update",
+      "kind": "event",
+      "mode": "full_scan",
+      "bank_candidates": 898,
+      "expected_object_id": "EVT-VECTOR-ADS",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "EVT-VECTOR-ADS",
+      "predicted_relation": "event_update",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 7434,
+      "llm_calls": [
+        {
+          "prompt_bytes": 664378,
+          "system_bytes": 1846,
+          "tokens_in": 119581,
+          "tokens_out": 357,
+          "provider_latency_ms": 7432,
+          "wall_latency_ms": 7432
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 1000,
+      "case_id": "E1000_same_actor_other_story",
+      "kind": "event",
+      "mode": "full_scan",
+      "bank_candidates": 898,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 9815,
+      "llm_calls": [
+        {
+          "prompt_bytes": 664356,
+          "system_bytes": 1846,
+          "tokens_in": 119579,
+          "tokens_out": 1190,
+          "provider_latency_ms": 9813,
+          "wall_latency_ms": 9813
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 1000,
+      "case_id": "N1000_known_update",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 102,
+      "expected_object_id": "NPA-TELEMETRY",
+      "expected_relation": "same_npa",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "NPA-TELEMETRY",
+      "predicted_relation": "same_npa",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 22582,
+      "llm_calls": [
+        {
+          "prompt_bytes": 26463,
+          "system_bytes": 3262,
+          "tokens_in": 8099,
+          "tokens_out": 6862,
+          "provider_latency_ms": 22582,
+          "wall_latency_ms": 22582
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 1000,
+      "case_id": "N1000_same_topic_other_id",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 102,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": true,
+      "wall_ms": 14018,
+      "llm_calls": [
+        {
+          "prompt_bytes": 26352,
+          "system_bytes": 3262,
+          "tokens_in": 8057,
+          "tokens_out": 4082,
+          "provider_latency_ms": 14017,
+          "wall_latency_ms": 14017
+        }
+      ],
+      "error": null
+    }
+  ]
+}

@@ -194,7 +194,11 @@ class OpenRouterEmbeddingProvider:
             try:
                 response = client.post(
                     "embeddings",
-                    json={"model": self.config.model, "input": list(texts)},
+                    json={
+                        "model": self.config.model,
+                        "input": list(texts),
+                        "dimensions": self.config.dimensions,
+                    },
                 )
                 if response.status_code in _CONFIG_STATUSES:
                     raise LlmConfigError(

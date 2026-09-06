@@ -1,0 +1,994 @@
+{
+  "instructions": "You are an independent evaluator of a GS Labs monitoring-system run.\n\nInputs: (1) visible source items, (2) hidden ground truth, (3) expected objects, (4) system prediction. Never reward style, length, keyword overlap or agreement with the ideal wording. Evaluate claims by meaning and require every factual claim in released digest text to be supported by an exact source quote.\n\nReturn JSON only. For each expected object report: inclusion, correct membership, preserved required meanings, unsupported claims, lost independent opinions, importance/critical correctness, role correctness and evidence validity. Then report separately: safety_gates; value_proxy; H1; H2_prerequisites; H3; H4_proxy; H5_content_proxy. Use verdict supported, mixed, not_supported or not_tested. H2, H4, H5 and value cannot be fully supported without timed human observations; never infer user value from text quality alone. Do not produce one total score. Quote the item IDs behind every failure.\n\nReturn exactly one object result for every expected_object_id and exactly these six safety gates: critical_recall, no_critical_low, no_unsupported_released_fact, opinion_attribution, npa_state, critical_role_delivery. The importance_critical_correctness field is mandatory for every object result. Return every hypothesis proxy in the response schema; use not_tested when evidence is insufficient.\n",
+  "response_schema": {
+    "type": "object",
+    "required": [
+      "object_results",
+      "safety_gates",
+      "hypothesis_results",
+      "limitations"
+    ],
+    "properties": {
+      "object_results": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "expected_object_id",
+            "inclusion",
+            "membership",
+            "required_meanings",
+            "unsupported_claims",
+            "lost_positions",
+            "role_correctness",
+            "evidence_validity",
+            "importance_critical_correctness"
+          ],
+          "properties": {
+            "expected_object_id": {
+              "type": "string"
+            },
+            "inclusion": {
+              "enum": [
+                "pass",
+                "fail"
+              ]
+            },
+            "membership": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "required_meanings": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "unsupported_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "claim",
+                  "reason",
+                  "item_ids"
+                ]
+              }
+            },
+            "lost_positions": {
+              "type": "array"
+            },
+            "role_correctness": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "evidence_validity": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "importance_critical_correctness": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            }
+          }
+        }
+      },
+      "safety_gates": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "gate",
+            "verdict",
+            "item_ids"
+          ],
+          "properties": {
+            "gate": {
+              "type": "string",
+              "enum": [
+                "critical_recall",
+                "no_critical_low",
+                "no_unsupported_released_fact",
+                "opinion_attribution",
+                "npa_state",
+                "critical_role_delivery"
+              ]
+            },
+            "verdict": {
+              "enum": [
+                "pass",
+                "fail",
+                "not_tested"
+              ]
+            },
+            "item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "hypothesis_results": {
+        "type": "object",
+        "properties": {
+          "value_proxy": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H1": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H2_prerequisites": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H3": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H4_proxy": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H5_content_proxy": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          }
+        },
+        "required": [
+          "value_proxy",
+          "H1",
+          "H2_prerequisites",
+          "H3",
+          "H4_proxy",
+          "H5_content_proxy"
+        ]
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "source_items": [
+    {
+      "id": "A12",
+      "flow_id": "A",
+      "available_at": "2026-08-24T11:44:00+03:00",
+      "surface": "rss",
+      "source_name": "TV Technology",
+      "source_url": "https://fixtures.gs-labs.invalid/rss/a12",
+      "discoverability": [
+        "fixed",
+        "search"
+      ],
+      "title": "Новый стандарт затронет интерфейсы телевизоров",
+      "raw_text": "Утверждён стандарт доступности Smart TV: рекомендации касаются контраста и голосового сопровождения. Издание ошибочно называет применение обязательным, хотя официальный текст определяет стандарт как добровольный.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.\n\nКонтекст 4. Цифры относятся к указанному этапу проекта. Потенциальный масштаб, обсуждаемый участниками рынка, не является фактическим охватом или заключённым контрактом.\n\nКонтекст 5. Обновление материала будет выпущено отдельно, если появится первичный документ. Текущая версия статьи не должна использоваться как подтверждение изменения юридического статуса.\n\nКонтекст 6. Смежные участники рынка оценивают событие по-разному. Их комментарии сохраняются как позиции конкретных спикеров, а не как установленный факт.\n\nКонтекст 7. В открытых материалах не раскрыты коммерческие условия, бюджет и внутренняя технологическая схема. Эти сведения редакция не реконструирует самостоятельно.\n\nКонтекст 8. Ссылка на источник и время обновления сохранены, чтобы отличать исходную публикацию от более поздних пересказов и исправлений.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "rss_item",
+        "guid": "A12",
+        "title": "Новый стандарт затронет интерфейсы телевизоров",
+        "description": "Утверждён стандарт доступности Smart TV: рекомендации касаются контраста и голосового сопровождения. Издание ошибочно называет применение обязательным, хотя официальный текст определяет стандарт как добровольный.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.\n\nКонтекст 4. Цифры относятся к указанному этапу проекта. Потенциальный масштаб, обсуждаемый участниками рынка, не является фактическим охватом или заключённым контрактом.\n\nКонтекст 5. Обновление материала будет выпущено отдельно, если появится первичный документ. Текущая версия статьи не должна использоваться как подтверждение изменения юридического статуса.\n\nКонтекст 6. Смежные участники рынка оценивают событие по-разному. Их комментарии сохраняются как позиции конкретных спикеров, а не как установленный факт.\n\nКонтекст 7. В открытых материалах не раскрыты коммерческие условия, бюджет и внутренняя технологическая схема. Эти сведения редакция не реконструирует самостоятельно.\n\nКонтекст 8. Ссылка на источник и время обновления сохранены, чтобы отличать исходную публикацию от более поздних пересказов и исправлений.",
+        "link": "https://fixtures.gs-labs.invalid/rss/a12",
+        "pubDate": "2026-08-24T11:44:00+03:00"
+      }
+    },
+    {
+      "id": "A15",
+      "flow_id": "A",
+      "available_at": "2026-08-24T13:02:00+03:00",
+      "surface": "rss",
+      "source_name": "Калининград Online",
+      "source_url": "https://fixtures.gs-labs.invalid/rss/a15",
+      "discoverability": [
+        "fixed",
+        "search"
+      ],
+      "title": "Локальное телевидение GS Group охватит до 20 тысяч семей",
+      "raw_text": "Региональное издание пишет, что пилот уже доступен 12 тысячам домохозяйств, а потенциальный охват после расширения может составить 20 тысяч. Расширение пока не подтверждено как завершённое.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "rss_item",
+        "guid": "A15",
+        "title": "Локальное телевидение GS Group охватит до 20 тысяч семей",
+        "description": "Региональное издание пишет, что пилот уже доступен 12 тысячам домохозяйств, а потенциальный охват после расширения может составить 20 тысяч. Расширение пока не подтверждено как завершённое.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+        "link": "https://fixtures.gs-labs.invalid/rss/a15",
+        "pubDate": "2026-08-24T13:02:00+03:00"
+      }
+    },
+    {
+      "id": "A20",
+      "flow_id": "A",
+      "available_at": "2026-08-24T10:26:00+03:00",
+      "surface": "search_api",
+      "source_name": "Муниципальные закупки",
+      "source_url": "https://fixtures.gs-labs.invalid/search_api/a20",
+      "discoverability": [
+        "search"
+      ],
+      "title": "Техзадание муниципальной сети требует совместимости с двумя CAS",
+      "raw_text": "В приложении к закупке муниципального оператора указана обязательная одновременная совместимость клиентского ПО с CAS «Ключ-А» и «Ключ-Б». Плановый объём — 45 тысяч устройств; заявки принимаются до 9 сентября. Документ не упоминался в постоянных источниках.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "A20",
+        "title": "Техзадание муниципальной сети требует совместимости с двумя CAS",
+        "content": "В приложении к закупке муниципального оператора указана обязательная одновременная совместимость клиентского ПО с CAS «Ключ-А» и «Ключ-Б». Плановый объём — 45 тысяч устройств; заявки принимаются до 9 сентября. Документ не упоминался в постоянных источниках.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.",
+        "url": "https://fixtures.gs-labs.invalid/search_api/a20",
+        "score": 0.68,
+        "published_at": "2026-08-24T10:26:00+03:00"
+      }
+    },
+    {
+      "id": "A21",
+      "flow_id": "A",
+      "available_at": "2026-08-24T11:10:00+03:00",
+      "surface": "search_api",
+      "source_name": "Web search",
+      "source_url": "https://fixtures.gs-labs.invalid/search_api/a21",
+      "discoverability": [
+        "search"
+      ],
+      "title": "CAS для автоматизации расчёта зарплат",
+      "raw_text": "Университетская лаборатория показала, как Computer Algebra System сокращает время проверки формул расчёта зарплат. Авторы опубликовали учебный блокнот и набор примеров.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "A21",
+        "title": "CAS для автоматизации расчёта зарплат",
+        "content": "Университетская лаборатория показала, как Computer Algebra System сокращает время проверки формул расчёта зарплат. Авторы опубликовали учебный блокнот и набор примеров.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+        "url": "https://fixtures.gs-labs.invalid/search_api/a21",
+        "score": 0.69,
+        "published_at": "2026-08-24T11:10:00+03:00"
+      }
+    }
+  ],
+  "ground_truth": [
+    {
+      "id": "A12",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR",
+        "PR",
+        "HEAD"
+      ],
+      "topic": "accessibility",
+      "object_id": "EV-A1",
+      "object_type": "event",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": true,
+      "risk_reasons": [
+        "secondary_source_conflicts_with_primary"
+      ],
+      "must_facts": [
+        "Издание называет применение обязательным."
+      ],
+      "forbidden_claims": [],
+      "requires_review": true
+    },
+    {
+      "id": "A15",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "topic": "company",
+      "object_id": "EV-A2",
+      "object_type": "event",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": true,
+      "risk_reasons": [
+        "actual_vs_forecast_number"
+      ],
+      "must_facts": [
+        "Текущий охват — 12 тысяч домохозяйств.",
+        "20 тысяч — потенциальный охват после расширения."
+      ],
+      "forbidden_claims": [
+        "Пилот уже охватывает 20 тысяч семей."
+      ],
+      "requires_review": true
+    },
+    {
+      "id": "A20",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "topic": "market_opportunity",
+      "object_id": "OBJ-A20",
+      "object_type": "publication",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": true,
+      "risk_reasons": [
+        "search_only_primary_document"
+      ],
+      "must_facts": [
+        "Требуется совместимость с двумя CAS.",
+        "Плановый объём — 45 тысяч устройств.",
+        "Заявки принимаются до 9 сентября."
+      ],
+      "forbidden_claims": [
+        "GS Labs соответствует требованиям закупки.",
+        "GS Labs выиграла закупку."
+      ],
+      "requires_review": true
+    },
+    {
+      "id": "A21",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "topic": "noise",
+      "object_id": null,
+      "object_type": "publication",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": false,
+      "risk_reasons": [
+        "acronym_collision"
+      ],
+      "must_facts": [],
+      "forbidden_claims": [],
+      "requires_review": false
+    }
+  ],
+  "expected_objects": [
+    {
+      "object_id": "EV-A1",
+      "flow_id": "A",
+      "type": "event",
+      "member_ids": [
+        "A12"
+      ],
+      "roles": [
+        "GR",
+        "PR",
+        "HEAD"
+      ],
+      "importance": "high",
+      "critical": false,
+      "digest": true,
+      "delivery_types": [
+        "planned_digest"
+      ],
+      "unreachable_member_ids": [
+        "A11",
+        "A13"
+      ]
+    },
+    {
+      "object_id": "EV-A2",
+      "flow_id": "A",
+      "type": "event",
+      "member_ids": [
+        "A15"
+      ],
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "importance": "high",
+      "critical": false,
+      "digest": true,
+      "delivery_types": [
+        "planned_digest"
+      ],
+      "unreachable_member_ids": [
+        "A14",
+        "A16"
+      ]
+    },
+    {
+      "object_id": "OBJ-A20",
+      "flow_id": "A",
+      "type": "publication",
+      "member_ids": [
+        "A20"
+      ],
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "importance": "high",
+      "critical": false,
+      "digest": true,
+      "delivery_types": [
+        "planned_digest"
+      ],
+      "unreachable_member_ids": []
+    }
+  ],
+  "npa_truth": [],
+  "prediction": {
+    "run_id": "2894b577-7f38-4aaa-a0ce-a903b3098456",
+    "scenario_id": "A",
+    "mode": "search",
+    "item_decisions": [
+      {
+        "id": "A20",
+        "relevance": "relevant",
+        "importance": "high",
+        "critical": false,
+        "roles": [
+          "PR",
+          "HEAD"
+        ],
+        "risk_flag": true,
+        "reason": "open_questions"
+      },
+      {
+        "id": "A21",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical": false,
+        "roles": [],
+        "risk_flag": false,
+        "reason": "Материал о применении Computer Algebra System для проверки формул расчёта зарплат в университетской лаборатории; совпадение с контекстом GS Labs ограничено термином 'CAS', который здесь означает систему компьютерной алгебры, а не Conditional Access System. Связи с цифровым телевидением, CAS/DRM, продуктами, рынками или регуляторикой GS Labs нет."
+      },
+      {
+        "id": "A12",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "GR"
+        ],
+        "risk_flag": true,
+        "reason": "open_questions"
+      },
+      {
+        "id": "A15",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "PR"
+        ],
+        "risk_flag": true,
+        "reason": "open_questions"
+      }
+    ],
+    "objects": [
+      {
+        "object_id": "evt-7ed980a62ab3",
+        "type": "publication",
+        "member_ids": [
+          "A20"
+        ],
+        "summary": "Муниципальный оператор объявил закупку клиентского ПО с обязательной одновременной совместимостью с двумя CAS («Ключ-А» и «Ключ-Б») на 45 тысяч устройств; заявки принимаются до 9 сентября.",
+        "impact_on_gs_labs": "Закупка на 45 тыс. устройств с требованием двух-CAS-совместимости — прямая возможность или барьер для CAS/DRM-бизнеса GS Labs в операторском сегменте. Требование одновременной поддержки двух CAS может влиять на продуктовые и рыночные решения. Участие зависит от того, чьи именно CAS указаны в техзадании.",
+        "importance": "high",
+        "critical": false,
+        "roles": [
+          "PR",
+          "HEAD"
+        ],
+        "claims": [
+          {
+            "claim_id": "A20:s1:c1",
+            "text": "Техзадание муниципального оператора требует обязательной одновременной совместимости клиентского ПО с CAS «Ключ-А» и «Ключ-Б».",
+            "evidence": [
+              {
+                "source_item_id": "A20",
+                "quote": "обязательная одновременная совместимость клиентского ПО с CAS «Ключ-А» и «Ключ-Б»"
+              }
+            ]
+          },
+          {
+            "claim_id": "A20:s1:c2",
+            "text": "Плановый объём закупки — 45 тысяч устройств.",
+            "evidence": [
+              {
+                "source_item_id": "A20",
+                "quote": "Плановый объём — 45 тысяч устройств"
+              }
+            ]
+          },
+          {
+            "claim_id": "A20:s1:c3",
+            "text": "Заявки на закупку принимаются до 9 сентября.",
+            "evidence": [
+              {
+                "source_item_id": "A20",
+                "quote": "заявки принимаются до 9 сентября"
+              }
+            ]
+          },
+          {
+            "claim_id": "A20:s1:c4",
+            "text": "Материал найден дополнительным поиском и отсутствует в постоянной ленте источников.",
+            "evidence": [
+              {
+                "source_item_id": "A20",
+                "quote": "Документ не упоминался в постоянных источниках."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "object_id": "evt-039e901e643f",
+        "type": "publication",
+        "member_ids": [
+          "A12"
+        ],
+        "summary": "Утверждён добровольный стандарт доступности Smart TV (контраст, голосовое сопровождение); публикация исправляет ошибочное представление другого издания о его обязательности.",
+        "impact_on_gs_labs": "Добровольный статус не создаёт юридических обязательств, но стандарт касается интерфейсов Smart TV — основного продуктового домена GS Labs — и может стать де-факто ориентиром доступности интерфейсов. Юридическое состояние определяет официальный текст, а не вторичный пересказ об обязательности. Для оценки регуляторного риска нужен первичный документ стандарта.",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "GR"
+        ],
+        "claims": [
+          {
+            "claim_id": "A12:s1:c1",
+            "text": "Утверждён стандарт доступности для Smart TV.",
+            "evidence": [
+              {
+                "source_item_id": "A12",
+                "quote": "Утверждён стандарт доступности Smart TV"
+              }
+            ]
+          },
+          {
+            "claim_id": "A12:s1:c2",
+            "text": "Рекомендации стандарта касаются контраста и голосового сопровождения.",
+            "evidence": [
+              {
+                "source_item_id": "A12",
+                "quote": "рекомендации касаются контраста и голосового сопровождения"
+              }
+            ]
+          },
+          {
+            "claim_id": "A12:s1:c3",
+            "text": "Издание ошибочно назвало применение стандарта обязательным.",
+            "evidence": [
+              {
+                "source_item_id": "A12",
+                "quote": "Издание ошибочно называет применение обязательным"
+              }
+            ]
+          },
+          {
+            "claim_id": "A12:s1:c4",
+            "text": "Официальный текст определяет стандарт как добровольный.",
+            "evidence": [
+              {
+                "source_item_id": "A12",
+                "quote": "официальный текст определяет стандарт как добровольный"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "object_id": "evt-3bade19e4fba",
+        "type": "publication",
+        "member_ids": [
+          "A15"
+        ],
+        "summary": "Региональное издание сообщает, что пилот локального телевидения GS Group уже доступен 12 тысячам домохозяйств, а потенциальный охват после расширения может составить до 20 тысяч семей; расширение не подтверждено, комментарий компании не получен.",
+        "impact_on_gs_labs": "Подтверждённый пилот группы в цифровом телевидении — позитивный публичный нарратив и возможная возможность для коммуникации PR. Прогнозные 20 тысяч семей нельзя подавать как достигнутый результат. Регуляторного или рыночного риска материал не содержит.",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "PR"
+        ],
+        "claims": [
+          {
+            "claim_id": "A15:s1:c1",
+            "text": "Пилот локального телевидения GS Group уже доступен 12 тысячам домохозяйств.",
+            "evidence": [
+              {
+                "source_item_id": "A15",
+                "quote": "пилот уже доступен 12 тысячам домохозяйств"
+              }
+            ]
+          },
+          {
+            "claim_id": "A15:s1:c2",
+            "text": "Потенциальный охват после расширения оценивается до 20 тысяч семей, но расширение не подтверждено как завершённое.",
+            "evidence": [
+              {
+                "source_item_id": "A15",
+                "quote": "потенциальный охват после расширения может составить 20 тысяч. Расширение пока не подтверждено как завершённое"
+              }
+            ]
+          },
+          {
+            "claim_id": "A15:s1:c3",
+            "text": "Материал не подтверждает внутренние планы компании: комментарий организации к публикации не поступил.",
+            "evidence": [
+              {
+                "source_item_id": "A15",
+                "quote": "материал не подтверждает внутренние планы компании и описывает только открытые сведения"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "deliveries": [
+      {
+        "delivery_type": "planned_digest",
+        "recipient": "GR",
+        "object_ids": [
+          "evt-039e901e643f"
+        ],
+        "digest_text": "• Утверждён добровольный стандарт доступности Smart TV (контраст, голосовое сопровождение); публикация исправляет ошибочное представление другого издания о его обязательности."
+      },
+      {
+        "delivery_type": "planned_digest",
+        "recipient": "HEAD",
+        "object_ids": [
+          "evt-7ed980a62ab3"
+        ],
+        "digest_text": "• Муниципальный оператор объявил закупку клиентского ПО с обязательной одновременной совместимостью с двумя CAS («Ключ-А» и «Ключ-Б») на 45 тысяч устройств; заявки принимаются до 9 сентября."
+      },
+      {
+        "delivery_type": "planned_digest",
+        "recipient": "PR",
+        "object_ids": [
+          "evt-7ed980a62ab3",
+          "evt-3bade19e4fba"
+        ],
+        "digest_text": "• Муниципальный оператор объявил закупку клиентского ПО с обязательной одновременной совместимостью с двумя CAS («Ключ-А» и «Ключ-Б») на 45 тысяч устройств; заявки принимаются до 9 сентября.\n• Региональное издание сообщает, что пилот локального телевидения GS Group уже доступен 12 тысячам домохозяйств, а потенциальный охват после расширения может составить до 20 тысяч семей; расширение не подтверждено, комментарий компании не получен."
+      }
+    ],
+    "telemetry": {
+      "configuration_id": "A1=one_pass;A2=without_research;A3=full_scan;A4=without_critic",
+      "model": "glm-5.3-flash:cloud",
+      "context_version": "external-v1",
+      "documents": 4,
+      "signals": 3,
+      "model_calls": 4,
+      "input_tokens": 9178,
+      "output_tokens": 8678,
+      "provider_latency_ms": 44210,
+      "wall_seconds": 29.99786974999006,
+      "errors": [],
+      "generation_provider": "ollama",
+      "generation_model": "glm-5.3-flash:cloud",
+      "architecture": "A1=one_pass;A2=without_research;A3=full_scan;A4=without_critic;review_first"
+    }
+  },
+  "deterministic_report": {
+    "run_id": "2894b577-7f38-4aaa-a0ce-a903b3098456",
+    "scenario_id": "A",
+    "mode": "search",
+    "contract_errors": [],
+    "coverage": {
+      "visible_items": 4,
+      "decisions": 4
+    },
+    "discovery": {
+      "all_digest_objects_in_scenario": [
+        "EV-A1",
+        "EV-A2",
+        "NPA-A",
+        "OBJ-A07",
+        "OBJ-A08",
+        "OBJ-A09",
+        "OBJ-A20"
+      ],
+      "digest_objects_reachable_in_mode": [
+        "EV-A1",
+        "EV-A2",
+        "OBJ-A20"
+      ],
+      "reachable_digest_coverage": 0.42857142857142855,
+      "irrelevant_items_exposed_by_mode": 1
+    },
+    "item_labels": {
+      "relevance": {
+        "correct": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "importance": {
+        "correct": 2,
+        "total": 4,
+        "accuracy": 0.5
+      },
+      "critical": {
+        "correct": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "roles": {
+        "correct": 2,
+        "total": 4,
+        "exact_set_accuracy": 0.5
+      },
+      "review_policy": {
+        "correct": 4,
+        "total": 4,
+        "accuracy": 1.0
+      }
+    },
+    "classification_by_class": {
+      "relevance": {
+        "classes": {
+          "relevant": {
+            "support": 3,
+            "predicted": 3,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "borderline": {
+            "support": 0,
+            "predicted": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "irrelevant": {
+            "support": 1,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "unknown": {
+            "support": 0,
+            "predicted": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          }
+        },
+        "macro_f1_over_present_classes": 1.0
+      },
+      "importance": {
+        "classes": {
+          "low": {
+            "support": 1,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "medium": {
+            "support": 0,
+            "predicted": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": null
+          },
+          "high": {
+            "support": 3,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          },
+          "critical": {
+            "support": 0,
+            "predicted": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          }
+        },
+        "macro_f1_over_present_classes": 0.75
+      }
+    },
+    "safety": {
+      "critical_recall": null,
+      "critical_item_recall": null,
+      "critical_object_recall": null,
+      "critical_delivery_recall": null,
+      "critical_recipient_recall": null,
+      "missing_critical_recipients": [],
+      "critical_items_in_low": [],
+      "all_submitted_evidence_quotes_verbatim": true,
+      "submitted_claims": 11,
+      "claim_support_by_meaning": "requires_semantic_judge",
+      "evidence_quote_checks": [
+        {
+          "object_id": "evt-7ed980a62ab3",
+          "claim_id": "A20:s1:c1",
+          "source_item_id": "A20",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-7ed980a62ab3",
+          "claim_id": "A20:s1:c2",
+          "source_item_id": "A20",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-7ed980a62ab3",
+          "claim_id": "A20:s1:c3",
+          "source_item_id": "A20",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-7ed980a62ab3",
+          "claim_id": "A20:s1:c4",
+          "source_item_id": "A20",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-039e901e643f",
+          "claim_id": "A12:s1:c1",
+          "source_item_id": "A12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-039e901e643f",
+          "claim_id": "A12:s1:c2",
+          "source_item_id": "A12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-039e901e643f",
+          "claim_id": "A12:s1:c3",
+          "source_item_id": "A12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-039e901e643f",
+          "claim_id": "A12:s1:c4",
+          "source_item_id": "A12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-3bade19e4fba",
+          "claim_id": "A15:s1:c1",
+          "source_item_id": "A15",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-3bade19e4fba",
+          "claim_id": "A15:s1:c2",
+          "source_item_id": "A15",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-3bade19e4fba",
+          "claim_id": "A15:s1:c3",
+          "source_item_id": "A15",
+          "verbatim_quote": true
+        }
+      ]
+    },
+    "grouping": {
+      "pair_true_positive": 0,
+      "pair_false_positive": 0,
+      "pair_false_negative": 0,
+      "pair_precision": null,
+      "pair_recall": null,
+      "exact_expected_objects": 3,
+      "expected_objects": 3,
+      "predicted_objects": 3,
+      "exact_object_precision": 1.0,
+      "exact_object_recall": 1.0,
+      "unexpected_member_sets": [],
+      "missing_member_sets": [],
+      "object_attributes": {
+        "EV-A1": {
+          "present_as_exact_member_set": true,
+          "type": false,
+          "importance": false,
+          "critical": true,
+          "roles": false
+        },
+        "EV-A2": {
+          "present_as_exact_member_set": true,
+          "type": false,
+          "importance": false,
+          "critical": true,
+          "roles": false
+        },
+        "OBJ-A20": {
+          "present_as_exact_member_set": true,
+          "type": true,
+          "importance": true,
+          "critical": true,
+          "roles": true
+        }
+      }
+    },
+    "role_deliveries": {
+      "PR": {
+        "expected": [
+          "EV-A1",
+          "EV-A2",
+          "OBJ-A20"
+        ],
+        "predicted_exactly_mapped": [
+          "EV-A2",
+          "OBJ-A20"
+        ],
+        "precision": 1.0,
+        "recall": 0.6666666666666666
+      },
+      "GR": {
+        "expected": [
+          "EV-A1"
+        ],
+        "predicted_exactly_mapped": [
+          "EV-A1"
+        ],
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "HEAD": {
+        "expected": [
+          "EV-A1",
+          "EV-A2",
+          "OBJ-A20"
+        ],
+        "predicted_exactly_mapped": [
+          "OBJ-A20"
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333
+      }
+    },
+    "delivery_type_errors": [],
+    "duplicate_deliveries": [],
+    "npa_state": {},
+    "not_scored_by_rules": [
+      "semantic groundedness beyond submitted evidence quotes",
+      "summary sufficiency and preservation of meaning",
+      "human task time and cognitive load",
+      "product-value verdicts H2/H4/H5"
+    ]
+  }
+}

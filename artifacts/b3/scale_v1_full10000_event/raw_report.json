@@ -1,0 +1,43 @@
+{
+  "benchmark": "B3-SCALE",
+  "version": "1.0.0",
+  "embedding_model": "google/gemini-embedding-001",
+  "embedding_dimensions": 768,
+  "generation_model": "glm-5.3-flash:cloud",
+  "sizes": [
+    10000
+  ],
+  "indexing_ms_for_missing_objects": 0,
+  "result_count": 1,
+  "results": [
+    {
+      "size": 10000,
+      "case_id": "E10000_old_event_update",
+      "kind": "event",
+      "mode": "full_scan",
+      "bank_candidates": 8996,
+      "expected_object_id": "EVT-HYBRID-TV-ROUND-TABLE",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": null,
+      "predicted_relation": "failed",
+      "object_correct": false,
+      "relation_correct": false,
+      "needs_human_review": true,
+      "wall_ms": 11824,
+      "llm_calls": [
+        {
+          "prompt_bytes": 6641690,
+          "system_bytes": 1846,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "provider_latency_ms": 0,
+          "wall_latency_ms": 11808,
+          "error": "LlmConfigError: chat: HTTP 400 — The prompt is too long: 1200129, model maximum context length: 1048576 (ref: f83f5e0a-4bd7-44c3-82af-7867898c6740) (status code: 400)"
+        }
+      ],
+      "error": "LlmConfigError: chat: HTTP 400 — The prompt is too long: 1200129, model maximum context length: 1048576 (ref: f83f5e0a-4bd7-44c3-82af-7867898c6740) (status code: 400)"
+    }
+  ]
+}

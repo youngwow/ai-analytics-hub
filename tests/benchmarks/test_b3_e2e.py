@@ -110,6 +110,12 @@ def test_b3_dataset_and_evaluator_oracle_smoke(tmp_path: Path):
                 "npa_state": None,
             }
         )
+    # A transport title is part of the visible original and is valid evidence,
+    # even when normalized raw_text stores the body separately.
+    first_member = prediction_objects[0]["member_ids"][0]
+    prediction_objects[0]["claims"][0]["evidence"][0]["quote"] = materials[
+        first_member
+    ]["title"]
 
     prediction = {
         "run_id": "oracle-smoke",

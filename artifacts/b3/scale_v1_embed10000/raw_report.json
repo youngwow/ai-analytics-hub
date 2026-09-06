@@ -1,0 +1,350 @@
+{
+  "benchmark": "B3-SCALE",
+  "version": "1.0.0",
+  "embedding_model": "google/gemini-embedding-001",
+  "embedding_dimensions": 768,
+  "generation_model": "glm-5.3-flash:cloud",
+  "sizes": [
+    10000
+  ],
+  "indexing_ms_for_missing_objects": 423395,
+  "result_count": 12,
+  "results": [
+    {
+      "size": 10000,
+      "case_id": "E100_same_event",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "EVT-STINGRAY-2026",
+      "expected_relation": "same_event",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1113,
+      "predicted_object_id": "EVT-STINGRAY-2026",
+      "predicted_relation": "same_event",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 2090,
+      "llm_calls": [
+        {
+          "prompt_bytes": 17892,
+          "system_bytes": 1846,
+          "tokens_in": 3264,
+          "tokens_out": 263,
+          "provider_latency_ms": 2031,
+          "wall_latency_ms": 2090
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "E100_hard_negative",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1592,
+      "predicted_object_id": "EVT-STINGRAY-MARKET",
+      "predicted_relation": "same_event",
+      "object_correct": false,
+      "relation_correct": false,
+      "needs_human_review": false,
+      "wall_ms": 5436,
+      "llm_calls": [
+        {
+          "prompt_bytes": 16493,
+          "system_bytes": 1846,
+          "tokens_in": 2845,
+          "tokens_out": 1037,
+          "provider_latency_ms": 5436,
+          "wall_latency_ms": 5436
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "N100_known_update",
+      "kind": "npa",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "NPA-PREINSTALL",
+      "expected_relation": "same_npa",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1263,
+      "predicted_object_id": "NPA-PREINSTALL",
+      "predicted_relation": "same_npa",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 42032,
+      "llm_calls": [
+        {
+          "prompt_bytes": 6380,
+          "system_bytes": 3262,
+          "tokens_in": 2265,
+          "tokens_out": 10936,
+          "provider_latency_ms": 42031,
+          "wall_latency_ms": 42031
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "N100_similar_other",
+      "kind": "npa",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1104,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 13887,
+      "llm_calls": [
+        {
+          "prompt_bytes": 6038,
+          "system_bytes": 3262,
+          "tokens_in": 2238,
+          "tokens_out": 3490,
+          "provider_latency_ms": 13887,
+          "wall_latency_ms": 13887
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "E1000_event_update",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "EVT-VECTOR-ADS",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1745,
+      "predicted_object_id": "EVT-VECTOR-ADS",
+      "predicted_relation": "event_update",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 2838,
+      "llm_calls": [
+        {
+          "prompt_bytes": 11935,
+          "system_bytes": 1846,
+          "tokens_in": 2743,
+          "tokens_out": 570,
+          "provider_latency_ms": 2838,
+          "wall_latency_ms": 2838
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "E1000_same_actor_other_story",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 486,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 8681,
+      "llm_calls": [
+        {
+          "prompt_bytes": 11894,
+          "system_bytes": 1846,
+          "tokens_in": 2737,
+          "tokens_out": 1822,
+          "provider_latency_ms": 8681,
+          "wall_latency_ms": 8681
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "N1000_known_update",
+      "kind": "npa",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "NPA-TELEMETRY",
+      "expected_relation": "same_npa",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1398,
+      "predicted_object_id": "NPA-TELEMETRY",
+      "predicted_relation": "same_npa",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 26402,
+      "llm_calls": [
+        {
+          "prompt_bytes": 6095,
+          "system_bytes": 3262,
+          "tokens_in": 2274,
+          "tokens_out": 6756,
+          "provider_latency_ms": 26402,
+          "wall_latency_ms": 26402
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "N1000_same_topic_other_id",
+      "kind": "npa",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1101,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 11187,
+      "llm_calls": [
+        {
+          "prompt_bytes": 6418,
+          "system_bytes": 3262,
+          "tokens_in": 2349,
+          "tokens_out": 2612,
+          "provider_latency_ms": 11187,
+          "wall_latency_ms": 11187
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "E10000_old_event_update",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "EVT-HYBRID-TV-ROUND-TABLE",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 617,
+      "predicted_object_id": "EVT-HYBRID-TV-ROUND-TABLE",
+      "predicted_relation": "event_update",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 2274,
+      "llm_calls": [
+        {
+          "prompt_bytes": 14954,
+          "system_bytes": 1846,
+          "tokens_in": 2777,
+          "tokens_out": 330,
+          "provider_latency_ms": 2274,
+          "wall_latency_ms": 2274
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "E10000_old_event_negative",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1196,
+      "predicted_object_id": "EVT-HYBRID-TV-CONFERENCE",
+      "predicted_relation": "event_update",
+      "object_correct": false,
+      "relation_correct": false,
+      "needs_human_review": false,
+      "wall_ms": 47214,
+      "llm_calls": [
+        {
+          "prompt_bytes": 13536,
+          "system_bytes": 1846,
+          "tokens_in": 2806,
+          "tokens_out": 10958,
+          "provider_latency_ms": 47214,
+          "wall_latency_ms": 47214
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "N10000_old_npa_update",
+      "kind": "npa",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "NPA-ACCESS-OLD",
+      "expected_relation": "same_npa",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1189,
+      "predicted_object_id": "NPA-ACCESS-OLD",
+      "predicted_relation": "same_npa",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 17060,
+      "llm_calls": [
+        {
+          "prompt_bytes": 6307,
+          "system_bytes": 3262,
+          "tokens_in": 2228,
+          "tokens_out": 4163,
+          "provider_latency_ms": 17059,
+          "wall_latency_ms": 17059
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "N10000_old_npa_negative",
+      "kind": "npa",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 492,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": true,
+      "wall_ms": 16052,
+      "llm_calls": [
+        {
+          "prompt_bytes": 5914,
+          "system_bytes": 3262,
+          "tokens_in": 2183,
+          "tokens_out": 4211,
+          "provider_latency_ms": 16052,
+          "wall_latency_ms": 16052
+        }
+      ],
+      "error": null
+    }
+  ]
+}

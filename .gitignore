@@ -229,6 +229,8 @@ benchmarks/**/runs/**/raw/
 artifacts/**/product.db-shm
 artifacts/**/product.db-wal
 artifacts/b2/_archive/
+artifacts/b3/_archive/
+artifacts/b3/**/embeddings.sqlite
 
 # Telegram MTProto session — equals full access to the account, never commit
 data/*.session

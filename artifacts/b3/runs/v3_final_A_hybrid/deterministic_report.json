@@ -1,0 +1,634 @@
+{
+  "run_id": "6a236c26-768e-4e72-a2ef-01ede28dd560",
+  "scenario_id": "A",
+  "mode": "hybrid",
+  "contract_errors": [],
+  "coverage": {
+    "visible_items": 22,
+    "decisions": 22
+  },
+  "discovery": {
+    "all_digest_objects_in_scenario": [
+      "EV-A1",
+      "EV-A2",
+      "NPA-A",
+      "OBJ-A07",
+      "OBJ-A08",
+      "OBJ-A09",
+      "OBJ-A20"
+    ],
+    "digest_objects_reachable_in_mode": [
+      "EV-A1",
+      "EV-A2",
+      "NPA-A",
+      "OBJ-A07",
+      "OBJ-A08",
+      "OBJ-A09",
+      "OBJ-A20"
+    ],
+    "reachable_digest_coverage": 1.0,
+    "irrelevant_items_exposed_by_mode": 8
+  },
+  "item_labels": {
+    "relevance": {
+      "correct": 20,
+      "total": 22,
+      "accuracy": 0.9090909090909091
+    },
+    "importance": {
+      "correct": 17,
+      "total": 22,
+      "accuracy": 0.7727272727272727
+    },
+    "critical": {
+      "correct": 22,
+      "total": 22,
+      "accuracy": 1.0
+    },
+    "roles": {
+      "correct": 17,
+      "total": 22,
+      "exact_set_accuracy": 0.7727272727272727
+    },
+    "review_policy": {
+      "correct": 17,
+      "total": 22,
+      "accuracy": 0.7727272727272727
+    }
+  },
+  "classification_by_class": {
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 13,
+          "predicted": 13,
+          "precision": 0.9230769230769231,
+          "recall": 0.9230769230769231,
+          "f1": 0.9230769230769231
+        },
+        "borderline": {
+          "support": 1,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 8,
+          "predicted": 8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 0.9615384615384616
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 8,
+          "predicted": 9,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1": 0.9411764705882353
+        },
+        "medium": {
+          "support": 5,
+          "predicted": 8,
+          "precision": 0.5,
+          "recall": 0.8,
+          "f1": 0.6153846153846154
+        },
+        "high": {
+          "support": 9,
+          "predicted": 5,
+          "precision": 1.0,
+          "recall": 0.5555555555555556,
+          "f1": 0.7142857142857143
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 0.7569489334195216
+    }
+  },
+  "safety": {
+    "critical_recall": null,
+    "critical_item_recall": null,
+    "critical_object_recall": null,
+    "critical_delivery_recall": null,
+    "critical_recipient_recall": null,
+    "missing_critical_recipients": [],
+    "critical_items_in_low": [],
+    "all_submitted_evidence_quotes_verbatim": true,
+    "submitted_claims": 55,
+    "claim_support_by_meaning": "requires_semantic_judge",
+    "evidence_quote_checks": [
+      {
+        "object_id": "evt-d010e6096543",
+        "claim_id": "A07:s1:c1",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d010e6096543",
+        "claim_id": "A07:s1:c2",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d010e6096543",
+        "claim_id": "A07:s1:c3",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d010e6096543",
+        "claim_id": "A07:s1:c4",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d010e6096543",
+        "claim_id": "A07:s1:c5",
+        "source_item_id": "A07",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-0dbcd99421b2",
+        "claim_id": "A08:s1:c1",
+        "source_item_id": "A08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-0dbcd99421b2",
+        "claim_id": "A08:s1:c2",
+        "source_item_id": "A08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-0dbcd99421b2",
+        "claim_id": "A08:s1:c3",
+        "source_item_id": "A08",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d54d74b39590",
+        "claim_id": "A09:s1:c1",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d54d74b39590",
+        "claim_id": "A09:s1:c2",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d54d74b39590",
+        "claim_id": "A09:s1:c3",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d54d74b39590",
+        "claim_id": "A09:s1:c4",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-d54d74b39590",
+        "claim_id": "A09:s1:c5",
+        "source_item_id": "A09",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-7ed980a62ab3",
+        "claim_id": "A20:s1:c1",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-7ed980a62ab3",
+        "claim_id": "A20:s1:c2",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-7ed980a62ab3",
+        "claim_id": "A20:s1:c3",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-7ed980a62ab3",
+        "claim_id": "A20:s1:c4",
+        "source_item_id": "A20",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-0513a81eccf7",
+        "claim_id": "A10:s1:c1",
+        "source_item_id": "A10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-0513a81eccf7",
+        "claim_id": "A10:s1:c2",
+        "source_item_id": "A10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-0513a81eccf7",
+        "claim_id": "A10:s1:c3",
+        "source_item_id": "A10",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A11:s1:c1",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A11:s1:c2",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A11:s1:c3",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A11:s1:c4",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A11:s1:c5",
+        "source_item_id": "A11",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A12:s1:c1",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A12:s1:c2",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A12:s1:c3",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A12:s1:c4",
+        "source_item_id": "A12",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A13:s1:c1",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A13:s1:c2",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A13:s1:c3",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-42aaf218540e",
+        "claim_id": "A13:s1:c4",
+        "source_item_id": "A13",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A14:s1:c1",
+        "source_item_id": "A14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A14:s1:c2",
+        "source_item_id": "A14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A14:s1:c3",
+        "source_item_id": "A14",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A15:s1:c1",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A15:s1:c2",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A15:s1:c3",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A15:s1:c4",
+        "source_item_id": "A15",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A16:s1:c1",
+        "source_item_id": "A16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A16:s1:c2",
+        "source_item_id": "A16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A16:s1:c3",
+        "source_item_id": "A16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-1a634f95f965",
+        "claim_id": "A16:s1:c4",
+        "source_item_id": "A16",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c1",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c2",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c3",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A17:s1:c4",
+        "source_item_id": "A17",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c1",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c2",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c3",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A18:s1:c4",
+        "source_item_id": "A18",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A19:s1:c1",
+        "source_item_id": "A19",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A19:s1:c2",
+        "source_item_id": "A19",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "NPA-PREINSTALL",
+        "claim_id": "A19:s1:c3",
+        "source_item_id": "A19",
+        "verbatim_quote": true
+      }
+    ]
+  },
+  "grouping": {
+    "pair_true_positive": 9,
+    "pair_false_positive": 0,
+    "pair_false_negative": 0,
+    "pair_precision": 1.0,
+    "pair_recall": 1.0,
+    "exact_expected_objects": 8,
+    "expected_objects": 8,
+    "predicted_objects": 8,
+    "exact_object_precision": 1.0,
+    "exact_object_recall": 1.0,
+    "unexpected_member_sets": [],
+    "missing_member_sets": [],
+    "object_attributes": {
+      "OBJ-A07": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": false
+      },
+      "OBJ-A08": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "OBJ-A09": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "OBJ-A10": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "EV-A1": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": false,
+        "critical": true,
+        "roles": false
+      },
+      "EV-A2": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": false,
+        "critical": true,
+        "roles": true
+      },
+      "NPA-A": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      },
+      "OBJ-A20": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      }
+    }
+  },
+  "role_deliveries": {
+    "PR": {
+      "expected": [
+        "EV-A1",
+        "EV-A2",
+        "OBJ-A08",
+        "OBJ-A09",
+        "OBJ-A20"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A1",
+        "EV-A2",
+        "OBJ-A07",
+        "OBJ-A08",
+        "OBJ-A09",
+        "OBJ-A10",
+        "OBJ-A20"
+      ],
+      "precision": 0.7142857142857143,
+      "recall": 1.0
+    },
+    "GR": {
+      "expected": [
+        "EV-A1",
+        "NPA-A",
+        "OBJ-A07"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A1",
+        "NPA-A",
+        "OBJ-A07",
+        "OBJ-A10"
+      ],
+      "precision": 0.75,
+      "recall": 1.0
+    },
+    "HEAD": {
+      "expected": [
+        "EV-A1",
+        "EV-A2",
+        "NPA-A",
+        "OBJ-A07",
+        "OBJ-A08",
+        "OBJ-A09",
+        "OBJ-A20"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-A2",
+        "NPA-A",
+        "OBJ-A07",
+        "OBJ-A08",
+        "OBJ-A09",
+        "OBJ-A20"
+      ],
+      "precision": 1.0,
+      "recall": 0.8571428571428571
+    }
+  },
+  "delivery_type_errors": [
+    {
+      "recipient": "GR",
+      "object_id": "OBJ-A10",
+      "actual": "planned_digest",
+      "expected": []
+    },
+    {
+      "recipient": "PR",
+      "object_id": "OBJ-A10",
+      "actual": "planned_digest",
+      "expected": []
+    }
+  ],
+  "duplicate_deliveries": [],
+  "npa_state": {
+    "NPA-A": {
+      "present": true,
+      "current_stage": true,
+      "current_version": true,
+      "current_version_exact_label": false,
+      "effective_from": true,
+      "history_ids": true,
+      "history_ids_exact": false,
+      "change_summary": "semantic_judge"
+    }
+  },
+  "not_scored_by_rules": [
+    "semantic groundedness beyond submitted evidence quotes",
+    "summary sufficiency and preservation of meaning",
+    "human task time and cognitive load",
+    "product-value verdicts H2/H4/H5"
+  ]
+}

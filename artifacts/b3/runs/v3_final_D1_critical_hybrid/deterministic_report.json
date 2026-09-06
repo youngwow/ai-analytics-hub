@@ -1,0 +1,283 @@
+{
+  "run_id": "031868ce-8c95-4bfa-9ae1-b2fee5be0126",
+  "scenario_id": "D1_critical",
+  "mode": "hybrid",
+  "contract_errors": [],
+  "coverage": {
+    "visible_items": 3,
+    "decisions": 3
+  },
+  "discovery": {
+    "all_digest_objects_in_scenario": [
+      "EV-D1"
+    ],
+    "digest_objects_reachable_in_mode": [
+      "EV-D1"
+    ],
+    "reachable_digest_coverage": 1.0,
+    "irrelevant_items_exposed_by_mode": 0
+  },
+  "item_labels": {
+    "relevance": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "importance": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "critical": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "roles": {
+      "correct": 2,
+      "total": 3,
+      "exact_set_accuracy": 0.6666666666666666
+    },
+    "review_policy": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    }
+  },
+  "classification_by_class": {
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 3,
+          "predicted": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "borderline": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1_over_present_classes": 1.0
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "medium": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "high": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "critical": {
+          "support": 3,
+          "predicted": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1_over_present_classes": 1.0
+    }
+  },
+  "safety": {
+    "critical_recall": 1.0,
+    "critical_item_recall": 1.0,
+    "critical_object_recall": 1.0,
+    "critical_delivery_recall": 1.0,
+    "critical_recipient_recall": 1.0,
+    "missing_critical_recipients": [],
+    "critical_items_in_low": [],
+    "all_submitted_evidence_quotes_verbatim": true,
+    "submitted_claims": 15,
+    "claim_support_by_meaning": "requires_semantic_judge",
+    "evidence_quote_checks": [
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D101:s1:c1",
+        "source_item_id": "D101",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D101:s1:c2",
+        "source_item_id": "D101",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D101:s1:c3",
+        "source_item_id": "D101",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D101:s1:c4",
+        "source_item_id": "D101",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D101:s1:c5",
+        "source_item_id": "D101",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D102:s1:c1",
+        "source_item_id": "D102",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D102:s1:c2",
+        "source_item_id": "D102",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D102:s1:c3",
+        "source_item_id": "D102",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D102:s1:c4",
+        "source_item_id": "D102",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D102:s1:c5",
+        "source_item_id": "D102",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D103:s1:c1",
+        "source_item_id": "D103",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D103:s1:c2",
+        "source_item_id": "D103",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D103:s1:c3",
+        "source_item_id": "D103",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D103:s1:c4",
+        "source_item_id": "D103",
+        "verbatim_quote": true
+      },
+      {
+        "object_id": "evt-734ebccb56dd",
+        "claim_id": "D103:s1:c5",
+        "source_item_id": "D103",
+        "verbatim_quote": true
+      }
+    ]
+  },
+  "grouping": {
+    "pair_true_positive": 3,
+    "pair_false_positive": 0,
+    "pair_false_negative": 0,
+    "pair_precision": 1.0,
+    "pair_recall": 1.0,
+    "exact_expected_objects": 1,
+    "expected_objects": 1,
+    "predicted_objects": 1,
+    "exact_object_precision": 1.0,
+    "exact_object_recall": 1.0,
+    "unexpected_member_sets": [],
+    "missing_member_sets": [],
+    "object_attributes": {
+      "EV-D1": {
+        "present_as_exact_member_set": true,
+        "type": true,
+        "importance": true,
+        "critical": true,
+        "roles": true
+      }
+    }
+  },
+  "role_deliveries": {
+    "PR": {
+      "expected": [
+        "EV-D1"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-D1"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "GR": {
+      "expected": [
+        "EV-D1"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-D1"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "HEAD": {
+      "expected": [
+        "EV-D1"
+      ],
+      "predicted_exactly_mapped": [
+        "EV-D1"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "delivery_type_errors": [],
+  "duplicate_deliveries": [],
+  "npa_state": {},
+  "not_scored_by_rules": [
+    "semantic groundedness beyond submitted evidence quotes",
+    "summary sufficiency and preservation of meaning",
+    "human task time and cognitive load",
+    "product-value verdicts H2/H4/H5"
+  ]
+}

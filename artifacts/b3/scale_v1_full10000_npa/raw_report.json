@@ -1,0 +1,70 @@
+{
+  "benchmark": "B3-SCALE",
+  "version": "1.0.0",
+  "embedding_model": "google/gemini-embedding-001",
+  "embedding_dimensions": 768,
+  "generation_model": "glm-5.3-flash:cloud",
+  "sizes": [
+    10000
+  ],
+  "indexing_ms_for_missing_objects": 0,
+  "result_count": 2,
+  "results": [
+    {
+      "size": 10000,
+      "case_id": "N10000_old_npa_update",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 1004,
+      "expected_object_id": "NPA-ACCESS-OLD",
+      "expected_relation": "same_npa",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "NPA-ACCESS-OLD",
+      "predicted_relation": "same_npa",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 30740,
+      "llm_calls": [
+        {
+          "prompt_bytes": 248833,
+          "system_bytes": 3262,
+          "tokens_in": 73029,
+          "tokens_out": 6659,
+          "provider_latency_ms": 30688,
+          "wall_latency_ms": 30735
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "N10000_old_npa_negative",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 1004,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 16005,
+      "llm_calls": [
+        {
+          "prompt_bytes": 248534,
+          "system_bytes": 3262,
+          "tokens_in": 73012,
+          "tokens_out": 3721,
+          "provider_latency_ms": 15999,
+          "wall_latency_ms": 16000
+        }
+      ],
+      "error": null
+    }
+  ]
+}

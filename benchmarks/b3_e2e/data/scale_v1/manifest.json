@@ -1,0 +1,22 @@
+{
+  "benchmark": "B3-SCALE",
+  "version": "1.0.0",
+  "bank_sizes": [
+    100,
+    1000,
+    10000
+  ],
+  "nested_banks": true,
+  "bulk_data": "deterministic synthetic distractors",
+  "targets": "hand-authored domain cases and hard negatives",
+  "intended_claim": "A3 candidate retrieval and final resolution under bank growth",
+  "non_claims": [
+    "natural production prevalence",
+    "human PR/GR value",
+    "quality outside the represented cases"
+  ],
+  "files": {
+    "bank.jsonl": "64852c132efa30dbd5f6e36c9e65d34503c93d70f2e0d20bf60eeb612ffb05ae",
+    "cases.json": "18963deb2de497f0e1bd7ce2f81d259e8d353ef96a1f9b8c6c8047f9a104cbdf"
+  }
+}

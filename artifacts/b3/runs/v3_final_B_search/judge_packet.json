@@ -1,0 +1,977 @@
+{
+  "instructions": "You are an independent evaluator of a GS Labs monitoring-system run.\n\nInputs: (1) visible source items, (2) hidden ground truth, (3) expected objects, (4) system prediction. Never reward style, length, keyword overlap or agreement with the ideal wording. Evaluate claims by meaning and require every factual claim in released digest text to be supported by an exact source quote.\n\nReturn JSON only. For each expected object report: inclusion, correct membership, preserved required meanings, unsupported claims, lost independent opinions, importance/critical correctness, role correctness and evidence validity. Then report separately: safety_gates; value_proxy; H1; H2_prerequisites; H3; H4_proxy; H5_content_proxy. Use verdict supported, mixed, not_supported or not_tested. H2, H4, H5 and value cannot be fully supported without timed human observations; never infer user value from text quality alone. Do not produce one total score. Quote the item IDs behind every failure.\n\nReturn exactly one object result for every expected_object_id and exactly these six safety gates: critical_recall, no_critical_low, no_unsupported_released_fact, opinion_attribution, npa_state, critical_role_delivery. The importance_critical_correctness field is mandatory for every object result. Return every hypothesis proxy in the response schema; use not_tested when evidence is insufficient.\n",
+  "response_schema": {
+    "type": "object",
+    "required": [
+      "object_results",
+      "safety_gates",
+      "hypothesis_results",
+      "limitations"
+    ],
+    "properties": {
+      "object_results": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "expected_object_id",
+            "inclusion",
+            "membership",
+            "required_meanings",
+            "unsupported_claims",
+            "lost_positions",
+            "role_correctness",
+            "evidence_validity",
+            "importance_critical_correctness"
+          ],
+          "properties": {
+            "expected_object_id": {
+              "type": "string"
+            },
+            "inclusion": {
+              "enum": [
+                "pass",
+                "fail"
+              ]
+            },
+            "membership": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "required_meanings": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "unsupported_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "claim",
+                  "reason",
+                  "item_ids"
+                ]
+              }
+            },
+            "lost_positions": {
+              "type": "array"
+            },
+            "role_correctness": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "evidence_validity": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            },
+            "importance_critical_correctness": {
+              "enum": [
+                "pass",
+                "partial",
+                "fail"
+              ]
+            }
+          }
+        }
+      },
+      "safety_gates": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "gate",
+            "verdict",
+            "item_ids"
+          ],
+          "properties": {
+            "gate": {
+              "type": "string",
+              "enum": [
+                "critical_recall",
+                "no_critical_low",
+                "no_unsupported_released_fact",
+                "opinion_attribution",
+                "npa_state",
+                "critical_role_delivery"
+              ]
+            },
+            "verdict": {
+              "enum": [
+                "pass",
+                "fail",
+                "not_tested"
+              ]
+            },
+            "item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "hypothesis_results": {
+        "type": "object",
+        "properties": {
+          "value_proxy": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H1": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H2_prerequisites": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H3": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H4_proxy": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          },
+          "H5_content_proxy": {
+            "enum": [
+              "supported",
+              "mixed",
+              "not_supported",
+              "not_tested"
+            ]
+          }
+        },
+        "required": [
+          "value_proxy",
+          "H1",
+          "H2_prerequisites",
+          "H3",
+          "H4_proxy",
+          "H5_content_proxy"
+        ]
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "source_items": [
+    {
+      "id": "B12",
+      "flow_id": "B",
+      "available_at": "2026-08-25T11:39:00+03:00",
+      "surface": "rss",
+      "source_name": "Видеоиндустрия",
+      "source_url": "https://fixtures.gs-labs.invalid/rss/b12",
+      "discoverability": [
+        "fixed",
+        "search"
+      ],
+      "title": "Онлайн-кинотеатры готовят обязательную маркировку видео",
+      "raw_text": "Издание сообщает о будущей обязательной маркировке, хотя опубликованная концепция описывает только пилот. Сроки и участники пилота ещё не утверждены.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "rss_item",
+        "guid": "B12",
+        "title": "Онлайн-кинотеатры готовят обязательную маркировку видео",
+        "description": "Издание сообщает о будущей обязательной маркировке, хотя опубликованная концепция описывает только пилот. Сроки и участники пилота ещё не утверждены.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+        "link": "https://fixtures.gs-labs.invalid/rss/b12",
+        "pubDate": "2026-08-25T11:39:00+03:00"
+      }
+    },
+    {
+      "id": "B15",
+      "flow_id": "B",
+      "available_at": "2026-08-25T12:54:00+03:00",
+      "surface": "rss",
+      "source_name": "Оператор Орбита",
+      "source_url": "https://fixtures.gs-labs.invalid/rss/b15",
+      "discoverability": [
+        "fixed",
+        "search"
+      ],
+      "title": "«Орбита» тестирует облачный интерфейс на 8 тысячах пользователей",
+      "raw_text": "Оператор подтвердил масштаб и длительность пилота с GS Labs. Представитель оператора отметил, что критериями будут стабильность и доля завершённых пользовательских сценариев.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "rss_item",
+        "guid": "B15",
+        "title": "«Орбита» тестирует облачный интерфейс на 8 тысячах пользователей",
+        "description": "Оператор подтвердил масштаб и длительность пилота с GS Labs. Представитель оператора отметил, что критериями будут стабильность и доля завершённых пользовательских сценариев.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+        "link": "https://fixtures.gs-labs.invalid/rss/b15",
+        "pubDate": "2026-08-25T12:54:00+03:00"
+      }
+    },
+    {
+      "id": "B20",
+      "flow_id": "B",
+      "available_at": "2026-08-25T10:31:00+03:00",
+      "surface": "search_api",
+      "source_name": "Форум операторов",
+      "source_url": "https://fixtures.gs-labs.invalid/search_api/b20",
+      "discoverability": [
+        "search"
+      ],
+      "title": "Протокол форума операторов: спрос на единый API телеметрии",
+      "raw_text": "В опубликованном протоколе технической секции четыре региональных оператора назвали отсутствие единого API телеметрии препятствием для обновления парка приставок. Решений о закупке нет, но зафиксирован общий рыночный запрос.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "B20",
+        "title": "Протокол форума операторов: спрос на единый API телеметрии",
+        "content": "В опубликованном протоколе технической секции четыре региональных оператора назвали отсутствие единого API телеметрии препятствием для обновления парка приставок. Решений о закупке нет, но зафиксирован общий рыночный запрос.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+        "url": "https://fixtures.gs-labs.invalid/search_api/b20",
+        "score": 0.69,
+        "published_at": "2026-08-25T10:31:00+03:00"
+      }
+    },
+    {
+      "id": "B21",
+      "flow_id": "B",
+      "available_at": "2026-08-25T11:08:00+03:00",
+      "surface": "search_api",
+      "source_name": "Web search",
+      "source_url": "https://fixtures.gs-labs.invalid/search_api/b21",
+      "discoverability": [
+        "search"
+      ],
+      "title": "API телеметрии для теплиц",
+      "raw_text": "Разработчик агроплатформы открыл API телеметрии датчиков влажности и температуры. Документация описывает пакетную выгрузку показаний и тревоги для агронома.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "B21",
+        "title": "API телеметрии для теплиц",
+        "content": "Разработчик агроплатформы открыл API телеметрии датчиков влажности и температуры. Документация описывает пакетную выгрузку показаний и тревоги для агронома.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+        "url": "https://fixtures.gs-labs.invalid/search_api/b21",
+        "score": 0.7,
+        "published_at": "2026-08-25T11:08:00+03:00"
+      }
+    }
+  ],
+  "ground_truth": [
+    {
+      "id": "B12",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR",
+        "PR"
+      ],
+      "topic": "content_protection",
+      "object_id": "EV-B1",
+      "object_type": "event",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": true,
+      "risk_reasons": [
+        "headline_overstates_status"
+      ],
+      "must_facts": [
+        "Сроки и участники пилота не утверждены."
+      ],
+      "forbidden_claims": [
+        "Обязательная маркировка утверждена."
+      ],
+      "requires_review": true
+    },
+    {
+      "id": "B15",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "topic": "company",
+      "object_id": "EV-B2",
+      "object_type": "event",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": true,
+      "risk_reasons": [],
+      "must_facts": [
+        "Критерии оператора — стабильность и завершение пользовательских сценариев."
+      ],
+      "forbidden_claims": [],
+      "requires_review": false
+    },
+    {
+      "id": "B20",
+      "relevance": "borderline",
+      "importance": "medium",
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "topic": "market_signal",
+      "object_id": "OBJ-B20",
+      "object_type": "publication",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": false,
+      "risk_reasons": [
+        "search_only_market_signal"
+      ],
+      "must_facts": [
+        "Четыре оператора назвали отсутствие единого API препятствием.",
+        "Решений о закупке нет."
+      ],
+      "forbidden_claims": [
+        "Операторы заказали API у GS Labs."
+      ],
+      "requires_review": false
+    },
+    {
+      "id": "B21",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "topic": "noise",
+      "object_id": null,
+      "object_type": "publication",
+      "critical": false,
+      "urgent": false,
+      "include_in_digest": false,
+      "risk_reasons": [
+        "keyword_false_positive"
+      ],
+      "must_facts": [],
+      "forbidden_claims": [],
+      "requires_review": false
+    }
+  ],
+  "expected_objects": [
+    {
+      "object_id": "EV-B1",
+      "flow_id": "B",
+      "type": "event",
+      "member_ids": [
+        "B12"
+      ],
+      "roles": [
+        "GR",
+        "PR",
+        "HEAD"
+      ],
+      "importance": "high",
+      "critical": false,
+      "digest": true,
+      "delivery_types": [
+        "planned_digest"
+      ],
+      "unreachable_member_ids": [
+        "B11",
+        "B13"
+      ]
+    },
+    {
+      "object_id": "EV-B2",
+      "flow_id": "B",
+      "type": "event",
+      "member_ids": [
+        "B15"
+      ],
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "importance": "high",
+      "critical": false,
+      "digest": true,
+      "delivery_types": [
+        "planned_digest"
+      ],
+      "unreachable_member_ids": [
+        "B14",
+        "B16"
+      ]
+    },
+    {
+      "object_id": "OBJ-B20",
+      "flow_id": "B",
+      "type": "publication",
+      "member_ids": [
+        "B20"
+      ],
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "importance": "medium",
+      "critical": false,
+      "digest": false,
+      "delivery_types": [],
+      "unreachable_member_ids": []
+    }
+  ],
+  "npa_truth": [],
+  "prediction": {
+    "run_id": "3641d960-d3e3-42cd-8839-e622b41affdf",
+    "scenario_id": "B",
+    "mode": "search",
+    "item_decisions": [
+      {
+        "id": "B20",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "PR"
+        ],
+        "risk_flag": true,
+        "reason": "open_questions"
+      },
+      {
+        "id": "B21",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical": false,
+        "roles": [],
+        "risk_flag": false,
+        "reason": "Материал описывает открытие API телеметрии датчиков влажности и температуры для теплиц агроплатформой. Это сельскохозяйственный IoT-продукт без связи с цифровым телевидением, медиатехнологиями, регулированием вещания или другими направлениями GS Labs; совпадение ограничивается отраслевыми терминами (API, телеметрия, датчики)."
+      },
+      {
+        "id": "B12",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "GR",
+          "PR"
+        ],
+        "risk_flag": true,
+        "reason": "open_questions; unconfirmed_npa"
+      },
+      {
+        "id": "B15",
+        "relevance": "relevant",
+        "importance": "high",
+        "critical": false,
+        "roles": [
+          "PR",
+          "HEAD"
+        ],
+        "risk_flag": true,
+        "reason": "open_questions"
+      }
+    ],
+    "objects": [
+      {
+        "object_id": "evt-b65a1e46c19e",
+        "type": "publication",
+        "member_ids": [
+          "B20"
+        ],
+        "summary": "Протокол технической секции форума операторов фиксирует, что четыре региональных оператора называют отсутствие единого API телеметрии препятствием для обновления парка приставок; решений о закупке нет.",
+        "impact_on_gs_labs": "Единый рыночный запрос операторов на API телеметрии — входной сигнал для продуктовой линии GS Labs в области приставок и middleware, потенциально влияющий на требования к продуктам. Решений о закупке нет, поэтому немедленных коммерческих или регуляторных действий не требуется. Сигнал значим как нарратив о направлении спроса рынка.",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "PR"
+        ],
+        "claims": [
+          {
+            "claim_id": "B20:s1:c1",
+            "text": "Четыре региональных оператора назвали отсутствие единого API телеметрии препятствием для обновления парка приставок.",
+            "evidence": [
+              {
+                "source_item_id": "B20",
+                "quote": "четыре региональных оператора назвали отсутствие единого API телеметрии препятствием для обновления парка приставок"
+              }
+            ]
+          },
+          {
+            "claim_id": "B20:s1:c2",
+            "text": "Решений о закупке на основе этого запроса пока нет.",
+            "evidence": [
+              {
+                "source_item_id": "B20",
+                "quote": "Решений о закупке нет, но зафиксирован общий рыночный запрос."
+              }
+            ]
+          },
+          {
+            "claim_id": "B20:s1:c3",
+            "text": "Запрос зафиксирован в опубликованном протоколе технической секции форума.",
+            "evidence": [
+              {
+                "source_item_id": "B20",
+                "quote": "В опубликованном протоколе технической секции"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "object_id": "evt-ec58d8b33658",
+        "type": "publication",
+        "member_ids": [
+          "B12"
+        ],
+        "summary": "Издание сообщает о будущей обязательной маркировке видео для онлайн-кинотеатров, однако опубликованная концепция описывает лишь пилот; сроки и участники пилота ещё не утверждены.",
+        "impact_on_gs_labs": "Потенциальная обязательная маркировка видео может затронуть основной продуктовый контур GS Labs (контент-протекция, middleware, устройства), но пока это только концепция пилота без утверждённых сроков и участников. Нельзя выдавать предложение за принятое регулирование. Требуется мониторинг официального статуса концепции и будущих НПА.",
+        "importance": "medium",
+        "critical": false,
+        "roles": [
+          "GR",
+          "PR"
+        ],
+        "claims": [
+          {
+            "claim_id": "B12:s1:c1",
+            "text": "Издание сообщает о будущей обязательной маркировке видео.",
+            "evidence": [
+              {
+                "source_item_id": "B12",
+                "quote": "Издание сообщает о будущей обязательной маркировке"
+              }
+            ]
+          },
+          {
+            "claim_id": "B12:s1:c2",
+            "text": "Опубликованная концепция описывает только пилот, а не принятую обязанность.",
+            "evidence": [
+              {
+                "source_item_id": "B12",
+                "quote": "хотя опубликованная концепция описывает только пилот"
+              }
+            ]
+          },
+          {
+            "claim_id": "B12:s1:c3",
+            "text": "Сроки и участники пилота ещё не утверждены.",
+            "evidence": [
+              {
+                "source_item_id": "B12",
+                "quote": "Сроки и участники пилота ещё не утверждены."
+              }
+            ]
+          },
+          {
+            "claim_id": "B12:s1:c4",
+            "text": "Материал не подтверждает внутренние планы упомянутой организации: комментарий к публикации не поступил.",
+            "evidence": [
+              {
+                "source_item_id": "B12",
+                "quote": "материал не подтверждает внутренние планы компании и описывает только открытые сведения"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "object_id": "evt-a3730ffecde9",
+        "type": "publication",
+        "member_ids": [
+          "B15"
+        ],
+        "summary": "Оператор «Орбита» подтвердил масштаб и длительность пилота облачного интерфейса с GS Labs на 8 тысячах пользователей; критерии успеха — стабильность и доля завершённых пользовательских сценариев.",
+        "impact_on_gs_labs": "Публично подтверждённый пилот на 8 тысячах пользователей укрепляет кейс GS Labs в облачных интерфейсах для операторов и может учитываться в продуктовых и рыночных решениях. Критерии оценки (стабильность, завершённость сценариев) задают измеримые ориентиры проекта. Материал описывает только открытые сведения и не подтверждает внутренние планы компании.",
+        "importance": "high",
+        "critical": false,
+        "roles": [
+          "PR",
+          "HEAD"
+        ],
+        "claims": [
+          {
+            "claim_id": "B15:s1:c1",
+            "text": "Оператор подтвердил масштаб и длительность пилота с GS Labs.",
+            "evidence": [
+              {
+                "source_item_id": "B15",
+                "quote": "Оператор подтвердил масштаб и длительность пилота с GS Labs."
+              }
+            ]
+          },
+          {
+            "claim_id": "B15:s1:c2",
+            "text": "Критериями пилота названы стабильность и доля завершённых пользовательских сценариев.",
+            "evidence": [
+              {
+                "source_item_id": "B15",
+                "quote": "критериями будут стабильность и доля завершённых пользовательских сценариев"
+              }
+            ]
+          },
+          {
+            "claim_id": "B15:s1:c3",
+            "text": "Комментарий упомянутой организации к моменту публикации не поступил, материал не подтверждает внутренние планы компании.",
+            "evidence": [
+              {
+                "source_item_id": "B15",
+                "quote": "Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "deliveries": [
+      {
+        "delivery_type": "planned_digest",
+        "recipient": "GR",
+        "object_ids": [
+          "evt-ec58d8b33658"
+        ],
+        "digest_text": "• Издание сообщает о будущей обязательной маркировке видео для онлайн-кинотеатров, однако опубликованная концепция описывает лишь пилот; сроки и участники пилота ещё не утверждены."
+      },
+      {
+        "delivery_type": "planned_digest",
+        "recipient": "HEAD",
+        "object_ids": [
+          "evt-a3730ffecde9"
+        ],
+        "digest_text": "• Оператор «Орбита» подтвердил масштаб и длительность пилота облачного интерфейса с GS Labs на 8 тысячах пользователей; критерии успеха — стабильность и доля завершённых пользовательских сценариев."
+      },
+      {
+        "delivery_type": "planned_digest",
+        "recipient": "PR",
+        "object_ids": [
+          "evt-b65a1e46c19e",
+          "evt-ec58d8b33658",
+          "evt-a3730ffecde9"
+        ],
+        "digest_text": "• Протокол технической секции форума операторов фиксирует, что четыре региональных оператора называют отсутствие единого API телеметрии препятствием для обновления парка приставок; решений о закупке нет.\n• Издание сообщает о будущей обязательной маркировке видео для онлайн-кинотеатров, однако опубликованная концепция описывает лишь пилот; сроки и участники пилота ещё не утверждены.\n• Оператор «Орбита» подтвердил масштаб и длительность пилота облачного интерфейса с GS Labs на 8 тысячах пользователей; критерии успеха — стабильность и доля завершённых пользовательских сценариев."
+      }
+    ],
+    "telemetry": {
+      "configuration_id": "A1=one_pass;A2=without_research;A3=full_scan;A4=without_critic",
+      "model": "glm-5.3-flash:cloud",
+      "context_version": "external-v1",
+      "documents": 4,
+      "signals": 3,
+      "model_calls": 4,
+      "input_tokens": 8981,
+      "output_tokens": 6183,
+      "provider_latency_ms": 31804,
+      "wall_seconds": 45.55102070901194,
+      "errors": [],
+      "generation_provider": "ollama",
+      "generation_model": "glm-5.3-flash:cloud",
+      "architecture": "A1=one_pass;A2=without_research;A3=full_scan;A4=without_critic;review_first"
+    }
+  },
+  "deterministic_report": {
+    "run_id": "3641d960-d3e3-42cd-8839-e622b41affdf",
+    "scenario_id": "B",
+    "mode": "search",
+    "contract_errors": [],
+    "coverage": {
+      "visible_items": 4,
+      "decisions": 4
+    },
+    "discovery": {
+      "all_digest_objects_in_scenario": [
+        "EV-B1",
+        "EV-B2",
+        "NPA-B",
+        "OBJ-B08",
+        "OBJ-B09",
+        "OBJ-B10"
+      ],
+      "digest_objects_reachable_in_mode": [
+        "EV-B1",
+        "EV-B2"
+      ],
+      "reachable_digest_coverage": 0.3333333333333333,
+      "irrelevant_items_exposed_by_mode": 1
+    },
+    "item_labels": {
+      "relevance": {
+        "correct": 3,
+        "total": 4,
+        "accuracy": 0.75
+      },
+      "importance": {
+        "correct": 3,
+        "total": 4,
+        "accuracy": 0.75
+      },
+      "critical": {
+        "correct": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "roles": {
+        "correct": 3,
+        "total": 4,
+        "exact_set_accuracy": 0.75
+      },
+      "review_policy": {
+        "correct": 2,
+        "total": 4,
+        "accuracy": 0.5
+      }
+    },
+    "classification_by_class": {
+      "relevance": {
+        "classes": {
+          "relevant": {
+            "support": 2,
+            "predicted": 3,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "borderline": {
+            "support": 1,
+            "predicted": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null
+          },
+          "irrelevant": {
+            "support": 1,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "unknown": {
+            "support": 0,
+            "predicted": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          }
+        },
+        "macro_f1_over_present_classes": 0.9
+      },
+      "importance": {
+        "classes": {
+          "low": {
+            "support": 1,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "medium": {
+            "support": 1,
+            "predicted": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "high": {
+            "support": 2,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          "critical": {
+            "support": 0,
+            "predicted": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          }
+        },
+        "macro_f1_over_present_classes": 0.7777777777777777
+      }
+    },
+    "safety": {
+      "critical_recall": null,
+      "critical_item_recall": null,
+      "critical_object_recall": null,
+      "critical_delivery_recall": null,
+      "critical_recipient_recall": null,
+      "missing_critical_recipients": [],
+      "critical_items_in_low": [],
+      "all_submitted_evidence_quotes_verbatim": true,
+      "submitted_claims": 10,
+      "claim_support_by_meaning": "requires_semantic_judge",
+      "evidence_quote_checks": [
+        {
+          "object_id": "evt-b65a1e46c19e",
+          "claim_id": "B20:s1:c1",
+          "source_item_id": "B20",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-b65a1e46c19e",
+          "claim_id": "B20:s1:c2",
+          "source_item_id": "B20",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-b65a1e46c19e",
+          "claim_id": "B20:s1:c3",
+          "source_item_id": "B20",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-ec58d8b33658",
+          "claim_id": "B12:s1:c1",
+          "source_item_id": "B12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-ec58d8b33658",
+          "claim_id": "B12:s1:c2",
+          "source_item_id": "B12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-ec58d8b33658",
+          "claim_id": "B12:s1:c3",
+          "source_item_id": "B12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-ec58d8b33658",
+          "claim_id": "B12:s1:c4",
+          "source_item_id": "B12",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-a3730ffecde9",
+          "claim_id": "B15:s1:c1",
+          "source_item_id": "B15",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-a3730ffecde9",
+          "claim_id": "B15:s1:c2",
+          "source_item_id": "B15",
+          "verbatim_quote": true
+        },
+        {
+          "object_id": "evt-a3730ffecde9",
+          "claim_id": "B15:s1:c3",
+          "source_item_id": "B15",
+          "verbatim_quote": true
+        }
+      ]
+    },
+    "grouping": {
+      "pair_true_positive": 0,
+      "pair_false_positive": 0,
+      "pair_false_negative": 0,
+      "pair_precision": null,
+      "pair_recall": null,
+      "exact_expected_objects": 3,
+      "expected_objects": 3,
+      "predicted_objects": 3,
+      "exact_object_precision": 1.0,
+      "exact_object_recall": 1.0,
+      "unexpected_member_sets": [],
+      "missing_member_sets": [],
+      "object_attributes": {
+        "EV-B1": {
+          "present_as_exact_member_set": true,
+          "type": false,
+          "importance": false,
+          "critical": true,
+          "roles": false
+        },
+        "EV-B2": {
+          "present_as_exact_member_set": true,
+          "type": false,
+          "importance": true,
+          "critical": true,
+          "roles": true
+        },
+        "OBJ-B20": {
+          "present_as_exact_member_set": true,
+          "type": true,
+          "importance": true,
+          "critical": true,
+          "roles": false
+        }
+      }
+    },
+    "role_deliveries": {
+      "PR": {
+        "expected": [
+          "EV-B1",
+          "EV-B2"
+        ],
+        "predicted_exactly_mapped": [
+          "EV-B1",
+          "EV-B2",
+          "OBJ-B20"
+        ],
+        "precision": 0.6666666666666666,
+        "recall": 1.0
+      },
+      "GR": {
+        "expected": [
+          "EV-B1"
+        ],
+        "predicted_exactly_mapped": [
+          "EV-B1"
+        ],
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "HEAD": {
+        "expected": [
+          "EV-B1",
+          "EV-B2"
+        ],
+        "predicted_exactly_mapped": [
+          "EV-B2"
+        ],
+        "precision": 1.0,
+        "recall": 0.5
+      }
+    },
+    "delivery_type_errors": [
+      {
+        "recipient": "PR",
+        "object_id": "OBJ-B20",
+        "actual": "planned_digest",
+        "expected": []
+      }
+    ],
+    "duplicate_deliveries": [],
+    "npa_state": {},
+    "not_scored_by_rules": [
+      "semantic groundedness beyond submitted evidence quotes",
+      "summary sufficiency and preservation of meaning",
+      "human task time and cognitive load",
+      "product-value verdicts H2/H4/H5"
+    ]
+  }
+}

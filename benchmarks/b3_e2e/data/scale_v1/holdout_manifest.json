@@ -1,0 +1,10 @@
+{
+  "benchmark": "B3-SCALE-HOLDOUT",
+  "version": "1.0.0",
+  "base_bank_sha256": "64852c132efa30dbd5f6e36c9e65d34503c93d70f2e0d20bf60eeb612ffb05ae",
+  "overlay_sha256": "ecaf940f7158074352f3bb150075e03702d20729c88ed965c374958322e9f8e9",
+  "cases_sha256": "f30fe4abed295a3713ce176912bbee30eb6f54851496e3a27b8ea6d738f6ba08",
+  "created_before_resolver_fix": true,
+  "objects_replaced": 8,
+  "cases": 8
+}

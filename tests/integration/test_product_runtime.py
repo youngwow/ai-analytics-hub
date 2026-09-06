@@ -3,7 +3,7 @@ from __future__ import annotations
 from support import FakeLLM
 
 from src.product.analysis import PrimaryAnalyzer
-from src.product.contracts import ContextBlock, GsLabsContext, PreparedDocument
+from src.product.contracts import ContextBlock, GsLabsContext, LinkDecision, PreparedDocument
 from src.product.events import EventLinker
 from src.product.npa import NpaResolver
 from src.product.runtime import ProductAgentRuntime
@@ -86,3 +86,41 @@ def test_runtime_rejects_selected_unwired_strategy(db):
         assert False
     except ValueError as exc:
         assert "without researcher" in str(exc)
+
+
+def test_runtime_persists_event_before_link_to_initial_state(db):
+    class ExistingEventLinker:
+        def link(self, signal, events, *, mode):
+            assert events[0].id == "known-1"
+            return LinkDecision(
+                signal.signal_id,
+                "known-1",
+                "event_update",
+                0.9,
+                "same event",
+            )
+
+    llm = FakeLLM(answer())
+    runtime = ProductAgentRuntime(
+        PrimaryAnalyzer(llm, model="model"),
+        ExistingEventLinker(),
+        NpaResolver(llm, model="model"),
+        ProductStore(db.conn),
+    )
+    context = GsLabsContext(
+        "ctx-v1", ContextBlock("GS Labs"), ContextBlock("PR"), ContextBlock("GR")
+    )
+
+    runtime.run(
+        [PreparedDocument("m1", "Пилот", "Оператор начал крупный пилот.")],
+        context,
+        BranchConfiguration(),
+        initial_state={
+            "known_events": [
+                {"object_id": "known-1", "title": "Известный пилот", "status": "active"}
+            ]
+        },
+    )
+
+    assert db.conn.execute("SELECT COUNT(*) FROM product_events").fetchone()[0] == 1
+    assert db.conn.execute("SELECT event_id FROM event_links").fetchone()[0] == "known-1"

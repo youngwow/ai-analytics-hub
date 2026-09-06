@@ -1,0 +1,267 @@
+{
+  "benchmark": "B3-SCALE",
+  "status": "MEASURED_NOT_YET_DECIDED",
+  "reports": [
+    {
+      "path": "artifacts/b3/scale_v1/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    },
+    {
+      "path": "artifacts/b3/scale_v1_full100/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    },
+    {
+      "path": "artifacts/b3/scale_v1_embed1000/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    },
+    {
+      "path": "artifacts/b3/scale_v1_full1000/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    },
+    {
+      "path": "artifacts/b3/scale_v1_embed10000/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    },
+    {
+      "path": "artifacts/b3/scale_v1_full10000_event/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    },
+    {
+      "path": "artifacts/b3/scale_v1_full10000_npa/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    }
+  ],
+  "table": [
+    {
+      "size": 100,
+      "mode": "embedding_top20",
+      "kind": "event",
+      "cases": 2,
+      "retrieval_hits": 1,
+      "retrieval_linked_cases": 1,
+      "final_object_correct": 1,
+      "final_relation_correct": 1,
+      "false_links": 1,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        20
+      ],
+      "input_tokens_sum": 5986,
+      "wall_ms_median": 2359
+    },
+    {
+      "size": 100,
+      "mode": "embedding_top20",
+      "kind": "npa",
+      "cases": 2,
+      "retrieval_hits": 1,
+      "retrieval_linked_cases": 1,
+      "final_object_correct": 2,
+      "final_relation_correct": 2,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        11
+      ],
+      "input_tokens_sum": 3161,
+      "wall_ms_median": 13383
+    },
+    {
+      "size": 100,
+      "mode": "full_scan",
+      "kind": "event",
+      "cases": 2,
+      "retrieval_hits": null,
+      "retrieval_linked_cases": null,
+      "final_object_correct": 1,
+      "final_relation_correct": 1,
+      "false_links": 1,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        89
+      ],
+      "input_tokens_sum": 23714,
+      "wall_ms_median": 6383
+    },
+    {
+      "size": 100,
+      "mode": "full_scan",
+      "kind": "npa",
+      "cases": 2,
+      "retrieval_hits": null,
+      "retrieval_linked_cases": null,
+      "final_object_correct": 2,
+      "final_relation_correct": 2,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        11
+      ],
+      "input_tokens_sum": 3161,
+      "wall_ms_median": 13328
+    },
+    {
+      "size": 1000,
+      "mode": "embedding_top20",
+      "kind": "event",
+      "cases": 4,
+      "retrieval_hits": 2,
+      "retrieval_linked_cases": 2,
+      "final_object_correct": 2,
+      "final_relation_correct": 2,
+      "false_links": 2,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        20
+      ],
+      "input_tokens_sum": 11892,
+      "wall_ms_median": 2617
+    },
+    {
+      "size": 1000,
+      "mode": "embedding_top20",
+      "kind": "npa",
+      "cases": 4,
+      "retrieval_hits": 2,
+      "retrieval_linked_cases": 2,
+      "final_object_correct": 4,
+      "final_relation_correct": 4,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        20
+      ],
+      "input_tokens_sum": 9001,
+      "wall_ms_median": 12606
+    },
+    {
+      "size": 1000,
+      "mode": "full_scan",
+      "kind": "event",
+      "cases": 4,
+      "retrieval_hits": null,
+      "retrieval_linked_cases": null,
+      "final_object_correct": 3,
+      "final_relation_correct": 3,
+      "false_links": 1,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        898
+      ],
+      "input_tokens_sum": 478290,
+      "wall_ms_median": 8624
+    },
+    {
+      "size": 1000,
+      "mode": "full_scan",
+      "kind": "npa",
+      "cases": 4,
+      "retrieval_hits": null,
+      "retrieval_linked_cases": null,
+      "final_object_correct": 4,
+      "final_relation_correct": 4,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        102
+      ],
+      "input_tokens_sum": 32243,
+      "wall_ms_median": 15232
+    },
+    {
+      "size": 10000,
+      "mode": "embedding_top20",
+      "kind": "event",
+      "cases": 6,
+      "retrieval_hits": 3,
+      "retrieval_linked_cases": 3,
+      "final_object_correct": 4,
+      "final_relation_correct": 4,
+      "false_links": 2,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        20
+      ],
+      "input_tokens_sum": 17172,
+      "wall_ms_median": 4137
+    },
+    {
+      "size": 10000,
+      "mode": "embedding_top20",
+      "kind": "npa",
+      "cases": 6,
+      "retrieval_hits": 3,
+      "retrieval_linked_cases": 3,
+      "final_object_correct": 6,
+      "final_relation_correct": 6,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        20
+      ],
+      "input_tokens_sum": 13537,
+      "wall_ms_median": 16556
+    },
+    {
+      "size": 10000,
+      "mode": "full_scan",
+      "kind": "event",
+      "cases": 1,
+      "retrieval_hits": null,
+      "retrieval_linked_cases": null,
+      "final_object_correct": 0,
+      "final_relation_correct": 0,
+      "false_links": 0,
+      "missed_links": 1,
+      "provider_errors": 1,
+      "candidate_counts": [
+        8996
+      ],
+      "input_tokens_sum": 0,
+      "wall_ms_median": 11824
+    },
+    {
+      "size": 10000,
+      "mode": "full_scan",
+      "kind": "npa",
+      "cases": 2,
+      "retrieval_hits": null,
+      "retrieval_linked_cases": null,
+      "final_object_correct": 2,
+      "final_relation_correct": 2,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        1004
+      ],
+      "input_tokens_sum": 146041,
+      "wall_ms_median": 23372
+    }
+  ],
+  "interpretation_rule": "Choose A3 only after all scale points: top-20 must retain every labelled true link; the same final resolver must not add errors versus a runnable full-scan control. A full-scan provider/context failure establishes its operating boundary."
+}

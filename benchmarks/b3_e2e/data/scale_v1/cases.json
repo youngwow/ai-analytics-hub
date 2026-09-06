@@ -1,0 +1,104 @@
+[
+  {
+    "id": "E100_same_event",
+    "min_size": 100,
+    "kind": "event",
+    "expected_object_id": "EVT-STINGRAY-2026",
+    "expected_relation": "same_event",
+    "text": "В обновлённой StingrayTV от GS Labs появились быстрый запуск приложений и переработанные рекомендации."
+  },
+  {
+    "id": "E100_hard_negative",
+    "min_size": 100,
+    "kind": "event",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "text": "Аналитики сравнили несколько решений рынка интерактивного ТВ, включая StingrayTV; новых релизов не объявлено."
+  },
+  {
+    "id": "N100_known_update",
+    "min_size": 100,
+    "kind": "npa",
+    "expected_object_id": "NPA-PREINSTALL",
+    "expected_relation": "same_npa",
+    "external_id": "02/15/07-26/00181111",
+    "text": "Проект 02/15/07-26/00181111 доработан после обсуждения и внесён в правительство."
+  },
+  {
+    "id": "N100_similar_other",
+    "min_size": 100,
+    "kind": "npa",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "external_id": "02/15/07-26/00181113",
+    "text": "Опубликован новый отдельный документ 02/15/07-26/00181113 о детских приложениях."
+  },
+  {
+    "id": "E1000_event_update",
+    "min_size": 1000,
+    "kind": "event",
+    "expected_object_id": "EVT-VECTOR-ADS",
+    "expected_relation": "event_update",
+    "text": "Вектор расширил ранее начатый в Самаре пилот адресной рекламы на всю региональную абонентскую базу."
+  },
+  {
+    "id": "E1000_same_actor_other_story",
+    "min_size": 1000,
+    "kind": "event",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "text": "Оператор Вектор запустил несвязанную федеральную кампанию по продвижению домашнего интернета."
+  },
+  {
+    "id": "N1000_known_update",
+    "min_size": 1000,
+    "kind": "npa",
+    "expected_object_id": "NPA-TELEMETRY",
+    "expected_relation": "same_npa",
+    "external_id": "02/15/09-26/00990001",
+    "text": "Документ 02/15/09-26/00990001 внесён в Госдуму; срок хранения сокращён с 12 до 6 месяцев."
+  },
+  {
+    "id": "N1000_same_topic_other_id",
+    "min_size": 1000,
+    "kind": "npa",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "external_id": "02/15/09-26/00990003",
+    "text": "Появился отдельный проект 02/15/09-26/00990003 о промышленной телеметрии."
+  },
+  {
+    "id": "E10000_old_event_update",
+    "min_size": 10000,
+    "kind": "event",
+    "expected_object_id": "EVT-HYBRID-TV-ROUND-TABLE",
+    "expected_relation": "event_update",
+    "text": "Участники августовского круглого стола завершили рекомендации по единому стандарту гибридного ТВ."
+  },
+  {
+    "id": "E10000_old_event_negative",
+    "min_size": 10000,
+    "kind": "event",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "text": "Новые организаторы открыли регистрацию на отдельную конференцию о гибридном телевидении."
+  },
+  {
+    "id": "N10000_old_npa_update",
+    "min_size": 10000,
+    "kind": "npa",
+    "expected_object_id": "NPA-ACCESS-OLD",
+    "expected_relation": "same_npa",
+    "external_id": "STD-TV-14",
+    "text": "Опубликована вторая редакция STD-TV-14: часть требований к доступности Smart TV стала обязательной."
+  },
+  {
+    "id": "N10000_old_npa_negative",
+    "min_size": 10000,
+    "kind": "npa",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "external_id": "STD-WEB-14",
+    "text": "Опубликован новый отдельный стандарт STD-WEB-14 для веб-интерфейсов."
+  }
+]

@@ -167,12 +167,34 @@ class ProductAgentRuntime:
         for event in events:
             if event.material_ids:
                 self.store.save_event(event)
+        # event_links has foreign keys to both signals and events. Persist the
+        # final event projection first, then its decisions; otherwise links to
+        # an initial-state or newly created event can fail mid-run.
+        for link in links:
+            self.store.save_link(link)
         for resolution in resolutions:
             payload = npa_object(resolution, final_signals)
             if payload is not None:
                 self.store.save_npa_resolution(resolution, payload)
 
-        objects = [event_object(event, final_signals) for event in events if event.material_ids]
+        initial_event_ids = {
+            str(row["object_id"])
+            for row in initial_state.get("known_events", [])
+            if row.get("object_id")
+        }
+        objects = [
+            event_object(
+                event,
+                final_signals,
+                kind=(
+                    "event"
+                    if event.id in initial_event_ids or len(event.material_ids) > 1
+                    else "publication"
+                ),
+            )
+            for event in events
+            if event.material_ids
+        ]
         objects.extend(npa_object(resolution, final_signals) for resolution in resolutions)
         visible_objects = tuple(item for item in objects if item is not None)
         deliverable_ids = {
@@ -265,7 +287,6 @@ class ProductAgentRuntime:
         for signal in signals:
             decision = self.linker.link(signal, events, mode=config.a3)
             links.append(decision)
-            self.store.save_link(decision)
             if decision.event_id and decision.relation in {"same_event", "event_update"}:
                 events = [
                     replace(

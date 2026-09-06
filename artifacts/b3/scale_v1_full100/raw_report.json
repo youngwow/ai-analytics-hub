@@ -1,0 +1,126 @@
+{
+  "benchmark": "B3-SCALE",
+  "version": "1.0.0",
+  "embedding_model": "google/gemini-embedding-001",
+  "embedding_dimensions": 768,
+  "generation_model": "glm-5.3-flash:cloud",
+  "sizes": [
+    100
+  ],
+  "indexing_ms_for_missing_objects": 0,
+  "result_count": 4,
+  "results": [
+    {
+      "size": 100,
+      "case_id": "E100_same_event",
+      "kind": "event",
+      "mode": "full_scan",
+      "bank_candidates": 89,
+      "expected_object_id": "EVT-STINGRAY-2026",
+      "expected_relation": "same_event",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "EVT-STINGRAY-2026",
+      "predicted_relation": "same_event",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 10275,
+      "llm_calls": [
+        {
+          "prompt_bytes": 59969,
+          "system_bytes": 1846,
+          "tokens_in": 11856,
+          "tokens_out": 230,
+          "provider_latency_ms": 10221,
+          "wall_latency_ms": 10275
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 100,
+      "case_id": "E100_hard_negative",
+      "kind": "event",
+      "mode": "full_scan",
+      "bank_candidates": 89,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "EVT-STINGRAY-MARKET",
+      "predicted_relation": "same_event",
+      "object_correct": false,
+      "relation_correct": false,
+      "needs_human_review": false,
+      "wall_ms": 2492,
+      "llm_calls": [
+        {
+          "prompt_bytes": 60030,
+          "system_bytes": 1846,
+          "tokens_in": 11858,
+          "tokens_out": 489,
+          "provider_latency_ms": 2491,
+          "wall_latency_ms": 2492
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 100,
+      "case_id": "N100_known_update",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 11,
+      "expected_object_id": "NPA-PREINSTALL",
+      "expected_relation": "same_npa",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "NPA-PREINSTALL",
+      "predicted_relation": "same_npa",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 18336,
+      "llm_calls": [
+        {
+          "prompt_bytes": 4022,
+          "system_bytes": 3262,
+          "tokens_in": 1585,
+          "tokens_out": 5446,
+          "provider_latency_ms": 18336,
+          "wall_latency_ms": 18336
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 100,
+      "case_id": "N100_similar_other",
+      "kind": "npa",
+      "mode": "full_scan",
+      "bank_candidates": 11,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 8320,
+      "llm_calls": [
+        {
+          "prompt_bytes": 4031,
+          "system_bytes": 3262,
+          "tokens_in": 1576,
+          "tokens_out": 2477,
+          "provider_latency_ms": 8319,
+          "wall_latency_ms": 8319
+        }
+      ],
+      "error": null
+    }
+  ]
+}

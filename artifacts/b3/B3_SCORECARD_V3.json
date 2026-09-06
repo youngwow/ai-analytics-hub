@@ -1,0 +1,386 @@
+{
+  "benchmark": "B3 automated E2E",
+  "runs": [
+    {
+      "run": "v3_final_A_fixed",
+      "scenario": "A",
+      "mode": "fixed",
+      "visible_items": 20,
+      "reachable_digest_objects": 6,
+      "all_digest_objects": 7,
+      "irrelevant_exposed": 7,
+      "relevance_exact": "18/20",
+      "importance_exact": "16/20",
+      "roles_exact": "16/20",
+      "review_policy_exact": "14/20",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 9,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "7/7",
+      "npa": {
+        "NPA-A": {
+          "present": true,
+          "current_stage": false,
+          "current_version": false,
+          "current_version_exact_label": false,
+          "effective_from": true,
+          "history_ids": true,
+          "history_ids_exact": true,
+          "change_summary": "semantic_judge"
+        }
+      },
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_A_hybrid",
+      "scenario": "A",
+      "mode": "hybrid",
+      "visible_items": 22,
+      "reachable_digest_objects": 7,
+      "all_digest_objects": 7,
+      "irrelevant_exposed": 8,
+      "relevance_exact": "20/22",
+      "importance_exact": "17/22",
+      "roles_exact": "17/22",
+      "review_policy_exact": "17/22",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 9,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "8/8",
+      "npa": {
+        "NPA-A": {
+          "present": true,
+          "current_stage": true,
+          "current_version": true,
+          "current_version_exact_label": false,
+          "effective_from": true,
+          "history_ids": true,
+          "history_ids_exact": false,
+          "change_summary": "semantic_judge"
+        }
+      },
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_A_search",
+      "scenario": "A",
+      "mode": "search",
+      "visible_items": 4,
+      "reachable_digest_objects": 3,
+      "all_digest_objects": 7,
+      "irrelevant_exposed": 1,
+      "relevance_exact": "4/4",
+      "importance_exact": "2/4",
+      "roles_exact": "2/4",
+      "review_policy_exact": "4/4",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 0,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "3/3",
+      "npa": {},
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_B_fixed",
+      "scenario": "B",
+      "mode": "fixed",
+      "visible_items": 20,
+      "reachable_digest_objects": 6,
+      "all_digest_objects": 6,
+      "irrelevant_exposed": 7,
+      "relevance_exact": "20/20",
+      "importance_exact": "17/20",
+      "roles_exact": "15/20",
+      "review_policy_exact": "16/20",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 7,
+        "false_merge": 0,
+        "missed_merge": 2
+      },
+      "exact_objects": "6/7",
+      "npa": {
+        "NPA-B": {
+          "present": false,
+          "current_stage": false,
+          "current_version": false,
+          "current_version_exact_label": false,
+          "effective_from": false,
+          "history_ids": false,
+          "history_ids_exact": false,
+          "change_summary": "semantic_judge"
+        }
+      },
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_B_hybrid",
+      "scenario": "B",
+      "mode": "hybrid",
+      "visible_items": 22,
+      "reachable_digest_objects": 6,
+      "all_digest_objects": 6,
+      "irrelevant_exposed": 8,
+      "relevance_exact": "21/22",
+      "importance_exact": "15/22",
+      "roles_exact": "15/22",
+      "review_policy_exact": "18/22",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 9,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "8/8",
+      "npa": {
+        "NPA-B": {
+          "present": true,
+          "current_stage": true,
+          "current_version": true,
+          "current_version_exact_label": false,
+          "effective_from": true,
+          "history_ids": true,
+          "history_ids_exact": true,
+          "change_summary": "semantic_judge"
+        }
+      },
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_B_search",
+      "scenario": "B",
+      "mode": "search",
+      "visible_items": 4,
+      "reachable_digest_objects": 2,
+      "all_digest_objects": 6,
+      "irrelevant_exposed": 1,
+      "relevance_exact": "3/4",
+      "importance_exact": "3/4",
+      "roles_exact": "3/4",
+      "review_policy_exact": "2/4",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 0,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "3/3",
+      "npa": {},
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_D1_critical_hybrid",
+      "scenario": "D1_critical",
+      "mode": "hybrid",
+      "visible_items": 3,
+      "reachable_digest_objects": 1,
+      "all_digest_objects": 1,
+      "irrelevant_exposed": 0,
+      "relevance_exact": "3/3",
+      "importance_exact": "3/3",
+      "roles_exact": "2/3",
+      "review_policy_exact": "3/3",
+      "critical_item_recall": 1.0,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 3,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "1/1",
+      "npa": {},
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_D2_event_boundary_hybrid",
+      "scenario": "D2_event_boundary",
+      "mode": "hybrid",
+      "visible_items": 5,
+      "reachable_digest_objects": 2,
+      "all_digest_objects": 2,
+      "irrelevant_exposed": 0,
+      "relevance_exact": "5/5",
+      "importance_exact": "4/5",
+      "roles_exact": "4/5",
+      "review_policy_exact": "3/5",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 6,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "2/2",
+      "npa": {},
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_D3_new_npa_hybrid",
+      "scenario": "D3_new_npa",
+      "mode": "hybrid",
+      "visible_items": 2,
+      "reachable_digest_objects": 1,
+      "all_digest_objects": 1,
+      "irrelevant_exposed": 0,
+      "relevance_exact": "2/2",
+      "importance_exact": "2/2",
+      "roles_exact": "2/2",
+      "review_policy_exact": "2/2",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 1,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "1/1",
+      "npa": {
+        "NPA-D3": {
+          "present": true,
+          "current_stage": true,
+          "current_version": true,
+          "current_version_exact_label": true,
+          "effective_from": true,
+          "history_ids": true,
+          "history_ids_exact": true,
+          "change_summary": "semantic_judge"
+        }
+      },
+      "contract_errors": []
+    },
+    {
+      "run": "v3_final_D4_known_npa_hybrid",
+      "scenario": "D4_known_npa",
+      "mode": "hybrid",
+      "visible_items": 4,
+      "reachable_digest_objects": 1,
+      "all_digest_objects": 1,
+      "irrelevant_exposed": 0,
+      "relevance_exact": "4/4",
+      "importance_exact": "2/4",
+      "roles_exact": "2/4",
+      "review_policy_exact": "4/4",
+      "critical_item_recall": null,
+      "critical_items_in_low": [],
+      "all_evidence_quotes_verbatim": true,
+      "event_pairs": {
+        "correct": 6,
+        "false_merge": 0,
+        "missed_merge": 0
+      },
+      "exact_objects": "1/1",
+      "npa": {
+        "NPA-D4": {
+          "present": true,
+          "current_stage": true,
+          "current_version": true,
+          "current_version_exact_label": true,
+          "effective_from": true,
+          "history_ids": true,
+          "history_ids_exact": true,
+          "change_summary": "semantic_judge"
+        }
+      },
+      "contract_errors": []
+    }
+  ],
+  "h1_discovery_comparison": {
+    "A": {
+      "fixed": {
+        "reachable_digest_objects": 6,
+        "all_digest_objects": 7,
+        "irrelevant_exposed": 7
+      },
+      "search": {
+        "reachable_digest_objects": 3,
+        "all_digest_objects": 7,
+        "irrelevant_exposed": 1
+      },
+      "hybrid": {
+        "reachable_digest_objects": 7,
+        "all_digest_objects": 7,
+        "irrelevant_exposed": 8
+      }
+    },
+    "B": {
+      "fixed": {
+        "reachable_digest_objects": 6,
+        "all_digest_objects": 6,
+        "irrelevant_exposed": 7
+      },
+      "search": {
+        "reachable_digest_objects": 2,
+        "all_digest_objects": 6,
+        "irrelevant_exposed": 1
+      },
+      "hybrid": {
+        "reachable_digest_objects": 6,
+        "all_digest_objects": 6,
+        "irrelevant_exposed": 8
+      }
+    }
+  },
+  "selected_hybrid_contour": {
+    "runs": [
+      "v3_final_A_hybrid",
+      "v3_final_B_hybrid",
+      "v3_final_D1_critical_hybrid",
+      "v3_final_D2_event_boundary_hybrid",
+      "v3_final_D3_new_npa_hybrid",
+      "v3_final_D4_known_npa_hybrid"
+    ],
+    "relevance": {
+      "correct": 55,
+      "total": 58
+    },
+    "importance": {
+      "correct": 43,
+      "total": 58
+    },
+    "roles": {
+      "correct": 42,
+      "total": 58
+    },
+    "review_policy": {
+      "correct": 47,
+      "total": 58
+    },
+    "event_pairs": {
+      "correct": 34,
+      "false_merge": 0,
+      "missed_merge": 0
+    },
+    "contract_errors": 0,
+    "evidence_quotes_all_verbatim": true
+  },
+  "interpretation_rules": [
+    "Counts are primary; percentages may be derived but are not a separate source of truth.",
+    "No dimension is averaged into a total score.",
+    "Human time, usability, trust and adoption are not measured.",
+    "Semantic sufficiency remains a separate B4 judgement."
+  ]
+}

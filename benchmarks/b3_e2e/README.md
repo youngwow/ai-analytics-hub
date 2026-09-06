@@ -20,6 +20,7 @@
 - `evaluate_acceptance.py` — pass/fail восьми обязательных операций с обязательным evidence.
 - `data/v2/acceptance_result.schema.json` — контракт evidence: существующий артефакт/URL плюс наблюдение проверяющего.
 - `make_oracle_prediction.py` — проверка самого scorer; продукту этот файл и результат не передаются.
+- `scale/` и `data/scale_v1/` — отдельный `B3-SCALE`: растущий банк `100 / 1 000 / 10 000`, события и известные НПА, `full_scan` против `embedding top-20 + той же LLM`.
 
 ## Быстрый запуск
 

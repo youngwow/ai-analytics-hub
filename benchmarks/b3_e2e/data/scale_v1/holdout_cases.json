@@ -1,0 +1,70 @@
+[
+  {
+    "id": "H_E_voice_update",
+    "min_size": 10000,
+    "kind": "event",
+    "expected_object_id": "H-EVT-AURORA-VOICE",
+    "expected_relation": "event_update",
+    "text": "Аврора расширила казанский пилот голосового переключения телеканалов на всех абонентов региона."
+  },
+  {
+    "id": "H_E_voice_same_actor_negative",
+    "min_size": 10000,
+    "kind": "event",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "text": "Аврора начала отдельную программу лояльности для покупателей домашнего интернета."
+  },
+  {
+    "id": "H_E_workgroup_update",
+    "min_size": 10000,
+    "kind": "event",
+    "expected_object_id": "H-EVT-DVB-WORKGROUP",
+    "expected_relation": "event_update",
+    "text": "Созданная вещателями рабочая группа завершила первую редакцию рекомендаций по гибридному вещанию."
+  },
+  {
+    "id": "H_E_forum_negative",
+    "min_size": 10000,
+    "kind": "event",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "text": "Другая команда объявила новый коммерческий форум о гибридном ТВ; к рабочей группе он не относится."
+  },
+  {
+    "id": "H_N_smarttv_update",
+    "min_size": 10000,
+    "kind": "npa",
+    "expected_object_id": "H-NPA-SMARTTV-DATA",
+    "expected_relation": "same_npa",
+    "external_id": "REG-TV-DATA-204",
+    "text": "В доработанном REG-TV-DATA-204 срок хранения телеметрии Smart TV сокращён до 12 месяцев."
+  },
+  {
+    "id": "H_N_data_negative",
+    "min_size": 10000,
+    "kind": "npa",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "external_id": "REG-IOT-DATA-205",
+    "text": "Опубликован новый самостоятельный REG-IOT-DATA-205 о телеметрии промышленных датчиков."
+  },
+  {
+    "id": "H_N_ad_update",
+    "min_size": 10000,
+    "kind": "npa",
+    "expected_object_id": "H-NPA-AD-TRANSPARENCY",
+    "expected_relation": "same_npa",
+    "external_id": "REG-AD-TV-911",
+    "text": "Вторая редакция REG-AD-TV-911 добавила требования к отчётам по адресной телерекламе."
+  },
+  {
+    "id": "H_N_ad_negative",
+    "min_size": 10000,
+    "kind": "npa",
+    "expected_object_id": null,
+    "expected_relation": "different",
+    "external_id": "REG-AD-AUDIO-912",
+    "text": "Новый REG-AD-AUDIO-912 регулирует прозрачность рекламы в аудиосервисах."
+  }
+]

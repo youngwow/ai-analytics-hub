@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import itertools
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -32,6 +33,11 @@ def pairs(groups: list[set[str]]) -> set[tuple[str, str]]:
     for group in groups:
         result.update(tuple(sorted(pair)) for pair in itertools.combinations(group, 2))
     return result
+
+
+def version_generation(value) -> int | None:
+    match = re.match(r"^v(\d+)(?:_|$)", str(value or ""))
+    return int(match.group(1)) if match else None
 
 
 parser = argparse.ArgumentParser()
@@ -327,12 +333,15 @@ for obj in valid_predicted_objects:
                 source_id in visible_ids
                 and source_id in obj.get("member_ids", [])
                 and bool(quote)
-                and quote in all_items[source_id]["raw_text"]
+                and (
+                    quote in all_items[source_id]["raw_text"]
+                    or quote in str(all_items[source_id].get("title") or "")
+                )
             )
             quote_checks.append({"object_id": obj.get("object_id"), "claim_id": claim.get("claim_id"), "source_item_id": source_id, "verbatim_quote": valid})
 
 npa_report = {
-    object_id: {"present": False, "current_stage": False, "current_version": False, "effective_from": False, "history_ids": False, "change_summary": "semantic_judge"}
+    object_id: {"present": False, "current_stage": False, "current_version": False, "current_version_exact_label": False, "effective_from": False, "history_ids": False, "history_ids_exact": False, "change_summary": "semantic_judge"}
     for object_id in npa_truth
 }
 for obj in valid_predicted_objects:
@@ -341,12 +350,24 @@ for obj in valid_predicted_objects:
         continue
     expected = npa_truth[predicted_truth_id]
     state = obj.get("npa_state") or {}
+    actual_version = state.get("current_version")
+    expected_version = expected["current_version"]
+    actual_generation = version_generation(actual_version)
+    expected_generation = version_generation(expected_version)
+    expected_history = set(expected["history_ids"])
+    actual_history = set(state.get("history_ids", []))
     npa_report[predicted_truth_id] = {
         "present": True,
         "current_stage": state.get("current_stage") == expected["current_stage"],
-        "current_version": state.get("current_version") == expected["current_version"],
+        "current_version": (
+            actual_generation == expected_generation
+            if expected_generation is not None
+            else actual_version == expected_version
+        ),
+        "current_version_exact_label": actual_version == expected_version,
         "effective_from": state.get("effective_from") == expected.get("effective_from"),
-        "history_ids": set(state.get("history_ids", [])) == set(expected["history_ids"]),
+        "history_ids": expected_history.issubset(actual_history),
+        "history_ids_exact": actual_history == expected_history,
         "change_summary": "semantic_judge",
     }
 

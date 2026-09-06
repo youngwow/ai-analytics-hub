@@ -1,0 +1,479 @@
+{
+  "benchmark": "B3 E2E",
+  "dataset_version": "v2.0.0",
+  "scenario_id": "B",
+  "mode": "search",
+  "view": "transport",
+  "scenario": {
+    "kind": "typical_shift",
+    "item_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11",
+      "B12",
+      "B13",
+      "B14",
+      "B15",
+      "B16",
+      "B17",
+      "B18",
+      "B19",
+      "B20",
+      "B21",
+      "B22"
+    ],
+    "initial_state_id": "B",
+    "release_at": "2026-08-25T18:00:00+03:00"
+  },
+  "company_context": {
+    "company": "GS Labs",
+    "relation": "Developer of software and equipment for digital television and adjacent media technologies within GS Group.",
+    "interests": [
+      "digital television",
+      "subscriber devices",
+      "middleware and interfaces",
+      "content protection CAS/DRM",
+      "recommendation systems",
+      "device security and updates",
+      "broadcasting regulation",
+      "radioelectronics support",
+      "operator tenders and partnerships"
+    ],
+    "roles": {
+      "PR": "Company and market narratives, reputation, partnerships, public positions and opportunities.",
+      "GR": "Draft laws, standards, regulator actions, deadlines, stages, versions and potential regulatory impact.",
+      "HEAD": "High-impact company, market, security and regulatory changes; always receives confirmed critical items."
+    },
+    "uncertainty_rule": "Unknown internal facts such as a dependency or eligibility must be surfaced as a check, not invented.",
+    "benchmark_scope": "Synthetic isolated replay world; the context is fixed across hypothesis variants.",
+    "delivery_policy": {
+      "status": "Benchmark test configuration, not a confirmed customer requirement.",
+      "planned_release": "18:00 virtual time",
+      "urgent": "Critical confirmed signals bypass the planned release after review.",
+      "critical_core": "Confirmed critical objects are visible to every intended recipient."
+    },
+    "npa_policy": "Track identity, stage, version and history. Official sources define legal state; secondary sources may add interpretation but cannot overwrite it."
+  },
+  "initial_state": {
+    "scenario_id": "B",
+    "virtual_now": "2026-08-25T08:00:00+03:00",
+    "known_events": [
+      {
+        "object_id": "KNOWN-B-01",
+        "title": "Пилот адресной рекламы оператора «Вектор»",
+        "status": "confirmed",
+        "last_seen_at": "2026-08-21T15:00:00+03:00"
+      },
+      {
+        "object_id": "KNOWN-B-02",
+        "title": "Новая версия комплекта разработчика GS Labs",
+        "status": "confirmed",
+        "last_seen_at": "2026-08-20T10:30:00+03:00"
+      },
+      {
+        "object_id": "KNOWN-B-03",
+        "title": "Завершённая выставка телеком-оборудования",
+        "status": "archived",
+        "last_seen_at": "2026-08-17T17:40:00+03:00"
+      },
+      {
+        "object_id": "KNOWN-B-04",
+        "title": "Обзор российского рынка медиаплатформ",
+        "status": "confirmed",
+        "last_seen_at": "2026-08-13T09:10:00+03:00"
+      }
+    ],
+    "archived_events": [],
+    "tracked_npas": [
+      {
+        "object_id": "NPA-PREINSTALL",
+        "external_id": "02/15/07-26/00181111",
+        "title": "Предустановка медиаприложений",
+        "current_stage": "public_discussion",
+        "current_version": "v1",
+        "history": [
+          {
+            "event_id": "INIT-COMMON-01",
+            "at": "2026-08-12",
+            "stage": "public_discussion",
+            "version": "v1"
+          }
+        ]
+      },
+      {
+        "object_id": "NPA-ACCESS",
+        "external_id": "STD-TV-14",
+        "title": "Доступность интерфейсов Smart TV",
+        "current_stage": "approved_voluntary",
+        "current_version": "v1",
+        "history": [
+          {
+            "event_id": "INIT-COMMON-02",
+            "at": "2026-08-15",
+            "stage": "approved_voluntary",
+            "version": "v1"
+          }
+        ]
+      }
+    ],
+    "human_decisions": [
+      {
+        "target_id": "KNOWN-B-03",
+        "action": "archive",
+        "reason": "Событие завершено"
+      }
+    ],
+    "last_release": {
+      "release_id": "REL-B-PREV",
+      "released_at": "2026-08-20T18:00:00+03:00",
+      "recipients": [
+        "PR",
+        "GR",
+        "HEAD"
+      ],
+      "object_ids": [
+        "KNOWN-B-01",
+        "KNOWN-B-02"
+      ]
+    },
+    "source_cursors": {
+      "rss": "cursor-1042",
+      "telegram": "msg-8821",
+      "regulator": "event-411",
+      "search": "query-window-prev"
+    }
+  },
+  "task": "Process the supplied scenario timeline as the GS Labs monitoring product. Use only the visible company context and source observations. Multiple observations can point to the same canonical_item_id when a publication was discovered through both a fixed source and search; make one item decision per canonical_item_id and do not count those observations as separate publications. Classify every canonical item, form publication/event/NPA objects, preserve provenance and conflicting positions, identify uncertainty and risk, and prepare planned or urgent role-specific deliveries. Express every factual object claim separately with one or more verbatim supporting quotes. For NPA objects, return current stage, version, history item IDs and change summary. Never invent GS Labs impact: mark unknown when internal applicability cannot be established. Return one JSON object conforming to prediction.schema.json.\n\nThe initial state is authoritative for already known objects. Update it; do not recreate tracked objects or reopen archived events unless new primary evidence requires it.\n",
+  "response_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "required": [
+      "run_id",
+      "scenario_id",
+      "mode",
+      "item_decisions",
+      "objects",
+      "deliveries"
+    ],
+    "properties": {
+      "run_id": {
+        "type": "string"
+      },
+      "scenario_id": {
+        "enum": [
+          "A",
+          "B",
+          "D1_critical",
+          "D2_event_boundary",
+          "D3_new_npa",
+          "D4_known_npa"
+        ]
+      },
+      "mode": {
+        "enum": [
+          "fixed",
+          "search",
+          "hybrid"
+        ]
+      },
+      "item_decisions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "relevance",
+            "importance",
+            "critical",
+            "roles",
+            "risk_flag"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "relevance": {
+              "enum": [
+                "relevant",
+                "borderline",
+                "irrelevant",
+                "unknown"
+              ]
+            },
+            "importance": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "critical"
+              ]
+            },
+            "critical": {
+              "type": "boolean"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "PR",
+                  "GR",
+                  "HEAD"
+                ]
+              }
+            },
+            "risk_flag": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "objects": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "object_id",
+            "type",
+            "member_ids",
+            "summary",
+            "importance",
+            "critical",
+            "roles",
+            "claims"
+          ],
+          "properties": {
+            "object_id": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "publication",
+                "event",
+                "npa"
+              ]
+            },
+            "member_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "summary": {
+              "type": "string"
+            },
+            "impact_on_gs_labs": {
+              "type": "string"
+            },
+            "importance": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "critical"
+              ]
+            },
+            "critical": {
+              "type": "boolean"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "PR",
+                  "GR",
+                  "HEAD"
+                ]
+              }
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "claim_id",
+                  "text",
+                  "evidence"
+                ],
+                "properties": {
+                  "claim_id": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "source_item_id",
+                        "quote"
+                      ],
+                      "properties": {
+                        "source_item_id": {
+                          "type": "string"
+                        },
+                        "quote": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "npa_state": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "current_stage": {
+                  "type": "string"
+                },
+                "current_version": {
+                  "type": "string"
+                },
+                "history_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "change_summary": {
+                  "type": "string"
+                },
+                "effective_from": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "deliveries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "delivery_type",
+            "recipient",
+            "object_ids",
+            "digest_text"
+          ],
+          "properties": {
+            "delivery_type": {
+              "enum": [
+                "planned_digest",
+                "urgent_alert",
+                "npa_update"
+              ]
+            },
+            "recipient": {
+              "enum": [
+                "PR",
+                "GR",
+                "HEAD"
+              ]
+            },
+            "object_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "digest_text": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "timeline": [
+    {
+      "observation_id": "B20::search",
+      "canonical_item_id": "B20",
+      "discovery_channel": "search",
+      "available_at": "2026-08-25T10:31:00+03:00",
+      "source_name": "Форум операторов",
+      "source_url": "https://fixtures.gs-labs.invalid/search_api/b20",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "B20::search",
+        "title": "Протокол форума операторов: спрос на единый API телеметрии",
+        "content": "В опубликованном протоколе технической секции четыре региональных оператора назвали отсутствие единого API телеметрии препятствием для обновления парка приставок. Решений о закупке нет, но зафиксирован общий рыночный запрос.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+        "url": "https://fixtures.gs-labs.invalid/search_api/b20",
+        "published_at": "2026-08-25T10:31:00+03:00"
+      }
+    },
+    {
+      "observation_id": "B21::search",
+      "canonical_item_id": "B21",
+      "discovery_channel": "search",
+      "available_at": "2026-08-25T11:08:00+03:00",
+      "source_name": "Web search",
+      "source_url": "https://fixtures.gs-labs.invalid/search_api/b21",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "B21::search",
+        "title": "API телеметрии для теплиц",
+        "content": "Разработчик агроплатформы открыл API телеметрии датчиков влажности и температуры. Документация описывает пакетную выгрузку показаний и тревоги для агронома.\n\nКонтекст 1. Результат найден дополнительным поиском и отсутствует в постоянной ленте. Фрагмент может быть неполным, поэтому вывод должен опираться на доступный первичный документ и явно отмечать неизвестное.\n\nКонтекст 2. Поисковая оценка показывает близость запросу, но не является оценкой достоверности или важности для GS Labs.\n\nКонтекст 3. Дата в поисковом ответе может отсутствовать или относиться к индексации. Если время публикации критично, его нужно получать с исходной страницы.\n\nКонтекст 4. Одинаковый URL может встретиться и в постоянном источнике. Такое повторное обнаружение не является второй публикацией или дополнительным подтверждением.\n\nКонтекст 5. Фрагмент сформирован поисковой выдачей и может обрываться до важной оговорки; полный текст доступен только на исходной странице.\n\nКонтекст 6. Сходство с запросом вызвано несколькими отраслевыми терминами. Оно не гарантирует связь с цифровым телевидением или интересами компании.\n\nКонтекст 7. При недоступности полного текста сохраняются заголовок, URL, фрагмент и признак неполноты. Результат может быть отправлен на проверку, но не выпускаться как установленный факт.\n\nКонтекст 8. Поиск выполнялся в фиксированном временном окне и с замороженной формулировкой запроса. Это позволяет сравнивать fixed и hybrid без подмены условий.\n\nКонтекст 9. Несколько результатов одного домена не считаются независимыми подтверждениями, если они ведут на одну исходную публикацию.",
+        "url": "https://fixtures.gs-labs.invalid/search_api/b21",
+        "published_at": "2026-08-25T11:08:00+03:00"
+      }
+    },
+    {
+      "observation_id": "B12::search",
+      "canonical_item_id": "B12",
+      "discovery_channel": "search",
+      "available_at": "2026-08-25T11:39:00+03:00",
+      "source_name": "Видеоиндустрия",
+      "source_url": "https://fixtures.gs-labs.invalid/rss/b12",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "B12::search",
+        "title": "Онлайн-кинотеатры готовят обязательную маркировку видео",
+        "content": "Издание сообщает о будущей обязательной маркировке, хотя опубликованная концепция описывает только пилот. Сроки и участники пилота ещё не утверждены.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+        "url": "https://fixtures.gs-labs.invalid/rss/b12",
+        "published_at": "2026-08-25T11:39:00+03:00"
+      }
+    },
+    {
+      "observation_id": "B15::search",
+      "canonical_item_id": "B15",
+      "discovery_channel": "search",
+      "available_at": "2026-08-25T12:54:00+03:00",
+      "source_name": "Оператор Орбита",
+      "source_url": "https://fixtures.gs-labs.invalid/rss/b15",
+      "language": "ru",
+      "transport_payload": {
+        "format": "search_result",
+        "result_id": "B15::search",
+        "title": "«Орбита» тестирует облачный интерфейс на 8 тысячах пользователей",
+        "content": "Оператор подтвердил масштаб и длительность пилота с GS Labs. Представитель оператора отметил, что критериями будут стабильность и доля завершённых пользовательских сценариев.\n\nКонтекст 1. Редакция отделяет подтверждённые сведения от оценок участников рынка. Дополнительных решений или обязательств, кроме прямо перечисленных в материале, источник не сообщает.\n\nКонтекст 2. В публикации сохранены дата, ссылка на первичное сообщение и оговорки о статусе события. Прогнозные значения не следует смешивать с уже достигнутыми показателями.\n\nКонтекст 3. Корреспондент запросил комментарий у упомянутой организации, но к моменту публикации ответ не поступил. Поэтому материал не подтверждает внутренние планы компании и описывает только открытые сведения.",
+        "url": "https://fixtures.gs-labs.invalid/rss/b15",
+        "published_at": "2026-08-25T12:54:00+03:00"
+      }
+    }
+  ]
+}
