@@ -77,6 +77,8 @@ export const api = {
   bulk: (item_ids: number[], scope: 'feed' | 'digest' | 'visible', reason: string) => post<{ changed: number; scope: string }>('/items/bulk', { item_ids, scope, reason }),
   revisions: (id: number) => request<{ revisions: Revision[] }>(`/items/${id}/revisions`),
   revert: (id: number, field: string) => post<{ item: Item; manual_overrides: string[] }>(`/items/${id}/revert`, { field }),
+  merge: (id: number, item_ids: number[], reason = '') => post<{ item: Item; absorbed: number[]; sources_count: number }>(`/items/${id}/merge`, { item_ids, reason }),
+  notDuplicate: (id: number) => post<{ id: number; dismissed: number[] }>(`/items/${id}/not-duplicate`),
   note: (id: number, body: string, author: string) => post<Note>(`/items/${id}/notes`, { body, author }),
   sources: (query: { status?: string; kind?: string } = {}, signal?: AbortSignal) => request<{ sources: Source[] }>('/sources', { query, signal }),
   source: (id: number) => request<Source>(`/sources/${id}`),

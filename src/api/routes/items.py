@@ -19,6 +19,7 @@ from ...models.requests import (
     HideRequest,
     ItemCreateRequest,
     ItemUpdateRequest,
+    MergeRequest,
     NoteCreateRequest,
     NpaEventCreateRequest,
     RevertRequest,
@@ -27,11 +28,13 @@ from ...models.responses import (
     ArchiveResponse,
     BulkItemsResponse,
     BulkResponse,
+    DuplicateDismissResponse,
     FacetsResponse,
     FeedResponse,
     ItemCardResponse,
     ItemEditResponse,
     ManualItemResponse,
+    MergeResponse,
     NoteResponse,
     NpaEventResponse,
     RevisionListResponse,
@@ -154,6 +157,27 @@ def revisions(item_id: ItemId, service: ItemServiceDep) -> RevisionListResponse:
 @router.post("/{item_id}/revert", response_model=ItemEditResponse, summary="Вернуть версию модели")
 def revert(item_id: ItemId, payload: RevertRequest, service: ItemServiceDep) -> ItemEditResponse:
     return ItemEditResponse.from_domain(service.revert(item_id, payload.field))
+
+
+@router.post(
+    "/{item_id}/merge",
+    response_model=MergeResponse,
+    summary="Объединить карточки-дубли: публикации переходят к этой карточке",
+)
+def merge_items(item_id: ItemId, payload: MergeRequest, service: ItemServiceDep) -> MergeResponse:
+    """Подтверждение предложения «вероятный дубль» аналитиком; НПА не объединяются."""
+    return MergeResponse.from_domain(
+        service.merge(item_id, payload.item_ids, reason=payload.reason)
+    )
+
+
+@router.post(
+    "/{item_id}/not-duplicate",
+    response_model=DuplicateDismissResponse,
+    summary="Отклонить предложение «вероятный дубль» у карточки и её партнёров",
+)
+def dismiss_duplicate(item_id: ItemId, service: ItemServiceDep) -> DuplicateDismissResponse:
+    return DuplicateDismissResponse(**service.dismiss_duplicate(item_id))
 
 
 @router.post(

@@ -27,8 +27,16 @@ from .models import (
 from .models.queries import DocumentQuery, FeedQuery
 from .paths import DEFAULT_PATHS, ProjectPaths
 from .processing import profile as company_profile
-from .processing.llm import LlmConfigError, build_provider
-from .processing.quality import GOLD_PATH, evaluate, load_gold
+from .processing.embeddings import build_embedder
+from .processing.llm import LlmConfigError, LlmError, build_provider
+from .processing.quality import (
+    GOLD_PATH,
+    PAIRS_PATH,
+    evaluate,
+    evaluate_pairs,
+    load_gold,
+    load_pairs,
+)
 from .repositories import Database, DuplicateSourceError
 from .services.feed_service import FeedService
 from .services.item_service import EDITABLE_FIELDS, REVERTIBLE_FIELDS, ItemService
@@ -628,7 +636,13 @@ def _processing(config: Config, paths: ProjectPaths) -> tuple[Database, Processi
     provider = build_provider(config.llm, key) if key else None
     if provider is None:
         log.warning("нет %s — обработка пойдёт без модели", config.llm.api_key_env)
-    return db, ProcessingService(config, db, provider=provider, embedder=provider)
+    embedder = build_embedder(
+        config.embeddings,
+        config.llm,
+        key,
+        shared=provider if config.embeddings.provider == "ollama" else None,
+    )
+    return db, ProcessingService(config, db, provider=provider, embedder=embedder)
 
 
 def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
@@ -668,9 +682,32 @@ def _cmd_process(args, config: Config, paths: ProjectPaths) -> int:
         f"вызовов модели {report.calls}, средняя латентность {report.avg_latency_ms} мс, "
         f"всего {report.elapsed_s:.1f} с"
     )
+    if report.duplicates_proposed:
+        print(
+            f"вероятных дублей: {report.duplicates_proposed} предложений — "
+            "`item <id>` покажет, `merge` объединит, `not-duplicate` отклонит"
+        )
     if report.failed:
         print(f"не обработано: {report.failed}")
     return 2 if (report.degraded and report.items_new) or report.failed else 0
+
+
+def _cmd_dedup(args, config: Config, paths: ProjectPaths) -> int:
+    """Пересчитать «вероятные дубли» по карточкам окна — после смены настроек clustering."""
+    db, service = _processing(config, paths)
+    try:
+        written = service.recluster()
+    except LlmConfigError as e:
+        log.error("%s", e)
+        return 2
+    finally:
+        service.close()
+        db.close()
+    print(
+        f"предложений «вероятный дубль»: {written} новых — "
+        "`items` помечает такие карточки, `item <id>` показывает партнёров"
+    )
+    return 0
 
 
 def _feed_service(config: Config, paths: ProjectPaths):
@@ -717,6 +754,7 @@ def _cmd_items(args, config: Config, paths: ProjectPaths) -> int:
             str(r["sources_count"]),
             (r["source_name"] or "—")[:18],
             ("⚠ " if r["flags"]["needs_review"] else "")
+            + ("≈ " if r["flags"].get("duplicate") else "")
             + ("· " if r["visibility"] != "visible" else "")
             + (r["title"] or "")[:52],
         ]
@@ -785,6 +823,14 @@ def _cmd_item(args, config: Config, paths: ProjectPaths) -> int:
         for note in payload["notes"]:
             stamp = (note.created_at or "")[:16]
             print(f"  {stamp} {note.author or 'аналитик'}: {note.body}")
+    proposal = payload.get("duplicate_proposal")
+    if proposal:
+        partners = ", ".join(f"#{p['id']} «{p['title'][:48]}»" for p in proposal["items"])
+        similarity = proposal.get("similarity")
+        score = f", сходство {similarity:.2f}" if isinstance(similarity, (int, float)) else ""
+        ids = " ".join(str(p["id"]) for p in proposal["items"])
+        print(f"\nвероятный дубль — объединить? {partners}{score}")
+        print(f"  merge {item.id} {ids}   |   not-duplicate {item.id}")
     db.close()
     return 0
 
@@ -930,8 +976,57 @@ def _cmd_quality(args, config: Config, paths: ProjectPaths) -> int:
             )
             print("приёмка пройдена" if data["passed"] else "приёмка НЕ пройдена")
             code = 0 if data["passed"] else 1
+    if args.pairs:
+        code = max(code, _quality_pairs(args, config, paths))
     db.close()
     return code
+
+
+def _quality_pairs(args, config: Config, paths: ProjectPaths) -> int:
+    """Калибровка дедупликации на парах «дубль / не дубль»: настоящая модель эмбеддингов."""
+    pairs = load_pairs(args.pairs_path or PAIRS_PATH)
+    if not pairs:
+        log.error("набор пар не найден: %s", args.pairs_path or PAIRS_PATH)
+        return 1
+    key = load_env_secret(config.llm.api_key_env, paths.env_path)
+    embedder = build_embedder(config.embeddings, config.llm, key)
+    if embedder is None:
+        log.error("embeddings.provider = %s: калибровать нечем", config.embeddings.provider)
+        return 1
+    try:
+        result = evaluate_pairs(
+            embedder,
+            pairs,
+            clustering=config.clustering,
+            threshold=config.processing.cosine_threshold,
+            grid=args.grid,
+        )
+    except LlmError as e:
+        log.error("%s", e)
+        return 2
+    finally:
+        closer = getattr(embedder, "close", None)
+        if callable(closer):
+            closer()
+    s1 = result["s1"]
+    print(
+        f"\nпары: {result['pairs']} ({result['duplicates']} дублей), модель {result['model']}"
+    )
+    print(
+        f"S1 при cosine_threshold {s1['threshold']}: recall {s1['recall']}, "
+        f"precision {s1['precision']}; дубли ≥ {s1['min_duplicate']}, "
+        f"не-дубли ≤ {s1['max_non_duplicate']}; лучший порог по F1 — {s1['best_threshold']}"
+    )
+    for row in result["clustering"]:
+        mark = "→" if row["current"] else " "
+        print(
+            f" {mark} HDBSCAN size={row['min_cluster_size']} samples={row['min_samples']} "
+            f"{row['reduction']:4} {row['cluster_selection_method']:4}: "
+            f"recall {row['recall']}, precision {row['precision']}, групп {row['groups']}"
+        )
+    for miss in result["misses"]:
+        print(f"   {miss}")
+    return 0
 
 
 
@@ -1102,6 +1197,35 @@ def _cmd_item_revert(args, config: Config, paths: ProjectPaths) -> int:
         db.close()
     print(f"#{item.id}: поле «{args.field}» возвращено к версии модели")
     print(f"под защитой человека осталось: {item.manual_overrides or '—'}")
+    return 0
+
+
+def _cmd_item_merge(args, config: Config, paths: ProjectPaths) -> int:
+    """Подтвердить «вероятный дубль»: публикации других карточек переходят к `id`."""
+    db, svc = _item_service(config, paths)
+    try:
+        result = svc.merge(args.id, args.others, reason=args.reason or "")
+    except ItemError as e:
+        return _report_service_error(e)
+    finally:
+        db.close()
+    item = result["item"]
+    absorbed = ", ".join(f"#{i}" for i in result["absorbed"])
+    print(f"#{item.id}: объединена с {absorbed}; публикаций теперь {result['sources_count']}")
+    print(f"приоритет {item.priority}; поглощённые карточки скрыты как «объединена с #{item.id}»")
+    return 0
+
+
+def _cmd_item_not_duplicate(args, config: Config, paths: ProjectPaths) -> int:
+    db, svc = _item_service(config, paths)
+    try:
+        result = svc.dismiss_duplicate(args.id)
+    except ItemError as e:
+        return _report_service_error(e)
+    finally:
+        db.close()
+    dismissed = ", ".join(f"#{i}" for i in result["dismissed"])
+    print(f"#{args.id}: не дубль {dismissed}; предложение закрыто у всей группы")
     return 0
 
 
@@ -1443,6 +1567,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--to", dest="until")
     p.add_argument("--gold", action="store_true", help="evaluate against the gold set")
     p.add_argument("--gold-path", help=f"path to the gold set (default: {'tests/fixtures/gold/gold_set.jsonl'})")
+    p.add_argument(
+        "--pairs", action="store_true",
+        help="calibrate S1 and card clustering on labelled duplicate pairs (loads the embedder)",
+    )
+    p.add_argument("--pairs-path", help=f"path to the pair set (default: {PAIRS_PATH})")
+    p.add_argument("--grid", action="store_true", help="with --pairs: sweep HDBSCAN settings")
     p.set_defaults(func=_cmd_quality)
 
     p = sub.add_parser("hide", help="hide cards from the feed or from the next digest")
@@ -1469,6 +1599,21 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("revisions", help="edit history of a card")
     p.add_argument("id", type=int)
     p.set_defaults(func=_cmd_item_revisions)
+
+    p = sub.add_parser("merge", help="confirm a probable duplicate: absorb other cards into this one")
+    p.add_argument("id", type=int, help="the card that stays")
+    p.add_argument("others", type=int, nargs="+", help="cards whose publications move here")
+    p.add_argument("--reason")
+    p.set_defaults(func=_cmd_item_merge)
+
+    p = sub.add_parser("not-duplicate", help="dismiss the probable-duplicate proposal on a card")
+    p.add_argument("id", type=int)
+    p.set_defaults(func=_cmd_item_not_duplicate)
+
+    p = sub.add_parser(
+        "dedup", help="re-run probable-duplicate clustering over the window (after changing settings)"
+    )
+    p.set_defaults(func=_cmd_dedup)
 
     p = sub.add_parser("add-item", help="add a publication by hand (US-12, US-13)")
     p.add_argument("--url")

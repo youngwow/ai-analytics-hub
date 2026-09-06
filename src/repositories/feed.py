@@ -50,12 +50,20 @@ _PRIORITY_RANK = "CASE i.priority WHEN 'high' THEN 2 WHEN 'medium' THEN 1 ELSE 0
 _PUBLISHED = "COALESCE(i.published_at, '')"
 _PROCESSED = "COALESCE(i.processed_at, '')"
 
+# Открытое предложение «вероятный дубль» — последняя ревизия `duplicate_of` от
+# модели (ревизия человека закрывает его). Подзапрос идёт по индексу
+# `idx_item_revisions_field`, на странице ленты это десятки строк.
+DUPLICATE_FLAG = """
+    (SELECT r.source_of_change = 'llm' FROM item_revisions r
+      WHERE r.item_id = i.id AND r.field = 'duplicate_of'
+      ORDER BY r.created_at DESC, r.id DESC LIMIT 1) AS duplicate_flag
+"""
 FEED_COLUMNS = """
     i.id, i.type, i.npa_status, i.npa_key, i.priority, i.title, i.summary, i.tags,
     i.published_at, i.visibility, i.hidden_reason, i.origin, i.degraded, i.needs_review,
     i.date_estimated, i.manual_overrides, i.confidence, i.relevance_score, i.reasoning,
-    c.size AS sources_count, d.url AS canonical_url, sr.name AS source_name
-"""
+    c.size AS sources_count, d.url AS canonical_url, sr.name AS source_name,
+""" + DUPLICATE_FLAG
 FEED_FROM = """
     FROM items i
     JOIN clusters c ON c.id = i.cluster_id

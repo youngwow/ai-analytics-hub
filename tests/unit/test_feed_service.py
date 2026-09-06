@@ -75,6 +75,7 @@ def test_a_feed_row_carries_everything_the_dashboard_shows(feed, card_factory, s
             "needs_review": False,
             "date_estimated": False,
             "edited": False,
+            "duplicate": False,
         },
     }
 

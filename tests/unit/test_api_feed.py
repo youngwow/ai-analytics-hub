@@ -110,6 +110,7 @@ def test_the_row_carries_the_link_to_the_original_and_the_source_name(client, co
         "needs_review": False,
         "date_estimated": False,
         "edited": False,
+        "duplicate": False,
     }
 
 

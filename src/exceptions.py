@@ -126,6 +126,13 @@ class NothingToRevertError(ItemError):
     code = "nothing_to_revert"
 
 
+class NoDuplicateProposalError(ItemError):
+    """Отклонять нечего: у карточки нет открытого предложения «вероятный дубль»."""
+
+    status_code = 409
+    code = "no_duplicate_proposal"
+
+
 # ── профиль компании ───────────────────────────────────────────────────────
 
 

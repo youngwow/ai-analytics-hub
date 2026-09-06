@@ -11,7 +11,7 @@ from fastapi.testclient import TestClient
 from support import FakeLLM, MockRoutes, default_raw_config, news_answer, read_fixture
 
 from src.config import Config, get_config, get_paths, get_settings
-from src.dependencies import get_collection_watcher, get_llm_provider
+from src.dependencies import get_collection_watcher, get_embedder, get_llm_provider
 from src.main import create_app
 from src.models import Cluster, Item
 from src.paths import ProjectPaths
@@ -34,6 +34,7 @@ CACHED_PROVIDERS = (
     get_paths,
     get_config,
     get_llm_provider,
+    get_embedder,
     get_collection_watcher,
 )
 

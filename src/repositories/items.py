@@ -26,6 +26,11 @@ def _now_iso() -> str:
     return to_utc_iso(utc_now()) or ""
 
 
+def merge_reason(target_id: int) -> str:
+    """Причина скрытия поглощённой карточки — по ней видно, куда ушли публикации."""
+    return f"объединена с карточкой #{target_id}"
+
+
 class ClusterRepo:
     def __init__(self, conn: sqlite3.Connection):
         self.conn = conn
@@ -317,6 +322,91 @@ class SqliteItemRepository(ItemRepository):
         ).fetchone()
         return ItemRevision.from_row(row) if row else None
 
+    def last_revision(self, item_id: int, field: str) -> ItemRevision | None:
+        """Последняя ревизия поля любого происхождения — чья версия сейчас действует.
+
+        Для предложения «вероятный дубль» это и есть его состояние: ревизия
+        модели — предложение открыто, ревизия человека (merge / not_duplicate) —
+        закрыто. Отдельной таблицы состояния не нужно.
+        """
+        row = self.conn.execute(
+            "SELECT * FROM item_revisions WHERE item_id=? AND field=? "
+            "ORDER BY created_at DESC, id DESC LIMIT 1",
+            (item_id, field),
+        ).fetchone()
+        return ItemRevision.from_row(row) if row else None
+
+    # -- duplicates and merge --
+
+    def clustering_pool(
+        self, since: str | None, limit: int, include_ids: Iterable[int] = ()
+    ) -> list[sqlite3.Row]:
+        """Карточки, среди которых ищутся дубли: новости окна плюс свежие карточки прогона.
+
+        НПА сюда не попадают никогда — тождество акта только по `npa_key`.
+        Скрытые из ленты, удалённые и архивные тоже нет: их аналитик уже разобрал.
+        Деградированные карточки тоже мимо: у них нет саммари модели (лид из
+        первых предложений повторяет шапку сайта), а тип не определён — под
+        «новостью» может скрываться приказ или указ, которые кластеризовать нельзя.
+        """
+        ids = list(dict.fromkeys(int(i) for i in include_ids))
+        where = [
+            "i.type = 'news'",
+            "i.degraded = 0",
+            "i.visibility IN ('visible', 'hidden_digest')",
+            "i.is_archived = 0",
+            "i.summary <> ''",
+        ]
+        params: list = []
+        window: list[str] = []
+        if since:
+            window.append("COALESCE(i.published_at, i.processed_at) >= ?")
+            params.append(since)
+        if ids:
+            window.append(f"i.id IN ({','.join('?' * len(ids))})")
+            params.extend(ids)
+        if window:
+            where.append("(" + " OR ".join(window) + ")")
+        params.append(limit)
+        return list(
+            self.conn.execute(
+                "SELECT i.id, i.title, i.summary, i.processed_at FROM items i "
+                "WHERE " + " AND ".join(where) + " "
+                "ORDER BY i.processed_at DESC, i.id DESC LIMIT ?",
+                params,
+            )
+        )
+
+    def source_count(self, item_id: int) -> int:
+        return int(
+            self.conn.execute(
+                "SELECT count(*) FROM item_sources WHERE item_id=?", (item_id,)
+            ).fetchone()[0]
+        )
+
+    def move_sources(self, from_item: int, to_item: int) -> int:
+        """Перевесить публикации одной карточки на другую; вернуть число новых связей.
+
+        Первоисточник остаётся у принимающей карточки: перенесённые публикации
+        приходят как обычные. Повторная связь (документ уже был у обеих) не
+        считается. Вызывающий владеет транзакцией.
+        """
+        before = self.source_count(to_item)
+        self.conn.execute(
+            "INSERT OR IGNORE INTO item_sources (item_id, document_id, is_canonical) "
+            "SELECT ?, document_id, 0 FROM item_sources WHERE item_id=?",
+            (to_item, from_item),
+        )
+        self.conn.execute("DELETE FROM item_sources WHERE item_id=?", (from_item,))
+        return self.source_count(to_item) - before
+
+    def mark_merged(self, item_id: int, target_id: int) -> None:
+        """Поглощённая карточка уходит из ленты и дайджеста; физически не удаляется."""
+        self.conn.execute(
+            "UPDATE items SET visibility='deleted', hidden_reason=? WHERE id=?",
+            (merge_reason(target_id), item_id),
+        )
+
     def edited_share(self, since: str | None = None) -> float:
         """Share of cards an analyst touched — the honest proxy for model quality."""
         total = self.count()
@@ -348,6 +438,13 @@ class ItemNoteRepo:
             "SELECT * FROM item_notes WHERE item_id=? ORDER BY id", (item_id,)
         )
         return [ItemNote.from_row(r) for r in rows]
+
+    def reassign(self, from_item: int, to_item: int) -> int:
+        """Заметки поглощённой карточки переезжают к принимающей; транзакция — у вызывающего."""
+        cur = self.conn.execute(
+            "UPDATE item_notes SET item_id=? WHERE item_id=?", (to_item, from_item)
+        )
+        return cur.rowcount
 
 
 class ItemTagRepo:
@@ -403,6 +500,10 @@ class ItemTagRepo:
 
     def names(self, item_id: int) -> list[str]:
         return [t.tag for t in self.list(item_id)]
+
+    def manual_names(self, item_id: int) -> list[str]:
+        """Только теги человека — их переносит объединение карточек."""
+        return [t.tag for t in self.list(item_id) if t.is_manual]
 
 
 class SearchRepo:

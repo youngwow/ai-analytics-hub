@@ -244,6 +244,32 @@ class TagResponse(BaseModel):
         return cls(**asdict(tag))
 
 
+class DuplicatePartnerResponse(BaseModel):
+    id: int
+    title: str
+    published_at: str | None
+
+
+class DuplicateProposalResponse(BaseModel):
+    """«Вероятный дубль — объединить?»: партнёры по кластеру и их сходство."""
+
+    items: list[DuplicatePartnerResponse]
+    similarity: float | None
+    run_id: int | None
+    created_at: str
+
+    @classmethod
+    def from_domain(cls, proposal: dict | None) -> DuplicateProposalResponse | None:
+        if proposal is None:
+            return None
+        return cls(
+            items=[DuplicatePartnerResponse(**partner) for partner in proposal["items"]],
+            similarity=proposal.get("similarity"),
+            run_id=proposal.get("run_id"),
+            created_at=proposal.get("created_at") or "",
+        )
+
+
 class ItemCardResponse(BaseModel):
     """Карточка целиком — всё, что нужно экрану карточки за один запрос."""
 
@@ -256,6 +282,7 @@ class ItemCardResponse(BaseModel):
     notes: list[NoteResponse]
     tags: list[TagResponse]
     model_proposals: dict[str, RevisionResponse | None]
+    duplicate_proposal: DuplicateProposalResponse | None = None
 
     @classmethod
     def from_domain(cls, card: dict) -> ItemCardResponse:
@@ -273,7 +300,31 @@ class ItemCardResponse(BaseModel):
                 name: (RevisionResponse.from_domain(rev) if rev else None)
                 for name, rev in card["model_proposals"].items()
             },
+            duplicate_proposal=DuplicateProposalResponse.from_domain(
+                card.get("duplicate_proposal")
+            ),
         )
+
+
+class MergeResponse(BaseModel):
+    """Итог объединения: принимающая карточка, поглощённые и сколько публикаций у неё теперь."""
+
+    item: ItemResponse
+    absorbed: list[int]
+    sources_count: int
+
+    @classmethod
+    def from_domain(cls, result: dict) -> MergeResponse:
+        return cls(
+            item=ItemResponse.from_domain(result["item"]),
+            absorbed=list(result["absorbed"]),
+            sources_count=int(result["sources_count"]),
+        )
+
+
+class DuplicateDismissResponse(BaseModel):
+    id: int
+    dismissed: list[int]
 
 
 class ItemEditResponse(BaseModel):
@@ -334,6 +385,7 @@ class FeedFlags(BaseModel):
     needs_review: bool
     date_estimated: bool
     edited: bool
+    duplicate: bool = False  # открыто предложение «вероятный дубль»
 
 
 class FeedItemResponse(BaseModel):

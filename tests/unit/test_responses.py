@@ -417,4 +417,5 @@ def test_feed_response_carries_the_real_feed(feed, corpus):
     assert [row.id for row in response.items][:2] == [corpus["hidden_digest"], corpus["npa_high"]]
     assert response.items[1].flags.model_dump() == {
         "degraded": False, "needs_review": False, "date_estimated": False, "edited": False,
+        "duplicate": False,
     }

@@ -103,6 +103,13 @@ class RevertRequest(_Request):
     field: str
 
 
+class MergeRequest(_Request):
+    """Объединить карточки-дубли в ту, чей адрес в пути: её партнёры — `item_ids`."""
+
+    item_ids: list[int] = Field(min_length=1)
+    reason: str = ""
+
+
 class NpaEventCreateRequest(_Request):
     """Событие в хронологии карточки: статус НПА из словаря двигает карточку,
     любое другое (слушания, срок) просто ложится в историю."""

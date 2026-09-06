@@ -22,6 +22,10 @@ from typing import Iterable, Sequence
 
 import numpy as np
 
+from ..utils import get_logger
+
+log = get_logger("dedup")
+
 _TOKEN_RE = re.compile(r"[А-Яа-яЁёA-Za-z0-9]+")
 _BITS = 64
 # Reprints repeat the same facts; commentary adds a speaker. Two texts about one
@@ -75,9 +79,14 @@ def prepare(rows: Iterable) -> list[Candidate]:
     return [row if isinstance(row, Candidate) else Candidate.from_row(row) for row in rows]
 
 
-def pool(rows: Iterable) -> "CandidatePool":
-    """Пул кандидатов с матрицей эмбеддингов — строится один раз на прогон."""
-    return rows if isinstance(rows, CandidatePool) else CandidatePool(prepare(rows))
+def pool(rows: Iterable, width: int | None = None) -> "CandidatePool":
+    """Пул кандидатов с матрицей эмбеддингов — строится один раз на прогон.
+
+    `width` — длина вектора текущей модели эмбеддингов (`embeddings.dimensions`):
+    кандидаты с векторами другой длины посчитаны прежней моделью и сравниваются
+    только по SimHash. Без `width` берётся преобладающая длина.
+    """
+    return rows if isinstance(rows, CandidatePool) else CandidatePool(prepare(rows), width=width)
 
 
 class CandidatePool:
@@ -88,7 +97,7 @@ class CandidatePool:
     совпадения (строго `>`, поэтому при равенстве побеждает первый).
     """
 
-    def __init__(self, candidates: list[Candidate]):
+    def __init__(self, candidates: list[Candidate], width: int | None = None):
         self.candidates = candidates
         usable = [
             (position, candidate)
@@ -96,11 +105,20 @@ class CandidatePool:
             if candidate.embedding and candidate.norm
         ]
         # В базе могут лежать векторы от прежней модели другой размерности:
-        # матрица из разных длин — это ValueError, поэтому берём преобладающую.
-        # Остальные не сравниваются вовсе — ровно как раньше, когда косинус
-        # разноразмерных векторов давал 0.0 и до порога не доходил.
-        width = _dominant_width([c for _, c in usable])
+        # матрица из разных длин — это ValueError. Длину задаёт текущая модель
+        # (`width`), а без неё — преобладающая. Остальные не сравниваются вовсе —
+        # ровно как раньше, когда косинус разноразмерных векторов давал 0.0 и до
+        # порога не доходил; но теперь об этом сказано в логе.
+        width = width or _dominant_width([c for _, c in usable])
         rows = [(position, c) for position, c in usable if len(c.embedding) == width]
+        skipped = len(usable) - len(rows)
+        if skipped:
+            log.warning(
+                "%d кандидатов с векторами не длины %d (прежняя модель эмбеддингов) "
+                "сравниваются только по SimHash",
+                skipped,
+                width,
+            )
         self._positions = np.array([position for position, _ in rows], dtype=np.intp)
         if rows:
             matrix = np.array([c.embedding for _, c in rows], dtype=np.float64)

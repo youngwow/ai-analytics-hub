@@ -8,7 +8,7 @@ export interface FeedItem {
   published_at: string | null; canonical_url: string | null; source_name: string | null; sources_count: number | null
   visibility: Visibility; hidden_reason: string; origin: string; confidence: number | null
   relevance_score: number | null; reasoning: string | null; snippet: string | null
-  flags: { degraded: boolean; needs_review: boolean; date_estimated: boolean; edited: boolean }
+  flags: { degraded: boolean; needs_review: boolean; date_estimated: boolean; edited: boolean; duplicate: boolean }
 }
 export interface Item extends Omit<FeedItem, 'flags' | 'canonical_url' | 'source_name' | 'sources_count' | 'snippet'> {
   cluster_id: number; analyst_note: string; manual_overrides: string[]; is_archived: boolean
@@ -17,6 +17,7 @@ export interface Item extends Omit<FeedItem, 'flags' | 'canonical_url' | 'source
 }
 export interface Revision { id: number | null; item_id: number; field: string; old_value: string | null; new_value: string | null; actor: string; source_of_change: string; edit_reason: string; created_at: string }
 export interface Note { id: number | null; item_id: number; body: string; author: string; created_at: string }
+export interface DuplicateProposal { items: { id: number; title: string; published_at: string | null }[]; similarity: number | null; run_id: number | null; created_at: string }
 export interface ItemCard {
   item: Item; canonical_url: string | null
   entities: { id: number | null; role: string; value: string; normalized_value: string; evidence_start: number | null; evidence_end: number | null }[]
@@ -24,6 +25,7 @@ export interface ItemCard {
   events: { id: number | null; item_id: number; status: string; occurred_at: string | null; source_url: string; note: string; created_by: string; created_at: string }[]
   revisions: Revision[]; notes: Note[]; tags: { item_id: number; tag: string; is_manual: boolean }[]
   model_proposals: Record<string, Revision | null>
+  duplicate_proposal: DuplicateProposal | null
 }
 export interface Source {
   id: number; name: string; url: string; kind: string; category: string; fetch_url: string

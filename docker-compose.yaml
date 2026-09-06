@@ -25,6 +25,9 @@ services:
       - ./src:/app/src:ro           # dev: --reload подхватывает правки без пересборки
       - ./config.yaml:/app/config.yaml:ro
       - ./sources.json:/app/sources.json:ro
+      # Кэш Hugging Face: веса модели эмбеддингов (~14 ГБ) скачиваются один раз
+      # и переживают пересборку образа; без тома контейнер качал бы их заново.
+      - ${HF_HOME:-~/.cache/huggingface}:/home/app/.cache/huggingface
     command:
       - uvicorn
       - src.main:create_app
