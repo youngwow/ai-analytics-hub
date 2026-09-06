@@ -1,0 +1,3810 @@
+{
+  "benchmark": "B2 AI semantic judge packet",
+  "dataset_version": "v3.0.0",
+  "run_id": "dd58ac8c-99a4-404f-8487-20d9dae35ba2",
+  "configuration_id": "v3-dev-baseline-glm-onepass-t0.2",
+  "rubric": {
+    "required": [
+      "must_fact_coverage",
+      "unsupported_claims",
+      "summary_faithfulness",
+      "impact_justification",
+      "preserved_independent_positions"
+    ],
+    "rule": "Judge each item/case separately against the frozen truth; do not infer one weighted total."
+  },
+  "materials": [
+    {
+      "material": {
+        "id": "e01-a",
+        "title": "ЦТС выпустила 30-миллионную телевизионную приставку",
+        "text": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку. Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+        "source_name": "Пресс-служба GS Group",
+        "source_type": "corporate_site",
+        "source_url": null,
+        "published_at": "2026-08-12T09:15:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e01-a",
+        "relevance": "relevant",
+        "roles": [
+          "PR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "company",
+        "impact_on_gs_labs": "Прямой позитивный корпоративный инфоповод группы.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e01-a-f1",
+            "claim": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку.",
+            "evidence": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку."
+          },
+          {
+            "fact_id": "e01-a-f2",
+            "claim": "Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+            "evidence": "Предприятие находится в Гусеве Калининградской области и входит в GS Group."
+          }
+        ],
+        "forbidden_claims": [
+          "Приставка разработана GS Labs.",
+          "Объём выпуска относится к 2026 году."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "medium"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "PR"
+              ],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e01-a",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "PR"
+        ],
+        "summary": "Завод «Цифровые Телевизионные Системы» (Гусев, Калининградская область), входящий в GS Group, выпустил 30-миллионную телевизионную приставку — юбилейный производственный инфоповод группы в домене цифрового ТВ.",
+        "claims": [
+          {
+            "text": "ЦТС выпустила 30-миллионную телевизионную приставку",
+            "evidence_quote": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку."
+          },
+          {
+            "text": "Предприятие ЦТС расположено в Гусеве Калининградской области",
+            "evidence_quote": "Предприятие находится в Гусеве Калининградской области"
+          },
+          {
+            "text": "ЦТС входит в GS Group",
+            "evidence_quote": "входит в GS Group"
+          }
+        ],
+        "impact": "Позитивный корпоративный инфоповод группы в основном продуктовом домене GS Labs (цифровое ТВ, приставки), пригодный для коммуникаций о масштабе производства группы. Прямого эффекта на продукты, обязательства или рыночную позицию GS Labs не создаёт. Управленческой значимости или срочности нет.",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "e01-b",
+        "title": "ЦТС выпустила 30-миллионную телевизионную приставку",
+        "text": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку. Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+        "source_name": "Отраслевой Telegram-канал",
+        "source_type": "telegram",
+        "source_url": null,
+        "published_at": "2026-08-12T09:15:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e01-b",
+        "relevance": "relevant",
+        "roles": [
+          "PR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "company",
+        "impact_on_gs_labs": "Прямой позитивный корпоративный инфоповод группы.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e01-b-f1",
+            "claim": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку.",
+            "evidence": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку."
+          },
+          {
+            "fact_id": "e01-b-f2",
+            "claim": "Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+            "evidence": "Предприятие находится в Гусеве Калининградской области и входит в GS Group."
+          }
+        ],
+        "forbidden_claims": [
+          "Приставка разработана GS Labs.",
+          "Объём выпуска относится к 2026 году."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "medium"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "PR"
+              ],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e01-b",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "PR"
+        ],
+        "summary": "ЦТС («Цифровые Телевизионные Системы», Гусев Калининградской области), входящая в GS Group, выпустила 30-миллионную телевизионную приставку — групповой производственный milestone в продуктовом домене цифрового ТВ.",
+        "claims": [
+          {
+            "text": "ЦТС выпустила 30-миллионную телевизионную приставку",
+            "evidence_quote": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку"
+          },
+          {
+            "text": "Предприятие ЦТС находится в Гусеве Калининградской области",
+            "evidence_quote": "Предприятие находится в Гусеве Калининградской области"
+          },
+          {
+            "text": "ЦТС входит в GS Group",
+            "evidence_quote": "входит в GS Group"
+          }
+        ],
+        "impact": "Позитивный инфоповод уровня группы: подтверждает масштаб производства ТВ-приставок в основном продуктовом домене GS Labs (цифровое телевидение). Может использоваться в отраслевых коммуникациях о группе; рисков, обязательств или сроков не создаёт.",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "e01-c",
+        "title": "ЦТС выпустила 30-миллионную телевизионную приставку",
+        "text": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку. Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+        "source_name": "Новостной агрегатор",
+        "source_type": "rss",
+        "source_url": null,
+        "published_at": "2026-08-12T09:15:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e01-c",
+        "relevance": "relevant",
+        "roles": [
+          "PR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "company",
+        "impact_on_gs_labs": "Прямой позитивный корпоративный инфоповод группы.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e01-c-f1",
+            "claim": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку.",
+            "evidence": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку."
+          },
+          {
+            "fact_id": "e01-c-f2",
+            "claim": "Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+            "evidence": "Предприятие находится в Гусеве Калининградской области и входит в GS Group."
+          }
+        ],
+        "forbidden_claims": [
+          "Приставка разработана GS Labs.",
+          "Объём выпуска относится к 2026 году."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "medium"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "PR"
+              ],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e01-c",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "PR"
+        ],
+        "summary": "ЦТС («Цифровые Телевизионные Системы»), предприятие GS Group в Гусеве Калининградской области, выпустило 30-миллионную телевизионную приставку — юбилейный производственный показатель группы в домене цифрового ТВ.",
+        "claims": [
+          {
+            "text": "ЦТС выпустила 30-миллионную телевизионную приставку.",
+            "evidence_quote": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку."
+          },
+          {
+            "text": "Предприятие ЦТС находится в Гусеве Калининградской области.",
+            "evidence_quote": "Предприятие находится в Гусеве Калининградской области и входит в GS Group."
+          },
+          {
+            "text": "ЦТС входит в GS Group.",
+            "evidence_quote": "Предприятие находится в Гусеве Калининградской области и входит в GS Group."
+          }
+        ],
+        "impact": "Позитивный инфоповод о масштабе производства группы в основном продуктовом домене GS Labs (ТВ-приставки, цифровое телевидение); может использоваться в коммуникациях о группе и её производственной базе. Прямого эффекта на продукты, обязательства, сроки или риски GS Labs материал не содержит.",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "e02-a",
+        "title": "Дефицит мощностей российских ЦОД усилился",
+        "text": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД.\n\nПодключение новых площадок в Москве может занимать от двух до пяти лет.",
+        "source_name": "Телеспутник",
+        "source_type": "rss",
+        "source_url": null,
+        "published_at": "2026-08-06T10:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e02-a",
+        "relevance": "relevant",
+        "roles": [
+          "PR",
+          "GR",
+          "HEAD"
+        ],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "infrastructure",
+        "impact_on_gs_labs": "Может влиять на стоимость и сроки размещения вычислительной инфраструктуры.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e02-a-f1",
+            "claim": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД.",
+            "evidence": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД."
+          },
+          {
+            "fact_id": "e02-a-f2",
+            "claim": "Подключение новых площадок в Москве может занимать от двух до пяти лет.",
+            "evidence": "Подключение новых площадок в Москве может занимать от двух до пяти лет."
+          }
+        ],
+        "forbidden_claims": [
+          "GS Labs уже столкнулась с нехваткой мощностей.",
+          "Новые подключения в Москве запрещены законом."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "not_relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e02-a",
+        "relevance": "borderline",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД; подключение новых площадок в Москве может занимать от двух до пяти лет.",
+        "claims": [
+          {
+            "text": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД.",
+            "evidence_quote": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД."
+          },
+          {
+            "text": "Подключение новых площадок в Москве может занимать от двух до пяти лет.",
+            "evidence_quote": "Подключение новых площадок в Москве может занимать от двух до пяти лет."
+          }
+        ],
+        "impact": "Дефицит мощностей в ключевых локациях может ограничивать размещение и масштабирование операторской инфраструктуры, включая хостинг видеоплатформ — потенциального контура клиентов GS Labs. Прямое влияние на компанию из текста не следует. Сигнал значим только как фоновый отраслевой тренд.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance",
+          "open_questions"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "e02-b",
+        "title": "Дефицит мощностей российских ЦОД усилился",
+        "text": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге.\n\nГодовой рост составил 15,7% и 31,3% соответственно.",
+        "source_name": "CNews",
+        "source_type": "html",
+        "source_url": null,
+        "published_at": "2026-08-06T11:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e02-b",
+        "relevance": "relevant",
+        "roles": [
+          "PR",
+          "GR",
+          "HEAD"
+        ],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "infrastructure",
+        "impact_on_gs_labs": "Может влиять на стоимость и сроки размещения вычислительной инфраструктуры.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e02-b-f1",
+            "claim": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге.",
+            "evidence": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс."
+          },
+          {
+            "fact_id": "e02-b-f2",
+            "claim": "Годовой рост составил 15,7% и 31,3% соответственно.",
+            "evidence": "Годовой рост составил 15,7% и 31,3% соответственно."
+          }
+        ],
+        "forbidden_claims": [
+          "GS Labs уже столкнулась с нехваткой мощностей.",
+          "Новые подключения в Москве запрещены законом."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "not_relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e02-b",
+        "relevance": "borderline",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [
+          "PR"
+        ],
+        "summary": "CNews сообщает об усилении дефицита мощностей российских ЦОД: средняя стоимость стойки 5 кВт достигла 170,8 тыс. руб. в Москве (+15,7% г/г) и 138 тыс. руб. в Санкт-Петербурге (+31,3% г/г).",
+        "claims": [
+          {
+            "text": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге.",
+            "evidence_quote": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге."
+          },
+          {
+            "text": "Годовой рост стоимости стойки 5 кВт составил 15,7% в Москве и 31,3% в Санкт-Петербурге.",
+            "evidence_quote": "Годовой рост составил 15,7% и 31,3% соответственно."
+          }
+        ],
+        "impact": "Рост стоимости и дефицит стойко-мест могут повышать инфраструктурные издержки операторов и хостинга сервисов в домене OTT/IPTV и цифровых платформ. Прямое влияние на GS Labs не подтверждено: зависимость компании или её клиентов от коммерческих ЦОД в Москве и Санкт-Петербурге неизвестна. Сигнал фоновый — рыночный контекст, а не действие, требующее реакции.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance",
+          "open_questions"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "e02-c",
+        "title": "Дефицит мощностей российских ЦОД усилился",
+        "text": "Стойки мощностью 15–20 кВт для задач ИИ уменьшают доступную ёмкость существующих машинных залов.\n\nУчастники рынка ожидают пересмотра планов размещения инфраструктуры.",
+        "source_name": "CIO: канал IT-руководителей",
+        "source_type": "telegram",
+        "source_url": null,
+        "published_at": "2026-08-06T12:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e02-c",
+        "relevance": "relevant",
+        "roles": [
+          "PR",
+          "GR",
+          "HEAD"
+        ],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "infrastructure",
+        "impact_on_gs_labs": "Может влиять на стоимость и сроки размещения вычислительной инфраструктуры.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e02-c-f1",
+            "claim": "Стойки мощностью 15–20 кВт для задач ИИ уменьшают доступную ёмкость существующих машинных залов.",
+            "evidence": "Стойки мощностью 15–20 кВт для задач ИИ уменьшают доступную ёмкость существующих машинных залов."
+          },
+          {
+            "fact_id": "e02-c-f2",
+            "claim": "Участники рынка ожидают пересмотра планов размещения инфраструктуры.",
+            "evidence": "Участники рынка ожидают пересмотра планов размещения инфраструктуры."
+          }
+        ],
+        "forbidden_claims": [
+          "GS Labs уже столкнулась с нехваткой мощностей.",
+          "Новые подключения в Москве запрещены законом."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "not_relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e02-c",
+        "relevance": "borderline",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "Российские ЦОД сталкиваются с усилением дефицита ёмкости: стойки 15–20 кВт под ИИ-нагрузки сокращают доступную ёмкость машинных залов, участники рынка ожидают пересмотра планов размещения инфраструктуры.",
+        "claims": [
+          {
+            "text": "Стойки мощностью 15–20 кВт для ИИ-задач уменьшают доступную ёмкость существующих машинных залов.",
+            "evidence_quote": "Стойки мощностью 15–20 кВт для задач ИИ уменьшают доступную ёмкость существующих машинных залов."
+          },
+          {
+            "text": "Участники рынка ожидают пересмотра планов размещения инфраструктуры на фоне дефицита мощностей.",
+            "evidence_quote": "Участники рынка ожидают пересмотра планов размещения инфраструктуры."
+          }
+        ],
+        "impact": "Общий инфраструктурный тренд без упоминания ТВ/OTT, операторов или GS Labs. Косвенно может отразиться на хостинге сервисов операторов — потенциальных клиентов компании, но прямое влияние на продукты или решения GS Labs из текста не следует. Повода для действий PR или GR нет.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance",
+          "open_questions"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "e03-a",
+        "title": "Отрасль обсуждает реформу лицензирования связи",
+        "text": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий.\n\nВедомство заявило, что модель должна повысить устойчивость сетей.",
+        "source_name": "Минцифры России",
+        "source_type": "regulator_site",
+        "source_url": null,
+        "published_at": "2026-08-20T12:30:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e03-a",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "telecom_regulation",
+        "impact_on_gs_labs": "Реформа может изменить правила работы операторов — клиентов и партнёров экосистемы цифрового ТВ.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e03-a-f1",
+            "claim": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий.",
+            "evidence": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий."
+          },
+          {
+            "fact_id": "e03-a-f2",
+            "claim": "Ведомство заявило, что модель должна повысить устойчивость сетей.",
+            "evidence": "Ведомство заявило, что модель должна повысить устойчивость сетей."
+          }
+        ],
+        "forbidden_claims": [
+          "Отрасль единогласно поддержала реформу.",
+          "Реформа уже принята."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e03-a",
+        "relevance": "relevant",
+        "importance": "high",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR",
+          "PR",
+          "HEAD"
+        ],
+        "summary": "Минцифры предложило реформу лицензирования операторов связи с введением трёх уровней лицензий, заявляя целью повышение устойчивости сетей; отрасль публично обсуждает инициативу, официальный идентификатор проекта НПА не указан.",
+        "claims": [
+          {
+            "text": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий",
+            "evidence_quote": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий"
+          },
+          {
+            "text": "Регулятор заявляет целью новой модели повышение устойчивости сетей",
+            "evidence_quote": "модель должна повысить устойчивость сетей"
+          }
+        ],
+        "impact": "Реформа может изменить регуляторные требования к операторам — ключевым клиентам и партнёрам GS Labs в OTT/IPTV и операторской инфраструктуре, и создать раннее окно для GR-участия в формировании правил. Публичное предложение регулятора меняет отраслевой нарратив, но пока не является принятым регулированием. Прямые обязательства для GS Labs в тексте не указаны.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "e03-b",
+        "title": "Отрасль обсуждает реформу лицензирования связи",
+        "text": "АМОР считает предложенную реформу риском для региональной конкуренции.\n\nАссоциация предложила институт аварийного оператора вместо передачи сети крупному игроку.",
+        "source_name": "Ассоциация малых операторов связи",
+        "source_type": "telegram",
+        "source_url": null,
+        "published_at": "2026-08-20T13:30:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e03-b",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "telecom_regulation",
+        "impact_on_gs_labs": "Реформа может изменить правила работы операторов — клиентов и партнёров экосистемы цифрового ТВ.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e03-b-f1",
+            "claim": "АМОР считает предложенную реформу риском для региональной конкуренции.",
+            "evidence": "АМОР считает предложенную реформу риском для региональной конкуренции."
+          },
+          {
+            "fact_id": "e03-b-f2",
+            "claim": "Ассоциация предложила институт аварийного оператора вместо передачи сети крупному игроку.",
+            "evidence": "Ассоциация предложила институт аварийного оператора вместо передачи сети крупному игроку."
+          }
+        ],
+        "forbidden_claims": [
+          "Отрасль единогласно поддержала реформу.",
+          "Реформа уже принята."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e03-b",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR"
+        ],
+        "summary": "Ассоциация малых операторов связи (АМОР) публично назвала предлагаемую реформу лицензирования связи риском для региональной конкуренции и предложила альтернативу — институт аварийного оператора вместо передачи сети крупному игроку. Официальный документ реформы в материале не идентифицирован.",
+        "claims": [
+          {
+            "text": "АМОР считает предложенную реформу лицензирования связи риском для региональной конкуренции.",
+            "evidence_quote": "АМОР считает предложенную реформу риском для региональной конкуренции."
+          },
+          {
+            "text": "АМОР предложила институт аварийного оператора как альтернативу передаче сети крупному игроку.",
+            "evidence_quote": "Ассоциация предложила институт аварийного оператора вместо передачи сети крупному игроку."
+          },
+          {
+            "text": "Обсуждаемая реформа содержит вариант передачи сети крупному игроку.",
+            "evidence_quote": "вместо передачи сети крупному игроку"
+          }
+        ],
+        "impact": "Реформа лицензирования может изменить структуру операторского рынка (консолидация сетей у крупного игрока против сохранения региональных операторов) — это среда, в которой работают потенциальные заказчики решений GS Labs для ТВ/OTT и операторской инфраструктуры. Пока это публичная позиция ассоциации без идентифицированного НПА, стадии и сроков; для GR сигнал означает задачу найти и связать объект реформы, а не самостоятельное регуляторное событие.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "e03-c",
+        "title": "Отрасль обсуждает реформу лицензирования связи",
+        "text": "Крупные операторы поддержали единые требования к устойчивости сетей, но попросили уточнить переходный период.\n\nСрок внесения проекта в Госдуму пока не назван.",
+        "source_name": "Коммерсант",
+        "source_type": "rss",
+        "source_url": null,
+        "published_at": "2026-08-20T14:30:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "e03-c",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "telecom_regulation",
+        "impact_on_gs_labs": "Реформа может изменить правила работы операторов — клиентов и партнёров экосистемы цифрового ТВ.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "e03-c-f1",
+            "claim": "Крупные операторы поддержали единые требования к устойчивости сетей, но попросили уточнить переходный период.",
+            "evidence": "Крупные операторы поддержали единые требования к устойчивости сетей, но попросили уточнить переходный период."
+          },
+          {
+            "fact_id": "e03-c-f2",
+            "claim": "Срок внесения проекта в Госдуму пока не назван.",
+            "evidence": "Срок внесения проекта в Госдуму пока не назван."
+          }
+        ],
+        "forbidden_claims": [
+          "Отрасль единогласно поддержала реформу.",
+          "Реформа уже принята."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "e03-c",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR"
+        ],
+        "summary": "Отраслевое обсуждение проекта реформы лицензирования связи: крупные операторы поддержали единые требования к устойчивости сетей, но просят уточнить переходный период; срок внесения проекта в Госдуму не назван.",
+        "claims": [
+          {
+            "text": "Крупные операторы поддержали единые требования к устойчивости сетей в рамках обсуждаемой реформы лицензирования связи.",
+            "evidence_quote": "Крупные операторы поддержали единые требования к устойчивости сетей"
+          },
+          {
+            "text": "Операторы попросили уточнить переходный период по реформе.",
+            "evidence_quote": "но попросили уточнить переходный период"
+          },
+          {
+            "text": "Срок внесения проекта реформы в Госдуму пока не определён.",
+            "evidence_quote": "Срок внесения проекта в Госдуму пока не назван."
+          }
+        ],
+        "impact": "Реформа лицензирования операторов связи может изменить требования к операторской инфраструктуре — рынку, на который GS Labs поставляет решения для ТВ/OTT и управления доступом. На текущем раннем этапе (проект не внесён в Госдуму, требования не детализированы) прямое влияние на продукты компании не подтверждено. Целесообразно отслеживать появление официального текста и идентификатора проекта.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "n02-1",
+        "title": "Маркировка контента, созданного с применением ИИ",
+        "text": "Рабочая группа предложила обязательную видимую маркировку любого аудиовизуального контента, при создании которого применялся генеративный ИИ. Порог участия ИИ в проекте не определён.",
+        "source_name": "Официальный контур НПА",
+        "source_type": "regulator_site",
+        "source_url": null,
+        "published_at": "2026-03-12T12:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "n02-1",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "npa",
+        "impact_on_gs_labs": "Может влиять на функции создания и распространения цифрового контента.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "n02-1-f1",
+            "claim": "Предложена обязательная видимая маркировка аудиовизуального ИИ-контента.",
+            "evidence": "Рабочая группа предложила обязательную видимую маркировку любого аудиовизуального контента, при создании которого применялся генеративный ИИ."
+          },
+          {
+            "fact_id": "n02-1-f2",
+            "claim": "Порог участия ИИ не определён.",
+            "evidence": "Порог участия ИИ в проекте не определён."
+          }
+        ],
+        "forbidden_claims": [
+          "Закон запрещает использование генеративного ИИ.",
+          "Технический стандарт маркировки уже утверждён."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "medium"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "PR"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "n02-1",
+        "relevance": "relevant",
+        "importance": "high",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR",
+          "HEAD",
+          "PR"
+        ],
+        "summary": "Рабочая группа при регуляторе предложила ввести обязательную видимую маркировку любого аудиовизуального контента, созданного с применением генеративного ИИ; порог участия ИИ, при котором требуется маркировка, не определён. Официальный идентификатор НПА отсутствует — это ранняя инициатива, а не принятый или внесённый проект.",
+        "claims": [
+          {
+            "text": "Рабочая группа предложила ввести обязательную маркировку аудиовизуального контента, при создании которого применялся генеративный ИИ.",
+            "evidence_quote": "Рабочая группа предложила обязательную видимую маркировку любого аудиовизуального контента, при создании которого применялся генеративный ИИ."
+          },
+          {
+            "text": "Предлагаемая маркировка является видимой для пользователя.",
+            "evidence_quote": "обязательную видимую маркировку"
+          },
+          {
+            "text": "Порог участия ИИ, при котором контент подлежит маркировке, не определён.",
+            "evidence_quote": "Порог участия ИИ в проекте не определён."
+          }
+        ],
+        "impact": "Обязательная маркировка ИИ-контента потенциально затрагивает основной продуктовый контур GS Labs: платформам цифрового ТВ/OTT-IPTV и системам управления контентом может потребоваться функциональность отображения и учёта маркировки. Неопределённый порог создаёт риск широкого охвата требований. Ранняя стадия инициативы даёт окно для формирования отраслевой позиции через GR.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "n02-2",
+        "title": "Маркировка контента, созданного с применением ИИ",
+        "text": "В новой редакции маркировка обязательна только для контента, преимущественно созданного большой генеративной моделью. Платформы свыше 500 тысяч пользователей должны предоставить техническую возможность маркировки; ответственность будет определена отдельно.",
+        "source_name": "Официальный контур НПА",
+        "source_type": "regulator_site",
+        "source_url": null,
+        "published_at": "2026-06-28T12:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "n02-2",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "npa",
+        "impact_on_gs_labs": "Может влиять на функции создания и распространения цифрового контента.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "n02-2-f1",
+            "claim": "В новой редакции появился критерий преимущественного создания большой генеративной моделью.",
+            "evidence": "В новой редакции маркировка обязательна только для контента, преимущественно созданного большой генеративной моделью."
+          },
+          {
+            "fact_id": "n02-2-f2",
+            "claim": "Порог платформы составляет 500 тысяч пользователей.",
+            "evidence": "Платформы свыше 500 тысяч пользователей должны предоставить техническую возможность маркировки; ответственность будет определена отдельно."
+          },
+          {
+            "fact_id": "n02-2-f3",
+            "claim": "Ответственность ещё не определена.",
+            "evidence": "Платформы свыше 500 тысяч пользователей должны предоставить техническую возможность маркировки; ответственность будет определена отдельно."
+          }
+        ],
+        "forbidden_claims": [
+          "Закон запрещает использование генеративного ИИ.",
+          "Технический стандарт маркировки уже утверждён."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "high"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "PR"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "n02-2",
+        "relevance": "relevant",
+        "importance": "high",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR",
+          "HEAD"
+        ],
+        "summary": "Новая редакция правил маркировки ИИ-контента: обязательна маркировка только контента, преимущественно созданного большой генеративной моделью; платформы с аудиторией свыше 500 тыс. пользователей обязаны обеспечить техническую возможность маркировки, ответственность вынесена на отдельное определение.",
+        "claims": [
+          {
+            "text": "В новой редакции обязательная маркировка ограничена контентом, преимущественно созданным большой генеративной моделью.",
+            "evidence_quote": "В новой редакции маркировка обязательна только для контента, преимущественно созданного большой генеративной моделью."
+          },
+          {
+            "text": "Платформы с аудиторией свыше 500 тысяч пользователей должны предоставить техническую возможность маркировки.",
+            "evidence_quote": "Платформы свыше 500 тысяч пользователей должны предоставить техническую возможность маркировки"
+          },
+          {
+            "text": "Ответственность за нарушение требований маркировки будет определена отдельным решением.",
+            "evidence_quote": "ответственность будет определена отдельно"
+          }
+        ],
+        "impact": "Создаёт потенциальное продуктовое обязательство для платформ в домене OTT/цифрового контента, где работают решения GS Labs, включая техническую возможность маркировки. Сужение обязательной маркировки до контента от больших генеративных моделей задаёт охват требований, но ответственность пока не определена. Требуется идентификация НПА и оценка применимости к продуктам и клиентам компании.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "n02-3",
+        "title": "Маркировка контента, созданного с применением ИИ",
+        "text": "Подписан Федеральный закон № 243-ФЗ. Нормы о маркировке ИИ-контента и уведомлении пользователей вступают в силу 1 марта 2027 года. Конкретные технические требования должны быть установлены подзаконными актами.",
+        "source_name": "Официальный контур НПА",
+        "source_type": "regulator_site",
+        "source_url": null,
+        "published_at": "2026-07-26T12:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "n02-3",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "npa",
+        "impact_on_gs_labs": "Может влиять на функции создания и распространения цифрового контента.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "n02-3-f1",
+            "claim": "Подписан Федеральный закон № 243-ФЗ.",
+            "evidence": "Подписан Федеральный закон № 243-ФЗ."
+          },
+          {
+            "fact_id": "n02-3-f2",
+            "claim": "Нормы о маркировке вступают в силу 1 марта 2027 года.",
+            "evidence": "Нормы о маркировке ИИ-контента и уведомлении пользователей вступают в силу 1 марта 2027 года."
+          },
+          {
+            "fact_id": "n02-3-f3",
+            "claim": "Технические требования ожидаются в подзаконных актах.",
+            "evidence": "Конкретные технические требования должны быть установлены подзаконными актами."
+          }
+        ],
+        "forbidden_claims": [
+          "Закон запрещает использование генеративного ИИ.",
+          "Технический стандарт маркировки уже утверждён."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "high"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "PR"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "n02-3",
+        "relevance": "relevant",
+        "importance": "high",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR",
+          "HEAD"
+        ],
+        "summary": "Подписан Федеральный закон № 243-ФЗ о маркировке ИИ-контента и уведомлении пользователей; нормы вступают в силу 1 марта 2027 года, технические требования будут установлены подзаконными актами.",
+        "claims": [
+          {
+            "text": "Подписан Федеральный закон № 243-ФЗ.",
+            "evidence_quote": "Подписан Федеральный закон № 243-ФЗ."
+          },
+          {
+            "text": "Нормы о маркировке ИИ-контента и уведомлении пользователей вступают в силу 1 марта 2027 года.",
+            "evidence_quote": "Нормы о маркировке ИИ-контента и уведомлении пользователей вступают в силу 1 марта 2027 года."
+          },
+          {
+            "text": "Конкретные технические требования будут установлены подзаконными актами.",
+            "evidence_quote": "Конкретные технические требования должны быть установлены подзаконными актами."
+          }
+        ],
+        "impact": "Новый закон создаёт обязательства по маркировке ИИ-контента и уведомлению пользователей с фиксированным сроком 01.03.2027 — это затрагивает платформы цифрового ТВ, OTT/IPTV и сервисы работы с контентом, то есть основной продуктовый контур GS Labs и её операторских клиентов. Поскольку технические требования вынесены в подзаконные акты, открывается окно GR-мониторинга и возможного участия в формировании требований. Немедленных действий срок не требует, но закон закладывает будущие затраты на исполнение в продуктах управления доступом и правами на контент.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "real-01",
+        "title": "Билайн и Правительство Хабаровского края договорились о внедрении ИИ-решений для развития региона",
+        "text": "Билайн и Правительство Хабаровского края договорились о внедрении ИИ-решений для развития региона\nБилайн и Правительство Хабаровского края в рамках Восточного экономического форума-2026 заключили соглашение о сотрудничестве в сфере цифровизациирегиона. Документ подписали заместитель Председателя Правительства Хабаровского края по экономическим вопросам Авилова Мария Юрьевна и и.о. заместителя генерального директора Билайна по корпоративному бизнесу Александр Шведов.\nСоглашение, рассчитанное на пять лет, определяет стратегические направления взаимодействия сторон. Ключевой фокус сделан на комплексной цифровой трансформации края с применением инструментов искусственного интеллекта — от модернизации телеком-инфраструктуры до внедрения «умных» сервисов в городской среде. Реализация этих планов станет важным вкладом в достижение целей национального проекта «Экономика данных и цифровая трансформация государства», направленного на создание высокотехнологичной среды для жизни и бизнеса.\nПриоритеты сотрудничества:\n- Развитие голосовой связи и мобильного интернета. Первоочередная задача — обеспечение устойчивой связью удаленных и северных территорий. В рамках соглашения покрытие 4G появится в рабочем поселке Охотск и селе Чумикан, что значительно повысит качество голосовой связи и доступа в интернет для местных жителей.\n- ИИ-решения для широкого перечня отраслей региона: от модернизации контакт-центров и телефонных сервисов региона до здравоохранения и МФЦ. Их внедрение позволит сделать взаимодействие граждан с государственными службами более оперативным и эффективным.\n- Технологии видеоаналитики для промышленности и «Умного города». Внедрение автономных мобильных комплексов наблюдения и систем мониторинга городских служб. Искусственный интеллект будет помогать в управлении городским хозяйством, контролем за производством работ и обеспечении безопасности на улицах.\n- комплексные инфраструктурные проекты на территории региона, в том числе по модели государственно-частного партнерства.\nАлександр Шведов, и.о. заместителя генерального директора Билайна по корпоративному бизнесу:\n«Подписанное соглашение открывает новый этап системного партнерства Билайна и Хабаровского края. Для нас принципиально важно, чтобы качественная связь и современные цифровые сервисы становились доступными не только жителям крупных городов, но и самых отдаленных поселков региона. Мы стремимся к тому, чтобы современные технологии, основанные на искусственном интеллекте, работали на благо каждого жителя — будь то житель мегаполиса или отдаленного поселка — делая жизнь людей удобнее».\nМария Авилова, зампред краевого Правительства по экономическим вопросам:\n«Подписание этого соглашения — важный шаг в цифровом развитии края. Наша главная цель — чтобы модернизация инфраструктуры связи стала очередным шагом к развитию современных цифровых сервисов, вывела на новый уровень работу ключевых отраслей. Каждый из этих проектов направлен на главное — повышение комфорта и качества жизни жителей Хабаровского края».",
+        "source_name": "CNews Телеком",
+        "source_type": "rss",
+        "source_url": "https://telecom.cnews.ru/news/line/2026-09-04_bilajn_i_pravitelstvo_habarovskogo",
+        "published_at": "2026-09-04T13:21:00+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "real-01",
+        "relevance": "irrelevant",
+        "roles": [
+          "PR",
+          "GR"
+        ],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "regional_ai_agreement",
+        "impact_on_gs_labs": "Общий отраслевой пример ИИ и телеком-инфраструктуры; прямой связи с GS Labs нет.",
+        "impact_confidence": "medium",
+        "must_facts": [
+          {
+            "fact_id": "real-01-f1",
+            "claim": "Соглашение, рассчитанное на пять лет, определяет стратегические направления взаимодействия сторон.",
+            "evidence": "Соглашение, рассчитанное на пять лет, определяет стратегические направления взаимодействия сторон."
+          },
+          {
+            "fact_id": "real-01-f2",
+            "claim": "Первоочередная задача — обеспечение устойчивой связью удаленных и северных территорий.",
+            "evidence": "Первоочередная задача — обеспечение устойчивой связью удаленных и северных территорий."
+          },
+          {
+            "fact_id": "real-01-f3",
+            "claim": "В рамках соглашения покрытие 4G появится в рабочем поселке Охотск и селе Чумикан",
+            "evidence": "В рамках соглашения покрытие 4G появится в рабочем поселке Охотск и селе Чумикан, что значительно повысит качество голосовой связи и доступа в интернет для местных жителей."
+          },
+          {
+            "fact_id": "real-01-f4",
+            "claim": "ИИ-решения для широкого перечня отраслей региона: от модернизации контакт-центров и телефонных сервисов региона до здравоохранения и МФЦ.",
+            "evidence": "- ИИ-решения для широкого перечня отраслей региона: от модернизации контакт-центров и телефонных сервисов региона до здравоохранения и МФЦ."
+          }
+        ],
+        "forbidden_claims": [
+          "GS Labs участвует в соглашении.",
+          "Соглашение касается CAS или DRM."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "captured_source",
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "borderline",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "low",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "GR"
+              ],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "real-01",
+        "relevance": "borderline",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "PR"
+        ],
+        "summary": "Билайн и Правительство Хабаровского края на ВЭФ-2026 заключили пятилетнее соглашение о цифровизации региона с фокусом на ИИ: покрытие 4G в отдалённых пунктах, ИИ для контакт-центров, здравоохранения и МФЦ, видеоаналитика для «Умного города» и инфраструктурные проекты по модели ГЧП.",
+        "claims": [
+          {
+            "text": "Билайн и Правительство Хабаровского края заключили соглашение о сотрудничестве в сфере цифровизации региона в рамках ВЭФ-2026.",
+            "evidence_quote": "Билайн и Правительство Хабаровского края в рамках Восточного экономического форума-2026 заключили соглашение о сотрудничестве в сфере цифровизациирегиона."
+          },
+          {
+            "text": "Соглашение рассчитано на пять лет и определяет стратегические направления взаимодействия, с ключевым фокусом на цифровую трансформацию края с применением ИИ.",
+            "evidence_quote": "Соглашение, рассчитанное на пять лет, определяет стратегические направления взаимодействия сторон."
+          },
+          {
+            "text": "В рамках соглашения покрытие 4G появится в посёлке Охотск и селе Чумикан.",
+            "evidence_quote": "В рамках соглашения покрытие 4G появится в рабочем поселке Охотск и селе Чумикан"
+          },
+          {
+            "text": "ИИ-решения охватят контакт-центры, телефонные сервисы региона, здравоохранение и МФЦ.",
+            "evidence_quote": "ИИ-решения для широкого перечня отраслей региона: от модернизации контакт-центров и телефонных сервисов региона до здравоохранения и МФЦ."
+          },
+          {
+            "text": "Стороны планируют комплексные инфраструктурные проекты в регионе, в том числе по модели государственно-частного партнёрства.",
+            "evidence_quote": "комплексные инфраструктурные проекты на территории региона, в том числе по модели государственно-частного партнерства."
+          }
+        ],
+        "impact": "Крупный оператор на пять лет закрепляет стратегию входа в ИИ-сервисы для регионального госсектора и «Умного города» — заметный рыночный сигнал в смежном цифровом домене и потенциальный контекст конкуренции или партнёрства. Прямого пересечения с основным продуктовым контуром GS Labs (ТВ/OTT/IPTV, управление доступом и правами на контент) материал не фиксирует. Ценно для PR как отраслевой тренд и движение конкурента, без прямой коммуникационной задачи.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "real-02",
+        "title": "Определились победители чемпионата России по боксу в Саранске",
+        "text": "Определились победители чемпионата России по боксу в Саранске\nМосква. 5 сентября. INTERFAX.RU - С 27 августа по 4 сентября в Саранске проходил чемпионат России по боксу среди мужчин, в котором участвовали 312 спортсменов из 62 регионов страны.\nПо итогам девяти дней соревнований определились 13 чемпионов России.\nПобедители чемпионата:\nдо 48 кг — Эдмонд Худоян (Челябинская область) - стал семикратным чемпионом России\nдо 51 кг — Расул Салиев (Дагестан)\nдо 54 кг — Тимурбек Маамадалиев (Москва)\nдо 57 кг — Андрей Пегливанян (Краснодарский край-Челябинская) - стал трехкратным чемпионом России\nдо 60 кг — Руслан Белоусов (Мордовия-Хабаровский)\nдо 63,5 кг — Илья Попов (Санкт-Петербург) - стал трехкратным чемпионом России\nдо 67 кг — Егор Козорезов (Новосибирская область-Приморский)\nдо 71 кг — Александр Зырянов (Санкт-Петербург)\nдо 75 кг — Сергей Сергеев (Татарстан) - стал двукратным чемпионом России\nдо 80 кг — Бешто Шавлаев (Чеченская Республика)\nдо 86 кг — Савелий Садома (Хабаровский край) - стал двукратным чемпионом России\nдо 92 кг — Денис Козлов (Мордовия)\nсвыше 92 кг — Владислав Муравин (Санкт-Петербург)\nПобедители чемпионата России по боксу получат по 1,5 млн рублей. Серебряным призерам полагается по 250 тыс. рублей, бронзовым – по 125 тыс.\nОбщий призовой фонд составляет 26 млн руб.",
+        "source_name": "Интерфакс",
+        "source_type": "rss",
+        "source_url": "https://www.sport-interfax.ru/1113303",
+        "published_at": "2026-09-05T00:10:00+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "real-02",
+        "relevance": "irrelevant",
+        "roles": [],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "sport",
+        "impact_on_gs_labs": "Нет связи с продуктами, рынками или регуляторными рисками GS Labs.",
+        "impact_confidence": "medium",
+        "must_facts": [
+          {
+            "fact_id": "real-02-f1",
+            "claim": "С 27 августа по 4 сентября в Саранске проходил чемпионат России по боксу среди мужчин, в котором участвовали 312 спортсменов из 62 регионов страны.",
+            "evidence": "INTERFAX.RU - С 27 августа по 4 сентября в Саранске проходил чемпионат России по боксу среди мужчин, в котором участвовали 312 спортсменов из 62 регионов страны."
+          },
+          {
+            "fact_id": "real-02-f2",
+            "claim": "Общий призовой фонд составляет 26 млн руб.",
+            "evidence": "Общий призовой фонд составляет 26 млн руб."
+          }
+        ],
+        "forbidden_claims": [
+          "GS Labs является спонсором чемпионата.",
+          "Событие относится к цифровому телевидению."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "captured_source",
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "irrelevant",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "low",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [],
+              "gpt_oss_blind": [],
+              "deepseek_blind": []
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "real-02",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "Спортивная новость об итогах чемпионата России по боксу не имеет связи с продуктами, рынками, регуляторными или репутационными интересами GS Labs.",
+        "claims": [],
+        "impact": "",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "real-03",
+        "title": "Минцифры рассмотрит модель \"аварийного оператора\" для реформы рынка связи",
+        "text": "Минцифры России прорабатывает предложения по созданию института аварийного, или резервного, оператора связи. Об этом говорится в письме ведомства, которое оно направило Ассоциации малых операторов связи регионов 3 сентября.\nВ письме Минцифры указано, что ведомство прорабатывает предложенные ассоциацией альтернативные варианты формирования отрасли, в том числе модель аварийного (резервного) оператора связи. Документ был направлен в ответ на обращения ассоциации от 17 и 18 августа по вопросу подготовки проекта федерального закона о реформировании отрасли связи.\nПредложенная ассоциацией модель предполагает, что оператор заранее заключает предварительный договор с другим оператором, имеющим лицензию на оказание услуг связи в соответствующем регионе. Именно этот оператор становится аварийным и при необходимости получает сеть первого оператора во временное пользование. В предварительном договоре предусматривается выплата собственнику сети 10% выручки на период действия соглашения.\nЕсли Роскомнадзор выявляет нарушение условий лицензии, ее действие приостанавливается, а оператору устанавливается срок для устранения нарушения. После этого предварительный договор с аварийным оператором вступает в силу, а сеть передается ему во временное пользование до окончания периода приостановки лицензии.\nЕсли оператор устраняет нарушение, Роскомнадзор или межведомственная комиссия подтверждает выполнение требований и возобновляет действие лицензии. Если требования не выполнены, лицензия не возобновляется, а сеть может быть передана аварийному оператору в постоянное пользование. При этом собственнику сети должна выплачиваться компенсация за право пользования инфраструктурой.\nВо время выступления на отраслевой пресс-конференции \"Реформа телеком-отрасли: что ждет российский рынок связи?\" глава ассоциации Дмитрий Галушко отметил, что такая схема должна дать оператору возможность исправить нарушение и сохранить бизнес, а не приводить к немедленной передаче сети. По его словам, лицензию, в случае нарушения, следует временно приостанавливать, а не отбирать.\nСпикер также отметил возможные последствия реформы лицензирования для регионального рынка. По его оценке, новые финансовые требования могут особенно сильно повлиять на небольших операторов, работающих за пределами крупнейших городов. Дмитрий отметил, что условия работы операторов в Москве и Санкт-Петербурге заметно отличаются от ситуации в большинстве регионов, в том числе по объему выручки и плотности абонентской базы.\nВ случае введения новых требований к размеру выручки или финансовым показателям операторов часть региональных компаний может прекратить работу, а их сети придется передавать федеральным операторам. Он также предупредил, что новые финансовые и лицензионные требования могут затормозить развитие региональных операторов. По его словам, некоторые компании за 10–15 лет выросли с выручки около 10 млн рублей до 1 млрд рублей, постепенно развивая бизнес на своем рынке. Если значительную часть средств придется направить на выполнение новых требований, у операторов может остаться меньше ресурсов для дальнейшего расширения.\nВ письме Минцифры не указаны сроки принятия решений по предложенной модели и параметры будущего законопроекта. Ведомство лишь подтвердило, что продолжает прорабатывать предложения ассоциации.\nНапомним, ранее \"Кабельщик\" писал, что реформа лицензирования связи может особенно сильно ударить по новым регионам.\n- Войдите или зарегистрируйтесь, чтобы оставлять комментарии",
+        "source_name": "Кабельщик",
+        "source_type": "sitemap",
+        "source_url": "https://www.cableman.ru/content/mintsifry-rassmotrit-model-avariinogo-operatora-dlya-reformy-rynka-svyazi",
+        "published_at": "2026-09-04T14:54:00+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "real-03",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "telecom_regulation",
+        "impact_on_gs_labs": "Может изменить рынок операторов связи — клиентов и партнёров решений цифрового ТВ.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "real-03-f1",
+            "claim": "Минцифры России прорабатывает предложения по созданию института аварийного, или резервного, оператора связи.",
+            "evidence": "Минцифры России прорабатывает предложения по созданию института аварийного, или резервного, оператора связи."
+          },
+          {
+            "fact_id": "real-03-f2",
+            "claim": "Предложенная ассоциацией модель предполагает, что оператор заранее заключает предварительный договор с другим оператором, имеющим лицензию на оказание услуг связи в соответствующем регионе.",
+            "evidence": "Предложенная ассоциацией модель предполагает, что оператор заранее заключает предварительный договор с другим оператором, имеющим лицензию на оказание услуг связи в соответствующем регионе."
+          },
+          {
+            "fact_id": "real-03-f3",
+            "claim": "В предварительном договоре предусматривается выплата собственнику сети 10% выручки на период действия соглашения.",
+            "evidence": "В предварительном договоре предусматривается выплата собственнику сети 10% выручки на период действия соглашения."
+          },
+          {
+            "fact_id": "real-03-f4",
+            "claim": "Если Роскомнадзор выявляет нарушение условий лицензии, ее действие приостанавливается, а оператору устанавливается срок для устранения нарушения.",
+            "evidence": "Если Роскомнадзор выявляет нарушение условий лицензии, ее действие приостанавливается, а оператору устанавливается срок для устранения нарушения."
+          },
+          {
+            "fact_id": "real-03-f5",
+            "claim": "В письме Минцифры не указаны сроки принятия решений по предложенной модели и параметры будущего законопроекта.",
+            "evidence": "В письме Минцифры не указаны сроки принятия решений по предложенной модели и параметры будущего законопроекта."
+          }
+        ],
+        "forbidden_claims": [
+          "Модель аварийного оператора уже принята.",
+          "Минцифры установило срок вступления реформы."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "captured_source",
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "high",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "medium"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "real-03",
+        "relevance": "relevant",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR",
+          "PR"
+        ],
+        "summary": "Минцифры письмом от 3 сентября подтвердила проработку модели «аварийного (резервного) оператора» в рамках подготовки проекта федерального закона о реформировании отрасли связи; сроки и параметры законопроекта не раскрыты, ассоциация публично предупреждает о рисках для региональных операторов.",
+        "claims": [
+          {
+            "text": "Минцифры прорабатывает создание института аварийного (резервного) оператора связи, предложенное ассоциацией малых операторов.",
+            "evidence_quote": "Минцифры России прорабатывает предложения по созданию института аварийного, или резервного, оператора связи."
+          },
+          {
+            "text": "Письмо направлено в ответ на обращения ассоциации по вопросу подготовки проекта федерального закона о реформировании отрасли связи.",
+            "evidence_quote": "Документ был направлен в ответ на обращения ассоциации от 17 и 18 августа по вопросу подготовки проекта федерального закона о реформировании отрасли связи."
+          },
+          {
+            "text": "Предложенная модель предусматривает передачу сети аварийному оператору на период приостановки лицензии с выплатой собственнику 10% выручки.",
+            "evidence_quote": "В предварительном договоре предусматривается выплата собственнику сети 10% выручки на период действия соглашения."
+          },
+          {
+            "text": "Глава ассоциации предупредил, что новые финансовые требования могут привести к уходу части региональных операторов и передаче их сетей федеральным.",
+            "evidence_quote": "В случае введения новых требований к размеру выручки или финансовым показателям операторов часть региональных компаний может прекратить работу, а их сети придется передавать федеральным операторам."
+          },
+          {
+            "text": "Сроки принятия решений и параметры будущего законопроекта в письме не указаны.",
+            "evidence_quote": "В письме Минцифры не указаны сроки принятия решений по предложенной модели и параметры будущего законопроекта."
+          }
+        ],
+        "impact": "Реформа лицензирования может перестроить рынок операторов связи — консолидация, уход региональных игроков, переход сетей к федеральным — то есть изменить ландшафт потенциальных клиентов GS Labs в ТВ/OTT/IPTV. На данной стадии подтверждена только проработка предложений, проект закона не идентифицирован, поэтому ценность сигнала — раннее GR-отслеживание и подготовка позиции до появления окна обсуждения. Срочных действий не требуется.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "rf-007",
+        "title": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества",
+        "text": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве.\nНикифорову предъявлены обвинения\nБывшему министру связи и массовых коммуникаций главе Минкомсвязи России Николаю Никифорову следователи МВД предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве. Об этом сообщил «Коммерсант».\nКак пишет издание, Никифоров стал фигурантом уголовного дела финансовой пирамиды Finiko, в котором расследуется хищении 5 млрд руб. у 8 тыс. вкладчиков.\nОбвинение Никифорову было предъявлено в заочной форме, поскольку бывший министр сейчас проживает в основном в ОАЭ, «бывая на родине наездами».\nЧем грозит заочное обвинение\nЗаочное обвинение может стать основанием для объявления Никифорова в федеральный, а потом в международный розыск.\nПрежде, чем Николай Никифоров будет объявлен в розыск по линии Интерпола, его надлежит заочно арестовать через суд. Если это произойдет, велика вероятность задержания Никифорова на территории ОАЭ и экстрадиции в Россию.\nОрганизация преступного сообщества наказывается по статье 210 УК РФ лишением свободы на срок до 20 лет и штрафом до 5 млн руб.\nМаксимальное наказание за особо крупное мошенничество (то есть мошенничество в размере свыше 12 млн руб.) наказывается согласно части 4 статьи 159 лишением свободы сроком до 10 лет и штрафом до 1 млн руб. или штрафом в размере дохода за период до трех лет.\nИстория финансовой пирамиды Finiko\nФинансовая пирамида Finiko, созданная на родине Никифорова в Татарстане, привлекала вкладчиков, обещая выплату до 25% годовых. К моменту прекращения компанией выплат, около 8 тыс. человек стали потерпевшими, а сумма их потерь по оценке МВД составляет около 5 млрд руб.\nКак пишет «Коммерсант», деньги, собранные Finiko, выводились за границу с участием архитектурного бюро «Иннополис Архитект».\nЭта компания занимается, в частности, застройкой города Иннополис недалеко от Казани.\nВозглавляет бюро дизайнер Азат Тухватуллин, которому принадлежит половина компании. Вторым учредителем является Николай Никифоров через ООО «Иннополис Развитие».\nАзат Тухватуллин был задержан в конце августа 2026 г. в Иннополисе. К операции по его задержанию привлекалась местная полиция и СОБР Росгвардии. 1 сентября по решению Мещанского райсуда он был помещен в СИЗО.\nВ ОАЭ задержан и уже передан властям России еще один фигурант уголовного дела Finiko Эдвард Сабиров.\nЧем знаменит Николай Никифоров\nНиколай Никифоров - самый молодой министр в истории современной России. В 2012 г. в 29 лет он возглавил Министерство связи и массовых коммуникаций, где занимал кресло министра до 2018 г.\nДо этого в 2010-2012 гг. он был министром связи Татарстана.\nНаукоград Иннополис, который часто называют первым новым городом в современной России, был построен в 2015 г. по инициативе в том числе и Никифорова.",
+        "source_name": "CNews Телеком",
+        "source_type": "rss",
+        "source_url": "https://telecom.cnews.ru/news/top/2026-09-04_byvshij_ministr_svyazi_rossii",
+        "published_at": "2026-09-04T16:28:00+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-007",
+        "relevance": "irrelevant",
+        "roles": [],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "technology_market",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "medium",
+        "must_facts": [
+          {
+            "fact_id": "rf-007-f1",
+            "claim": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве.",
+            "evidence": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве."
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:7",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "borderline",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "PR"
+              ],
+              "gpt_oss_blind": [],
+              "deepseek_blind": []
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-007",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "Уголовное дело против экс-министра связи Никифорова по делу финансовой пирамиды Finiko — криминально-политическая новость без связи с продуктами, рынками (OTT/IPTV, цифровое ТВ, защищённые сервисы), регуляторными рисками или репутацией GS Labs; Иннополис упомянут лишь как объект застройки бюро, без подтверждённой связи с компанией.",
+        "claims": [],
+        "impact": "",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "rf-016",
+        "title": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества",
+        "text": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве.\nНикифорову предъявлены обвинения\nБывшему министру связи и массовых коммуникаций главе Минкомсвязи России Николаю Никифорову следователи МВД предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве. Об этом сообщил «Коммерсант».\nКак пишет издание, Никифоров стал фигурантом уголовного дела финансовой пирамиды Finiko, в котором расследуется хищении 5 млрд руб. у 8 тыс. вкладчиков.\nОбвинение Никифорову было предъявлено в заочной форме, поскольку бывший министр сейчас проживает в основном в ОАЭ, «бывая на родине наездами».\nЧем грозит заочное обвинение\nЗаочное обвинение может стать основанием для объявления Никифорова в федеральный, а потом в международный розыск.\nПрежде, чем Николай Никифоров будет объявлен в розыск по линии Интерпола, его надлежит заочно арестовать через суд. Если это произойдет, велика вероятность задержания Никифорова на территории ОАЭ и экстрадиции в Россию.\nОрганизация преступного сообщества наказывается по статье 210 УК РФ лишением свободы на срок до 20 лет и штрафом до 5 млн руб.\nМаксимальное наказание за особо крупное мошенничество (то есть мошенничество в размере свыше 12 млн руб.) наказывается согласно части 4 статьи 159 лишением свободы сроком до 10 лет и штрафом до 1 млн руб. или штрафом в размере дохода за период до трех лет.\nИстория финансовой пирамиды Finiko\nФинансовая пирамида Finiko, созданная на родине Никифорова в Татарстане, привлекала вкладчиков, обещая выплату до 25% годовых. К моменту прекращения компанией выплат, около 8 тыс. человек стали потерпевшими, а сумма их потерь по оценке МВД составляет около 5 млрд руб.\nКак пишет «Коммерсант», деньги, собранные Finiko, выводились за границу с участием архитектурного бюро «Иннополис Архитект».\nЭта компания занимается, в частности, застройкой города Иннополис недалеко от Казани.\nВозглавляет бюро дизайнер Азат Тухватуллин, которому принадлежит половина компании. Вторым учредителем является Николай Никифоров через ООО «Иннополис Развитие».\nАзат Тухватуллин был задержан в конце августа 2026 г. в Иннополисе. К операции по его задержанию привлекалась местная полиция и СОБР Росгвардии. 1 сентября по решению Мещанского райсуда он был помещен в СИЗО.\nВ ОАЭ задержан и уже передан властям России еще один фигурант уголовного дела Finiko Эдвард Сабиров.\nЧем знаменит Николай Никифоров\nНиколай Никифоров - самый молодой министр в истории современной России. В 2012 г. в 29 лет он возглавил Министерство связи и массовых коммуникаций, где занимал кресло министра до 2018 г.\nДо этого в 2010-2012 гг. он был министром связи Татарстана.\nНаукоград Иннополис, который часто называют первым новым городом в современной России, был построен в 2015 г. по инициативе в том числе и Никифорова.",
+        "source_name": "CNews",
+        "source_type": "rss",
+        "source_url": "https://biz.cnews.ru/news/top/2026-09-04_byvshij_ministr_svyazi_rossii",
+        "published_at": "2026-09-04T16:28:00+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-016",
+        "relevance": "irrelevant",
+        "roles": [
+          "PR"
+        ],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "technology_market",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "medium",
+        "must_facts": [
+          {
+            "fact_id": "rf-016-f1",
+            "claim": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве.",
+            "evidence": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве."
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:16",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "borderline",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "medium",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "PR"
+              ],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-016",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "Уголовное дело против бывшего министра связи Никифорова и финансовой пирамиды Finiko — криминально-политическая новость вне продуктового домена GS Labs (финансовая пирамида, застройка Иннополиса): связи с продуктами, рынками платного ТВ/OTT, регуляторными рисками или репутацией компании в материале и контексте нет, применимого эффекта не видно.",
+        "claims": [],
+        "impact": "",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "rf-070",
+        "title": "Минсельхоз прорабатывает дополнительные меры поддержки аграриев",
+        "text": "Минсельхоз прорабатывает дополнительные меры поддержки аграриев\n\nВ ходе рабочей поездки в Челябинскую область Оксана Лут провела в режиме ВКС оперативный штаб по ходу уборочной кампании и подготовке к озимому севу.\n\nО сезонных полевых работах:\n\n🚜Несмотря на непростые условия в начале, сейчас темпы уборочных работ и урожайность основных культур в целом по стране превышают прошлогодние показатели.\n\n🌾Обмолочено порядка 70% площадей зерновых и зернобобовых, собрано свыше 110 млн т – на 10,5 млн т больше, чем на аналогичную дату прошлого года. В том числе намолочено 83,5 млн т пшеницы. Полученные объемы уже полностью обеспечивают потребности внутреннего рынка в зерне.\n\n🌻В активной фазе находится уборка масличных культур – собрано 3,3 млн т. Начался сбор сахарной свеклы, картофеля и овощей открытого грунта. Ожидается хороший урожай по всем основным культурам.\n\n🌱Озимый сев идет в 44 регионах, засеяно более 2 млн га, что выше темпов прошлого года. Регионам необходимо сохранить озимый клин, который формирует основной объем урожая зерновых и имеет ключевое значение для обеспечения продовольственной безопасности страны.\n\n«Благодаря оперативно принятым Правительством мерам удалось стабилизировать ситуацию с топливом. Вопрос обеспечения аграриев ГСМ находится на личном контроле вице-премьера Дмитрия Патрушева. У нас есть соответствующее поручение Президента: здесь мы совместно с Минэнерго в оперативном режиме каждый день регулируем ситуацию, решаем возникающие вопросы», – отметила Оксана Лут.\n\nО поддержке аграриев:\n\n🛤В связи со сложностями в Азово-Черноморском бассейне экспортные потоки переориентируются на другие направления. Правительство одобрило выделение 9,7 млрд рублей на субсидирование железнодорожного тарифа для перевозок зерна до портов и сухопутных переходов.\n\n📃С 1 сентября введен мораторий на уплату экспортных пошлин на зерновые и фиксации верхней границы пошлины на масло и шрот.\nМинсельхоз также прорабатывает дополнительные инструменты поддержки финансовой устойчивости аграриев:\n\n•В Правительство внесены предложения о пролонгации льготных кредитов и льготного лизинга.\n•Рассматривается возможность предоставления погектарной поддержки озимого сева.\n•Прорабатывается введение моратория на банкротство хозяйств и сохранение за ними статуса сельхозтоваропроизводителя.\n•В проработке закупочные интервенции зерна объемом до 3 млн т.\n\n🇷🇺 Подписаться на Правительство России в MAКС",
+        "source_name": "Правительство России — Telegram",
+        "source_type": "telegram",
+        "source_url": "https://t.me/government_rus/32399",
+        "published_at": "2026-09-04T16:12:44+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-070",
+        "relevance": "irrelevant",
+        "roles": [],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "unrelated_support",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "rf-070-f1",
+            "claim": "Минсельхоз прорабатывает дополнительные меры поддержки аграриев\n\nВ ходе рабочей поездки в Челябинскую область Оксана Лут провела в режиме ВКС оперативный штаб по ходу уборочной кампании и подготовке к озимому севу.",
+            "evidence": "Минсельхоз прорабатывает дополнительные меры поддержки аграриев\n\nВ ходе рабочей поездки в Челябинскую область Оксана Лут провела в режиме ВКС оперативный штаб по ходу уборочной кампании и подготовке к озимому севу."
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:70",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "irrelevant",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "low",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-070",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "Материал о мерах поддержки аграриев (урожай, экспортные пошлины, субсидии на ж/д тариф, льготные кредиты, мораторий на банкротство хозяйств) относится к сельскому хозяйству и не имеет связи с продуктовым доменом GS Labs (цифровое ТВ, OTT/IPTV, защищённые цифровые сервисы, управление доступом и правами на контент): ни риска, ни возможности, ни применимой меры поддержки для компании в тексте нет.",
+        "claims": [],
+        "impact": "",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "rf-075",
+        "title": "📡 Реформа телеком-отрасли — что ждет российский рынок связи?",
+        "text": "📡 Реформа телеком-отрасли — что ждет российский рынок связи?\n\n3 сентября в Москве прошла пресс-конференция региональных операторов связи и отраслевых объединений. Эксперты обсудили готовящуюся реформу лицензирования в отрасли связи и условия размещения линий связи на опорах электросетевых компаний.\n\nСпикерами выступили:\n🔹 Алексей Леонтьев, директор Ассоциации телекоммуникационных операторов (АСТО)\n🔹 Николай Михайлов, глава комитета по телекоммуникациям АРПП «Отечественный софт»\n🔹 Олег Грищенко, президент ассоциации «Ростелесеть»\n🔹 Дмитрий Галушко, президент Ассоциации малых операторов связи (АМОР)\n🔹 Игорь Дорофеев, президент Ассоциации участников отрасли ЦОД\n🔹 Олег Зиборов, первый заместитель генерального директора АСТО\n🔹 Александр Самойлов, директор ООО «СитиЛайн»\n🔹 Юрий Беззубцев, директор ООО «Фотон»\n🔹 Алексей Калачев, управляющий директор «Битрейс Телеком».\n\nРеформа предусматривает для операторов связи новые три типа лицензий: базовую, универсальную и генеральную. Универсальная лицензия открывает ШПД и предусматривает 10 млн рублей за 10 лет, 100 млн рублей собственных средств, сеть не менее чем в 30% муниципальных образований региона и не менее 15% МКД в городах.\n\n📊 На пресс-конференции участники представили расчеты возможных последствий реформы. По оценке АСТО, предлагаемые требования к универсальной лицензии в оптимистичном сценарии вытеснят компании с годовой выручкой до 200 млн рублей. В 26 субъектах рынок региональных операторов может исчезнуть полностью, еще в девяти регионах от него останется от 1% до 30%. Под ударом может оказаться связь более чем 50 млн граждан.\n\nОтдельное внимание эксперты уделили последствиям реформы для рынка отечественного ПО. Глава комитета по телекоммуникациям АРПП «Отечественный софт» Николай Михайлов предупредил, что сокращение числа малых и средних операторов ударит по независимым разработчикам софта, дистрибьюторам контента и производителям оборудования. Малые операторы, по его словам, служили полигоном обкатки отечественных биллингов, DPI, медиаплатформ и систем защиты контента. Крупные игроки непроверенный софт ставят неохотно и закрывают потребность внутренней разработкой через индустриальные центры компетенций.\n\n«Можно вводить любые налоговые льготы для ИТ. Если не будет рынка, на котором продавать продукты, льготы бессмысленны. Уход операторов обернется для бюджета расходами на переподключение абонентской базы. В пояснительной записке к закону, скорее всего, напишут, что дополнительных средств не требуется. На практике крупные сети перекредитованы и за финансированием придут в тот же бюджет», — отметил Николай Михайлов.\n\nПо итогам конференции участники обозначили необходимость публичного обсуждения проекта реформы лицензирования с участием региональных операторов до его внесения в Государственную Думу, пересчета финансовых и географических порогов по фактической экономике малых и средних операторов, а также оценки бюджетного эффекта переподключения абонентов и сжатия рынка отечественного телеком-ПО и региональных ЦОД.\n\n📋 Позицию отраслевых объединений представят в совместном меморандуме пяти ассоциаций, который направят президенту РФ, правительству и Минцифры России.\n\nПодробнее на сайте\n\n🖥 АРПП «Отечественный софт» в МАХ | VK",
+        "source_name": "АРПП «Отечественный софт» — Telegram",
+        "source_type": "telegram",
+        "source_url": "https://t.me/arppsoft/1527",
+        "published_at": "2026-09-04T09:28:16+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-075",
+        "relevance": "relevant",
+        "roles": [
+          "PR",
+          "GR",
+          "HEAD"
+        ],
+        "importance": "high",
+        "critical_or_escalate": false,
+        "topic": "telecom_regulation",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "rf-075-f1",
+            "claim": "📡 Реформа телеком-отрасли — что ждет российский рынок связи?",
+            "evidence": "📡 Реформа телеком-отрасли — что ждет российский рынок связи?"
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:75",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "high",
+              "gpt_oss_blind": "high",
+              "deepseek_blind": "medium"
+            },
+            "roles": {
+              "team_v2": [
+                "PR",
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR",
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-075",
+        "relevance": "relevant",
+        "importance": "high",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR",
+          "HEAD",
+          "PR"
+        ],
+        "summary": "Отраслевые ассоциации на пресс-конференции 3 сентября раскрыли параметры готовящейся реформы лицензирования связи (три типа лицензий, жёсткие пороги универсальной лицензии по ШПД) и представили расчёты вытеснения малых операторов. Заявлено, что сжатие рынка операторов ударит по независимым разработчикам телеком-ПО, включая медиаплатформы и системы защиты контента; ассоциации требуют публичного обсуждения проекта до внесения в Госдуму и готовят меморандум президенту, правительству и Минцифры.",
+        "claims": [
+          {
+            "text": "Реформа предусматривает три новых типа лицензий для операторов связи; универсальная лицензия (ШПД) требует 10 млн рублей за 10 лет, 100 млн рублей собственных средств, сеть не менее чем в 30% муниципальных образований региона и не менее 15% МКД в городах.",
+            "evidence_quote": "Реформа предусматривает для операторов связи новые три типа лицензий: базовую, универсальную и генеральную. Универсальная лицензия открывает ШПД и предусматривает 10 млн рублей за 10 лет, 100 млн рублей собственных средств, сеть не менее чем в 30% муниципальных образований региона и не менее 15% МКД в городах."
+          },
+          {
+            "text": "По оценке АСТО, требования универсальной лицензии в оптимистичном сценарии вытеснят компании с выручкой до 200 млн рублей; в 26 регионах рынок региональных операторов может исчезнуть полностью, ещё в девяти останется 1–30%; под ударом связь более 50 млн граждан.",
+            "evidence_quote": "По оценке АСТО, предлагаемые требования к универсальной лицензии в оптимистичном сценарии вытеснят компании с годовой выручкой до 200 млн рублей. В 26 субъектах рынок региональных операторов может исчезнуть полностью, еще в девяти регионах от него останется от 1% до 30%. Под ударом может оказаться связь более чем 50 млн граждан."
+          },
+          {
+            "text": "Глава телеком-комитета АРПП «Отечественный софт» предупредил, что сокращение малых и средних операторов ударит по независимым разработчикам софта: малые операторы были полигоном обкатки отечественных биллингов, DPI, медиаплатформ и систем защиты контента.",
+            "evidence_quote": "сокращение числа малых и средних операторов ударит по независимым разработчикам софта, дистрибьюторам контента и производителям оборудования. Малые операторы, по его словам, служили полигоном обкатки отечественных биллингов, DPI, медиаплатформ и систем защиты контента."
+          },
+          {
+            "text": "Участники конференции потребовали публичного обсуждения проекта реформы лицензирования с участием региональных операторов до его внесения в Государственную Думу.",
+            "evidence_quote": "необходимость публичного обсуждения проекта реформы лицензирования с участием региональных операторов до его внесения в Государственную Думу"
+          },
+          {
+            "text": "Позицию объединений направят в совместном меморандуме пяти ассоциаций президенту РФ, правительству и Минцифры России.",
+            "evidence_quote": "Позицию отраслевых объединений представят в совместном меморандуме пяти ассоциаций, который направят президенту РФ, правительству и Минцифры России."
+          }
+        ],
+        "impact": "Реформа с заявленными порогами может сжать рынок региональных операторов — по оценке ассоциаций, ключевой канал продаж и обкатки отечественного телеком-ПО, включая медиаплатформы и системы защиты контента, то есть основной продуктовый домен GS Labs. Ассоциации открывают окно влияния: требуют публичного обсуждения до внесения в ГД и готовят меморандум президенту, правительству и Минцифры. Для GS Labs это рыночный риск и возможное окно для отраслевой позиции или участия в обсуждении.",
+        "review_required": true,
+        "review_reasons": [
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "rf-077",
+        "title": "Власти обсуждают налоговые льготы разработчикам отечественных ИИ-моделей",
+        "text": "Власти обсуждают налоговые льготы разработчикам отечественных ИИ-моделей\nСреди них – налоговый вычет и пониженные социальные взносы\n\nВ рамках подготовки подзаконных актов для вступившего в июле закона об ИИ ведется разработка мер поддержки разработчиков национальных и суверенных больших фундаментальных моделей искусственного интеллекта (ИИ). Среди них – ежегодный региональный инвестиционный налоговый вычет по налогу на прибыль из бюджета в сумме расходов, понесенных на создание модели ИИ. Об этом говорится в предложениях АНО «Цифровая экономика» по стимулированию отрасли, направленных в Минцифры в конце июля.\n\nhttps://www.vedomosti.ru/technology/articles/2026/09/02/1225447-vlasti-obsuzhdayut-lgoti-razrabotchikam-otechestvennih-ii-modelei\n\n🤩 в МАХ 💬| ВК 💙",
+        "source_name": "АРПЭ — Telegram",
+        "source_type": "telegram",
+        "source_url": "https://t.me/arperf/7225",
+        "published_at": "2026-09-02T13:01:54+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-077",
+        "relevance": "relevant",
+        "roles": [
+          "GR",
+          "HEAD"
+        ],
+        "importance": "high",
+        "critical_or_escalate": false,
+        "topic": "software_support",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "rf-077-f1",
+            "claim": "Власти обсуждают налоговые льготы разработчикам отечественных ИИ-моделей\nСреди них – налоговый вычет и пониженные социальные взносы\n\nВ рамках подготовки подзаконных актов для вступившего в июле закона об ИИ ведется разработка мер поддержки разработчиков национальных и суверенных больших фундаментальных моделей искусственного интеллекта (ИИ).",
+            "evidence": "Власти обсуждают налоговые льготы разработчикам отечественных ИИ-моделей\nСреди них – налоговый вычет и пониженные социальные взносы\n\nВ рамках подготовки подзаконных актов для вступившего в июле закона об ИИ ведется разработка мер поддержки разработчиков национальных и суверенных больших фундаментальных моделей искусственного интеллекта (ИИ)."
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:77",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "high",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": []
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-077",
+        "relevance": "borderline",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR"
+        ],
+        "summary": "В рамках подготовки подзаконных актов к вступившему в июле закону об ИИ власти прорабатывают меры поддержки разработчиков национальных и суверенных больших фундаментальных ИИ-моделей: региональный инвестиционный налоговый вычет по налогу на прибыль и пониженные социальные взносы. Предложения АНО «Цифровая экономика» направлены в Минцифры в конце июля.",
+        "claims": [
+          {
+            "text": "В рамках подготовки подзаконных актов к закону об ИИ, вступившему в силу в июле, разрабатываются меры поддержки разработчиков национальных и суверенных больших фундаментальных ИИ-моделей",
+            "evidence_quote": "В рамках подготовки подзаконных актов для вступившего в июле закона об ИИ ведется разработка мер поддержки разработчиков национальных и суверенных больших фундаментальных моделей искусственного интеллекта (ИИ)"
+          },
+          {
+            "text": "Среди обсуждаемых мер — ежегодный региональный инвестиционный налоговый вычет по налогу на прибыль в сумме расходов на создание модели ИИ",
+            "evidence_quote": "Среди них – ежегодный региональный инвестиционный налоговый вычет по налогу на прибыль из бюджета в сумме расходов, понесенных на создание модели ИИ"
+          },
+          {
+            "text": "Также обсуждаются налоговый вычет и пониженные социальные взносы",
+            "evidence_quote": "Среди них – налоговый вычет и пониженные социальные взносы"
+          },
+          {
+            "text": "Предложения по стимулированию отрасли подготовлены АНО «Цифровая экономика» и направлены в Минцифры в конце июля",
+            "evidence_quote": "Об этом говорится в предложениях АНО «Цифровая экономика» по стимулированию отрасли, направленных в Минцифры в конце июля"
+          }
+        ],
+        "impact": "Мера адресована узкому кругу разработчиков национальных и суверенных фундаментальных ИИ-моделей; применимость к GS Labs, по контексту не относящейся к разработчикам таких моделей, не подтверждена. Сигнал показывает направление политики поддержки ИИ и формирование подзаконной базы к закону об ИИ, за состоянием которой может следить GR-контур. Коммуникационной задачи для PR материал не создаёт.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance",
+          "open_questions"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "rf-083",
+        "title": "❤ Соберите свой осенний образ с мерчем ЦИПР и Тех-Френдли Викенд",
+        "text": "❤ Соберите свой осенний образ с мерчем ЦИПР и Тех-Френдли Викенд\n\nСмена сезона — отличный повод обновить гардероб и добавить в повседневные наряды технологичные детали.\n\nВ коллекциях конференции и фестиваля найдутся вещи для любой погоды и задач: от ветровок, дождевиков и футболок до вместительных шопперов, кофейных кружек и лаконичных аксессуаров.\n\nВыбирайте и заказывайте понравившиеся позиции ⬇\n\n🔹 по прямой ссылке: https://cipr-shop.ru/\n🔹 или через раздел «Мерч» в главном меню на сайте ЦИПР\n\nДоставка осуществляется по всей России сервисом СДЭК.\n\n📲Подписывайтесь на канал ЦИПР в MAX.",
+        "source_name": "ЦИПР — Telegram",
+        "source_type": "telegram",
+        "source_url": "https://t.me/icipr/9927",
+        "published_at": "2026-09-03T07:02:33+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-083",
+        "relevance": "irrelevant",
+        "roles": [],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "promotional_noise",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "rf-083-f1",
+            "claim": "❤ Соберите свой осенний образ с мерчем ЦИПР и Тех-Френдли Викенд\n\nСмена сезона — отличный повод обновить гардероб и добавить в повседневные наряды технологичные детали.",
+            "evidence": "❤ Соберите свой осенний образ с мерчем ЦИПР и Тех-Френдли Викенд\n\nСмена сезона — отличный повод обновить гардероб и добавить в повседневные наряды технологичные детали."
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:83",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "irrelevant",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "low",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [],
+              "gpt_oss_blind": [],
+              "deepseek_blind": []
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-083",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "Рекламный пост о продаже мерча конференции ЦИПР: одежда, аксессуары, доставка СДЭК, приглашение подписаться на канал. Нет события, риска, обязательства, рыночного или репутационного эффекта для GS Labs; совпадение темы «технологии» без связи с продуктами, рынками или НПА.",
+        "claims": [],
+        "impact": "",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "rf-092",
+        "title": "Легализация Национального удостоверяющего центра. Подготовлен приказ Минцифры о форматах сертификатов безопасности",
+        "text": "Легализация Национального удостоверяющего центра. Подготовлен приказ Минцифры о форматах сертификатов безопасности\nhttps://www.tadviser.ru/a/494214\n\n——————————\nTAdviser в MAX и ВК",
+        "source_name": "TAdviser — Telegram",
+        "source_type": "telegram",
+        "source_url": "https://t.me/tadviser/6185",
+        "published_at": "2026-09-02T07:54:01+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-092",
+        "relevance": "relevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "topic": "digital_trust_regulation",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "rf-092-f1",
+            "claim": "Легализация Национального удостоверяющего центра.",
+            "evidence": "Легализация Национального удостоверяющего центра."
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:92",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "relevant"
+            },
+            "importance": {
+              "team_v2": "high",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "medium"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": [
+                "GR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-092",
+        "relevance": "borderline",
+        "importance": "medium",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR"
+        ],
+        "summary": "TAdviser сообщает о подготовке приказа Минцифры о форматах сертификатов безопасности в связи с легализацией Национального удостоверяющего центра; содержания и реквизитов документа в материале нет.",
+        "claims": [
+          {
+            "text": "Минцифры подготовило приказ о форматах сертификатов безопасности",
+            "evidence_quote": "Подготовлен приказ Минцифры о форматах сертификатов безопасности"
+          },
+          {
+            "text": "Материал посвящён легализации Национального удостоверяющего центра",
+            "evidence_quote": "Легализация Национального удостоверяющего центра"
+          },
+          {
+            "text": "Полный материал размещён на TAdviser, в телеграм-посте приведён только заголовок",
+            "evidence_quote": "https://www.tadviser.ru/a/494214"
+          }
+        ],
+        "impact": "Регулирование форматов сертификатов и легализация НУЦ могут затронуть PKI/TLS-контур защищённых цифровых сервисов и управления доступом GS Labs, но из заголовка применимость не подтверждена. Для оценки требуется текст проекта приказа. Сигнал значим как кандидат НПА для GR-отслеживания.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance",
+          "open_questions",
+          "unconfirmed_npa"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "rf-097",
+        "title": "Разработчики российских ИИ-моделей могут получить масштабные налоговые льготы",
+        "text": "Разработчики российских ИИ-моделей могут получить масштабные налоговые льготы\n\nРоссийские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных моделей искусственного интеллекта. В рамках реализации нового закона об ИИ обсуждается внедрение инвестиционных налоговых вычетов, существенное снижение страховых взносов и применение повышающих коэффициентов к расходам на разработку, что должно помочь компаниям компенсировать до половины затрат на создание высокотехнологичных ИИ-решений.",
+        "source_name": "Кабельщик — Telegram",
+        "source_type": "telegram",
+        "source_url": "https://t.me/cablemanru/21177",
+        "published_at": "2026-09-02T14:23:01+00:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "rf-097",
+        "relevance": "relevant",
+        "roles": [
+          "GR",
+          "HEAD"
+        ],
+        "importance": "high",
+        "critical_or_escalate": false,
+        "topic": "software_support",
+        "impact_on_gs_labs": "Контекстная применимость оценивается по Context Truth Pack.",
+        "impact_confidence": "high",
+        "must_facts": [
+          {
+            "fact_id": "rf-097-f1",
+            "claim": "Разработчики российских ИИ-моделей могут получить масштабные налоговые льготы\n\nРоссийские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных моделей искусственного интеллекта.",
+            "evidence": "Разработчики российских ИИ-моделей могут получить масштабные налоговые льготы\n\nРоссийские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных моделей искусственного интеллекта."
+          }
+        ],
+        "forbidden_claims": [
+          "Материал прямо относится к GS Labs, если компания не названа в оригинале.",
+          "Неофициальная публикация сама устанавливает юридический статус НПА."
+        ],
+        "allowed_ambiguity": "Borderline допускает расхождение только при явном unknown.",
+        "truth_sources": [
+          "B1:20260904T235519Z:document:97",
+          "CONTEXT_TRUTH_V1"
+        ],
+        "scored_fields": [
+          "relevance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "relevant",
+              "gpt_oss_blind": "relevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "high",
+              "gpt_oss_blind": "medium",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "GR",
+                "HEAD"
+              ],
+              "gpt_oss_blind": [
+                "GR"
+              ],
+              "deepseek_blind": []
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "rf-097",
+        "relevance": "borderline",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR"
+        ],
+        "summary": "Российские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных ИИ-моделей: инвестиционные налоговые вычеты, снижение страховых взносов и повышающие коэффициенты на R&D с компенсацией до половины затрат, в рамках реализации нового закона об ИИ. Мера находится на стадии обсуждения, официального документа нет, применимость к GS Labs не подтверждена.",
+        "claims": [
+          {
+            "text": "Российские власти начали разработку пакета налоговых преференций для создателей отечественных фундаментальных ИИ-моделей.",
+            "evidence_quote": "Российские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных моделей искусственного интеллекта."
+          },
+          {
+            "text": "Мера обсуждается в рамках реализации нового закона об ИИ.",
+            "evidence_quote": "В рамках реализации нового закона об ИИ обсуждается внедрение инвестиционных налоговых вычетов"
+          },
+          {
+            "text": "Обсуждаемые инструменты: инвестиционные налоговые вычеты, существенное снижение страховых взносов и повышающие коэффициенты к расходам на разработку.",
+            "evidence_quote": "обсуждается внедрение инвестиционных налоговых вычетов, существенное снижение страховых взносов и применение повышающих коэффициентов к расходам на разработку"
+          },
+          {
+            "text": "Заявленная цель — помочь компаниям компенсировать до половины затрат на создание высокотехнологичных ИИ-решений.",
+            "evidence_quote": "что должно помочь компаниям компенсировать до половины затрат на создание высокотехнологичных ИИ-решений."
+          }
+        ],
+        "impact": "Потенциальная возможность снижения затрат, только если GS Labs подпадает под критерии разработчика российских ИИ-моделей; профиль компании (цифровое ТВ/OTT, управление доступом) такого разработчика не описывает. Мера на стадии обсуждения, без документа, сроков и обязательств. Достаточно фонового отслеживания до появления проекта акта с идентификатором.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance",
+          "open_questions"
+        ]
+      }
+    },
+    {
+      "material": {
+        "id": "s01",
+        "title": "ИИ помогает диагностировать заболевания сельскохозяйственных культур",
+        "text": "Исследователи представили модель компьютерного зрения для диагностики болезней кукурузы по снимкам листьев.\n\nРешение тестируют три сельскохозяйственных предприятия; связь с медиарынком, защитой контента или разработкой корпоративного ПО не заявлена.",
+        "source_name": "Агротехнологии",
+        "source_type": "rss",
+        "source_url": null,
+        "published_at": "2026-08-18T09:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "s01",
+        "relevance": "irrelevant",
+        "roles": [],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "agritech",
+        "impact_on_gs_labs": "Связь с деятельностью GS Labs отсутствует.",
+        "impact_confidence": "medium",
+        "must_facts": [
+          {
+            "fact_id": "s01-f1",
+            "claim": "Модель диагностирует болезни кукурузы по снимкам листьев.",
+            "evidence": "Исследователи представили модель компьютерного зрения для диагностики болезней кукурузы по снимкам листьев."
+          },
+          {
+            "fact_id": "s01-f2",
+            "claim": "Решение тестируют три сельскохозяйственных предприятия.",
+            "evidence": "Решение тестируют три сельскохозяйственных предприятия; связь с медиарынком, защитой контента или разработкой корпоративного ПО не заявлена."
+          }
+        ],
+        "forbidden_claims": [
+          "GS Labs участвует в проекте.",
+          "Технология предназначена для анализа видеоконтента."
+        ],
+        "allowed_ambiguity": null,
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "roles",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "irrelevant",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "low",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "s01",
+        "relevance": "irrelevant",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [],
+        "summary": "Новость о модели компьютерного зрения для диагностики болезней кукурузы относится к агротехнологиям; связи с продуктовым контуром GS Labs (цифровое ТВ, OTT/IPTV, защита контента, управление доступом), её рынками, регуляторными или репутационными рисками нет. Совпадение по слову «ИИ» само по себе не создаёт релевантности.",
+        "claims": [],
+        "impact": "",
+        "review_required": false,
+        "review_reasons": []
+      }
+    },
+    {
+      "material": {
+        "id": "s02",
+        "title": "Регион расширил гранты для малых ИТ-компаний",
+        "text": "Регион увеличил максимальный грант для ИТ-компаний из реестра субъектов малого предпринимательства до 10 млн рублей.\n\nЗаявитель должен быть зарегистрирован в регионе не менее двух лет; статус GS Labs как подходящего получателя в доступном профиле не указан.",
+        "source_name": "Региональный портал поддержки",
+        "source_type": "html",
+        "source_url": null,
+        "published_at": "2026-08-19T10:00:00+03:00",
+        "language": "ru"
+      },
+      "truth": {
+        "id": "s02",
+        "relevance": "irrelevant",
+        "roles": [
+          "GR"
+        ],
+        "importance": "low",
+        "critical_or_escalate": false,
+        "topic": "support_measures",
+        "impact_on_gs_labs": "Применимость нельзя определить без статуса МСП и региона регистрации.",
+        "impact_confidence": "medium",
+        "must_facts": [
+          {
+            "fact_id": "s02-f1",
+            "claim": "Максимальный грант составляет 10 млн рублей.",
+            "evidence": "Регион увеличил максимальный грант для ИТ-компаний из реестра субъектов малого предпринимательства до 10 млн рублей."
+          },
+          {
+            "fact_id": "s02-f2",
+            "claim": "Получатель должен быть субъектом малого предпринимательства и работать в регионе не менее двух лет.",
+            "evidence": "Заявитель должен быть зарегистрирован в регионе не менее двух лет; статус GS Labs как подходящего получателя в доступном профиле не указан."
+          }
+        ],
+        "forbidden_claims": [
+          "GS Labs может получить грант.",
+          "GS Labs не может получить грант."
+        ],
+        "allowed_ambiguity": "Недостаточно подтверждённого внутреннего контекста GS Labs.",
+        "truth_sources": [
+          "team_scenario_spec"
+        ],
+        "scored_fields": [
+          "relevance",
+          "importance",
+          "critical_or_escalate"
+        ],
+        "label_adjudication": {
+          "method": "field_level_majority_of_team_v2_and_two_blind_llm_reviews",
+          "votes": {
+            "relevance": {
+              "team_v2": "unknown",
+              "gpt_oss_blind": "irrelevant",
+              "deepseek_blind": "irrelevant"
+            },
+            "importance": {
+              "team_v2": "low",
+              "gpt_oss_blind": "low",
+              "deepseek_blind": "low"
+            },
+            "roles": {
+              "team_v2": [
+                "GR"
+              ],
+              "gpt_oss_blind": [],
+              "deepseek_blind": [
+                "PR"
+              ]
+            },
+            "critical_or_escalate": {
+              "team_v2": false,
+              "gpt_oss_blind": false,
+              "deepseek_blind": false
+            }
+          }
+        }
+      },
+      "prediction": {
+        "id": "s02",
+        "relevance": "unknown",
+        "importance": "low",
+        "critical_or_escalate": false,
+        "roles": [
+          "GR"
+        ],
+        "summary": "Регион увеличил максимальный грант для ИТ-компаний из реестра субъектов малого предпринимательства до 10 млн рублей; заявитель должен быть зарегистрирован в регионе не менее двух лет, применимость к GS Labs не подтверждена.",
+        "claims": [
+          {
+            "text": "Максимальный грант для ИТ-компаний из реестра субъектов малого предпринимательства увеличен до 10 млн рублей.",
+            "evidence_quote": "Регион увеличил максимальный грант для ИТ-компаний из реестра субъектов малого предпринимательства до 10 млн рублей."
+          },
+          {
+            "text": "Заявитель гранта должен быть зарегистрирован в регионе не менее двух лет.",
+            "evidence_quote": "Заявитель должен быть зарегистрирован в регионе не менее двух лет"
+          },
+          {
+            "text": "Применимость гранта к GS Labs не подтверждена: статус подходящего получателя в доступном профиле не указан.",
+            "evidence_quote": "статус GS Labs как подходящего получателя в доступном профиле не указан"
+          }
+        ],
+        "impact": "Если GS Labs входит в реестр МСП и зарегистрирована в соответствующем регионе, грант до 10 млн рублей — прямая финансовая возможность. Регион в материале не назван, статус подходящего получателя не указан, поэтому проверить применимость по доступным данным нельзя. До проверки сигнал не даёт оснований для действий.",
+        "review_required": true,
+        "review_reasons": [
+          "uncertain_relevance",
+          "open_questions"
+        ]
+      }
+    }
+  ],
+  "event_cases": [
+    {
+      "truth": {
+        "case_id": "E01",
+        "split": "development",
+        "member_ids": [
+          "e01-a",
+          "e01-b",
+          "e01-c"
+        ],
+        "expected_clusters": [
+          [
+            "e01-a",
+            "e01-b",
+            "e01-c"
+          ]
+        ],
+        "preserve_positions": false,
+        "failure_to_avoid": "Оставить три карточки точного дубля."
+      },
+      "materials": [
+        {
+          "id": "e01-a",
+          "title": "ЦТС выпустила 30-миллионную телевизионную приставку",
+          "text": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку. Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+          "source_name": "Пресс-служба GS Group",
+          "source_type": "corporate_site",
+          "source_url": null,
+          "published_at": "2026-08-12T09:15:00+03:00",
+          "language": "ru"
+        },
+        {
+          "id": "e01-b",
+          "title": "ЦТС выпустила 30-миллионную телевизионную приставку",
+          "text": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку. Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+          "source_name": "Отраслевой Telegram-канал",
+          "source_type": "telegram",
+          "source_url": null,
+          "published_at": "2026-08-12T09:15:00+03:00",
+          "language": "ru"
+        },
+        {
+          "id": "e01-c",
+          "title": "ЦТС выпустила 30-миллионную телевизионную приставку",
+          "text": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку. Предприятие находится в Гусеве Калининградской области и входит в GS Group.",
+          "source_name": "Новостной агрегатор",
+          "source_type": "rss",
+          "source_url": null,
+          "published_at": "2026-08-12T09:15:00+03:00",
+          "language": "ru"
+        }
+      ],
+      "material_predictions": [
+        {
+          "id": "e01-a",
+          "relevance": "relevant",
+          "importance": "medium",
+          "critical_or_escalate": false,
+          "roles": [
+            "PR"
+          ],
+          "summary": "Завод «Цифровые Телевизионные Системы» (Гусев, Калининградская область), входящий в GS Group, выпустил 30-миллионную телевизионную приставку — юбилейный производственный инфоповод группы в домене цифрового ТВ.",
+          "claims": [
+            {
+              "text": "ЦТС выпустила 30-миллионную телевизионную приставку",
+              "evidence_quote": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку."
+            },
+            {
+              "text": "Предприятие ЦТС расположено в Гусеве Калининградской области",
+              "evidence_quote": "Предприятие находится в Гусеве Калининградской области"
+            },
+            {
+              "text": "ЦТС входит в GS Group",
+              "evidence_quote": "входит в GS Group"
+            }
+          ],
+          "impact": "Позитивный корпоративный инфоповод группы в основном продуктовом домене GS Labs (цифровое ТВ, приставки), пригодный для коммуникаций о масштабе производства группы. Прямого эффекта на продукты, обязательства или рыночную позицию GS Labs не создаёт. Управленческой значимости или срочности нет.",
+          "review_required": false,
+          "review_reasons": []
+        },
+        {
+          "id": "e01-b",
+          "relevance": "relevant",
+          "importance": "medium",
+          "critical_or_escalate": false,
+          "roles": [
+            "PR"
+          ],
+          "summary": "ЦТС («Цифровые Телевизионные Системы», Гусев Калининградской области), входящая в GS Group, выпустила 30-миллионную телевизионную приставку — групповой производственный milestone в продуктовом домене цифрового ТВ.",
+          "claims": [
+            {
+              "text": "ЦТС выпустила 30-миллионную телевизионную приставку",
+              "evidence_quote": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку"
+            },
+            {
+              "text": "Предприятие ЦТС находится в Гусеве Калининградской области",
+              "evidence_quote": "Предприятие находится в Гусеве Калининградской области"
+            },
+            {
+              "text": "ЦТС входит в GS Group",
+              "evidence_quote": "входит в GS Group"
+            }
+          ],
+          "impact": "Позитивный инфоповод уровня группы: подтверждает масштаб производства ТВ-приставок в основном продуктовом домене GS Labs (цифровое телевидение). Может использоваться в отраслевых коммуникациях о группе; рисков, обязательств или сроков не создаёт.",
+          "review_required": false,
+          "review_reasons": []
+        },
+        {
+          "id": "e01-c",
+          "relevance": "relevant",
+          "importance": "medium",
+          "critical_or_escalate": false,
+          "roles": [
+            "PR"
+          ],
+          "summary": "ЦТС («Цифровые Телевизионные Системы»), предприятие GS Group в Гусеве Калининградской области, выпустило 30-миллионную телевизионную приставку — юбилейный производственный показатель группы в домене цифрового ТВ.",
+          "claims": [
+            {
+              "text": "ЦТС выпустила 30-миллионную телевизионную приставку.",
+              "evidence_quote": "«Цифровые Телевизионные Системы» выпустили 30-миллионную телевизионную приставку."
+            },
+            {
+              "text": "Предприятие ЦТС находится в Гусеве Калининградской области.",
+              "evidence_quote": "Предприятие находится в Гусеве Калининградской области и входит в GS Group."
+            },
+            {
+              "text": "ЦТС входит в GS Group.",
+              "evidence_quote": "Предприятие находится в Гусеве Калининградской области и входит в GS Group."
+            }
+          ],
+          "impact": "Позитивный инфоповод о масштабе производства группы в основном продуктовом домене GS Labs (ТВ-приставки, цифровое телевидение); может использоваться в коммуникациях о группе и её производственной базе. Прямого эффекта на продукты, обязательства, сроки или риски GS Labs материал не содержит.",
+          "review_required": false,
+          "review_reasons": []
+        }
+      ],
+      "predicted_clusters": [
+        {
+          "cluster_id": "event-1",
+          "member_ids": [
+            "e01-a",
+            "e01-b",
+            "e01-c"
+          ]
+        },
+        {
+          "cluster_id": "event-2",
+          "member_ids": [
+            "e02-a",
+            "e02-b",
+            "e02-c"
+          ]
+        },
+        {
+          "cluster_id": "event-3",
+          "member_ids": [
+            "e03-a",
+            "e03-b",
+            "e03-c",
+            "rf-075"
+          ]
+        },
+        {
+          "cluster_id": "event-4",
+          "member_ids": [
+            "rf-077",
+            "rf-097"
+          ]
+        },
+        {
+          "cluster_id": "event-5",
+          "member_ids": [
+            "rf-092"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-007",
+          "member_ids": [
+            "rf-007"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-016",
+          "member_ids": [
+            "rf-016"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-070",
+          "member_ids": [
+            "rf-070"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-083",
+          "member_ids": [
+            "rf-083"
+          ]
+        }
+      ]
+    },
+    {
+      "truth": {
+        "case_id": "E02",
+        "split": "development",
+        "member_ids": [
+          "e02-a",
+          "e02-b",
+          "e02-c"
+        ],
+        "expected_clusters": [
+          [
+            "e02-a",
+            "e02-b",
+            "e02-c"
+          ]
+        ],
+        "preserve_positions": false,
+        "failure_to_avoid": "Потерять числа, сроки подключения или факт о высокоплотных стойках."
+      },
+      "materials": [
+        {
+          "id": "e02-a",
+          "title": "Дефицит мощностей российских ЦОД усилился",
+          "text": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД.\n\nПодключение новых площадок в Москве может занимать от двух до пяти лет.",
+          "source_name": "Телеспутник",
+          "source_type": "rss",
+          "source_url": null,
+          "published_at": "2026-08-06T10:00:00+03:00",
+          "language": "ru"
+        },
+        {
+          "id": "e02-b",
+          "title": "Дефицит мощностей российских ЦОД усилился",
+          "text": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге.\n\nГодовой рост составил 15,7% и 31,3% соответственно.",
+          "source_name": "CNews",
+          "source_type": "html",
+          "source_url": null,
+          "published_at": "2026-08-06T11:00:00+03:00",
+          "language": "ru"
+        },
+        {
+          "id": "e02-c",
+          "title": "Дефицит мощностей российских ЦОД усилился",
+          "text": "Стойки мощностью 15–20 кВт для задач ИИ уменьшают доступную ёмкость существующих машинных залов.\n\nУчастники рынка ожидают пересмотра планов размещения инфраструктуры.",
+          "source_name": "CIO: канал IT-руководителей",
+          "source_type": "telegram",
+          "source_url": null,
+          "published_at": "2026-08-06T12:00:00+03:00",
+          "language": "ru"
+        }
+      ],
+      "material_predictions": [
+        {
+          "id": "e02-a",
+          "relevance": "borderline",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [],
+          "summary": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД; подключение новых площадок в Москве может занимать от двух до пяти лет.",
+          "claims": [
+            {
+              "text": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД.",
+              "evidence_quote": "В Москве и Санкт-Петербурге возник дефицит свободных мощностей ЦОД."
+            },
+            {
+              "text": "Подключение новых площадок в Москве может занимать от двух до пяти лет.",
+              "evidence_quote": "Подключение новых площадок в Москве может занимать от двух до пяти лет."
+            }
+          ],
+          "impact": "Дефицит мощностей в ключевых локациях может ограничивать размещение и масштабирование операторской инфраструктуры, включая хостинг видеоплатформ — потенциального контура клиентов GS Labs. Прямое влияние на компанию из текста не следует. Сигнал значим только как фоновый отраслевой тренд.",
+          "review_required": true,
+          "review_reasons": [
+            "uncertain_relevance",
+            "open_questions"
+          ]
+        },
+        {
+          "id": "e02-b",
+          "relevance": "borderline",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [
+            "PR"
+          ],
+          "summary": "CNews сообщает об усилении дефицита мощностей российских ЦОД: средняя стоимость стойки 5 кВт достигла 170,8 тыс. руб. в Москве (+15,7% г/г) и 138 тыс. руб. в Санкт-Петербурге (+31,3% г/г).",
+          "claims": [
+            {
+              "text": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге.",
+              "evidence_quote": "Средняя стоимость стойки 5 кВт достигла 170,8 тыс. рублей в Москве и 138 тыс. рублей в Санкт-Петербурге."
+            },
+            {
+              "text": "Годовой рост стоимости стойки 5 кВт составил 15,7% в Москве и 31,3% в Санкт-Петербурге.",
+              "evidence_quote": "Годовой рост составил 15,7% и 31,3% соответственно."
+            }
+          ],
+          "impact": "Рост стоимости и дефицит стойко-мест могут повышать инфраструктурные издержки операторов и хостинга сервисов в домене OTT/IPTV и цифровых платформ. Прямое влияние на GS Labs не подтверждено: зависимость компании или её клиентов от коммерческих ЦОД в Москве и Санкт-Петербурге неизвестна. Сигнал фоновый — рыночный контекст, а не действие, требующее реакции.",
+          "review_required": true,
+          "review_reasons": [
+            "uncertain_relevance",
+            "open_questions"
+          ]
+        },
+        {
+          "id": "e02-c",
+          "relevance": "borderline",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [],
+          "summary": "Российские ЦОД сталкиваются с усилением дефицита ёмкости: стойки 15–20 кВт под ИИ-нагрузки сокращают доступную ёмкость машинных залов, участники рынка ожидают пересмотра планов размещения инфраструктуры.",
+          "claims": [
+            {
+              "text": "Стойки мощностью 15–20 кВт для ИИ-задач уменьшают доступную ёмкость существующих машинных залов.",
+              "evidence_quote": "Стойки мощностью 15–20 кВт для задач ИИ уменьшают доступную ёмкость существующих машинных залов."
+            },
+            {
+              "text": "Участники рынка ожидают пересмотра планов размещения инфраструктуры на фоне дефицита мощностей.",
+              "evidence_quote": "Участники рынка ожидают пересмотра планов размещения инфраструктуры."
+            }
+          ],
+          "impact": "Общий инфраструктурный тренд без упоминания ТВ/OTT, операторов или GS Labs. Косвенно может отразиться на хостинге сервисов операторов — потенциальных клиентов компании, но прямое влияние на продукты или решения GS Labs из текста не следует. Повода для действий PR или GR нет.",
+          "review_required": true,
+          "review_reasons": [
+            "uncertain_relevance",
+            "open_questions"
+          ]
+        }
+      ],
+      "predicted_clusters": [
+        {
+          "cluster_id": "event-1",
+          "member_ids": [
+            "e01-a",
+            "e01-b",
+            "e01-c"
+          ]
+        },
+        {
+          "cluster_id": "event-2",
+          "member_ids": [
+            "e02-a",
+            "e02-b",
+            "e02-c"
+          ]
+        },
+        {
+          "cluster_id": "event-3",
+          "member_ids": [
+            "e03-a",
+            "e03-b",
+            "e03-c",
+            "rf-075"
+          ]
+        },
+        {
+          "cluster_id": "event-4",
+          "member_ids": [
+            "rf-077",
+            "rf-097"
+          ]
+        },
+        {
+          "cluster_id": "event-5",
+          "member_ids": [
+            "rf-092"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-007",
+          "member_ids": [
+            "rf-007"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-016",
+          "member_ids": [
+            "rf-016"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-070",
+          "member_ids": [
+            "rf-070"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-083",
+          "member_ids": [
+            "rf-083"
+          ]
+        }
+      ]
+    },
+    {
+      "truth": {
+        "case_id": "E03",
+        "split": "development",
+        "member_ids": [
+          "e03-a",
+          "e03-b",
+          "e03-c"
+        ],
+        "expected_clusters": [
+          [
+            "e03-a",
+            "e03-b",
+            "e03-c"
+          ]
+        ],
+        "preserve_positions": true,
+        "failure_to_avoid": "Выдать позиции ведомства, ассоциации и операторов за единое мнение."
+      },
+      "materials": [
+        {
+          "id": "e03-a",
+          "title": "Отрасль обсуждает реформу лицензирования связи",
+          "text": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий.\n\nВедомство заявило, что модель должна повысить устойчивость сетей.",
+          "source_name": "Минцифры России",
+          "source_type": "regulator_site",
+          "source_url": null,
+          "published_at": "2026-08-20T12:30:00+03:00",
+          "language": "ru"
+        },
+        {
+          "id": "e03-b",
+          "title": "Отрасль обсуждает реформу лицензирования связи",
+          "text": "АМОР считает предложенную реформу риском для региональной конкуренции.\n\nАссоциация предложила институт аварийного оператора вместо передачи сети крупному игроку.",
+          "source_name": "Ассоциация малых операторов связи",
+          "source_type": "telegram",
+          "source_url": null,
+          "published_at": "2026-08-20T13:30:00+03:00",
+          "language": "ru"
+        },
+        {
+          "id": "e03-c",
+          "title": "Отрасль обсуждает реформу лицензирования связи",
+          "text": "Крупные операторы поддержали единые требования к устойчивости сетей, но попросили уточнить переходный период.\n\nСрок внесения проекта в Госдуму пока не назван.",
+          "source_name": "Коммерсант",
+          "source_type": "rss",
+          "source_url": null,
+          "published_at": "2026-08-20T14:30:00+03:00",
+          "language": "ru"
+        }
+      ],
+      "material_predictions": [
+        {
+          "id": "e03-a",
+          "relevance": "relevant",
+          "importance": "high",
+          "critical_or_escalate": false,
+          "roles": [
+            "GR",
+            "PR",
+            "HEAD"
+          ],
+          "summary": "Минцифры предложило реформу лицензирования операторов связи с введением трёх уровней лицензий, заявляя целью повышение устойчивости сетей; отрасль публично обсуждает инициативу, официальный идентификатор проекта НПА не указан.",
+          "claims": [
+            {
+              "text": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий",
+              "evidence_quote": "Минцифры предложило обновить лицензирование операторов связи и ввести три уровня лицензий"
+            },
+            {
+              "text": "Регулятор заявляет целью новой модели повышение устойчивости сетей",
+              "evidence_quote": "модель должна повысить устойчивость сетей"
+            }
+          ],
+          "impact": "Реформа может изменить регуляторные требования к операторам — ключевым клиентам и партнёрам GS Labs в OTT/IPTV и операторской инфраструктуре, и создать раннее окно для GR-участия в формировании правил. Публичное предложение регулятора меняет отраслевой нарратив, но пока не является принятым регулированием. Прямые обязательства для GS Labs в тексте не указаны.",
+          "review_required": true,
+          "review_reasons": [
+            "open_questions",
+            "unconfirmed_npa"
+          ]
+        },
+        {
+          "id": "e03-b",
+          "relevance": "relevant",
+          "importance": "medium",
+          "critical_or_escalate": false,
+          "roles": [
+            "GR"
+          ],
+          "summary": "Ассоциация малых операторов связи (АМОР) публично назвала предлагаемую реформу лицензирования связи риском для региональной конкуренции и предложила альтернативу — институт аварийного оператора вместо передачи сети крупному игроку. Официальный документ реформы в материале не идентифицирован.",
+          "claims": [
+            {
+              "text": "АМОР считает предложенную реформу лицензирования связи риском для региональной конкуренции.",
+              "evidence_quote": "АМОР считает предложенную реформу риском для региональной конкуренции."
+            },
+            {
+              "text": "АМОР предложила институт аварийного оператора как альтернативу передаче сети крупному игроку.",
+              "evidence_quote": "Ассоциация предложила институт аварийного оператора вместо передачи сети крупному игроку."
+            },
+            {
+              "text": "Обсуждаемая реформа содержит вариант передачи сети крупному игроку.",
+              "evidence_quote": "вместо передачи сети крупному игроку"
+            }
+          ],
+          "impact": "Реформа лицензирования может изменить структуру операторского рынка (консолидация сетей у крупного игрока против сохранения региональных операторов) — это среда, в которой работают потенциальные заказчики решений GS Labs для ТВ/OTT и операторской инфраструктуры. Пока это публичная позиция ассоциации без идентифицированного НПА, стадии и сроков; для GR сигнал означает задачу найти и связать объект реформы, а не самостоятельное регуляторное событие.",
+          "review_required": true,
+          "review_reasons": [
+            "open_questions",
+            "unconfirmed_npa"
+          ]
+        },
+        {
+          "id": "e03-c",
+          "relevance": "relevant",
+          "importance": "medium",
+          "critical_or_escalate": false,
+          "roles": [
+            "GR"
+          ],
+          "summary": "Отраслевое обсуждение проекта реформы лицензирования связи: крупные операторы поддержали единые требования к устойчивости сетей, но просят уточнить переходный период; срок внесения проекта в Госдуму не назван.",
+          "claims": [
+            {
+              "text": "Крупные операторы поддержали единые требования к устойчивости сетей в рамках обсуждаемой реформы лицензирования связи.",
+              "evidence_quote": "Крупные операторы поддержали единые требования к устойчивости сетей"
+            },
+            {
+              "text": "Операторы попросили уточнить переходный период по реформе.",
+              "evidence_quote": "но попросили уточнить переходный период"
+            },
+            {
+              "text": "Срок внесения проекта реформы в Госдуму пока не определён.",
+              "evidence_quote": "Срок внесения проекта в Госдуму пока не назван."
+            }
+          ],
+          "impact": "Реформа лицензирования операторов связи может изменить требования к операторской инфраструктуре — рынку, на который GS Labs поставляет решения для ТВ/OTT и управления доступом. На текущем раннем этапе (проект не внесён в Госдуму, требования не детализированы) прямое влияние на продукты компании не подтверждено. Целесообразно отслеживать появление официального текста и идентификатора проекта.",
+          "review_required": true,
+          "review_reasons": [
+            "open_questions",
+            "unconfirmed_npa"
+          ]
+        }
+      ],
+      "predicted_clusters": [
+        {
+          "cluster_id": "event-1",
+          "member_ids": [
+            "e01-a",
+            "e01-b",
+            "e01-c"
+          ]
+        },
+        {
+          "cluster_id": "event-2",
+          "member_ids": [
+            "e02-a",
+            "e02-b",
+            "e02-c"
+          ]
+        },
+        {
+          "cluster_id": "event-3",
+          "member_ids": [
+            "e03-a",
+            "e03-b",
+            "e03-c",
+            "rf-075"
+          ]
+        },
+        {
+          "cluster_id": "event-4",
+          "member_ids": [
+            "rf-077",
+            "rf-097"
+          ]
+        },
+        {
+          "cluster_id": "event-5",
+          "member_ids": [
+            "rf-092"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-007",
+          "member_ids": [
+            "rf-007"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-016",
+          "member_ids": [
+            "rf-016"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-070",
+          "member_ids": [
+            "rf-070"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-083",
+          "member_ids": [
+            "rf-083"
+          ]
+        }
+      ]
+    },
+    {
+      "truth": {
+        "case_id": "RF-E1",
+        "split": "development",
+        "member_ids": [
+          "rf-007",
+          "rf-016"
+        ],
+        "expected_clusters": [
+          [
+            "rf-007",
+            "rf-016"
+          ]
+        ],
+        "preserve_positions": false,
+        "failure_to_avoid": "Оставить повторно обнаруженное событие разными объектами."
+      },
+      "materials": [
+        {
+          "id": "rf-007",
+          "title": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества",
+          "text": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве.\nНикифорову предъявлены обвинения\nБывшему министру связи и массовых коммуникаций главе Минкомсвязи России Николаю Никифорову следователи МВД предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве. Об этом сообщил «Коммерсант».\nКак пишет издание, Никифоров стал фигурантом уголовного дела финансовой пирамиды Finiko, в котором расследуется хищении 5 млрд руб. у 8 тыс. вкладчиков.\nОбвинение Никифорову было предъявлено в заочной форме, поскольку бывший министр сейчас проживает в основном в ОАЭ, «бывая на родине наездами».\nЧем грозит заочное обвинение\nЗаочное обвинение может стать основанием для объявления Никифорова в федеральный, а потом в международный розыск.\nПрежде, чем Николай Никифоров будет объявлен в розыск по линии Интерпола, его надлежит заочно арестовать через суд. Если это произойдет, велика вероятность задержания Никифорова на территории ОАЭ и экстрадиции в Россию.\nОрганизация преступного сообщества наказывается по статье 210 УК РФ лишением свободы на срок до 20 лет и штрафом до 5 млн руб.\nМаксимальное наказание за особо крупное мошенничество (то есть мошенничество в размере свыше 12 млн руб.) наказывается согласно части 4 статьи 159 лишением свободы сроком до 10 лет и штрафом до 1 млн руб. или штрафом в размере дохода за период до трех лет.\nИстория финансовой пирамиды Finiko\nФинансовая пирамида Finiko, созданная на родине Никифорова в Татарстане, привлекала вкладчиков, обещая выплату до 25% годовых. К моменту прекращения компанией выплат, около 8 тыс. человек стали потерпевшими, а сумма их потерь по оценке МВД составляет около 5 млрд руб.\nКак пишет «Коммерсант», деньги, собранные Finiko, выводились за границу с участием архитектурного бюро «Иннополис Архитект».\nЭта компания занимается, в частности, застройкой города Иннополис недалеко от Казани.\nВозглавляет бюро дизайнер Азат Тухватуллин, которому принадлежит половина компании. Вторым учредителем является Николай Никифоров через ООО «Иннополис Развитие».\nАзат Тухватуллин был задержан в конце августа 2026 г. в Иннополисе. К операции по его задержанию привлекалась местная полиция и СОБР Росгвардии. 1 сентября по решению Мещанского райсуда он был помещен в СИЗО.\nВ ОАЭ задержан и уже передан властям России еще один фигурант уголовного дела Finiko Эдвард Сабиров.\nЧем знаменит Николай Никифоров\nНиколай Никифоров - самый молодой министр в истории современной России. В 2012 г. в 29 лет он возглавил Министерство связи и массовых коммуникаций, где занимал кресло министра до 2018 г.\nДо этого в 2010-2012 гг. он был министром связи Татарстана.\nНаукоград Иннополис, который часто называют первым новым городом в современной России, был построен в 2015 г. по инициативе в том числе и Никифорова.",
+          "source_name": "CNews Телеком",
+          "source_type": "rss",
+          "source_url": "https://telecom.cnews.ru/news/top/2026-09-04_byvshij_ministr_svyazi_rossii",
+          "published_at": "2026-09-04T16:28:00+00:00",
+          "language": "ru"
+        },
+        {
+          "id": "rf-016",
+          "title": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества",
+          "text": "Бывший министр связи России получил обвинение в создании организованного преступного сообщества\nЭкс-главе Минкомсвязи России Николаю Никифорову следователи предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве.\nНикифорову предъявлены обвинения\nБывшему министру связи и массовых коммуникаций главе Минкомсвязи России Николаю Никифорову следователи МВД предъявили обвинения в создании организованного преступного сообщества и особо крупном мошенничестве. Об этом сообщил «Коммерсант».\nКак пишет издание, Никифоров стал фигурантом уголовного дела финансовой пирамиды Finiko, в котором расследуется хищении 5 млрд руб. у 8 тыс. вкладчиков.\nОбвинение Никифорову было предъявлено в заочной форме, поскольку бывший министр сейчас проживает в основном в ОАЭ, «бывая на родине наездами».\nЧем грозит заочное обвинение\nЗаочное обвинение может стать основанием для объявления Никифорова в федеральный, а потом в международный розыск.\nПрежде, чем Николай Никифоров будет объявлен в розыск по линии Интерпола, его надлежит заочно арестовать через суд. Если это произойдет, велика вероятность задержания Никифорова на территории ОАЭ и экстрадиции в Россию.\nОрганизация преступного сообщества наказывается по статье 210 УК РФ лишением свободы на срок до 20 лет и штрафом до 5 млн руб.\nМаксимальное наказание за особо крупное мошенничество (то есть мошенничество в размере свыше 12 млн руб.) наказывается согласно части 4 статьи 159 лишением свободы сроком до 10 лет и штрафом до 1 млн руб. или штрафом в размере дохода за период до трех лет.\nИстория финансовой пирамиды Finiko\nФинансовая пирамида Finiko, созданная на родине Никифорова в Татарстане, привлекала вкладчиков, обещая выплату до 25% годовых. К моменту прекращения компанией выплат, около 8 тыс. человек стали потерпевшими, а сумма их потерь по оценке МВД составляет около 5 млрд руб.\nКак пишет «Коммерсант», деньги, собранные Finiko, выводились за границу с участием архитектурного бюро «Иннополис Архитект».\nЭта компания занимается, в частности, застройкой города Иннополис недалеко от Казани.\nВозглавляет бюро дизайнер Азат Тухватуллин, которому принадлежит половина компании. Вторым учредителем является Николай Никифоров через ООО «Иннополис Развитие».\nАзат Тухватуллин был задержан в конце августа 2026 г. в Иннополисе. К операции по его задержанию привлекалась местная полиция и СОБР Росгвардии. 1 сентября по решению Мещанского райсуда он был помещен в СИЗО.\nВ ОАЭ задержан и уже передан властям России еще один фигурант уголовного дела Finiko Эдвард Сабиров.\nЧем знаменит Николай Никифоров\nНиколай Никифоров - самый молодой министр в истории современной России. В 2012 г. в 29 лет он возглавил Министерство связи и массовых коммуникаций, где занимал кресло министра до 2018 г.\nДо этого в 2010-2012 гг. он был министром связи Татарстана.\nНаукоград Иннополис, который часто называют первым новым городом в современной России, был построен в 2015 г. по инициативе в том числе и Никифорова.",
+          "source_name": "CNews",
+          "source_type": "rss",
+          "source_url": "https://biz.cnews.ru/news/top/2026-09-04_byvshij_ministr_svyazi_rossii",
+          "published_at": "2026-09-04T16:28:00+00:00",
+          "language": "ru"
+        }
+      ],
+      "material_predictions": [
+        {
+          "id": "rf-007",
+          "relevance": "irrelevant",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [],
+          "summary": "Уголовное дело против экс-министра связи Никифорова по делу финансовой пирамиды Finiko — криминально-политическая новость без связи с продуктами, рынками (OTT/IPTV, цифровое ТВ, защищённые сервисы), регуляторными рисками или репутацией GS Labs; Иннополис упомянут лишь как объект застройки бюро, без подтверждённой связи с компанией.",
+          "claims": [],
+          "impact": "",
+          "review_required": false,
+          "review_reasons": []
+        },
+        {
+          "id": "rf-016",
+          "relevance": "irrelevant",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [],
+          "summary": "Уголовное дело против бывшего министра связи Никифорова и финансовой пирамиды Finiko — криминально-политическая новость вне продуктового домена GS Labs (финансовая пирамида, застройка Иннополиса): связи с продуктами, рынками платного ТВ/OTT, регуляторными рисками или репутацией компании в материале и контексте нет, применимого эффекта не видно.",
+          "claims": [],
+          "impact": "",
+          "review_required": false,
+          "review_reasons": []
+        }
+      ],
+      "predicted_clusters": [
+        {
+          "cluster_id": "event-1",
+          "member_ids": [
+            "e01-a",
+            "e01-b",
+            "e01-c"
+          ]
+        },
+        {
+          "cluster_id": "event-2",
+          "member_ids": [
+            "e02-a",
+            "e02-b",
+            "e02-c"
+          ]
+        },
+        {
+          "cluster_id": "event-3",
+          "member_ids": [
+            "e03-a",
+            "e03-b",
+            "e03-c",
+            "rf-075"
+          ]
+        },
+        {
+          "cluster_id": "event-4",
+          "member_ids": [
+            "rf-077",
+            "rf-097"
+          ]
+        },
+        {
+          "cluster_id": "event-5",
+          "member_ids": [
+            "rf-092"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-007",
+          "member_ids": [
+            "rf-007"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-016",
+          "member_ids": [
+            "rf-016"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-070",
+          "member_ids": [
+            "rf-070"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-083",
+          "member_ids": [
+            "rf-083"
+          ]
+        }
+      ]
+    },
+    {
+      "truth": {
+        "case_id": "RF-E2",
+        "split": "development",
+        "member_ids": [
+          "rf-077",
+          "rf-097"
+        ],
+        "expected_clusters": [
+          [
+            "rf-077",
+            "rf-097"
+          ]
+        ],
+        "preserve_positions": false,
+        "failure_to_avoid": "Оставить повторно обнаруженное событие разными объектами."
+      },
+      "materials": [
+        {
+          "id": "rf-077",
+          "title": "Власти обсуждают налоговые льготы разработчикам отечественных ИИ-моделей",
+          "text": "Власти обсуждают налоговые льготы разработчикам отечественных ИИ-моделей\nСреди них – налоговый вычет и пониженные социальные взносы\n\nВ рамках подготовки подзаконных актов для вступившего в июле закона об ИИ ведется разработка мер поддержки разработчиков национальных и суверенных больших фундаментальных моделей искусственного интеллекта (ИИ). Среди них – ежегодный региональный инвестиционный налоговый вычет по налогу на прибыль из бюджета в сумме расходов, понесенных на создание модели ИИ. Об этом говорится в предложениях АНО «Цифровая экономика» по стимулированию отрасли, направленных в Минцифры в конце июля.\n\nhttps://www.vedomosti.ru/technology/articles/2026/09/02/1225447-vlasti-obsuzhdayut-lgoti-razrabotchikam-otechestvennih-ii-modelei\n\n🤩 в МАХ 💬| ВК 💙",
+          "source_name": "АРПЭ — Telegram",
+          "source_type": "telegram",
+          "source_url": "https://t.me/arperf/7225",
+          "published_at": "2026-09-02T13:01:54+00:00",
+          "language": "ru"
+        },
+        {
+          "id": "rf-097",
+          "title": "Разработчики российских ИИ-моделей могут получить масштабные налоговые льготы",
+          "text": "Разработчики российских ИИ-моделей могут получить масштабные налоговые льготы\n\nРоссийские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных моделей искусственного интеллекта. В рамках реализации нового закона об ИИ обсуждается внедрение инвестиционных налоговых вычетов, существенное снижение страховых взносов и применение повышающих коэффициентов к расходам на разработку, что должно помочь компаниям компенсировать до половины затрат на создание высокотехнологичных ИИ-решений.",
+          "source_name": "Кабельщик — Telegram",
+          "source_type": "telegram",
+          "source_url": "https://t.me/cablemanru/21177",
+          "published_at": "2026-09-02T14:23:01+00:00",
+          "language": "ru"
+        }
+      ],
+      "material_predictions": [
+        {
+          "id": "rf-077",
+          "relevance": "borderline",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [
+            "GR"
+          ],
+          "summary": "В рамках подготовки подзаконных актов к вступившему в июле закону об ИИ власти прорабатывают меры поддержки разработчиков национальных и суверенных больших фундаментальных ИИ-моделей: региональный инвестиционный налоговый вычет по налогу на прибыль и пониженные социальные взносы. Предложения АНО «Цифровая экономика» направлены в Минцифры в конце июля.",
+          "claims": [
+            {
+              "text": "В рамках подготовки подзаконных актов к закону об ИИ, вступившему в силу в июле, разрабатываются меры поддержки разработчиков национальных и суверенных больших фундаментальных ИИ-моделей",
+              "evidence_quote": "В рамках подготовки подзаконных актов для вступившего в июле закона об ИИ ведется разработка мер поддержки разработчиков национальных и суверенных больших фундаментальных моделей искусственного интеллекта (ИИ)"
+            },
+            {
+              "text": "Среди обсуждаемых мер — ежегодный региональный инвестиционный налоговый вычет по налогу на прибыль в сумме расходов на создание модели ИИ",
+              "evidence_quote": "Среди них – ежегодный региональный инвестиционный налоговый вычет по налогу на прибыль из бюджета в сумме расходов, понесенных на создание модели ИИ"
+            },
+            {
+              "text": "Также обсуждаются налоговый вычет и пониженные социальные взносы",
+              "evidence_quote": "Среди них – налоговый вычет и пониженные социальные взносы"
+            },
+            {
+              "text": "Предложения по стимулированию отрасли подготовлены АНО «Цифровая экономика» и направлены в Минцифры в конце июля",
+              "evidence_quote": "Об этом говорится в предложениях АНО «Цифровая экономика» по стимулированию отрасли, направленных в Минцифры в конце июля"
+            }
+          ],
+          "impact": "Мера адресована узкому кругу разработчиков национальных и суверенных фундаментальных ИИ-моделей; применимость к GS Labs, по контексту не относящейся к разработчикам таких моделей, не подтверждена. Сигнал показывает направление политики поддержки ИИ и формирование подзаконной базы к закону об ИИ, за состоянием которой может следить GR-контур. Коммуникационной задачи для PR материал не создаёт.",
+          "review_required": true,
+          "review_reasons": [
+            "uncertain_relevance",
+            "open_questions"
+          ]
+        },
+        {
+          "id": "rf-097",
+          "relevance": "borderline",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [
+            "GR"
+          ],
+          "summary": "Российские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных ИИ-моделей: инвестиционные налоговые вычеты, снижение страховых взносов и повышающие коэффициенты на R&D с компенсацией до половины затрат, в рамках реализации нового закона об ИИ. Мера находится на стадии обсуждения, официального документа нет, применимость к GS Labs не подтверждена.",
+          "claims": [
+            {
+              "text": "Российские власти начали разработку пакета налоговых преференций для создателей отечественных фундаментальных ИИ-моделей.",
+              "evidence_quote": "Российские власти приступили к разработке пакета налоговых преференций для создателей отечественных фундаментальных моделей искусственного интеллекта."
+            },
+            {
+              "text": "Мера обсуждается в рамках реализации нового закона об ИИ.",
+              "evidence_quote": "В рамках реализации нового закона об ИИ обсуждается внедрение инвестиционных налоговых вычетов"
+            },
+            {
+              "text": "Обсуждаемые инструменты: инвестиционные налоговые вычеты, существенное снижение страховых взносов и повышающие коэффициенты к расходам на разработку.",
+              "evidence_quote": "обсуждается внедрение инвестиционных налоговых вычетов, существенное снижение страховых взносов и применение повышающих коэффициентов к расходам на разработку"
+            },
+            {
+              "text": "Заявленная цель — помочь компаниям компенсировать до половины затрат на создание высокотехнологичных ИИ-решений.",
+              "evidence_quote": "что должно помочь компаниям компенсировать до половины затрат на создание высокотехнологичных ИИ-решений."
+            }
+          ],
+          "impact": "Потенциальная возможность снижения затрат, только если GS Labs подпадает под критерии разработчика российских ИИ-моделей; профиль компании (цифровое ТВ/OTT, управление доступом) такого разработчика не описывает. Мера на стадии обсуждения, без документа, сроков и обязательств. Достаточно фонового отслеживания до появления проекта акта с идентификатором.",
+          "review_required": true,
+          "review_reasons": [
+            "uncertain_relevance",
+            "open_questions"
+          ]
+        }
+      ],
+      "predicted_clusters": [
+        {
+          "cluster_id": "event-1",
+          "member_ids": [
+            "e01-a",
+            "e01-b",
+            "e01-c"
+          ]
+        },
+        {
+          "cluster_id": "event-2",
+          "member_ids": [
+            "e02-a",
+            "e02-b",
+            "e02-c"
+          ]
+        },
+        {
+          "cluster_id": "event-3",
+          "member_ids": [
+            "e03-a",
+            "e03-b",
+            "e03-c",
+            "rf-075"
+          ]
+        },
+        {
+          "cluster_id": "event-4",
+          "member_ids": [
+            "rf-077",
+            "rf-097"
+          ]
+        },
+        {
+          "cluster_id": "event-5",
+          "member_ids": [
+            "rf-092"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-007",
+          "member_ids": [
+            "rf-007"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-016",
+          "member_ids": [
+            "rf-016"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-070",
+          "member_ids": [
+            "rf-070"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-083",
+          "member_ids": [
+            "rf-083"
+          ]
+        }
+      ]
+    },
+    {
+      "truth": {
+        "case_id": "RF-SINGLE-development",
+        "split": "development",
+        "member_ids": [
+          "rf-070",
+          "rf-075",
+          "rf-083",
+          "rf-092"
+        ],
+        "expected_clusters": [
+          [
+            "rf-070"
+          ],
+          [
+            "rf-075"
+          ],
+          [
+            "rf-083"
+          ],
+          [
+            "rf-092"
+          ]
+        ],
+        "preserve_positions": true,
+        "failure_to_avoid": "Склеить разные реальные материалы только по общей теме."
+      },
+      "materials": [
+        {
+          "id": "rf-070",
+          "title": "Минсельхоз прорабатывает дополнительные меры поддержки аграриев",
+          "text": "Минсельхоз прорабатывает дополнительные меры поддержки аграриев\n\nВ ходе рабочей поездки в Челябинскую область Оксана Лут провела в режиме ВКС оперативный штаб по ходу уборочной кампании и подготовке к озимому севу.\n\nО сезонных полевых работах:\n\n🚜Несмотря на непростые условия в начале, сейчас темпы уборочных работ и урожайность основных культур в целом по стране превышают прошлогодние показатели.\n\n🌾Обмолочено порядка 70% площадей зерновых и зернобобовых, собрано свыше 110 млн т – на 10,5 млн т больше, чем на аналогичную дату прошлого года. В том числе намолочено 83,5 млн т пшеницы. Полученные объемы уже полностью обеспечивают потребности внутреннего рынка в зерне.\n\n🌻В активной фазе находится уборка масличных культур – собрано 3,3 млн т. Начался сбор сахарной свеклы, картофеля и овощей открытого грунта. Ожидается хороший урожай по всем основным культурам.\n\n🌱Озимый сев идет в 44 регионах, засеяно более 2 млн га, что выше темпов прошлого года. Регионам необходимо сохранить озимый клин, который формирует основной объем урожая зерновых и имеет ключевое значение для обеспечения продовольственной безопасности страны.\n\n«Благодаря оперативно принятым Правительством мерам удалось стабилизировать ситуацию с топливом. Вопрос обеспечения аграриев ГСМ находится на личном контроле вице-премьера Дмитрия Патрушева. У нас есть соответствующее поручение Президента: здесь мы совместно с Минэнерго в оперативном режиме каждый день регулируем ситуацию, решаем возникающие вопросы», – отметила Оксана Лут.\n\nО поддержке аграриев:\n\n🛤В связи со сложностями в Азово-Черноморском бассейне экспортные потоки переориентируются на другие направления. Правительство одобрило выделение 9,7 млрд рублей на субсидирование железнодорожного тарифа для перевозок зерна до портов и сухопутных переходов.\n\n📃С 1 сентября введен мораторий на уплату экспортных пошлин на зерновые и фиксации верхней границы пошлины на масло и шрот.\nМинсельхоз также прорабатывает дополнительные инструменты поддержки финансовой устойчивости аграриев:\n\n•В Правительство внесены предложения о пролонгации льготных кредитов и льготного лизинга.\n•Рассматривается возможность предоставления погектарной поддержки озимого сева.\n•Прорабатывается введение моратория на банкротство хозяйств и сохранение за ними статуса сельхозтоваропроизводителя.\n•В проработке закупочные интервенции зерна объемом до 3 млн т.\n\n🇷🇺 Подписаться на Правительство России в MAКС",
+          "source_name": "Правительство России — Telegram",
+          "source_type": "telegram",
+          "source_url": "https://t.me/government_rus/32399",
+          "published_at": "2026-09-04T16:12:44+00:00",
+          "language": "ru"
+        },
+        {
+          "id": "rf-075",
+          "title": "📡 Реформа телеком-отрасли — что ждет российский рынок связи?",
+          "text": "📡 Реформа телеком-отрасли — что ждет российский рынок связи?\n\n3 сентября в Москве прошла пресс-конференция региональных операторов связи и отраслевых объединений. Эксперты обсудили готовящуюся реформу лицензирования в отрасли связи и условия размещения линий связи на опорах электросетевых компаний.\n\nСпикерами выступили:\n🔹 Алексей Леонтьев, директор Ассоциации телекоммуникационных операторов (АСТО)\n🔹 Николай Михайлов, глава комитета по телекоммуникациям АРПП «Отечественный софт»\n🔹 Олег Грищенко, президент ассоциации «Ростелесеть»\n🔹 Дмитрий Галушко, президент Ассоциации малых операторов связи (АМОР)\n🔹 Игорь Дорофеев, президент Ассоциации участников отрасли ЦОД\n🔹 Олег Зиборов, первый заместитель генерального директора АСТО\n🔹 Александр Самойлов, директор ООО «СитиЛайн»\n🔹 Юрий Беззубцев, директор ООО «Фотон»\n🔹 Алексей Калачев, управляющий директор «Битрейс Телеком».\n\nРеформа предусматривает для операторов связи новые три типа лицензий: базовую, универсальную и генеральную. Универсальная лицензия открывает ШПД и предусматривает 10 млн рублей за 10 лет, 100 млн рублей собственных средств, сеть не менее чем в 30% муниципальных образований региона и не менее 15% МКД в городах.\n\n📊 На пресс-конференции участники представили расчеты возможных последствий реформы. По оценке АСТО, предлагаемые требования к универсальной лицензии в оптимистичном сценарии вытеснят компании с годовой выручкой до 200 млн рублей. В 26 субъектах рынок региональных операторов может исчезнуть полностью, еще в девяти регионах от него останется от 1% до 30%. Под ударом может оказаться связь более чем 50 млн граждан.\n\nОтдельное внимание эксперты уделили последствиям реформы для рынка отечественного ПО. Глава комитета по телекоммуникациям АРПП «Отечественный софт» Николай Михайлов предупредил, что сокращение числа малых и средних операторов ударит по независимым разработчикам софта, дистрибьюторам контента и производителям оборудования. Малые операторы, по его словам, служили полигоном обкатки отечественных биллингов, DPI, медиаплатформ и систем защиты контента. Крупные игроки непроверенный софт ставят неохотно и закрывают потребность внутренней разработкой через индустриальные центры компетенций.\n\n«Можно вводить любые налоговые льготы для ИТ. Если не будет рынка, на котором продавать продукты, льготы бессмысленны. Уход операторов обернется для бюджета расходами на переподключение абонентской базы. В пояснительной записке к закону, скорее всего, напишут, что дополнительных средств не требуется. На практике крупные сети перекредитованы и за финансированием придут в тот же бюджет», — отметил Николай Михайлов.\n\nПо итогам конференции участники обозначили необходимость публичного обсуждения проекта реформы лицензирования с участием региональных операторов до его внесения в Государственную Думу, пересчета финансовых и географических порогов по фактической экономике малых и средних операторов, а также оценки бюджетного эффекта переподключения абонентов и сжатия рынка отечественного телеком-ПО и региональных ЦОД.\n\n📋 Позицию отраслевых объединений представят в совместном меморандуме пяти ассоциаций, который направят президенту РФ, правительству и Минцифры России.\n\nПодробнее на сайте\n\n🖥 АРПП «Отечественный софт» в МАХ | VK",
+          "source_name": "АРПП «Отечественный софт» — Telegram",
+          "source_type": "telegram",
+          "source_url": "https://t.me/arppsoft/1527",
+          "published_at": "2026-09-04T09:28:16+00:00",
+          "language": "ru"
+        },
+        {
+          "id": "rf-083",
+          "title": "❤ Соберите свой осенний образ с мерчем ЦИПР и Тех-Френдли Викенд",
+          "text": "❤ Соберите свой осенний образ с мерчем ЦИПР и Тех-Френдли Викенд\n\nСмена сезона — отличный повод обновить гардероб и добавить в повседневные наряды технологичные детали.\n\nВ коллекциях конференции и фестиваля найдутся вещи для любой погоды и задач: от ветровок, дождевиков и футболок до вместительных шопперов, кофейных кружек и лаконичных аксессуаров.\n\nВыбирайте и заказывайте понравившиеся позиции ⬇\n\n🔹 по прямой ссылке: https://cipr-shop.ru/\n🔹 или через раздел «Мерч» в главном меню на сайте ЦИПР\n\nДоставка осуществляется по всей России сервисом СДЭК.\n\n📲Подписывайтесь на канал ЦИПР в MAX.",
+          "source_name": "ЦИПР — Telegram",
+          "source_type": "telegram",
+          "source_url": "https://t.me/icipr/9927",
+          "published_at": "2026-09-03T07:02:33+00:00",
+          "language": "ru"
+        },
+        {
+          "id": "rf-092",
+          "title": "Легализация Национального удостоверяющего центра. Подготовлен приказ Минцифры о форматах сертификатов безопасности",
+          "text": "Легализация Национального удостоверяющего центра. Подготовлен приказ Минцифры о форматах сертификатов безопасности\nhttps://www.tadviser.ru/a/494214\n\n——————————\nTAdviser в MAX и ВК",
+          "source_name": "TAdviser — Telegram",
+          "source_type": "telegram",
+          "source_url": "https://t.me/tadviser/6185",
+          "published_at": "2026-09-02T07:54:01+00:00",
+          "language": "ru"
+        }
+      ],
+      "material_predictions": [
+        {
+          "id": "rf-070",
+          "relevance": "irrelevant",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [],
+          "summary": "Материал о мерах поддержки аграриев (урожай, экспортные пошлины, субсидии на ж/д тариф, льготные кредиты, мораторий на банкротство хозяйств) относится к сельскому хозяйству и не имеет связи с продуктовым доменом GS Labs (цифровое ТВ, OTT/IPTV, защищённые цифровые сервисы, управление доступом и правами на контент): ни риска, ни возможности, ни применимой меры поддержки для компании в тексте нет.",
+          "claims": [],
+          "impact": "",
+          "review_required": false,
+          "review_reasons": []
+        },
+        {
+          "id": "rf-075",
+          "relevance": "relevant",
+          "importance": "high",
+          "critical_or_escalate": false,
+          "roles": [
+            "GR",
+            "HEAD",
+            "PR"
+          ],
+          "summary": "Отраслевые ассоциации на пресс-конференции 3 сентября раскрыли параметры готовящейся реформы лицензирования связи (три типа лицензий, жёсткие пороги универсальной лицензии по ШПД) и представили расчёты вытеснения малых операторов. Заявлено, что сжатие рынка операторов ударит по независимым разработчикам телеком-ПО, включая медиаплатформы и системы защиты контента; ассоциации требуют публичного обсуждения проекта до внесения в Госдуму и готовят меморандум президенту, правительству и Минцифры.",
+          "claims": [
+            {
+              "text": "Реформа предусматривает три новых типа лицензий для операторов связи; универсальная лицензия (ШПД) требует 10 млн рублей за 10 лет, 100 млн рублей собственных средств, сеть не менее чем в 30% муниципальных образований региона и не менее 15% МКД в городах.",
+              "evidence_quote": "Реформа предусматривает для операторов связи новые три типа лицензий: базовую, универсальную и генеральную. Универсальная лицензия открывает ШПД и предусматривает 10 млн рублей за 10 лет, 100 млн рублей собственных средств, сеть не менее чем в 30% муниципальных образований региона и не менее 15% МКД в городах."
+            },
+            {
+              "text": "По оценке АСТО, требования универсальной лицензии в оптимистичном сценарии вытеснят компании с выручкой до 200 млн рублей; в 26 регионах рынок региональных операторов может исчезнуть полностью, ещё в девяти останется 1–30%; под ударом связь более 50 млн граждан.",
+              "evidence_quote": "По оценке АСТО, предлагаемые требования к универсальной лицензии в оптимистичном сценарии вытеснят компании с годовой выручкой до 200 млн рублей. В 26 субъектах рынок региональных операторов может исчезнуть полностью, еще в девяти регионах от него останется от 1% до 30%. Под ударом может оказаться связь более чем 50 млн граждан."
+            },
+            {
+              "text": "Глава телеком-комитета АРПП «Отечественный софт» предупредил, что сокращение малых и средних операторов ударит по независимым разработчикам софта: малые операторы были полигоном обкатки отечественных биллингов, DPI, медиаплатформ и систем защиты контента.",
+              "evidence_quote": "сокращение числа малых и средних операторов ударит по независимым разработчикам софта, дистрибьюторам контента и производителям оборудования. Малые операторы, по его словам, служили полигоном обкатки отечественных биллингов, DPI, медиаплатформ и систем защиты контента."
+            },
+            {
+              "text": "Участники конференции потребовали публичного обсуждения проекта реформы лицензирования с участием региональных операторов до его внесения в Государственную Думу.",
+              "evidence_quote": "необходимость публичного обсуждения проекта реформы лицензирования с участием региональных операторов до его внесения в Государственную Думу"
+            },
+            {
+              "text": "Позицию объединений направят в совместном меморандуме пяти ассоциаций президенту РФ, правительству и Минцифры России.",
+              "evidence_quote": "Позицию отраслевых объединений представят в совместном меморандуме пяти ассоциаций, который направят президенту РФ, правительству и Минцифры России."
+            }
+          ],
+          "impact": "Реформа с заявленными порогами может сжать рынок региональных операторов — по оценке ассоциаций, ключевой канал продаж и обкатки отечественного телеком-ПО, включая медиаплатформы и системы защиты контента, то есть основной продуктовый домен GS Labs. Ассоциации открывают окно влияния: требуют публичного обсуждения до внесения в ГД и готовят меморандум президенту, правительству и Минцифры. Для GS Labs это рыночный риск и возможное окно для отраслевой позиции или участия в обсуждении.",
+          "review_required": true,
+          "review_reasons": [
+            "open_questions",
+            "unconfirmed_npa"
+          ]
+        },
+        {
+          "id": "rf-083",
+          "relevance": "irrelevant",
+          "importance": "low",
+          "critical_or_escalate": false,
+          "roles": [],
+          "summary": "Рекламный пост о продаже мерча конференции ЦИПР: одежда, аксессуары, доставка СДЭК, приглашение подписаться на канал. Нет события, риска, обязательства, рыночного или репутационного эффекта для GS Labs; совпадение темы «технологии» без связи с продуктами, рынками или НПА.",
+          "claims": [],
+          "impact": "",
+          "review_required": false,
+          "review_reasons": []
+        },
+        {
+          "id": "rf-092",
+          "relevance": "borderline",
+          "importance": "medium",
+          "critical_or_escalate": false,
+          "roles": [
+            "GR"
+          ],
+          "summary": "TAdviser сообщает о подготовке приказа Минцифры о форматах сертификатов безопасности в связи с легализацией Национального удостоверяющего центра; содержания и реквизитов документа в материале нет.",
+          "claims": [
+            {
+              "text": "Минцифры подготовило приказ о форматах сертификатов безопасности",
+              "evidence_quote": "Подготовлен приказ Минцифры о форматах сертификатов безопасности"
+            },
+            {
+              "text": "Материал посвящён легализации Национального удостоверяющего центра",
+              "evidence_quote": "Легализация Национального удостоверяющего центра"
+            },
+            {
+              "text": "Полный материал размещён на TAdviser, в телеграм-посте приведён только заголовок",
+              "evidence_quote": "https://www.tadviser.ru/a/494214"
+            }
+          ],
+          "impact": "Регулирование форматов сертификатов и легализация НУЦ могут затронуть PKI/TLS-контур защищённых цифровых сервисов и управления доступом GS Labs, но из заголовка применимость не подтверждена. Для оценки требуется текст проекта приказа. Сигнал значим как кандидат НПА для GR-отслеживания.",
+          "review_required": true,
+          "review_reasons": [
+            "uncertain_relevance",
+            "open_questions",
+            "unconfirmed_npa"
+          ]
+        }
+      ],
+      "predicted_clusters": [
+        {
+          "cluster_id": "event-1",
+          "member_ids": [
+            "e01-a",
+            "e01-b",
+            "e01-c"
+          ]
+        },
+        {
+          "cluster_id": "event-2",
+          "member_ids": [
+            "e02-a",
+            "e02-b",
+            "e02-c"
+          ]
+        },
+        {
+          "cluster_id": "event-3",
+          "member_ids": [
+            "e03-a",
+            "e03-b",
+            "e03-c",
+            "rf-075"
+          ]
+        },
+        {
+          "cluster_id": "event-4",
+          "member_ids": [
+            "rf-077",
+            "rf-097"
+          ]
+        },
+        {
+          "cluster_id": "event-5",
+          "member_ids": [
+            "rf-092"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-007",
+          "member_ids": [
+            "rf-007"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-016",
+          "member_ids": [
+            "rf-016"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-070",
+          "member_ids": [
+            "rf-070"
+          ]
+        },
+        {
+          "cluster_id": "singleton-rf-083",
+          "member_ids": [
+            "rf-083"
+          ]
+        }
+      ]
+    }
+  ]
+}

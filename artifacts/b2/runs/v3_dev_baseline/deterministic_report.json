@@ -1,0 +1,167 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v3.0.0",
+  "run_id": "dd58ac8c-99a4-404f-8487-20d9dae35ba2",
+  "configuration_id": "v3-dev-baseline-glm-onepass-t0.2",
+  "usage": {
+    "model_calls": 42,
+    "input_tokens": 97458,
+    "output_tokens": 92098,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 307.61422091702116,
+    "provider_latency_ms": 505330,
+    "attempted_calls": 42,
+    "failed_calls": 0,
+    "provider_errors": []
+  },
+  "split": "development",
+  "contract_errors": [],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 17,
+        "total": 25,
+        "accuracy": 0.68
+      },
+      "importance": {
+        "correct": 17,
+        "total": 23,
+        "accuracy": 0.7391304347826086
+      },
+      "critical_or_escalate": {
+        "correct": 25,
+        "total": 25,
+        "accuracy": 1.0
+      },
+      "roles": {
+        "correct": 11,
+        "total": 17,
+        "exact_set_accuracy": 0.6470588235294118
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 17,
+          "predicted": 11,
+          "precision": 1.0,
+          "recall": 0.6470588235294118,
+          "f1": 0.7857142857142858
+        },
+        "borderline": {
+          "support": 0,
+          "predicted": 7,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 8,
+          "predicted": 6,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.8214285714285714
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 10,
+          "predicted": 10,
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1": 0.9
+        },
+        "medium": {
+          "support": 12,
+          "predicted": 8,
+          "precision": 0.875,
+          "recall": 0.5833333333333334,
+          "f1": 0.7000000000000001
+        },
+        "high": {
+          "support": 1,
+          "predicted": 5,
+          "precision": 0.2,
+          "recall": 1.0,
+          "f1": 0.33333333333333337
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.6444444444444445
+    },
+    "roles_by_label": {
+      "GR": {
+        "support": 8,
+        "predicted": 8,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "HEAD": {
+        "support": 0,
+        "predicted": 4,
+        "precision": 0.0,
+        "recall": null
+      },
+      "PR": {
+        "support": 4,
+        "predicted": 6,
+        "precision": 0.5,
+        "recall": 0.75
+      }
+    }
+  },
+  "safety": {
+    "critical_total": 0,
+    "critical_in_low": [],
+    "submitted_claims": 61,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "review_policy": {
+    "available": true,
+    "reviewed_items": 16,
+    "workload_rate": 0.64,
+    "label_error_recall": 0.8666666666666667,
+    "critical_recall": null,
+    "unreviewed_label_error_ids": [
+      "rf-007",
+      "rf-016"
+    ]
+  },
+  "event_grouping": {
+    "pair_precision": 0.7692307692307693,
+    "pair_recall": 0.9090909090909091,
+    "pair_f1": 0.8333333333333333,
+    "b_cubed": {
+      "precision": 0.9117647058823529,
+      "recall": 0.9411764705882353,
+      "f1": 0.9262371615312791
+    },
+    "false_merge_pairs": 3,
+    "false_split_pairs": 1
+  },
+  "npa": {
+    "link_identity_accuracy": 1.0,
+    "relation_accuracy": 1.0,
+    "stage_accuracy": 1.0
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

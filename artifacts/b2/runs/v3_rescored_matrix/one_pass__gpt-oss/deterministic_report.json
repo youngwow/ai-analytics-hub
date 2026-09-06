@@ -1,0 +1,166 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v3.0.0",
+  "run_id": "048b4511-de2d-443f-be09-d602ffbdf170",
+  "configuration_id": "a1-one_pass__a5-gpt-oss:120b-cloud__rescored-v3",
+  "usage": {
+    "model_calls": 45,
+    "input_tokens": 95938,
+    "output_tokens": 27775,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 65.22731762501644,
+    "provider_latency_ms": 105160,
+    "attempted_calls": 45,
+    "failed_calls": 0
+  },
+  "split": "validation",
+  "contract_errors": [],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 11,
+        "total": 27,
+        "accuracy": 0.4074074074074074
+      },
+      "importance": {
+        "correct": 19,
+        "total": 28,
+        "accuracy": 0.6785714285714286
+      },
+      "critical_or_escalate": {
+        "correct": 29,
+        "total": 29,
+        "accuracy": 1.0
+      },
+      "roles": {
+        "correct": 18,
+        "total": 25,
+        "exact_set_accuracy": 0.72
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 15,
+          "predicted": 8,
+          "precision": 1.0,
+          "recall": 0.5333333333333333,
+          "f1": 0.6956521739130436
+        },
+        "borderline": {
+          "support": 0,
+          "predicted": 6,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 12,
+          "predicted": 3,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 10,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.5478260869565218
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 15,
+          "predicted": 16,
+          "precision": 0.8125,
+          "recall": 0.8666666666666667,
+          "f1": 0.8387096774193549
+        },
+        "medium": {
+          "support": 11,
+          "predicted": 10,
+          "precision": 0.6,
+          "recall": 0.5454545454545454,
+          "f1": 0.5714285714285713
+        },
+        "high": {
+          "support": 2,
+          "predicted": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.7050691244239631
+    },
+    "roles_by_label": {
+      "GR": {
+        "support": 8,
+        "predicted": 11,
+        "precision": 0.7272727272727273,
+        "recall": 1.0
+      },
+      "HEAD": {
+        "support": 0,
+        "predicted": 1,
+        "precision": 0.0,
+        "recall": null
+      },
+      "PR": {
+        "support": 6,
+        "predicted": 3,
+        "precision": 1.0,
+        "recall": 0.5
+      }
+    }
+  },
+  "safety": {
+    "critical_total": 0,
+    "critical_in_low": [],
+    "submitted_claims": 35,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "review_policy": {
+    "available": true,
+    "reviewed_items": 23,
+    "workload_rate": 0.7931034482758621,
+    "label_error_recall": 0.9047619047619048,
+    "critical_recall": null,
+    "unreviewed_label_error_ids": [
+      "e06-a",
+      "real-06"
+    ]
+  },
+  "event_grouping": {
+    "pair_precision": 1.0,
+    "pair_recall": 0.5,
+    "pair_f1": 0.6666666666666666,
+    "b_cubed": {
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1": 0.9411764705882353
+    },
+    "false_merge_pairs": 0,
+    "false_split_pairs": 3
+  },
+  "npa": {
+    "link_identity_accuracy": 1.0,
+    "relation_accuracy": 1.0,
+    "stage_accuracy": 0.5
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

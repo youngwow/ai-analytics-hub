@@ -9,7 +9,7 @@
   "event_cases_file": "event_cases.jsonl",
   "npa_trajectories_file": "npa_trajectories.jsonl",
   "rat_packages_file": "rat_packages.json",
-  "split_policy": "Former v2 validation/holdout are disclosed validation; holdout is intentionally empty until prompt freeze.",
+  "split_policy": "Former v2 holdout is disclosed development; v2 validation stays validation; holdout is intentionally empty until prompt freeze.",
   "model_input_allowlist": [
     "id",
     "title",

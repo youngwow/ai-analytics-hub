@@ -79,14 +79,14 @@ def main() -> int:
 
     catalog = load_jsonl(V3 / "catalog.jsonl")
     for row in catalog:
-        if row["split"] in {"validation", "holdout"}:
-            row["split"] = "validation"
+        if row["split"] == "holdout":
+            row["split"] = "development"
     write_jsonl(V3 / "catalog.jsonl", catalog)
     for filename in ("event_cases.jsonl", "npa_trajectories.jsonl"):
         rows = load_jsonl(V3 / filename)
         for row in rows:
-            if row.get("split") in {"validation", "holdout"}:
-                row["split"] = "validation"
+            if row.get("split") == "holdout":
+                row["split"] = "development"
         write_jsonl(V3 / filename, rows)
 
     contract = json.loads((V3 / "contract.json").read_text(encoding="utf-8"))
@@ -95,7 +95,7 @@ def main() -> int:
             "dataset_version": "v3.0.0",
             "created_at": "2026-09-06T16:45:00+03:00",
             "freeze_state": "gold_audited_development_and_validation_no_new_holdout_yet",
-            "split_policy": "Former v2 validation/holdout are disclosed validation; holdout is intentionally empty until prompt freeze.",
+            "split_policy": "Former v2 holdout is disclosed development; v2 validation stays validation; holdout is intentionally empty until prompt freeze.",
             "label_policy": "Field-level majority; unresolved fields are not scored.",
         }
     )

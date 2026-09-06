@@ -1,0 +1,165 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v3.0.0",
+  "run_id": "d4e5214c-a431-4677-8599-3cbcf87d8341",
+  "configuration_id": "a1-one_pass__a5-glm-5.3-flash:cloud__rescored-v3",
+  "usage": {
+    "model_calls": 46,
+    "input_tokens": 101280,
+    "output_tokens": 77912,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 244.1269737080147,
+    "provider_latency_ms": 410617,
+    "attempted_calls": 46,
+    "failed_calls": 0
+  },
+  "split": "validation",
+  "contract_errors": [],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 17,
+        "total": 27,
+        "accuracy": 0.6296296296296297
+      },
+      "importance": {
+        "correct": 21,
+        "total": 28,
+        "accuracy": 0.75
+      },
+      "critical_or_escalate": {
+        "correct": 28,
+        "total": 29,
+        "accuracy": 0.9655172413793104
+      },
+      "roles": {
+        "correct": 18,
+        "total": 25,
+        "exact_set_accuracy": 0.72
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 15,
+          "predicted": 8,
+          "precision": 1.0,
+          "recall": 0.5333333333333333,
+          "f1": 0.6956521739130436
+        },
+        "borderline": {
+          "support": 0,
+          "predicted": 9,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "irrelevant": {
+          "support": 12,
+          "predicted": 10,
+          "precision": 0.9,
+          "recall": 0.75,
+          "f1": 0.8181818181818182
+        },
+        "unknown": {
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.7569169960474309
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 15,
+          "predicted": 15,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002
+        },
+        "medium": {
+          "support": 11,
+          "predicted": 10,
+          "precision": 0.7,
+          "recall": 0.6363636363636364,
+          "f1": 0.6666666666666666
+        },
+        "high": {
+          "support": 2,
+          "predicted": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "critical": {
+          "support": 0,
+          "predicted": 1,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.8222222222222223
+    },
+    "roles_by_label": {
+      "GR": {
+        "support": 8,
+        "predicted": 9,
+        "precision": 0.8888888888888888,
+        "recall": 1.0
+      },
+      "HEAD": {
+        "support": 0,
+        "predicted": 3,
+        "precision": 0.0,
+        "recall": null
+      },
+      "PR": {
+        "support": 6,
+        "predicted": 5,
+        "precision": 0.8,
+        "recall": 0.6666666666666666
+      }
+    }
+  },
+  "safety": {
+    "critical_total": 0,
+    "critical_in_low": [],
+    "submitted_claims": 54,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "review_policy": {
+    "available": true,
+    "reviewed_items": 16,
+    "workload_rate": 0.5517241379310345,
+    "label_error_recall": 0.9333333333333333,
+    "critical_recall": null,
+    "unreviewed_label_error_ids": [
+      "e05-b"
+    ]
+  },
+  "event_grouping": {
+    "pair_precision": 1.0,
+    "pair_recall": 0.6666666666666666,
+    "pair_f1": 0.8,
+    "b_cubed": {
+      "precision": 1.0,
+      "recall": 0.925925925925926,
+      "f1": 0.9615384615384616
+    },
+    "false_merge_pairs": 0,
+    "false_split_pairs": 2
+  },
+  "npa": {
+    "link_identity_accuracy": 1.0,
+    "relation_accuracy": 1.0,
+    "stage_accuracy": 0.8333333333333334
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

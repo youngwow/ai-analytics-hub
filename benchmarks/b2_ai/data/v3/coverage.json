@@ -2,8 +2,8 @@
   "materials_total": 92,
   "new_real_flow": 24,
   "by_split": {
-    "development": 25,
-    "validation": 57,
+    "development": 53,
+    "validation": 29,
     "rat": 10
   },
   "by_layer": {
