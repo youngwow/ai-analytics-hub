@@ -138,3 +138,44 @@ def test_dashboard_exposes_failed_analysis(tmp_path):
     assert failures["items"][0]["payload"]["reason"] == "temporary model failure"
     _, overview = app.dispatch("GET", "/api/overview", {}, {})
     assert overview["analysis_failures"] == 1
+
+
+def test_dashboard_exposes_latest_filtered_material_with_reason(tmp_path):
+    path = tmp_path / "hub.db"
+    db = Database(str(path))
+    try:
+        store = ProductStore(db.conn)
+        version = store.save_prepared(
+            "noise-1",
+            PreparedDocument(
+                "noise-1",
+                "Нерелевантный материал",
+                "Исходный текст для ручной перепроверки.",
+                source_name="Источник",
+                source_url="https://example.test/noise-1",
+            ),
+        )
+        store.save_analysis(
+            AnalysisDraft(
+                "noise-1",
+                "irrelevant",
+                (),
+                "cfg",
+                "glm-5.3-flash:cloud",
+                "context-v1",
+                1,
+                reason="Нет связи с GS Labs",
+            ),
+            prepared_version=version,
+        )
+    finally:
+        db.close()
+
+    app = DashboardApplication(str(path))
+    status, filtered = app.dispatch("GET", "/api/filtered", {}, {})
+    assert status == 200
+    assert filtered["items"][0]["material_id"] == "noise-1"
+    assert filtered["items"][0]["payload"]["reason"] == "Нет связи с GS Labs"
+    assert filtered["items"][0]["prepared_payload"]["text"].startswith("Исходный текст")
+    _, overview = app.dispatch("GET", "/api/overview", {}, {})
+    assert overview["filtered_materials"] == 1

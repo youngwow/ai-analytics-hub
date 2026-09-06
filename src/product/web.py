@@ -45,9 +45,15 @@ class DashboardApplication:
                 if profile and profile not in {"PR", "GR"}:
                     raise ApiError(400, "profile must be PR or GR")
                 include_resolved = self._one(query, "resolved") == "1"
-                return 200, {"items": WorkQueue(store).list(profile=profile, include_resolved=include_resolved)}
+                return 200, {
+                    "items": WorkQueue(store).list(
+                        profile=profile, include_resolved=include_resolved
+                    )
+                }
             if method == "GET" and path == "/api/failures":
                 return 200, {"items": self._failures(db)}
+            if method == "GET" and path == "/api/filtered":
+                return 200, {"items": self._filtered(db)}
             if method == "GET" and path.startswith("/api/signals/"):
                 return 200, self._signal_detail(db, unquote(path.removeprefix("/api/signals/")))
             if method == "POST" and path == "/api/review":
@@ -93,11 +99,13 @@ class DashboardApplication:
                     row["state"] not in {"working", "disabled"} for row in source_rows
                 ),
                 "review_required": sum(
-                    item["review_required"] for item in WorkQueue(store).list(include_resolved=False)
+                    item["review_required"]
+                    for item in WorkQueue(store).list(include_resolved=False)
                 ),
                 "analysis_failures": db.conn.execute(
                     "SELECT COUNT(*) FROM analysis_runs WHERE status IN ('failed','unreadable')"
                 ).fetchone()[0],
+                "filtered_materials": len(self._filtered(db)),
             }
         )
         return metrics
@@ -152,7 +160,9 @@ class DashboardApplication:
                 "text": row["source_text"],
                 "published_at": row["published_at"],
                 "fetched_at": row["fetched_at"],
-                "prepared": json.loads(row["prepared_payload"]) if row["prepared_payload"] else None,
+                "prepared": json.loads(row["prepared_payload"])
+                if row["prepared_payload"]
+                else None,
             },
             "decisions": [DashboardApplication._decode_payload(item) for item in decisions],
             "event_links": [DashboardApplication._decode_payload(item) for item in links],
@@ -262,9 +272,7 @@ class DashboardApplication:
 
     @staticmethod
     def _history(db: Database) -> list[dict]:
-        rows = db.conn.execute(
-            "SELECT * FROM audit_events ORDER BY id DESC LIMIT 200"
-        ).fetchall()
+        rows = db.conn.execute("SELECT * FROM audit_events ORDER BY id DESC LIMIT 200").fetchall()
         return [DashboardApplication._decode_payload(dict(row)) for row in rows]
 
     @staticmethod
@@ -276,6 +284,32 @@ class DashboardApplication:
                LEFT JOIN prepared_documents p
                  ON p.material_id=a.material_id AND p.version=a.prepared_version
                WHERE a.status IN ('failed','unreadable')
+               ORDER BY a.id DESC"""
+        ).fetchall()
+        result = []
+        for row in rows:
+            item = DashboardApplication._decode_payload(dict(row))
+            item = DashboardApplication._decode_payload(item, "prepared_payload")
+            result.append(item)
+        return result
+
+    @staticmethod
+    def _filtered(db: Database) -> list[dict]:
+        """Latest explicit no-signal decisions, with their reviewable source."""
+        rows = db.conn.execute(
+            """SELECT a.id,a.material_id,a.status,a.configuration_id,a.model,
+                      a.payload,a.created_at,p.payload AS prepared_payload,
+                      d.url AS source_url,d.text AS source_text,d.published_at,
+                      so.name AS source_name
+               FROM analysis_runs a
+               JOIN (
+                 SELECT material_id,MAX(id) AS id FROM analysis_runs GROUP BY material_id
+               ) latest ON latest.id=a.id
+               LEFT JOIN prepared_documents p
+                 ON p.material_id=a.material_id AND p.version=a.prepared_version
+               LEFT JOIN documents d ON d.id=p.raw_document_id
+               LEFT JOIN sources so ON so.id=d.source_id
+               WHERE a.status IN ('irrelevant','no_signal')
                ORDER BY a.id DESC"""
         ).fetchall()
         result = []
@@ -376,7 +410,10 @@ def make_handler(app: DashboardApplication, web_root: Path = WEB_ROOT):
                 candidate = root / "index.html"
             data = candidate.read_bytes()
             self.send_response(200)
-            self.send_header("Content-Type", mimetypes.guess_type(candidate.name)[0] or "application/octet-stream")
+            self.send_header(
+                "Content-Type",
+                mimetypes.guess_type(candidate.name)[0] or "application/octet-stream",
+            )
             self.send_header("Content-Length", str(len(data)))
             self.end_headers()
             self.wfile.write(data)
@@ -389,7 +426,9 @@ def make_handler(app: DashboardApplication, web_root: Path = WEB_ROOT):
 
 def serve(host: str, port: int, db_path: str, web_root: Path = WEB_ROOT):
     Database(db_path).close()
-    server = ThreadingHTTPServer((host, port), make_handler(DashboardApplication(db_path), web_root))
+    server = ThreadingHTTPServer(
+        (host, port), make_handler(DashboardApplication(db_path), web_root)
+    )
     print(f"GS Labs monitor: http://{host}:{server.server_port}")
     try:
         server.serve_forever()

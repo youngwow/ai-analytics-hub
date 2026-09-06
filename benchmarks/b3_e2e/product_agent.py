@@ -142,6 +142,7 @@ def persist_raw_documents(db: Database, documents: list[PreparedDocument]) -> di
                     notes="Изолированный источник пользовательского пилота B3",
                     direction="both",
                     source_class=document.source_class,
+                    created_at=document.published_at,
                 )
             )
 
@@ -162,6 +163,15 @@ def persist_raw_documents(db: Database, documents: list[PreparedDocument]) -> di
             raw.compute_hash()
             document_id = db.documents.insert(raw)
             db.document_revisions.append(document_id, raw)
+            if document.published_at:
+                db.conn.execute(
+                    "UPDATE documents SET created_at=? WHERE id=?",
+                    (document.published_at, document_id),
+                )
+                db.conn.execute(
+                    "UPDATE document_revisions SET created_at=? WHERE document_id=?",
+                    (document.published_at, document_id),
+                )
         ids[document.id] = document_id
         if document.published_at:
             source_dates.setdefault(int(source.id), []).append(document.published_at)

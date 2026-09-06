@@ -5,13 +5,13 @@
 
 | Проверка | Результат |
 |---|---|
-| Полный test suite | `1115 passed`, одна внешняя необязательная warning о `PySocks` |
+| Полный test suite | `1116 passed`, одна внешняя необязательная warning о `PySocks` |
 | Ruff | `PASS`, ошибок нет |
 | B3 scorecard против исходных JSON | `PASS` |
 | JSON-артефакты репозитория | `PASS` |
 | Локальные Markdown-ссылки | `PASS` |
 | Demo SQLite | `PRAGMA integrity_check = ok` |
-| Web/API smoke | очередь, карточка/evidence, НПА и overview открываются; console errors отсутствуют |
+| Web/API smoke | очередь, карточка/evidence, проверяемый отсев, НПА и overview открываются; console errors отсутствуют |
 | Секреты | `.env` игнорируется; реальные ключи в содержимом репозитория не найдены |
 | OpenRouter embeddings | HTTP `200`, `google/gemini-embedding-001`, 3072 измерения |
 | Pilot workbook | 6 листов, 22 материала в A и B, 8 строк cross-over, ошибок формул нет |
