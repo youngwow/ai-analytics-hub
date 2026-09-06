@@ -1,0 +1,251 @@
+{
+  "status": "PROPOSAL_ONLY",
+  "dataset_version": "v2",
+  "split": "rat",
+  "judge_model": "deepseek-v4-flash:cloud",
+  "existing_gold_was_visible": false,
+  "labels": [
+    {
+      "id": "rat-npa-22",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Постановление прямо включает системы условного доступа (CAS) в перечень объектов КИИ в сфере связи, что непосредственно относится к продуктовому контуру GS Labs и требует отслеживания и возможной адаптации."
+    },
+    {
+      "id": "rat-npa-23",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Новые правила реестра российского ПО вводят обязательную совместимость с российскими ОС, что может затронуть продукты GS Labs, если они претендуют на включение в реестр, и требует мониторинга сроков."
+    },
+    {
+      "id": "rat-project-12",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Проект приказа ФСТЭК вводит новые требования к защите персональных данных, включая использование ИИ и оценку зрелости, что может затронуть продукты и процессы GS Labs, требует отслеживания стадии."
+    },
+    {
+      "id": "rat-project-1",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR",
+        "PR"
+      ],
+      "critical_or_escalate": true,
+      "rationale": "Прямое регуляторное обязательство по переходу на CAS/DRM из реестра российского ПО с 2027 года, напрямую затрагивает продуктовый контур GS Labs и требует немедленной отработки."
+    },
+    {
+      "id": "rat-project-21",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Законопроект о видеоиграх не связан с продуктами, рынками или обязанностями GS Labs; отсутствует применимый эффект для компании."
+    },
+    {
+      "id": "rat-project-26",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Инициатива о дипфейках как отягчающем обстоятельстве не имеет подтверждённой связи с деятельностью или продуктами GS Labs, поэтому не создаёт риска или возможности."
+    },
+    {
+      "id": "rat-news-3",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о дефиците ЦОД не имеет подтверждённой связи с продуктами или рынками GS Labs, отсутствует применимый эффект."
+    },
+    {
+      "id": "rat-news-7",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Развёртывание спутниковой группировки не связано напрямую с продуктовым контуром GS Labs, нет доказанного влияния на компанию."
+    },
+    {
+      "id": "rat-news-28",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "PR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Рост рынка онлайн-кинотеатров напрямую относится к OTT/IPTV-сегменту, где работает GS Labs, создавая рыночный инфоповод."
+    },
+    {
+      "id": "rat-news-36",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "PR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Прямое упоминание GS Group и производственного достижения в продуктовом контуре, что создаёт инфоповод для PR."
+    }
+  ],
+  "limitations": [
+    "LLM second opinion is not customer gold.",
+    "No frozen label is changed without explicit adjudication."
+  ],
+  "raw_batches": [
+    {
+      "expected": [
+        "rat-npa-22",
+        "rat-npa-23",
+        "rat-project-12"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "rat-npa-22",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Постановление прямо включает системы условного доступа (CAS) в перечень объектов КИИ в сфере связи, что непосредственно относится к продуктовому контуру GS Labs и требует отслеживания и возможной адаптации."
+          },
+          {
+            "id": "rat-npa-23",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Новые правила реестра российского ПО вводят обязательную совместимость с российскими ОС, что может затронуть продукты GS Labs, если они претендуют на включение в реестр, и требует мониторинга сроков."
+          },
+          {
+            "id": "rat-project-12",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Проект приказа ФСТЭК вводит новые требования к защите персональных данных, включая использование ИИ и оценку зрелости, что может затронуть продукты и процессы GS Labs, требует отслеживания стадии."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "rat-project-1",
+        "rat-project-21",
+        "rat-project-26"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "rat-project-1",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR",
+              "PR"
+            ],
+            "critical_or_escalate": true,
+            "rationale": "Прямое регуляторное обязательство по переходу на CAS/DRM из реестра российского ПО с 2027 года, напрямую затрагивает продуктовый контур GS Labs и требует немедленной отработки."
+          },
+          {
+            "id": "rat-project-21",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Законопроект о видеоиграх не связан с продуктами, рынками или обязанностями GS Labs; отсутствует применимый эффект для компании."
+          },
+          {
+            "id": "rat-project-26",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Инициатива о дипфейках как отягчающем обстоятельстве не имеет подтверждённой связи с деятельностью или продуктами GS Labs, поэтому не создаёт риска или возможности."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "rat-news-3",
+        "rat-news-7",
+        "rat-news-28"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "rat-news-3",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о дефиците ЦОД не имеет подтверждённой связи с продуктами или рынками GS Labs, отсутствует применимый эффект."
+          },
+          {
+            "id": "rat-news-7",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Развёртывание спутниковой группировки не связано напрямую с продуктовым контуром GS Labs, нет доказанного влияния на компанию."
+          },
+          {
+            "id": "rat-news-28",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "PR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Рост рынка онлайн-кинотеатров напрямую относится к OTT/IPTV-сегменту, где работает GS Labs, создавая рыночный инфоповод."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "rat-news-36"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "rat-news-36",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "PR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Прямое упоминание GS Group и производственного достижения в продуктовом контуре, что создаёт инфоповод для PR."
+          }
+        ]
+      }
+    }
+  ]
+}

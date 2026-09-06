@@ -344,6 +344,12 @@ def main(argv=None) -> int:
         choices=["glm-5.3-flash:cloud", "deepseek-v4-flash:cloud", "gpt-oss:120b-cloud"],
         help="Experiment-only Ollama Cloud model override; production config stays frozen.",
     )
+    parser.add_argument(
+        "--temperature",
+        type=float,
+        choices=[0.0, 0.1, 0.2],
+        help="Experiment-only sampling temperature override.",
+    )
     parser.add_argument("--configuration-id")
     parser.add_argument("input", nargs="?", default=os.environ.get("B2_INPUT"))
     parser.add_argument("output", nargs="?", default=os.environ.get("B2_OUTPUT"))
@@ -352,8 +358,12 @@ def main(argv=None) -> int:
         parser.error("input/output paths or B2_INPUT/B2_OUTPUT are required")
     packet = json.loads(Path(args.input).read_text(encoding="utf-8"))
     config = Config.load()
-    experiment_llm: LLMConfig = (
-        replace(config.llm, model=args.model) if args.model else config.llm
+    experiment_llm: LLMConfig = replace(
+        config.llm,
+        model=args.model or config.llm.model,
+        temperature=(
+            args.temperature if args.temperature is not None else config.llm.temperature
+        ),
     )
     key = load_env_secret(experiment_llm.api_key_env, DEFAULT_PATHS.env_path)
     provider = build_llm_provider(experiment_llm, key)
@@ -420,7 +430,8 @@ def main(argv=None) -> int:
     output = {
         "run_id": str(uuid.uuid4()),
         "configuration_id": args.configuration_id or (
-            f"product-{experiment_llm.model}-a1-{args.a1}-a3-{args.a3}-a4-{args.a4}"
+            f"product-{experiment_llm.model}-t{experiment_llm.temperature}-"
+            f"a1-{args.a1}-a3-{args.a3}-a4-{args.a4}"
         ),
         "dataset_version": packet["dataset_version"],
         "split": packet["split"],

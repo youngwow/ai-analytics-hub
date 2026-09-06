@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "one_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--model",
+    "glm-5.3-flash:cloud",
+    "--temperature",
+    "0.2",
+    "--configuration-id",
+    "dev-glm-onepass-t0.2",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_dev_t0.2/benchmark_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_dev_t0.2/prediction.json"
+  ],
+  "returncode": 0,
+  "wall_seconds": 279.3507156250125,
+  "stdout": "",
+  "stderr": "2026-09-06 16:16:45 [WARNING] llm: chat: модель вернула не JSON: ```json\n{\n  \"status\": \"ok\",\n  \"reason\": \"Корпоративный PR-милстоун компании группы GS в продуктовом домене цифрового ТВ\",\n  \"signals\": [\n    {\n      \"signal_id\": \"e01-a-s1\",\n      \"kind\": \"news\",\n    ; повтор через 2.0 с\n2026-09-06 16:21:04 [WARNING] llm: chat: модель вернула не JSON: {\"pairs\":[{\"case_id\":\"N02-positive-1\",\"same_npa\":true,\"relation\":\"next_state; повтор через 2.0 с\n"
+}

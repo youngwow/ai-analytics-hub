@@ -1,0 +1,615 @@
+{
+  "status": "PROPOSAL_ONLY",
+  "dataset_version": "v2",
+  "split": "holdout",
+  "judge_model": "deepseek-v4-flash:cloud",
+  "existing_gold_was_visible": false,
+  "labels": [
+    {
+      "id": "e07-a",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Материал о предустановке приложений на смартфоны не связан с продуктами или рынками GS Labs (CAS/DRM/OTT/IPTV), поэтому не создаёт риска или возможности."
+    },
+    {
+      "id": "e07-b",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о штрафе по делу о предустановке не имеет применимого эффекта для GS Labs, так как компания не работает в сегменте смартфонов."
+    },
+    {
+      "id": "e07-c",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Функция субтитров для потокового видео на смартфонах не относится к продуктовому контуру GS Labs и не создаёт инфоповода или обязательства."
+    },
+    {
+      "id": "e07-d",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о контракте на дисплеи не связана с продуктами или рынками GS Labs."
+    },
+    {
+      "id": "e08-a",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Законопроект о CAS и DRM напрямую относится к продуктовому домену GS Labs, что соответствует GR-контуру."
+    },
+    {
+      "id": "e08-b",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Повторная публикация без новых сведений не является новым событием или изменением статуса НПА."
+    },
+    {
+      "id": "e08-c",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Официальное изменение стадии отслеживаемого НПА о CAS/DRM — прямое регуляторное событие для продуктового контура GS Labs."
+    },
+    {
+      "id": "n01-1",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Сигнал о подготовке требований к российским CAS/DRM, но без опубликованного текста — ранняя стадия, требующая мониторинга."
+    },
+    {
+      "id": "n01-2",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Внесённый законопроект с конкретными сроками и обязательствами напрямую затрагивает продуктовый домен GS Labs и требует GR-отработки."
+    },
+    {
+      "id": "n01-3",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Законопроект напрямую касается продуктового домена GS Labs (CAS/DRM) и содержит изменение сроков, что является значимым для GR-контура."
+    },
+    {
+      "id": "n05-1",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Регулирование видеоигр не связано с продуктами или рынками GS Labs, отсутствует применимый эффект для компании."
+    },
+    {
+      "id": "n05-2",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Тот же законопроект о видеоиграх, не имеющий отношения к деятельности GS Labs, поэтому нерелевантен."
+    },
+    {
+      "id": "n05-3",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Тема видеоигр не входит в продуктовый контур GS Labs (CAS, DRM, OTT, IPTV, защита контента), нет применимого эффекта для компании."
+    },
+    {
+      "id": "n06-1",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Постановление о реестре российского ПО вводит требования совместимости, напрямую применимые к продуктам GS Labs как разработчику российского ПО."
+    },
+    {
+      "id": "n06-2",
+      "relevance": "relevant",
+      "importance": "high",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Вступление в силу и поэтапные сроки постановления №1937 создают обязательства и сроки для GS Labs, требуя мониторинга и подготовки."
+    },
+    {
+      "id": "n06-3",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "НПА о требованиях к ПО из реестра с конкретными сроками применим к продуктам GS Labs как разработчику российского ПО."
+    },
+    {
+      "id": "s05",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о зарубежном стартапе не связана с продуктами, рынками или обязанностями GS Labs."
+    },
+    {
+      "id": "s06",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Разъяснение Роскомнадзора о сроках уведомления об утечках данных создаёт регуляторное обязательство для операторов, включая возможную применимость к GS Labs."
+    },
+    {
+      "id": "real-07",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Нет прямого упоминания GS Labs или продуктового контура; общий тренд кибербезопасности без доказанной связи с компанией, что не соответствует важным примерам."
+    },
+    {
+      "id": "real-08",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Тема ЦОД и межрегиональных хабов не связана с продуктами, рынками или обязанностями GS Labs; отсутствует применимый эффект для компании."
+    },
+    {
+      "id": "rf-073",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Историческое политическое сообщение без связи с деятельностью, рынками или регуляторными обязательствами GS Labs; не соответствует ни одному важному примеру."
+    },
+    {
+      "id": "rf-084",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о производстве полупроводников не связана с продуктовым контуром GS Labs (CAS, DRM, OTT, IPTV, защита контента). Отсутствует применимый эффект для компании."
+    },
+    {
+      "id": "rf-096",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Дубликат новости о производстве полупроводников, не связан с продуктами или рынками GS Labs. Нет применимого влияния на компанию."
+    },
+    {
+      "id": "rf-085",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Новость о рынке ВКС не связана с продуктовым контуром GS Labs (цифровое ТВ, OTT/IPTV, защита контента). Нет прямого влияния на компанию."
+    },
+    {
+      "id": "rf-089",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "НПА о выборе ИИ-помощника не относится к продуктовому контуру GS Labs (CAS, DRM, OTT/IPTV, защита контента), нет применимого эффекта или обязательства."
+    },
+    {
+      "id": "rf-093",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Смерть регионального чиновника не создаёт риска, возможности или обязательства для GS Labs, отсутствует связь с продуктами или рынками компании."
+    },
+    {
+      "id": "rf-099",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "roles": [],
+      "critical_or_escalate": false,
+      "rationale": "Отраслевой фестиваль документального контента не упоминает GS Labs и не создаёт инфоповода или репутационного эффекта для компании."
+    },
+    {
+      "id": "rf-124",
+      "relevance": "relevant",
+      "importance": "medium",
+      "roles": [
+        "GR"
+      ],
+      "critical_or_escalate": false,
+      "rationale": "Законопроект уточняет требования по категорированию объектов КИИ, что относится к регуляторной сфере и может затронуть продуктовый контур GS Labs в области защищённых цифровых сервисов."
+    }
+  ],
+  "limitations": [
+    "LLM second opinion is not customer gold.",
+    "No frozen label is changed without explicit adjudication."
+  ],
+  "raw_batches": [
+    {
+      "expected": [
+        "e07-a",
+        "e07-b",
+        "e07-c"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "e07-a",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Материал о предустановке приложений на смартфоны не связан с продуктами или рынками GS Labs (CAS/DRM/OTT/IPTV), поэтому не создаёт риска или возможности."
+          },
+          {
+            "id": "e07-b",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о штрафе по делу о предустановке не имеет применимого эффекта для GS Labs, так как компания не работает в сегменте смартфонов."
+          },
+          {
+            "id": "e07-c",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Функция субтитров для потокового видео на смартфонах не относится к продуктовому контуру GS Labs и не создаёт инфоповода или обязательства."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "e07-d",
+        "e08-a",
+        "e08-b"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "e07-d",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о контракте на дисплеи не связана с продуктами или рынками GS Labs."
+          },
+          {
+            "id": "e08-a",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Законопроект о CAS и DRM напрямую относится к продуктовому домену GS Labs, что соответствует GR-контуру."
+          },
+          {
+            "id": "e08-b",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Повторная публикация без новых сведений не является новым событием или изменением статуса НПА."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "e08-c",
+        "n01-1",
+        "n01-2"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "e08-c",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Официальное изменение стадии отслеживаемого НПА о CAS/DRM — прямое регуляторное событие для продуктового контура GS Labs."
+          },
+          {
+            "id": "n01-1",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Сигнал о подготовке требований к российским CAS/DRM, но без опубликованного текста — ранняя стадия, требующая мониторинга."
+          },
+          {
+            "id": "n01-2",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Внесённый законопроект с конкретными сроками и обязательствами напрямую затрагивает продуктовый домен GS Labs и требует GR-отработки."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "n01-3",
+        "n05-1",
+        "n05-2"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "n01-3",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Законопроект напрямую касается продуктового домена GS Labs (CAS/DRM) и содержит изменение сроков, что является значимым для GR-контура."
+          },
+          {
+            "id": "n05-1",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Регулирование видеоигр не связано с продуктами или рынками GS Labs, отсутствует применимый эффект для компании."
+          },
+          {
+            "id": "n05-2",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Тот же законопроект о видеоиграх, не имеющий отношения к деятельности GS Labs, поэтому нерелевантен."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "n05-3",
+        "n06-1",
+        "n06-2"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "n05-3",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Тема видеоигр не входит в продуктовый контур GS Labs (CAS, DRM, OTT, IPTV, защита контента), нет применимого эффекта для компании."
+          },
+          {
+            "id": "n06-1",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Постановление о реестре российского ПО вводит требования совместимости, напрямую применимые к продуктам GS Labs как разработчику российского ПО."
+          },
+          {
+            "id": "n06-2",
+            "relevance": "relevant",
+            "importance": "high",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Вступление в силу и поэтапные сроки постановления №1937 создают обязательства и сроки для GS Labs, требуя мониторинга и подготовки."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "n06-3",
+        "s05",
+        "s06"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "n06-3",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "НПА о требованиях к ПО из реестра с конкретными сроками применим к продуктам GS Labs как разработчику российского ПО."
+          },
+          {
+            "id": "s05",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о зарубежном стартапе не связана с продуктами, рынками или обязанностями GS Labs."
+          },
+          {
+            "id": "s06",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Разъяснение Роскомнадзора о сроках уведомления об утечках данных создаёт регуляторное обязательство для операторов, включая возможную применимость к GS Labs."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "real-07",
+        "real-08",
+        "rf-073"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "real-07",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Нет прямого упоминания GS Labs или продуктового контура; общий тренд кибербезопасности без доказанной связи с компанией, что не соответствует важным примерам."
+          },
+          {
+            "id": "real-08",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Тема ЦОД и межрегиональных хабов не связана с продуктами, рынками или обязанностями GS Labs; отсутствует применимый эффект для компании."
+          },
+          {
+            "id": "rf-073",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Историческое политическое сообщение без связи с деятельностью, рынками или регуляторными обязательствами GS Labs; не соответствует ни одному важному примеру."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "rf-084",
+        "rf-096",
+        "rf-085"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "rf-084",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о производстве полупроводников не связана с продуктовым контуром GS Labs (CAS, DRM, OTT, IPTV, защита контента). Отсутствует применимый эффект для компании."
+          },
+          {
+            "id": "rf-096",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Дубликат новости о производстве полупроводников, не связан с продуктами или рынками GS Labs. Нет применимого влияния на компанию."
+          },
+          {
+            "id": "rf-085",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Новость о рынке ВКС не связана с продуктовым контуром GS Labs (цифровое ТВ, OTT/IPTV, защита контента). Нет прямого влияния на компанию."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "rf-089",
+        "rf-093",
+        "rf-099"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "rf-089",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "НПА о выборе ИИ-помощника не относится к продуктовому контуру GS Labs (CAS, DRM, OTT/IPTV, защита контента), нет применимого эффекта или обязательства."
+          },
+          {
+            "id": "rf-093",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Смерть регионального чиновника не создаёт риска, возможности или обязательства для GS Labs, отсутствует связь с продуктами или рынками компании."
+          },
+          {
+            "id": "rf-099",
+            "relevance": "irrelevant",
+            "importance": "low",
+            "roles": [],
+            "critical_or_escalate": false,
+            "rationale": "Отраслевой фестиваль документального контента не упоминает GS Labs и не создаёт инфоповода или репутационного эффекта для компании."
+          }
+        ]
+      }
+    },
+    {
+      "expected": [
+        "rf-124"
+      ],
+      "response": {
+        "labels": [
+          {
+            "id": "rf-124",
+            "relevance": "relevant",
+            "importance": "medium",
+            "roles": [
+              "GR"
+            ],
+            "critical_or_escalate": false,
+            "rationale": "Законопроект уточняет требования по категорированию объектов КИИ, что относится к регуляторной сфере и может затронуть продуктовый контур GS Labs в области защищённых цифровых сервисов."
+          }
+        ]
+      }
+    }
+  ]
+}
