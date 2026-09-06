@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "one_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--model",
+    "glm-5.3-flash:cloud",
+    "--configuration-id",
+    "final-v3-onepass-glm-fullscan-no-critic-r2",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_holdout_r2/benchmark_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_holdout_r2/prediction.json"
+  ],
+  "returncode": 0,
+  "wall_seconds": 409.9229189589969,
+  "stdout": "",
+  "stderr": "2026-09-06 16:02:32 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n2026-09-06 16:05:39 [WARNING] llm: chat: модель вернула не JSON: ; повтор через 2.0 с\n"
+}

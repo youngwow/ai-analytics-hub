@@ -1,0 +1,169 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v2.0.0",
+  "run_id": "048b4511-de2d-443f-be09-d602ffbdf170",
+  "configuration_id": "a1-one_pass__a5-gpt-oss:120b-cloud",
+  "usage": {
+    "model_calls": 45,
+    "input_tokens": 95938,
+    "output_tokens": 27775,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 65.22731762501644,
+    "provider_latency_ms": 105160,
+    "attempted_calls": 45,
+    "failed_calls": 0
+  },
+  "split": "validation",
+  "contract_errors": [],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 13,
+        "total": 29,
+        "accuracy": 0.4482758620689655
+      },
+      "importance": {
+        "correct": 15,
+        "total": 29,
+        "accuracy": 0.5172413793103449
+      },
+      "critical_or_escalate": {
+        "correct": 27,
+        "total": 29,
+        "accuracy": 0.9310344827586207
+      },
+      "roles": {
+        "correct": 8,
+        "total": 29,
+        "exact_set_accuracy": 0.27586206896551724
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 15,
+          "predicted": 8,
+          "precision": 1.0,
+          "recall": 0.5333333333333333,
+          "f1": 0.6956521739130436
+        },
+        "borderline": {
+          "support": 8,
+          "predicted": 7,
+          "precision": 0.42857142857142855,
+          "recall": 0.375,
+          "f1": 0.39999999999999997
+        },
+        "irrelevant": {
+          "support": 5,
+          "predicted": 4,
+          "precision": 0.25,
+          "recall": 0.2,
+          "f1": 0.22222222222222224
+        },
+        "unknown": {
+          "support": 1,
+          "predicted": 10,
+          "precision": 0.1,
+          "recall": 1.0,
+          "f1": 0.18181818181818182
+        }
+      },
+      "macro_f1": 0.3749231444883619
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 9,
+          "predicted": 16,
+          "precision": 0.5625,
+          "recall": 1.0,
+          "f1": 0.72
+        },
+        "medium": {
+          "support": 15,
+          "predicted": 11,
+          "precision": 0.5454545454545454,
+          "recall": 0.4,
+          "f1": 0.4615384615384615
+        },
+        "high": {
+          "support": 4,
+          "predicted": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "critical": {
+          "support": 1,
+          "predicted": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.5907692307692307
+    },
+    "roles_by_label": {
+      "GR": {
+        "support": 10,
+        "predicted": 11,
+        "precision": 0.8181818181818182,
+        "recall": 0.9
+      },
+      "HEAD": {
+        "support": 14,
+        "predicted": 1,
+        "precision": 1.0,
+        "recall": 0.07142857142857142
+      },
+      "PR": {
+        "support": 15,
+        "predicted": 5,
+        "precision": 1.0,
+        "recall": 0.3333333333333333
+      }
+    }
+  },
+  "safety": {
+    "critical_total": 2,
+    "critical_in_low": [],
+    "submitted_claims": 35,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "review_policy": {
+    "available": true,
+    "reviewed_items": 23,
+    "workload_rate": 0.7931034482758621,
+    "label_error_recall": 0.8,
+    "critical_recall": 1.0,
+    "unreviewed_label_error_ids": [
+      "e04-c",
+      "e06-a",
+      "real-04",
+      "real-06",
+      "rf-079"
+    ]
+  },
+  "event_grouping": {
+    "pair_precision": 1.0,
+    "pair_recall": 0.5,
+    "pair_f1": 0.6666666666666666,
+    "b_cubed": {
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1": 0.9411764705882353
+    },
+    "false_merge_pairs": 0,
+    "false_split_pairs": 3
+  },
+  "npa": {
+    "link_identity_accuracy": 1.0,
+    "relation_accuracy": 1.0,
+    "stage_accuracy": 0.5
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

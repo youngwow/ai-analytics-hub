@@ -268,3 +268,43 @@ class CriticResult:
     needs_human_review: bool
     model: str
     latency_ms: int
+
+
+@dataclass(frozen=True)
+class DraftDigest:
+    """Machine-produced release candidate before any human approval.
+
+    Dictionaries are used at this boundary because the web/API and benchmark
+    contracts intentionally expose the same JSON-compatible representation.
+    """
+
+    item_decisions: tuple[dict[str, Any], ...]
+    objects: tuple[dict[str, Any], ...]
+    deliveries: tuple[dict[str, Any], ...]
+
+
+@dataclass(frozen=True)
+class RuntimeTelemetry:
+    configuration_id: str
+    model: str
+    context_version: str
+    documents: int
+    signals: int
+    model_calls: int
+    input_tokens: int
+    output_tokens: int
+    provider_latency_ms: int
+    wall_seconds: float
+    errors: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class AgentRunResult:
+    """Stable output of the automatic product contour."""
+
+    draft_digest: DraftDigest
+    analyses: tuple[AnalysisDraft, ...]
+    research: tuple[ResearchReport, ...]
+    critics: tuple[CriticResult, ...]
+    links: tuple[LinkDecision, ...]
+    telemetry: RuntimeTelemetry

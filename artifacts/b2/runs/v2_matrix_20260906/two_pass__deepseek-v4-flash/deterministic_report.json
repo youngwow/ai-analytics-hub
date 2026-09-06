@@ -1,0 +1,174 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v2.0.0",
+  "run_id": "dabaa638-824d-4dcf-82ab-8305ae560bd3",
+  "configuration_id": "a1-two_pass__a5-deepseek-v4-flash:cloud",
+  "usage": {
+    "model_calls": 51,
+    "input_tokens": 112612,
+    "output_tokens": 66502,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 896.8772893330024,
+    "provider_latency_ms": 1018070,
+    "attempted_calls": 55,
+    "failed_calls": 4
+  },
+  "split": "validation",
+  "contract_errors": [],
+  "material_labels": {
+    "exact": {
+      "relevance": {
+        "correct": 11,
+        "total": 29,
+        "accuracy": 0.3793103448275862
+      },
+      "importance": {
+        "correct": 17,
+        "total": 29,
+        "accuracy": 0.5862068965517241
+      },
+      "critical_or_escalate": {
+        "correct": 27,
+        "total": 29,
+        "accuracy": 0.9310344827586207
+      },
+      "roles": {
+        "correct": 10,
+        "total": 29,
+        "exact_set_accuracy": 0.3448275862068966
+      }
+    },
+    "relevance": {
+      "classes": {
+        "relevant": {
+          "support": 15,
+          "predicted": 5,
+          "precision": 0.8,
+          "recall": 0.26666666666666666,
+          "f1": 0.4
+        },
+        "borderline": {
+          "support": 8,
+          "predicted": 4,
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333
+        },
+        "irrelevant": {
+          "support": 5,
+          "predicted": 15,
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5
+        },
+        "unknown": {
+          "support": 1,
+          "predicted": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.41111111111111115
+    },
+    "importance": {
+      "classes": {
+        "low": {
+          "support": 9,
+          "predicted": 19,
+          "precision": 0.47368421052631576,
+          "recall": 1.0,
+          "f1": 0.6428571428571429
+        },
+        "medium": {
+          "support": 15,
+          "predicted": 7,
+          "precision": 0.7142857142857143,
+          "recall": 0.3333333333333333,
+          "f1": 0.4545454545454545
+        },
+        "high": {
+          "support": 4,
+          "predicted": 3,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        "critical": {
+          "support": 1,
+          "predicted": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null
+        }
+      },
+      "macro_f1": 0.6515151515151515
+    },
+    "roles_by_label": {
+      "GR": {
+        "support": 10,
+        "predicted": 8,
+        "precision": 1.0,
+        "recall": 0.8
+      },
+      "HEAD": {
+        "support": 14,
+        "predicted": 2,
+        "precision": 1.0,
+        "recall": 0.14285714285714285
+      },
+      "PR": {
+        "support": 15,
+        "predicted": 1,
+        "precision": 1.0,
+        "recall": 0.06666666666666667
+      }
+    }
+  },
+  "safety": {
+    "critical_total": 2,
+    "critical_in_low": [],
+    "submitted_claims": 27,
+    "verbatim_evidence_rate": 1.0,
+    "all_submitted_evidence_quotes_verbatim": true
+  },
+  "review_policy": {
+    "available": true,
+    "reviewed_items": 14,
+    "workload_rate": 0.4827586206896552,
+    "label_error_recall": 0.5,
+    "critical_recall": 1.0,
+    "unreviewed_label_error_ids": [
+      "e04-c",
+      "e06-b",
+      "e06-c",
+      "real-04",
+      "rf-008",
+      "rf-015",
+      "rf-017",
+      "rf-025",
+      "rf-079",
+      "s04"
+    ]
+  },
+  "event_grouping": {
+    "pair_precision": null,
+    "pair_recall": 0.0,
+    "pair_f1": null,
+    "b_cubed": {
+      "precision": 1.0,
+      "recall": 0.7777777777777778,
+      "f1": 0.8750000000000001
+    },
+    "false_merge_pairs": 0,
+    "false_split_pairs": 6
+  },
+  "npa": {
+    "link_identity_accuracy": 1.0,
+    "relation_accuracy": 1.0,
+    "stage_accuracy": 0.5
+  },
+  "semantic_status": "pending_independent_judge",
+  "interpretation_rule": "Do not average dimensions into one score; any safety-gate failure remains visible."
+}

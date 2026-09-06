@@ -1,0 +1,39 @@
+{
+  "materials_total": 92,
+  "new_real_flow": 24,
+  "by_split": {
+    "development": 25,
+    "validation": 29,
+    "holdout": 28,
+    "rat": 10
+  },
+  "by_layer": {
+    "challenge": 41,
+    "rare-safety": 9,
+    "real-flow": 32,
+    "case-anchor": 10
+  },
+  "by_source_type": {
+    "corporate_site": 3,
+    "telegram": 22,
+    "rss": 26,
+    "html": 8,
+    "regulator_site": 29,
+    "sitemap": 3,
+    "search": 1
+  },
+  "by_relevance": {
+    "relevant": 59,
+    "borderline": 16,
+    "irrelevant": 15,
+    "unknown": 2
+  },
+  "by_importance": {
+    "medium": 38,
+    "low": 26,
+    "high": 27,
+    "critical": 1
+  },
+  "event_cases": 14,
+  "npa_trajectories": 6
+}

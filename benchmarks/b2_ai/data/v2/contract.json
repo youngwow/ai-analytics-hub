@@ -1,0 +1,37 @@
+{
+  "benchmark": "B2 AI",
+  "dataset_version": "v2.0.0",
+  "created_at": "2026-09-06T15:00:00+03:00",
+  "scope": "Four-layer diagnostic basket: real-flow, case-anchor, challenge and rare-safety.",
+  "input_file": "materials.jsonl",
+  "metadata_file": "catalog.jsonl",
+  "ground_truth_file": "ground_truth.jsonl",
+  "event_cases_file": "event_cases.jsonl",
+  "npa_trajectories_file": "npa_trajectories.jsonl",
+  "rat_packages_file": "rat_packages.json",
+  "split_policy": "Complete event and NPA trajectories never cross development/validation/holdout; RAT remains isolated.",
+  "model_input_allowlist": [
+    "id",
+    "title",
+    "text",
+    "source_name",
+    "source_type",
+    "source_url",
+    "published_at",
+    "language"
+  ],
+  "model_input_denylist": [
+    "split",
+    "synthetic",
+    "provenance_kind",
+    "anchor",
+    "diagnostic_risks",
+    "ground_truth",
+    "expected_clusters",
+    "expected_stages"
+  ],
+  "freeze_state": "frozen_before_v2_evaluated_runs",
+  "npa_link_cases_file": "npa_link_cases.jsonl",
+  "hypothesis_coverage_file": "hypothesis_coverage.json",
+  "context_version": "gs-labs-context-truth-v1.0.0"
+}

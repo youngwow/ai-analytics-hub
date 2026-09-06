@@ -1,0 +1,138 @@
+{
+  "benchmark": "B2 v2 repeated holdout",
+  "runs": 3,
+  "verdict": "FAIL",
+  "safety_pass_all_runs": false,
+  "metrics": {
+    "relevance_macro_f1": {
+      "values": [
+        0.6291486291486291,
+        0.6171529619805481,
+        0.6914235190097259
+      ],
+      "worst": 0.6171529619805481,
+      "best": 0.6914235190097259
+    },
+    "importance_macro_f1": {
+      "values": [
+        0.6931818181818181,
+        0.4538794538794539,
+        0.6521739130434783
+      ],
+      "worst": 0.4538794538794539,
+      "best": 0.6931818181818181
+    },
+    "roles_exact": {
+      "values": [
+        0.5714285714285714,
+        0.6071428571428571,
+        0.6428571428571429
+      ],
+      "worst": 0.5714285714285714,
+      "best": 0.6428571428571429
+    },
+    "critical_accuracy": {
+      "values": [
+        0.8571428571428571,
+        0.8571428571428571,
+        0.8571428571428571
+      ],
+      "worst": 0.8571428571428571,
+      "best": 0.8571428571428571
+    },
+    "event_pair_f1": {
+      "values": [
+        0.888888888888889,
+        0.7499999999999999,
+        0.888888888888889
+      ],
+      "worst": 0.7499999999999999,
+      "best": 0.888888888888889
+    },
+    "event_b_cubed_f1": {
+      "values": [
+        0.9655172413793104,
+        0.9534883720930233,
+        0.9655172413793104
+      ],
+      "worst": 0.9534883720930233,
+      "best": 0.9655172413793104
+    },
+    "npa_identity_accuracy": {
+      "values": [
+        0.9166666666666666,
+        0.9166666666666666,
+        0.9166666666666666
+      ],
+      "worst": 0.9166666666666666,
+      "best": 0.9166666666666666
+    },
+    "npa_relation_accuracy": {
+      "values": [
+        0.9166666666666666,
+        0.9166666666666666,
+        0.9166666666666666
+      ],
+      "worst": 0.9166666666666666,
+      "best": 0.9166666666666666
+    },
+    "npa_stage_accuracy": {
+      "values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "worst": 1.0,
+      "best": 1.0
+    },
+    "review_error_recall": {
+      "values": [
+        0.875,
+        0.9411764705882353,
+        0.9285714285714286
+      ],
+      "worst": 0.875,
+      "best": 0.9411764705882353
+    },
+    "review_critical_recall": {
+      "values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "worst": 1.0,
+      "best": 1.0
+    }
+  },
+  "safety": [
+    {
+      "run_id": "9ad2d55a-49ec-488a-9a16-19e1fe22a495",
+      "contract_errors": [],
+      "critical_in_low": [],
+      "verbatim_evidence_rate": 1.0,
+      "failed_calls": 1,
+      "wall_seconds": 425.12631979200523
+    },
+    {
+      "run_id": "94cc2792-3941-4407-a1b7-b27018f4f2f2",
+      "contract_errors": [],
+      "critical_in_low": [],
+      "verbatim_evidence_rate": 1.0,
+      "failed_calls": 1,
+      "wall_seconds": 409.8253970830119
+    },
+    {
+      "run_id": "a4656b18-c700-4966-a7bd-71f09a5a778e",
+      "contract_errors": [],
+      "critical_in_low": [],
+      "verbatim_evidence_rate": 1.0,
+      "failed_calls": 1,
+      "wall_seconds": 494.0345011250174
+    }
+  ],
+  "limitations": [
+    "Single-team labels are not customer gold.",
+    "Semantic quality remains pending an explicitly independent judge/B4.",
+    "No user-time, usability or adoption claim is supported."
+  ]
+}

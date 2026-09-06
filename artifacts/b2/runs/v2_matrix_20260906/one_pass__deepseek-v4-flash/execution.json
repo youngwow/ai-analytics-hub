@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "one_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--model",
+    "deepseek-v4-flash:cloud",
+    "--configuration-id",
+    "a1-one_pass__a5-deepseek-v4-flash:cloud",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_matrix_20260906/one_pass__deepseek-v4-flash/benchmark_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_matrix_20260906/one_pass__deepseek-v4-flash/prediction.json"
+  ],
+  "returncode": 0,
+  "wall_seconds": 152.33109237501048,
+  "stdout": "",
+  "stderr": "2026-09-06 15:15:21 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n2026-09-06 15:16:02 [WARNING] llm: chat: модель вернула не JSON: ; повтор через 2.0 с\n"
+}

@@ -19,7 +19,7 @@ def load_jsonl(path: Path):
 
 def test_b2_input_has_no_ground_truth(tmp_path: Path):
     output = tmp_path / "input.json"
-    subprocess.run([sys.executable, str(B2 / "prepare_input.py"), "--split", "validation", "--output", str(output)], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(B2 / "prepare_input.py"), "--version", "v2", "--split", "validation", "--output", str(output)], cwd=ROOT, check=True)
     packet = json.loads(output.read_text(encoding="utf-8"))
     serialized = json.dumps(packet, ensure_ascii=False)
     for hidden in ("ground_truth", "diagnostic_risks", "expected_clusters", "expected_stages"):
@@ -28,9 +28,16 @@ def test_b2_input_has_no_ground_truth(tmp_path: Path):
     assert all(set(row) == {"case_id", "left_id", "right_id"} for row in packet["tasks"]["npa_pairs"])
 
 
-def test_b2_frozen_dataset_validates():
-    completed = subprocess.run([sys.executable, str(B2 / "validate_dataset.py")], cwd=ROOT, check=True, capture_output=True, text=True)
-    assert json.loads(completed.stdout)["status"] == "PASS"
+def test_b2_frozen_datasets_validate():
+    for version in ("v1", "v2"):
+        completed = subprocess.run(
+            [sys.executable, str(B2 / "validate_dataset.py"), "--version", version],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        assert json.loads(completed.stdout)["status"] == "PASS"
 
 
 def test_b2_oracle_scores_exact_dimensions(tmp_path: Path):
@@ -78,12 +85,23 @@ def test_b2_oracle_scores_exact_dimensions(tmp_path: Path):
 def test_b2_external_runner_smoke(tmp_path: Path):
     run_dir = tmp_path / "run"
     subprocess.run([
-        sys.executable, str(B2 / "run_benchmark.py"), "--split", "validation", "--output-dir", str(run_dir), "--",
+        sys.executable, str(B2 / "run_benchmark.py"), "--version", "v2", "--split", "validation", "--output-dir", str(run_dir), "--",
         sys.executable, str(B2 / "make_oracle_prediction.py"), "--input", "{input}", "--output", "{output}",
     ], cwd=ROOT, check=True, capture_output=True, text=True)
     report = json.loads((run_dir / "deterministic_report.json").read_text(encoding="utf-8"))
     assert report["contract_errors"] == []
     assert report["event_grouping"]["pair_f1"] == 1.0
+
+
+def test_b2_v2_has_no_cross_split_groups_or_duplicate_material_ids():
+    data = B2 / "data" / "v2"
+    catalog_rows = load_jsonl(data / "catalog.jsonl")
+    catalog = {row["id"]: row for row in catalog_rows}
+    assert len(catalog) == len(catalog_rows) == 92
+    for row in load_jsonl(data / "event_cases.jsonl"):
+        assert len({catalog[item_id]["split"] for item_id in row["member_ids"]}) == 1
+    for row in load_jsonl(data / "npa_trajectories.jsonl"):
+        assert len({catalog[item_id]["split"] for item_id in row["state_ids_in_order"]}) == 1
 
 
 def test_npa_predictions_use_bounded_independent_batches():

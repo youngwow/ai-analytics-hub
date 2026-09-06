@@ -29,7 +29,10 @@ args = parser.parse_args()
 input_path = args.input or Path(os.environ["B2_INPUT"])
 output_path = args.output or Path(os.environ["B2_OUTPUT"])
 packet = load_json(input_path)
-data = ROOT / "data" / "v1"
+dataset_major = str(packet["dataset_version"]).split(".", 1)[0]
+data = ROOT / "data" / dataset_major
+if not data.is_dir():
+    raise SystemExit(f"unsupported dataset version: {packet['dataset_version']}")
 truth = {row["id"]: row for row in load_jsonl(data / "ground_truth.jsonl")}
 materials = {row["id"]: row for row in load_jsonl(data / "materials.jsonl")}
 visible = {row["id"] for row in packet["materials"]}

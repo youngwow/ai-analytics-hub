@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/bin/python",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/benchmarks/b2_ai/product_system.py",
+    "--a1",
+    "two_pass",
+    "--a3",
+    "full_scan",
+    "--a4",
+    "without_critic",
+    "--model",
+    "deepseek-v4-flash:cloud",
+    "--configuration-id",
+    "a1-two_pass__a5-deepseek-v4-flash:cloud",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_matrix_20260906/two_pass__deepseek-v4-flash/benchmark_input.json",
+    "/Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/artifacts/b2/runs/v2_matrix_20260906/two_pass__deepseek-v4-flash/prediction.json"
+  ],
+  "returncode": 0,
+  "wall_seconds": 896.9957112089905,
+  "stdout": "",
+  "stderr": "2026-09-06 15:29:39 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n2026-09-06 15:30:54 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n2026-09-06 15:32:42 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n2026-09-06 15:33:56 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n2026-09-06 15:35:44 [WARNING] llm: chat: chat: ReadTimeout — The read operation timed out; повтор через 2.0 с\n"
+}

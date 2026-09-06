@@ -1,0 +1,771 @@
+{
+  "run_id": "048b4511-de2d-443f-be09-d602ffbdf170",
+  "configuration_id": "a1-one_pass__a5-gpt-oss:120b-cloud",
+  "dataset_version": "v2.0.0",
+  "split": "validation",
+  "usage": {
+    "model_calls": 45,
+    "input_tokens": 95938,
+    "output_tokens": 27775,
+    "estimated_cost": 0,
+    "currency": "unknown",
+    "wall_seconds": 65.22731762501644,
+    "provider_latency_ms": 105160,
+    "attempted_calls": 45,
+    "failed_calls": 0
+  },
+  "material_predictions": [
+    {
+      "id": "e04-a",
+      "relevance": "relevant",
+      "importance": "high",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "Правительство увеличило грантовое софинансирование особо значимых ИТ‑проектов до 80 % и установило срок подготовки предложений до 20 декабря 2026 г.",
+      "claims": [
+        {
+          "text": "Грантовое софинансирование особо значимых ИТ‑проектов увеличено до 80 %.",
+          "evidence_quote": "Правительство поручило увеличить грантовое софинансирование особо значимых ИТ-проектов до 80%."
+        },
+        {
+          "text": "Предложения по механизму должны быть подготовлены до 20 декабря 2026 г.",
+          "evidence_quote": "Предложения по механизму должны быть подготовлены до 20 декабря 2026 года."
+        }
+      ],
+      "impact": "Ожидается открытие крупного фонда грантов, который может покрыть большую часть расходов на разработку новых решений в сфере защищённого цифрового контента и OTT/IPTV, что создаёт финансовую возможность для GS Labs. При получении гранта компания сможет ускорить R&D и укрепить позиции на рынке. Необходимо оценить соответствие проектов GS Labs критериям «особо значимых ИТ‑проектов».",
+      "review_required": true,
+      "review_reasons": [
+        "open_questions"
+      ]
+    },
+    {
+      "id": "e04-b",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "РФРИТ открыл отбор проектов по внедрению отечественного программного обеспечения с предельной долей поддержки 50 % затрат.",
+      "claims": [
+        {
+          "text": "РФРИТ открыл отбор проектов по внедрению отечественного программного обеспечения.",
+          "evidence_quote": "РФРИТ открыл отбор проектов по внедрению отечественного программного обеспечения."
+        },
+        {
+          "text": "Предельная доля поддержки в текущем отборе составляет 50 % затрат.",
+          "evidence_quote": "Предельная доля поддержки в текущем отборе составляет 50% затрат."
+        }
+      ],
+      "impact": "Если GS Labs будет соответствовать критериям, программа может предоставить значительное финансирование для разработки отечественного ПО, что ускорит проекты в сфере цифрового ТВ и OTT/IPTV. При отсутствии подтверждения участия риск ограничен лишь потенциальной упущенной возможностью.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions"
+      ]
+    },
+    {
+      "id": "e04-c",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "The announced 1% preferential rate applies to industrial machines and robots, which are unrelated to GS Labs' software and digital content products; no confirmed applicability or obligation for the company is indicated.",
+      "claims": [],
+      "impact": "",
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "id": "e04-d",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "The article describes a regional subsidy for precision agriculture equipment, which has no direct connection to GS Labs' products, markets, regulatory risks, or reputation.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "e05-a",
+      "relevance": "relevant",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "PR"
+      ],
+      "summary": "Mass authentication failures reported by users of several paid‑TV operators; cause and affected conditional‑access systems are not yet confirmed.",
+      "claims": [
+        {
+          "text": "Пользователи нескольких операторов платного ТВ сообщили о массовых ошибках авторизации приставок.",
+          "evidence_quote": "Пользователи нескольких операторов платного ТВ сообщили о массовых ошибках авторизации приставок."
+        },
+        {
+          "text": "Причина сбоя и затронутые системы условного доступа пока не подтверждены.",
+          "evidence_quote": "Причина сбоя и затронутые системы условного доступа пока не подтверждены."
+        }
+      ],
+      "impact": "The outage may affect the reputation of paid‑TV operators and could create demand for more reliable conditional‑access solutions, which are within GS Labs' product scope. No direct link to GS Labs is confirmed, but the market relevance warrants monitoring and possible communication.",
+      "review_required": true,
+      "review_reasons": [
+        "open_questions"
+      ]
+    },
+    {
+      "id": "e05-b",
+      "relevance": "borderline",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "Оператор СеверТВ сообщил о сбое авторизации в системе биллинга, при этом оборудование и системы условного доступа поставщиков работали штатно.",
+      "claims": [
+        {
+          "text": "Оператор СеверТВ подтвердил сбой на своей стороне в системе биллинга.",
+          "evidence_quote": "Оператор СеверТВ подтвердил сбой на своей стороне в системе биллинга."
+        },
+        {
+          "text": "Оборудование и системы условного доступа поставщиков работали штатно.",
+          "evidence_quote": "Оборудование и системы условного доступа поставщиков работали штатно."
+        }
+      ],
+      "impact": "Возможные кратковременные перебои в обслуживании абонентов СеверТВ, но прямой связи с продуктами или обязательствами GS Labs не обнаружено.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions"
+      ]
+    },
+    {
+      "id": "e05-c",
+      "relevance": "relevant",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "PR"
+      ],
+      "summary": "SeverTV suffered a 47‑minute authentication outage, restored service after that period and issued an apology to customers.",
+      "claims": [
+        {
+          "text": "SeverTV restored authorization for subscribers after 47 minutes.",
+          "evidence_quote": "СеверТВ восстановил авторизацию абонентов через 47 минут после начала инцидента."
+        },
+        {
+          "text": "The operator apologized to customers and did not name equipment suppliers as the cause.",
+          "evidence_quote": "Оператор извинился перед клиентами; поставщиков оборудования причиной сбоя не называли."
+        }
+      ],
+      "impact": "Short‑term reputational impact on the paid‑TV market and possible perception of reliability of related technology providers, including those offering authentication solutions.",
+      "review_required": true,
+      "review_reasons": [
+        "open_questions"
+      ]
+    },
+    {
+      "id": "e06-a",
+      "relevance": "relevant",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "PR",
+        "GR"
+      ],
+      "summary": "TelecomDaily reports that paid subscriptions for the nine leading Russian online video platforms now exceed 72 million users.",
+      "claims": [
+        {
+          "text": "Число подписчиков девяти ведущих онлайн-кинотеатров превысило 72 млн.",
+          "evidence_quote": "По оценке TelecomDaily, число подписчиков девяти ведущих онлайн-кинотеатров превысило 72 млн."
+        },
+        {
+          "text": "Метрика учитывает только платные подписки, а не уникальных людей.",
+          "evidence_quote": "Метрика считает платные подписки, а не уникальных людей."
+        }
+      ],
+      "impact": "Рост числа платных подписок указывает на расширяющийся рынок OTT/IPTV в России, что повышает спрос на решения GS Labs в области DRM, управления доступом и защиты контента. Информация может быть использована в PR‑коммуникациях о позиции компании на рынке и в GR‑аналитике для оценки регуляторных инициатив, связанных с платным видеоконтентом.",
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "id": "e06-b",
+      "relevance": "relevant",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "PR"
+      ],
+      "summary": "Медиаизмеритель сообщил, что уникальная месячная аудитория российских онлайн‑кинотеатров составила 61 млн человек, включая бесплатный просмотр.",
+      "claims": [
+        {
+          "text": "Медиаизмеритель оценил аудиторию онлайн-кинотеатров в 61 млн человек за месяц.",
+          "evidence_quote": "Медиаизмеритель оценил аудиторию онлайн-кинотеатров в 61 млн человек за месяц."
+        },
+        {
+          "text": "Показатель отражает уникальную месячную аудиторию и включает бесплатный просмотр.",
+          "evidence_quote": "Показатель отражает уникальную месячную аудиторию и включает бесплатный просмотр."
+        }
+      ],
+      "impact": "Увеличенный размер аудитории онлайн‑кинотеатров указывает на рост рынка OTT/IPTV в России, что может создать новые коммерческие возможности для решений GS Labs в области защиты контента и управления доступом.",
+      "review_required": true,
+      "review_reasons": [
+        "open_questions"
+      ]
+    },
+    {
+      "id": "e06-c",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "Документ содержит лишь общие статистические замечания о подписках и зрителях онлайн‑кинотеатров без упоминания GS Labs, её продуктов, конкурентов, регулятивных рисков или репутационных последствий.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "n03-1",
+      "relevance": "relevant",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "ФСТЭК опубликовал проект приказа о защите персональных данных с новыми требованиями к риск‑ориентированному выбору мер и использованию ИИ.",
+      "claims": [
+        {
+          "text": "ФСТЭК опубликовала проект приказа о защите персональных данных.",
+          "evidence_quote": "ФСТЭК опубликовала проект приказа о защите персональных данных."
+        },
+        {
+          "text": "Проект вводит риск‑ориентированный выбор мер и отдельные требования при использовании ИИ.",
+          "evidence_quote": "Проект вводит риск-ориентированный выбор мер и отдельные требования при использовании ИИ."
+        }
+      ],
+      "impact": "Возможные новые обязательства по защите персональных данных могут потребовать доработки продуктов GS Labs, особенно тех, где используется ИИ и обрабатываются персональные данные. Требования могут повлиять на архитектуру защиты и процедуры соответствия. Необходима оценка применимости и план действий.",
+      "review_required": true,
+      "review_reasons": [
+        "open_questions",
+        "unconfirmed_npa"
+      ]
+    },
+    {
+      "id": "n03-2",
+      "relevance": "borderline",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "ФСТЭК завершил публичное обсуждение проекта № 169583 о требованиях к защите персональных данных; в доработанной редакции предусмотрена оценка зрелости до начала обработки, после инцидента и не реже одного раза в три года.",
+      "claims": [
+        {
+          "text": "Публичное обсуждение проекта № 169583 завершено 8 августа 2026 года.",
+          "evidence_quote": "Публичное обсуждение проекта № 169583 завершено 8 августа 2026 года."
+        },
+        {
+          "text": "В доработанной редакции оценка зрелости проводится до начала обработки, после инцидента и планово не реже одного раза в три года.",
+          "evidence_quote": "В доработанной редакции оценка зрелости проводится до начала обработки, после инцидента и планово не реже одного раза в три года."
+        }
+      ],
+      "impact": "Если проект будет принят, компании, разрабатывающие защищённые цифровые сервисы (включая GS Labs), могут потребовать внедрения новых процедур оценки зрелости систем защиты персональных данных, что создаст дополнительные регуляторные обязательства и затраты.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions",
+        "unconfirmed_npa"
+      ]
+    },
+    {
+      "id": "n03-3",
+      "relevance": "borderline",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "ФСТЭК утвердил приказ о защите персональных данных, вступающий в силу 1 сентября 2026 г.",
+      "claims": [
+        {
+          "text": "ФСТЭК утвердила приказ с вступлением в силу 1 сентября 2026 года.",
+          "evidence_quote": "ФСТЭК утвердила приказ с вступлением в силу 1 сентября 2026 года."
+        },
+        {
+          "text": "Требования к оценке зрелости и подрядчикам сохранены; обязательное подключение всех систем к ГосСОПКА в итоговый текст не вошло.",
+          "evidence_quote": "Требования к оценке зрелости и подрядчикам сохранены; обязательное подключение всех систем к ГосСОПКА в итоговый текст не вошло."
+        }
+      ],
+      "impact": "Новый приказ ФСТЭК может создать дополнительные требования к защите персональных данных для компаний, разрабатывающих защищённые цифровые сервисы, включая GS Labs. При отсутствии обязательного подключения к ГосСОПКА возможны различия в реализации требований. Необходимо оценить, попадает ли текущий продуктовый портфель GS Labs под действие данного приказа.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions"
+      ]
+    },
+    {
+      "id": "n04-1",
+      "relevance": "borderline",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "Минцифры предложило установить правила учёта корпоративных SIM‑карт, используемых в устройствах M2M.",
+      "claims": [
+        {
+          "text": "Минцифры предложило установить правила учёта корпоративных SIM‑карт, используемых в устройствах M2M.",
+          "evidence_quote": "Минцифры предложило установить правила учёта корпоративных SIM-карт, используемых в устройствах M2M."
+        }
+      ],
+      "impact": "Если правила будут приняты, компании, использующие M2M‑SIM, могут столкнуться с новыми требованиями учёта, что может потребовать адаптации программных решений GS Labs для соответствия требованиям.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions",
+        "unconfirmed_npa"
+      ]
+    },
+    {
+      "id": "n04-2",
+      "relevance": "borderline",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "Проект правил управления SIM‑картами в устройствах межмашинного взаимодействия опубликован, с требованием к операторам предоставлять бизнесу интерфейс инвентаризации и сроком вступления 1 сентября 2027 г.",
+      "claims": [
+        {
+          "text": "Операторы должны предоставлять бизнесу интерфейс инвентаризации.",
+          "evidence_quote": "Операторы должны предоставлять бизнесу интерфейс инвентаризации"
+        },
+        {
+          "text": "Предполагаемый срок вступления — 1 сентября 2027 года.",
+          "evidence_quote": "предполагаемый срок вступления — 1 сентября 2027 года."
+        }
+      ],
+      "impact": "Регулирование может потребовать от операторов новых сервисов инвентаризации M2M‑SIM, что создаст потенциальные требования к интеграции со сторонними решениями, включая продукты GS Labs в области защищённых цифровых сервисов и управления доступом.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions",
+        "unconfirmed_npa"
+      ]
+    },
+    {
+      "id": "n04-3",
+      "relevance": "borderline",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "Регулятор утвердил Правила управления M2M SIM‑картами с исключением для тестовых стендов до 50 SIM‑карт; дата вступления 1 сентября 2027 г.",
+      "claims": [
+        {
+          "text": "В правилах предусмотрено исключение для тестовых стендов до 50 SIM‑карт.",
+          "evidence_quote": "После обсуждения проект правил M2M дополнен исключением для тестовых стендов до 50 SIM-карт."
+        },
+        {
+          "text": "Дата вступления правил сохранена – 1 сентября 2027 года.",
+          "evidence_quote": "Дата вступления 1 сентября 2027 года сохранена."
+        }
+      ],
+      "impact": "Новые требования к управлению M2M SIM‑картами могут изменить условия работы операторов и производителей M2M‑устройств, что потенциально затронет рынок решений по защищённому доступу и DRM, в котором работает GS Labs. Исключение для тестовых стендов может облегчить пилотные проекты, но обязательство к 2027 году создаёт окно для подготовки. Прямой влияния на текущие продукты GS Labs пока нет.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions"
+      ]
+    },
+    {
+      "id": "real-04",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "The Nvidia PAIR utility concerns AI workload distribution across PCs and does not mention GS Labs, its products, markets, regulatory risks, or reputation. No direct or indirect impact on GS Labs can be inferred from the source.",
+      "claims": [],
+      "impact": "",
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "id": "real-05",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "Документ относится к методическим рекомендациям по оценке радиационного риска в рентгенорадиологии и не имеет прямой связи с продуктами, рынками, регуляторными рисками или репутацией GS Labs.",
+      "claims": [],
+      "impact": "",
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "id": "real-06",
+      "relevance": "relevant",
+      "importance": "high",
+      "critical_or_escalate": false,
+      "roles": [
+        "PR",
+        "HEAD"
+      ],
+      "summary": "VK Video audience surpassed 2.5 M daily users and introduced a lower monetisation threshold for creators.",
+      "claims": [
+        {
+          "text": "Daily audience of VK live streams exceeded 2.5 million users.",
+          "evidence_quote": "Ежедневная аудитория трансляций VK превысила 2,5 млн пользователей"
+        },
+        {
+          "text": "Average viewing time was 34 minutes.",
+          "evidence_quote": "Среднее время просмотра составило 34 минуты."
+        },
+        {
+          "text": "From 1 September VK Video reduced the entry threshold for authors from 5 000 to 1 000 subscribers.",
+          "evidence_quote": "С 1 сентября в «VK видео» изменилась программа монетизации. Платформа снизила порог входа для авторов в 5 раз – с 5000 до 1000 подписчиков."
+        },
+        {
+          "text": "A 90‑day grace period guarantees payments to existing authors if they do not reach 30 000 minutes of watch time per quarter.",
+          "evidence_quote": "Также появился льготный период на 90 дней для уже подключенных авторов: им гарантируют выплаты, если не наберется 30 000 минут просмотров за квартал, уточнили в компании."
+        },
+        {
+          "text": "Entertainment and media content accounted for 44 % of total viewing time in the first half‑year.",
+          "evidence_quote": "За первое полугодие самой популярной тематикой трансляций стали развлечения и медиаконтент – 44% общего времени просмотра."
+        }
+      ],
+      "impact": "The growth of VK Video’s audience and its more permissive monetisation model could shift creator and advertiser attention away from GS Labs‑partnered OTT services, creating a competitive market pressure that senior leadership should monitor.",
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "id": "rf-008",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "Extracted relevant news signal about a competitor's AI partnership with a regional government.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "rf-015",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "The article discusses general cybersecurity concepts (microsegmentation, container security) without mentioning GS Labs, its products, market, regulatory issues, or any direct risk/opportunity for the company.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "rf-017",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "The article discusses NM‑Tech's re‑pledging of semiconductor manufacturing equipment, including ASML tools, without any direct link to GS Labs' products, markets, regulatory exposure, or reputation.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "rf-025",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "Document reports regional digital transformation initiatives without any direct or indirect link to GS Labs products, markets, regulatory risks, or reputation.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "rf-028",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "Документ относится к методическим рекомендациям по оценке радиационного риска в рентгенологии и не имеет прямой связи с продуктами, рынками, регуляторными рисками или репутацией GS Labs.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "rf-029",
+      "relevance": "borderline",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "Указание Банка России N 7419‑У от 22.07.2026 вносит изменения в порядок определения допустимого времени простоя и деградации технологических процессов кредитных организаций.",
+      "claims": [
+        {
+          "text": "Внесены изменения в обязательные требования к операционной надежности при осуществлении банковской деятельности",
+          "evidence_quote": "Внесены изменения в обязательные требования к операционной надежности при осуществлении банковской деятельности в целях обеспечения непрерывности оказания банковских услуг."
+        },
+        {
+          "text": "Указание вступает в силу с 1 января 2027 года, за исключением подпункта 1.5, вступающего в силу с 1 января 2028 года",
+          "evidence_quote": "Указание вступает в силу с 1 января 2027 года, за исключением подпункта 1.5 пункта 1 указания, вступающего в силу с 1 января 2028 года."
+        }
+      ],
+      "impact": "Новые требования к операционной надежности банков могут создать спрос на решения по мониторингу и управлению простоями, что потенциально интересно для GS Labs, если компания предлагает соответствующее ПО/аппаратные решения. На данный момент прямой связи с продуктами GS Labs не подтверждено.",
+      "review_required": true,
+      "review_reasons": [
+        "uncertain_relevance",
+        "open_questions"
+      ]
+    },
+    {
+      "id": "rf-079",
+      "relevance": "irrelevant",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "The article reports only on a visual rebranding of a TV channel and contains no mention of GS Labs, its products, market, regulatory issues, or any risk/opportunity for the company.",
+      "claims": [],
+      "impact": "",
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "id": "rf-080",
+      "relevance": "relevant",
+      "importance": "medium",
+      "critical_or_escalate": false,
+      "roles": [
+        "GR"
+      ],
+      "summary": "Минцифры рассматривает модель аварийного (резервного) оператора связи в рамках реформы лицензирования телеком-отрасли.",
+      "claims": [
+        {
+          "text": "Минцифры России прорабатывает предложения по созданию института аварийного, или резервного, оператора связи.",
+          "evidence_quote": "Минцифры России прорабатывает предложения по созданию института аварийного, или резервного, оператора связи."
+        },
+        {
+          "text": "Новые финансовые требования могут особенно сильно повлиять на небольших региональных операторов.",
+          "evidence_quote": "По его оценке, новые финансовые требования могут особенно сильно повлиять на небольших операторов, работающих за пределами крупнейших городов."
+        },
+        {
+          "text": "В письме Минцифры не указаны сроки принятия решений по предложенной модели.",
+          "evidence_quote": "В письме Минцифры не указаны сроки принятия решений по предложенной модели и параметры будущего законопроекта."
+        }
+      ],
+      "impact": "Регуляторное предложение может изменить условия лицензирования и финансовые обязательства операторов связи, что косвенно затронет рынок клиентов GS Labs (операторы OTT/IPTV, цифрового ТВ). Возможные изменения могут создать как риски (строгие требования), так и возможности (потребность в новых программных решениях).",
+      "review_required": true,
+      "review_reasons": [
+        "open_questions"
+      ]
+    },
+    {
+      "id": "s03",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "The article describes a private clinic network adopting a cloud system for medical imaging storage, which has no connection to GS Labs products, markets, regulatory risks, or reputation concerns.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    },
+    {
+      "id": "s04",
+      "relevance": "unknown",
+      "importance": "low",
+      "critical_or_escalate": false,
+      "roles": [],
+      "summary": "Документ сообщает о закрытом пилоте умного дома у оператора связи без упоминания GS Labs, её продуктов, партнёрств или регуляторных аспектов, поэтому нет фактов, влияющих на риски, возможности или обязательства компании.",
+      "claims": [],
+      "impact": "",
+      "review_required": true,
+      "review_reasons": [
+        "missing_grounded_claims"
+      ]
+    }
+  ],
+  "event_clusters": [
+    {
+      "cluster_id": "event-1",
+      "member_ids": [
+        "e04-a"
+      ]
+    },
+    {
+      "cluster_id": "event-2",
+      "member_ids": [
+        "e04-b"
+      ]
+    },
+    {
+      "cluster_id": "event-3",
+      "member_ids": [
+        "e05-a",
+        "e05-b",
+        "e05-c"
+      ]
+    },
+    {
+      "cluster_id": "event-4",
+      "member_ids": [
+        "e06-a"
+      ]
+    },
+    {
+      "cluster_id": "event-5",
+      "member_ids": [
+        "e06-b"
+      ]
+    },
+    {
+      "cluster_id": "event-6",
+      "member_ids": [
+        "rf-029"
+      ]
+    },
+    {
+      "cluster_id": "event-7",
+      "member_ids": [
+        "rf-080"
+      ]
+    },
+    {
+      "cluster_id": "singleton-e04-c",
+      "member_ids": [
+        "e04-c"
+      ]
+    },
+    {
+      "cluster_id": "singleton-e04-d",
+      "member_ids": [
+        "e04-d"
+      ]
+    },
+    {
+      "cluster_id": "singleton-e06-c",
+      "member_ids": [
+        "e06-c"
+      ]
+    },
+    {
+      "cluster_id": "singleton-rf-008",
+      "member_ids": [
+        "rf-008"
+      ]
+    },
+    {
+      "cluster_id": "singleton-rf-015",
+      "member_ids": [
+        "rf-015"
+      ]
+    },
+    {
+      "cluster_id": "singleton-rf-017",
+      "member_ids": [
+        "rf-017"
+      ]
+    },
+    {
+      "cluster_id": "singleton-rf-025",
+      "member_ids": [
+        "rf-025"
+      ]
+    },
+    {
+      "cluster_id": "singleton-rf-028",
+      "member_ids": [
+        "rf-028"
+      ]
+    },
+    {
+      "cluster_id": "singleton-rf-079",
+      "member_ids": [
+        "rf-079"
+      ]
+    }
+  ],
+  "npa_link_predictions": [
+    {
+      "case_id": "N03-positive-0",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N03-positive-1",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N04-positive-0",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "N04-positive-1",
+      "same_npa": true,
+      "relation": "next_state"
+    },
+    {
+      "case_id": "D03-pd-vs-m2m",
+      "same_npa": false,
+      "relation": "different"
+    },
+    {
+      "case_id": "D04-pd-vs-smart-home-pilot",
+      "same_npa": false,
+      "relation": "different"
+    }
+  ],
+  "npa_state_predictions": [
+    {
+      "id": "n03-1",
+      "stage": "draft"
+    },
+    {
+      "id": "n03-2",
+      "stage": "discussion_closed"
+    },
+    {
+      "id": "n03-3",
+      "stage": "adopted"
+    },
+    {
+      "id": "n04-1",
+      "stage": "draft"
+    },
+    {
+      "id": "n04-2",
+      "stage": "introduced"
+    },
+    {
+      "id": "n04-3",
+      "stage": "revised_draft"
+    }
+  ]
+}

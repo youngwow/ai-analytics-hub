@@ -21,7 +21,6 @@ from src.product.contracts import EventRecord, EvidenceClaim, SignalDraft  # noq
 from src.product.events import EventLinker, cosine  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE / "data" / "v1"
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -91,13 +90,26 @@ def cases(materials: dict[str, dict], event_cases: list[dict], bank_size: int) -
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--version", default="v2")
+    parser.add_argument(
+        "--split", choices=["development", "validation", "holdout"], default="validation"
+    )
     parser.add_argument("--bank-size", type=int, default=30)
     args = parser.parse_args()
     if args.bank_size <= 20:
         parser.error("bank-size must be greater than 20 to distinguish top-20 from full scan")
 
-    materials = {row["id"]: row for row in load_jsonl(DATA / "materials.jsonl")}
-    event_cases = load_jsonl(DATA / "event_cases.jsonl")
+    data = HERE / "data" / args.version
+    catalog = {row["id"]: row for row in load_jsonl(data / "catalog.jsonl")}
+    visible = {item_id for item_id, row in catalog.items() if row["split"] == args.split}
+    materials = {
+        row["id"]: row
+        for row in load_jsonl(data / "materials.jsonl")
+        if row["id"] in visible
+    }
+    event_cases = [
+        row for row in load_jsonl(data / "event_cases.jsonl") if row["split"] == args.split
+    ]
     test_cases = cases(materials, event_cases, args.bank_size)
     config = Config.load()
     llm = build_llm_provider(
@@ -162,7 +174,10 @@ def main() -> int:
     positives = [row for row in rows if row["target_event_id"]]
     report = {
         "benchmark": "B2-A3 retrieval",
-        "source_dataset": "v1.0.0",
+        "source_dataset": json.loads((data / "contract.json").read_text(encoding="utf-8"))[
+            "dataset_version"
+        ],
+        "split": args.split,
         "bank_size": args.bank_size,
         "cases": len(rows),
         "positive_cases": len(positives),

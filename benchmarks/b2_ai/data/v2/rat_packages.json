@@ -1,0 +1,18 @@
+{
+  "status": "inputs_selected_but_full_source_snapshots_missing",
+  "package_a": [
+    "rat-npa-22",
+    "rat-project-12",
+    "rat-project-21",
+    "rat-news-3",
+    "rat-news-28"
+  ],
+  "package_b": [
+    "rat-npa-23",
+    "rat-project-1",
+    "rat-project-26",
+    "rat-news-7",
+    "rat-news-36"
+  ],
+  "rule": "RAT records remain isolated from prompt tuning and other B2 splits."
+}

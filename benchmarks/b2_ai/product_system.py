@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import hashlib
 import json
 import os
 import threading
@@ -22,7 +23,7 @@ if str(PROJECT_ROOT) not in os.sys.path:
     os.sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.common import load_env_secret  # noqa: E402
-from src.config import Config  # noqa: E402
+from src.config import Config, LLMConfig  # noqa: E402
 from src.paths import DEFAULT_PATHS  # noqa: E402
 from src.processing.llm import (  # noqa: E402
     LLMProvider,
@@ -46,6 +47,7 @@ class CountingProvider:
         self.latency_ms = 0
         self.attempted_calls = 0
         self.failed_calls = 0
+        self.errors: list[dict[str, str]] = []
         self._lock = threading.Lock()
 
     def complete(self, prompt, schema, *, system=""):
@@ -53,9 +55,17 @@ class CountingProvider:
             self.attempted_calls += 1
         try:
             result = self.provider.complete(prompt, schema, system=system)
-        except Exception:
+        except Exception as exc:
             with self._lock:
                 self.failed_calls += 1
+                self.errors.append(
+                    {
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                        "prompt_sha256": hashlib.sha256(prompt.encode("utf-8")).hexdigest(),
+                        "system_head": system[:120],
+                    }
+                )
             raise
         with self._lock:
             self.calls += 1
@@ -329,6 +339,11 @@ def main(argv=None) -> int:
     parser.add_argument("--a1", choices=["one_pass", "two_pass"], default="one_pass")
     parser.add_argument("--a3", choices=["full_scan", "embedding_top20"], default="full_scan")
     parser.add_argument("--a4", choices=["without_critic", "with_critic"], default="without_critic")
+    parser.add_argument(
+        "--model",
+        choices=["glm-5.3-flash:cloud", "deepseek-v4-flash:cloud", "gpt-oss:120b-cloud"],
+        help="Experiment-only Ollama Cloud model override; production config stays frozen.",
+    )
     parser.add_argument("--configuration-id")
     parser.add_argument("input", nargs="?", default=os.environ.get("B2_INPUT"))
     parser.add_argument("output", nargs="?", default=os.environ.get("B2_OUTPUT"))
@@ -337,11 +352,14 @@ def main(argv=None) -> int:
         parser.error("input/output paths or B2_INPUT/B2_OUTPUT are required")
     packet = json.loads(Path(args.input).read_text(encoding="utf-8"))
     config = Config.load()
-    key = load_env_secret(config.llm.api_key_env, DEFAULT_PATHS.env_path)
-    provider = build_llm_provider(config.llm, key)
+    experiment_llm: LLMConfig = (
+        replace(config.llm, model=args.model) if args.model else config.llm
+    )
+    key = load_env_secret(experiment_llm.api_key_env, DEFAULT_PATHS.env_path)
+    provider = build_llm_provider(experiment_llm, key)
     npa_provider = build_llm_provider(
         replace(
-            config.llm,
+            experiment_llm,
             temperature=0.0,
             think=None,
             max_output_tokens=NPA_MAX_OUTPUT_TOKENS,
@@ -354,9 +372,11 @@ def main(argv=None) -> int:
         embedder = build_embedding_provider(config.embeddings, embedding_key)
     counted = CountingProvider(provider)
     npa_counted = CountingProvider(npa_provider)
-    analyzer = PrimaryAnalyzer(counted, model=config.llm.model, max_chars=config.processing.max_chars)
-    critic = SignalCritic(counted, model=config.llm.model)
-    linker = EventLinker(counted, embedder, model=config.llm.model)
+    analyzer = PrimaryAnalyzer(
+        counted, model=experiment_llm.model, max_chars=config.processing.max_chars
+    )
+    critic = SignalCritic(counted, model=experiment_llm.model)
+    linker = EventLinker(counted, embedder, model=experiment_llm.model)
     context = GsLabsContext.from_dict(packet["context"])
     documents = {row["id"]: row for row in packet["materials"]}
     material_ids = packet["tasks"]["material_ids"]
@@ -400,7 +420,7 @@ def main(argv=None) -> int:
     output = {
         "run_id": str(uuid.uuid4()),
         "configuration_id": args.configuration_id or (
-            f"product-a1-{args.a1}-a3-{args.a3}-a4-{args.a4}"
+            f"product-{experiment_llm.model}-a1-{args.a1}-a3-{args.a3}-a4-{args.a4}"
         ),
         "dataset_version": packet["dataset_version"],
         "split": packet["split"],
@@ -414,6 +434,7 @@ def main(argv=None) -> int:
             "provider_latency_ms": counted.latency_ms + npa_counted.latency_ms,
             "attempted_calls": counted.attempted_calls + npa_counted.attempted_calls,
             "failed_calls": counted.failed_calls + npa_counted.failed_calls,
+            "provider_errors": [*counted.errors, *npa_counted.errors],
         },
         "material_predictions": predictions,
         "event_clusters": clusters,

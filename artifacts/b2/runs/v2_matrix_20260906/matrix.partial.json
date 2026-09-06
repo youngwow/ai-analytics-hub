@@ -1,0 +1,166 @@
+[
+  {
+    "configuration_id": "a1-one_pass__a5-glm-5.3-flash:cloud",
+    "safety_pass": true,
+    "worst_core_metric": 0.41379310344827586,
+    "dimensions": {
+      "relevance_macro_f1": 0.588365539452496,
+      "importance_macro_f1": 0.8317857142857142,
+      "roles_exact": 0.41379310344827586,
+      "event_b_cubed_f1": 0.9615384615384616,
+      "npa_stage_accuracy": 0.8333333333333334
+    },
+    "critical_in_low": [],
+    "verbatim_evidence_rate": 1.0,
+    "contract_errors": [],
+    "usage": {
+      "model_calls": 46,
+      "input_tokens": 101280,
+      "output_tokens": 77912,
+      "estimated_cost": 0,
+      "currency": "unknown",
+      "wall_seconds": 244.1269737080147,
+      "provider_latency_ms": 410617,
+      "attempted_calls": 46,
+      "failed_calls": 0
+    },
+    "run_dir": "artifacts/b2/runs/v2_matrix_20260906/one_pass__glm-5-3-flash"
+  },
+  {
+    "configuration_id": "a1-one_pass__a5-deepseek-v4-flash:cloud",
+    "safety_pass": true,
+    "worst_core_metric": 0.3103448275862069,
+    "dimensions": {
+      "relevance_macro_f1": 0.4063492063492063,
+      "importance_macro_f1": 0.39037378392217104,
+      "roles_exact": 0.3103448275862069,
+      "event_b_cubed_f1": 0.8750000000000001,
+      "npa_stage_accuracy": 0.5
+    },
+    "critical_in_low": [],
+    "verbatim_evidence_rate": 1.0,
+    "contract_errors": [],
+    "usage": {
+      "model_calls": 41,
+      "input_tokens": 97198,
+      "output_tokens": 37870,
+      "estimated_cost": 0,
+      "currency": "unknown",
+      "wall_seconds": 152.22047570801806,
+      "provider_latency_ms": 275926,
+      "attempted_calls": 41,
+      "failed_calls": 0
+    },
+    "run_dir": "artifacts/b2/runs/v2_matrix_20260906/one_pass__deepseek-v4-flash"
+  },
+  {
+    "configuration_id": "a1-one_pass__a5-gpt-oss:120b-cloud",
+    "safety_pass": true,
+    "worst_core_metric": 0.27586206896551724,
+    "dimensions": {
+      "relevance_macro_f1": 0.3749231444883619,
+      "importance_macro_f1": 0.5907692307692307,
+      "roles_exact": 0.27586206896551724,
+      "event_b_cubed_f1": 0.9411764705882353,
+      "npa_stage_accuracy": 0.5
+    },
+    "critical_in_low": [],
+    "verbatim_evidence_rate": 1.0,
+    "contract_errors": [],
+    "usage": {
+      "model_calls": 45,
+      "input_tokens": 95938,
+      "output_tokens": 27775,
+      "estimated_cost": 0,
+      "currency": "unknown",
+      "wall_seconds": 65.22731762501644,
+      "provider_latency_ms": 105160,
+      "attempted_calls": 45,
+      "failed_calls": 0
+    },
+    "run_dir": "artifacts/b2/runs/v2_matrix_20260906/one_pass__gpt-oss"
+  },
+  {
+    "configuration_id": "a1-two_pass__a5-glm-5.3-flash:cloud",
+    "safety_pass": true,
+    "worst_core_metric": 0.4482758620689655,
+    "dimensions": {
+      "relevance_macro_f1": 0.5578110161443495,
+      "importance_macro_f1": 0.6010466988727857,
+      "roles_exact": 0.4482758620689655,
+      "event_b_cubed_f1": 1.0,
+      "npa_stage_accuracy": 0.8333333333333334
+    },
+    "critical_in_low": [],
+    "verbatim_evidence_rate": 1.0,
+    "contract_errors": [],
+    "usage": {
+      "model_calls": 73,
+      "input_tokens": 166540,
+      "output_tokens": 236965,
+      "estimated_cost": 0,
+      "currency": "unknown",
+      "wall_seconds": 642.3032291670097,
+      "provider_latency_ms": 1209919,
+      "attempted_calls": 73,
+      "failed_calls": 0
+    },
+    "run_dir": "artifacts/b2/runs/v2_matrix_20260906/two_pass__glm-5-3-flash"
+  },
+  {
+    "configuration_id": "a1-two_pass__a5-deepseek-v4-flash:cloud",
+    "safety_pass": false,
+    "worst_core_metric": 0.3448275862068966,
+    "dimensions": {
+      "relevance_macro_f1": 0.41111111111111115,
+      "importance_macro_f1": 0.6515151515151515,
+      "roles_exact": 0.3448275862068966,
+      "event_b_cubed_f1": 0.8750000000000001,
+      "npa_stage_accuracy": 0.5
+    },
+    "critical_in_low": [],
+    "verbatim_evidence_rate": 1.0,
+    "contract_errors": [],
+    "usage": {
+      "model_calls": 51,
+      "input_tokens": 112612,
+      "output_tokens": 66502,
+      "estimated_cost": 0,
+      "currency": "unknown",
+      "wall_seconds": 896.8772893330024,
+      "provider_latency_ms": 1018070,
+      "attempted_calls": 55,
+      "failed_calls": 4
+    },
+    "run_dir": "artifacts/b2/runs/v2_matrix_20260906/two_pass__deepseek-v4-flash"
+  },
+  {
+    "configuration_id": "a1-two_pass__a5-gpt-oss:120b-cloud",
+    "safety_pass": false,
+    "worst_core_metric": 0.2413793103448276,
+    "dimensions": {
+      "relevance_macro_f1": 0.4041666666666667,
+      "importance_macro_f1": 0.3885714285714286,
+      "roles_exact": 0.2413793103448276,
+      "event_b_cubed_f1": 0.8750000000000001,
+      "npa_stage_accuracy": 0.6666666666666666
+    },
+    "critical_in_low": [
+      "e05-a"
+    ],
+    "verbatim_evidence_rate": 1.0,
+    "contract_errors": [],
+    "usage": {
+      "model_calls": 63,
+      "input_tokens": 131314,
+      "output_tokens": 48003,
+      "estimated_cost": 0,
+      "currency": "unknown",
+      "wall_seconds": 203.54382970900042,
+      "provider_latency_ms": 367236,
+      "attempted_calls": 63,
+      "failed_calls": 0
+    },
+    "run_dir": "artifacts/b2/runs/v2_matrix_20260906/two_pass__gpt-oss"
+  }
+]

@@ -1,0 +1,296 @@
+{
+  "benchmark": "B1 targeted gap audit",
+  "version": "3.0.0",
+  "run_id": "20260906T120019Z_gap_audit",
+  "uses_new_external_traffic": false,
+  "inputs": {
+    "proof_run": "20260906T015442Z_proof",
+    "technical_run": "20260904T235519Z",
+    "live_run_ids": [
+      "20260904T234926Z",
+      "20260904T235429Z",
+      "20260904T235519Z"
+    ]
+  },
+  "targeted_state_fault_tests": {
+    "passed": true,
+    "count": 11,
+    "tests": [
+      "tests/unit/test_collector.py::test_first_and_second_run_over_every_adapter",
+      "tests/unit/test_collector.py::test_backfill_ignores_the_window",
+      "tests/unit/test_collector.py::test_collector_never_discards_a_returned_tail",
+      "tests/unit/test_collector.py::test_success_after_failure_clears_error_and_counter",
+      "tests/unit/test_collector.py::test_failed_source_is_recorded_and_the_run_continues",
+      "tests/unit/test_collector.py::test_recoverable_warning_is_reported_as_partial",
+      "tests/unit/test_collector.py::test_rerun_does_not_duplicate_documents_by_external_id",
+      "tests/unit/test_collector.py::test_legacy_per_source_cap_never_cuts_url_documents",
+      "tests/unit/test_scraper_tg.py::test_incremental_run_stops_after_max_pages",
+      "tests/unit/test_scraper_tg.py::test_backfill_walks_before_pages",
+      "tests/unit/test_scraper_sitemap.py::test_backfill_keeps_everything_on_host"
+    ],
+    "stdout": "...........                                                              [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/urllib3/contrib/socks.py:50\n  /Users/dvmalikov/Documents/ChatGPT/Хакатон/РЕПОЗИТОРИЙ_КОМАНДЫ/ai-analytics-hub/.venv/lib/python3.12/site-packages/urllib3/contrib/socks.py:50: DependencyWarning: SOCKS support in urllib3 requires the installation of optional dependencies: specifically, PySocks.  For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#socks-proxies\n    warnings.warn(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n11 passed, 1 warning in 0.23s",
+    "stderr": ""
+  },
+  "prior_frozen_proof": {
+    "verdict": "PASS",
+    "C1": true,
+    "C2": true,
+    "C3": true,
+    "C4": true
+  },
+  "three_live_runs": {
+    "source_attempts": 159,
+    "source_failures": 0,
+    "methods": [
+      {
+        "method": "rss",
+        "configured_sources": 24,
+        "source_attempts": 72,
+        "adapter_success_percent": 100.0,
+        "sources_successful_in_all_runs_percent": 100.0,
+        "attempts_with_documents_percent": 95.83,
+        "stored_documents": 195,
+        "complete_document_percent": 98.46,
+        "live_latency_p50_ms": 844,
+        "live_latency_p95_ms": 1165,
+        "replay_success_percent": 100.0,
+        "replay_stability_percent": 100.0,
+        "replay_24_workers_p95_ms_median": 687.554,
+        "replay_24_workers_throughput_rps_median": 100.86,
+        "live_speed_rank": 2,
+        "technical_coverage_rank": 1
+      },
+      {
+        "method": "telegram",
+        "configured_sources": 22,
+        "source_attempts": 66,
+        "adapter_success_percent": 100.0,
+        "sources_successful_in_all_runs_percent": 100.0,
+        "attempts_with_documents_percent": 86.36,
+        "stored_documents": 156,
+        "complete_document_percent": 100.0,
+        "live_latency_p50_ms": 709,
+        "live_latency_p95_ms": 912,
+        "replay_success_percent": 100.0,
+        "replay_stability_percent": 100.0,
+        "replay_24_workers_p95_ms_median": 59.553,
+        "replay_24_workers_throughput_rps_median": 580.94,
+        "live_speed_rank": 1,
+        "technical_coverage_rank": 2
+      },
+      {
+        "method": "search",
+        "configured_sources": 2,
+        "source_attempts": 6,
+        "adapter_success_percent": 100.0,
+        "sources_successful_in_all_runs_percent": 100.0,
+        "attempts_with_documents_percent": 100.0,
+        "stored_documents": 24,
+        "complete_document_percent": 62.5,
+        "live_latency_p50_ms": 4124,
+        "live_latency_p95_ms": 4437,
+        "replay_success_percent": 100.0,
+        "replay_stability_percent": 100.0,
+        "replay_24_workers_p95_ms_median": 15.776,
+        "replay_24_workers_throughput_rps_median": 477.67,
+        "live_speed_rank": 4,
+        "technical_coverage_rank": 3
+      },
+      {
+        "method": "html",
+        "configured_sources": 3,
+        "source_attempts": 9,
+        "adapter_success_percent": 100.0,
+        "sources_successful_in_all_runs_percent": 100.0,
+        "attempts_with_documents_percent": 100.0,
+        "stored_documents": 9,
+        "complete_document_percent": 100.0,
+        "live_latency_p50_ms": 720,
+        "live_latency_p95_ms": 1386,
+        "replay_success_percent": 100.0,
+        "replay_stability_percent": 100.0,
+        "replay_24_workers_p95_ms_median": 19.343,
+        "replay_24_workers_throughput_rps_median": 629.6,
+        "live_speed_rank": 3,
+        "technical_coverage_rank": 4
+      },
+      {
+        "method": "sitemap",
+        "configured_sources": 2,
+        "source_attempts": 6,
+        "adapter_success_percent": 100.0,
+        "sources_successful_in_all_runs_percent": 100.0,
+        "attempts_with_documents_percent": 50.0,
+        "stored_documents": 9,
+        "complete_document_percent": 100.0,
+        "live_latency_p50_ms": 3076,
+        "live_latency_p95_ms": 6172,
+        "replay_success_percent": 100.0,
+        "replay_stability_percent": 100.0,
+        "replay_24_workers_p95_ms_median": 1272.3,
+        "replay_24_workers_throughput_rps_median": 7.85,
+        "live_speed_rank": 5,
+        "technical_coverage_rank": 5
+      }
+    ]
+  },
+  "captured_response_shape": {
+    "n": 143,
+    "bytes_p50": 96041,
+    "bytes_p95": 360058,
+    "bytes_max": 6265570,
+    "http_status_counts": {
+      "200": 133,
+      "301": 9,
+      "500": 1
+    }
+  },
+  "normalized_document_shape": {
+    "html": {
+      "n": 3,
+      "content_chars": {
+        "min": 778,
+        "median": 4528,
+        "p95": 9001,
+        "max": 9001
+      },
+      "with_date": 3,
+      "with_url": 3,
+      "with_title": 3
+    },
+    "rss": {
+      "n": 65,
+      "content_chars": {
+        "min": 0,
+        "median": 1316,
+        "p95": 5997,
+        "max": 20000
+      },
+      "with_date": 65,
+      "with_url": 65,
+      "with_title": 65
+    },
+    "search": {
+      "n": 8,
+      "content_chars": {
+        "min": 140,
+        "median": 1543,
+        "p95": 6152,
+        "max": 6152
+      },
+      "with_date": 5,
+      "with_url": 6,
+      "with_title": 8
+    },
+    "sitemap": {
+      "n": 3,
+      "content_chars": {
+        "min": 1073,
+        "median": 3477,
+        "p95": 11765,
+        "max": 11765
+      },
+      "with_date": 3,
+      "with_url": 3,
+      "with_title": 3
+    },
+    "telegram": {
+      "n": 52,
+      "content_chars": {
+        "min": 115,
+        "median": 540,
+        "p95": 2410,
+        "max": 3229
+      },
+      "with_date": 52,
+      "with_url": 52,
+      "with_title": 52
+    }
+  },
+  "raw_to_normalized_examples": [
+    {
+      "method": "rss",
+      "raw_surface": {
+        "url": "https://www.rbc.ru/business/05/09/2026/6a9b5883a253bdbe3d350602",
+        "sha256": "1ed953ba8b02c1d74b4c885cf612489d6e8536e0c2e44a6041189df8db3475eb",
+        "bytes": 196872
+      },
+      "normalized": {
+        "external_id": "rssexport.rbc.ru:business:6a9b5883a253bdbe3d350602",
+        "url": "https://www.rbc.ru/business/05/09/2026/6a9b5883a253bdbe3d350602",
+        "title": "Reuters назвал возможную дату запуска IPO Anthropic",
+        "published_at": "2026-09-04T23:53:56+00:00",
+        "content_chars": 1340,
+        "content_sha256": "f5ccb3710992070e41eb9bffec9f84863a84cd410af813e339ec822c9b48bd58"
+      }
+    },
+    {
+      "method": "html",
+      "raw_surface": {
+        "url": "http://publication.pravo.gov.ru/documents/block/president",
+        "sha256": "3a8514a17470fab96c5fb2f2262baef0029e4492b1b565bd9e262528eec38a7e",
+        "bytes": 101894
+      },
+      "normalized": {
+        "external_id": "http://publication.pravo.gov.ru/documents/block/president",
+        "url": "http://publication.pravo.gov.ru/documents/block/president",
+        "title": "Официальное опубликование правовых актов",
+        "published_at": "2026-09-03T21:00:00+00:00",
+        "content_chars": 9001,
+        "content_sha256": "fa646a2bce8df49f1a34127dd7d3e86d587b95582410d2e69f5a14a70882e1d8"
+      }
+    },
+    {
+      "method": "telegram",
+      "raw_surface": {
+        "note": "no exact document URL/body pair in the capture index"
+      },
+      "normalized": {
+        "external_id": "government_rus/32394",
+        "url": "https://t.me/government_rus/32394",
+        "title": "Приморье усиливает ИТ",
+        "published_at": "2026-09-04T15:37:44+00:00",
+        "content_chars": 888,
+        "content_sha256": "1e24269e028ebd38dfa3195a0428be02c0959424311974b8617f592970828f56"
+      }
+    },
+    {
+      "method": "sitemap",
+      "raw_surface": {
+        "url": "https://www.cableman.ru/content/telekanal-mosfilm-zolotaya-kollektsiya-obyavil-o-rebrendinge-efirnogo-oformleniya",
+        "sha256": "1e11d7d512b90882e1a120f1272477c4c4cf01bb12480f1b112d36068eee3f64",
+        "bytes": 42666
+      },
+      "normalized": {
+        "external_id": "https://www.cableman.ru/content/telekanal-mosfilm-zolotaya-kollektsiya-obyavil-o-rebrendinge-efirnogo-oformleniya",
+        "url": "https://www.cableman.ru/content/telekanal-mosfilm-zolotaya-kollektsiya-obyavil-o-rebrendinge-efirnogo-oformleniya",
+        "title": "Телеканал \"Мосфильм. Золотая коллекция\" объявил о ребрендинге эфирного оформления",
+        "published_at": "2026-09-04T14:58:00+00:00",
+        "content_chars": 1073,
+        "content_sha256": "a48bb6dc7cd3c8209bf45078ee8efb81302717081c21cf8b2e744082397badcc"
+      }
+    },
+    {
+      "method": "search",
+      "raw_surface": {
+        "url": "https://sozd.duma.gov.ru/bill/581689-8",
+        "sha256": "48a51e84466d3279407f76d4af4e7c1b932c5ec62518415697ce12666c594c66",
+        "bytes": 2570847
+      },
+      "normalized": {
+        "external_id": "https://sozd.duma.gov.ru/bill/581689-8",
+        "url": "https://sozd.duma.gov.ru/bill/581689-8",
+        "title": "581689-8 Законопроект",
+        "published_at": "2024-03-20T21:00:00+00:00",
+        "content_chars": 6152,
+        "content_sha256": "645efcbc8e9090172030fabe64f71c42144455433693e0fd0d72561c9c4ffb85"
+      }
+    }
+  ],
+  "verdict": "PASS",
+  "limitations": [
+    "No new external traffic was created; live stability is inherited from the named three runs.",
+    "A raw body is paired to a normalized example only by exact document URL; absent exact pairs stay explicit.",
+    "Absolute live recall and publication-to-feed SLA remain unproved."
+  ]
+}

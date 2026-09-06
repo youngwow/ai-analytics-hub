@@ -4,11 +4,9 @@
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
 import json
 import os
 import re
-import time
 import uuid
 from dataclasses import replace
 from pathlib import Path
@@ -23,18 +21,18 @@ from src.common import load_env_secret  # noqa: E402
 from src.config import Config  # noqa: E402
 from src.models import FetchState, RawDocument, Source  # noqa: E402
 from src.paths import DEFAULT_PATHS  # noqa: E402
-from src.processing.llm import build_llm_provider  # noqa: E402
+from src.processing.llm import build_embedding_provider, build_llm_provider  # noqa: E402
 from src.product.analysis import PrimaryAnalyzer  # noqa: E402
 from src.product.contracts import EventRecord, GsLabsContext, PreparedDocument  # noqa: E402
+from src.product.critic import SignalCritic  # noqa: E402
 from src.product.events import EventLinker  # noqa: E402
 from src.product.npa import NpaResolver  # noqa: E402
-from src.product.release import (  # noqa: E402
-    build_deliveries,
-    event_object,
-    item_decision,
-    npa_object,
-)
+from src.product.providers import TavilyResearchSearch  # noqa: E402
+from src.product.release import npa_object  # noqa: E402
+from src.product.research import TargetedResearcher  # noqa: E402
+from src.product.runtime import ProductAgentRuntime  # noqa: E402
 from src.product.store import ProductStore  # noqa: E402
+from src.product.workflow import BranchConfiguration  # noqa: E402
 from src.storage import Database  # noqa: E402
 
 
@@ -257,6 +255,12 @@ def main(argv=None) -> int:
     parser.add_argument("input", nargs="?", default=os.environ.get("B3_INPUT"))
     parser.add_argument("output", nargs="?", default=os.environ.get("B3_OUTPUT"))
     parser.add_argument("--db")
+    parser.add_argument("--a1", choices=["one_pass", "two_pass"], default="one_pass")
+    parser.add_argument(
+        "--a2", choices=["without_research", "targeted_research"], default="without_research"
+    )
+    parser.add_argument("--a3", choices=["full_scan", "embedding_top20"], default="full_scan")
+    parser.add_argument("--a4", choices=["without_critic", "with_critic"], default="without_critic")
     args = parser.parse_args(argv)
     if not args.input or not args.output:
         parser.error("input/output paths or B3_INPUT/B3_OUTPUT are required")
@@ -276,101 +280,65 @@ def main(argv=None) -> int:
     store.ensure_context(context.version, context, actor="benchmark")
     documents = prepared_documents(packet)
     raw_document_ids = persist_raw_documents(db, documents)
-    analyzer = PrimaryAnalyzer(
-        provider, model=config.llm.model, max_chars=config.processing.max_chars
+    branches = BranchConfiguration(args.a1, args.a2, args.a3, args.a4)
+    embedder = None
+    if branches.a3 == "embedding_top20":
+        embedder = build_embedding_provider(
+            config.embeddings,
+            load_env_secret(config.embeddings.api_key_env, DEFAULT_PATHS.env_path),
+        )
+    search = None
+    researcher = None
+    if branches.a2 == "targeted_research":
+        search = TavilyResearchSearch(
+            config.tavily,
+            load_env_secret(config.tavily.api_key_env, DEFAULT_PATHS.env_path),
+        )
+        researcher = TargetedResearcher(provider, search, config.llm.model)
+    runtime = ProductAgentRuntime(
+        PrimaryAnalyzer(provider, model=config.llm.model, max_chars=config.processing.max_chars),
+        EventLinker(provider, embedder, model=config.llm.model),
+        NpaResolver(npa_provider, model=config.llm.model),
+        store,
+        researcher=researcher,
+        critic=(
+            SignalCritic(provider, model=config.llm.model)
+            if branches.a4 == "with_critic"
+            else None
+        ),
     )
-    linker = EventLinker(provider, None, model=config.llm.model)
-    resolver = NpaResolver(npa_provider, model=config.llm.model)
-    started = time.monotonic()
     try:
-
-        def analyze(document):
-            return document, analyzer.analyze(document, context, mode="one_pass")
-
-        with concurrent.futures.ThreadPoolExecutor(
-            max_workers=config.processing.concurrency
-        ) as executor:
-            analyzed = list(executor.map(analyze, documents))
-
-        decisions = []
-        signal_map = {}
-        document_map = {document.id: document for document in documents}
-        for document, draft in analyzed:
-            prepared_version = store.save_prepared(
-                document.id,
-                document,
-                raw_document_id=raw_document_ids[document.id],
-            )
-            store.save_analysis(draft, prepared_version=prepared_version)
-            decisions.append(item_decision(document.id, draft))
-            signal_map.update({signal.signal_id: signal for signal in draft.signals})
-
-        npa_candidates = [
-            signal for signal in signal_map.values() if signal.kind in {"npa", "npa_candidate"}
-        ]
-        all_resolutions = resolver.resolve(
-            npa_candidates,
-            document_map,
-            list((packet.get("initial_state") or {}).get("tracked_npas", [])),
+        result = runtime.run(
+            documents,
+            context,
+            branches,
+            initial_state=packet.get("initial_state") or {},
+            raw_document_ids=raw_document_ids,
+            scheduled_release=bool((packet.get("scenario") or {}).get("release_at")),
         )
-        tracked_ids = {
-            str(item["object_id"])
-            for item in (packet.get("initial_state") or {}).get("tracked_npas", [])
-            if item.get("object_id")
-        }
-        resolutions = tuple(
-            resolution
-            for resolution in all_resolutions
-            if resolution.external_id or resolution.object_id in tracked_ids
-        )
-        resolved_npa_signal_ids = {
-            signal_id for resolution in resolutions for signal_id in resolution.member_signal_ids
-        }
-        event_signals = [
-            signal
-            for signal in signal_map.values()
-            if signal.signal_id not in resolved_npa_signal_ids and signal.relevance != "irrelevant"
-        ]
-        events = _link_events(linker, event_signals, packet.get("initial_state") or {})
-        for event in events:
-            store.save_event(event)
-        _persist_npas(store, resolutions, signal_map)
-
-        objects = [event_object(event, signal_map) for event in events]
-        objects.extend(npa_object(resolution, signal_map) for resolution in resolutions)
-        objects = [item for item in objects if item is not None]
-        deliverable_ids = {
-            obj["object_id"]
-            for obj in objects
-            if any(
-                signal.relevance == "relevant" or signal.critical_or_escalate
-                for signal in signal_map.values()
-                if signal.material_id in obj["member_ids"]
-            )
-        }
-        scheduled_release = bool((packet.get("scenario") or {}).get("release_at"))
+        digest = result.draft_digest
         output = {
             "run_id": str(uuid.uuid4()),
             "scenario_id": packet["scenario_id"],
             "mode": packet["mode"],
-            "item_decisions": decisions,
-            "objects": objects,
-            "deliveries": build_deliveries(
-                objects,
-                allowed_object_ids=deliverable_ids,
-                scheduled_release=scheduled_release,
-            ),
+            "item_decisions": list(digest.item_decisions),
+            "objects": list(digest.objects),
+            "deliveries": list(digest.deliveries),
             "telemetry": {
-                "wall_seconds": time.monotonic() - started,
+                **result.telemetry.__dict__,
                 "generation_provider": "ollama",
                 "generation_model": config.llm.model,
-                "architecture": "one_pass/full_scan/no_critic/review_first",
+                "architecture": branches.id + ";review_first",
             },
         }
         Path(args.output).write_text(
             json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
     finally:
+        if search:
+            search.close()
+        if embedder and hasattr(embedder, "close"):
+            embedder.close()
         npa_provider.close()
         provider.close()
         db.close()

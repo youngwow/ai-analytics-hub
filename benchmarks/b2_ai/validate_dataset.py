@@ -3,12 +3,12 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-DATA = ROOT / "data" / "v1"
 
 
 def load_json(path: Path):
@@ -18,6 +18,11 @@ def load_json(path: Path):
 def load_jsonl(path: Path):
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--version", default="v1")
+args = parser.parse_args()
+DATA = ROOT / "data" / args.version
 
 errors = []
 contract = load_json(DATA / "contract.json")
