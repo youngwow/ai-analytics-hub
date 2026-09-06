@@ -1,0 +1,18 @@
+[
+  {
+    "case_id": "E10000_old_event_negative",
+    "old_expected_object_id": null,
+    "old_expected_relation": "different",
+    "expected_object_id": "EVT-HYBRID-TV-CONFERENCE",
+    "expected_relation": "event_update",
+    "reason": "В банке уже есть анонс этой отдельной конференции; открытие регистрации — продолжение именно конференции, а не рабочей группы. Исходный gold ошибочно требовал новый объект."
+  },
+  {
+    "case_id": "H_E_forum_negative",
+    "old_expected_object_id": null,
+    "old_expected_relation": "different",
+    "expected_object_id": "H-EVT-DVB-FORUM",
+    "expected_relation": "event_update",
+    "reason": "В overlay уже есть анонс независимого коммерческого форума; новое объявление этого форума является продолжением самостоятельного события."
+  }
+]

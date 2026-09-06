@@ -33,6 +33,25 @@ from .build_scale import DEFAULT_OUTPUT, SIZES
 ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_ARTIFACTS = ROOT / "artifacts" / "b3" / "scale_v1"
 
+VERIFY_SCHEMA = {
+    "type": "object",
+    "required": ["accept", "relation", "confidence", "evidence", "needs_human_review"],
+    "properties": {
+        "accept": {"type": "boolean"},
+        "relation": {"enum": ["same_event", "event_update", "different"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence": {"type": "string"},
+        "needs_human_review": {"type": "boolean"},
+    },
+    "additionalProperties": False,
+}
+VERIFY_SYSTEM = """Ты независимо проверяешь предложенное объединение двух записей. Верни только JSON.
+Нужен конкретный якорь непрерывности: тот же идентификатор, названный документ, пилот,
+проект или инцидент вместе с совместимой хронологией. Совпадения компании, продукта,
+отрасли, темы или города недостаточно. Новый проект, другая программа, другой организатор
+или явно самостоятельное мероприятие означают different. event_update допустимо только
+при явном продолжении конкретного прежнего события. При сомнении отклони объединение."""
+
 
 def object_text(row: dict[str, Any]) -> str:
     return f"{row['title']}\n{row['text']}".strip()
@@ -187,12 +206,32 @@ def tracked_npas(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def resolve_case(
-    case: dict[str, Any], candidates: list[dict[str, Any]], provider: MeteredProvider, model: str
+    case: dict[str, Any], candidates: list[dict[str, Any]], provider: MeteredProvider, model: str,
+    *, verify_positive: bool = False,
 ) -> tuple[str | None, str, bool]:
     if case["kind"] == "event":
         decision = EventLinker(provider, None, model=model).link(
             event_signal(case), event_records(candidates), mode="full_scan"
         )
+        if verify_positive and decision.event_id and decision.relation in {"same_event", "event_update"}:
+            candidate = next(row for row in candidates if row["id"] == decision.event_id)
+            checked = provider.complete(
+                json.dumps(
+                    {
+                        "new_signal": case["text"],
+                        "candidate": candidate,
+                        "proposed_relation": decision.relation,
+                        "proposed_evidence": decision.evidence,
+                    },
+                    ensure_ascii=False,
+                ),
+                VERIFY_SCHEMA,
+                system=VERIFY_SYSTEM,
+            ).data
+            relation = str(checked.get("relation") or "different")
+            if not bool(checked.get("accept")) or relation not in {"same_event", "event_update"}:
+                return None, "different", True
+            return candidate["id"], relation, bool(checked.get("needs_human_review", False))
         return decision.event_id, decision.relation, decision.needs_human_review
     signal, document = npa_signal(case)
     resolutions = NpaResolver(provider, model=model).resolve(
@@ -214,7 +253,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             embedding_config,
             load_env_secret(config.embeddings.api_key_env, DEFAULT_PATHS.env_path),
         )
-        if "embedding_top20" in args.modes
+        if any(mode.startswith("embedding_top20") for mode in args.modes)
         else None
     )
     llm = build_llm_provider(
@@ -229,7 +268,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     cases = json.loads(args.case_file.read_text(encoding="utf-8"))
     args.output.mkdir(parents=True, exist_ok=True)
     index = (
-        EmbeddingIndex(args.output / "embeddings.sqlite", embedding_config.model, args.dimensions)
+        EmbeddingIndex(
+            args.index or args.output / "embeddings.sqlite",
+            embedding_config.model,
+            args.dimensions,
+        )
         if embedder is not None
         else None
     )
@@ -269,6 +312,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     modes.append(("full_scan", by_kind[case["kind"]]))
                 if "embedding_top20" in args.modes:
                     modes.append(("embedding_top20", [by_id[item] for item in top_ids]))
+                if "embedding_top20_verified" in args.modes:
+                    modes.append(("embedding_top20_verified", [by_id[item] for item in top_ids]))
                 for mode, candidates in modes:
                     metered = MeteredProvider(llm)
                     started = time.monotonic()
@@ -278,7 +323,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     needs_review = True
                     try:
                         predicted_id, predicted_relation, needs_review = resolve_case(
-                            case, candidates, metered, config.llm.model
+                            case,
+                            candidates,
+                            metered,
+                            config.llm.model,
+                            verify_positive=mode == "embedding_top20_verified",
                         )
                     except Exception as exc:  # recorded evidence; one scale point must not erase the run
                         error = f"{type(exc).__name__}: {exc}"
@@ -290,8 +339,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                         "mode": mode, "bank_candidates": len(candidates),
                         "expected_object_id": expected,
                         "expected_relation": case["expected_relation"],
-                        "retrieval_hit_at_20": retrieval_hit if mode == "embedding_top20" else None,
-                        "retrieval_ms": retrieval_ms if mode == "embedding_top20" else None,
+                        "retrieval_hit_at_20": (
+                            retrieval_hit if mode.startswith("embedding_top20") else None
+                        ),
+                        "retrieval_ms": (
+                            retrieval_ms if mode.startswith("embedding_top20") else None
+                        ),
                         "predicted_object_id": predicted_id,
                         "predicted_relation": predicted_relation,
                         "object_correct": predicted_id == expected,
@@ -333,13 +386,14 @@ def main() -> None:
     parser.add_argument("--case-file", type=Path, default=DEFAULT_OUTPUT / "cases.json")
     parser.add_argument("--overlay", type=Path)
     parser.add_argument("--output", type=Path, default=DEFAULT_ARTIFACTS)
+    parser.add_argument("--index", type=Path, help="Reusable embedding SQLite cache.")
     parser.add_argument("--sizes", type=int, nargs="+", default=list(SIZES))
     parser.add_argument("--dimensions", type=int, default=768)
     parser.add_argument("--embedding-batch", type=int, default=64)
     parser.add_argument(
         "--modes",
         nargs="+",
-        choices=["full_scan", "embedding_top20"],
+        choices=["full_scan", "embedding_top20", "embedding_top20_verified"],
         default=["full_scan", "embedding_top20"],
     )
     parser.add_argument("--cases", nargs="+", help="Run only named cases (diagnostic use).")

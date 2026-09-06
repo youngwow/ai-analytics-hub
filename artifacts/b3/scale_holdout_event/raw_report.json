@@ -1,0 +1,262 @@
+{
+  "benchmark": "B3-SCALE",
+  "version": "1.0.0",
+  "embedding_model": "google/gemini-embedding-001",
+  "embedding_dimensions": 768,
+  "generation_model": "glm-5.3-flash:cloud",
+  "sizes": [
+    10000
+  ],
+  "indexing_ms_for_missing_objects": 1746,
+  "result_count": 8,
+  "results": [
+    {
+      "size": 10000,
+      "case_id": "H_E_voice_update",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "H-EVT-AURORA-VOICE",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1190,
+      "predicted_object_id": "H-EVT-AURORA-VOICE",
+      "predicted_relation": "event_update",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 3651,
+      "llm_calls": [
+        {
+          "prompt_bytes": 14819,
+          "system_bytes": 1846,
+          "tokens_in": 2892,
+          "tokens_out": 550,
+          "provider_latency_ms": 3611,
+          "wall_latency_ms": 3651
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "H_E_voice_update",
+      "kind": "event",
+      "mode": "embedding_top20_verified",
+      "bank_candidates": 20,
+      "expected_object_id": "H-EVT-AURORA-VOICE",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "H-EVT-AURORA-VOICE",
+      "predicted_relation": "event_update",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 7071,
+      "llm_calls": [
+        {
+          "prompt_bytes": 14819,
+          "system_bytes": 1846,
+          "tokens_in": 2892,
+          "tokens_out": 612,
+          "provider_latency_ms": 3160,
+          "wall_latency_ms": 3160
+        },
+        {
+          "prompt_bytes": 2198,
+          "system_bytes": 1338,
+          "tokens_in": 549,
+          "tokens_out": 808,
+          "provider_latency_ms": 3909,
+          "wall_latency_ms": 3909
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "H_E_voice_same_actor_negative",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 822,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 3456,
+      "llm_calls": [
+        {
+          "prompt_bytes": 11867,
+          "system_bytes": 1846,
+          "tokens_in": 2712,
+          "tokens_out": 577,
+          "provider_latency_ms": 3456,
+          "wall_latency_ms": 3456
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "H_E_voice_same_actor_negative",
+      "kind": "event",
+      "mode": "embedding_top20_verified",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": null,
+      "predicted_relation": "different",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 3583,
+      "llm_calls": [
+        {
+          "prompt_bytes": 11867,
+          "system_bytes": 1846,
+          "tokens_in": 2712,
+          "tokens_out": 575,
+          "provider_latency_ms": 3582,
+          "wall_latency_ms": 3582
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "H_E_workgroup_update",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": "H-EVT-DVB-WORKGROUP",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 1385,
+      "predicted_object_id": "H-EVT-DVB-WORKGROUP",
+      "predicted_relation": "event_update",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 2091,
+      "llm_calls": [
+        {
+          "prompt_bytes": 13532,
+          "system_bytes": 1846,
+          "tokens_in": 2843,
+          "tokens_out": 333,
+          "provider_latency_ms": 2090,
+          "wall_latency_ms": 2090
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "H_E_workgroup_update",
+      "kind": "event",
+      "mode": "embedding_top20_verified",
+      "bank_candidates": 20,
+      "expected_object_id": "H-EVT-DVB-WORKGROUP",
+      "expected_relation": "event_update",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "H-EVT-DVB-WORKGROUP",
+      "predicted_relation": "event_update",
+      "object_correct": true,
+      "relation_correct": true,
+      "needs_human_review": false,
+      "wall_ms": 5327,
+      "llm_calls": [
+        {
+          "prompt_bytes": 13532,
+          "system_bytes": 1846,
+          "tokens_in": 2843,
+          "tokens_out": 601,
+          "provider_latency_ms": 2936,
+          "wall_latency_ms": 2936
+        },
+        {
+          "prompt_bytes": 2363,
+          "system_bytes": 1338,
+          "tokens_in": 580,
+          "tokens_out": 346,
+          "provider_latency_ms": 2390,
+          "wall_latency_ms": 2390
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "H_E_forum_negative",
+      "kind": "event",
+      "mode": "embedding_top20",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": true,
+      "retrieval_ms": 671,
+      "predicted_object_id": "H-EVT-DVB-FORUM",
+      "predicted_relation": "same_event",
+      "object_correct": false,
+      "relation_correct": false,
+      "needs_human_review": false,
+      "wall_ms": 3529,
+      "llm_calls": [
+        {
+          "prompt_bytes": 13463,
+          "system_bytes": 1846,
+          "tokens_in": 2995,
+          "tokens_out": 671,
+          "provider_latency_ms": 3529,
+          "wall_latency_ms": 3529
+        }
+      ],
+      "error": null
+    },
+    {
+      "size": 10000,
+      "case_id": "H_E_forum_negative",
+      "kind": "event",
+      "mode": "embedding_top20_verified",
+      "bank_candidates": 20,
+      "expected_object_id": null,
+      "expected_relation": "different",
+      "retrieval_hit_at_20": null,
+      "retrieval_ms": null,
+      "predicted_object_id": "H-EVT-DVB-FORUM",
+      "predicted_relation": "same_event",
+      "object_correct": false,
+      "relation_correct": false,
+      "needs_human_review": false,
+      "wall_ms": 14720,
+      "llm_calls": [
+        {
+          "prompt_bytes": 13463,
+          "system_bytes": 1846,
+          "tokens_in": 2995,
+          "tokens_out": 648,
+          "provider_latency_ms": 3172,
+          "wall_latency_ms": 3172
+        },
+        {
+          "prompt_bytes": 2064,
+          "system_bytes": 1338,
+          "tokens_in": 581,
+          "tokens_out": 2566,
+          "provider_latency_ms": 11548,
+          "wall_latency_ms": 11548
+        }
+      ],
+      "error": null
+    }
+  ]
+}

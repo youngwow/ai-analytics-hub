@@ -1,0 +1,56 @@
+{
+  "benchmark": "B3-SCALE",
+  "status": "MEASURED_NOT_YET_DECIDED",
+  "reports": [
+    {
+      "path": "artifacts/b3/scale_holdout_event/raw_report.json",
+      "embedding_model": "google/gemini-embedding-001",
+      "embedding_dimensions": 768,
+      "generation_model": "glm-5.3-flash:cloud"
+    }
+  ],
+  "gold_amendments": {
+    "path": "benchmarks/b3_e2e/data/scale_v1/gold_amendments.json",
+    "sha256": "f403152294acf77e1623d5e9abf57d95a111a0aa86447027a72a3882e24afa91",
+    "count": 2
+  },
+  "table": [
+    {
+      "size": 10000,
+      "mode": "embedding_top20",
+      "kind": "event",
+      "cases": 4,
+      "retrieval_hits": 3,
+      "retrieval_linked_cases": 3,
+      "final_object_correct": 4,
+      "final_relation_correct": 3,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        20
+      ],
+      "input_tokens_sum": 11442,
+      "wall_ms_median": 3492
+    },
+    {
+      "size": 10000,
+      "mode": "embedding_top20_verified",
+      "kind": "event",
+      "cases": 4,
+      "retrieval_hits": 3,
+      "retrieval_linked_cases": 3,
+      "final_object_correct": 4,
+      "final_relation_correct": 3,
+      "false_links": 0,
+      "missed_links": 0,
+      "provider_errors": 0,
+      "candidate_counts": [
+        20
+      ],
+      "input_tokens_sum": 13152,
+      "wall_ms_median": 6199
+    }
+  ],
+  "interpretation_rule": "Choose A3 only after all scale points: top-20 must retain every labelled true link; the same final resolver must not add errors versus a runnable full-scan control. A full-scan provider/context failure establishes its operating boundary."
+}
