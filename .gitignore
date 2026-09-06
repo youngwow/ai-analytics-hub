@@ -231,6 +231,7 @@ artifacts/**/product.db-wal
 artifacts/b2/_archive/
 artifacts/b3/_archive/
 artifacts/b3/**/embeddings.sqlite
+artifacts/b3/a2_research/debug/
 
 # Telegram MTProto session — equals full access to the account, never commit
 data/*.session

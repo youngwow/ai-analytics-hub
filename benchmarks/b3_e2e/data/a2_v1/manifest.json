@@ -1,0 +1,8 @@
+{
+  "version": "a2-v1",
+  "source": "benchmarks/b1_proof/runs/20260906T015536Z_registered-disabled_1/documents.jsonl",
+  "source_sha256": "a4b2dd1f8f1bd16a7933308371735dfb6bad0e9d95bf4a14bfe8ea2037409326",
+  "cases_sha256": "4b4935e0bb73f4c7fcc6107e61f840af7074083d8b71215e6402b9d8925161ab",
+  "case_count": 3,
+  "truth_boundary": "Original B1 material is evidence for the starting signal; Tavily results are retained separately and audited after the live run."
+}
