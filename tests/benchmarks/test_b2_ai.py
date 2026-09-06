@@ -29,7 +29,7 @@ def test_b2_input_has_no_ground_truth(tmp_path: Path):
 
 
 def test_b2_frozen_datasets_validate():
-    for version in ("v1", "v2"):
+    for version in ("v1", "v2", "v3"):
         completed = subprocess.run(
             [sys.executable, str(B2 / "validate_dataset.py"), "--version", version],
             cwd=ROOT,

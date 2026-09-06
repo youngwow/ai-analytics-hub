@@ -56,7 +56,13 @@ def bcubed(expected_groups, predicted_groups, item_ids):
     return {"precision": precision, "recall": recall, "f1": f1}
 
 
+def scoreable(row, field):
+    return field in row.get("scored_fields", ["relevance", "importance", "roles", "critical_or_escalate"])
+
+
 def classification_report(truth, predictions, field, classes):
+    truth = {item_id: row for item_id, row in truth.items() if scoreable(row, field)}
+    predictions = {item_id: row for item_id, row in predictions.items() if item_id in truth}
     per_class, f1s = {}, []
     for value in classes:
         expected = {item_id for item_id, row in truth.items() if row[field] == value}
@@ -140,17 +146,19 @@ importance = classification_report(truth, material_predictions, "importance", ["
 label_exact = {}
 for field in ("relevance", "importance", "critical_or_escalate"):
     truth_field = "critical_or_escalate" if field == "critical_or_escalate" else field
-    correct = sum(material_predictions.get(item_id, {}).get(field) == truth[item_id][truth_field] for item_id in truth)
-    label_exact[field] = {"correct": correct, "total": len(truth), "accuracy": ratio(correct, len(truth))}
-role_correct = sum(set(material_predictions.get(item_id, {}).get("roles", [])) == set(truth[item_id]["roles"]) for item_id in truth)
-label_exact["roles"] = {"correct": role_correct, "total": len(truth), "exact_set_accuracy": ratio(role_correct, len(truth))}
+    eligible = {item_id: row for item_id, row in truth.items() if scoreable(row, truth_field)}
+    correct = sum(material_predictions.get(item_id, {}).get(field) == row[truth_field] for item_id, row in eligible.items())
+    label_exact[field] = {"correct": correct, "total": len(eligible), "accuracy": ratio(correct, len(eligible))}
+role_truth = {item_id: row for item_id, row in truth.items() if scoreable(row, "roles")}
+role_correct = sum(set(material_predictions.get(item_id, {}).get("roles", [])) == set(row["roles"]) for item_id, row in role_truth.items())
+label_exact["roles"] = {"correct": role_correct, "total": len(role_truth), "exact_set_accuracy": ratio(role_correct, len(role_truth))}
 role_labels = {}
 for role in sorted(valid_roles):
-    expected = {item_id for item_id, row in truth.items() if role in row["roles"]}
+    expected = {item_id for item_id, row in role_truth.items() if role in row["roles"]}
     predicted = {
         item_id
         for item_id, row in material_predictions.items()
-        if role in row.get("roles", [])
+        if item_id in role_truth and role in row.get("roles", [])
     }
     tp = len(expected & predicted)
     role_labels[role] = {
@@ -159,7 +167,7 @@ for role in sorted(valid_roles):
         "precision": ratio(tp, len(predicted)),
         "recall": ratio(tp, len(expected)),
     }
-critical_ids = {item_id for item_id, row in truth.items() if row["critical_or_escalate"]}
+critical_ids = {item_id for item_id, row in truth.items() if scoreable(row, "critical_or_escalate") and row["critical_or_escalate"]}
 critical_low = sorted(item_id for item_id in critical_ids if material_predictions.get(item_id, {}).get("importance") == "low")
 review_rows_present = all(
     isinstance(row.get("review_required"), bool) for row in material_predictions.values()
@@ -172,9 +180,9 @@ review_ids = {
 label_error_ids = {
     item_id
     for item_id in truth
-    if material_predictions[item_id].get("relevance") != truth[item_id]["relevance"]
-    or material_predictions[item_id].get("importance") != truth[item_id]["importance"]
-    or set(material_predictions[item_id].get("roles", [])) != set(truth[item_id]["roles"])
+    if (scoreable(truth[item_id], "relevance") and material_predictions[item_id].get("relevance") != truth[item_id]["relevance"])
+    or (scoreable(truth[item_id], "importance") and material_predictions[item_id].get("importance") != truth[item_id]["importance"])
+    or (scoreable(truth[item_id], "roles") and set(material_predictions[item_id].get("roles", [])) != set(truth[item_id]["roles"]))
 }
 
 event_ids = {item_id for item_id in visible if "B2-E" in catalog[item_id]["sets"]}
