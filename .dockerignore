@@ -1,0 +1,12 @@
+*
+!pyproject.toml
+!uv.lock
+!config.yaml
+!sources.json
+!src/
+!src/**
+!MVP/
+!MVP/**
+MVP/data/
+**/__pycache__/
+**/*.py[cod]

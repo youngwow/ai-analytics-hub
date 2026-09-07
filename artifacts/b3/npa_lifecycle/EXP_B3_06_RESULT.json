@@ -1,0 +1,51 @@
+{
+  "experiment": "EXP-B3-06",
+  "scenario": "adopted_with_future_date_to_archive",
+  "verdict": "PASS",
+  "checks": {
+    "not_eligible_before_effective_date": true,
+    "not_archived_before_effective_date": true,
+    "eligible_on_effective_date": true,
+    "archived_on_effective_date": true,
+    "second_archive_is_noop": true,
+    "main_removed_from_active_tracking": true,
+    "all_three_versions_preserved": true,
+    "neighbour_untouched": true,
+    "single_archive_audit_event": true
+  },
+  "before_effective_date": {
+    "exists": true,
+    "tracked": true,
+    "eligible": false,
+    "reason": "awaiting_effective_date",
+    "current_stage": "adopted",
+    "effective_from": "2026-12-01"
+  },
+  "on_effective_date": {
+    "exists": true,
+    "tracked": true,
+    "eligible": true,
+    "reason": "effective_date_reached",
+    "current_stage": "adopted",
+    "effective_from": "2026-12-01"
+  },
+  "preserved_versions": [
+    {
+      "version": 1,
+      "stage": "public_discussion",
+      "effective_at": null
+    },
+    {
+      "version": 2,
+      "stage": "revised_draft",
+      "effective_at": null
+    },
+    {
+      "version": 3,
+      "stage": "adopted",
+      "effective_at": "2026-12-01"
+    }
+  ],
+  "archive_audit_events": 1,
+  "boundary": "Deterministic lifecycle after official NPA identity, stage and effective date are resolved; AI extraction is out of scope."
+}

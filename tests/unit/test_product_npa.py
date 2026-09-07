@@ -98,6 +98,39 @@ def test_npa_resolver_receives_structured_state_from_primary_analysis():
     assert row["change_summary"] == "Срок сокращён"
 
 
+def test_npa_resolver_cannot_drop_unanimous_identifier_from_primary_signal():
+    answer = {
+        "objects": [
+            {
+                "object_id": "NEW:UNKNOWN:model-output",
+                "member_signal_ids": ["m1:s1"],
+                "external_id": None,
+                "current_stage": "unknown",
+                "current_version": "unknown",
+                "change_summary": "unknown",
+                "effective_from": None,
+                "stale_signal_ids": [],
+                "needs_human_review": True,
+            }
+        ]
+    }
+    result = NpaResolver(FakeLLM(answer), model="glm-5.3-flash:cloud").resolve(
+        [signal(identifier="Постановление № 1120")],
+        {
+            "m1": PreparedDocument(
+                "m1",
+                "НПА",
+                "Постановление № 1120",
+                source_class="regulator",
+            )
+        },
+        [],
+    )
+
+    assert result[0].external_id == "Постановление № 1120"
+    assert result[0].object_id == "NEW:Постановление № 1120"
+
+
 def test_large_npa_bank_uses_embedding_candidates_and_keeps_exact_id():
     answer = {
         "objects": [
@@ -129,9 +162,7 @@ def test_large_npa_bank_uses_embedding_candidates_and_keeps_exact_id():
         for index in range(25)
     ]
 
-    result = NpaResolver(
-        provider, model="glm-5.3-flash:cloud", embedder=provider
-    ).resolve(
+    result = NpaResolver(provider, model="glm-5.3-flash:cloud", embedder=provider).resolve(
         [signal()],
         {"m1": PreparedDocument("m1", "НПА", "Опубликована новая редакция")},
         tracked,
@@ -181,9 +212,7 @@ def test_large_npa_bank_without_embedder_degrades_to_exact_ids_only():
 
 
 def test_npa_resolver_fails_safe_without_dropping_signal():
-    resolver = NpaResolver(
-        FakeLLM(LlmTemporaryError("down")), model="glm-5.3-flash:cloud"
-    )
+    resolver = NpaResolver(FakeLLM(LlmTemporaryError("down")), model="glm-5.3-flash:cloud")
     result = resolver.resolve(
         [signal(identifier=None)],
         {"m1": PreparedDocument("m1", "НПА", "Опубликована новая редакция")},
@@ -196,9 +225,7 @@ def test_npa_resolver_fails_safe_without_dropping_signal():
 
 
 def test_npa_fallback_groups_same_confirmed_identifier():
-    resolver = NpaResolver(
-        FakeLLM(LlmTemporaryError("down")), model="glm-5.3-flash:cloud"
-    )
+    resolver = NpaResolver(FakeLLM(LlmTemporaryError("down")), model="glm-5.3-flash:cloud")
     signals = [
         signal("official:s1", "official", "RU-1"),
         signal("secondary:s1", "secondary", "RU-1"),
@@ -209,9 +236,7 @@ def test_npa_fallback_groups_same_confirmed_identifier():
             "official": PreparedDocument(
                 "official", "НПА", "Опубликована новая редакция", source_class="regulator"
             ),
-            "secondary": PreparedDocument(
-                "secondary", "Обзор", "Опубликована новая редакция"
-            ),
+            "secondary": PreparedDocument("secondary", "Обзор", "Опубликована новая редакция"),
         },
         [],
     )
@@ -287,7 +312,11 @@ def test_latest_official_signal_controls_current_stage():
                 "old", "Проект", "Текст", published_at="2026-08-01", source_class="regulator"
             ),
             "current": PreparedDocument(
-                "current", "Акт принят", "Текст", published_at="2026-09-01", source_class="regulator"
+                "current",
+                "Акт принят",
+                "Текст",
+                published_at="2026-09-01",
+                source_class="regulator",
             ),
         },
         [{"object_id": "TRACKED-1", "external_id": "RU-1"}],
@@ -326,7 +355,11 @@ def test_revised_draft_advances_new_internal_version_without_effective_date():
                 "first", "Проект", "Текст", published_at="2026-08-01", source_class="regulator"
             ),
             "revised": PreparedDocument(
-                "revised", "Новая редакция", "Текст", published_at="2026-09-01", source_class="regulator"
+                "revised",
+                "Новая редакция",
+                "Текст",
+                published_at="2026-09-01",
+                source_class="regulator",
             ),
         },
         [],

@@ -31,6 +31,25 @@ def payload_review_reasons(signal: dict[str, Any]) -> tuple[str, ...]:
     )
 
 
+def should_surface_in_work_queue(signal: dict[str, Any]) -> bool:
+    """Return whether an unresolved signal deserves a PR/GR decision now.
+
+    The append-only bank keeps every grounded signal. The work queue is a
+    deliberately smaller product projection: background and already rejected
+    material must not accumulate into an endless human inbox.
+    """
+    relevance = str(signal.get("relevance") or "unknown")
+    interest = str(signal.get("interest") or "IRRELEVANT").upper()
+    importance = str(signal.get("importance") or "low")
+    urgency = str(signal.get("urgency") or "routine")
+
+    if relevance == "irrelevant" or interest == "IRRELEVANT":
+        return False
+    if importance == "low" and urgency != "urgent":
+        return False
+    return importance in {"medium", "high", "critical"} or urgency == "urgent"
+
+
 def _reasons(
     *,
     relevance: str,

@@ -11,6 +11,7 @@ import hashlib
 import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import replace
+from datetime import UTC, datetime
 from typing import Any
 
 from .analysis import PrimaryAnalyzer
@@ -101,9 +102,7 @@ class ProductAgentRuntime:
 
         for document, draft in zip(documents, drafts):
             draft = replace(draft, configuration_id=config.id)
-            self.store.save_analysis(
-                draft, prepared_version=prepared_versions[document.id]
-            )
+            self.store.save_analysis(draft, prepared_version=prepared_versions[document.id])
             resolved_signals = []
             for original in draft.signals:
                 signal = original
@@ -148,26 +147,29 @@ class ProductAgentRuntime:
         npa_signals = [
             signal
             for signal in final_signals.values()
-            if signal.kind in {"npa", "npa_candidate"}
+            if signal.kind in {"npa", "npa_candidate"} and signal.relevance != "irrelevant"
         ]
-        resolutions = self._resolve_npas(
-            npa_signals, document_map, initial_state, mode=config.a3
-        )
+        resolutions = self._resolve_npas(npa_signals, document_map, initial_state, mode=config.a3)
         resolved_npa_ids = {
-            signal_id
-            for resolution in resolutions
-            for signal_id in resolution.member_signal_ids
+            signal_id for resolution in resolutions for signal_id in resolution.member_signal_ids
         }
         event_signals = [
             signal
             for signal in final_signals.values()
-            if signal.signal_id not in resolved_npa_ids
-            and signal.relevance != "irrelevant"
+            if signal.signal_id not in resolved_npa_ids and signal.relevance != "irrelevant"
         ]
-        events, links = self._link_events(event_signals, initial_state, config)
+        events, links = self._link_events(event_signals, document_map, initial_state, config)
 
+        initial_event_versions = {
+            str(row["object_id"]): int(row.get("version") or 1)
+            for row in initial_state.get("known_events", [])
+            if row.get("object_id")
+        }
         for event in events:
-            if event.material_ids:
+            if event.material_ids and (
+                event.id not in initial_event_versions
+                or event.version > initial_event_versions[event.id]
+            ):
                 self.store.save_event(event)
         # event_links has foreign keys to both signals and events. Persist the
         # final event projection first, then its decisions; otherwise links to
@@ -177,7 +179,16 @@ class ProductAgentRuntime:
         for resolution in resolutions:
             payload = npa_object(resolution, final_signals)
             if payload is not None:
-                self.store.save_npa_resolution(resolution, payload)
+                source_url = self._official_npa_source_url(
+                    resolution,
+                    final_signals,
+                    document_map,
+                )
+                self.store.save_npa_resolution(
+                    resolution,
+                    payload,
+                    source_url=source_url,
+                )
 
         initial_event_ids = {
             str(row["object_id"])
@@ -210,8 +221,7 @@ class ProductAgentRuntime:
         }
         digest = DraftDigest(
             item_decisions=tuple(
-                item_decision(document.id, draft)
-                for document, draft in zip(documents, analyses)
+                item_decision(document.id, draft) for document, draft in zip(documents, analyses)
             ),
             objects=visible_objects,
             deliveries=tuple(
@@ -262,16 +272,13 @@ class ProductAgentRuntime:
     ) -> tuple[NpaResolution, ...]:
         tracked = list(initial_state.get("tracked_npas", []))
         resolved = self.npa_resolver.resolve(signals, documents, tracked, mode=mode)
-        tracked_ids = {
-            str(item["object_id"]) for item in tracked if item.get("object_id")
-        }
-        return tuple(
-            row for row in resolved if row.external_id or row.object_id in tracked_ids
-        )
+        tracked_ids = {str(item["object_id"]) for item in tracked if item.get("object_id")}
+        return tuple(row for row in resolved if row.external_id or row.object_id in tracked_ids)
 
     def _link_events(
         self,
         signals: list[SignalDraft],
+        documents: dict[str, PreparedDocument],
         initial_state: dict[str, Any],
         config: BranchConfiguration,
     ) -> tuple[list[EventRecord], list[LinkDecision]]:
@@ -279,16 +286,34 @@ class ProductAgentRuntime:
             EventRecord(
                 id=str(row["object_id"]),
                 title=str(row["title"]),
-                summary=str(row["title"]),
-                signal_ids=(),
-                material_ids=(),
-                compact_text=str(row["title"]),
+                summary=str(row.get("summary") or row["title"]),
+                signal_ids=tuple(row.get("signal_ids") or ()),
+                material_ids=tuple(row.get("material_ids") or ()),
+                compact_text=str(row.get("compact_text") or row["title"]),
+                embedding=tuple(row.get("embedding") or ()),
+                version=int(row.get("version") or 1),
+                lifecycle_state=(
+                    "archived"
+                    if row.get("lifecycle_state", row.get("status")) == "archived"
+                    else "active"
+                ),
+                first_published_at=row.get("first_published_at"),
+                last_published_at=row.get("last_published_at"),
+                first_seen_at=row.get("first_seen_at"),
+                last_seen_at=row.get("last_seen_at"),
+                last_meaningful_update_at=row.get("last_meaningful_update_at"),
+                archived_at=row.get("archived_at"),
             )
             for row in initial_state.get("known_events", [])
-            if row.get("status") != "archived"
         ]
         links = []
         for signal in signals:
+            observed_at = datetime.now(UTC).isoformat(timespec="seconds")
+            published_at = (
+                documents.get(signal.material_id).published_at
+                if signal.material_id in documents
+                else None
+            )
             decision = self.linker.link(signal, events, mode=config.a3)
             links.append(decision)
             if decision.event_id and decision.relation in {"same_event", "event_update"}:
@@ -296,12 +321,33 @@ class ProductAgentRuntime:
                     replace(
                         event,
                         signal_ids=tuple(dict.fromkeys((*event.signal_ids, signal.signal_id))),
-                        material_ids=tuple(dict.fromkeys((*event.material_ids, signal.material_id))),
+                        material_ids=tuple(
+                            dict.fromkeys((*event.material_ids, signal.material_id))
+                        ),
                         compact_text=(
                             f"{event.compact_text}\n{signal.summary}\n{signal.impact}"
                         ).strip(),
                         embedding=(),
                         version=event.version + 1,
+                        lifecycle_state=(
+                            "active"
+                            if decision.relation == "event_update"
+                            else event.lifecycle_state
+                        ),
+                        first_published_at=self._earliest(event.first_published_at, published_at),
+                        last_published_at=self._latest(event.last_published_at, published_at),
+                        first_seen_at=event.first_seen_at or observed_at,
+                        last_seen_at=observed_at,
+                        last_meaningful_update_at=(
+                            observed_at
+                            if decision.relation == "event_update"
+                            else event.last_meaningful_update_at
+                            or event.first_seen_at
+                            or observed_at
+                        ),
+                        archived_at=(
+                            None if decision.relation == "event_update" else event.archived_at
+                        ),
                     )
                     if event.id == decision.event_id
                     else event
@@ -317,6 +363,41 @@ class ProductAgentRuntime:
                         (signal.signal_id,),
                         (signal.material_id,),
                         f"{signal.summary}\n{signal.impact}",
+                        first_published_at=published_at,
+                        last_published_at=published_at,
+                        first_seen_at=observed_at,
+                        last_seen_at=observed_at,
+                        last_meaningful_update_at=observed_at,
                     )
                 )
         return events, links
+
+    @staticmethod
+    def _earliest(left: str | None, right: str | None) -> str | None:
+        values = [value for value in (left, right) if value]
+        return min(values) if values else None
+
+    @staticmethod
+    def _latest(left: str | None, right: str | None) -> str | None:
+        values = [value for value in (left, right) if value]
+        return max(values) if values else None
+
+    @staticmethod
+    def _official_npa_source_url(
+        resolution: NpaResolution,
+        signals: dict[str, SignalDraft],
+        documents: dict[str, PreparedDocument],
+    ) -> str:
+        candidates = []
+        for signal_id in resolution.member_signal_ids:
+            signal = signals.get(signal_id)
+            document = documents.get(signal.material_id) if signal else None
+            if document and document.source_url:
+                candidates.append(document)
+        official = [row for row in candidates if row.source_class == "regulator"]
+        chosen = max(
+            official,
+            key=lambda row: row.published_at or "",
+            default=None,
+        )
+        return (chosen.source_url or "") if chosen else ""

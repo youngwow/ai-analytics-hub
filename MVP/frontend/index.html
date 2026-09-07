@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="GS Labs Radar — рабочая система PR/GR-мониторинга"
+    />
+    <title>GS Labs Radar</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="sidebar-collapsed">
+    <aside class="sidebar">
+      <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-label="Развернуть меню" title="Развернуть меню">›</button>
+      <div class="brand-lockup">
+        <div class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div><strong>GS Labs</strong><span>RADAR</span></div>
+      </div>
+      <nav aria-label="Основное меню">
+        <small class="nav-label">Рабочий день</small>
+        <button class="nav-item active" data-view="overview" title="Сегодня">
+          <span>01</span>Сегодня
+        </button>
+        <button class="nav-item" data-view="queue" title="Разбор и выпуск">
+          <span>02</span>Разбор<b id="queue-badge">0</b>
+        </button>
+        <button class="nav-item" data-view="npa" title="НПА"><span>03</span>НПА</button>
+
+        <details class="settings-nav" id="settings-nav">
+          <summary>Настройки и контроль</summary>
+          <div>
+            <button class="nav-item" data-view="sources" title="Источники">
+              <span>04</span>Источники
+            </button>
+            <button class="nav-item" data-view="context" title="Контекст">
+              <span>05</span>Контекст
+            </button>
+            <button class="nav-item" data-view="history" title="История">
+              <span>06</span>История
+            </button>
+          </div>
+        </details>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="system-state" data-open-job type="button">
+          <i id="system-dot"></i>
+          <div>
+            <strong id="system-label">Проверяем систему</strong
+            ><small id="system-subline">—</small>
+          </div>
+          <span aria-hidden="true">›</span>
+        </button>
+        <div class="partner-lockup">
+          <span>ITMO</span><span>AI TALENT HUB</span>
+        </div>
+        <small>Хакатон · 2026</small>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <div class="breadcrumbs">
+            ЦИФРА · GS LABS <span>/</span> <b id="section-label">ОБЗОР</b>
+          </div>
+          <h1 id="page-title">Контроль повестки</h1>
+          <p id="page-subtitle">Что требует внимания прямо сейчас.</p>
+        </div>
+        <div class="top-actions">
+          <div class="profile-control" id="profile-control" aria-label="Рабочий фокус">
+            <span>Рабочий фокус</span>
+            <div class="profile-switch">
+              <button class="active" data-profile="ALL">Все</button>
+              <button data-profile="PR">PR</button>
+              <button data-profile="GR">GR</button>
+            </div>
+          </div>
+          <button
+            class="icon-button"
+            id="refresh"
+            title="Обновить данные"
+            aria-label="Обновить"
+          >
+            ↻
+          </button>
+          <button
+            class="button primary"
+            id="run-cycle"
+            aria-label="Собрать и обработать новые материалы"
+            title="Собрать и обработать новые материалы"
+          >
+            <span>Собрать сейчас</span><i></i>
+          </button>
+        </div>
+      </header>
+
+      <button class="job-banner" id="job-banner" data-open-job hidden>
+        <div class="job-icon"><span></span></div>
+        <div>
+          <strong id="job-title">Обновляем поток</strong
+          ><small id="job-detail">Подключаемся к источникам</small>
+        </div>
+        <div class="job-progress"><i id="job-progress"></i></div>
+        <span class="job-open">Открыть ›</span>
+      </button>
+
+      <section id="view" aria-live="polite"></section>
+    </main>
+
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer-close" id="drawer-close" aria-label="Закрыть">
+        ×
+      </button>
+      <div id="drawer-content"></div>
+    </aside>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="drawer-close" id="modal-close" aria-label="Закрыть">
+          ×
+        </button>
+        <div id="modal-content"></div>
+      </section>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

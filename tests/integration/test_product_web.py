@@ -1,6 +1,16 @@
 from __future__ import annotations
 
-from src.product.contracts import AnalysisDraft, EvidenceClaim, PreparedDocument, SignalDraft
+import json
+
+from src.models import RawDocument, Source
+from src.product.contracts import (
+    AnalysisDraft,
+    EventRecord,
+    EvidenceClaim,
+    PreparedDocument,
+    SignalDraft,
+)
+from src.product.operations import DigestService
 from src.product.store import ProductStore
 from src.product.web import ApiError, DashboardApplication
 from src.storage import Database
@@ -72,6 +82,74 @@ def test_dashboard_queue_review_and_digest_flow(tmp_path):
     assert status == 200 and approved["id"] == "weekly-1"
 
 
+def test_npa_api_separates_legal_stage_from_digest_workflow(tmp_path):
+    path = tmp_path / "hub.db"
+    db = Database(str(path))
+    try:
+        store = ProductStore(db.conn)
+        store.save_signal(
+            SignalDraft(
+                signal_id="npa-signal",
+                material_id="npa-material",
+                summary="Опубликован новый акт",
+                claims=(EvidenceClaim("Акт опубликован", "Акт опубликован"),),
+                relevance="relevant",
+                importance="high",
+                interest="GR",
+                impact="Влияет на GS Labs",
+                urgency="routine",
+                confidence=0.9,
+                kind="npa",
+                npa_identifier="№ 42",
+                npa_stage="adopted",
+            )
+        )
+        store.save_review("npa-signal", 1, "include", "demo-gr")
+        digest = DigestService(store).create_draft(
+            "weekly",
+            "2026-09-01",
+            "2026-09-07",
+            ["npa-signal"],
+            actor="demo-gr",
+        )
+        db.conn.execute(
+            "UPDATE digests SET status='delivered' WHERE id='weekly' AND version=?",
+            (digest["version"],),
+        )
+        db.conn.execute(
+            "INSERT INTO npa_records(id,jurisdiction,official_identifier,official_url,created_at) VALUES(?,?,?,?,?)",
+            ("npa-42", "RU", "№ 42", "https://example.test/npa-42", "2026-09-07T00:00:00+00:00"),
+        )
+        db.conn.execute(
+            "INSERT INTO npa_versions(npa_id,version,stage,payload,source_url,created_at) VALUES(?,?,?,?,?,?)",
+            (
+                "npa-42",
+                1,
+                "adopted",
+                json.dumps({"member_ids": ["npa-material"], "summary": "Акт"}),
+                "https://example.test/npa-42",
+                "2026-09-07T00:00:00+00:00",
+            ),
+        )
+        db.conn.commit()
+    finally:
+        db.close()
+
+    status, response = DashboardApplication(str(path)).dispatch("GET", "/api/npa", {}, {})
+
+    assert status == 200
+    item = response["items"][0]
+    assert item["stage"] == "adopted"
+    assert item["workflow_status"] == "delivered"
+    assert item["last_digest"] == {
+        "id": "weekly",
+        "version": 1,
+        "status": "delivered",
+        "created_at": item["last_digest"]["created_at"],
+        "title": "Информационная повестка GS Labs",
+    }
+
+
 def test_dashboard_context_is_immutable_and_overview_is_real(tmp_path):
     path = tmp_path / "hub.db"
     seed_signal(path)
@@ -87,6 +165,10 @@ def test_dashboard_context_is_immutable_and_overview_is_real(tmp_path):
         "PUT", "/api/context", {}, {"version": "context-v1", "context": context, "actor": "admin"}
     )
     assert status == 201 and created["version"] == "context-v1"
+    status, repeated = app.dispatch(
+        "PUT", "/api/context", {}, {"version": "context-v1", "context": context, "actor": "admin"}
+    )
+    assert status == 201 and repeated["version"] == "context-v1"
     status, loaded = app.dispatch("GET", "/api/context", {}, {})
     assert loaded["context"]["common"]["text"] == "GS Labs"
     status, overview = app.dispatch("GET", "/api/overview", {}, {})
@@ -107,6 +189,88 @@ def test_dashboard_rejects_invalid_profile_and_unknown_signal(tmp_path):
         assert False
     except ApiError as exc:
         assert exc.status == 404
+
+
+def test_dashboard_events_default_to_active_and_archive_is_explicit(tmp_path):
+    path = tmp_path / "hub.db"
+    db = Database(str(path))
+    try:
+        store = ProductStore(db.conn)
+        store.save_event(EventRecord("active", "A", "A", (), (), "A"))
+        store.save_event(
+            EventRecord(
+                "archived",
+                "B",
+                "B",
+                (),
+                (),
+                "B",
+                lifecycle_state="archived",
+            )
+        )
+    finally:
+        db.close()
+
+    app = DashboardApplication(str(path))
+    _, active = app.dispatch("GET", "/api/events", {}, {})
+    _, archived = app.dispatch("GET", "/api/events", {"state": ["archived"]}, {})
+    _, all_events = app.dispatch("GET", "/api/events", {"state": ["all"]}, {})
+    assert [row["id"] for row in active["items"]] == ["active"]
+    assert [row["id"] for row in archived["items"]] == ["archived"]
+    assert {row["id"] for row in all_events["items"]} == {"active", "archived"}
+
+
+def test_dashboard_source_and_event_details_keep_original_links(tmp_path):
+    path = tmp_path / "hub.db"
+    db = Database(str(path))
+    try:
+        source = db.sources.add(
+            Source(
+                name="Test RSS",
+                url="https://example.test",
+                kind="rss",
+                category="media",
+                fetch_url="https://example.test/feed.xml",
+            )
+        )
+        document = RawDocument(
+            source_id=source.id,
+            external_id="story-1",
+            url="https://example.test/story-1",
+            title="Original story",
+            text="Original text",
+            published_at="2026-09-06T10:00:00+00:00",
+            fetched_at="2026-09-06T10:05:00+00:00",
+        )
+        document.compute_hash()
+        document_id = db.documents.insert(document)
+        store = ProductStore(db.conn)
+        store.save_prepared(
+            "raw-1-rev-1",
+            PreparedDocument("raw-1-rev-1", "Original story", "Original text"),
+            raw_document_id=document_id,
+        )
+        store.save_event(
+            EventRecord(
+                "event-1",
+                "One event",
+                "One event summary",
+                (),
+                ("raw-1-rev-1",),
+                "One event",
+            )
+        )
+    finally:
+        db.close()
+
+    app = DashboardApplication(str(path))
+    status, source = app.dispatch("GET", f"/api/sources/{source.id}", {}, {})
+    assert status == 200
+    assert source["materials"][0]["url"] == "https://example.test/story-1"
+    status, event = app.dispatch("GET", "/api/events/event-1", {}, {})
+    assert status == 200
+    assert event["materials"][0]["source_name"] == "Test RSS"
+    assert event["materials"][0]["url"] == "https://example.test/story-1"
 
 
 def test_dashboard_exposes_failed_analysis(tmp_path):
@@ -138,6 +302,36 @@ def test_dashboard_exposes_failed_analysis(tmp_path):
     assert failures["items"][0]["payload"]["reason"] == "temporary model failure"
     _, overview = app.dispatch("GET", "/api/overview", {}, {})
     assert overview["analysis_failures"] == 1
+
+
+def test_dashboard_shows_only_unresolved_workflow_failures(tmp_path):
+    path = tmp_path / "hub.db"
+    db = Database(str(path))
+    try:
+        store = ProductStore(db.conn)
+        store.audit(
+            "workflow.failed",
+            "material",
+            "raw-1-rev-1",
+            "runtime",
+            {"error": "link failed"},
+        )
+    finally:
+        db.close()
+
+    app = DashboardApplication(str(path))
+    _, failures = app.dispatch("GET", "/api/failures", {}, {})
+    assert failures["items"][0]["failure_type"] == "workflow"
+    _, overview = app.dispatch("GET", "/api/overview", {}, {})
+    assert overview["workflow_failures"] == 1
+
+    db = Database(str(path))
+    try:
+        ProductStore(db.conn).audit("workflow.completed", "material", "raw-1-rev-1", "runtime")
+    finally:
+        db.close()
+    _, failures = app.dispatch("GET", "/api/failures", {}, {})
+    assert failures["items"] == []
 
 
 def test_dashboard_exposes_latest_filtered_material_with_reason(tmp_path):

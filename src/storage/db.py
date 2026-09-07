@@ -425,7 +425,30 @@ CREATE TABLE IF NOT EXISTS document_revisions (
 """
 
 
-_MIGRATIONS: dict[int, str] = {1: _SCHEMA_V1, 2: _SCHEMA_V2, 3: _SCHEMA_V3, 4: _SCHEMA_V4}
+_SCHEMA_V5 = """
+ALTER TABLE product_events ADD COLUMN lifecycle_state TEXT NOT NULL DEFAULT 'active';
+ALTER TABLE product_events ADD COLUMN first_seen_at TEXT;
+ALTER TABLE product_events ADD COLUMN last_seen_at TEXT;
+ALTER TABLE product_events ADD COLUMN last_meaningful_update_at TEXT;
+ALTER TABLE product_events ADD COLUMN archived_at TEXT;
+
+UPDATE product_events
+SET first_seen_at=COALESCE(first_seen_at, created_at),
+    last_seen_at=COALESCE(last_seen_at, updated_at),
+    last_meaningful_update_at=COALESCE(last_meaningful_update_at, updated_at);
+
+CREATE INDEX IF NOT EXISTS idx_product_events_lifecycle
+    ON product_events(lifecycle_state, last_meaningful_update_at);
+"""
+
+
+_MIGRATIONS: dict[int, str] = {
+    1: _SCHEMA_V1,
+    2: _SCHEMA_V2,
+    3: _SCHEMA_V3,
+    4: _SCHEMA_V4,
+    5: _SCHEMA_V5,
+}
 
 
 class DuplicateSourceError(Exception):
@@ -553,14 +576,23 @@ class SourceRepo:
 
     def set_enabled(self, source_id: int, enabled: bool) -> bool:
         cur = self.conn.execute(
-            "UPDATE sources SET enabled=? WHERE id=?", (int(enabled), source_id)
+            """UPDATE sources
+               SET enabled=?,
+                   status=CASE WHEN ?=1 THEN 'active' ELSE status END
+               WHERE id=?""",
+            (int(enabled), int(enabled), source_id),
         )
         self.conn.commit()
         return cur.rowcount > 0
 
     def remove(self, source_id: int) -> bool:
-        """Hard delete; documents, fetch state and seen URLs cascade."""
-        cur = self.conn.execute("DELETE FROM sources WHERE id=?", (source_id,))
+        """Decommission a source without destroying collected evidence."""
+        cur = self.conn.execute(
+            """UPDATE sources
+               SET enabled=0, status='decommissioned'
+               WHERE id=? AND status!='decommissioned'""",
+            (source_id,),
+        )
         self.conn.commit()
         return cur.rowcount > 0
 
@@ -658,7 +690,6 @@ class DocumentRepo:
             ).fetchone()[0]
         )
 
-
     def unprocessed(
         self,
         limit: int = 200,
@@ -698,7 +729,9 @@ class DocumentRepo:
             (simhash, embedding, norm_text, doc_id),
         )
 
-    def clustered_candidates(self, since: str | None = None, limit: int = 2000) -> list[sqlite3.Row]:
+    def clustered_candidates(
+        self, since: str | None = None, limit: int = 2000
+    ) -> list[sqlite3.Row]:
         """Already-carded documents a new one could join — the dedup blocking pool."""
         where = ["d.simhash <> ''"]
         params: list = []
@@ -931,9 +964,7 @@ class ClusterRepo:
     def grow(self, cluster_id: int, count: int = 1, *, divergent: bool | None = None) -> None:
         """`count` more publications joined; a repeated link passes 0 and changes nothing."""
         if count > 0:
-            self.conn.execute(
-                "UPDATE clusters SET size = size + ? WHERE id=?", (count, cluster_id)
-            )
+            self.conn.execute("UPDATE clusters SET size = size + ? WHERE id=?", (count, cluster_id))
         if divergent:
             self.conn.execute(
                 "UPDATE clusters SET has_divergent_opinions = 1 WHERE id=?", (cluster_id,)
@@ -966,9 +997,7 @@ class ItemRepo:
     def update(self, item: Item) -> None:
         row = item.to_row()
         assignments = ", ".join(f"{c.strip()}=:{c.strip()}" for c in self._COLUMNS.split(","))
-        self.conn.execute(
-            f"UPDATE items SET {assignments} WHERE id=:id", {**row, "id": item.id}
-        )
+        self.conn.execute(f"UPDATE items SET {assignments} WHERE id=:id", {**row, "id": item.id})
 
     def get(self, item_id: int) -> Item | None:
         row = self.conn.execute("SELECT * FROM items WHERE id=?", (item_id,)).fetchone()
@@ -1019,7 +1048,8 @@ class ItemRepo:
         params.append(limit)
         sql = (
             "SELECT i.*, c.size AS sources_count FROM items i "
-            "JOIN clusters c ON c.id = i.cluster_id " + join
+            "JOIN clusters c ON c.id = i.cluster_id "
+            + join
             + ("WHERE " + " AND ".join(where) + " " if where else "")
             + "ORDER BY i.published_at DESC, i.id DESC LIMIT ?"
         )
@@ -1041,9 +1071,7 @@ class ItemRepo:
         )
 
     def entities(self, item_id: int) -> list[EntitySpan]:
-        rows = self.conn.execute(
-            "SELECT * FROM entities WHERE item_id=? ORDER BY id", (item_id,)
-        )
+        rows = self.conn.execute("SELECT * FROM entities WHERE item_id=? ORDER BY id", (item_id,))
         return [EntitySpan.from_row(r) for r in rows]
 
     def clear_entities(self, item_id: int) -> None:

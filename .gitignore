@@ -223,16 +223,24 @@ __marimo__/
 
 # local database
 data/hub.db*
+MVP/data/*.db*
+MVP/data/outbox/
+MVP/data/runtime.json
 
 # Benchmark runners keep compact reports in git; raw HTTP payloads and SQLite journals are local evidence.
 benchmarks/**/runs/**/raw/
-artifacts/**/product.db-shm
-artifacts/**/product.db-wal
+*.db-shm
+*.db-wal
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3-shm
+*.sqlite3-wal
 artifacts/b2/_archive/
 artifacts/b3/_archive/
 artifacts/b3/**/embeddings.sqlite
 artifacts/b3/a2_research/debug/
 artifacts/b4/judges/debug/
+tmp/
 
 # Telegram MTProto session — equals full access to the account, never commit
 data/*.session

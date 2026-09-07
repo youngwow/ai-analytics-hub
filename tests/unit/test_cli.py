@@ -362,7 +362,7 @@ def test_sources_toggle_and_remove(config, paths, capsys):
     assert capsys.readouterr().out.strip() == f"source #{source.id} disabled"
     assert cli._cmd_sources_toggle(_args(id=999, enable=True), config, paths) == 1
     assert cli._cmd_sources_remove(_args(id=source.id), config, paths) == 0
-    assert capsys.readouterr().out.strip() == f"removed source #{source.id} and its 0 documents"
+    assert capsys.readouterr().out.strip() == f"decommissioned source #{source.id}; preserved 0 documents"
     assert cli._cmd_sources_remove(_args(id=source.id), config, paths) == 1
 
 

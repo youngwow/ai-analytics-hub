@@ -73,11 +73,9 @@ def _seeded_documents(db: Database, count: int = 1, **overrides) -> list[int]:
 
 
 def test_schema_version_and_pragmas(db):
-    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+    assert db.conn.execute("PRAGMA user_version").fetchone()[0] == 5
     assert db.conn.execute("PRAGMA foreign_keys").fetchone()[0] == 1
-    tables = {
-        r[0] for r in db.conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
-    }
+    tables = {r[0] for r in db.conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
     assert {"sources", "documents", "fetch_state", "seen_urls", "collect_runs"} <= tables
 
 
@@ -87,7 +85,7 @@ def test_file_database_creates_parent_dir_and_uses_wal(tmp_path):
     try:
         assert path.exists()
         assert database.conn.execute("PRAGMA journal_mode").fetchone()[0] == "wal"
-        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+        assert database.conn.execute("PRAGMA user_version").fetchone()[0] == 5
     finally:
         database.close()
 
@@ -169,19 +167,28 @@ def test_set_enabled_reports_whether_a_row_changed(db):
     assert db.sources.set_enabled(999, False) is False
 
 
-def test_remove_cascades_documents_fetch_state_and_seen_urls(db):
+def test_remove_decommissions_source_and_preserves_evidence(db):
     source = db.sources.add(_source())
     with db.transaction():
         db.documents.insert(_doc(source.id, "a"))
         db.fetch_state.save(FetchState(source_id=source.id, etag='W/"1"'))
         db.seen_urls.add(source.id, ["https://example.ru/a"])
     assert db.sources.remove(source.id) is True
-    assert db.sources.get(source.id) is None
-    assert db.documents.count(source.id) == 0
-    assert db.fetch_state.get(source.id).etag is None
-    assert db.seen_urls.known(source.id, ["https://example.ru/a"]) == set()
-    assert db.conn.execute("SELECT count(*) FROM seen_urls").fetchone()[0] == 0
+    stored = db.sources.get(source.id)
+    assert stored is not None
+    assert stored.enabled is False
+    assert stored.status == "decommissioned"
+    assert db.documents.count(source.id) == 1
+    assert db.fetch_state.get(source.id).etag == 'W/"1"'
+    assert db.seen_urls.known(source.id, ["https://example.ru/a"]) == {"https://example.ru/a"}
+    assert db.conn.execute("SELECT count(*) FROM seen_urls").fetchone()[0] == 1
     assert db.sources.remove(source.id) is False
+
+    assert db.sources.set_enabled(source.id, True) is True
+    restored = db.sources.get(source.id)
+    assert restored is not None
+    assert restored.enabled is True
+    assert restored.status == "active"
 
 
 def test_ensure_manual_is_idempotent(db):
@@ -251,8 +258,16 @@ def test_list_is_newest_first_with_undated_last_and_carries_display_columns(db):
     assert [r["external_id"] for r in rows] == ["new", "old", "undated"]
     assert rows[0]["source_name"] == "Источник"
     assert rows[2]["text_len"] == 3
-    assert set(rows[0].keys()) >= {"id", "url", "title", "summary", "author", "attachments",
-                                   "fetched_at", "content_hash"}
+    assert set(rows[0].keys()) >= {
+        "id",
+        "url",
+        "title",
+        "summary",
+        "author",
+        "attachments",
+        "fetched_at",
+        "content_hash",
+    }
 
 
 def test_list_filters_by_source_limit_and_hidden(db):
@@ -260,7 +275,9 @@ def test_list_filters_by_source_limit_and_hidden(db):
     b = db.sources.add(_source(name="B", fetch_url="https://b.ru/rss"))
     with db.transaction():
         for i in range(3):
-            db.documents.insert(_doc(a.id, f"a{i}", published_at=f"2026-09-0{i + 1}T00:00:00+00:00"))
+            db.documents.insert(
+                _doc(a.id, f"a{i}", published_at=f"2026-09-0{i + 1}T00:00:00+00:00")
+            )
         hidden_id = db.documents.insert(_doc(b.id, "b0"))
     db.conn.execute("UPDATE documents SET hidden=1 WHERE id=?", (hidden_id,))
     assert [r["external_id"] for r in db.documents.list(source_id=a.id, limit=2)] == ["a2", "a1"]
@@ -430,7 +447,7 @@ def test_reopening_a_database_keeps_data_and_does_not_remigrate(tmp_path):
 
     second = Database(path)
     try:
-        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 4
+        assert second.conn.execute("PRAGMA user_version").fetchone()[0] == 5
         assert second.items.count() == 1
         assert second.items.get(item_id).title == "Минцифры расширило реестр"
         assert [r["id"] for r in second.items.list(query="реестр")] == [item_id]
@@ -635,9 +652,18 @@ def test_items_list_hides_hidden_cards_and_sorts_newest_first(db, feed):
         ({"limit": 1}, ["npa"]),
     ],
     ids=[
-        "type-npa", "type-news", "priority-high", "priority-low", "priority-medium",
-        "tag-regulation", "tag-with-slash", "tag-competitors", "tag-absent", "since",
-        "type-and-priority", "limit",
+        "type-npa",
+        "type-news",
+        "priority-high",
+        "priority-low",
+        "priority-medium",
+        "tag-regulation",
+        "tag-with-slash",
+        "tag-competitors",
+        "tag-absent",
+        "since",
+        "type-and-priority",
+        "limit",
     ],
 )
 def test_items_list_filters(db, feed, filters, expected):
@@ -700,9 +726,7 @@ def test_add_and_read_entities_round_trip(db):
             item_id,
             [
                 EntitySpan(role="who", value="Минцифры", evidence_start=0, evidence_end=8),
-                EntitySpan(
-                    role="act_number", value="112233-8", normalized_value="112233-8"
-                ),
+                EntitySpan(role="act_number", value="112233-8", normalized_value="112233-8"),
             ],
         )
     stored = db.items.entities(item_id)
@@ -831,14 +855,24 @@ def test_llm_calls_stats_aggregate_and_window(db):
     with db.transaction():
         db.llm_calls.add(
             LlmCall(
-                stage="s2_s5", model="m", tokens_in=100, tokens_out=20, latency_ms=200,
+                stage="s2_s5",
+                model="m",
+                tokens_in=100,
+                tokens_out=20,
+                latency_ms=200,
                 created_at="2026-09-02T10:00:00+00:00",
             )
         )
         db.llm_calls.add(
             LlmCall(
-                stage="s2_s5", model="m", tokens_in=300, tokens_out=40, latency_ms=400,
-                status="failed", error="429", created_at="2026-09-02T14:00:00+00:00",
+                stage="s2_s5",
+                model="m",
+                tokens_in=300,
+                tokens_out=40,
+                latency_ms=400,
+                status="failed",
+                error="429",
+                created_at="2026-09-02T14:00:00+00:00",
             )
         )
     stats = db.llm_calls.stats()

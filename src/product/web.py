@@ -64,8 +64,17 @@ class DashboardApplication:
                 return 201, self._save_context(store, body)
             if method == "GET" and path == "/api/sources":
                 return 200, {"items": self._sources(db)}
+            match = re.fullmatch(r"/api/sources/(\d+)", path)
+            if method == "GET" and match:
+                return 200, self._source_detail(db, int(match.group(1)))
             if method == "GET" and path == "/api/events":
-                return 200, {"items": self._payload_rows(db, "product_events", "updated_at")}
+                lifecycle = self._one(query, "state") or "active"
+                if lifecycle not in {"active", "archived", "all"}:
+                    raise ApiError(400, "state must be active, archived or all")
+                return 200, {"items": self._events(db, lifecycle)}
+            match = re.fullmatch(r"/api/events/([^/]+)", path)
+            if method == "GET" and match:
+                return 200, self._event_detail(db, unquote(match.group(1)))
             if method == "GET" and path == "/api/npa":
                 return 200, {"items": self._npa(db)}
             if method == "GET" and path == "/api/digests":
@@ -96,8 +105,9 @@ class DashboardApplication:
             {
                 "sources_total": len(source_rows),
                 "sources_attention": sum(
-                    row["state"] not in {"working", "disabled"} for row in source_rows
+                    row["state"] in {"attention", "coverage_gap"} for row in source_rows
                 ),
+                "sources_unchecked": sum(row["state"] == "not_checked" for row in source_rows),
                 "review_required": sum(
                     item["review_required"]
                     for item in WorkQueue(store).list(include_resolved=False)
@@ -105,6 +115,7 @@ class DashboardApplication:
                 "analysis_failures": db.conn.execute(
                     "SELECT COUNT(*) FROM analysis_runs WHERE status IN ('failed','unreadable')"
                 ).fetchone()[0],
+                "workflow_failures": len(self._workflow_failures(db)),
                 "filtered_materials": len(self._filtered(db)),
             }
         )
@@ -114,7 +125,7 @@ class DashboardApplication:
     def _signal_detail(db: Database, signal_id: str) -> dict:
         row = db.conn.execute(
             """SELECT s.payload,s.revision,s.created_at,s.actor,s.reason,
-                      a.status AS analysis_status,a.configuration_id,a.model,
+                      a.status AS analysis_status,a.configuration_id,a.model,a.context_version,
                       p.payload AS prepared_payload,d.url AS source_url,d.title AS source_title,
                       d.text AS source_text,d.published_at,d.fetched_at,so.name AS source_name
                FROM signal_revisions s
@@ -152,6 +163,7 @@ class DashboardApplication:
                 "status": row["analysis_status"],
                 "configuration_id": row["configuration_id"],
                 "model": row["model"],
+                "context_version": row["context_version"],
             },
             "source": {
                 "name": row["source_name"],
@@ -215,7 +227,7 @@ class DashboardApplication:
             context = GsLabsContext.from_dict(body.get("context") or {})
             if context.version != version:
                 raise ValueError("context.version must equal version")
-            store.save_context(version, asdict(context), actor=actor)
+            store.ensure_context(version, asdict(context), actor=actor)
         except (TypeError, ValueError) as exc:
             raise ApiError(400, str(exc)) from exc
         return {"status": "created", "version": version}
@@ -246,9 +258,69 @@ class DashboardApplication:
         return result
 
     @staticmethod
+    def _source_detail(db: Database, source_id: int) -> dict:
+        source = next(
+            (item for item in DashboardApplication._sources(db) if item["id"] == source_id),
+            None,
+        )
+        if source is None:
+            raise ApiError(404, "source not found")
+        rows = db.conn.execute(
+            """SELECT d.id,d.title,d.url,d.summary,d.published_at,d.fetched_at,
+                      length(d.text) AS text_length,
+                      (SELECT status FROM analysis_runs a
+                       JOIN prepared_documents p ON p.material_id=a.material_id
+                       WHERE p.raw_document_id=d.id ORDER BY a.id DESC LIMIT 1)
+                       AS analysis_status
+               FROM documents d WHERE d.source_id=? AND d.hidden=0
+               ORDER BY COALESCE(d.published_at,d.fetched_at) DESC LIMIT 30""",
+            (source_id,),
+        ).fetchall()
+        return {"source": source, "materials": [dict(row) for row in rows]}
+
+    @staticmethod
     def _payload_rows(db: Database, table: str, order_field: str) -> list[dict]:
         rows = db.conn.execute(f"SELECT * FROM {table} ORDER BY {order_field} DESC").fetchall()
         return [DashboardApplication._decode_payload(dict(row)) for row in rows]
+
+    @staticmethod
+    def _events(db: Database, lifecycle: str) -> list[dict]:
+        if lifecycle == "all":
+            rows = db.conn.execute(
+                "SELECT * FROM product_events ORDER BY updated_at DESC"
+            ).fetchall()
+        else:
+            rows = db.conn.execute(
+                """SELECT * FROM product_events
+                   WHERE lifecycle_state=? ORDER BY updated_at DESC""",
+                (lifecycle,),
+            ).fetchall()
+        return [DashboardApplication._decode_payload(dict(row)) for row in rows]
+
+    @staticmethod
+    def _event_detail(db: Database, event_id: str) -> dict:
+        row = db.conn.execute(
+            "SELECT * FROM product_events WHERE id=?", (event_id,)
+        ).fetchone()
+        if row is None:
+            raise ApiError(404, "event not found")
+        event = DashboardApplication._decode_payload(dict(row))
+        material_ids = list((event.get("payload") or {}).get("material_ids") or [])
+        materials: list[dict] = []
+        if material_ids:
+            placeholders = ",".join("?" for _ in material_ids)
+            rows = db.conn.execute(
+                f"""SELECT p.material_id,p.version,d.id,d.title,d.url,d.published_at,
+                            d.fetched_at,s.name AS source_name,s.kind
+                     FROM prepared_documents p
+                     LEFT JOIN documents d ON d.id=p.raw_document_id
+                     LEFT JOIN sources s ON s.id=d.source_id
+                     WHERE p.material_id IN ({placeholders})
+                     ORDER BY COALESCE(d.published_at,d.fetched_at) DESC""",
+                material_ids,
+            ).fetchall()
+            materials = [dict(item) for item in rows]
+        return {"event": event, "materials": materials}
 
     @staticmethod
     def _npa(db: Database) -> list[dict]:
@@ -261,7 +333,85 @@ class DashboardApplication:
                  SELECT id FROM npa_versions WHERE npa_id=n.id ORDER BY version DESC LIMIT 1
                ) ORDER BY n.created_at DESC"""
         ).fetchall()
-        return [DashboardApplication._decode_payload(dict(row), "version_payload") for row in rows]
+        records = [
+            DashboardApplication._decode_payload(dict(row), "version_payload")
+            for row in rows
+        ]
+
+        signal_rows = db.conn.execute(
+            """SELECT s.signal_id,s.payload,r.decision,r.actor,r.created_at AS decision_at
+               FROM signal_revisions s
+               JOIN (SELECT signal_id,MAX(revision) AS revision
+                     FROM signal_revisions GROUP BY signal_id) latest
+                 ON latest.signal_id=s.signal_id AND latest.revision=s.revision
+               LEFT JOIN review_decisions r ON r.id=(
+                 SELECT id FROM review_decisions
+                 WHERE signal_id=s.signal_id ORDER BY id DESC LIMIT 1
+               )"""
+        ).fetchall()
+        signals_by_material: dict[str, list[dict]] = {}
+        for row in signal_rows:
+            signal = json.loads(row["payload"])
+            signal["latest_decision"] = row["decision"]
+            signal["decision_actor"] = row["actor"]
+            signal["decision_at"] = row["decision_at"]
+            signals_by_material.setdefault(str(signal.get("material_id") or ""), []).append(signal)
+
+        digest_rows = db.conn.execute(
+            "SELECT id,version,status,payload,created_at FROM digests ORDER BY created_at DESC,version DESC"
+        ).fetchall()
+        current_digest = digest_rows[0] if digest_rows and digest_rows[0]["status"] != "reset" else None
+        current_by_signal: dict[str, dict] = {}
+        delivered_by_signal: dict[str, dict] = {}
+        for digest_row in digest_rows:
+            payload = json.loads(digest_row["payload"])
+            reference = {
+                "id": digest_row["id"],
+                "version": digest_row["version"],
+                "status": digest_row["status"],
+                "created_at": digest_row["created_at"],
+                "title": payload.get("title") or "Информационная повестка GS Labs",
+            }
+            for item in payload.get("items") or []:
+                signal_id = str(item.get("signal_id") or "")
+                if digest_row is current_digest:
+                    current_by_signal[signal_id] = reference
+                if digest_row["status"] == "delivered" and signal_id not in delivered_by_signal:
+                    delivered_by_signal[signal_id] = reference
+
+        rank = {"selected": 5, "approved": 5, "pending": 4, "delivered": 3, "excluded": 2, "filtered": 1}
+        for record in records:
+            payload = record.get("version_payload") or {}
+            material_ids = [str(value) for value in payload.get("member_ids") or []]
+            related = [signal for material_id in material_ids for signal in signals_by_material.get(material_id, [])]
+            candidates = []
+            for signal in related:
+                signal_id = str(signal.get("signal_id") or "")
+                current = current_by_signal.get(signal_id)
+                delivered = delivered_by_signal.get(signal_id)
+                if current and current["status"] == "delivered":
+                    workflow_status, digest = "delivered", current
+                elif current and current["status"] in {"draft", "approved"}:
+                    workflow_status, digest = ("approved" if current["status"] == "approved" else "selected"), current
+                elif delivered:
+                    workflow_status, digest = "delivered", delivered
+                elif signal.get("latest_decision") == "include":
+                    workflow_status, digest = "selected", None
+                elif signal.get("latest_decision") == "exclude":
+                    workflow_status, digest = "excluded", None
+                elif signal.get("relevance") == "irrelevant":
+                    workflow_status, digest = "filtered", None
+                else:
+                    workflow_status, digest = "pending", None
+                candidates.append((rank[workflow_status], workflow_status, digest, signal))
+            chosen = max(candidates, default=(0, "pending", None, {}), key=lambda item: item[0])
+            record["workflow_status"] = chosen[1]
+            record["last_digest"] = chosen[2]
+            record["related_signal_ids"] = [str(signal.get("signal_id") or "") for signal in related]
+            record["relevance"] = "relevant" if any(signal.get("relevance") == "relevant" for signal in related) else (
+                "irrelevant" if related and all(signal.get("relevance") == "irrelevant" for signal in related) else "unknown"
+            )
+        return records
 
     @staticmethod
     def _digests(db: Database) -> list[dict]:
@@ -272,7 +422,7 @@ class DashboardApplication:
 
     @staticmethod
     def _history(db: Database) -> list[dict]:
-        rows = db.conn.execute("SELECT * FROM audit_events ORDER BY id DESC LIMIT 200").fetchall()
+        rows = db.conn.execute("SELECT * FROM audit_events ORDER BY id DESC LIMIT 1000").fetchall()
         return [DashboardApplication._decode_payload(dict(row)) for row in rows]
 
     @staticmethod
@@ -290,6 +440,31 @@ class DashboardApplication:
         for row in rows:
             item = DashboardApplication._decode_payload(dict(row))
             item = DashboardApplication._decode_payload(item, "prepared_payload")
+            item["failure_type"] = "analysis"
+            result.append(item)
+        result.extend(DashboardApplication._workflow_failures(db))
+        result.sort(key=lambda item: str(item.get("created_at") or ""), reverse=True)
+        return result
+
+    @staticmethod
+    def _workflow_failures(db: Database) -> list[dict]:
+        rows = db.conn.execute(
+            """SELECT a.id,a.object_id AS material_id,a.payload,a.created_at
+               FROM audit_events a
+               JOIN (
+                 SELECT object_id,MAX(id) AS id FROM audit_events
+                 WHERE object_type='material'
+                   AND event_type IN ('workflow.completed','workflow.failed')
+                 GROUP BY object_id
+               ) latest ON latest.id=a.id
+               WHERE a.event_type='workflow.failed'
+               ORDER BY a.id DESC"""
+        ).fetchall()
+        result = []
+        for row in rows:
+            item = DashboardApplication._decode_payload(dict(row))
+            item["failure_type"] = "workflow"
+            item["status"] = "failed"
             result.append(item)
         return result
 
@@ -332,6 +507,9 @@ class DashboardApplication:
                 [str(value) for value in body["signal_ids"]],
                 actor=str(body.get("actor") or "operator"),
                 recipients=list(body.get("recipients") or []),
+                title=str(body.get("title") or ""),
+                header=str(body.get("header") or ""),
+                footer=str(body.get("footer") or ""),
             )
         except (LookupError, ValueError) as exc:
             raise ApiError(400, str(exc)) from exc

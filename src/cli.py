@@ -251,7 +251,7 @@ def _cmd_sources_remove(args, config: Config, paths: ProjectPaths) -> int:
     if not ok:
         print(f"no source #{args.id}", file=sys.stderr)
         return 1
-    print(f"removed source #{args.id} and its {n} documents")
+    print(f"decommissioned source #{args.id}; preserved {n} documents")
     return 0
 
 
@@ -899,7 +899,7 @@ def build_parser() -> argparse.ArgumentParser:
         p = ps.add_parser(action, help=f"{action} a source")
         p.add_argument("id", type=int)
         p.set_defaults(func=_cmd_sources_toggle, enable=enable)
-    p = ps.add_parser("remove", help="delete a source and everything collected from it")
+    p = ps.add_parser("remove", help="stop a source while preserving collected evidence")
     p.add_argument("id", type=int)
     p.set_defaults(func=_cmd_sources_remove)
     p = ps.add_parser("resolve", help="re-run the resolver for a stored source")

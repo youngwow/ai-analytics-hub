@@ -171,14 +171,9 @@ class NpaResolver:
             raise ValueError(f"unknown NPA candidate mode: {mode}")
 
         exact_ids = {
-            str(signal.npa_identifier).strip()
-            for signal in signals
-            if signal.npa_identifier
+            str(signal.npa_identifier).strip() for signal in signals if signal.npa_identifier
         }
-        exact = [
-            row for row in tracked
-            if str(row.get("external_id") or "").strip() in exact_ids
-        ]
+        exact = [row for row in tracked if str(row.get("external_id") or "").strip() in exact_ids]
         if self.embedder is None:
             # Safe degradation: preserve exact official IDs and refuse a broad
             # implicit match. Signals without an exact identity become review
@@ -203,15 +198,11 @@ class NpaResolver:
                 vectors[index] = normalized
                 self._embedding_cache[key] = normalized
 
-        chosen: dict[str, dict[str, Any]] = {
-            str(row.get("object_id")): row for row in exact
-        }
+        chosen: dict[str, dict[str, Any]] = {str(row.get("object_id")): row for row in exact}
         queries = self.embedder.embed([self._signal_text(signal) for signal in signals])
         ranked = sorted(
             zip(tracked, vectors),
-            key=lambda pair: max(
-                cosine(query, pair[1] or ()) for query in queries
-            ),
+            key=lambda pair: max(cosine(query, pair[1] or ()) for query in queries),
             reverse=True,
         )
         for row, _ in ranked:
@@ -281,9 +272,7 @@ class NpaResolver:
     ) -> tuple[NpaResolution, ...]:
         known_signals = {signal.signal_id: signal for signal in signals}
         tracked_ids = {str(item.get("object_id")) for item in tracked if item.get("object_id")}
-        tracked_by_id = {
-            str(item["object_id"]): item for item in tracked if item.get("object_id")
-        }
+        tracked_by_id = {str(item["object_id"]): item for item in tracked if item.get("object_id")}
         tracked_by_external = {
             str(item["external_id"]).strip(): str(item["object_id"])
             for item in tracked
@@ -304,12 +293,23 @@ class NpaResolver:
             if not members:
                 continue
             object_id = str(raw.get("object_id") or "").strip()
-            external_id = (
-                str(raw.get("external_id")).strip() if raw.get("external_id") else None
-            )
+            external_id = str(raw.get("external_id")).strip() if raw.get("external_id") else None
+            grounded_member_ids = {
+                str(known_signals[signal_id].npa_identifier).strip()
+                for signal_id in members
+                if known_signals[signal_id].npa_identifier
+            }
+            # The grouping model may omit an identifier already extracted from
+            # the source evidence. A unanimous non-empty ID is lossless state,
+            # not a model suggestion, and must survive the next AI stage.
+            if len(grounded_member_ids) == 1:
+                external_id = next(iter(grounded_member_ids))
             if external_id in tracked_by_external:
                 object_id = tracked_by_external[external_id]
-            if object_id not in tracked_ids and not object_id.startswith("NEW:"):
+            if object_id not in tracked_ids and (
+                not object_id.startswith("NEW:")
+                or (external_id and object_id.startswith("NEW:UNKNOWN:"))
+            ):
                 object_id = self._new_id(external_id, members[0])
             stale = tuple(
                 str(item) for item in raw.get("stale_signal_ids") or [] if str(item) in members
@@ -322,9 +322,7 @@ class NpaResolver:
                 current_version=str(raw.get("current_version") or "unknown").strip(),
                 change_summary=str(raw.get("change_summary") or "unknown").strip(),
                 effective_from=(
-                    str(raw.get("effective_from")).strip()
-                    if raw.get("effective_from")
-                    else None
+                    str(raw.get("effective_from")).strip() if raw.get("effective_from") else None
                 ),
                 stale_signal_ids=stale,
                 needs_human_review=bool(raw.get("needs_human_review", False)),
@@ -334,9 +332,7 @@ class NpaResolver:
             used.update(members)
         missing = [signal for signal in signals if signal.signal_id not in used]
         for candidate in self._safe_fallback(missing, {}, tracked):
-            result[candidate.object_id] = self._merge(
-                result.get(candidate.object_id), candidate
-            )
+            result[candidate.object_id] = self._merge(result.get(candidate.object_id), candidate)
         return tuple(result.values())
 
     @classmethod
@@ -351,9 +347,7 @@ class NpaResolver:
             for item in tracked
             if item.get("external_id") and item.get("object_id")
         }
-        tracked_by_id = {
-            str(item["object_id"]): item for item in tracked if item.get("object_id")
-        }
+        tracked_by_id = {str(item["object_id"]): item for item in tracked if item.get("object_id")}
         groups: dict[str, list[SignalDraft]] = {}
         for signal in signals:
             external_id = str(signal.npa_identifier or "").strip()
@@ -378,7 +372,10 @@ class NpaResolver:
                 ),
             )
             stale = tuple(
-                signal.signal_id for signal in members if official and signal is not primary
+                signal.signal_id
+                for signal in members
+                if official
+                and signal is not primary
                 and (
                     not documents.get(signal.material_id)
                     or documents[signal.material_id].source_class != "regulator"
@@ -402,9 +399,7 @@ class NpaResolver:
         return tuple(result)
 
     @staticmethod
-    def _merge(
-        current: NpaResolution | None, candidate: NpaResolution
-    ) -> NpaResolution:
+    def _merge(current: NpaResolution | None, candidate: NpaResolution) -> NpaResolution:
         if current is None:
             return candidate
         return NpaResolution(
@@ -432,9 +427,7 @@ class NpaResolver:
             stale_signal_ids=tuple(
                 dict.fromkeys((*current.stale_signal_ids, *candidate.stale_signal_ids))
             ),
-            needs_human_review=(
-                current.needs_human_review or candidate.needs_human_review
-            ),
+            needs_human_review=(current.needs_human_review or candidate.needs_human_review),
             prior_history_ids=tuple(
                 dict.fromkeys((*current.prior_history_ids, *candidate.prior_history_ids))
             ),
@@ -468,9 +461,7 @@ class NpaResolver:
             or documents[signal.material_id].source_class != "regulator"
         )
         latest_stage = cls._stage(latest_official.npa_stage)
-        current_stage = (
-            latest_stage if latest_stage != "unknown" else resolution.current_stage
-        )
+        current_stage = latest_stage if latest_stage != "unknown" else resolution.current_stage
         current_version = resolution.current_version
         # A new object can arrive as an initial official publication followed
         # by a demonstrably changed official revision in the same collection
@@ -492,9 +483,7 @@ class NpaResolver:
             external_id=resolution.external_id,
             current_stage=current_stage,
             current_version=current_version,
-            change_summary=(
-                latest_official.npa_change_summary or resolution.change_summary
-            ),
+            change_summary=(latest_official.npa_change_summary or resolution.change_summary),
             effective_from=effective_from,
             stale_signal_ids=secondary,
             needs_human_review=resolution.needs_human_review,
@@ -508,9 +497,7 @@ class NpaResolver:
         documents: dict[str, PreparedDocument],
         tracked: list[dict[str, Any]],
     ) -> tuple[NpaResolution, ...]:
-        tracked_ids = {
-            str(item.get("object_id")) for item in tracked if item.get("object_id")
-        }
+        tracked_ids = {str(item.get("object_id")) for item in tracked if item.get("object_id")}
         confirmed = {
             item.object_id: item
             for item in resolutions
@@ -529,8 +516,7 @@ class NpaResolver:
             payload = {
                 "candidate": self._resolution_payload(candidate, by_signal),
                 "confirmed_objects": [
-                    self._resolution_payload(item, by_signal)
-                    for item in confirmed.values()
+                    self._resolution_payload(item, by_signal) for item in confirmed.values()
                 ],
             }
             try:
@@ -633,9 +619,7 @@ class NpaResolver:
         return "unknown"
 
     @staticmethod
-    def _fallback_version(
-        signal: SignalDraft, tracked: dict[str, Any] | None
-    ) -> str:
+    def _fallback_version(signal: SignalDraft, tracked: dict[str, Any] | None) -> str:
         label = str(signal.npa_version or "").strip()
         if not label:
             return "unknown"

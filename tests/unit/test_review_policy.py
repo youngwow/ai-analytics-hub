@@ -1,5 +1,7 @@
+from dataclasses import asdict
+
 from src.product.contracts import EvidenceClaim, SignalDraft
-from src.product.review_policy import review_reasons
+from src.product.review_policy import review_reasons, should_surface_in_work_queue
 
 
 def signal(**changes):
@@ -37,4 +39,13 @@ def test_observable_risks_trigger_review_with_reasons():
         "uncertain_relevance",
         "open_questions",
         "unconfirmed_npa",
+    )
+
+
+def test_work_queue_keeps_decisions_small_without_deleting_background_signals():
+    assert should_surface_in_work_queue(asdict(signal(importance="medium")))
+    assert should_surface_in_work_queue(asdict(signal(importance="critical")))
+    assert not should_surface_in_work_queue(asdict(signal(importance="low")))
+    assert not should_surface_in_work_queue(
+        asdict(signal(interest="IRRELEVANT", relevance="irrelevant"))
     )

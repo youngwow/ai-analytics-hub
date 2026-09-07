@@ -5,10 +5,12 @@ from __future__ import annotations
 import hashlib
 import json
 import sqlite3
-from dataclasses import asdict, is_dataclass
+from dataclasses import asdict, is_dataclass, replace
+from datetime import UTC, date, datetime, timedelta
 from typing import Any
 
 from ..common import to_utc_iso, utc_now
+from .review_policy import should_surface_in_work_queue
 
 
 def _now() -> str:
@@ -45,7 +47,9 @@ class ProductStore:
         if row["payload"] != encoded:
             raise ValueError(f"context version already exists with different content: {version}")
 
-    def save_prepared(self, material_id: str, payload: Any, *, raw_document_id: int | None = None) -> int:
+    def save_prepared(
+        self, material_id: str, payload: Any, *, raw_document_id: int | None = None
+    ) -> int:
         version = self._next("prepared_documents", "material_id", material_id)
         self.conn.execute(
             "INSERT INTO prepared_documents(material_id,version,raw_document_id,payload,created_at) VALUES(?,?,?,?,?)",
@@ -65,13 +69,22 @@ class ProductStore:
         """Load the current event projection into provider-neutral contracts."""
         from .contracts import EventRecord
 
-        rows = self.conn.execute("SELECT payload FROM product_events ORDER BY id").fetchall()
+        rows = self.conn.execute(
+            """SELECT payload,lifecycle_state,first_seen_at,last_seen_at,
+                      last_meaningful_update_at,archived_at
+               FROM product_events ORDER BY id"""
+        ).fetchall()
         events = []
         for row in rows:
             payload = json.loads(row["payload"])
             payload["signal_ids"] = tuple(payload.get("signal_ids", ()))
             payload["material_ids"] = tuple(payload.get("material_ids", ()))
             payload["embedding"] = tuple(payload.get("embedding", ()))
+            payload.setdefault("lifecycle_state", row["lifecycle_state"] or "active")
+            payload.setdefault("first_seen_at", row["first_seen_at"])
+            payload.setdefault("last_seen_at", row["last_seen_at"])
+            payload.setdefault("last_meaningful_update_at", row["last_meaningful_update_at"])
+            payload.setdefault("archived_at", row["archived_at"])
             events.append(EventRecord(**payload))
         return events
 
@@ -81,14 +94,22 @@ class ProductStore:
                 material_id,prepared_version,context_version,configuration_id,model,payload,status,created_at
             ) VALUES(?,?,?,?,?,?,?,?)""",
             (
-                draft.material_id, prepared_version, draft.context_version,
-                draft.configuration_id, draft.model, _json(draft), draft.status, _now(),
+                draft.material_id,
+                prepared_version,
+                draft.context_version,
+                draft.configuration_id,
+                draft.model,
+                _json(draft),
+                draft.status,
+                _now(),
             ),
         )
         run_id = int(cur.lastrowid)
         for signal in draft.signals:
             self.save_signal(signal, analysis_run_id=run_id, commit=False)
-        self.audit("analysis.completed", "analysis_run", str(run_id), "ai", {"status": draft.status})
+        self.audit(
+            "analysis.completed", "analysis_run", str(run_id), "ai", {"status": draft.status}
+        )
         self.conn.commit()
         return run_id
 
@@ -101,12 +122,28 @@ class ProductStore:
         reason: str = "",
         commit: bool = True,
     ) -> int:
+        if analysis_run_id is None:
+            previous = self.conn.execute(
+                """SELECT analysis_run_id FROM signal_revisions
+                   WHERE signal_id=? AND analysis_run_id IS NOT NULL
+                   ORDER BY revision DESC LIMIT 1""",
+                (signal.signal_id,),
+            ).fetchone()
+            if previous is not None:
+                analysis_run_id = int(previous["analysis_run_id"])
         revision = self._next("signal_revisions", "signal_id", signal.signal_id, "revision")
         self.conn.execute(
             "INSERT INTO signal_revisions(signal_id,revision,analysis_run_id,payload,created_at,actor,reason) VALUES(?,?,?,?,?,?,?)",
             (signal.signal_id, revision, analysis_run_id, _json(signal), _now(), actor, reason),
         )
-        self.audit("signal.revised", "signal", signal.signal_id, actor, {"revision": revision}, commit=False)
+        self.audit(
+            "signal.revised",
+            "signal",
+            signal.signal_id,
+            actor,
+            {"revision": revision},
+            commit=False,
+        )
         if commit:
             self.conn.commit()
         return revision
@@ -116,21 +153,153 @@ class ProductStore:
             "INSERT INTO research_reports(signal_id,payload,created_at) VALUES(?,?,?)",
             (report.signal_id, _json(report), _now()),
         )
-        self.audit("research.completed", "signal", report.signal_id, "ai", {"status": report.status}, commit=False)
+        self.audit(
+            "research.completed",
+            "signal",
+            report.signal_id,
+            "ai",
+            {"status": report.status},
+            commit=False,
+        )
         self.conn.commit()
         return int(cur.lastrowid)
 
     def save_event(self, event: Any) -> None:
-        existing = self.conn.execute("SELECT version FROM product_events WHERE id=?", (event.id,)).fetchone()
+        existing = self.conn.execute(
+            "SELECT version FROM product_events WHERE id=?", (event.id,)
+        ).fetchone()
         if existing and event.version <= int(existing[0]):
             raise ValueError("event version must increase")
         self.conn.execute(
-            """INSERT INTO product_events(id,version,payload,created_at,updated_at)
-               VALUES(?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET
-               version=excluded.version,payload=excluded.payload,updated_at=excluded.updated_at""",
-            (event.id, event.version, _json(event), _now(), _now()),
+            """INSERT INTO product_events(
+                   id,version,payload,created_at,updated_at,lifecycle_state,
+                   first_seen_at,last_seen_at,last_meaningful_update_at,archived_at
+               ) VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET
+                   version=excluded.version,
+                   payload=excluded.payload,
+                   updated_at=excluded.updated_at,
+                   lifecycle_state=excluded.lifecycle_state,
+                   first_seen_at=COALESCE(product_events.first_seen_at,excluded.first_seen_at),
+                   last_seen_at=excluded.last_seen_at,
+                   last_meaningful_update_at=excluded.last_meaningful_update_at,
+                   archived_at=excluded.archived_at""",
+            (
+                event.id,
+                event.version,
+                _json(event),
+                _now(),
+                _now(),
+                event.lifecycle_state,
+                event.first_seen_at,
+                event.last_seen_at,
+                event.last_meaningful_update_at,
+                event.archived_at,
+            ),
         )
         self.conn.commit()
+
+    def archive_due_events(
+        self,
+        *,
+        as_of: str,
+        active_days: int = 30,
+        actor: str = "maintenance",
+    ) -> dict[str, Any]:
+        """Logically archive inactive news events without losing retrieval history."""
+        if active_days < 1:
+            raise ValueError("active_days must be >= 1")
+        try:
+            instant = datetime.fromisoformat(as_of.replace("Z", "+00:00"))
+        except ValueError:
+            raise ValueError("as_of must be an ISO datetime") from None
+        if instant.tzinfo is None:
+            instant = instant.replace(tzinfo=UTC)
+        instant = instant.astimezone(UTC)
+        cutoff = instant - timedelta(days=active_days)
+
+        draft_signal_ids: set[str] = set()
+        for row in self.conn.execute("SELECT payload FROM digests WHERE status='draft'"):
+            payload = json.loads(row["payload"] or "{}")
+            draft_signal_ids.update(
+                str(item.get("signal_id"))
+                for item in payload.get("items", [])
+                if isinstance(item, dict) and item.get("signal_id")
+            )
+
+        result: dict[str, Any] = {
+            "active_days": active_days,
+            "as_of": instant.isoformat(timespec="seconds"),
+            "archived": [],
+            "blocked": {},
+        }
+        for event in self.load_events():
+            if event.lifecycle_state != "active":
+                continue
+            boundary_raw = event.last_meaningful_update_at or event.first_seen_at
+            if not boundary_raw:
+                result["blocked"][event.id] = "missing_lifecycle_time"
+                continue
+            try:
+                boundary = datetime.fromisoformat(boundary_raw.replace("Z", "+00:00"))
+            except ValueError:
+                result["blocked"][event.id] = "invalid_lifecycle_time"
+                continue
+            if boundary.tzinfo is None:
+                boundary = boundary.replace(tzinfo=UTC)
+            if boundary.astimezone(UTC) > cutoff:
+                continue
+
+            blockers = self._event_archive_blockers(event.signal_ids, draft_signal_ids)
+            if blockers:
+                result["blocked"][event.id] = ",".join(blockers)
+                continue
+            archived = replace(
+                event,
+                lifecycle_state="archived",
+                archived_at=instant.isoformat(timespec="seconds"),
+                version=event.version + 1,
+            )
+            self.save_event(archived)
+            self.audit(
+                "event.archived",
+                "event",
+                event.id,
+                actor,
+                {
+                    "active_days": active_days,
+                    "last_meaningful_update_at": boundary_raw,
+                },
+            )
+            result["archived"].append(event.id)
+        return result
+
+    def _event_archive_blockers(
+        self, signal_ids: tuple[str, ...], draft_signal_ids: set[str]
+    ) -> list[str]:
+        blockers: set[str] = set()
+        for signal_id in signal_ids:
+            if signal_id in draft_signal_ids:
+                blockers.add("active_digest")
+            signal_row = self.conn.execute(
+                """SELECT payload FROM signal_revisions
+                   WHERE signal_id=? ORDER BY revision DESC LIMIT 1""",
+                (signal_id,),
+            ).fetchone()
+            decision_row = self.conn.execute(
+                """SELECT decision FROM review_decisions
+                   WHERE signal_id=? ORDER BY id DESC LIMIT 1""",
+                (signal_id,),
+            ).fetchone()
+            decision = decision_row["decision"] if decision_row else None
+            payload = json.loads(signal_row["payload"]) if signal_row else {}
+            if decision not in {"include", "exclude"} and should_surface_in_work_queue(payload):
+                blockers.add("open_review")
+                if (
+                    payload.get("importance") == "critical"
+                    or payload.get("urgency") == "urgent"
+                ):
+                    blockers.add("unresolved_critical")
+        return sorted(blockers)
 
     def save_npa_resolution(
         self,
@@ -155,12 +324,13 @@ class ProductStore:
             official_identifier = f"unresolved:{digest}"
 
         row = self.conn.execute(
-            "SELECT id FROM npa_records WHERE id=?",
+            "SELECT id,official_url FROM npa_records WHERE id=?",
             (str(resolution.object_id),),
         ).fetchone()
         if row is None:
             row = self.conn.execute(
-                "SELECT id FROM npa_records WHERE jurisdiction=? AND official_identifier=?",
+                """SELECT id,official_url FROM npa_records
+                   WHERE jurisdiction=? AND official_identifier=?""",
                 (jurisdiction, official_identifier),
             ).fetchone()
         if row is None:
@@ -179,6 +349,19 @@ class ProductStore:
             npa_id = str(resolution.object_id)
         else:
             npa_id = str(row["id"])
+            if source_url and source_url != (row["official_url"] or ""):
+                self.conn.execute(
+                    "UPDATE npa_records SET official_url=? WHERE id=?",
+                    (source_url, npa_id),
+                )
+                self.audit(
+                    "npa.official_source_updated",
+                    "npa",
+                    npa_id,
+                    "system",
+                    {"official_url": source_url},
+                    commit=False,
+                )
 
         encoded = _json(payload)
         latest = self.conn.execute(
@@ -189,7 +372,6 @@ class ProductStore:
         if latest is not None and (
             latest["stage"] == resolution.current_stage
             and latest["payload"] == encoded
-            and latest["source_url"] == source_url
             and latest["effective_at"] == resolution.effective_from
         ):
             self.conn.commit()
@@ -221,15 +403,105 @@ class ProductStore:
         self.conn.commit()
         return npa_id, version
 
+    def npa_archive_status(self, npa_id: str, *, as_of: str) -> dict[str, Any]:
+        """Return a safe, date-aware archive decision for a tracked NPA.
+
+        An adopted act with a future effective date must remain monitored.  It
+        becomes archive-eligible only when that date arrives; an explicitly
+        effective or repealed act is terminal immediately.  The method never
+        infers a missing date and never deletes the version history.
+        """
+        row = self.conn.execute(
+            """SELECT n.tracked,v.stage,v.effective_at
+               FROM npa_records n
+               LEFT JOIN npa_versions v ON v.id=(
+                 SELECT id FROM npa_versions
+                 WHERE npa_id=n.id ORDER BY version DESC LIMIT 1
+               )
+               WHERE n.id=?""",
+            (npa_id,),
+        ).fetchone()
+        if row is None:
+            return {
+                "exists": False,
+                "tracked": False,
+                "eligible": False,
+                "reason": "not_found",
+            }
+
+        stage = str(row["stage"] or "unknown")
+        effective_at = str(row["effective_at"] or "")
+        try:
+            current_date = date.fromisoformat(as_of[:10])
+        except ValueError:
+            raise ValueError("as_of must start with an ISO date") from None
+
+        reached_effective_date = False
+        if effective_at:
+            try:
+                reached_effective_date = date.fromisoformat(effective_at[:10]) <= current_date
+            except ValueError:
+                reached_effective_date = False
+        eligible = stage in {"effective", "repealed"} or (
+            stage == "adopted" and reached_effective_date
+        )
+        reason = (
+            "terminal_stage"
+            if stage in {"effective", "repealed"}
+            else "effective_date_reached"
+            if eligible
+            else "awaiting_effective_date"
+            if stage == "adopted" and effective_at
+            else "non_terminal_or_unproven"
+        )
+        return {
+            "exists": True,
+            "tracked": bool(row["tracked"]),
+            "eligible": eligible,
+            "reason": reason,
+            "current_stage": stage,
+            "effective_from": effective_at or None,
+        }
+
+    def archive_npa(self, npa_id: str, *, as_of: str, actor: str) -> bool:
+        """Archive an eligible NPA idempotently while preserving all versions."""
+        status = self.npa_archive_status(npa_id, as_of=as_of)
+        if not status["exists"] or not status["tracked"] or not status["eligible"]:
+            return False
+        self.conn.execute("UPDATE npa_records SET tracked=0 WHERE id=?", (npa_id,))
+        self.audit(
+            "npa.archived",
+            "npa",
+            npa_id,
+            actor,
+            {
+                "as_of": as_of,
+                "stage": status["current_stage"],
+                "effective_from": status["effective_from"],
+            },
+            commit=False,
+        )
+        self.conn.commit()
+        return True
+
     def save_link(self, decision: Any) -> int:
         cur = self.conn.execute(
             "INSERT INTO event_links(signal_id,event_id,relation,confidence,payload,created_at) VALUES(?,?,?,?,?,?)",
-            (decision.signal_id, decision.event_id, decision.relation, decision.confidence, _json(decision), _now()),
+            (
+                decision.signal_id,
+                decision.event_id,
+                decision.relation,
+                decision.confidence,
+                _json(decision),
+                _now(),
+            ),
         )
         self.conn.commit()
         return int(cur.lastrowid)
 
-    def save_review(self, signal_id: str, revision: int, decision: str, actor: str, payload: Any | None = None) -> int:
+    def save_review(
+        self, signal_id: str, revision: int, decision: str, actor: str, payload: Any | None = None
+    ) -> int:
         if decision not in {"include", "exclude", "restore", "edit", "confirm_link", "reject_link"}:
             raise ValueError("invalid review decision")
         cur = self.conn.execute(
@@ -240,7 +512,16 @@ class ProductStore:
         self.conn.commit()
         return int(cur.lastrowid)
 
-    def audit(self, event_type: str, object_type: str, object_id: str, actor: str, payload: Any | None = None, *, commit: bool = True) -> None:
+    def audit(
+        self,
+        event_type: str,
+        object_type: str,
+        object_id: str,
+        actor: str,
+        payload: Any | None = None,
+        *,
+        commit: bool = True,
+    ) -> None:
         self.conn.execute(
             "INSERT INTO audit_events(event_type,object_type,object_id,actor,payload,created_at) VALUES(?,?,?,?,?,?)",
             (event_type, object_type, object_id, actor, _json(payload or {}), _now()),

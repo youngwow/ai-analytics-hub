@@ -97,7 +97,9 @@ class Collector:
                 workers = min(self.config.scraper.concurrency, len(sources) or 1)
                 with ThreadPoolExecutor(max_workers=workers) as pool:
                     futures = {
-                        pool.submit(self._poll, s, states[s.id], client, started, since, backfill): s
+                        pool.submit(
+                            self._poll, s, states[s.id], client, started, since, backfill
+                        ): s
                         for s in sources
                     }
                     completed = []
@@ -159,6 +161,23 @@ class Collector:
         report.finished_at = to_utc_iso(self.now()) or ""
         self.db.runs.add(report)
         return result, entry
+
+    def preview_source(self, source: Source, *, limit: int = 3) -> tuple[FetchResult, int]:
+        """Read a candidate source without persisting it or advancing a checkpoint."""
+        if limit < 1:
+            raise ValueError("preview limit must be >= 1")
+        if source.kind not in self.adapters:
+            return FetchResult(error=f"no adapter for kind '{source.kind}'"), 0
+        now = self.now()
+        state = FetchState(source_id=source.id or 0)
+        since = now - timedelta(hours=self.config.scraper.date_window_hours)
+        try:
+            with make_client(self.config, self.transport) as client:
+                result, latency_ms = self._poll(source, state, client, now, since, False)
+            result.documents = result.documents[:limit]
+            return result, round(latency_ms)
+        finally:
+            self.close()
 
     def close(self) -> None:
         """Release what adapters hold open between runs (the MTProto client)."""

@@ -200,7 +200,6 @@ def _initial_events(initial_state: dict) -> list[EventRecord]:
             compact_text=str(row["title"]),
         )
         for row in initial_state.get("known_events", [])
-        if row.get("status") != "archived"
     ]
 
 

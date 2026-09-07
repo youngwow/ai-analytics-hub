@@ -1,0 +1,30 @@
+services:
+  radar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gs-labs-radar:local
+    env_file:
+      - .env
+    ports:
+      - "${MVP_PORT:-3002}:3002"
+    volumes:
+      - ./MVP/data:/app/MVP/data
+      - ./data:/app/data
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    healthcheck:
+      test:
+        [
+          "CMD",
+          ".venv/bin/python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3002/api/pilot/status', timeout=3).read()",
+        ]
+      interval: 20s
+      timeout: 5s
+      start_period: 15s
+      retries: 3

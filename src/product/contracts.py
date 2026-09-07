@@ -253,6 +253,13 @@ class EventRecord:
     compact_text: str
     embedding: tuple[float, ...] = ()
     version: int = 1
+    lifecycle_state: Literal["active", "archived"] = "active"
+    first_published_at: str | None = None
+    last_published_at: str | None = None
+    first_seen_at: str | None = None
+    last_seen_at: str | None = None
+    last_meaningful_update_at: str | None = None
+    archived_at: str | None = None
 
 
 @dataclass(frozen=True)
